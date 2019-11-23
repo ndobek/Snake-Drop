@@ -30,16 +30,17 @@ public class PlayGrid : MonoBehaviour
     }
 
     public Block blockObj;
-    public Snake snakeObj;
 
     public BlockType defaultType;
-    public BlockType snakeType;
 
     public Block[,] blocks;
 
     public Vector3 position(int x, int y)
     {
-        Vector3 result = new Vector3(x * gridSpace, y * gridSpace);
+        float xAdj = ((XSize - 1) * gridSpace) / 2;
+        float yAdj = ((YSize - 1) * gridSpace);
+
+        Vector3 result = new Vector3((x * gridSpace) - xAdj, (y * gridSpace) - yAdj);
         result = this.transform.TransformPoint(result);
         return result;
     }
@@ -106,7 +107,6 @@ public class PlayGrid : MonoBehaviour
             }
         }
 
-        SetBlock(0, 0, snakeType, snakeObj);
     }
 
     private void UpdateGrid()

@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class Block : MonoBehaviour
 {
-    protected PlayGrid playGrid;
+    [SerializeField]
+    protected PlayGrid gameBoard;
+
+    public bool active;
+    public Block tail;
+
     protected int currentX;
     protected int currentY;
     public BlockType blockType;
@@ -33,8 +38,8 @@ public class Block : MonoBehaviour
     }
     public void UpdateLocation(PlayGrid obj)
     {
-        this.playGrid = obj;
-        UpdateLocation(this.playGrid.position(currentX, currentY));
+        gameBoard = obj;
+        UpdateLocation(gameBoard.position(currentX, currentY));
     }
     public void UpdateLocation(Vector3 location)
     {
@@ -60,7 +65,12 @@ public class Block : MonoBehaviour
 
     public virtual void MoveTo(int x, int y)
     {
-        playGrid.SwapBlocks(currentX, currentY, x, y);
+        int oldX = currentX;
+        int oldY = currentY;
+
+        gameBoard.SwapBlocks(currentX, currentY, x, y);
+
+        if (tail != null) tail.MoveTo(oldX, oldY);
     }
 
 }
