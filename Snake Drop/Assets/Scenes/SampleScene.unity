@@ -146,7 +146,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9304146}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.2079344, y: 1.1605486, z: -6.560383}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -226,9 +226,9 @@ MonoBehaviour:
   xSize: 9
   ySize: 14
   gridSpace: 0.6
+  slotObj: {fileID: 8801716192784943556, guid: 57e0accb7532d95498b10343a4e2fa7e, type: 3}
   blockObj: {fileID: 1568087265349854530, guid: 585e486e84721df45ac5626db1e6f54d,
     type: 3}
-  defaultType: {fileID: 11400000, guid: ad475ad1996e6644894bf95990d05d14, type: 2}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

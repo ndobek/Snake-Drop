@@ -29,11 +29,10 @@ public class PlayGrid : MonoBehaviour
         set { gridSpace = value; }
     }
 
+    public BlockSlot slotObj;
     public Block blockObj;
 
-    public BlockType defaultType;
-
-    public Block[,] blocks;
+    public BlockSlot[,] slots;
 
     public Vector3 position(int x, int y)
     {
@@ -54,56 +53,49 @@ public class PlayGrid : MonoBehaviour
     {
         UpdateGrid();
     }
-
-    public void SetBlock( int x, int y, BlockType type = null, Block baseBlock = null)
+    public BlockSlot GetSlot(int x, int y)
     {
-        DestroyBlock(x, y);
-        CreateBlock(x, y, type, baseBlock);
+        if (CheckInGrid(x, y)) return slots[x, y];
+        else return null;
+    }
+    public Block GetBlock(int x, int y)
+    {
+        return GetSlot(x, y).Block;
     }
 
-    private void CreateBlock(int x, int y)
+    public void SetBlock(int x, int y, BlockType type)
     {
-        CreateBlock(x, y, defaultType, blockObj);
+        GetSlot(x, y).SetBlock(type);
     }
-    private void CreateBlock(int x, int y, Block baseBlock)
+    private void CreateSlot(int x, int y, BlockType type)
     {
-        CreateBlock(x, y, defaultType, baseBlock);
+        CreateSlot(x, y);
+        SetBlock(x, y, type);
     }
-    private void CreateBlock(int x, int y, BlockType blockType)
+    private void CreateSlot(int x, int y)
     {
-        CreateBlock(x, y, blockType, blockObj);
-    }
-    private void CreateBlock(int x, int y, BlockType blockType, Block baseBlock)
-    {
-        if (blockType == null) blockType = defaultType;
-        if (baseBlock == null) baseBlock = blockObj;
-
-        if (InGrid(x, y) && blocks[x, y] == null)
+        if (CheckInGrid(x, y) && slots[x, y] == null)
         {
-            blocks[x, y] = Instantiate(baseBlock, position(x, y), Quaternion.identity, this.transform);
-            blocks[x, y].blockType = blockType;
-            blocks[x, y].UpdateLocation(this, x, y);
-            blocks[x, y].UpdateSprite();
+            slots[x, y] = Instantiate(slotObj, position(x, y), Quaternion.identity, this.transform);
+            slots[x, y].playGrid = this;
+            slots[x, y].x = x;
+            slots[x, y].y = y;
         }
     }
 
-    private void DestroyBlock(int x, int y)
+    public void DeleteBlock(int x, int y)
     {
-        if (InGrid(x, y))
-        {
-            Destroy(blocks[x, y].gameObject);
-            blocks[x, y] = null;
-        }
+        GetSlot(x, y).DeleteBlock();
     }
 
     private void CreateGrid()
     {
-        blocks = new Block[xSize, ySize];
+        slots = new BlockSlot[xSize, ySize];
         for (int x = 0; x < xSize; x++)
         {
             for (int y = 0; y < ySize; y++)
             {
-                CreateBlock(x, y);
+                CreateSlot(x, y);
             }
         }
 
@@ -115,25 +107,20 @@ public class PlayGrid : MonoBehaviour
         {
             for (int y = 0; y < ySize; y++)
             {
-                blocks[x, y].UpdateBlock(this, x, y);
+                slots[x, y].UpdateBlock();
             }
         }
     }
 
     public void SwapBlocks(int x1, int y1, int x2, int y2)
     {
-        if (InGrid(x1, y1) && InGrid(x2, y2))
+        if (CheckInGrid(x1, y1) && CheckInGrid(x2, y2))
         {
-            Block swap = blocks[x1, y1];
-            blocks[x1, y1] = blocks[x2, y2];
-            blocks[x2, y2] = swap;
-
-            blocks[x1, y1].UpdateLocation(this, x1, y1);
-            blocks[x2, y2].UpdateLocation(this, x2, y2);
+            BlockSlot.SwapBlocks(slots[x1, y1], slots[x2, y2]);
         }
     }
 
-    public bool InGrid(int x, int y)
+    public bool CheckInGrid(int x, int y)
     {
         if (
             x >= 0 &&

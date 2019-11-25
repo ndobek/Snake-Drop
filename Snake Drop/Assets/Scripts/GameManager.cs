@@ -44,8 +44,8 @@ public class GameManager : MonoBehaviour
     {
         if(snakeHead == null)
         {
-            gameBoard.SetBlock(0, 0, test);
-            snakeHead = gameBoard.blocks[0, 0];
+            gameBoard.SetBlock(1, 1, test);
+            snakeHead = gameBoard.GetBlock(1, 1);
         }
     }
 }

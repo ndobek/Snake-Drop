@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class Block : MonoBehaviour
 {
-    [SerializeField]
-    protected PlayGrid gameBoard;
+    //[SerializeField]
+    protected BlockSlot CurrentLocation;
 
     public bool isPartOfSnake;
     public Block tail;
 
-    protected int currentX;
-    protected int currentY;
+
     public BlockType blockType;
     public SpriteRenderer spriteRenderer;
 
@@ -24,53 +23,58 @@ public class Block : MonoBehaviour
             spriteRenderer.color = blockType.color;
         }
     }
-    public void UpdateBlock(PlayGrid obj, int x, int y)
+    public void UpdateBlock()
     {
-        UpdateLocation(obj, x, y);
+        if(CurrentLocation) UpdateLocation();
         UpdateSprite();
     }
+    public void SetBlockType(BlockType type)
+    {
+        blockType = type;
+        UpdateBlock();
+    }
 
-    public void UpdateLocation(PlayGrid obj, int x, int y)
+    public void UpdateLocation(BlockSlot obj)
     {
-        currentX = x;
-        currentY = y;
-        UpdateLocation(obj);
+        CurrentLocation = obj;
+        UpdateLocation();
     }
-    public void UpdateLocation(PlayGrid obj)
+    private void UpdateLocation()
     {
-        gameBoard = obj;
-        UpdateLocation(gameBoard.position(currentX, currentY));
-    }
-    public void UpdateLocation(Vector3 location)
-    {
-        this.transform.position = location;
+        this.transform.SetParent(CurrentLocation.transform);
+        this.transform.localPosition = Vector3.zero;
+        this.transform.localRotation = Quaternion.identity;
+        this.transform.localScale = Vector3.one;
     }
 
     public void MoveLeft()
     {
-        MoveTo(currentX - 1, currentY);
+        BlockSlot destination = CurrentLocation.GetNeighbor(BlockSlot.Neighbor.Left);
+        if(destination) MoveTo(destination);
     }
     public void MoveRight()
     {
-        MoveTo(currentX + 1, currentY);
+        BlockSlot destination = CurrentLocation.GetNeighbor(BlockSlot.Neighbor.Right);
+        if (destination) MoveTo(destination);
     }
     public void MoveUp()
     {
-        MoveTo(currentX, currentY + 1);
+        BlockSlot destination = CurrentLocation.GetNeighbor(BlockSlot.Neighbor.Up);
+        if (destination) MoveTo(destination);
     }
     public void MoveDown()
     {
-        MoveTo(currentX, currentY - 1);
+        BlockSlot destination = CurrentLocation.GetNeighbor(BlockSlot.Neighbor.Down);
+        if(destination) MoveTo(destination);
     }
 
-    public virtual void MoveTo(int x, int y)
+    public virtual void MoveTo(BlockSlot obj)
     {
-        int oldX = currentX;
-        int oldY = currentY;
+        BlockSlot Old = CurrentLocation;
+        CurrentLocation = obj;
+        UpdateLocation();
 
-        gameBoard.SwapBlocks(currentX, currentY, x, y);
-
-        if (tail != null) tail.MoveTo(oldX, oldY);
+        if (tail != null) tail.MoveTo(Old);
     }
 
 }
