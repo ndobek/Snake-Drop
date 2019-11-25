@@ -16,34 +16,36 @@ public class GameManager : MonoBehaviour
 
     public BlockType test;
 
+    private void Awake()
+    {
+        SwipeManager.OnSwipe += MoveSnakeOnSwipe;
+    }
+
+    private void MoveSnakeOnSwipe(SwipeManager.SwipeData swipe)
+    {
+        switch (swipe.direction)
+        {
+            case SwipeManager.SwipeDirection.Up:
+                snakeHead.MoveUp();
+                break;
+            case SwipeManager.SwipeDirection.Down:
+                snakeHead.MoveDown();
+                break;
+            case SwipeManager.SwipeDirection.Left:
+                snakeHead.MoveLeft();
+                break;
+            case SwipeManager.SwipeDirection.Right:
+                snakeHead.MoveRight();
+                break;
+        }
+    }
+
     private void Update()
     {
         if(snakeHead == null)
         {
             gameBoard.SetBlock(0, 0, test);
             snakeHead = gameBoard.blocks[0, 0];
-        }
-
-        if (Input.touchCount > 0)
-        {
-            Touch touch = Input.GetTouch(0);
-            Vector3 touchPos = touch.position;
-            float centeredX = (touchPos.x / Camera.main.scaledPixelWidth) - .5f;
-            float centeredY = (touchPos.y / Camera.main.scaledPixelHeight) - .5f;
-            if (touch.phase == TouchPhase.Began && snakeHead != null)
-            {
-                if(Mathf.Abs(centeredX) > Mathf.Abs(centeredY))
-                {
-                    if (centeredX > 0) snakeHead.MoveRight();
-                    else snakeHead.MoveLeft();
-                }
-                else
-                {
-                    if (centeredY > 0) snakeHead.MoveUp();
-                    else snakeHead.MoveDown();
-                }
-            }
-
         }
     }
 }

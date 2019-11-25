@@ -7,7 +7,7 @@ public class Block : MonoBehaviour
     [SerializeField]
     protected PlayGrid gameBoard;
 
-    public bool active;
+    public bool isPartOfSnake;
     public Block tail;
 
     protected int currentX;
