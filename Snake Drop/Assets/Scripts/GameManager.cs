@@ -14,8 +14,6 @@ public class GameManager : MonoBehaviour
         set { snakeHead = value; }
     }
 
-    public BlockType test;
-
     private void Awake()
     {
         SwipeManager.OnSwipe += MoveSnakeOnSwipe;
@@ -40,12 +38,20 @@ public class GameManager : MonoBehaviour
         }
     }
 
+
+    public BlockType test;
+    public BlockType test2;
     private void Update()
     {
         if(snakeHead == null)
         {
-            gameBoard.SetBlock(1, 1, test);
-            snakeHead = gameBoard.GetBlock(1, 1);
+            gameBoard.SetBlock(0, 1, test);
+            gameBoard.SetBlock(1, 1, test2);
+            gameBoard.SetBlock(2, 1, test);
+            gameBoard.GetBlock(2, 1).SetTail(BlockSlot.Neighbor.Left);
+            gameBoard.GetBlock(1, 1).SetTail(BlockSlot.Neighbor.Left);
+
+            snakeHead = gameBoard.GetBlock(2, 1);
         }
     }
 }

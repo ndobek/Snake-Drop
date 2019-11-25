@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//[ExecuteInEditMode]
+[ExecuteInEditMode]
 public class PlayGrid : MonoBehaviour
 {
     [SerializeField]
@@ -32,7 +32,8 @@ public class PlayGrid : MonoBehaviour
     public BlockSlot slotObj;
     public Block blockObj;
 
-    public BlockSlot[,] slots;
+    [SerializeField, HideInInspector]
+    private BlockSlot[,] slots;
 
     public Vector3 position(int x, int y)
     {
@@ -46,27 +47,47 @@ public class PlayGrid : MonoBehaviour
 
     private void Awake()
     {
-        CreateGrid();
+        //CreateGrid();
     }
-
     private void Update()
     {
         UpdateGrid();
     }
-    public BlockSlot GetSlot(int x, int y)
+
+    public void CreateGrid()
     {
-        if (CheckInGrid(x, y)) return slots[x, y];
-        else return null;
+        slots = new BlockSlot[xSize, ySize];
+        for (int x = 0; x < xSize; x++)
+        {
+            for (int y = 0; y < ySize; y++)
+            {
+                CreateSlot(x, y);
+            }
+        }
     }
-    public Block GetBlock(int x, int y)
+    private void UpdateGrid()
     {
-        return GetSlot(x, y).Block;
+        for (int x = 0; x < xSize; x++)
+        {
+            for (int y = 0; y < ySize; y++)
+            {
+                slots[x, y].UpdateBlock();
+            }
+        }
+    }
+    public bool CheckInGrid(int x, int y)
+    {
+        if (
+            x >= 0 &&
+            x < xSize &&
+
+            y >= 0 &&
+            y < ySize
+            ) { return true; }
+        else return false;
     }
 
-    public void SetBlock(int x, int y, BlockType type)
-    {
-        GetSlot(x, y).SetBlock(type);
-    }
+
     private void CreateSlot(int x, int y, BlockType type)
     {
         CreateSlot(x, y);
@@ -82,53 +103,31 @@ public class PlayGrid : MonoBehaviour
             slots[x, y].y = y;
         }
     }
+    public BlockSlot GetSlot(int x, int y)
+    {
+        if (CheckInGrid(x, y)) return slots[x, y];
+        else return null;
+    }
 
+
+
+    public void SetBlock(int x, int y, BlockType type)
+    {
+        GetSlot(x, y).SetBlock(type);
+    }
+    public Block GetBlock(int x, int y)
+    {
+        return GetSlot(x, y).Block;
+    }
     public void DeleteBlock(int x, int y)
     {
         GetSlot(x, y).DeleteBlock();
     }
-
-    private void CreateGrid()
-    {
-        slots = new BlockSlot[xSize, ySize];
-        for (int x = 0; x < xSize; x++)
-        {
-            for (int y = 0; y < ySize; y++)
-            {
-                CreateSlot(x, y);
-            }
-        }
-
-    }
-
-    private void UpdateGrid()
-    {
-        for (int x = 0; x < xSize; x++)
-        {
-            for (int y = 0; y < ySize; y++)
-            {
-                slots[x, y].UpdateBlock();
-            }
-        }
-    }
-
     public void SwapBlocks(int x1, int y1, int x2, int y2)
     {
         if (CheckInGrid(x1, y1) && CheckInGrid(x2, y2))
         {
             BlockSlot.SwapBlocks(slots[x1, y1], slots[x2, y2]);
         }
-    }
-
-    public bool CheckInGrid(int x, int y)
-    {
-        if (
-            x >= 0 &&
-            x < xSize &&
-
-            y >= 0 &&
-            y < ySize
-            ) { return true; }
-        else return false;
     }
 }

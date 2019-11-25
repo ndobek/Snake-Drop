@@ -8,7 +8,14 @@ public class Block : MonoBehaviour
     protected BlockSlot CurrentLocation;
 
     public bool isPartOfSnake;
-    public Block tail;
+
+    [SerializeField]
+    private Block tail;
+    public Block Tail
+    {
+        get { return tail; }
+        set { tail = value; }
+    }
 
 
     public BlockType blockType;
@@ -33,12 +40,27 @@ public class Block : MonoBehaviour
         blockType = type;
         UpdateBlock();
     }
-
-    public void UpdateLocation(BlockSlot obj)
+    public void SetTail(BlockSlot.Neighbor neighbor)
     {
-        CurrentLocation = obj;
-        UpdateLocation();
+        SetTail(Neighbor(neighbor).Block);
     }
+    public void SetTail(Block obj)
+    {
+        tail = obj;
+        isPartOfSnake = true;
+        tail.isPartOfSnake = true;
+    }
+    public BlockSlot Neighbor(BlockSlot.Neighbor direction)
+    {
+        return CurrentLocation.GetNeighbor(direction);
+    }
+
+    //public void UpdateLocation(BlockSlot obj)
+    //{
+    //    CurrentLocation = obj;
+    //    UpdateLocation();
+    //}
+
     private void UpdateLocation()
     {
         this.transform.SetParent(CurrentLocation.transform);
@@ -46,29 +68,7 @@ public class Block : MonoBehaviour
         this.transform.localRotation = Quaternion.identity;
         this.transform.localScale = Vector3.one;
     }
-
-    public void MoveLeft()
-    {
-        BlockSlot destination = CurrentLocation.GetNeighbor(BlockSlot.Neighbor.Left);
-        if(destination) MoveTo(destination);
-    }
-    public void MoveRight()
-    {
-        BlockSlot destination = CurrentLocation.GetNeighbor(BlockSlot.Neighbor.Right);
-        if (destination) MoveTo(destination);
-    }
-    public void MoveUp()
-    {
-        BlockSlot destination = CurrentLocation.GetNeighbor(BlockSlot.Neighbor.Up);
-        if (destination) MoveTo(destination);
-    }
-    public void MoveDown()
-    {
-        BlockSlot destination = CurrentLocation.GetNeighbor(BlockSlot.Neighbor.Down);
-        if(destination) MoveTo(destination);
-    }
-
-    public virtual void MoveTo(BlockSlot obj)
+    public void MoveTo(BlockSlot obj)
     {
         BlockSlot Old = CurrentLocation;
         CurrentLocation = obj;
@@ -76,5 +76,28 @@ public class Block : MonoBehaviour
 
         if (tail != null) tail.MoveTo(Old);
     }
+    public void MoveTo(BlockSlot.Neighbor neighbor)
+    {
+        BlockSlot destination = Neighbor(neighbor);
+        if (destination) MoveTo(destination);
+    }
+    public void MoveLeft()
+    {
+        MoveTo(BlockSlot.Neighbor.Left);
+    }
+    public void MoveRight()
+    {
+        MoveTo(BlockSlot.Neighbor.Right);
+    }
+    public void MoveUp()
+    {
+        MoveTo(BlockSlot.Neighbor.Up);
+    }
+    public void MoveDown()
+    {
+        MoveTo(BlockSlot.Neighbor.Down);
+    }
+
+
 
 }

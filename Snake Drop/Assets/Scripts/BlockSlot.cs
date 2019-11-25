@@ -11,8 +11,10 @@ public class BlockSlot : MonoBehaviour
     [HideInInspector]
     public PlayGrid playGrid;
 
-    public BlockSlot forwardNeighbor;
-    public BlockSlot backwardNeighbor;
+    public BlockSlot customRightNeighbor;
+    public BlockSlot customLeftNeighbor;
+    public BlockSlot customUpNeighbor;
+    public BlockSlot customDownNeighbor;
 
     private Block block;
     public Block Block
@@ -25,27 +27,24 @@ public class BlockSlot : MonoBehaviour
         Right,
         Left,
         Up,
-        Down,
-        Forward,
-        Backward
+        Down
     }
-
     public BlockSlot GetNeighbor(Neighbor neighbor)
     {
         switch (neighbor)
         {
             case Neighbor.Right:
-                return playGrid.GetSlot(x + 1, y);
+                if (customRightNeighbor) return customRightNeighbor;
+                else return playGrid.GetSlot(x + 1, y);
             case Neighbor.Left:
-                return playGrid.GetSlot(x - 1, y);
+                if (customLeftNeighbor) return customLeftNeighbor;
+                else return playGrid.GetSlot(x - 1, y);
             case Neighbor.Up:
-                return playGrid.GetSlot(x, y + 1);
+                if (customUpNeighbor) return customUpNeighbor;
+                else return playGrid.GetSlot(x, y + 1);
             case Neighbor.Down:
-                return playGrid.GetSlot(x, y - 1);
-            case Neighbor.Forward:
-                return forwardNeighbor;
-            case Neighbor.Backward:
-                return backwardNeighbor;
+                if (customDownNeighbor) return customDownNeighbor;
+                else return playGrid.GetSlot(x, y - 1);
         }
         return null;
     }
@@ -53,28 +52,24 @@ public class BlockSlot : MonoBehaviour
     public void MoveBlockHere(Block obj)
     {
         block = obj;
-        block.UpdateLocation(this);
+        block.MoveTo(this);
     }
     public void SetBlock(BlockType type)
     {
         DeleteBlock();
         block = Instantiate(playGrid.blockObj, playGrid.position(x, y), Quaternion.identity, this.transform);
         block.SetBlockType(type);
-        block.UpdateLocation(this);
+        block.MoveTo(this);
     }
     public void DeleteBlock()
     {
         if(block) GameObject.Destroy(block);
         block = null;
     }
-
     public void UpdateBlock()
     {
         if(block) block.UpdateBlock();
     }
-
-
-
     public static void SwapBlocks(BlockSlot obj1, BlockSlot obj2)
     {
         Block swap = obj1.Block;
