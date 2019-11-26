@@ -10,7 +10,9 @@ public class PlayGridEditor : Editor
         PlayGrid grid = (PlayGrid)target;
         if(GUILayout.Button("Generate Grid"))
         {
+            Undo.RecordObject(grid, "Created Grid");
             grid.CreateGrid();
+            EditorUtility.SetDirty(grid);
         }
     }
 }

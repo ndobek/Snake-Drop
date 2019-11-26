@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 5842934707549262566}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -95,5 +95,7 @@ MonoBehaviour:
   x: 0
   y: 0
   playGrid: {fileID: 0}
-  forwardNeighbor: {fileID: 0}
-  backwardNeighbor: {fileID: 0}
+  customRightNeighbor: {fileID: 0}
+  customLeftNeighbor: {fileID: 0}
+  customUpNeighbor: {fileID: 0}
+  customDownNeighbor: {fileID: 0}
