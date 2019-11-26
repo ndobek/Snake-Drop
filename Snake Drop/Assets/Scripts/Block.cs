@@ -55,12 +55,6 @@ public class Block : MonoBehaviour
         return CurrentLocation.GetNeighbor(direction);
     }
 
-    //public void UpdateLocation(BlockSlot obj)
-    //{
-    //    CurrentLocation = obj;
-    //    UpdateLocation();
-    //}
-
     private void UpdateLocation()
     {
         this.transform.SetParent(CurrentLocation.transform);
@@ -68,11 +62,17 @@ public class Block : MonoBehaviour
         this.transform.localRotation = Quaternion.identity;
         this.transform.localScale = Vector3.one;
     }
+    private void OnMoveTo(BlockSlot obj)
+    {
+        CurrentLocation = obj;
+        UpdateBlock();
+    }
+
     public void MoveTo(BlockSlot obj)
     {
         BlockSlot Old = CurrentLocation;
         CurrentLocation = obj;
-        UpdateLocation();
+        OnMoveTo(obj);
 
         if (tail != null) tail.MoveTo(Old);
     }

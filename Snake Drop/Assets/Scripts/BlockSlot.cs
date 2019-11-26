@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class BlockSlot : MonoBehaviour
 {
-    [HideInInspector]
     public int x;
-    [HideInInspector]
     public int y;
-    [HideInInspector]
+    //[HideInInspector]
     public PlayGrid playGrid;
 
     public BlockSlot customRightNeighbor;
@@ -49,17 +47,26 @@ public class BlockSlot : MonoBehaviour
         return null;
     }
 
-    public void MoveBlockHere(Block obj)
+    public virtual void OnAssignment(Block obj)
     {
         block = obj;
-        block.MoveTo(this);
+    }
+
+    public void MoveBlockHere(Block obj)
+    {
+        OnAssignment(obj);
+        obj.MoveTo(this);
     }
     public void SetBlock(BlockType type)
     {
         DeleteBlock();
-        block = Instantiate(playGrid.blockObj, playGrid.position(x, y), Quaternion.identity, this.transform);
-        block.SetBlockType(type);
-        block.MoveTo(this);
+        CreateBlock(type);
+    }
+    protected void CreateBlock(BlockType type)
+    {
+        Block newBlock = Instantiate(playGrid.blockObj, playGrid.position(x, y), Quaternion.identity, this.transform);
+        newBlock.SetBlockType(type);
+        MoveBlockHere(newBlock);
     }
     public void DeleteBlock()
     {

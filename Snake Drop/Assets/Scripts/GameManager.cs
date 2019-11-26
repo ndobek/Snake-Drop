@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public PlayGrid gameBoard;
+    public SnakeMaker snakeMaker;
 
     [HideInInspector]
     private Block snakeHead;
@@ -45,13 +46,14 @@ public class GameManager : MonoBehaviour
     {
         if(snakeHead == null)
         {
-            gameBoard.SetBlock(0, 1, test);
-            gameBoard.SetBlock(1, 1, test2);
-            gameBoard.SetBlock(2, 1, test);
-            gameBoard.GetBlock(2, 1).SetTail(BlockSlot.Neighbor.Left);
-            gameBoard.GetBlock(1, 1).SetTail(BlockSlot.Neighbor.Left);
+            snakeMaker.MakeSnake(55, .9f, this);
+            //gameBoard.SetBlock(0, 1, test);
+            //gameBoard.SetBlock(1, 1, test2);
+            //gameBoard.SetBlock(2, 1, test);
+            //gameBoard.GetBlock(2, 1).SetTail(BlockSlot.Neighbor.Left);
+            //gameBoard.GetBlock(1, 1).SetTail(BlockSlot.Neighbor.Left);
 
-            snakeHead = gameBoard.GetBlock(2, 1);
+            //snakeHead = gameBoard.GetBlock(2, 1);
         }
     }
 }

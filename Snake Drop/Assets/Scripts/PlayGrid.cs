@@ -32,7 +32,7 @@ public class PlayGrid : MonoBehaviour
     public BlockSlot slotObj;
     public Block blockObj;
 
-    [SerializeField, HideInInspector]
+    [SerializeField]
     private BlockSlot[] slots;
 
     private int FlattenedIndex(int x, int y)
