@@ -14,7 +14,7 @@ public class SnakeMaker : BlockSlot
         Blocks.Add(obj);
     }
 
-    public void MakeSnake(int length, float entropy, GameManager obj)
+    public Block MakeSnake(int length, float entropy, GameManager obj)
     {
         if (Blocks.Count == 0)
         {
@@ -26,7 +26,8 @@ public class SnakeMaker : BlockSlot
                 Blocks[i].isPartOfSnake = true;
                 if (i > 0) Blocks[i - 1].SetTail(Blocks[i]);
             }
-            obj.SnakeHead = Blocks[0];
+            
         }
+        return Blocks[0];
     }
 }

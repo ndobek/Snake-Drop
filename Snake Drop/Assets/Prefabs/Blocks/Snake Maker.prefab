@@ -103,3 +103,7 @@ MonoBehaviour:
   possibleTypes:
   - {fileID: 11400000, guid: 5438ed90547356044a3c13328a354b08, type: 2}
   - {fileID: 11400000, guid: 07b701687f0ab4f43b6961cfca09f98a, type: 2}
+  - {fileID: 11400000, guid: 48847a2b7d2594e4a885a17b2eb9b0da, type: 2}
+  - {fileID: 11400000, guid: 89027e777b4abb445b6c3b13886aebfc, type: 2}
+  - {fileID: 11400000, guid: 06922463012b1f24fb757d5ffdabbd6b, type: 2}
+  - {fileID: 11400000, guid: ee409ded68de8e44994020049bb8964e, type: 2}
