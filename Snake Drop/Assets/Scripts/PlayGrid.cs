@@ -33,7 +33,12 @@ public class PlayGrid : MonoBehaviour
     public Block blockObj;
 
     [SerializeField, HideInInspector]
-    private BlockSlot[,] slots;
+    private BlockSlot[] slots;
+
+    private int FlattenedIndex(int x, int y)
+    {
+        return y * xSize + x;
+    }
 
     public Vector3 position(int x, int y)
     {
@@ -56,7 +61,7 @@ public class PlayGrid : MonoBehaviour
 
     public void CreateGrid()
     {
-        slots = new BlockSlot[xSize, ySize];
+        slots = new BlockSlot[xSize * ySize];
         for (int x = 0; x < xSize; x++)
         {
             for (int y = 0; y < ySize; y++)
@@ -71,7 +76,7 @@ public class PlayGrid : MonoBehaviour
         {
             for (int y = 0; y < ySize; y++)
             {
-                slots[x, y].UpdateBlock();
+                GetSlot(x,y).UpdateBlock();
             }
         }
     }
@@ -95,17 +100,18 @@ public class PlayGrid : MonoBehaviour
     }
     private void CreateSlot(int x, int y)
     {
-        if (CheckInGrid(x, y) && slots[x, y] == null)
+        if (CheckInGrid(x, y) && slots[FlattenedIndex(x,y)] == null)
         {
-            slots[x, y] = Instantiate(slotObj, position(x, y), Quaternion.identity, this.transform);
-            slots[x, y].playGrid = this;
-            slots[x, y].x = x;
-            slots[x, y].y = y;
+            int i = FlattenedIndex(x, y);
+            slots[i] = Instantiate(slotObj, position(x, y), Quaternion.identity, this.transform);
+            slots[i].playGrid = this;
+            slots[i].x = x;
+            slots[i].y = y;
         }
     }
     public BlockSlot GetSlot(int x, int y)
     {
-        if (CheckInGrid(x, y)) return slots[x, y];
+        if (CheckInGrid(x, y)) return slots[FlattenedIndex(x, y)];
         else return null;
     }
 
@@ -127,7 +133,7 @@ public class PlayGrid : MonoBehaviour
     {
         if (CheckInGrid(x1, y1) && CheckInGrid(x2, y2))
         {
-            BlockSlot.SwapBlocks(slots[x1, y1], slots[x2, y2]);
+            BlockSlot.SwapBlocks(GetSlot(x1,y1), GetSlot(x2, y2));
         }
     }
 }
