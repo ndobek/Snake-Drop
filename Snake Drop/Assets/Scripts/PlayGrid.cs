@@ -133,7 +133,7 @@ public class PlayGrid : MonoBehaviour
     {
         if (CheckInGrid(x1, y1) && CheckInGrid(x2, y2))
         {
-            BlockSlot.SwapBlocks(GetSlot(x1,y1), GetSlot(x2, y2));
+            BlockSlot.SwapBlocks(GetSlot(x1, y1), GetSlot(x2, y2));
         }
     }
 }

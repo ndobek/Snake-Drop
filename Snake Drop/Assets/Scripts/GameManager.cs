@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager instance;
+
     public PlayGrid gameBoard;
     public SnakeMaker snakeMaker;
 
@@ -17,26 +19,47 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        if(!instance) instance = this;
         SwipeManager.OnSwipe += MoveSnakeOnSwipe;
-        snakeHead = snakeMaker.MakeSnake(55, .3f, this);
+        ContinueGame();
     }
 
     private void MoveSnakeOnSwipe(SwipeManager.SwipeData swipe)
     {
-        switch (swipe.direction)
+        if (snakeHead)
         {
-            case SwipeManager.SwipeDirection.Up:
-                snakeHead.MoveUp();
-                break;
-            case SwipeManager.SwipeDirection.Down:
-                snakeHead.MoveDown();
-                break;
-            case SwipeManager.SwipeDirection.Left:
-                snakeHead.MoveLeft();
-                break;
-            case SwipeManager.SwipeDirection.Right:
-                snakeHead.MoveRight();
-                break;
+            switch (swipe.direction)
+            {
+                case SwipeManager.SwipeDirection.Up:
+                    snakeHead.Eat(BlockSlot.Neighbor.Up);
+                    break;
+                case SwipeManager.SwipeDirection.Down:
+                    snakeHead.Eat(BlockSlot.Neighbor.Down);
+                    break;
+                case SwipeManager.SwipeDirection.Left:
+                    snakeHead.Eat(BlockSlot.Neighbor.Left);
+                    break;
+                case SwipeManager.SwipeDirection.Right:
+                    snakeHead.Eat(BlockSlot.Neighbor.Right);
+                    break;
+            }
         }
+    }
+
+    public void OnBlockDeath(Block obj)
+    {
+        if (obj == snakeHead) OnSnakeDeath(obj);
+    }
+    public void OnSnakeDeath(Block obj)
+    {
+        snakeHead = null;
+        //CheckGameState
+        ContinueGame();
+        //EndGame
+    }
+
+    private void ContinueGame()
+    {
+        snakeHead = snakeMaker.MakeSnake(7, .3f, this);
     }
 }

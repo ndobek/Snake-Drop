@@ -54,7 +54,6 @@ public class BlockSlot : MonoBehaviour
 
     public void MoveBlockHere(Block obj)
     {
-        OnAssignment(obj);
         obj.MoveTo(this);
     }
     public void SetBlock(BlockType type)
@@ -70,7 +69,11 @@ public class BlockSlot : MonoBehaviour
     }
     public void DeleteBlock()
     {
-        if(block) GameObject.Destroy(block);
+        if (block) GameObject.Destroy(block.gameObject);
+        RemoveBlock();
+    }
+    public void RemoveBlock()
+    {
         block = null;
     }
     public void UpdateBlock()

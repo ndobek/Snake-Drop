@@ -11,13 +11,16 @@ public class SnakeMaker : BlockSlot
 
     public override void OnAssignment(Block obj)
     {
+        base.OnAssignment(obj);
         Blocks.Add(obj);
     }
 
     public Block MakeSnake(int length, float entropy, GameManager obj)
     {
-        if (Blocks.Count == 0)
-        {
+        Blocks.Clear();
+        //SetBlock(null);
+        //if (Blocks.Count == 0)
+        //{
             int type = Random.Range(0, possibleTypes.Length);
             for (int i = 0; i < length; i++)
             {
@@ -27,7 +30,7 @@ public class SnakeMaker : BlockSlot
                 if (i > 0) Blocks[i - 1].SetTail(Blocks[i]);
             }
             
-        }
+        //}
         return Blocks[0];
     }
 }

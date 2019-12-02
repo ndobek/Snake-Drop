@@ -104,7 +104,7 @@ public class SwipeManager : MonoBehaviour
             endPos = fingerUpPos,
             direction = dir
         };
-        Debug.Log(obj.direction);
+        //Debug.Log(obj.direction);
         OnSwipe(obj);
     }
 
