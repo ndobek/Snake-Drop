@@ -3,19 +3,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SwipeManager : MonoBehaviour
+public class TouchManager : MonoBehaviour
 {
 
     private Vector2 fingerDownPos;
     private Vector2 fingerUpPos;
 
+    private float fingerHeldTime;
+    [SerializeField]
+    private float minHoldLength;
+
     [SerializeField]
     private float deadZone;
+
 
     [SerializeField]
     private bool detectSwipeBeforeRelease = false;
 
     public static event Action<SwipeData> OnSwipe = delegate {};
+    public static event Action<HoldData> OnHold = delegate { };
 
     private void Update()
     {
@@ -27,7 +33,14 @@ public class SwipeManager : MonoBehaviour
                 {
                     fingerDownPos = touch.position;
                     fingerUpPos = touch.position;
+                    fingerHeldTime = 0;
                 }
+
+                //if(touch.phase == TouchPhase.Stationary)
+                //{
+                    fingerHeldTime += Time.deltaTime;
+                    DetectHold();
+                //}
 
                 if(detectSwipeBeforeRelease && touch.phase == TouchPhase.Moved)
                 {
@@ -49,16 +62,16 @@ public class SwipeManager : MonoBehaviour
     {
         if (SwipeWasLongEnough())
         {
-            SwipeDirection dir;
+            GameManager.Direction dir;
             if (IsVerticalSwipe())
             {
                 if(fingerUpPos.y > fingerDownPos.y)
                 {
-                    dir = SwipeDirection.Up;
+                    dir = GameManager.Direction.Up;
                 }
                 else
                 {
-                    dir = SwipeDirection.Down;
+                    dir = GameManager.Direction.Down;
                 }
 
             }
@@ -66,15 +79,33 @@ public class SwipeManager : MonoBehaviour
             {
                 if (fingerUpPos.x > fingerDownPos.x)
                 {
-                    dir = SwipeDirection.Right;
+                    dir = GameManager.Direction.Right;
                 }
                 else
                 {
-                    dir = SwipeDirection.Left;
+                    dir = GameManager.Direction.Left;
                 }
             }
             RegisterSwipe(dir);
         }
+    }
+
+    private void DetectHold()
+    {
+        if(fingerHeldTime >= minHoldLength)
+        {
+            RegisterHold(fingerHeldTime);
+        }
+    }
+
+    private void RegisterHold(float time)
+    {
+        HoldData obj = new HoldData
+        {
+            Pos = fingerDownPos,
+            TimeHeld = time
+        };
+        OnHold(obj);
     }
 
     private bool IsVerticalSwipe()
@@ -96,7 +127,7 @@ public class SwipeManager : MonoBehaviour
         return Mathf.Abs(fingerUpPos.x - fingerDownPos.x);
     }
 
-    public void RegisterSwipe(SwipeDirection dir)
+    public void RegisterSwipe(GameManager.Direction dir)
     {
         SwipeData obj = new SwipeData
         {
@@ -112,14 +143,20 @@ public class SwipeManager : MonoBehaviour
     {
         public Vector2 startPos;
         public Vector2 endPos;
-        public SwipeDirection direction;
+        public GameManager.Direction direction;
     }
 
-    public enum SwipeDirection
+    public struct HoldData
     {
-        Up,
-        Down,
-        Left,
-        Right
+        public Vector2 Pos;
+        public float TimeHeld;
     }
+
+    //public enum SwipeDirection
+    //{
+    //    Up,
+    //    Down,
+    //    Left,
+    //    Right
+    //}
 }

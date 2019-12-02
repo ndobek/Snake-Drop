@@ -9,6 +9,19 @@ public class GameManager : MonoBehaviour
     public PlayGrid gameBoard;
     public SnakeMaker snakeMaker;
 
+    public enum Direction
+    {
+        Up,
+        Down,
+        Left,
+        Right
+    }
+
+    private Direction mostRecentDirection;
+    [SerializeField]
+    private float autoMoveInterval;
+    private float timeSinceLastAutoMove;
+
     [HideInInspector]
     private Block snakeHead;
     public Block SnakeHead
@@ -20,30 +33,32 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         if(!instance) instance = this;
-        SwipeManager.OnSwipe += MoveSnakeOnSwipe;
+        TouchManager.OnSwipe += MoveSnakeOnSwipe;
+        TouchManager.OnHold += MoveSnakeOnHold;
         ContinueGame();
     }
 
-    private void MoveSnakeOnSwipe(SwipeManager.SwipeData swipe)
+    private void MoveSnakeOnSwipe(TouchManager.SwipeData swipe)
     {
         if (snakeHead)
         {
-            switch (swipe.direction)
-            {
-                case SwipeManager.SwipeDirection.Up:
-                    snakeHead.Eat(BlockSlot.Neighbor.Up);
-                    break;
-                case SwipeManager.SwipeDirection.Down:
-                    snakeHead.Eat(BlockSlot.Neighbor.Down);
-                    break;
-                case SwipeManager.SwipeDirection.Left:
-                    snakeHead.Eat(BlockSlot.Neighbor.Left);
-                    break;
-                case SwipeManager.SwipeDirection.Right:
-                    snakeHead.Eat(BlockSlot.Neighbor.Right);
-                    break;
-            }
+            snakeHead.Eat(swipe.direction);
+            mostRecentDirection = swipe.direction;
         }
+    }
+
+    private void MoveSnakeOnHold(TouchManager.HoldData Hold)
+    {
+        if (timeSinceLastAutoMove > autoMoveInterval)
+        {
+            SnakeHead.Eat(mostRecentDirection);
+            timeSinceLastAutoMove = 0;
+        }
+        else
+        {
+            timeSinceLastAutoMove += Time.deltaTime;
+        }
+        Debug.Log(Hold.TimeHeld);
     }
 
     public void OnBlockDeath(Block obj)

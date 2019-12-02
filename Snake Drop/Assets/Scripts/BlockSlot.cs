@@ -20,27 +20,27 @@ public class BlockSlot : MonoBehaviour
         get { return block; }
     }
 
-    public enum Neighbor
-    {
-        Right,
-        Left,
-        Up,
-        Down
-    }
-    public BlockSlot GetNeighbor(Neighbor neighbor)
+    //public enum Neighbor
+    //{
+    //    Right,
+    //    Left,
+    //    Up,
+    //    Down
+    //}
+    public BlockSlot GetNeighbor(GameManager.Direction neighbor)
     {
         switch (neighbor)
         {
-            case Neighbor.Right:
+            case GameManager.Direction.Right:
                 if (customRightNeighbor) return customRightNeighbor;
                 else return playGrid.GetSlot(x + 1, y);
-            case Neighbor.Left:
+            case GameManager.Direction.Left:
                 if (customLeftNeighbor) return customLeftNeighbor;
                 else return playGrid.GetSlot(x - 1, y);
-            case Neighbor.Up:
+            case GameManager.Direction.Up:
                 if (customUpNeighbor) return customUpNeighbor;
                 else return playGrid.GetSlot(x, y + 1);
-            case Neighbor.Down:
+            case GameManager.Direction.Down:
                 if (customDownNeighbor) return customDownNeighbor;
                 else return playGrid.GetSlot(x, y - 1);
         }

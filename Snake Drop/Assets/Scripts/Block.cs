@@ -45,7 +45,7 @@ public class Block : MonoBehaviour
         blockType = type;
         UpdateBlock();
     }
-    public void SetTail(BlockSlot.Neighbor neighbor)
+    public void SetTail(GameManager.Direction neighbor)
     {
         SetTail(Neighbor(neighbor).Block);
     }
@@ -59,7 +59,7 @@ public class Block : MonoBehaviour
             tail = null;
         }
     }
-    public BlockSlot Neighbor(BlockSlot.Neighbor direction)
+    public BlockSlot Neighbor(GameManager.Direction direction)
     {
         return CurrentLocation.GetNeighbor(direction);
     }
@@ -81,13 +81,13 @@ public class Block : MonoBehaviour
         UpdateBlock();
         if (tail != null) tail.MoveTo(Old);
     }
-    public void Move(BlockSlot.Neighbor neighbor)
+    public void Move(GameManager.Direction neighbor)
     {
         BlockSlot destination = Neighbor(neighbor);
         if (destination) MoveTo(destination);
     }
 
-    public void Eat(BlockSlot.Neighbor neighbor)
+    public void Eat(GameManager.Direction neighbor)
     {
         BlockSlot slotOjb = Neighbor(neighbor);
 
