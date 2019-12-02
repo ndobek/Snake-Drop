@@ -22,7 +22,7 @@ public class Block : MonoBehaviour
     public BlockType blockType;
 
     public SpriteRenderer BlockSprite;
-    public GameObject Highlight;
+    public SpriteRenderer Highlight;
 
 
     public void UpdateSprite()
@@ -33,7 +33,7 @@ public class Block : MonoBehaviour
             BlockSprite.color = blockType.color;
         }
 
-        Highlight.SetActive(isPartOfSnake);
+        Highlight.enabled = isPartOfSnake;
     }
     public void UpdateBlock()
     {
@@ -54,8 +54,6 @@ public class Block : MonoBehaviour
         if (obj)
         {
             tail = obj;
-            isPartOfSnake = true;
-            tail.isPartOfSnake = true;
         } else
         {
             tail = null;
@@ -81,7 +79,6 @@ public class Block : MonoBehaviour
         CurrentLocation = obj;
         obj.OnAssignment(this);
         UpdateBlock();
-
         if (tail != null) tail.MoveTo(Old);
     }
     public void Move(BlockSlot.Neighbor neighbor)
@@ -96,8 +93,8 @@ public class Block : MonoBehaviour
 
         Block blockObj = null;
         if (slotOjb) blockObj = slotOjb.Block;
-        if (blockObj) Debug.Log(blockObj.blockType);
-        else Debug.Log("null");
+        //if (blockObj) Debug.Log(blockObj.blockType);
+        //else Debug.Log("null");
 
         if (!slotOjb | (blockObj != null && blockObj.blockType != blockType))
         {
@@ -116,12 +113,12 @@ public class Block : MonoBehaviour
 
     public void Kill()
     {
-        isPartOfSnake = false;
         if (tail != null)
         {
             tail.Kill();
             SetTail(null);
         }
+        isPartOfSnake = false;
         UpdateBlock();
         GameManager.instance.OnBlockDeath(this);
     }
