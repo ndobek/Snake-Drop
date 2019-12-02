@@ -31,16 +31,16 @@ public class BlockSlot : MonoBehaviour
     {
         switch (neighbor)
         {
-            case GameManager.Direction.Right:
+            case GameManager.Direction.RIGHT:
                 if (customRightNeighbor) return customRightNeighbor;
                 else return playGrid.GetSlot(x + 1, y);
-            case GameManager.Direction.Left:
+            case GameManager.Direction.LEFT:
                 if (customLeftNeighbor) return customLeftNeighbor;
                 else return playGrid.GetSlot(x - 1, y);
-            case GameManager.Direction.Up:
+            case GameManager.Direction.UP:
                 if (customUpNeighbor) return customUpNeighbor;
                 else return playGrid.GetSlot(x, y + 1);
-            case GameManager.Direction.Down:
+            case GameManager.Direction.DOWN:
                 if (customDownNeighbor) return customDownNeighbor;
                 else return playGrid.GetSlot(x, y - 1);
         }

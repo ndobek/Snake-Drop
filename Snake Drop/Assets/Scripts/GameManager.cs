@@ -11,10 +11,18 @@ public class GameManager : MonoBehaviour
 
     public enum Direction
     {
-        Up,
-        Down,
-        Left,
-        Right
+        UP, DOWN, LEFT, RIGHT
+    }
+    public Direction GetOppositeDirection(Direction direction)
+    {
+        switch (direction)
+        {
+            case Direction.UP: return Direction.DOWN;
+            case Direction.DOWN: return Direction.UP;
+            case Direction.LEFT: return Direction.RIGHT;
+            case Direction.RIGHT: return Direction.LEFT;
+            default: throw new System.Exception("Big OOPsy Doopsy" + this + "is not a real direction dumbass");
+        }
     }
 
     private Direction mostRecentDirection;
@@ -39,12 +47,12 @@ public class GameManager : MonoBehaviour
         ContinueGame();
     }
 
-    private void MoveSnakeOnSwipe(TouchManager.TouchData swipe)
+    private void MoveSnakeOnSwipe(TouchManager.TouchData Swipe)
     {
-        if (snakeHead)
+        if (snakeHead && Swipe.direction != GetOppositeDirection(mostRecentDirection))
         {
-            snakeHead.Eat(swipe.direction);
-            mostRecentDirection = swipe.direction;
+            snakeHead.Eat(Swipe.direction);
+            mostRecentDirection = Swipe.direction;
         }
     }
 
@@ -59,7 +67,6 @@ public class GameManager : MonoBehaviour
         {
             timeSinceLastAutoMove += Time.deltaTime;
         }
-        Debug.Log(Hold.TimeHeld);
     }
 
     private void MoveSnakeOnTap(TouchManager.TouchData Tap)

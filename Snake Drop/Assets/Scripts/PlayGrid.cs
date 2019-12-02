@@ -40,7 +40,7 @@ public class PlayGrid : MonoBehaviour
         return y * xSize + x;
     }
 
-    public Vector3 position(int x, int y)
+    public Vector3 position(float x, float y)
     {
         float xAdj = ((XSize - 1) * gridSpace) / 2;
         float yAdj = ((YSize - 1) * gridSpace);

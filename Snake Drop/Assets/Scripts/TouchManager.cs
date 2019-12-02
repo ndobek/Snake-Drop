@@ -66,11 +66,11 @@ public class TouchManager : MonoBehaviour
             {
                 if(fingerUpPos.y > fingerDownPos.y)
                 {
-                    dir = GameManager.Direction.Up;
+                    dir = GameManager.Direction.UP;
                 }
                 else
                 {
-                    dir = GameManager.Direction.Down;
+                    dir = GameManager.Direction.DOWN;
                 }
 
             }
@@ -78,11 +78,11 @@ public class TouchManager : MonoBehaviour
             {
                 if (fingerUpPos.x > fingerDownPos.x)
                 {
-                    dir = GameManager.Direction.Right;
+                    dir = GameManager.Direction.RIGHT;
                 }
                 else
                 {
-                    dir = GameManager.Direction.Left;
+                    dir = GameManager.Direction.LEFT;
                 }
             }
             mostRecentSwipedDirection = dir;
