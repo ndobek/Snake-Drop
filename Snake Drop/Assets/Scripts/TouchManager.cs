@@ -10,6 +10,7 @@ public class TouchManager : MonoBehaviour
     private Vector2 fingerUpPos;
 
     private float fingerHeldTime;
+    private GameManager.Direction mostRecentSwipedDirection;
     [SerializeField]
     private float minHoldLength;
 
@@ -20,8 +21,9 @@ public class TouchManager : MonoBehaviour
     [SerializeField]
     private bool detectSwipeBeforeRelease = false;
 
-    public static event Action<SwipeData> OnSwipe = delegate {};
-    public static event Action<HoldData> OnHold = delegate { };
+    public static event Action<TouchData> OnSwipe = delegate {};
+    public static event Action<TouchData> OnHold = delegate { };
+    public static event Action<TouchData> OnTap = delegate { };
 
     private void Update()
     {
@@ -36,22 +38,19 @@ public class TouchManager : MonoBehaviour
                     fingerHeldTime = 0;
                 }
 
-                //if(touch.phase == TouchPhase.Stationary)
-                //{
-                    fingerHeldTime += Time.deltaTime;
-                    DetectHold();
-                //}
+                fingerHeldTime += Time.deltaTime;
+                DetectHold();
+                fingerUpPos = touch.position;
 
-                if(detectSwipeBeforeRelease && touch.phase == TouchPhase.Moved)
+                if (detectSwipeBeforeRelease && touch.phase == TouchPhase.Moved)
                 {
-                    fingerUpPos = touch.position;
                     DetectSwipe();
                 }
 
                 if(touch.phase == TouchPhase.Ended)
                 {
-                    fingerUpPos = touch.position;
                     DetectSwipe();
+                    DetectTap();
                 }
 
             }
@@ -60,7 +59,7 @@ public class TouchManager : MonoBehaviour
 
     private void DetectSwipe()
     {
-        if (SwipeWasLongEnough())
+        if (LongEnoughForSwipe())
         {
             GameManager.Direction dir;
             if (IsVerticalSwipe())
@@ -86,26 +85,25 @@ public class TouchManager : MonoBehaviour
                     dir = GameManager.Direction.Left;
                 }
             }
-            RegisterSwipe(dir);
+            mostRecentSwipedDirection = dir;
+            OnSwipe(RegisterTouch());
         }
     }
 
     private void DetectHold()
     {
-        if(fingerHeldTime >= minHoldLength)
+        if(LongEnoughForHold())
         {
-            RegisterHold(fingerHeldTime);
+            OnHold(RegisterTouch());
         }
     }
 
-    private void RegisterHold(float time)
+    private void DetectTap()
     {
-        HoldData obj = new HoldData
+        if(!LongEnoughForHold() && !LongEnoughForSwipe())
         {
-            Pos = fingerDownPos,
-            TimeHeld = time
-        };
-        OnHold(obj);
+            OnTap(RegisterTouch());
+        }
     }
 
     private bool IsVerticalSwipe()
@@ -113,9 +111,14 @@ public class TouchManager : MonoBehaviour
         return VerticalSwipeDistance() > HorizontalSwipeDistance();
     }
 
-    private bool SwipeWasLongEnough()
+    private bool LongEnoughForSwipe()
     {
         return Vector2.Distance(fingerUpPos, fingerDownPos) > deadZone;
+    }
+
+    private bool LongEnoughForHold()
+    {
+        return fingerHeldTime >= minHoldLength;
     }
 
     private float VerticalSwipeDistance()
@@ -127,28 +130,21 @@ public class TouchManager : MonoBehaviour
         return Mathf.Abs(fingerUpPos.x - fingerDownPos.x);
     }
 
-    public void RegisterSwipe(GameManager.Direction dir)
+    public TouchData RegisterTouch()
     {
-        SwipeData obj = new SwipeData
+        return new TouchData
         {
             startPos = fingerDownPos,
             endPos = fingerUpPos,
-            direction = dir
+            direction = mostRecentSwipedDirection
         };
-        //Debug.Log(obj.direction);
-        OnSwipe(obj);
     }
 
-    public struct SwipeData
+    public struct TouchData
     {
         public Vector2 startPos;
         public Vector2 endPos;
         public GameManager.Direction direction;
-    }
-
-    public struct HoldData
-    {
-        public Vector2 Pos;
         public float TimeHeld;
     }
 

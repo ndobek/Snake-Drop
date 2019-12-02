@@ -35,10 +35,11 @@ public class GameManager : MonoBehaviour
         if(!instance) instance = this;
         TouchManager.OnSwipe += MoveSnakeOnSwipe;
         TouchManager.OnHold += MoveSnakeOnHold;
+        TouchManager.OnTap += MoveSnakeOnTap;
         ContinueGame();
     }
 
-    private void MoveSnakeOnSwipe(TouchManager.SwipeData swipe)
+    private void MoveSnakeOnSwipe(TouchManager.TouchData swipe)
     {
         if (snakeHead)
         {
@@ -47,7 +48,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void MoveSnakeOnHold(TouchManager.HoldData Hold)
+    private void MoveSnakeOnHold(TouchManager.TouchData Hold)
     {
         if (timeSinceLastAutoMove > autoMoveInterval)
         {
@@ -59,6 +60,11 @@ public class GameManager : MonoBehaviour
             timeSinceLastAutoMove += Time.deltaTime;
         }
         Debug.Log(Hold.TimeHeld);
+    }
+
+    private void MoveSnakeOnTap(TouchManager.TouchData Tap)
+    {
+        SnakeHead.Eat(mostRecentDirection);
     }
 
     public void OnBlockDeath(Block obj)

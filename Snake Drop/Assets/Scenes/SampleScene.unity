@@ -463,7 +463,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameBoard: {fileID: 354576705}
   snakeMaker: {fileID: 1631618764}
-  autoMoveInterval: 0.2
+  autoMoveInterval: 0.1
 --- !u!114 &9304149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -476,7 +476,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df3f7ea2a5c50bc4884f63dbc93b8073, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minHoldLength: 0.2
+  minHoldLength: 0.3
   deadZone: 20
   detectSwipeBeforeRelease: 0
 --- !u!1 &15798464
