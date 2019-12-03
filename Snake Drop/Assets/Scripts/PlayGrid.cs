@@ -80,6 +80,32 @@ public class PlayGrid : MonoBehaviour
             }
         }
     }
+    public void Fall()
+    {
+        for (int x = 0; x < xSize; x++)
+        {
+            Fall(x, 0, ySize);
+        }
+        UpdateGrid();
+    }
+    private void Fall(int x, int startingY, int maxY)
+    {
+        BlockSlot lowestEmptySlot = null;
+        for (int y = startingY; y < maxY; y++)
+        {
+            BlockSlot obj = GetSlot(x, y);
+            if (lowestEmptySlot == null && obj.Block == null)
+            {
+                lowestEmptySlot = obj;
+            }
+            if (lowestEmptySlot != null && obj.Block != null)
+            {
+                obj.Block.MoveTo(lowestEmptySlot);
+                Fall(x, lowestEmptySlot.y, maxY);
+            }
+        }
+    }
+
     public bool CheckInGrid(int x, int y)
     {
         if (

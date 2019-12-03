@@ -16894,7 +16894,7 @@ MonoBehaviour:
   playGrid: {fileID: 354576705}
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
-  customUpNeighbor: {fileID: 903321993}
+  customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
 --- !u!4 &1500569676
 Transform:

@@ -96,6 +96,7 @@ public class GameManager : MonoBehaviour
     public void OnSnakeDeath(Block obj)
     {
         snakeHead = null;
+        gameBoard.Fall();
         ContinueGame();
     }
     private void ShiftPreviewBar()
@@ -130,7 +131,7 @@ public class GameManager : MonoBehaviour
 
     private void MakeSnake()
     {
-        if (snakeMaker.CheckIsClear()) PreviewSnakes.Add(snakeMaker.MakeSnake(7, .4f, this));
+        if (snakeMaker.CheckIsClear()) PreviewSnakes.Add(snakeMaker.MakeSnake(25, .1f, this));
     }
 
     private void ActivateSnake(Block newSnakeHead)
