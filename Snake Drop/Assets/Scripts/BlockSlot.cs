@@ -70,11 +70,11 @@ public class BlockSlot : MonoBehaviour
     public void DeleteBlock()
     {
         if (block) GameObject.Destroy(block.gameObject);
-        RemoveBlock();
+        RemoveBlock(block);
     }
-    public void RemoveBlock()
+    public virtual void RemoveBlock(Block obj)
     {
-        block = null;
+        if(block == obj) block = null;
     }
     public void UpdateBlock()
     {

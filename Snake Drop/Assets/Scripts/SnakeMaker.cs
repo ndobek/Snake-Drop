@@ -14,23 +14,32 @@ public class SnakeMaker : BlockSlot
         base.OnAssignment(obj);
         Blocks.Add(obj);
     }
+    public override void RemoveBlock(Block obj)
+    {
+        base.RemoveBlock(obj);
+        if (Blocks.Contains(obj)) Blocks.Remove(obj);
+    }
+
+    public bool CheckIsClear()
+    {
+        return Blocks.Count == 0;
+    }
 
     public Block MakeSnake(int length, float entropy, GameManager obj)
     {
-        Blocks.Clear();
-        //SetBlock(null);
-        //if (Blocks.Count == 0)
-        //{
+        //Blocks.Clear();
+        if (CheckIsClear())
+        {
             int type = Random.Range(0, possibleTypes.Length);
             for (int i = 0; i < length; i++)
             {
                 if (Random.value < entropy) type = Random.Range(0, possibleTypes.Length);
                 CreateBlock(possibleTypes[type]);
-                Blocks[i].isPartOfSnake = true;
+                //Blocks[i].isPartOfSnake = true;
                 if (i > 0) Blocks[i - 1].SetTail(Blocks[i]);
             }
-            
-        //}
-        return Blocks[0];
+            return Blocks[0];
+        }
+        return null;
     }
 }

@@ -8,12 +8,15 @@ public class GameManager : MonoBehaviour
 
     public PlayGrid gameBoard;
     public SnakeMaker snakeMaker;
+    public BlockSlot waitSlot;
+
+    public int HeightLimit;
 
     public enum Direction
     {
         UP, DOWN, LEFT, RIGHT
     }
-    public Direction GetOppositeDirection(Direction direction)
+    public static Direction GetOppositeDirection(Direction direction)
     {
         switch (direction)
         {
@@ -21,7 +24,7 @@ public class GameManager : MonoBehaviour
             case Direction.DOWN: return Direction.UP;
             case Direction.LEFT: return Direction.RIGHT;
             case Direction.RIGHT: return Direction.LEFT;
-            default: throw new System.Exception("Big OOPsy Doopsy" + this + "is not a real direction dumbass");
+            default: throw new System.Exception("Big OOPsy Doopsy that is not a real direction dumbass");
         }
     }
 
@@ -38,21 +41,22 @@ public class GameManager : MonoBehaviour
         set { snakeHead = value; }
     }
 
+    private List<Block> PreviewSnakes = new List<Block>();
+
     private void Awake()
     {
         if(!instance) instance = this;
         TouchManager.OnSwipe += MoveSnakeOnSwipe;
         TouchManager.OnHold += MoveSnakeOnHold;
         TouchManager.OnTap += MoveSnakeOnTap;
-        ContinueGame();
+        StartGame();
     }
 
     private void MoveSnakeOnSwipe(TouchManager.TouchData Swipe)
     {
         if (snakeHead && Swipe.direction != GetOppositeDirection(mostRecentDirection))
         {
-            snakeHead.Eat(Swipe.direction);
-            mostRecentDirection = Swipe.direction;
+            MoveSnake(Swipe.direction);
         }
     }
 
@@ -60,18 +64,29 @@ public class GameManager : MonoBehaviour
     {
         if (timeSinceLastAutoMove > autoMoveInterval)
         {
-            SnakeHead.Eat(mostRecentDirection);
             timeSinceLastAutoMove = 0;
+            MoveSnake(mostRecentDirection);
         }
         else
         {
             timeSinceLastAutoMove += Time.deltaTime;
         }
     }
-
     private void MoveSnakeOnTap(TouchManager.TouchData Tap)
     {
-        SnakeHead.Eat(mostRecentDirection);
+        MoveSnake(mostRecentDirection);
+    }
+
+    public void MoveSnake(Direction direction)
+    {
+
+        if (direction != Direction.UP | SnakeHead.Coords().y < HeightLimit)
+        {
+            SnakeHead.Eat(direction);
+            mostRecentDirection = direction;
+            FillPreviewBar();
+            LowerHeightLimit();
+        }
     }
 
     public void OnBlockDeath(Block obj)
@@ -81,13 +96,63 @@ public class GameManager : MonoBehaviour
     public void OnSnakeDeath(Block obj)
     {
         snakeHead = null;
-        //CheckGameState
         ContinueGame();
-        //EndGame
+    }
+    private void ShiftPreviewBar()
+    {
+        foreach(Block snake in PreviewSnakes)
+        {
+            snake.Move(Direction.LEFT);
+        }
+        MakeSnake();
     }
 
+    private void FillPreviewBar()
+    {
+        MakeSnake();
+        while (PreviewSnakes.Count > 0 && PreviewSnakes[0].Slot != waitSlot && PreviewSnakes[0].Neighbor(Direction.LEFT).Block == null)
+        {
+            ShiftPreviewBar();
+        }
+    }
+
+    private void LowerHeightLimit()
+    {
+        int temp = SnakeHead.FindSnakeMaxY() + 2;
+        if (temp < HeightLimit) HeightLimit = temp;
+    }
+
+    private void ResetMoveRestrictions()
+    {
+        HeightLimit = gameBoard.YSize + 1;
+        mostRecentDirection = Direction.DOWN;
+    }
+
+    private void MakeSnake()
+    {
+        if (snakeMaker.CheckIsClear()) PreviewSnakes.Add(snakeMaker.MakeSnake(7, .4f, this));
+    }
+
+    private void ActivateSnake(Block newSnakeHead)
+    {
+        snakeHead = newSnakeHead;
+        snakeHead.ActivateSnake();
+    }
+
+    private void StartGame()
+    {
+        MakeSnake();
+        FillPreviewBar();
+        ResetMoveRestrictions();
+        ContinueGame();
+    }
     private void ContinueGame()
     {
-        snakeHead = snakeMaker.MakeSnake(7, .3f, this);
+        snakeHead = PreviewSnakes[0];
+        snakeHead.ActivateSnake();
+        snakeHead.Move(Direction.DOWN);
+        ResetMoveRestrictions();
+        PreviewSnakes.RemoveAt(0);
+        FillPreviewBar();
     }
 }

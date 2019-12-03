@@ -5,7 +5,7 @@ using UnityEngine;
 public class Block : MonoBehaviour
 {
     //[SerializeField]
-    protected BlockSlot CurrentLocation;
+    public BlockSlot Slot;
 
     [HideInInspector]
     public bool isPartOfSnake;
@@ -37,7 +37,7 @@ public class Block : MonoBehaviour
     }
     public void UpdateBlock()
     {
-        if(CurrentLocation) UpdateLocation();
+        if(Slot) UpdateLocation();
         UpdateSprite();
     }
     public void SetBlockType(BlockType type)
@@ -61,12 +61,12 @@ public class Block : MonoBehaviour
     }
     public BlockSlot Neighbor(GameManager.Direction direction)
     {
-        return CurrentLocation.GetNeighbor(direction);
+        return Slot.GetNeighbor(direction);
     }
 
     private void UpdateLocation()
     {
-        this.transform.SetParent(CurrentLocation.transform);
+        this.transform.SetParent(Slot.transform);
         this.transform.localPosition = Vector3.zero;
         this.transform.localRotation = Quaternion.identity;
         this.transform.localScale = Vector3.one;
@@ -74,9 +74,9 @@ public class Block : MonoBehaviour
 
     public void MoveTo(BlockSlot obj)
     {
-        BlockSlot Old = CurrentLocation;
-        if(Old) Old.RemoveBlock();
-        CurrentLocation = obj;
+        BlockSlot Old = Slot;
+        if(Old) Old.RemoveBlock(this);
+        Slot = obj;
         obj.OnAssignment(this);
         UpdateBlock();
         if (tail != null) tail.MoveTo(Old);
@@ -123,4 +123,30 @@ public class Block : MonoBehaviour
         GameManager.instance.OnBlockDeath(this);
     }
 
+    public Vector2 Coords()
+    {
+        return new Vector2(Slot.x, Slot.y);
+    }
+
+    public int FindSnakeMaxY()
+    {
+        int obj1 = (int)Coords().y;
+        int obj2 = 0;
+        if (tail != null)
+        {
+            obj2 = tail.FindSnakeMaxY();
+        }
+        int result = (obj1 > obj2) ? obj1 : obj2;
+        return result;
+    }
+
+    public void ActivateSnake()
+    {
+        if(tail != null)
+        {
+            tail.ActivateSnake();
+        }
+        isPartOfSnake = true;
+        UpdateBlock();
+    }
 }
