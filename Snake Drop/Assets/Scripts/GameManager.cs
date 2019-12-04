@@ -95,9 +95,15 @@ public class GameManager : MonoBehaviour
     }
     public void OnSnakeDeath(Block obj)
     {
-        snakeHead = null;
         gameBoard.Fall();
-        ContinueGame();
+        if (waitSlot.GetNeighbor(Direction.DOWN).Block != null)
+        {
+            EndGame();
+        }
+        else
+        {
+            ContinueGame();
+        }
     }
     private void ShiftPreviewBar()
     {
@@ -149,11 +155,15 @@ public class GameManager : MonoBehaviour
     }
     private void ContinueGame()
     {
-        snakeHead = PreviewSnakes[0];
+        snakeHead = waitSlot.Block;
         snakeHead.ActivateSnake();
         snakeHead.Move(Direction.DOWN);
         ResetMoveRestrictions();
-        PreviewSnakes.RemoveAt(0);
+        if (PreviewSnakes.Count > 0 && snakeHead == PreviewSnakes[0]) PreviewSnakes.RemoveAt(0);
         FillPreviewBar();
+    }
+    private void EndGame()
+    {
+        Debug.Log("Game Over");
     }
 }

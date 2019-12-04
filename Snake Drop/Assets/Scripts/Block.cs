@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class Block : MonoBehaviour
 {
+    [HideInInspector]
+    public BlockType blockType;
+
     //[SerializeField]
     public BlockSlot Slot;
 
     [HideInInspector]
     public bool isPartOfSnake;
-
     [SerializeField, HideInInspector]
     private Block tail;
     public Block Tail
@@ -18,14 +20,11 @@ public class Block : MonoBehaviour
         //set { tail = value; }
     }
 
-    [HideInInspector]
-    public BlockType blockType;
-
     public SpriteRenderer BlockSprite;
     public SpriteRenderer Highlight;
 
 
-    public void UpdateSprite()
+    private void UpdateSprite()
     {
         if (blockType != null)
         {
@@ -35,11 +34,19 @@ public class Block : MonoBehaviour
 
         Highlight.enabled = isPartOfSnake;
     }
+    private void UpdateLocation()
+    {
+        this.transform.SetParent(Slot.transform);
+        this.transform.localPosition = Vector3.zero;
+        this.transform.localRotation = Quaternion.identity;
+        this.transform.localScale = Vector3.one;
+    }
     public void UpdateBlock()
     {
         if(Slot) UpdateLocation();
         UpdateSprite();
     }
+
     public void SetBlockType(BlockType type)
     {
         blockType = type;
@@ -59,17 +66,14 @@ public class Block : MonoBehaviour
             tail = null;
         }
     }
+
+    public Vector2 Coords()
+    {
+        return new Vector2(Slot.x, Slot.y);
+    }
     public BlockSlot Neighbor(GameManager.Direction direction)
     {
         return Slot.GetNeighbor(direction);
-    }
-
-    private void UpdateLocation()
-    {
-        this.transform.SetParent(Slot.transform);
-        this.transform.localPosition = Vector3.zero;
-        this.transform.localRotation = Quaternion.identity;
-        this.transform.localScale = Vector3.one;
     }
 
     public void MoveTo(BlockSlot obj)
@@ -115,17 +119,12 @@ public class Block : MonoBehaviour
     {
         if (tail != null)
         {
-            tail.Kill();
+            if(tail.Slot.playGrid == GameManager.instance.gameBoard) tail.Kill();
             SetTail(null);
         }
         isPartOfSnake = false;
         UpdateBlock();
         GameManager.instance.OnBlockDeath(this);
-    }
-
-    public Vector2 Coords()
-    {
-        return new Vector2(Slot.x, Slot.y);
     }
 
     public int FindSnakeMaxY()
@@ -149,4 +148,14 @@ public class Block : MonoBehaviour
         isPartOfSnake = true;
         UpdateBlock();
     }
+
+    //public bool SnakeIsInSlot(BlockSlot obj)
+    //{
+    //    bool isFurtherDownSnake = false;
+    //    if (tail != null)
+    //    {
+    //        isFurtherDownSnake = SnakeIsInSlot(obj);
+    //    }
+    //    return (Slot == obj | isFurtherDownSnake);
+    //}
 }
