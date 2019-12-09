@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,8 +14,12 @@ public class GameManager : MonoBehaviour
     public SnakeMaker snakeMaker;
     public BlockSlot waitSlot;
     public GameObject gameOverScreen;
-    public Collider2D touchDetectionArea;
 
+    [HideInInspector]
+    public int score;
+    public Text ScoreText;
+
+    [HideInInspector]
     public int HeightLimit;
 
     public enum Direction
@@ -57,9 +62,20 @@ public class GameManager : MonoBehaviour
         StartGame();
     }
 
+    public void IncreaseScore(int i)
+    {
+        UpdateScore(score + i);
+
+    }
+    public void UpdateScore(int i)
+    {
+        score = i;
+        ScoreText.text = "Score: " + score.ToString();
+    }
+
     private void MoveSnakeOnSwipe(TouchManager.TouchData Swipe)
     {
-        if (TouchIsInValidArea(Swipe) && snakeHead && Swipe.direction != GetOppositeDirection(mostRecentDirection))
+        if (snakeHead && Swipe.direction != GetOppositeDirection(mostRecentDirection))
         {
             MoveSnake(Swipe.direction);
         }
@@ -67,8 +83,6 @@ public class GameManager : MonoBehaviour
 
     private void MoveSnakeOnHold(TouchManager.TouchData Hold)
     {
-        if (TouchIsInValidArea(Hold))
-        {
             if (timeSinceLastAutoMove > autoMoveInterval)
             {
                 timeSinceLastAutoMove = 0;
@@ -78,17 +92,10 @@ public class GameManager : MonoBehaviour
             {
                 timeSinceLastAutoMove += Time.deltaTime;
             }
-        }
     }
     private void MoveSnakeOnTap(TouchManager.TouchData Tap)
     {
-        if (TouchIsInValidArea(Tap)) MoveSnake(mostRecentDirection);
-    }
-
-    private bool TouchIsInValidArea(TouchManager.TouchData obj)
-    {
-        RaycastHit2D hit = Physics2D.Raycast(obj.startPos, obj.endPos);
-        return hit.collider == touchDetectionArea;
+        MoveSnake(mostRecentDirection);
     }
 
     public void MoveSnake(Direction direction)
@@ -163,6 +170,7 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
+        UpdateScore(0);
         gameOverScreen.SetActive(false);
         playGrid.ClearGrid();
         previewGrid.ClearGrid();

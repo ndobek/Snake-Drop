@@ -32,7 +32,7 @@ public class TouchManager : MonoBehaviour
         {
             foreach (Touch touch in Input.touches)
             {
-                if (InValidArea())
+                if (InValidArea(touch))
                 {
                     if (touch.phase == TouchPhase.Began)
                     {
@@ -133,9 +133,10 @@ public class TouchManager : MonoBehaviour
         return Mathf.Abs(fingerUpPos.x - fingerDownPos.x);
     }
 
-    private bool InValidArea()
+    private bool InValidArea(Touch touch)
     {
         return true;
+        //return !EventSystem.current.IsPointerOverGameObject(touch.fingerId);
     }
 
     public TouchData RegisterTouch()

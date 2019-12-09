@@ -113,6 +113,7 @@ public class Block : MonoBehaviour
         {
             if (blockObj)
             {
+                GameManager.instance.IncreaseScore(1);
                 blockObj.Kill();
                 slotOjb.DeleteBlock();
             }
