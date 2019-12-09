@@ -6,9 +6,14 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
-    public PlayGrid gameBoard;
+    public bool GameInProgress;
+
+    public PlayGrid playGrid;
+    public PlayGrid previewGrid;
     public SnakeMaker snakeMaker;
     public BlockSlot waitSlot;
+    public GameObject gameOverScreen;
+    public Collider2D touchDetectionArea;
 
     public int HeightLimit;
 
@@ -54,7 +59,7 @@ public class GameManager : MonoBehaviour
 
     private void MoveSnakeOnSwipe(TouchManager.TouchData Swipe)
     {
-        if (snakeHead && Swipe.direction != GetOppositeDirection(mostRecentDirection))
+        if (TouchIsInValidArea(Swipe) && snakeHead && Swipe.direction != GetOppositeDirection(mostRecentDirection))
         {
             MoveSnake(Swipe.direction);
         }
@@ -62,30 +67,39 @@ public class GameManager : MonoBehaviour
 
     private void MoveSnakeOnHold(TouchManager.TouchData Hold)
     {
-        if (timeSinceLastAutoMove > autoMoveInterval)
+        if (TouchIsInValidArea(Hold))
         {
-            timeSinceLastAutoMove = 0;
-            MoveSnake(mostRecentDirection);
-        }
-        else
-        {
-            timeSinceLastAutoMove += Time.deltaTime;
+            if (timeSinceLastAutoMove > autoMoveInterval)
+            {
+                timeSinceLastAutoMove = 0;
+                MoveSnake(mostRecentDirection);
+            }
+            else
+            {
+                timeSinceLastAutoMove += Time.deltaTime;
+            }
         }
     }
     private void MoveSnakeOnTap(TouchManager.TouchData Tap)
     {
-        MoveSnake(mostRecentDirection);
+        if (TouchIsInValidArea(Tap)) MoveSnake(mostRecentDirection);
+    }
+
+    private bool TouchIsInValidArea(TouchManager.TouchData obj)
+    {
+        RaycastHit2D hit = Physics2D.Raycast(obj.startPos, obj.endPos);
+        return hit.collider == touchDetectionArea;
     }
 
     public void MoveSnake(Direction direction)
     {
 
-        if (direction != Direction.UP | SnakeHead.Coords().y < HeightLimit)
+        if (GameInProgress && direction != Direction.UP | SnakeHead.Coords().y < HeightLimit)
         {
-            SnakeHead.Eat(direction);
             mostRecentDirection = direction;
+            SnakeHead.Eat(direction);
             FillPreviewBar();
-            LowerHeightLimit();
+            if(GameInProgress) LowerHeightLimit();
         }
     }
 
@@ -95,13 +109,14 @@ public class GameManager : MonoBehaviour
     }
     public void OnSnakeDeath(Block obj)
     {
-        gameBoard.Fall();
+        playGrid.Fall();
         if (waitSlot.GetNeighbor(Direction.DOWN).Block != null)
         {
             EndGame();
         }
         else
         {
+            ResetMoveRestrictions();
             ContinueGame();
         }
     }
@@ -131,7 +146,7 @@ public class GameManager : MonoBehaviour
 
     private void ResetMoveRestrictions()
     {
-        HeightLimit = gameBoard.YSize + 1;
+        HeightLimit = playGrid.YSize + 1;
         mostRecentDirection = Direction.DOWN;
     }
 
@@ -146,11 +161,16 @@ public class GameManager : MonoBehaviour
         snakeHead.ActivateSnake();
     }
 
-    private void StartGame()
+    public void StartGame()
     {
+        gameOverScreen.SetActive(false);
+        playGrid.ClearGrid();
+        previewGrid.ClearGrid();
+        PreviewSnakes.Clear();
         MakeSnake();
         FillPreviewBar();
         ResetMoveRestrictions();
+        GameInProgress = true;
         ContinueGame();
     }
     private void ContinueGame()
@@ -164,6 +184,7 @@ public class GameManager : MonoBehaviour
     }
     private void EndGame()
     {
-        Debug.Log("Game Over");
+        GameInProgress = false;
+        gameOverScreen.SetActive(true);
     }
 }

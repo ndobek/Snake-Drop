@@ -80,6 +80,13 @@ public class PlayGrid : MonoBehaviour
             }
         }
     }
+    public void ClearGrid()
+    {
+        foreach(BlockSlot slot in slots)
+        {
+            slot.DeleteBlock();
+        }
+    }
     public void Fall()
     {
         for (int x = 0; x < xSize; x++)
@@ -101,7 +108,8 @@ public class PlayGrid : MonoBehaviour
             if (lowestEmptySlot != null && obj.Block != null)
             {
                 obj.Block.MoveTo(lowestEmptySlot);
-                Fall(x, lowestEmptySlot.y, maxY);
+                Fall(x, lowestEmptySlot.y + 1, maxY);
+                break;
             }
         }
     }

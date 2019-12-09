@@ -51,9 +51,14 @@ public class BlockSlot : MonoBehaviour
     {
         block = obj;
     }
+    public virtual void OnUnassignment(Block obj)
+    {
+        if (block == obj) block = null;
+    }
 
     public void MoveBlockHere(Block obj)
     {
+        //Don't Change this, add to OnAssignment instead
         obj.MoveTo(this);
     }
     public void SetBlock(BlockType type)
@@ -67,14 +72,10 @@ public class BlockSlot : MonoBehaviour
         newBlock.SetBlockType(type);
         MoveBlockHere(newBlock);
     }
-    public void DeleteBlock()
+    public virtual void DeleteBlock()
     {
         if (block) GameObject.Destroy(block.gameObject);
-        RemoveBlock(block);
-    }
-    public virtual void RemoveBlock(Block obj)
-    {
-        if(block == obj) block = null;
+        OnUnassignment(block);
     }
     public void UpdateBlock()
     {

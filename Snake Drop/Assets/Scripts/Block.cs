@@ -75,14 +75,20 @@ public class Block : MonoBehaviour
     {
         return Slot.GetNeighbor(direction);
     }
-
+    private void OnMoveTo(BlockSlot obj)
+    {
+        Slot = obj;
+        UpdateBlock();
+    }
     public void MoveTo(BlockSlot obj)
     {
         BlockSlot Old = Slot;
-        if(Old) Old.RemoveBlock(this);
-        Slot = obj;
+        if (Old) Old.OnUnassignment(this);
+
+
         obj.OnAssignment(this);
-        UpdateBlock();
+        OnMoveTo(obj);
+
         if (tail != null) tail.MoveTo(Old);
     }
     public void Move(GameManager.Direction neighbor)
@@ -119,7 +125,7 @@ public class Block : MonoBehaviour
     {
         if (tail != null)
         {
-            if(tail.Slot.playGrid == GameManager.instance.gameBoard) tail.Kill();
+            if(tail.Slot.playGrid == GameManager.instance.playGrid) tail.Kill();
             SetTail(null);
         }
         isPartOfSnake = false;

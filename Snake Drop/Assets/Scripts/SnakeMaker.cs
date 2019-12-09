@@ -14,10 +14,15 @@ public class SnakeMaker : BlockSlot
         base.OnAssignment(obj);
         Blocks.Add(obj);
     }
-    public override void RemoveBlock(Block obj)
+    public override void OnUnassignment(Block obj)
     {
-        base.RemoveBlock(obj);
+        base.OnUnassignment(obj);
         if (Blocks.Contains(obj)) Blocks.Remove(obj);
+    }
+    public override void DeleteBlock()
+    {
+        base.DeleteBlock();
+        Blocks.Clear();
     }
 
     public bool CheckIsClear()

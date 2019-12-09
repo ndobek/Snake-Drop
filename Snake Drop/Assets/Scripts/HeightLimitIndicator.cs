@@ -7,7 +7,7 @@ public class HeightLimitIndicator : MonoBehaviour
     public float offset;
     void Update()
     {
-        Vector2 obj = GameManager.instance.gameBoard.position(0, GameManager.instance.HeightLimit + offset);
+        Vector2 obj = GameManager.instance.playGrid.position(0, GameManager.instance.HeightLimit + offset);
         this.transform.position = new Vector2(0, obj.y);
     }
 }
