@@ -18888,6 +18888,11 @@ PrefabInstance:
       propertyPath: playGrid
       value: 
       objectReference: {fileID: 1218598767}
+    - target: {fileID: 6524436789554765001, guid: b7af8bd94075c194f9f86a7ebacb1111,
+        type: 3}
+      propertyPath: y
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7af8bd94075c194f9f86a7ebacb1111, type: 3}
 --- !u!114 &1631618764 stripped

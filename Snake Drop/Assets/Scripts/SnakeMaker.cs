@@ -17,6 +17,7 @@ public class SnakeMaker : BlockSlot
 
     public BlockColor[] possibleColors;
     public BlockType defaultType;
+    public BlockType snakeHeadType;
 
     public override void OnAssignment(Block obj)
     {
@@ -44,8 +45,8 @@ public class SnakeMaker : BlockSlot
         if (CheckIsClear())
         {
             int color = Random.Range(0, possibleColors.Length);
-            //block will return the most recently made snake
-            for (int i = 0; i < length; i++)
+            CreateBlock(possibleColors[color], snakeHeadType);
+            for (int i = 1; i < length; i++)
             {
                 if (Random.value < entropy) color = Random.Range(0, possibleColors.Length);
                 CreateBlock(possibleColors[color], defaultType);

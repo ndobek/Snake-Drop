@@ -97,23 +97,43 @@ public class PlayGrid : MonoBehaviour
     }
     private void Fall(int x, int startingY, int maxY)
     {
-        BlockSlot lowestEmptySlot = null;
         for (int y = startingY; y < maxY; y++)
         {
-            BlockSlot obj = GetSlot(x, y);
-            if (lowestEmptySlot == null && obj.Block == null)
+            if(GetSlot(x,y).Block == null)
             {
-                lowestEmptySlot = obj;
-            }
-            if (lowestEmptySlot != null && obj.Block != null)
-            {
-                //This Line is the problem. When pulling a snake it conflicts with the recusrion of Fall and screws everything up.
-                obj.Block.MoveTo(lowestEmptySlot);
-
-                Fall(x, lowestEmptySlot.y + 1, maxY);
-                break;
+                for (int y2 = y; y2 < maxY; y2++)
+                {
+                    Block block = GetSlot(x, y2).Block;
+                    if (block != null)
+                    {
+                        block.Fall();
+                    }
+                }
             }
         }
+        //BlockSlot lowestEmptySlot = null;
+        //for (int y = startingY; y < maxY; y++)
+        //{
+        //    BlockSlot obj = GetSlot(x, y);
+        //    if (lowestEmptySlot == null && obj.Block == null)
+        //    {
+        //        lowestEmptySlot = obj;
+        //    }
+        //    if (lowestEmptySlot != null && obj.Block != null)
+        //    {
+        //        ////Moving Block one at a time so it can move snakes properly
+        //        //Block blockGettingShuffled = obj.Block;
+        //        //while(blockGettingShuffled.Slot != lowestEmptySlot)
+        //        //{
+        //        //    blockGettingShuffled.Move(GameManager.Direction.DOWN);
+        //        //}
+
+        //        obj.Block.MoveTo(lowestEmptySlot);
+
+        //        Fall(x, lowestEmptySlot.y + 1, maxY);
+        //        break;
+        //    }
+        //}
     }
 
     public bool CheckInGrid(int x, int y)

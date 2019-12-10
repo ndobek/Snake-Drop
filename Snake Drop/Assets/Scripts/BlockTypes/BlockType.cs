@@ -6,28 +6,28 @@ using UnityEngine;
 public class BlockType : ScriptableObject
 {
     public Sprite sprite;
+    public BlockType ChangeTypeToOnDeath;
 
     public virtual void OnEat(Block block, BlockSlot slot)
     {
-        Block blockObj = null;
-        if (slot) blockObj = slot.Block;
+        Block eatenBlock = null;
+        if (slot) eatenBlock = slot.Block;
         //if (blockObj) Debug.Log(blockObj.blockType);
         //else Debug.Log("null");
 
-        if (!slot | (blockObj != null && blockObj.blockColor != block.blockColor))
+        if (!slot | (eatenBlock != null && eatenBlock.blockColor != block.blockColor))
         {
             block.Kill();
         }
         else
         {
-            if (blockObj)
+            if (eatenBlock)
             {
 
                 GameManager.instance.difficultyManager.Score += 1;
-                blockObj.Kill();
+                eatenBlock.Kill();
                 slot.DeleteBlock();
             }
-            block.MoveTo(slot);
         }
         block.MoveTo(slot);
     }
@@ -41,6 +41,7 @@ public class BlockType : ScriptableObject
             block.SetTail(null);
         }
         block.isPartOfSnake = false;
+        if(ChangeTypeToOnDeath) block.SetBlockType(block.blockColor, ChangeTypeToOnDeath);
         block.UpdateBlock();
         GameManager.instance.OnBlockDeath(block);
     }

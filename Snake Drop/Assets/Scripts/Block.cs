@@ -97,6 +97,20 @@ public class Block : MonoBehaviour
         if (destination) MoveTo(destination);
     }
 
+    public void Fall(bool StayOnSameGrid = true)
+    {
+        BlockSlot destination = Neighbor(GameManager.Direction.DOWN);
+        while (
+            destination != null &&
+            destination.Block == null &&
+            (!StayOnSameGrid | destination.playGrid == this.Slot.playGrid)
+            )
+        {
+            Move(GameManager.Direction.DOWN);
+            destination = Neighbor(GameManager.Direction.DOWN);
+        }
+    }
+
     public void Eat(GameManager.Direction neighbor)
     {
         blockType.OnEat(this, Neighbor(neighbor));
