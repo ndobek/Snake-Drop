@@ -107,7 +107,9 @@ public class PlayGrid : MonoBehaviour
             }
             if (lowestEmptySlot != null && obj.Block != null)
             {
+                //This Line is the problem. When pulling a snake it conflicts with the recusrion of Fall and screws everything up.
                 obj.Block.MoveTo(lowestEmptySlot);
+
                 Fall(x, lowestEmptySlot.y + 1, maxY);
                 break;
             }

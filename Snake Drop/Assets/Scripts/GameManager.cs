@@ -33,8 +33,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private List<Block> PreviewSnakes = new List<Block>();
-
     private void Awake()
     {
         if(!instance) instance = this;
@@ -58,49 +56,42 @@ public class GameManager : MonoBehaviour
             ContinueGame();
         }
     }
-    private void ShiftPreviewBar()
+    private void ShufflePreviewBar()
     {
-        foreach(Block snake in PreviewSnakes)
-        {
-            snake.Move(Direction.LEFT);
-        }
+        previewGrid.Fall();
         MakeSnake();
     }
-
     public void FillPreviewBar()
     {
-        MakeSnake();
-        while (PreviewSnakes.Count > 0 && PreviewSnakes[0].Slot != waitSlot && PreviewSnakes[0].Neighbor(Direction.LEFT).Block == null)
+        ShufflePreviewBar();
+        while (snakeMaker.Blocks.Count == 0 | waitSlot.Block == null)
         {
-            ShiftPreviewBar();
+            ShufflePreviewBar();
         }
     }
 
     private void MakeSnake()
     {
-        if (snakeMaker.CheckIsClear()) PreviewSnakes.Add(snakeMaker.MakeSnake(25, .1f, this));
+        snakeMaker.MakeSnake(25, .1f);
     }
 
     public void StartGame()
     {
-        difficultyManager.Score = 0;
+        difficultyManager.ResetGame();
+        playerController.ResetGame();
         gameOverScreen.SetActive(false);
         playGrid.ClearGrid();
         previewGrid.ClearGrid();
-        PreviewSnakes.Clear();
-        MakeSnake();
-        FillPreviewBar();
-        playerController.ResetMoveRestrictions();
         GameInProgress = true;
         ContinueGame();
     }
     private void ContinueGame()
     {
+        FillPreviewBar();
         playerController.SnakeHead = waitSlot.Block;
         playerController.SnakeHead.ActivateSnake();
         playerController.SnakeHead.Move(Direction.DOWN);
         playerController.ResetMoveRestrictions();
-        if (PreviewSnakes.Count > 0 && playerController.SnakeHead == PreviewSnakes[0]) PreviewSnakes.RemoveAt(0);
         FillPreviewBar();
     }
     private void EndGame()

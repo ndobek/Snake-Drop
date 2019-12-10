@@ -2,14 +2,34 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Blocks/BlockType")]
+[CreateAssetMenu(menuName = "Blocks/BlockTypes/BlockType")]
 public class BlockType : ScriptableObject
 {
     public Sprite sprite;
 
-    public virtual void OnMove(Block block, BlockSlot slot)
+    public virtual void OnEat(Block block, BlockSlot slot)
     {
-        block.Slot = slot;
+        Block blockObj = null;
+        if (slot) blockObj = slot.Block;
+        //if (blockObj) Debug.Log(blockObj.blockType);
+        //else Debug.Log("null");
+
+        if (!slot | (blockObj != null && blockObj.blockColor != block.blockColor))
+        {
+            block.Kill();
+        }
+        else
+        {
+            if (blockObj)
+            {
+
+                GameManager.instance.difficultyManager.Score += 1;
+                blockObj.Kill();
+                slot.DeleteBlock();
+            }
+            block.MoveTo(slot);
+        }
+        block.MoveTo(slot);
     }
 
 

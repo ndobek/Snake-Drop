@@ -83,10 +83,12 @@ public class Block : MonoBehaviour
     {
         BlockSlot Old = Slot;
         if (Old) Old.OnUnassignment(this);
-        obj.OnAssignment(this);
-        blockType.OnMove(this, obj);
-        if (tail != null) tail.MoveTo(Old);
-
+        if (obj)
+        {
+            obj.OnAssignment(this);
+            Slot = obj;
+            if (Tail != null) Tail.MoveTo(Old);
+        }
         UpdateBlock();
     }
     public void Move(GameManager.Direction neighbor)
@@ -97,33 +99,12 @@ public class Block : MonoBehaviour
 
     public void Eat(GameManager.Direction neighbor)
     {
-        BlockSlot slotOjb = Neighbor(neighbor);
-        Block blockObj = null;
-        if (slotOjb) blockObj = slotOjb.Block;
-        //if (blockObj) Debug.Log(blockObj.blockType);
-        //else Debug.Log("null");
-
-        if (!slotOjb | (blockObj != null && blockObj.blockColor != blockColor))
-        {
-            Kill();
-        }
-        else
-        {
-            if (blockObj)
-            {
-
-                GameManager.instance.difficultyManager.Score += 1;
-                blockObj.Kill();
-                slotOjb.DeleteBlock();
-            }
-            MoveTo(slotOjb);
-        }
-    blockType.OnMove(this, slotOjb);
+        blockType.OnEat(this, Neighbor(neighbor));
     }
 
     public void Kill()
     {
-
+        blockType.OnKill(this);
     }
 
     public int FindSnakeMaxY()

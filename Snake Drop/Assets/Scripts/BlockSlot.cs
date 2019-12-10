@@ -14,8 +14,8 @@ public class BlockSlot : MonoBehaviour
     public BlockSlot customUpNeighbor;
     public BlockSlot customDownNeighbor;
 
-    private Block block;
-    public Block Block
+    protected Block block;
+    public virtual Block Block
     {
         get { return block; }
     }

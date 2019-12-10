@@ -83,5 +83,9 @@ public class PlayerController : MonoBehaviour
         mostRecentDirection = Direction.DOWN;
     }
 
+    public void ResetGame()
+    {
+        ResetMoveRestrictions();
+    }
 
 }
