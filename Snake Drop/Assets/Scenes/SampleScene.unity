@@ -428,6 +428,8 @@ GameObject:
   - component: {fileID: 9304147}
   - component: {fileID: 9304148}
   - component: {fileID: 9304149}
+  - component: {fileID: 9304150}
+  - component: {fileID: 9304151}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -461,16 +463,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81ffc1cd49430e64b8a007a5ca518150, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerController: {fileID: 9304151}
+  difficultyManager: {fileID: 9304150}
   GameInProgress: 0
   playGrid: {fileID: 354576705}
   previewGrid: {fileID: 1218598767}
   snakeMaker: {fileID: 1631618764}
   waitSlot: {fileID: 903321993}
   gameOverScreen: {fileID: 1438944169}
-  score: 0
-  ScoreText: {fileID: 667315739}
-  HeightLimit: 0
-  autoMoveInterval: 0.1
 --- !u!114 &9304149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -486,6 +486,33 @@ MonoBehaviour:
   minHoldLength: 0.3
   deadZone: 20
   detectSwipeBeforeRelease: 0
+--- !u!114 &9304150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9304146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61bf6a15bd2f3af4386cf9e6688e461f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ScoreText: {fileID: 667315739}
+--- !u!114 &9304151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9304146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26bba0005f3ed9b4bb3828c2ae75f81e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HeightLimit: 0
+  autoMoveInterval: 0.1
 --- !u!1 &15798464
 GameObject:
   m_ObjectHideFlags: 0
