@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+//Alpha 0.1
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
