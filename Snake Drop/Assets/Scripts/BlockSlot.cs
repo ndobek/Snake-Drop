@@ -20,13 +20,6 @@ public class BlockSlot : MonoBehaviour
         get { return block; }
     }
 
-    //public enum Neighbor
-    //{
-    //    Right,
-    //    Left,
-    //    Up,
-    //    Down
-    //}
     public BlockSlot GetNeighbor(GameManager.Direction neighbor)
     {
         switch (neighbor)
@@ -61,15 +54,16 @@ public class BlockSlot : MonoBehaviour
         //Don't Change this, add to OnAssignment instead
         obj.MoveTo(this);
     }
-    public void SetBlock(BlockType type)
+    public void SetBlock(BlockColor color, BlockType type)
     {
         DeleteBlock();
-        CreateBlock(type);
+        CreateBlock(color, type);
     }
-    protected void CreateBlock(BlockType type)
+
+    protected void CreateBlock(BlockColor color, BlockType type)
     {
         Block newBlock = Instantiate(playGrid.blockObj, playGrid.position(x, y), Quaternion.identity, this.transform);
-        newBlock.SetBlockType(type);
+        newBlock.SetBlockType(color, type);
         MoveBlockHere(newBlock);
     }
     public virtual void DeleteBlock()

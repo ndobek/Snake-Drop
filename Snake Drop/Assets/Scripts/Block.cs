@@ -6,6 +6,8 @@ public class Block : MonoBehaviour
 {
     [HideInInspector]
     public BlockType blockType;
+    [HideInInspector]
+    public BlockColor blockColor;
 
     //[SerializeField]
     public BlockSlot Slot;
@@ -17,7 +19,7 @@ public class Block : MonoBehaviour
     public Block Tail
     {
         get { return tail; }
-        //set { tail = value; }
+        set { tail = value; }
     }
 
     public SpriteRenderer BlockSprite;
@@ -26,10 +28,10 @@ public class Block : MonoBehaviour
 
     private void UpdateSprite()
     {
-        if (blockType != null)
+        if (blockColor != null && blockType != null)
         {
             BlockSprite.sprite = blockType.sprite;
-            BlockSprite.color = blockType.color;
+            BlockSprite.color = blockColor.color;
         }
 
         Highlight.enabled = isPartOfSnake;
@@ -47,9 +49,10 @@ public class Block : MonoBehaviour
         UpdateSprite();
     }
 
-    public void SetBlockType(BlockType type)
+    public void SetBlockType(BlockColor color, BlockType type)
     {
         blockType = type;
+        blockColor = color;
         UpdateBlock();
     }
     public void SetTail(GameManager.Direction neighbor)
@@ -75,21 +78,16 @@ public class Block : MonoBehaviour
     {
         return Slot.GetNeighbor(direction);
     }
-    private void OnMoveTo(BlockSlot obj)
-    {
-        Slot = obj;
-        UpdateBlock();
-    }
+
     public void MoveTo(BlockSlot obj)
     {
         BlockSlot Old = Slot;
         if (Old) Old.OnUnassignment(this);
-
-
         obj.OnAssignment(this);
-        OnMoveTo(obj);
-
+        blockType.OnMove(this, obj);
         if (tail != null) tail.MoveTo(Old);
+
+        UpdateBlock();
     }
     public void Move(GameManager.Direction neighbor)
     {
@@ -100,16 +98,16 @@ public class Block : MonoBehaviour
     public void Eat(GameManager.Direction neighbor)
     {
         BlockSlot slotOjb = Neighbor(neighbor);
-
         Block blockObj = null;
         if (slotOjb) blockObj = slotOjb.Block;
         //if (blockObj) Debug.Log(blockObj.blockType);
         //else Debug.Log("null");
 
-        if (!slotOjb | (blockObj != null && blockObj.blockType != blockType))
+        if (!slotOjb | (blockObj != null && blockObj.blockColor != blockColor))
         {
             Kill();
-        } else
+        }
+        else
         {
             if (blockObj)
             {
@@ -120,19 +118,12 @@ public class Block : MonoBehaviour
             }
             MoveTo(slotOjb);
         }
-
+    blockType.OnMove(this, slotOjb);
     }
 
     public void Kill()
     {
-        if (tail != null)
-        {
-            if(tail.Slot.playGrid == GameManager.instance.playGrid) tail.Kill();
-            SetTail(null);
-        }
-        isPartOfSnake = false;
-        UpdateBlock();
-        GameManager.instance.OnBlockDeath(this);
+
     }
 
     public int FindSnakeMaxY()

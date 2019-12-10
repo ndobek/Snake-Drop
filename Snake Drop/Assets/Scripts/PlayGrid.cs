@@ -127,10 +127,10 @@ public class PlayGrid : MonoBehaviour
     }
 
 
-    private void CreateSlot(int x, int y, BlockType type)
+    private void CreateSlot(int x, int y, BlockColor color, BlockType type)
     {
         CreateSlot(x, y);
-        SetBlock(x, y, type);
+        SetBlock(x, y, color, type);
     }
     private void CreateSlot(int x, int y)
     {
@@ -148,12 +148,9 @@ public class PlayGrid : MonoBehaviour
         if (CheckInGrid(x, y)) return slots[FlattenedIndex(x, y)];
         else return null;
     }
-
-
-
-    public void SetBlock(int x, int y, BlockType type)
+    public void SetBlock(int x, int y, BlockColor color, BlockType type)
     {
-        GetSlot(x, y).SetBlock(type);
+        GetSlot(x, y).SetBlock(color, type);
     }
     public Block GetBlock(int x, int y)
     {

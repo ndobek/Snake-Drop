@@ -7,7 +7,9 @@ public class SnakeMaker : BlockSlot
     [HideInInspector]
     public List<Block> Blocks;
 
-    public BlockType[] possibleTypes;
+    public BlockColor[] possibleColors;
+    public BlockType defaultType;
+    public BlockType snakeHeadType;
 
     public override void OnAssignment(Block obj)
     {
@@ -35,13 +37,13 @@ public class SnakeMaker : BlockSlot
         //Blocks.Clear();
         if (CheckIsClear())
         {
-            int type = Random.Range(0, possibleTypes.Length);
-            for (int i = 0; i < length; i++)
+            int color = Random.Range(0, possibleColors.Length);
+            CreateBlock(possibleColors[color], snakeHeadType);
+            for (int i = 1; i < length; i++)
             {
-                if (Random.value < entropy) type = Random.Range(0, possibleTypes.Length);
-                CreateBlock(possibleTypes[type]);
+                if (Random.value < entropy) color = Random.Range(0, possibleColors.Length);
                 //Blocks[i].isPartOfSnake = true;
-                if (i > 0) Blocks[i - 1].SetTail(Blocks[i]);
+                Blocks[i - 1].SetTail(Blocks[i]);
             }
             return Blocks[0];
         }

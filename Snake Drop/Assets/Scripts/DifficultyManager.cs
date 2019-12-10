@@ -16,4 +16,9 @@ public class DifficultyManager : MonoBehaviour
         }
     }
     public Text ScoreText;
+
+    public void ResetGame()
+    {
+        Score = 0;
+    }
 }
