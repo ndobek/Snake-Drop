@@ -90,7 +90,7 @@ public class GameManager : MonoBehaviour
         FillPreviewBar();
         playerController.SnakeHead = waitSlot.Block;
         playerController.SnakeHead.ActivateSnake();
-        playerController.SnakeHead.Move(Direction.DOWN);
+        playerController.SnakeHead.BasicMove(Direction.DOWN);
         playerController.ResetMoveRestrictions();
         FillPreviewBar();
     }

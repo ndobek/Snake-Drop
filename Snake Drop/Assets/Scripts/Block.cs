@@ -79,7 +79,7 @@ public class Block : MonoBehaviour
         return Slot.GetNeighbor(direction);
     }
 
-    public void MoveTo(BlockSlot obj)
+    public void BasicMoveTo(BlockSlot obj)
     {
         BlockSlot Old = Slot;
         if (Old) Old.OnUnassignment(this);
@@ -87,17 +87,17 @@ public class Block : MonoBehaviour
         {
             obj.OnAssignment(this);
             Slot = obj;
-            if (Tail != null) Tail.MoveTo(Old);
+            if (Tail != null) Tail.BasicMoveTo(Old);
         }
         UpdateBlock();
     }
-    public void Move(GameManager.Direction neighbor)
+    public void BasicMove(GameManager.Direction neighbor)
     {
         BlockSlot destination = Neighbor(neighbor);
-        if (destination) MoveTo(destination);
+        if (destination) BasicMoveTo(destination);
     }
 
-    public void Fall(bool StayOnSameGrid = true)
+    public void BasicFall(bool StayOnSameGrid = true)
     {
         BlockSlot destination = Neighbor(GameManager.Direction.DOWN);
         while (
@@ -106,14 +106,19 @@ public class Block : MonoBehaviour
             (!StayOnSameGrid | destination.playGrid == this.Slot.playGrid)
             )
         {
-            Move(GameManager.Direction.DOWN);
+            BasicMove(GameManager.Direction.DOWN);
             destination = Neighbor(GameManager.Direction.DOWN);
         }
     }
 
-    public void Eat(GameManager.Direction neighbor)
+    public void ActionFall()
     {
-        blockType.OnEat(this, Neighbor(neighbor));
+        blockType.OnActionFall(this);
+    }
+
+    public void ActionMove(GameManager.Direction neighbor)
+    {
+        blockType.OnActionMove(this, Neighbor(neighbor));
     }
 
     public void Kill()

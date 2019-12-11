@@ -106,7 +106,7 @@ public class PlayGrid : MonoBehaviour
                     Block block = GetSlot(x, y2).Block;
                     if (block != null)
                     {
-                        block.Fall();
+                        block.BasicFall();
                     }
                 }
             }

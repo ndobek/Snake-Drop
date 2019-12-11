@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour
         if (GameManager.instance.GameInProgress && direction != Direction.UP | SnakeHead.Coords().y < HeightLimit)
         {
             mostRecentDirection = direction;
-            SnakeHead.Eat(direction);
+            SnakeHead.ActionMove(direction);
             GameManager.instance.FillPreviewBar();
             if (GameManager.instance.GameInProgress) LowerHeightLimit();
         }

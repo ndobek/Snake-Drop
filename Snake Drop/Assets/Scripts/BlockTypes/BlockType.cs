@@ -8,7 +8,17 @@ public class BlockType : ScriptableObject
     public Sprite sprite;
     public BlockType ChangeTypeToOnDeath;
 
-    public virtual void OnEat(Block block, BlockSlot slot)
+    //public virtual bool CanActionMove(Block block, BlockSlot slot)
+    //{
+    //    return true;
+    //}
+
+    public virtual void OnActionFall(Block block)
+    {
+
+    }
+
+    public virtual void OnActionMove(Block block, BlockSlot slot)
     {
         Block eatenBlock = null;
         if (slot) eatenBlock = slot.Block;
@@ -28,8 +38,9 @@ public class BlockType : ScriptableObject
                 eatenBlock.Kill();
                 slot.DeleteBlock();
             }
+            block.BasicMoveTo(slot);
         }
-        block.MoveTo(slot);
+
     }
 
 

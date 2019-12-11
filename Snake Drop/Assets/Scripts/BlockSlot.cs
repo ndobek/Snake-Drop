@@ -52,7 +52,7 @@ public class BlockSlot : MonoBehaviour
     public void MoveBlockHere(Block obj)
     {
         //Don't Change this, add to OnAssignment instead
-        obj.MoveTo(this);
+        obj.BasicMoveTo(this);
     }
     public void SetBlock(BlockColor color, BlockType type)
     {
