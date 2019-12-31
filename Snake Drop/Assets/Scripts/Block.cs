@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Block : MonoBehaviour
 {
-    [HideInInspector]
+    //[HideInInspector]
     public BlockType blockType;
     [HideInInspector]
     public BlockColor blockColor;
@@ -124,6 +124,11 @@ public class Block : MonoBehaviour
     public void Kill()
     {
         blockType.OnKill(this);
+    }
+    public void Break()
+    {
+        Kill();
+        Slot.DeleteBlock();
     }
 
     public int FindSnakeMaxY()

@@ -10,11 +10,8 @@ public class PlayerController : MonoBehaviour
     public Block SnakeHead
     {
         get { return snakeHead; }
-        set { snakeHead = value; }
+        set { ActivateSnake(value); }
     }
-
-    [HideInInspector]
-    public int HeightLimit;
 
     private Direction mostRecentDirection;
     [SerializeField]
@@ -28,9 +25,18 @@ public class PlayerController : MonoBehaviour
         TouchManager.OnTap += MoveSnakeOnTap;
     }
 
+    //Temp to add keyboard controls
+    public void Update()
+    {
+        if (Input.GetKeyDown("w")) { MoveSnake(Direction.UP); }
+        if (Input.GetKeyDown("s")) { MoveSnake(Direction.DOWN); }
+        if (Input.GetKeyDown("a")) { MoveSnake(Direction.LEFT); }
+        if (Input.GetKeyDown("d")) { MoveSnake(Direction.RIGHT); }
+    }
+
     private void MoveSnakeOnSwipe(TouchManager.TouchData Swipe)
     {
-        if (snakeHead && Swipe.direction != GetOppositeDirection(mostRecentDirection))
+        if (snakeHead)
         {
             MoveSnake(Swipe.direction);
         }
@@ -56,30 +62,26 @@ public class PlayerController : MonoBehaviour
     public void MoveSnake(Direction direction)
     {
 
-        if (GameManager.instance.GameInProgress && direction != Direction.UP | SnakeHead.Coords().y < HeightLimit)
+        if (GameManager.instance.GameInProgress && direction != GetOppositeDirection(mostRecentDirection))
         {
             mostRecentDirection = direction;
             SnakeHead.ActionMove(direction);
             GameManager.instance.FillPreviewBar();
-            if (GameManager.instance.GameInProgress) LowerHeightLimit();
+            GameManager.instance.HeightLimitIndicator.LowerHeightLimit(SnakeHead.FindSnakeMaxY() + 2);
         }
     }
 
     private void ActivateSnake(Block newSnakeHead)
     {
         snakeHead = newSnakeHead;
+        snakeHead.SetBlockType(snakeHead.blockColor, GameManager.instance.snakeHeadType);
         snakeHead.ActivateSnake();
     }
 
-    private void LowerHeightLimit()
-    {
-        int temp = SnakeHead.FindSnakeMaxY() + 2;
-        if (temp < HeightLimit) HeightLimit = temp;
-    }
 
     public void ResetMoveRestrictions()
     {
-        HeightLimit = GameManager.instance.playGrid.YSize + 1;
+        GameManager.instance.HeightLimitIndicator.ResetHeightLimit();
         mostRecentDirection = Direction.DOWN;
     }
 

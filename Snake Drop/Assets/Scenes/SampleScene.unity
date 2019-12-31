@@ -369,8 +369,11 @@ MonoBehaviour:
   GameInProgress: 0
   playGrid: {fileID: 354576705}
   previewGrid: {fileID: 1218598767}
+  HeightLimitIndicator: {fileID: 629374640}
   snakeMaker: {fileID: 1631618764}
   waitSlot: {fileID: 1055408767}
+  defaultType: {fileID: 11400000, guid: f9f87476a3c72e741b635dd7da5b8050, type: 2}
+  snakeHeadType: {fileID: 11400000, guid: 1bb708f6f67e7844993159c157df7353, type: 2}
   gameOverScreen: {fileID: 1438944169}
 --- !u!114 &9304149
 MonoBehaviour:
@@ -412,7 +415,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26bba0005f3ed9b4bb3828c2ae75f81e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HeightLimit: 0
   autoMoveInterval: 0.1
 --- !u!1 &15798464
 GameObject:
@@ -8617,6 +8619,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offset: 0.5
+  HeightLimit: 0
 --- !u!1 &647789516
 GameObject:
   m_ObjectHideFlags: 0

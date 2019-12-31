@@ -87,16 +87,25 @@ public class PlayGrid : MonoBehaviour
             slot.DeleteBlock();
         }
     }
-    public void Fall()
+
+    public void Fall(bool doTypeAction = false)
     {
-        for (int x = 0; x < xSize; x++)
+        bool complete = false;
+
+        while (!complete)
         {
-            Fall(x, 0, ySize);
+            complete = true;
+            for (int x = 0; x < xSize; x++)
+            {
+                bool xComplete = Fall(x, 0, ySize, doTypeAction);
+                if (!xComplete) complete = false;
+            }
+            UpdateGrid();
         }
-        UpdateGrid();
     }
-    private void Fall(int x, int startingY, int maxY)
+    private bool Fall(int x, int startingY, int maxY, bool doTypeAction = false)
     {
+        bool noChanges = true;
         for (int y = startingY; y < maxY; y++)
         {
             if(GetSlot(x,y).Block == null)
@@ -104,37 +113,25 @@ public class PlayGrid : MonoBehaviour
                 for (int y2 = y; y2 < maxY; y2++)
                 {
                     Block block = GetSlot(x, y2).Block;
-                    if (block != null)
+                    if (block != null && block.Slot.playGrid == this)
                     {
-                        block.BasicFall();
+                        noChanges = false;
+                        if (doTypeAction)
+                        {
+                            block.ActionFall();
+                        }
+                        else
+                        {
+                            block.BasicFall();
+                        }
                     }
                 }
             }
         }
-        //BlockSlot lowestEmptySlot = null;
-        //for (int y = startingY; y < maxY; y++)
-        //{
-        //    BlockSlot obj = GetSlot(x, y);
-        //    if (lowestEmptySlot == null && obj.Block == null)
-        //    {
-        //        lowestEmptySlot = obj;
-        //    }
-        //    if (lowestEmptySlot != null && obj.Block != null)
-        //    {
-        //        ////Moving Block one at a time so it can move snakes properly
-        //        //Block blockGettingShuffled = obj.Block;
-        //        //while(blockGettingShuffled.Slot != lowestEmptySlot)
-        //        //{
-        //        //    blockGettingShuffled.Move(GameManager.Direction.DOWN);
-        //        //}
-
-        //        obj.Block.MoveTo(lowestEmptySlot);
-
-        //        Fall(x, lowestEmptySlot.y + 1, maxY);
-        //        break;
-        //    }
-        //}
+        return noChanges;
     }
+
+
 
     public bool CheckInGrid(int x, int y)
     {

@@ -71,6 +71,7 @@ public class BlockSlot : MonoBehaviour
         if (block) GameObject.Destroy(block.gameObject);
         OnUnassignment(block);
     }
+
     public void UpdateBlock()
     {
         if(block) block.UpdateBlock();

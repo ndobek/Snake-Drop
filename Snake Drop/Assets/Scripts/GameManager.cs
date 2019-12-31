@@ -12,8 +12,12 @@ public class GameManager : MonoBehaviour
 
     public PlayGrid playGrid;
     public PlayGrid previewGrid;
+    public HeightLimitIndicator HeightLimitIndicator;
     public SnakeMaker snakeMaker;
     public BlockSlot waitSlot;
+
+    public BlockType defaultType;
+    public BlockType snakeHeadType;
 
     public GameObject gameOverScreen;
 
@@ -39,13 +43,13 @@ public class GameManager : MonoBehaviour
         StartGame();
     }
 
-    public void OnBlockDeath(Block obj)
+    //public void OnBlockDeath(Block obj)
+    //{
+    //    if (obj == playerController.SnakeHead) OnSnakeDeath(obj);
+    //}
+    public void OnSnakeDeath(Block obj)
     {
-        if (obj == playerController.SnakeHead) OnSnakeDeath(obj);
-    }
-    private void OnSnakeDeath(Block obj)
-    {
-        playGrid.Fall();
+        playGrid.Fall(true);
         if (waitSlot.GetNeighbor(Direction.DOWN).Block != null)
         {
             EndGame();
@@ -89,7 +93,6 @@ public class GameManager : MonoBehaviour
     {
         FillPreviewBar();
         playerController.SnakeHead = waitSlot.Block;
-        playerController.SnakeHead.ActivateSnake();
         playerController.SnakeHead.BasicMove(Direction.DOWN);
         playerController.ResetMoveRestrictions();
         FillPreviewBar();
