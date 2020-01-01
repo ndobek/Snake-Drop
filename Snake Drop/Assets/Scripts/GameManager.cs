@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
     //{
     //    if (obj == playerController.SnakeHead) OnSnakeDeath(obj);
     //}
-    public void OnSnakeDeath(Block obj)
+    public void OnSnakeDeath()
     {
         playGrid.Fall(true);
         if (waitSlot.GetNeighbor(Direction.DOWN).Block != null)

@@ -131,6 +131,16 @@ public class Block : MonoBehaviour
         Slot.DeleteBlock();
     }
 
+    public void KillSnake()
+    {
+
+        if (tail != null)
+        {
+            tail.KillSnake();
+        }
+        Kill();
+    }
+
     public int FindSnakeMaxY()
     {
         int obj1 = (int)Coords().y;
