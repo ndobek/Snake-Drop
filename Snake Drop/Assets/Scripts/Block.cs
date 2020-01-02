@@ -79,7 +79,7 @@ public class Block : MonoBehaviour
         return Slot.GetNeighbor(direction);
     }
 
-    public void BasicMoveTo(BlockSlot obj)
+    public void RawMoveTo(BlockSlot obj)
     {
         SetGridDirty();
         BlockSlot Old = Slot;
@@ -88,15 +88,24 @@ public class Block : MonoBehaviour
         {
             obj.OnAssignment(this);
             Slot = obj;
-            if (Tail != null) Tail.BasicMoveTo(Old);
+            if (Tail != null) Tail.RawMoveTo(Old);
         }
         UpdateBlock();
+    }
+    public void RawMove(GameManager.Direction neighbor)
+    {
+        RawMoveTo(Neighbor(neighbor));
     }
 
     public void BasicMove(GameManager.Direction neighbor)
     {
         BlockSlot destination = Neighbor(neighbor);
-        if (destination) BasicMoveTo(destination);
+        if (blockType.CanBasicMoveTo(this, destination)) RawMoveTo(destination);
+    }
+
+    public void BasicMoveTo(BlockSlot obj)
+    {
+        if (blockType.CanBasicMoveTo(this, obj)) RawMoveTo(obj);
     }
 
     public void BasicFall(bool StayOnSameGrid = true)
@@ -108,7 +117,7 @@ public class Block : MonoBehaviour
             (!StayOnSameGrid | destination.playGrid == this.Slot.playGrid)
             )
         {
-            BasicMove(GameManager.Direction.DOWN);
+            RawMove(GameManager.Direction.DOWN);
             destination = Neighbor(GameManager.Direction.DOWN);
         }
     }
@@ -133,7 +142,12 @@ public class Block : MonoBehaviour
     {
         blockType.OnBreak(this);
         Kill();
-        Slot.DeleteBlock();
+        Break();
+    }
+    public void Break()
+    {
+        Slot.OnUnassignment(this);
+        GameObject.Destroy(this.gameObject);
     }
 
     public void KillSnake()

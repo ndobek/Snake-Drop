@@ -62,7 +62,7 @@ public class PlayerController : MonoBehaviour
     public void MoveSnake(Direction direction)
     {
 
-        if (GameManager.instance.GameInProgress && direction != GetOppositeDirection(mostRecentDirection))
+        if (GameManager.instance.GameInProgress)
         {
             mostRecentDirection = direction;
             SnakeHead.ActionMove(direction);

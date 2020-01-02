@@ -12,55 +12,35 @@ public class BlockType : ScriptableObject
     public virtual void OnActionFall(Block block)
     {
 
-        //BlockSlot NextBlock = block.Neighbor(GameManager.Direction.UP);
-        //BlockSlot OldLocation = block.Slot;
-
-        //bool NextBlockIsValid()
-        //{
-        //    return NextBlock
-        //        && NextBlock.Block
-        //        && NextBlock.playGrid == block.Slot.playGrid;
-        //}
-
-        //block.BasicFall();
-        //BlockSlot FallenOnto = block.Neighbor(GameManager.Direction.DOWN);
-
-        //if (OldLocation.y - block.Slot.y >= FallDestroyThreshold/* && CanActionMoveTo(block, FallenOnto)*/)
-        //{
-        //    block.ActionMove(GameManager.Direction.DOWN);
-
-        //    //if (NextBlockIsValid()) OnActionFall(NextBlock.Block);
-        //}
-        //else
-        //{
-        //    while (NextBlockIsValid())
-        //    {
-        //        BlockSlot Current = NextBlock;
-        //        NextBlock = Current.GetNeighbor(GameManager.Direction.UP);
-        //        Current.Block.BasicFall();
-        //    }
-        //}
+        BlockSlot NextBlock = block.Neighbor(GameManager.Direction.UP);
+        bool NextBlockIsValid()
+        {
+            return NextBlock
+                && NextBlock.Block
+                && NextBlock.playGrid == block.Slot.playGrid;
+        }
+        BlockSlot OldLocation = block.Slot;
 
         block.BasicFall();
         BlockSlot FallenOnto = block.Neighbor(GameManager.Direction.DOWN);
-        Action(block, FallenOnto);
+
+        if(OldLocation.y - block.Slot.y >= FallDestroyThreshold && CanAction(block, FallenOnto))
+        {
+            Action(block, FallenOnto);
+        }
+        else
+        {
+            while (NextBlockIsValid())
+            {
+                BlockSlot Current = NextBlock;
+                NextBlock = Current.GetNeighbor(GameManager.Direction.UP);
+                Current.Block.BasicFall();
+            }
+        }
+
 
     }
 
-    //private bool CanActionMoveTo(Block block, BlockSlot slot)
-    //{
-    //    Block eatenBlock = null;
-    //    if (slot)
-    //    {
-    //        eatenBlock = slot.Block;
-
-    //        return 
-    //            (eatenBlock == null || eatenBlock.blockColor == block.blockColor) && 
-    //            slot.y <= GameManager.instance.HeightLimitIndicator.HeightLimit;
-    //    }
-
-    //    return false;
-    //}    
     protected virtual bool CanAction(Block block, BlockSlot slot)
     {
         if (slot && slot.Block)
@@ -74,27 +54,64 @@ public class BlockType : ScriptableObject
     {
         if (CanAction(block, slot))
         {
+            Block tail = null;
+            BlockSlot oldLocation = block.Slot;
             slot.Block.KillSnake();
-            block.BasicMoveTo(slot);
             slot.Block.ActionBreak();
-            if (block.Tail)
+            block.BasicMoveTo(slot);
+            if (block.Tail) { tail = block.Tail; }
+
+            if (tail)
             {
-                GameManager.instance.playerController.SnakeHead = block.Tail;
+                tail.BasicMoveTo(oldLocation);
             }
-            else
-            {
-                GameManager.instance.OnSnakeDeath();
-            }
+            //else Crash(block, slot);
 
             block.ActionBreak();
         }
     }
-    protected virtual bool CanBasicMoveTo(Block block, BlockSlot slot)
+    //
+    protected virtual bool CanMoveToWithoutCrashing(Block block, BlockSlot slot)
     {
+        bool CheckIfTail()
+        {
+            if(slot && slot.Block && block && block.Tail)
+            {
+                return slot.Block == block.Tail;
+            }
+            return false;
+        }
+
         return 
             slot != null &&
-            slot.y <= GameManager.instance.HeightLimitIndicator.HeightLimit &&
+            GameManager.instance.HeightLimitIndicator.CheckHeightLimit(slot) &&
+            !CheckIfTail();
+    }
+
+    public virtual bool CanBasicMoveTo(Block block, BlockSlot slot)
+    {
+        return
+            CanMoveToWithoutCrashing(block, slot) &&
             slot.Block == null;
+    }
+
+    protected virtual bool OverrideCrash(Block block, BlockSlot slot)
+    {
+        bool result = false;
+        if(slot && slot.Block && block && block.Tail)
+        {
+            result = slot.Block == block.Tail;
+        }
+        return result;
+    }
+
+    protected virtual void Crash(Block block, BlockSlot slot)
+    {
+        if (!OverrideCrash(block, slot))
+        {
+            block.KillSnake();
+            GameManager.instance.OnCrash();
+        }
     }
 
     public virtual void OnActionMove(Block block, BlockSlot slot)
@@ -103,24 +120,40 @@ public class BlockType : ScriptableObject
 
         Debug.Log("CanBasicMoveTo()" + CanBasicMoveTo(block, slot));
         Debug.Log("CanAction()" + CanAction(block, slot));
-        if (CanAction(block, slot))
+        if (CanMoveToWithoutCrashing(block, slot))
         {
-            Action(block, slot);
-        } else if (CanBasicMoveTo(block, slot))
-        {
-            block.BasicMoveTo(slot);
+            if (CanAction(block, slot))
+            {
+                Action(block, slot);
+            }
+            else if (CanBasicMoveTo(block, slot))
+            {
+                block.BasicMoveTo(slot);
+            }
+            else
+            {
+                Crash(block, slot);
+            }
         }
         else
         {
-            block.KillSnake();
-            GameManager.instance.OnSnakeDeath();
+            Crash(block, slot);
         }
     }
+
+
 
 
     public virtual void OnBreak(Block block)
     {
         GameManager.instance.difficultyManager.Score += 1;
+        if (block == GameManager.instance.playerController.SnakeHead)
+        {
+            if (block.Tail)
+            {
+                GameManager.instance.playerController.SnakeHead = block.Tail;
+            } else { Crash(block, block.Slot); }
+        }
         if (ChangeTypeToOnDeath) block.SetBlockType(block.blockColor, ChangeTypeToOnDeath);
     }
 }

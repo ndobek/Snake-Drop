@@ -52,7 +52,7 @@ public class BlockSlot : MonoBehaviour
     public void MoveBlockHere(Block obj)
     {
         //Don't Change this, add to OnAssignment instead
-        obj.BasicMoveTo(this);
+        obj.RawMoveTo(this);
     }
     public void SetBlock(BlockColor color, BlockType type)
     {
@@ -68,8 +68,10 @@ public class BlockSlot : MonoBehaviour
     }
     public virtual void DeleteBlock()
     {
-        if (block) GameObject.Destroy(block.gameObject);
-        OnUnassignment(block);
+        if (block)
+        {
+            block.Break();
+        }
     }
 
     public void UpdateBlock()

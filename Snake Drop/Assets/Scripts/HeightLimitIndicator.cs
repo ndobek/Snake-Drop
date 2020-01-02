@@ -5,6 +5,7 @@ using UnityEngine;
 public class HeightLimitIndicator : MonoBehaviour
 {
     public float offset;
+    public PlayGrid affectedGrid;
 
     [HideInInspector]
     public int HeightLimit;
@@ -22,5 +23,10 @@ public class HeightLimitIndicator : MonoBehaviour
     {
         Vector2 obj = GameManager.instance.playGrid.position(0, HeightLimit + offset);
         this.transform.position = new Vector2(0, obj.y);
+    }
+    public bool CheckHeightLimit(BlockSlot slot)
+    {
+        if (!affectedGrid) throw new System.ArgumentNullException("Affected Grid");
+        return slot.y <= HeightLimit | slot.playGrid != affectedGrid;
     }
 }
