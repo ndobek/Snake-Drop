@@ -9,79 +9,95 @@ public class BlockType : ScriptableObject
     public BlockType ChangeTypeToOnDeath;
     public int FallDestroyThreshold;
 
-    //public virtual bool CanActionMove(Block block, BlockSlot slot)
-    //{
-    //    return true;
-    //}
-
     public virtual void OnActionFall(Block block)
     {
 
-        BlockSlot NextBlock = block.Neighbor(GameManager.Direction.UP);
-        BlockSlot OldLocation = block.Slot;
+        //BlockSlot NextBlock = block.Neighbor(GameManager.Direction.UP);
+        //BlockSlot OldLocation = block.Slot;
 
-        bool NextBlockIsValid()
-        {
-            return NextBlock
-                && NextBlock.Block
-                && NextBlock.playGrid == block.Slot.playGrid;
-        }
+        //bool NextBlockIsValid()
+        //{
+        //    return NextBlock
+        //        && NextBlock.Block
+        //        && NextBlock.playGrid == block.Slot.playGrid;
+        //}
+
+        //block.BasicFall();
+        //BlockSlot FallenOnto = block.Neighbor(GameManager.Direction.DOWN);
+
+        //if (OldLocation.y - block.Slot.y >= FallDestroyThreshold/* && CanActionMoveTo(block, FallenOnto)*/)
+        //{
+        //    block.ActionMove(GameManager.Direction.DOWN);
+
+        //    //if (NextBlockIsValid()) OnActionFall(NextBlock.Block);
+        //}
+        //else
+        //{
+        //    while (NextBlockIsValid())
+        //    {
+        //        BlockSlot Current = NextBlock;
+        //        NextBlock = Current.GetNeighbor(GameManager.Direction.UP);
+        //        Current.Block.BasicFall();
+        //    }
+        //}
 
         block.BasicFall();
         BlockSlot FallenOnto = block.Neighbor(GameManager.Direction.DOWN);
-
-        if (OldLocation.y - block.Slot.y >= FallDestroyThreshold && CanActionMoveTo(block, FallenOnto))
-        {
-            OnActionMove(block, FallenOnto);
-
-            //if (NextBlockIsValid()) OnActionFall(NextBlock.Block);
-        }
-        else
-        {
-            while (NextBlockIsValid())
-            {
-                BlockSlot Current = NextBlock;
-                NextBlock = Current.GetNeighbor(GameManager.Direction.UP);
-                Current.Block.BasicFall();
-            }
-        }
+        block.ActionMove(GameManager.Direction.DOWN);
 
     }
 
-    private bool CanActionMoveTo(Block block, BlockSlot slot)
-    {
-        Block eatenBlock = null;
-        if (slot)
-        {
-            eatenBlock = slot.Block;
+    //private bool CanActionMoveTo(Block block, BlockSlot slot)
+    //{
+    //    Block eatenBlock = null;
+    //    if (slot)
+    //    {
+    //        eatenBlock = slot.Block;
 
-            return 
-                (eatenBlock == null || eatenBlock.blockColor == block.blockColor) && 
-                slot.y <= GameManager.instance.HeightLimitIndicator.HeightLimit;
-        }
+    //        return 
+    //            (eatenBlock == null || eatenBlock.blockColor == block.blockColor) && 
+    //            slot.y <= GameManager.instance.HeightLimitIndicator.HeightLimit;
+    //    }
 
-        return false;
-    }
+    //    return false;
+    //}
+
 
     public virtual void OnActionMove(Block block, BlockSlot slot)
     {
-        if (CanActionMoveTo(block, slot))
+        bool CanActionMoveTo()
+        {
+            Block eatenBlock = null;
+            if (slot)
+            {
+                eatenBlock = slot.Block;
+
+                return
+                    (eatenBlock == null || eatenBlock.blockColor == block.blockColor) &&
+                    slot.y <= GameManager.instance.HeightLimitIndicator.HeightLimit;
+            }
+
+            return false;
+        }
+
+        if (CanActionMoveTo())
         {
             if (slot.Block)
             {
-                GameManager.instance.difficultyManager.Score += 1;
-                slot.Block.Break();
-                //block.Tail.BasicMoveTo(block.Slot);
+                slot.Block.KillSnake();
+                slot.Block.ActionBreak();
+
                 if (block.Tail)
                 {
                     GameManager.instance.playerController.SnakeHead = block.Tail;
+                    //block.Tail.BasicMoveTo(block.Slot);
                 }
                 else
                 {
                     GameManager.instance.OnSnakeDeath();
                 }
 
-                block.Break();
+                block.ActionBreak();
             }
             else
             {
@@ -99,15 +115,9 @@ public class BlockType : ScriptableObject
     }
 
 
-    public virtual void OnKill(Block block)
+    public virtual void OnBreak(Block block)
     {
-        if (block.Tail != null)
-        {
-            if (block.Tail.Slot.playGrid == GameManager.instance.playGrid) block.Tail.Kill();
-            block.SetTail(null);
-        }
-        block.isPartOfSnake = false;
-        if(ChangeTypeToOnDeath) block.SetBlockType(block.blockColor, ChangeTypeToOnDeath);
-        block.UpdateBlock();
+        GameManager.instance.difficultyManager.Score += 1;
+        if (ChangeTypeToOnDeath) block.SetBlockType(block.blockColor, ChangeTypeToOnDeath);
     }
 }

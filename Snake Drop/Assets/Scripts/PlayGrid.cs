@@ -32,6 +32,12 @@ public class PlayGrid : MonoBehaviour
     public BlockSlot slotObj;
     public Block blockObj;
 
+    private bool dirty = false;
+    public void SetDirty()
+    {
+        dirty = true;
+    }
+
     [SerializeField]
     private BlockSlot[] slots;
 
@@ -88,47 +94,38 @@ public class PlayGrid : MonoBehaviour
         }
     }
 
+
     public void Fall(bool doTypeAction = false)
     {
-        bool complete = false;
+        bool dirty = true;
 
-        while (!complete)
+        while (dirty)
         {
-            complete = true;
+            dirty = false;
             for (int x = 0; x < xSize; x++)
             {
-                bool xComplete = Fall(x, 0, ySize, doTypeAction);
-                if (!xComplete) complete = false;
+                Fall(x, 0, ySize, doTypeAction);
             }
             UpdateGrid();
         }
     }
-    private bool Fall(int x, int startingY, int maxY, bool doTypeAction = false)
+    private void Fall(int x, int startingY, int maxY, bool doTypeAction = false)
     {
-        bool noChanges = true;
         for (int y = startingY; y < maxY; y++)
         {
-            if(GetSlot(x,y).Block == null)
+            Block block = GetBlock(x, y);
+            if (block && block.Slot.playGrid == this)
             {
-                for (int y2 = y; y2 < maxY; y2++)
+                if (doTypeAction)
                 {
-                    Block block = GetSlot(x, y2).Block;
-                    if (block != null && block.Slot.playGrid == this)
-                    {
-                        noChanges = false;
-                        if (doTypeAction)
-                        {
-                            block.ActionFall();
-                        }
-                        else
-                        {
-                            block.BasicFall();
-                        }
-                    }
+                    block.ActionFall();
+                }
+                else
+                {
+                    block.BasicFall();
                 }
             }
         }
-        return noChanges;
     }
 
 

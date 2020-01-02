@@ -73,21 +73,15 @@ public class PlayerController : MonoBehaviour
 
     private void ActivateSnake(Block newSnakeHead)
     {
+        if(snakeHead) snakeHead.SetBlockType(snakeHead.blockColor, GameManager.instance.defaultType);
         snakeHead = newSnakeHead;
         snakeHead.SetBlockType(snakeHead.blockColor, GameManager.instance.snakeHeadType);
         snakeHead.ActivateSnake();
     }
 
-
-    public void ResetMoveRestrictions()
-    {
-        GameManager.instance.HeightLimitIndicator.ResetHeightLimit();
-        mostRecentDirection = Direction.DOWN;
-    }
-
     public void ResetGame()
     {
-        ResetMoveRestrictions();
+        mostRecentDirection = Direction.DOWN;
     }
 
 }

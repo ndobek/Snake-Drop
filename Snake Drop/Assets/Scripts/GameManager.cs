@@ -56,13 +56,12 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            playerController.ResetMoveRestrictions();
             ContinueGame();
         }
     }
     private void ShufflePreviewBar()
     {
-        previewGrid.Fall();
+        previewGrid.Fall(false);
         MakeSnake();
     }
     public void FillPreviewBar()
@@ -94,7 +93,7 @@ public class GameManager : MonoBehaviour
         FillPreviewBar();
         playerController.SnakeHead = waitSlot.Block;
         playerController.SnakeHead.BasicMove(Direction.DOWN);
-        playerController.ResetMoveRestrictions();
+        ResetMoveRestrictions();
         FillPreviewBar();
     }
     private void EndGame()
@@ -102,4 +101,12 @@ public class GameManager : MonoBehaviour
         GameInProgress = false;
         gameOverScreen.SetActive(true);
     }
+
+
+    public void ResetMoveRestrictions()
+    {
+        HeightLimitIndicator.ResetHeightLimit();
+        playerController.ResetGame();
+    }
+
 }

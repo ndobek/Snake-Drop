@@ -81,6 +81,7 @@ public class Block : MonoBehaviour
 
     public void BasicMoveTo(BlockSlot obj)
     {
+        SetGridDirty();
         BlockSlot Old = Slot;
         if (Old) Old.OnUnassignment(this);
         if (obj)
@@ -118,15 +119,18 @@ public class Block : MonoBehaviour
 
     public void ActionMove(GameManager.Direction neighbor)
     {
+        SetGridDirty();
         blockType.OnActionMove(this, Neighbor(neighbor));
     }
 
     public void Kill()
     {
-        blockType.OnKill(this);
+        isPartOfSnake = false;
+        UpdateBlock();
     }
-    public void Break()
+    public void ActionBreak()
     {
+        blockType.OnBreak(this);
         Kill();
         Slot.DeleteBlock();
     }
@@ -134,9 +138,10 @@ public class Block : MonoBehaviour
     public void KillSnake()
     {
 
-        if (tail != null)
+        if (Tail != null)
         {
-            tail.KillSnake();
+            if (Tail.Slot.playGrid == GameManager.instance.playGrid) Tail.KillSnake();
+            SetTail(null);
         }
         Kill();
     }
@@ -162,7 +167,10 @@ public class Block : MonoBehaviour
         isPartOfSnake = true;
         UpdateBlock();
     }
-
+    private void SetGridDirty()
+    {
+        if(Slot && Slot.playGrid) Slot.playGrid.SetDirty();
+    }
     //public bool SnakeIsInSlot(BlockSlot obj)
     //{
     //    bool isFurtherDownSnake = false;
