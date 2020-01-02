@@ -12,6 +12,9 @@ public class Block : MonoBehaviour
     //[SerializeField]
     public BlockSlot Slot;
 
+    //[SerializeField]
+    //private float animateSpeed;
+
     [HideInInspector]
     public bool isPartOfSnake;
     [SerializeField, HideInInspector]
@@ -39,7 +42,7 @@ public class Block : MonoBehaviour
     private void UpdateLocation()
     {
         this.transform.SetParent(Slot.transform);
-        this.transform.localPosition = Vector3.zero;
+        this.transform.localPosition = Vector3.zero; /*Vector3.MoveTowards(this.transform.localPosition, Vector3.zero, animateSpeed);*/ /*Vector3.Lerp(this.transform.localPosition, Vector3.zero, animateSpeed);*/
         this.transform.localRotation = Quaternion.identity;
         this.transform.localScale = Vector3.one;
     }
@@ -129,8 +132,8 @@ public class Block : MonoBehaviour
 
     public void ActionMove(GameManager.Direction neighbor)
     {
-        SetGridDirty();
         blockType.OnActionMove(this, Neighbor(neighbor));
+        GameManager.instance.CheckForRoundEnd();
     }
 
     public void Kill()
@@ -146,6 +149,7 @@ public class Block : MonoBehaviour
     }
     public void Break()
     {
+        SetGridDirty();
         Slot.OnUnassignment(this);
         GameObject.Destroy(this.gameObject);
     }
@@ -184,7 +188,7 @@ public class Block : MonoBehaviour
     }
     private void SetGridDirty()
     {
-        if(Slot && Slot.playGrid) Slot.playGrid.SetDirty();
+        if (Slot && Slot.playGrid) Slot.playGrid.SetDirty();
     }
     //public bool SnakeIsInSlot(BlockSlot obj)
     //{

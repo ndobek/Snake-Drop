@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public DifficultyManager difficultyManager;
     [HideInInspector]
     public bool GameInProgress;
+    public bool RoundInProgress;
 
     public PlayGrid playGrid;
     public PlayGrid previewGrid;
@@ -49,6 +50,18 @@ public class GameManager : MonoBehaviour
     //}
     public void OnCrash()
     {
+        RoundInProgress = false;
+    }
+    public void CheckForRoundEnd()
+    {
+        if (!RoundInProgress)
+        {
+            EndRound();
+        }
+    }
+
+    private void EndRound()
+    {
         playGrid.Fall(true);
         if (waitSlot.GetNeighbor(Direction.DOWN).Block != null)
         {
@@ -59,6 +72,7 @@ public class GameManager : MonoBehaviour
             ContinueGame();
         }
     }
+
     private void ShufflePreviewBar()
     {
         previewGrid.Fall(false);
@@ -75,7 +89,7 @@ public class GameManager : MonoBehaviour
 
     private void MakeSnake()
     {
-        snakeMaker.MakeSnake(25, .1f);
+        snakeMaker.MakeSnake(25, .25f);
     }
 
     public void StartGame()
@@ -95,6 +109,7 @@ public class GameManager : MonoBehaviour
         playerController.SnakeHead = waitSlot.Block;
         playerController.SnakeHead.BasicMove(Direction.DOWN);
         FillPreviewBar();
+        RoundInProgress = true;
     }
     private void EndGame()
     {

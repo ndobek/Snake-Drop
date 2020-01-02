@@ -61,23 +61,26 @@ public class BlockType : ScriptableObject
             block.BasicMoveTo(slot);
             if (block.Tail) { tail = block.Tail; }
 
+            block.ActionBreak();
             if (tail)
             {
                 tail.BasicMoveTo(oldLocation);
             }
-            //else Crash(block, slot);
+            else
+            {
+                Crash(block, slot);
+            }
 
-            block.ActionBreak();
         }
     }
     //
     protected virtual bool CanMoveToWithoutCrashing(Block block, BlockSlot slot)
     {
-        bool CheckIfTail()
+        bool CheckIfSnake()
         {
             if(slot && slot.Block && block && block.Tail)
             {
-                return slot.Block == block.Tail;
+                return slot.Block.isPartOfSnake;
             }
             return false;
         }
@@ -85,7 +88,7 @@ public class BlockType : ScriptableObject
         return 
             slot != null &&
             GameManager.instance.HeightLimitIndicator.CheckHeightLimit(slot) &&
-            !CheckIfTail();
+            !CheckIfSnake();
     }
 
     public virtual bool CanBasicMoveTo(Block block, BlockSlot slot)
@@ -116,10 +119,6 @@ public class BlockType : ScriptableObject
 
     public virtual void OnActionMove(Block block, BlockSlot slot)
     {
-
-
-        Debug.Log("CanBasicMoveTo()" + CanBasicMoveTo(block, slot));
-        Debug.Log("CanAction()" + CanAction(block, slot));
         if (CanMoveToWithoutCrashing(block, slot))
         {
             if (CanAction(block, slot))
@@ -147,12 +146,18 @@ public class BlockType : ScriptableObject
     public virtual void OnBreak(Block block)
     {
         GameManager.instance.difficultyManager.Score += 1;
+
         if (block == GameManager.instance.playerController.SnakeHead)
         {
             if (block.Tail)
             {
                 GameManager.instance.playerController.SnakeHead = block.Tail;
-            } else { Crash(block, block.Slot); }
+            }
+            else
+            {
+                GameManager.instance.playerController.SnakeHead = null;
+                Crash(block, block.Slot);
+            }
         }
         if (ChangeTypeToOnDeath) block.SetBlockType(block.blockColor, ChangeTypeToOnDeath);
     }
