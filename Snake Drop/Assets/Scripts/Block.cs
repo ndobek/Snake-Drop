@@ -92,6 +92,7 @@ public class Block : MonoBehaviour
         }
         UpdateBlock();
     }
+
     public void BasicMove(GameManager.Direction neighbor)
     {
         BlockSlot destination = Neighbor(neighbor);

@@ -43,7 +43,7 @@ public class BlockType : ScriptableObject
 
         block.BasicFall();
         BlockSlot FallenOnto = block.Neighbor(GameManager.Direction.DOWN);
-        block.ActionMove(GameManager.Direction.DOWN);
+        Action(block, FallenOnto);
 
     }
 
@@ -60,52 +60,55 @@ public class BlockType : ScriptableObject
     //    }
 
     //    return false;
-    //}
-
-
-    public virtual void OnActionMove(Block block, BlockSlot slot)
+    //}    
+    protected virtual bool CanAction(Block block, BlockSlot slot)
     {
-        bool CanActionMoveTo()
+        if (slot && slot.Block)
         {
-            Block eatenBlock = null;
-            if (slot)
-            {
-                eatenBlock = slot.Block;
-
-                return
-                    (eatenBlock == null || eatenBlock.blockColor == block.blockColor) &&
-                    slot.y <= GameManager.instance.HeightLimitIndicator.HeightLimit;
-            }
-
-            return false;
+            return slot.Block.blockColor == block.blockColor;
         }
+        return false;
+    }
 
-        if (CanActionMoveTo())
+    protected virtual void Action(Block block, BlockSlot slot)
+    {
+        if (CanAction(block, slot))
         {
-            if (slot.Block)
+            slot.Block.KillSnake();
+            block.BasicMoveTo(slot);
+            slot.Block.ActionBreak();
+            if (block.Tail)
             {
-                slot.Block.KillSnake();
-                slot.Block.ActionBreak();
-
-                if (block.Tail)
-                {
-                    GameManager.instance.playerController.SnakeHead = block.Tail;
-                    //block.Tail.BasicMoveTo(block.Slot);
-                }
-                else
-                {
-                    GameManager.instance.OnSnakeDeath();
-                }
-
-                block.ActionBreak();
+                GameManager.instance.playerController.SnakeHead = block.Tail;
             }
             else
             {
-
-                block.BasicMoveTo(slot);
+                GameManager.instance.OnSnakeDeath();
             }
 
+            block.ActionBreak();
+        }
+    }
+    protected virtual bool CanBasicMoveTo(Block block, BlockSlot slot)
+    {
+        return 
+            slot != null &&
+            slot.y <= GameManager.instance.HeightLimitIndicator.HeightLimit &&
+            slot.Block == null;
+    }
 
+    public virtual void OnActionMove(Block block, BlockSlot slot)
+    {
+
+
+        Debug.Log("CanBasicMoveTo()" + CanBasicMoveTo(block, slot));
+        Debug.Log("CanAction()" + CanAction(block, slot));
+        if (CanAction(block, slot))
+        {
+            Action(block, slot);
+        } else if (CanBasicMoveTo(block, slot))
+        {
+            block.BasicMoveTo(slot);
         }
         else
         {
