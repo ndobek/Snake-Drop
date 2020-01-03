@@ -21,7 +21,7 @@ public class HeightLimitIndicator : MonoBehaviour
     }
     void Update()
     {
-        Vector2 obj = GameManager.instance.playGrid.position(0, HeightLimit + offset);
+        Vector2 obj = GameManager.instance.playGrid.CoordsPosition(0, HeightLimit + offset);
         this.transform.position = new Vector2(0, obj.y);
     }
     public bool CheckHeightLimit(BlockSlot slot)

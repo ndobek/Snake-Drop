@@ -4,20 +4,55 @@ using UnityEngine;
 
 public class Block : MonoBehaviour
 {
+    #region Variables
+
+    #region Block Info
+
     //[HideInInspector]
     public BlockType blockType;
     [HideInInspector]
     public BlockColor blockColor;
+    private BlockSlot slot;
+    public BlockSlot Slot
+    {
+        get { return slot; }
+    }
 
-    //[SerializeField]
-    public BlockSlot Slot;
+    #endregion
 
-    //[SerializeField]
-    //private float animateSpeed;
+    #region Coordinates
+
+    public Vector2 Coords()
+    {
+        return new Vector2(Slot.x, Slot.y);
+    }
+    public int X
+    {
+        get { return Slot.x; }
+    }
+    public int Y
+    {
+        get { return Slot.y; }
+    }
+    public BlockSlot Neighbor(GameManager.Direction direction)
+    {
+        return Slot.GetNeighbor(direction);
+    }
+
+    #endregion
+
+    #region GameObject Components
+
+    public SpriteRenderer BlockSprite;
+    public SpriteRenderer Highlight;
+
+    #endregion
+
+    #region Snake Data
 
     [HideInInspector]
     public bool isPartOfSnake;
-    [SerializeField, HideInInspector]
+
     private Block tail;
     public Block Tail
     {
@@ -25,10 +60,18 @@ public class Block : MonoBehaviour
         set { tail = value; }
     }
 
-    public SpriteRenderer BlockSprite;
-    public SpriteRenderer Highlight;
+    #endregion
 
+    #endregion
 
+    #region Methods to Update Block Status
+
+    public void SetBlockType(BlockColor color, BlockType type)
+    {
+        blockType = type;
+        blockColor = color;
+        UpdateBlock();
+    }
     private void UpdateSprite()
     {
         if (blockColor != null && blockType != null)
@@ -42,7 +85,7 @@ public class Block : MonoBehaviour
     private void UpdateLocation()
     {
         this.transform.SetParent(Slot.transform);
-        this.transform.localPosition = Vector3.zero; /*Vector3.MoveTowards(this.transform.localPosition, Vector3.zero, animateSpeed);*/ /*Vector3.Lerp(this.transform.localPosition, Vector3.zero, animateSpeed);*/
+        this.transform.localPosition = Vector3.zero;
         this.transform.localRotation = Quaternion.identity;
         this.transform.localScale = Vector3.one;
     }
@@ -52,36 +95,23 @@ public class Block : MonoBehaviour
         UpdateSprite();
     }
 
-    public void SetBlockType(BlockColor color, BlockType type)
+    //Tells the grid that it needs to check for fall movement and update
+    private void SetGridDirty()
     {
-        blockType = type;
-        blockColor = color;
-        UpdateBlock();
-    }
-    public void SetTail(GameManager.Direction neighbor)
-    {
-        SetTail(Neighbor(neighbor).Block);
-    }
-    public void SetTail(Block obj)
-    {
-        if (obj)
-        {
-            tail = obj;
-        } else
-        {
-            tail = null;
-        }
+        if (Slot && Slot.playGrid) Slot.playGrid.SetDirty();
     }
 
-    public Vector2 Coords()
-    {
-        return new Vector2(Slot.x, Slot.y);
-    }
-    public BlockSlot Neighbor(GameManager.Direction direction)
-    {
-        return Slot.GetNeighbor(direction);
-    }
+    #endregion
 
+    #region Movement Methods
+
+    //Base for all movement code, doesn't follow game rules.
+    #region Raw Movement
+
+    public void RawMove(GameManager.Direction neighbor)
+    {
+        RawMoveTo(Neighbor(neighbor));
+    }
     public void RawMoveTo(BlockSlot obj)
     {
         SetGridDirty();
@@ -90,27 +120,32 @@ public class Block : MonoBehaviour
         if (obj)
         {
             obj.OnAssignment(this);
-            Slot = obj;
+            slot = obj;
             if (Tail != null) Tail.RawMoveTo(Old);
         }
         UpdateBlock();
     }
-    public void RawMove(GameManager.Direction neighbor)
+    public void Break()
     {
-        RawMoveTo(Neighbor(neighbor));
+        SetGridDirty();
+        Slot.OnUnassignment(this);
+        GameObject.Destroy(this.gameObject);
     }
+
+    #endregion
+
+    //Basic movement that follows game rules but doesn't do any special block actions
+    #region Basic Movement
+
 
     public void BasicMove(GameManager.Direction neighbor)
     {
-        BlockSlot destination = Neighbor(neighbor);
-        if (blockType.CanBasicMoveTo(this, destination)) RawMoveTo(destination);
+        BasicMoveTo(Neighbor(neighbor));
     }
-
     public void BasicMoveTo(BlockSlot obj)
     {
         if (blockType.CanBasicMoveTo(this, obj)) RawMoveTo(obj);
     }
-
     public void BasicFall(bool StayOnSameGrid = true)
     {
         BlockSlot destination = Neighbor(GameManager.Direction.DOWN);
@@ -125,35 +160,62 @@ public class Block : MonoBehaviour
         }
     }
 
+    #endregion
+
+    //Movement that does special actions based on block type.
+    #region Action Movement
+
+
+    public void ActionMove(GameManager.Direction neighbor)
+    {
+        ActionMoveTo(Neighbor(neighbor));
+    }
+    public void ActionMoveTo(BlockSlot obj)
+    {
+        blockType.OnActionMove(this, obj);
+        GameManager.instance.CheckForRoundEnd();
+    }
     public void ActionFall()
     {
         blockType.OnActionFall(this);
     }
-
-    public void ActionMove(GameManager.Direction neighbor)
+    public void ActionBreak()
     {
-        blockType.OnActionMove(this, Neighbor(neighbor));
-        GameManager.instance.CheckForRoundEnd();
+        blockType.OnActionBreak(this);
+        Kill();
+        Break();
     }
 
+    #endregion
+
+
+    #endregion
+
+    #region Snake Controls
+
+    public void SetTail(GameManager.Direction neighbor)
+    {
+        SetTail(Neighbor(neighbor).Block);
+    }
+    public void SetTail(Block obj)
+    {
+        tail = obj;
+    }
+
+    public void ActivateSnake()
+    {
+        if (tail != null)
+        {
+            tail.ActivateSnake();
+        }
+        isPartOfSnake = true;
+        UpdateBlock();
+    }
     public void Kill()
     {
         isPartOfSnake = false;
         UpdateBlock();
     }
-    public void ActionBreak()
-    {
-        blockType.OnBreak(this);
-        Kill();
-        Break();
-    }
-    public void Break()
-    {
-        SetGridDirty();
-        Slot.OnUnassignment(this);
-        GameObject.Destroy(this.gameObject);
-    }
-
     public void KillSnake()
     {
 
@@ -177,26 +239,5 @@ public class Block : MonoBehaviour
         return result;
     }
 
-    public void ActivateSnake()
-    {
-        if(tail != null)
-        {
-            tail.ActivateSnake();
-        }
-        isPartOfSnake = true;
-        UpdateBlock();
-    }
-    private void SetGridDirty()
-    {
-        if (Slot && Slot.playGrid) Slot.playGrid.SetDirty();
-    }
-    //public bool SnakeIsInSlot(BlockSlot obj)
-    //{
-    //    bool isFurtherDownSnake = false;
-    //    if (tail != null)
-    //    {
-    //        isFurtherDownSnake = SnakeIsInSlot(obj);
-    //    }
-    //    return (Slot == obj | isFurtherDownSnake);
-    //}
+    #endregion
 }

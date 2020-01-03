@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public DifficultyManager difficultyManager;
     [HideInInspector]
     public bool GameInProgress;
+    [HideInInspector]
     public bool RoundInProgress;
 
     public PlayGrid playGrid;
@@ -17,6 +18,7 @@ public class GameManager : MonoBehaviour
     public SnakeMaker snakeMaker;
     public BlockSlot waitSlot;
 
+    public Block blockObj;
     public BlockType defaultType;
     public BlockType snakeHeadType;
 
@@ -89,7 +91,7 @@ public class GameManager : MonoBehaviour
 
     private void MakeSnake()
     {
-        snakeMaker.MakeSnake(25, .25f);
+        snakeMaker.MakeSnake(25, .3f);
     }
 
     public void StartGame()

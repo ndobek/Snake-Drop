@@ -4,21 +4,27 @@ using UnityEngine;
 
 public class BlockSlot : MonoBehaviour
 {
+    #region Variables
+
+    #region Grid and Coordinates
+
+    public PlayGrid playGrid;
+
     public int x;
     public int y;
-    //[HideInInspector]
-    public PlayGrid playGrid;
+    public Vector2 Coords
+    {
+        get { return new Vector2(x, y); }
+    }
+
+    #endregion
+
+    #region Neighbors
 
     public BlockSlot customRightNeighbor;
     public BlockSlot customLeftNeighbor;
     public BlockSlot customUpNeighbor;
     public BlockSlot customDownNeighbor;
-
-    protected Block block;
-    public virtual Block Block
-    {
-        get { return block; }
-    }
 
     public BlockSlot GetNeighbor(GameManager.Direction neighbor)
     {
@@ -40,6 +46,18 @@ public class BlockSlot : MonoBehaviour
         return null;
     }
 
+    #endregion
+
+    protected Block block;
+    public virtual Block Block
+    {
+        get { return block; }
+    }
+
+    #endregion
+
+    #region Methods to Assign and Unassign Blocks
+
     public virtual void OnAssignment(Block obj)
     {
         block = obj;
@@ -49,23 +67,10 @@ public class BlockSlot : MonoBehaviour
         if (block == obj) block = null;
     }
 
-    public void MoveBlockHere(Block obj)
-    {
-        //Don't Change this, add to OnAssignment instead
-        obj.RawMoveTo(this);
-    }
-    public void SetBlock(BlockColor color, BlockType type)
-    {
-        DeleteBlock();
-        CreateBlock(color, type);
-    }
+    #endregion
 
-    protected void CreateBlock(BlockColor color, BlockType type)
-    {
-        Block newBlock = Instantiate(playGrid.blockObj, playGrid.position(x, y), Quaternion.identity, this.transform);
-        newBlock.SetBlockType(color, type);
-        MoveBlockHere(newBlock);
-    }
+    #region Methods to Create and Delete blocks
+
     public virtual void DeleteBlock()
     {
         if (block)
@@ -73,18 +78,32 @@ public class BlockSlot : MonoBehaviour
             block.Break();
         }
     }
+    protected void CreateBlock(BlockColor color, BlockType type)
+    {
+        Block newBlock = Instantiate(GameManager.instance.blockObj, playGrid.CoordsPosition(x, y), Quaternion.identity, this.transform);
+        newBlock.SetBlockType(color, type);
+        MoveBlockHere(newBlock);
+    }
+    public void SetBlock(BlockColor color, BlockType type)
+    {
+        DeleteBlock();
+        CreateBlock(color, type);
+    }
 
+    #endregion
+
+    #region Methods to update blocks
+
+    public void MoveBlockHere(Block obj)
+    {
+        //Don't Change this, add to OnAssignment instead
+        obj.RawMoveTo(this);
+    }
     public void UpdateBlock()
     {
-        if(block) block.UpdateBlock();
+        if (block) block.UpdateBlock();
     }
-    public static void SwapBlocks(BlockSlot obj1, BlockSlot obj2)
-    {
-        Block swap = obj1.Block;
-        obj1.MoveBlockHere(obj2.Block);
-        obj2.MoveBlockHere(swap);
 
-        obj1.UpdateBlock();
-        obj2.UpdateBlock();
-    }
+    #endregion
+
 }
