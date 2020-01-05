@@ -6,6 +6,7 @@ using UnityEngine;
 public class BlockType : ScriptableObject
 {
     public Sprite sprite;
+    public MoveRule[] moveRules;
     public BlockType ChangeTypeToOnDeath;
     public int FallDestroyThreshold;
 
@@ -13,120 +14,102 @@ public class BlockType : ScriptableObject
 
     protected virtual bool CanMoveToWithoutCrashing(Block block, BlockSlot slot)
     {
-        bool CheckIfSnake()
+        foreach(MoveRule rule in moveRules)
         {
-            if (slot && slot.Block && block && block.Tail)
-            {
-                return slot.Block.isPartOfSnake;
-            }
-            return false;
-        }
-        return
-            slot != null &&
-            GameManager.instance.HeightLimitIndicator.CheckHeightLimit(slot) &&
-            !CheckIfSnake();
-    }
-    public virtual bool CanBasicMoveTo(Block block, BlockSlot slot)
-    {
-        return
-            CanMoveToWithoutCrashing(block, slot) &&
-            slot.Block == null;
-    }
-    protected virtual bool CanAction(Block block, BlockSlot slot)
-    {
-        if (slot && slot.Block)
-        {
-            return slot.Block.blockColor == block.blockColor;
+            if (rule.CanMoveTo(block, slot)) return true;
         }
         return false;
     }
-    public virtual bool OverrideCrash(Block block, BlockSlot slot)
+    public virtual bool OverrideMove(Block block, BlockSlot slot)
     {
-        bool result = false;
-        if (slot && slot.Block && block && block.Tail)
-        {
-            result = slot.Block == block.Tail;
-        }
-        return result;
+        if (slot &&
+            slot.Block &&
+            block &&
+            block.Tail &&
+            slot.Block == block.Tail) return true;
+        return false;
     }
 
     #endregion
 
     #region Actions
 
-    protected virtual void Action(Block block, BlockSlot slot)
+    public virtual void OnBasicFall(Block block)
     {
-        if (CanAction(block, slot))
+        BlockSlot destination = block.Neighbor(GameManager.Direction.DOWN);
+        while (moveRules[0].CanMoveTo(block, destination) && destination.playGrid == block.Slot.playGrid)
         {
-            Block tail = null;
-            //BlockSlot oldLocation = block.Slot;
-            slot.Block.KillSnake();
-            slot.Block.ActionBreak();
-            block.BasicMoveTo(slot);
-            if (block.Tail) { tail = block.Tail; }
-
-            block.ActionBreak();
-            if (tail)
-            {
-                tail.BasicMoveTo(slot);
-            }
-            else
-            {
-                Crash(block, slot);
-            }
-
+            moveRules[0].OnMove(block, destination);
+            destination = block.Neighbor(GameManager.Direction.DOWN);
         }
+
+        //BlockSlot destination = block.Neighbor(GameManager.Direction.DOWN);
+        //while (
+        //    destination != null &&
+        //    destination.Block == null &&
+        //    destination.playGrid == block.Slot.playGrid
+        //    )
+        //{
+        //    block.RawMove(GameManager.Direction.DOWN);
+        //    destination = block.Neighbor(GameManager.Direction.DOWN);
+        //}
     }
     public virtual void OnActionFall(Block block)
     {
 
-        BlockSlot NextBlock = block.Neighbor(GameManager.Direction.UP);
-        bool NextBlockIsValid()
-        {
-            return NextBlock
-                && NextBlock.Block
-                && NextBlock.playGrid == block.Slot.playGrid;
-        }
-        BlockSlot OldLocation = block.Slot;
+        //BlockSlot NextBlock = block.Neighbor(GameManager.Direction.UP);
+        //bool NextBlockIsValid()
+        //{
+        //    return NextBlock
+        //        && NextBlock.Block
+        //        && NextBlock.playGrid == block.Slot.playGrid;
+        //}
+        //BlockSlot OldLocation = block.Slot;
 
         block.BasicFall();
-        BlockSlot FallenOnto = block.Neighbor(GameManager.Direction.DOWN);
+        //BlockSlot FallenOnto = block.Neighbor(GameManager.Direction.DOWN);
 
-        if (OldLocation.y - block.Slot.y >= FallDestroyThreshold && CanAction(block, FallenOnto))
-        {
-            Action(block, FallenOnto);
-        }
-        else
-        {
-            while (NextBlockIsValid())
-            {
-                BlockSlot Current = NextBlock;
-                NextBlock = Current.GetNeighbor(GameManager.Direction.UP);
-                Current.Block.BasicFall();
-            }
-        }
+        //if (OldLocation.y - block.Slot.y >= FallDestroyThreshold && CanActionMoveTo(block, FallenOnto))
+        //{
+        //    OnActionMove(block, FallenOnto);
+        //}
+        //else
+        //{
+        //    while (NextBlockIsValid())
+        //    {
+        //        BlockSlot Current = NextBlock;
+        //        NextBlock = Current.GetNeighbor(GameManager.Direction.UP);
+        //        Current.Block.BasicFall();
+        //    }
+        //}
     }
-    public virtual void OnActionMove(Block block, BlockSlot slot)
+
+    public virtual void OnMove(Block block, BlockSlot slot, int moveType)
     {
+        if (!OverrideMove(block, slot)) return;
+
+        moveRules[moveType].OnMove(block, slot);
+    }
+    public virtual void OnMove(Block block, BlockSlot slot)
+    {
+        if (OverrideMove(block, slot)) return;
+
         if (CanMoveToWithoutCrashing(block, slot))
         {
-            if (CanAction(block, slot))
+            for(int r = moveRules.Length - 1; r >= 0; r--)
             {
-                Action(block, slot);
-            }
-            else if (CanBasicMoveTo(block, slot))
-            {
-                block.BasicMoveTo(slot);
-            }
-            else
-            {
-                Crash(block, slot);
+                if (moveRules[r].CanMoveTo(block, slot))
+                {
+                    moveRules[r].OnMove(block, slot);
+                    break;
+                }
             }
         }
         else
         {
-            Crash(block, slot);
+            GameManager.instance.OnCrash();
         }
+
     }
     public virtual void OnActionBreak(Block block)
     {
@@ -141,7 +124,7 @@ public class BlockType : ScriptableObject
             else
             {
                 GameManager.instance.playerController.SnakeHead = null;
-                Crash(block, block.Slot);
+                GameManager.instance.OnCrash();
             }
         }
         if (ChangeTypeToOnDeath) block.SetBlockType(block.blockColor, ChangeTypeToOnDeath);
@@ -149,13 +132,5 @@ public class BlockType : ScriptableObject
 
     #endregion
 
-    //Tell the GameManager to end the round
-    protected void Crash(Block block, BlockSlot slot)
-    {
-        if (!OverrideCrash(block, slot))
-        {
-            block.KillSnake();
-            GameManager.instance.OnCrash();
-        }
-    }
+
 }

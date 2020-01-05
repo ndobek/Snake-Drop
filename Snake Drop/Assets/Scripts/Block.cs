@@ -144,20 +144,11 @@ public class Block : MonoBehaviour
     }
     public void BasicMoveTo(BlockSlot obj)
     {
-        if (blockType.CanBasicMoveTo(this, obj)) RawMoveTo(obj);
+        blockType.OnMove(this, obj, 0);
     }
-    public void BasicFall(bool StayOnSameGrid = true)
+    public void BasicFall()
     {
-        BlockSlot destination = Neighbor(GameManager.Direction.DOWN);
-        while (
-            destination != null &&
-            destination.Block == null &&
-            (!StayOnSameGrid | destination.playGrid == this.Slot.playGrid)
-            )
-        {
-            RawMove(GameManager.Direction.DOWN);
-            destination = Neighbor(GameManager.Direction.DOWN);
-        }
+        blockType.OnBasicFall(this);
     }
 
     #endregion
@@ -172,7 +163,7 @@ public class Block : MonoBehaviour
     }
     public void ActionMoveTo(BlockSlot obj)
     {
-        blockType.OnActionMove(this, obj);
+        blockType.OnMove(this, obj);
         GameManager.instance.CheckForRoundEnd();
     }
     public void ActionFall()

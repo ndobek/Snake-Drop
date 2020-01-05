@@ -52,6 +52,7 @@ public class GameManager : MonoBehaviour
     //}
     public void OnCrash()
     {
+        playerController.SnakeHead.KillSnake();
         RoundInProgress = false;
     }
     public void CheckForRoundEnd()
@@ -109,7 +110,7 @@ public class GameManager : MonoBehaviour
         FillPreviewBar();
         ResetMoveRestrictions();
         playerController.SnakeHead = waitSlot.Block;
-        playerController.SnakeHead.BasicMove(Direction.DOWN);
+        playerController.SnakeHead.RawMove(Direction.DOWN);
         FillPreviewBar();
         RoundInProgress = true;
     }

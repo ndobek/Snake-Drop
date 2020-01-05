@@ -13,5 +13,8 @@ MonoBehaviour:
   m_Name: Default
   m_EditorClassIdentifier: 
   sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  moveRules:
+  - {fileID: 11400000, guid: fdd0c6e77166ab240bf04b229ad0cb16, type: 2}
+  - {fileID: 11400000, guid: 03bf64b51ce470b478e794ec861ae897, type: 2}
   ChangeTypeToOnDeath: {fileID: 0}
   FallDestroyThreshold: 1
