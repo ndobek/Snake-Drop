@@ -37,22 +37,13 @@ public class BlockType : ScriptableObject
     public virtual void OnBasicFall(Block block)
     {
         BlockSlot destination = block.Neighbor(GameManager.Direction.DOWN);
-        while (moveRules[0].CanMoveTo(block, destination) && destination.playGrid == block.Slot.playGrid)
+        while (destination != null &&
+            destination.Block == null &&
+            destination.playGrid == block.Slot.playGrid)
         {
-            moveRules[0].OnMove(block, destination);
+            block.RawMoveTo(destination);
             destination = block.Neighbor(GameManager.Direction.DOWN);
         }
-
-        //BlockSlot destination = block.Neighbor(GameManager.Direction.DOWN);
-        //while (
-        //    destination != null &&
-        //    destination.Block == null &&
-        //    destination.playGrid == block.Slot.playGrid
-        //    )
-        //{
-        //    block.RawMove(GameManager.Direction.DOWN);
-        //    destination = block.Neighbor(GameManager.Direction.DOWN);
-        //}
     }
     public virtual void OnActionFall(Block block)
     {
@@ -69,9 +60,9 @@ public class BlockType : ScriptableObject
         block.BasicFall();
         //BlockSlot FallenOnto = block.Neighbor(GameManager.Direction.DOWN);
 
-        //if (OldLocation.y - block.Slot.y >= FallDestroyThreshold && CanActionMoveTo(block, FallenOnto))
+        //if (OldLocation.y - block.Slot.y >= FallDestroyThreshold && CanMoveToWithoutCrashing(block, FallenOnto))
         //{
-        //    OnActionMove(block, FallenOnto);
+        //    OnMove(block, FallenOnto);
         //}
         //else
         //{

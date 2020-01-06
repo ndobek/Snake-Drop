@@ -66,8 +66,7 @@ public class PlayerController : MonoBehaviour
         {
             mostRecentDirection = direction;
             SnakeHead.ActionMove(direction);
-            GameManager.instance.FillPreviewBar();
-            GameManager.instance.HeightLimitIndicator.LowerHeightLimit(SnakeHead.FindSnakeMaxY() + 2);
+            GameManager.instance.MidRound();
         }
     }
 

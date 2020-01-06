@@ -52,20 +52,28 @@ public class GameManager : MonoBehaviour
     //}
     public void OnCrash()
     {
-        playerController.SnakeHead.KillSnake();
         RoundInProgress = false;
     }
-    public void CheckForRoundEnd()
+    public void MidRound()
     {
         if (!RoundInProgress)
         {
             EndRound();
         }
+        else
+        {
+            HeightLimitIndicator.LowerHeightLimit(playerController.SnakeHead.FindSnakeMaxY() + 2);
+        }
     }
 
     private void EndRound()
     {
+        if (playerController.SnakeHead)
+        {
+            playerController.SnakeHead.KillSnake();
+        }
         playGrid.Fall(true);
+
         if (waitSlot.GetNeighbor(Direction.DOWN).Block != null)
         {
             EndGame();

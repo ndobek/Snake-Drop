@@ -2,51 +2,76 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LargeBlock : BlockType
+public class LargeBlock : Block
 {
     public int xSize;
     public int ySize;
 
     private BlockSlot[] BlockSlots;
-
-    private BlockSlot[] Build(Block block)
+    private int FlattenedIndex(int x, int y)
     {
-        List<BlockSlot> result = new List<BlockSlot>();
+        return y * xSize + x;
+    }
+
+    private void Build(Block block, int _xSize, int _ySize)
+    {
+        BlockSlot[] result = new BlockSlot[xSize*ySize];
+        xSize = _xSize;
+        ySize = _ySize;
 
         BlockSlot temp = block.Slot;
         for (int x = 0; x < xSize; x++)
         {
             for (int y = 0; y < ySize; y++)
             {
-                result.Add(temp);
+                result[FlattenedIndex(x,y)] = temp;
                 temp = temp.GetNeighbor(GameManager.Direction.DOWN);
             }
             temp = temp.GetNeighbor(GameManager.Direction.RIGHT);
         }
 
-        return result.ToArray();
+        BlockSlots = result;
     }
 
-    private void SizeCount(BlockSlot origin)
+    private bool CheckArea(BlockSlot origin, System.Func<BlockSlot, bool> action, bool defaultResult = true)
     {
-        int newXSize = DimensionSizeCount(origin, GameManager.Direction.RIGHT);
+        bool result = defaultResult;
 
-        for(int x = 0; x < newXSize; x++)
+        BlockSlot temp = origin;
+        for (int x = 0; x < xSize; x++)
         {
-            int tempY = DimensionSizeCount(origin.GetNeighbor(GameManager.Direction.RIGHT, x), GameManager.Direction.DOWN);
-            
+            for (int y = 0; y < ySize; y++)
+            {
+                bool tempResult = action.Invoke(temp);
+                if (tempResult != defaultResult) result = tempResult;
+                temp = temp.GetNeighbor(GameManager.Direction.DOWN);
+            }
+            temp = temp.GetNeighbor(GameManager.Direction.RIGHT);
         }
-    }
-    private int DimensionSizeCount(BlockSlot origin, GameManager.Direction direction)
-    {
-        int result = 0;
-        BlockSlot current = origin;
-        while(current.Block.blockColor == origin.Block.blockColor)
-        {
-            result += 1;
-            current = current.GetNeighbor(direction);
-        }
+
         return result;
     }
 
+    public override void RawMoveTo(BlockSlot obj)
+    {
+        base.RawMoveTo(obj);
+    }
+
+    public override void BasicMoveTo(BlockSlot obj)
+    {
+        bool BasicCheck(BlockSlot slot)
+        {
+            if (slot && slot.Block && slot.Block == this) return true;
+            return blockType.moveRules[0].CanMoveTo(this, obj);
+        }
+        if (CheckArea(obj, BasicCheck))
+        {
+            base.BasicMoveTo(obj);
+        }
+    }
+
+    public override void ActionMoveTo(BlockSlot obj)
+    {
+        base.ActionMoveTo(obj);
+    }
 }

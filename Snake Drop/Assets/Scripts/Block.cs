@@ -112,7 +112,7 @@ public class Block : MonoBehaviour
     {
         RawMoveTo(Neighbor(neighbor));
     }
-    public void RawMoveTo(BlockSlot obj)
+    public virtual void RawMoveTo(BlockSlot obj)
     {
         SetGridDirty();
         BlockSlot Old = Slot;
@@ -142,7 +142,7 @@ public class Block : MonoBehaviour
     {
         BasicMoveTo(Neighbor(neighbor));
     }
-    public void BasicMoveTo(BlockSlot obj)
+    public virtual void BasicMoveTo(BlockSlot obj)
     {
         blockType.OnMove(this, obj, 0);
     }
@@ -161,10 +161,9 @@ public class Block : MonoBehaviour
     {
         ActionMoveTo(Neighbor(neighbor));
     }
-    public void ActionMoveTo(BlockSlot obj)
+    public virtual void ActionMoveTo(BlockSlot obj)
     {
         blockType.OnMove(this, obj);
-        GameManager.instance.CheckForRoundEnd();
     }
     public void ActionFall()
     {
