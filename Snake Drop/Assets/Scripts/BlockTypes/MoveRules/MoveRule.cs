@@ -8,7 +8,6 @@ public abstract class MoveRule : ScriptableObject
     {
         if (slot == null) return false;
         if (!GameManager.instance.HeightLimitIndicator.CheckHeightLimit(slot)) return false;
-        if (slot.Block && slot.Block.isPartOfSnake) return false;
         return true;
     }
     public bool CanMoveTo(Block block, BlockSlot slot)

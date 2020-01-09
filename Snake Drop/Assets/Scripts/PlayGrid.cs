@@ -65,6 +65,11 @@ public class PlayGrid : MonoBehaviour
     {
         return y * xSize + x;
     }
+    private Vector2 Coords(int i)
+    {
+        return new Vector2(i % xSize, i / xSize);
+    }
+
     public BlockSlot GetSlot(int x, int y)
     {
         if (CheckInGrid(x, y)) return slots[FlattenedIndex(x, y)];
@@ -160,7 +165,7 @@ public class PlayGrid : MonoBehaviour
         for (int y = startingY; y < maxY; y++)
         {
             Block block = GetBlock(x, y);
-            if (block && block.Slot.playGrid == this)
+            if (block && block.Slot.playGrid == this && !block.isPartOfSnake)
             {
                 if (doTypeAction)
                 {
@@ -182,4 +187,149 @@ public class PlayGrid : MonoBehaviour
     }
 
     #endregion
+
+    private int[][] GridAndBoolToIntArray(System.Func<BlockSlot, bool> condition)
+    {
+        int[][] result = new int[xSize][];
+
+        for (int i = 0; i < xSize; i++)
+        {
+            result[i] = new int[ySize];
+            for (int j = 0; j < ySize; j++)
+            {
+                result[i][j] = condition(GetSlot(i, j)) ? 1 : 0;
+            }
+        }
+
+        return result;
+    }
+
+    public class RectInfo : IComparer
+    {
+        public Vector2 TopLeft;
+        public Vector2 BottomRight;
+        public int Area;
+
+        public int Compare(object obj1, object obj2)
+        {
+            RectInfo rect1 = obj1 as RectInfo;
+            RectInfo rect2 = obj2 as RectInfo;
+            if (rect1.Area == rect2.Area) return 0;
+            else return rect1.Area > rect2.Area ? 1 : -1;
+        }
+    }
+
+    public BlockCollection[] GetBlockCollections(System.Func<BlockSlot, bool> condition)
+    {
+        RectInfo[] AllRectangles = GetRectInArray(condition);
+
+        System.Array.Sort(AllRectangles);
+
+        List<BlockCollection> result = new List<BlockCollection>();
+        List<BlockSlot> addedSlots = new List<BlockSlot>();
+
+        foreach(RectInfo rect in AllRectangles)
+        {
+            BlockSlot[] SlotsInRect = RectToBlockSlots(rect);
+            bool AddRect = true;
+
+            foreach(BlockSlot slot in SlotsInRect)
+            {
+                if (addedSlots.Contains(slot))
+                {
+                    AddRect = false;
+                    break;
+                }
+            }
+
+            if (AddRect)
+            {
+                //NEED TO IMPLEMENT: Create new BlockCollection and Add it
+                addedSlots.AddRange(SlotsInRect);
+            }
+        }
+        return result.ToArray();
+
+    }
+
+    private BlockSlot[] RectToBlockSlots(RectInfo obj)
+    {
+        List<BlockSlot> result = new List<BlockSlot>();
+        for (int x = (int)obj.TopLeft.x; x < (int)obj.BottomRight.x; x++)
+        {
+            for (int y = (int)obj.TopLeft.y; y < (int)obj.BottomRight.y; y++)
+            {
+                Debug.Log("X: " + x + "Y: " + y);
+                result.Add(GetSlot(x, y));
+            }
+        }
+        return result.ToArray();
+    }
+
+    private RectInfo[] GetRectInArray(System.Func<BlockSlot, bool> condition)
+    {
+        int[][] grid = GridAndBoolToIntArray(condition);
+
+        //Probably some +1 -1 bullshit here
+        List<RectInfo> rectList = new List<RectInfo>(GetRectInsideHist(grid[0]));
+
+        for(int x = 1; x < xSize; x++)
+        {
+            for(int y = 0; y < ySize; y++)
+            {
+                if (grid[x][y] == 1) grid[x][y] += grid[x - 1][y];
+            }
+
+            rectList.AddRange(GetRectInsideHist(grid[x], x));
+        }
+
+        return rectList.ToArray();
+    }
+
+
+
+    private RectInfo[] GetRectInsideHist(int[] column, int xMod = 0)
+    {
+        List<RectInfo> result = new List<RectInfo>();
+        Stack<int> rectangleIndex = new Stack<int>();
+
+        int ySize = column.Length;
+        int i = 0;
+
+        void registerRect()
+        {
+
+            int x1 = xMod - column[rectangleIndex.Pop()];
+            int x2 = xMod;
+            int y1 = i;
+            int y2 = rectangleIndex.Count > 0 ? rectangleIndex.Peek() - 1 : 0;
+
+            RectInfo temp = new RectInfo
+            {
+                TopLeft = new Vector2(x1, y1),
+                BottomRight = new Vector2(x2, y2),
+                Area = (y1 - y2) * (x1 - x2)
+            };
+            Debug.Log(temp.TopLeft + " and "  + temp.BottomRight);
+            if (y1-y2 >= 2 && x1 - x2 >= 2) result.Add(temp);
+        }
+
+        while (i < ySize)
+        {
+            if (rectangleIndex.Count == 0 || column[rectangleIndex.Peek()] <= column[i])
+            {
+                rectangleIndex.Push(i++);
+            }
+            else
+            {
+                registerRect();
+            }
+        }
+
+        while (rectangleIndex.Count > 0)
+        {
+            registerRect();
+        }
+        return result.ToArray();
+    }
 }

@@ -46,10 +46,6 @@ public class GameManager : MonoBehaviour
         StartGame();
     }
 
-    //public void OnBlockDeath(Block obj)
-    //{
-    //    if (obj == playerController.SnakeHead) OnSnakeDeath(obj);
-    //}
     public void OnCrash()
     {
         RoundInProgress = false;
@@ -62,8 +58,16 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            HeightLimitIndicator.LowerHeightLimit(playerController.SnakeHead.FindSnakeMaxY() + 2);
+            playGrid.GetBlockCollections(Temp);
+            playGrid.Fall(false);
+            FillPreviewBar();
+            //HeightLimitIndicator.LowerHeightLimit(playerController.SnakeHead.FindSnakeMaxY() + 2);
         }
+    }
+
+    public bool Temp(BlockSlot obj)
+    {
+        return obj && obj.Block && obj.Block.blockColor == snakeMaker.possibleColors[0];
     }
 
     private void EndRound()
