@@ -104,7 +104,7 @@ public class GameManager : MonoBehaviour
 
     private void MakeSnake()
     {
-        snakeMaker.MakeSnake(25, .3f);
+        snakeMaker.MakeSnake(25, .1f);
     }
 
     public void StartGame()

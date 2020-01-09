@@ -15,7 +15,7 @@ MonoBehaviour:
   sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   moveRules:
   - {fileID: 11400000, guid: fdd0c6e77166ab240bf04b229ad0cb16, type: 2}
-  - {fileID: 11400000, guid: 1b673fd5462175e48aa16397ba3255d9, type: 2}
+  - {fileID: 11400000, guid: 03bf64b51ce470b478e794ec861ae897, type: 2}
   ChangeTypeToOnDeath: {fileID: 11400000, guid: f9f87476a3c72e741b635dd7da5b8050,
     type: 2}
   FallDestroyThreshold: 1

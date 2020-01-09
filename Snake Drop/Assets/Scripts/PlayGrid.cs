@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -204,18 +205,17 @@ public class PlayGrid : MonoBehaviour
         return result;
     }
 
-    public class RectInfo : IComparer
+    public class RectInfo : IComparable
     {
         public Vector2 TopLeft;
         public Vector2 BottomRight;
         public int Area;
 
-        public int Compare(object obj1, object obj2)
+        public int CompareTo(object obj)
         {
-            RectInfo rect1 = obj1 as RectInfo;
-            RectInfo rect2 = obj2 as RectInfo;
-            if (rect1.Area == rect2.Area) return 0;
-            else return rect1.Area > rect2.Area ? 1 : -1;
+            RectInfo rect2 = obj as RectInfo;
+            if (Area == rect2.Area) return 0;
+            else return Area < rect2.Area ? 1 : -1;
         }
     }
 
@@ -227,12 +227,12 @@ public class PlayGrid : MonoBehaviour
 
         List<BlockCollection> result = new List<BlockCollection>();
         List<BlockSlot> addedSlots = new List<BlockSlot>();
-
-        foreach(RectInfo rect in AllRectangles)
+        Debug.Log("UGH");
+        foreach (RectInfo rect in AllRectangles)
         {
             BlockSlot[] SlotsInRect = RectToBlockSlots(rect);
-            bool AddRect = true;
 
+            bool AddRect = true;
             foreach(BlockSlot slot in SlotsInRect)
             {
                 if (addedSlots.Contains(slot))
@@ -246,6 +246,7 @@ public class PlayGrid : MonoBehaviour
             {
                 //NEED TO IMPLEMENT: Create new BlockCollection and Add it
                 addedSlots.AddRange(SlotsInRect);
+                Debug.Log(rect.TopLeft + " and " + rect.BottomRight + "Area: " + rect.Area + " AddedSlots: " + addedSlots.Count);
             }
         }
         return result.ToArray();
@@ -255,11 +256,10 @@ public class PlayGrid : MonoBehaviour
     private BlockSlot[] RectToBlockSlots(RectInfo obj)
     {
         List<BlockSlot> result = new List<BlockSlot>();
-        for (int x = (int)obj.TopLeft.x; x < (int)obj.BottomRight.x; x++)
+        for (int x = (int)obj.TopLeft.x; x <= (int)obj.BottomRight.x; x++)
         {
-            for (int y = (int)obj.TopLeft.y; y < (int)obj.BottomRight.y; y++)
+            for (int y = (int)obj.BottomRight.y; y <= (int)obj.TopLeft.y; y++)
             {
-                Debug.Log("X: " + x + "Y: " + y);
                 result.Add(GetSlot(x, y));
             }
         }
@@ -270,7 +270,6 @@ public class PlayGrid : MonoBehaviour
     {
         int[][] grid = GridAndBoolToIntArray(condition);
 
-        //Probably some +1 -1 bullshit here
         List<RectInfo> rectList = new List<RectInfo>(GetRectInsideHist(grid[0]));
 
         for(int x = 1; x < xSize; x++)
@@ -299,19 +298,23 @@ public class PlayGrid : MonoBehaviour
         void registerRect()
         {
 
-            int x1 = xMod - column[rectangleIndex.Pop()];
+            int x1 = xMod - (column[rectangleIndex.Pop()] - 1);
             int x2 = xMod;
-            int y1 = i;
-            int y2 = rectangleIndex.Count > 0 ? rectangleIndex.Peek() - 1 : 0;
+            int y1 = i - 1;
+            int y2 = rectangleIndex.Count > 0 ? rectangleIndex.Peek() + 1 : 0;
 
             RectInfo temp = new RectInfo
             {
                 TopLeft = new Vector2(x1, y1),
                 BottomRight = new Vector2(x2, y2),
-                Area = (y1 - y2) * (x1 - x2)
+                Area = (y1 - (y2 - 1)) * (x2 - (x1 - 1))
             };
-            Debug.Log(temp.TopLeft + " and "  + temp.BottomRight);
-            if (y1-y2 >= 2 && x1 - x2 >= 2) result.Add(temp);
+
+            if (temp.Area > 0 /*&& y1 - y2 >= 2 && x1 - x2 >= 2*/)
+            {
+                result.Add(temp);
+
+            }
         }
 
         while (i < ySize)
