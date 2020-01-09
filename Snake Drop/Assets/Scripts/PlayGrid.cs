@@ -303,14 +303,17 @@ public class PlayGrid : MonoBehaviour
             int y1 = i - 1;
             int y2 = rectangleIndex.Count > 0 ? rectangleIndex.Peek() + 1 : 0;
 
+            int areaX = x2 - (x1 - 1);
+            int areaY = y1 - (y2 - 1);
+
             RectInfo temp = new RectInfo
             {
                 TopLeft = new Vector2(x1, y1),
                 BottomRight = new Vector2(x2, y2),
-                Area = (y1 - (y2 - 1)) * (x2 - (x1 - 1))
+                Area = areaX * areaY
             };
 
-            if (temp.Area > 0 /*&& y1 - y2 >= 2 && x1 - x2 >= 2*/)
+            if (areaX >= 2 && areaY >= 2)
             {
                 result.Add(temp);
 

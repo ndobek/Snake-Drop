@@ -58,8 +58,8 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            playGrid.GetBlockCollections(Temp);
             playGrid.Fall(false);
+            playGrid.GetBlockCollections(Temp);
             FillPreviewBar();
             //HeightLimitIndicator.LowerHeightLimit(playerController.SnakeHead.FindSnakeMaxY() + 2);
         }
