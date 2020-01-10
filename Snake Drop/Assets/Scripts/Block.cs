@@ -12,6 +12,7 @@ public class Block : MonoBehaviour
     public BlockType blockType;
     [HideInInspector]
     public BlockColor blockColor;
+    public BlockCollection BlockCollection;
     private BlockSlot slot;
     public BlockSlot Slot
     {
@@ -164,6 +165,10 @@ public class Block : MonoBehaviour
     public virtual void ActionMoveTo(BlockSlot obj)
     {
         blockType.OnMove(this, obj);
+    }
+    public bool CanMoveToWithoutCrashing(BlockSlot obj)
+    {
+        return blockType.CanMoveToWithoutCrashing(this, obj);
     }
     public void ActionFall()
     {

@@ -1,44 +1,80 @@
-﻿using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BlockCollection : Block
+public class BlockCollection : IComparable
 {
+    public int LeftCoord;
+    public int RightCoord;
+    public int TopCoord;
+    public int BottomCoord;
 
-    public int xSize;
-    public int ySize;
 
-    private BlockSlot[] BlockSlots;
+    public Block[] Blocks;
+
+    public int XSize() { return RightCoord - (LeftCoord - 1); }
+    public int YSize() { return TopCoord - (BottomCoord - 1); }
+
+    public int Area()
+    {
+        return XSize() * YSize();
+    }
+
+    public int CompareTo(object obj)
+    {
+        BlockCollection rect2 = obj as BlockCollection;
+        if (Area() == rect2.Area()) return 0;
+        else return Area() < rect2.Area() ? 1 : -1;
+    }
+
     private int FlattenedIndex(int x, int y)
     {
-        return y * xSize + x;
+        return y * XSize() + x;
     }
-    private Vector2 Coords(int i)
+    private Vector2 IndexToCoords(int i)
     {
-        return new Vector2(i % xSize, i / xSize);
+        return new Vector2(i % XSize(), i / XSize());
+    }
+    private int GridCoordsToIndex(int GridX, int GridY)
+    {
+        Vector2 Coords = GridToCollectionCoords(GridX, GridY);
+        return FlattenedIndex((int)Coords.x, (int)Coords.y);
+    }
+    public Vector2 GridToCollectionCoords(int GridX, int GridY)
+    {
+        return new Vector2(GridX - LeftCoord, GridY - BottomCoord);
+    }
+    public Vector2 GridToCollectionCoords(Block block)
+    {
+        return GridToCollectionCoords(block.X, block.Y);
+    }
+    public Vector2 GridToCollectionCoords(BlockSlot slot)
+    {
+        return GridToCollectionCoords(slot.x, slot.y);
+    }
+
+
+    public void Build(PlayGrid grid)
+    {
+        Blocks = new Block[XSize() * YSize()];
+
+        for (int x = LeftCoord; x <= RightCoord; x++)
+        {
+            for (int y = BottomCoord; y <= TopCoord; y++)
+            {
+                Add(grid.GetSlot(x, y).Block);
+            }
+        }
     }
 
 
 
-    //private void Build(Block block, int _xSize, int _ySize)
-    //{
-    //    BlockSlot[] result = new BlockSlot[xSize * ySize];
-    //    xSize = _xSize;
-    //    ySize = _ySize;
-
-    //    BlockSlot temp = block.Slot;
-    //    for (int x = 0; x < xSize; x++)
-    //    {
-    //        for (int y = 0; y < ySize; y++)
-    //        {
-    //            result[FlattenedIndex(x, y)] = temp;
-    //            temp = temp.GetNeighbor(GameManager.Direction.DOWN);
-    //        }
-    //        temp = temp.GetNeighbor(GameManager.Direction.RIGHT);
-    //    }
-
-    //    BlockSlots = result;
-    //}
+    public void Add(Block block)
+    {
+        block.SetBlockType(block.blockColor, GameManager.instance.collectionType);
+        Blocks[GridCoordsToIndex(block.X, block.Y)] = block;
+        block.BlockCollection = this;
+    }
 
     //private bool CheckArea(BlockSlot origin, System.Func<BlockSlot, bool> action, bool defaultResult = true)
     //{

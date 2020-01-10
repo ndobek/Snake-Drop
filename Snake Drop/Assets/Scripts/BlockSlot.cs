@@ -26,11 +26,14 @@ public class BlockSlot : MonoBehaviour
     public BlockSlot customUpNeighbor;
     public BlockSlot customDownNeighbor;
 
-    public BlockSlot GetNeighbor(GameManager.Direction neighbor)
+    public BlockSlot GetNeighbor(int x, int y)
     {
-        return GetNeighbor(neighbor, 1);
+        BlockSlot destination = this;
+        destination = destination.GetNeighbor(GameManager.Direction.RIGHT, x);
+        destination = destination.GetNeighbor(GameManager.Direction.UP, y);
+        return destination;
     }
-    public BlockSlot GetNeighbor(GameManager.Direction neighbor, int distance)
+    public BlockSlot GetNeighbor(GameManager.Direction neighbor, int distance = 1)
     {
         switch (neighbor)
         {

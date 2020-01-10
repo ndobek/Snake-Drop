@@ -12,7 +12,7 @@ public class BlockType : ScriptableObject
 
     #region Permissions
 
-    protected virtual bool CanMoveToWithoutCrashing(Block block, BlockSlot slot)
+    public virtual bool CanMoveToWithoutCrashing(Block block, BlockSlot slot)
     {
         foreach(MoveRule rule in moveRules)
         {
@@ -37,17 +37,33 @@ public class BlockType : ScriptableObject
     public virtual void OnBasicFall(Block block)
     {
         BlockSlot destination = block.Neighbor(GameManager.Direction.DOWN);
-        while (destination != null &&
-            destination.Block == null &&
-            destination.playGrid == block.Slot.playGrid)
+        while (moveRules[0].CanMoveTo(block, destination) && destination.playGrid == block.Slot.playGrid)
         {
-            block.RawMoveTo(destination);
+            OnMove(block, destination, 0);
             destination = block.Neighbor(GameManager.Direction.DOWN);
         }
+
+        //    BlockSlot destination = block.Neighbor(GameManager.Direction.DOWN);
+        //    while (destination != null &&
+        //        destination.Block == null &&
+        //        destination.playGrid == block.Slot.playGrid)
+        //    {
+        //        block.RawMoveTo(destination);
+        //        destination = block.Neighbor(GameManager.Direction.DOWN);
+        //    }
     }
     public virtual void OnActionFall(Block block)
     {
+        block.BasicFall();
 
+        //BlockSlot destination = block.Neighbor(GameManager.Direction.DOWN);
+        //while (CanMoveToWithoutCrashing(block, destination))
+        //{
+        //    OnMove(block, destination);
+        //    destination = block.Neighbor(GameManager.Direction.DOWN);
+        //}
+
+        //_____________________________________________________________
         //BlockSlot NextBlock = block.Neighbor(GameManager.Direction.UP);
         //bool NextBlockIsValid()
         //{
@@ -57,7 +73,7 @@ public class BlockType : ScriptableObject
         //}
         //BlockSlot OldLocation = block.Slot;
 
-        block.BasicFall();
+        //block.BasicFall();
         //BlockSlot FallenOnto = block.Neighbor(GameManager.Direction.DOWN);
 
         //if (OldLocation.y - block.Slot.y >= FallDestroyThreshold && CanMoveToWithoutCrashing(block, FallenOnto))
@@ -77,7 +93,7 @@ public class BlockType : ScriptableObject
 
     public virtual void OnMove(Block block, BlockSlot slot, int moveType)
     {
-        if (!OverrideMove(block, slot)) return;
+        if (OverrideMove(block, slot)) return;
 
         moveRules[moveType].OnMove(block, slot);
     }

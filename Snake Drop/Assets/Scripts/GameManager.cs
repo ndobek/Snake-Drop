@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     public Block blockObj;
     public BlockType defaultType;
     public BlockType snakeHeadType;
+    public BlockType collectionType;
 
     public GameObject gameOverScreen;
 
@@ -58,7 +59,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            playGrid.Fall(false);
+            playGrid.Fall(true);
             BlockMelder.Meld(playGrid, snakeMaker.possibleColors);
             FillPreviewBar();
             //HeightLimitIndicator.LowerHeightLimit(playerController.SnakeHead.FindSnakeMaxY() + 2);

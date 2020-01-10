@@ -4,33 +4,23 @@ using UnityEngine;
 
 public static class BlockMelder
 {
-    public class RectInfo : IComparable
-    {
-        public Vector2 TopLeft;
-        public Vector2 BottomRight;
-        public int Area;
-
-        public int CompareTo(object obj)
-        {
-            RectInfo rect2 = obj as RectInfo;
-            if (Area == rect2.Area) return 0;
-            else return Area < rect2.Area ? 1 : -1;
-        }
-    }
-
     public static void Meld(PlayGrid grid, BlockColor[] colors)
     {
         Debug.Log("ROUND");
         foreach (BlockColor color in colors)
         {
             Debug.Log(color.name);
-            BlockMelder.GetBlockCollections(grid, C => Temp(C, color));
+            BlockCollection[] Melded = BlockMelder.GetBlockCollections(grid, C => Temp(C, color));
+            foreach(BlockCollection obj in Melded)
+            {
+                obj.Build(grid);
+            }
         }
     }
 
     private static bool Temp(BlockSlot obj, BlockColor color)
     {
-        return obj && obj.Block && obj.Block.blockColor == color;
+        return obj && obj.Block && obj.Block.blockColor == color && obj.Block.isPartOfSnake == false;
     }
 
     private static BlockCollection[] GetBlockCollections(PlayGrid grid, System.Func<BlockSlot, bool> _condition)
@@ -47,11 +37,11 @@ public static class BlockMelder
         while (resultLength != addedSlots.Count)
         {
             resultLength = addedSlots.Count;
-            RectInfo[] AllRectangles = GetRectInArray(grid, condition);
+            BlockCollection[] AllRectangles = GetRectInArray(grid, condition);
 
             System.Array.Sort(AllRectangles);
 
-            foreach (RectInfo rect in AllRectangles)
+            foreach (BlockCollection rect in AllRectangles)
             {
                 BlockSlot[] SlotsInRect = RectToBlockSlots(grid, rect);
 
@@ -67,9 +57,9 @@ public static class BlockMelder
 
                 if (AddRect)
                 {
-                    //NEED TO IMPLEMENT: Create new BlockCollection and Add it
+                    result.Add(rect);
                     addedSlots.AddRange(SlotsInRect);
-                    Debug.Log(rect.TopLeft + " and " + rect.BottomRight + "Area: " + rect.Area);
+                    Debug.Log("Top: " + rect.TopCoord + " Bottom: " + rect.BottomCoord + " Left: " + rect.LeftCoord + " Right: " + rect.RightCoord + " Area: " + rect.Area());
                 }
             }
         }
@@ -77,12 +67,12 @@ public static class BlockMelder
 
     }
 
-    private static BlockSlot[] RectToBlockSlots(PlayGrid grid, RectInfo obj)
+    private static BlockSlot[] RectToBlockSlots(PlayGrid grid, BlockCollection obj)
     {
         List<BlockSlot> result = new List<BlockSlot>();
-        for (int x = (int)obj.TopLeft.x; x <= (int)obj.BottomRight.x; x++)
+        for (int x = obj.LeftCoord; x <= obj.RightCoord; x++)
         {
-            for (int y = (int)obj.BottomRight.y; y <= (int)obj.TopLeft.y; y++)
+            for (int y = obj.BottomCoord; y <= obj.TopCoord; y++)
             {
                 result.Add(grid.GetSlot(x, y));
             }
@@ -90,11 +80,11 @@ public static class BlockMelder
         return result.ToArray();
     }
 
-    private static RectInfo[] GetRectInArray(PlayGrid _grid, System.Func<BlockSlot, bool> condition)
+    private static BlockCollection[] GetRectInArray(PlayGrid _grid, System.Func<BlockSlot, bool> condition)
     {
         int[][] grid = _grid.GridAndBoolToIntArray(condition);
 
-        List<RectInfo> rectList = new List<RectInfo>(GetRectInsideHist(grid[0]));
+        List<BlockCollection> rectList = new List<BlockCollection>(GetRectInsideHist(grid[0]));
 
         for (int x = 1; x < _grid.XSize; x++)
         {
@@ -111,9 +101,9 @@ public static class BlockMelder
 
 
 
-    private static RectInfo[] GetRectInsideHist(int[] column, int xMod = 0)
+    private static BlockCollection[] GetRectInsideHist(int[] column, int xMod = 0)
     {
-        List<RectInfo> result = new List<RectInfo>();
+        List<BlockCollection> result = new List<BlockCollection>();
         Stack<int> rectangleIndex = new Stack<int>();
 
         int ySize = column.Length;
@@ -127,17 +117,15 @@ public static class BlockMelder
             int y1 = i - 1;
             int y2 = rectangleIndex.Count > 0 ? rectangleIndex.Peek() + 1 : 0;
 
-            int areaX = x2 - (x1 - 1);
-            int areaY = y1 - (y2 - 1);
-
-            RectInfo temp = new RectInfo
+            BlockCollection temp = new BlockCollection
             {
-                TopLeft = new Vector2(x1, y1),
-                BottomRight = new Vector2(x2, y2),
-                Area = areaX * areaY
+                TopCoord = y1,
+                BottomCoord = y2,
+                LeftCoord = x1,
+                RightCoord = x2
             };
 
-            if (areaX >= 2 && areaY >= 2)
+            if (temp.XSize() >= 2 && temp.YSize() >= 2)
             {
                 result.Add(temp);
 
