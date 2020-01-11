@@ -9,10 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6bd3250dde91e984ca21eb1cdd8190dc, type: 3}
-  m_Name: Default
+  m_Script: {fileID: 11500000, guid: eeb0f66548424514b8a7aa241130ddda, type: 3}
+  m_Name: ChangeSnakeHead
   m_EditorClassIdentifier: 
-  sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  moveRules:
-  - {fileID: 11400000, guid: fdd0c6e77166ab240bf04b229ad0cb16, type: 2}
-  breakRule: {fileID: 0}

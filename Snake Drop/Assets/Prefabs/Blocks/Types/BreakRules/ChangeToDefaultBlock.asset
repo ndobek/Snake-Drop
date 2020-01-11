@@ -9,10 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6bd3250dde91e984ca21eb1cdd8190dc, type: 3}
-  m_Name: Default
+  m_Script: {fileID: 11500000, guid: e5e90c4c0b4195f41a701df82c65af23, type: 3}
+  m_Name: ChangeToDefaultBlock
   m_EditorClassIdentifier: 
-  sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  moveRules:
-  - {fileID: 11400000, guid: fdd0c6e77166ab240bf04b229ad0cb16, type: 2}
-  breakRule: {fileID: 0}
+  ChangeTypeToOnDeath: {fileID: 11400000, guid: f9f87476a3c72e741b635dd7da5b8050,
+    type: 2}

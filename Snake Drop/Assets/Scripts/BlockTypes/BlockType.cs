@@ -7,8 +7,8 @@ public class BlockType : ScriptableObject
 {
     public Sprite sprite;
     public MoveRule[] moveRules;
-    public BlockType ChangeTypeToOnDeath;
-    public int FallDestroyThreshold;
+    public BreakRule[] breakRules;
+    //public int FallDestroyThreshold;
 
     #region Permissions
 
@@ -120,21 +120,10 @@ public class BlockType : ScriptableObject
     }
     public virtual void OnActionBreak(Block block)
     {
-        GameManager.instance.difficultyManager.Score += 1;
-
-        if (block == GameManager.instance.playerController.SnakeHead)
+        foreach(BreakRule rule in breakRules)
         {
-            if (block.Tail)
-            {
-                GameManager.instance.playerController.SnakeHead = block.Tail;
-            }
-            else
-            {
-                GameManager.instance.playerController.SnakeHead = null;
-                GameManager.instance.OnCrash();
-            }
+            rule.OnBreak(block);
         }
-        if (ChangeTypeToOnDeath) block.SetBlockType(block.blockColor, ChangeTypeToOnDeath);
     }
 
     #endregion
