@@ -15,4 +15,7 @@ MonoBehaviour:
   sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   moveRules:
   - {fileID: 11400000, guid: fdd0c6e77166ab240bf04b229ad0cb16, type: 2}
-  breakRule: {fileID: 0}
+  breakRules:
+  - {fileID: 11400000, guid: 595345747a046bb41bac30e35f67b6a0, type: 2}
+  fallRules:
+  - {fileID: 11400000, guid: 0f6b3328f7ee3ca4a94742c6b36e9c49, type: 2}

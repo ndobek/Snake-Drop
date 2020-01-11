@@ -4,10 +4,10 @@ using UnityEngine;
 
 public abstract class FallRule : ScriptableObject
 {
-    public void OnFall(Block block, BlockSlot slot)
+    public void OnFall(Block block)
     {
-        FallAction(block, slot);
+        FallAction(block);
     }
 
-    protected abstract void FallAction(Block block, BlockSlot slot);
+    protected abstract void FallAction(Block block);
 }

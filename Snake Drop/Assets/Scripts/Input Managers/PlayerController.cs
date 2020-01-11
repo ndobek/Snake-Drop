@@ -65,7 +65,7 @@ public class PlayerController : MonoBehaviour
         if (GameManager.instance.GameInProgress)
         {
             mostRecentDirection = direction;
-            SnakeHead.ActionMove(direction);
+            SnakeHead.Move(direction);
             GameManager.instance.MidRound();
         }
     }

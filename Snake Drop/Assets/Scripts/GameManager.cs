@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
     public SnakeMaker snakeMaker;
     public BlockSlot waitSlot;
 
+    public FallRule BasicFall;
+
     public Block blockObj;
     public BlockType defaultType;
     public BlockType snakeHeadType;
@@ -59,7 +61,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            playGrid.Fall(true);
+            playGrid.Fall();
             BlockMelder.Meld(playGrid, snakeMaker.possibleColors);
             FillPreviewBar();
             //HeightLimitIndicator.LowerHeightLimit(playerController.SnakeHead.FindSnakeMaxY() + 2);
@@ -72,7 +74,7 @@ public class GameManager : MonoBehaviour
         {
             playerController.SnakeHead.KillSnake();
         }
-        playGrid.Fall(true);
+        playGrid.Fall();
 
         if (waitSlot.GetNeighbor(Direction.DOWN).Block != null)
         {
@@ -86,7 +88,7 @@ public class GameManager : MonoBehaviour
 
     private void ShufflePreviewBar()
     {
-        previewGrid.Fall(false);
+        previewGrid.Fall(BasicFall);
         MakeSnake();
     }
     public void FillPreviewBar()

@@ -378,6 +378,7 @@ MonoBehaviour:
   HeightLimitIndicator: {fileID: 629374640}
   snakeMaker: {fileID: 1631618764}
   waitSlot: {fileID: 1055408767}
+  BasicFall: {fileID: 11400000, guid: 0f6b3328f7ee3ca4a94742c6b36e9c49, type: 2}
   blockObj: {fileID: 1568087265349854530, guid: 585e486e84721df45ac5626db1e6f54d,
     type: 3}
   defaultType: {fileID: 11400000, guid: f9f87476a3c72e741b635dd7da5b8050, type: 2}

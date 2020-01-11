@@ -82,7 +82,7 @@ public class BlockSlot : MonoBehaviour
     {
         if (block)
         {
-            block.Break();
+            block.RawBreak();
         }
     }
     protected void CreateBlock(BlockColor color, BlockType type)

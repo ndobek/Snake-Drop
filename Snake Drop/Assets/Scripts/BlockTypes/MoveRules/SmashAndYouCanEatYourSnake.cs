@@ -20,9 +20,9 @@ public class SmashAndYouCanEatYourSnake : MoveRule
         Block tail = null;
         if (block.Tail) { tail = block.Tail; }
         if (slot.Block && slot.Block.isPartOfSnake) slot.Block.KillSnake();
-        slot.Block.ActionBreak();
+        slot.Block.Break();
         block.RawMoveTo(slot);
-        block.ActionBreak();
+        block.Break();
         if (tail)
         {
             tail.RawMoveTo(slot);

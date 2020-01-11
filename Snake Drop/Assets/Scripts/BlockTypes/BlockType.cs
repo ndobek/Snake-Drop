@@ -8,6 +8,7 @@ public class BlockType : ScriptableObject
     public Sprite sprite;
     public MoveRule[] moveRules;
     public BreakRule[] breakRules;
+    public FallRule[] fallRules;
     //public int FallDestroyThreshold;
 
     #region Permissions
@@ -34,62 +35,65 @@ public class BlockType : ScriptableObject
 
     #region Actions
 
-    public virtual void OnBasicFall(Block block)
+    public virtual void OnFall(Block block)
     {
-        BlockSlot destination = block.Neighbor(GameManager.Direction.DOWN);
-        while (moveRules[0].CanMoveTo(block, destination) && destination.playGrid == block.Slot.playGrid)
+        foreach (FallRule rule in fallRules)
         {
-            OnMove(block, destination, 0);
-            destination = block.Neighbor(GameManager.Direction.DOWN);
+            rule.OnFall(block);
         }
-
-        //    BlockSlot destination = block.Neighbor(GameManager.Direction.DOWN);
-        //    while (destination != null &&
-        //        destination.Block == null &&
-        //        destination.playGrid == block.Slot.playGrid)
-        //    {
-        //        block.RawMoveTo(destination);
-        //        destination = block.Neighbor(GameManager.Direction.DOWN);
-        //    }
     }
-    public virtual void OnActionFall(Block block)
-    {
-        block.BasicFall();
 
-        //BlockSlot destination = block.Neighbor(GameManager.Direction.DOWN);
-        //while (CanMoveToWithoutCrashing(block, destination))
-        //{
-        //    OnMove(block, destination);
-        //    destination = block.Neighbor(GameManager.Direction.DOWN);
-        //}
+    //public virtual void OnBasicFall(Block block)
+    //{
 
-        //_____________________________________________________________
-        //BlockSlot NextBlock = block.Neighbor(GameManager.Direction.UP);
-        //bool NextBlockIsValid()
-        //{
-        //    return NextBlock
-        //        && NextBlock.Block
-        //        && NextBlock.playGrid == block.Slot.playGrid;
-        //}
-        //BlockSlot OldLocation = block.Slot;
 
-        //block.BasicFall();
-        //BlockSlot FallenOnto = block.Neighbor(GameManager.Direction.DOWN);
+    //    //    BlockSlot destination = block.Neighbor(GameManager.Direction.DOWN);
+    //    //    while (destination != null &&
+    //    //        destination.Block == null &&
+    //    //        destination.playGrid == block.Slot.playGrid)
+    //    //    {
+    //    //        block.RawMoveTo(destination);
+    //    //        destination = block.Neighbor(GameManager.Direction.DOWN);
+    //    //    }
+    //}
+    //public virtual void OnActionFall(Block block)
+    //{
+    //    block.BasicFall();
 
-        //if (OldLocation.y - block.Slot.y >= FallDestroyThreshold && CanMoveToWithoutCrashing(block, FallenOnto))
-        //{
-        //    OnMove(block, FallenOnto);
-        //}
-        //else
-        //{
-        //    while (NextBlockIsValid())
-        //    {
-        //        BlockSlot Current = NextBlock;
-        //        NextBlock = Current.GetNeighbor(GameManager.Direction.UP);
-        //        Current.Block.BasicFall();
-        //    }
-        //}
-    }
+    //    //BlockSlot destination = block.Neighbor(GameManager.Direction.DOWN);
+    //    //while (CanMoveToWithoutCrashing(block, destination))
+    //    //{
+    //    //    OnMove(block, destination);
+    //    //    destination = block.Neighbor(GameManager.Direction.DOWN);
+    //    //}
+
+    //    //_____________________________________________________________
+    //    //BlockSlot NextBlock = block.Neighbor(GameManager.Direction.UP);
+    //    //bool NextBlockIsValid()
+    //    //{
+    //    //    return NextBlock
+    //    //        && NextBlock.Block
+    //    //        && NextBlock.playGrid == block.Slot.playGrid;
+    //    //}
+    //    //BlockSlot OldLocation = block.Slot;
+
+    //    //block.BasicFall();
+    //    //BlockSlot FallenOnto = block.Neighbor(GameManager.Direction.DOWN);
+
+    //    //if (OldLocation.y - block.Slot.y >= FallDestroyThreshold && CanMoveToWithoutCrashing(block, FallenOnto))
+    //    //{
+    //    //    OnMove(block, FallenOnto);
+    //    //}
+    //    //else
+    //    //{
+    //    //    while (NextBlockIsValid())
+    //    //    {
+    //    //        BlockSlot Current = NextBlock;
+    //    //        NextBlock = Current.GetNeighbor(GameManager.Direction.UP);
+    //    //        Current.Block.BasicFall();
+    //    //    }
+    //    //}
+    //}
 
     public virtual void OnMove(Block block, BlockSlot slot, int moveType)
     {

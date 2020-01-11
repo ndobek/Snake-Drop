@@ -126,7 +126,7 @@ public class Block : MonoBehaviour
         }
         UpdateBlock();
     }
-    public void Break()
+    public void RawBreak()
     {
         SetGridDirty();
         Slot.OnUnassignment(this);
@@ -135,34 +135,19 @@ public class Block : MonoBehaviour
 
     #endregion
 
-    //Basic movement that follows game rules but doesn't do any special block actions
-    #region Basic Movement
-
-
-    public void BasicMove(GameManager.Direction neighbor)
+    public void Fall()
     {
-        BasicMoveTo(Neighbor(neighbor));
-    }
-    public virtual void BasicMoveTo(BlockSlot obj)
-    {
-        blockType.OnMove(this, obj, 0);
-    }
-    public void BasicFall()
-    {
-        blockType.OnBasicFall(this);
+        SetGridDirty();
+        blockType.OnFall(this);
     }
 
-    #endregion
-
-    //Movement that does special actions based on block type.
-    #region Action Movement
 
 
-    public void ActionMove(GameManager.Direction neighbor)
+    public void Move(GameManager.Direction neighbor)
     {
-        ActionMoveTo(Neighbor(neighbor));
+        MoveTo(Neighbor(neighbor));
     }
-    public virtual void ActionMoveTo(BlockSlot obj)
+    public virtual void MoveTo(BlockSlot obj)
     {
         blockType.OnMove(this, obj);
     }
@@ -170,19 +155,13 @@ public class Block : MonoBehaviour
     {
         return blockType.CanMoveToWithoutCrashing(this, obj);
     }
-    public void ActionFall()
-    {
-        blockType.OnActionFall(this);
-    }
-    public void ActionBreak()
+
+    public void Break()
     {
         blockType.OnActionBreak(this);
         Kill();
-        Break();
+        RawBreak();
     }
-
-    #endregion
-
 
     #endregion
 

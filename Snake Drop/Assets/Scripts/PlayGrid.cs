@@ -147,7 +147,7 @@ public class PlayGrid : MonoBehaviour
     {
         dirty = true;
     }
-    public void Fall(bool doTypeAction = false)
+    public void Fall(FallRule fallRule = null)
     {
         bool dirty = true;
 
@@ -156,25 +156,25 @@ public class PlayGrid : MonoBehaviour
             dirty = false;
             for (int x = 0; x < xSize; x++)
             {
-                Fall(x, 0, ySize, doTypeAction);
+                Fall(x, 0, ySize, fallRule);
             }
             UpdateGrid();
         }
     }
-    private void Fall(int x, int startingY, int maxY, bool doTypeAction = false)
+    private void Fall(int x, int startingY, int maxY, FallRule rule = null)
     {
         for (int y = startingY; y < maxY; y++)
         {
             Block block = GetBlock(x, y);
             if (block && block.Slot.playGrid == this && !block.isPartOfSnake)
             {
-                if (doTypeAction)
+                if (rule)
                 {
-                    block.ActionFall();
+                    rule.OnFall(block);
                 }
                 else
                 {
-                    block.BasicFall();
+                    block.Fall();
                 }
             }
         }
