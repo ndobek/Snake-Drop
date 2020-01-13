@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   moveRules:
-  - {fileID: 11400000, guid: e2a1b6a6888e11d46a14beb5f6e0ce76, type: 2}
+  - {fileID: 11400000, guid: 262227f8863056f44aebf48883a89c15, type: 2}
+  killRules: []
   breakRules:
-  - {fileID: 11400000, guid: be029645d149a544895f78b9f831133d, type: 2}
+  - {fileID: 11400000, guid: e8f676ce9a413824e8eba4055d456d47, type: 2}
   fallRules:
-  - {fileID: 11400000, guid: 02232484134bef648853f52dd4b65ff3, type: 2}
+  - {fileID: 11400000, guid: fa4d615adc4a25d45b91efc15f1a9f24, type: 2}

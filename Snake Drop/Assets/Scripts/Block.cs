@@ -58,8 +58,14 @@ public class Block : MonoBehaviour
     public Block Tail
     {
         get { return tail; }
-        set { tail = value; }
+        set { SetTail(value); }
     }
+    //private Block head;
+    //public Block Head
+    //{
+    //    get { return head; }
+    //    set { head = value; }
+    //}
 
     #endregion
 
@@ -83,16 +89,16 @@ public class Block : MonoBehaviour
 
         Highlight.enabled = isPartOfSnake;
     }
-    private void UpdateLocation()
+    private void UpdatePosition()
     {
         this.transform.SetParent(Slot.transform);
-        this.transform.localPosition = Vector3.zero;
+        this.transform.localPosition = Vector3.zero; /*Vector3.MoveTowards(this.transform.localPosition, Vector3.zero, .01f); */ /*ector3.Lerp(this.transform.localPosition, Vector3.zero, .1f);*/
         this.transform.localRotation = Quaternion.identity;
         this.transform.localScale = Vector3.one;
     }
     public void UpdateBlock()
     {
-        if(Slot) UpdateLocation();
+        if(Slot) UpdatePosition();
         UpdateSprite();
     }
 
@@ -159,7 +165,7 @@ public class Block : MonoBehaviour
 
     public void Break()
     {
-        blockType.OnActionBreak(this);
+        blockType.OnBreak(this);
     }
 
     #endregion
@@ -173,6 +179,7 @@ public class Block : MonoBehaviour
     public void SetTail(Block obj)
     {
         tail = obj;
+        //obj.Head = this;
     }
 
     public void ActivateSnake()
@@ -187,12 +194,7 @@ public class Block : MonoBehaviour
     public void Kill()
     {
         isPartOfSnake = false;
-        if (blockType == GameManager.instance.snakeHeadType)
-        {
-            blockType = GameManager.instance.defaultType;
-            GameManager.instance.playerController.SnakeHead = null;
-        }
-        UpdateBlock();
+        blockType.OnKill(this);
     }
     public void KillSnake()
     {

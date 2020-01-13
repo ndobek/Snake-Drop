@@ -147,7 +147,7 @@ public class PlayGrid : MonoBehaviour
     {
         dirty = true;
     }
-    public void Fall(FallRule fallRule = null)
+    public void Fall(Rule fallRule = null)
     {
         bool dirty = true;
 
@@ -162,7 +162,7 @@ public class PlayGrid : MonoBehaviour
         }
         BlockMelder.Meld(this, GameManager.instance.snakeMaker.possibleColors);
     }
-    private void Fall(int x, int startingY, int maxY, FallRule rule = null)
+    private void Fall(int x, int startingY, int maxY, Rule rule = null)
     {
         for (int y = startingY; y < maxY; y++)
         {
@@ -171,7 +171,7 @@ public class PlayGrid : MonoBehaviour
             {
                 if (rule)
                 {
-                    rule.OnFall(block);
+                    rule.Invoke(block);
                 }
                 else
                 {

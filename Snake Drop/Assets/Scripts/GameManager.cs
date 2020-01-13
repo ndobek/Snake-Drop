@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     public SnakeMaker snakeMaker;
     public BlockSlot waitSlot;
 
-    public FallRule BasicFall;
+    public Rule BasicFall;
 
     public Block blockObj;
     public BlockType defaultType;

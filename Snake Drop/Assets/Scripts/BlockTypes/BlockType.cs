@@ -7,9 +7,9 @@ public class BlockType : ScriptableObject
 {
     public Sprite sprite;
     public MoveRule[] moveRules;
-    public BreakRule[] killRules;
-    public BreakRule[] breakRules;
-    public FallRule[] fallRules;
+    public Rule[] killRules;
+    public Rule[] breakRules;
+    public Rule[] fallRules;
     //public int FallDestroyThreshold;
 
     #region Permissions
@@ -35,42 +35,6 @@ public class BlockType : ScriptableObject
     #endregion
 
     #region Actions
-
-    public virtual void OnFall(Block block)
-    {
-        foreach (FallRule rule in fallRules)
-        {
-            rule.OnFall(block);
-        }
-    }
-
-    //    //BlockSlot NextBlock = block.Neighbor(GameManager.Direction.UP);
-    //    //bool NextBlockIsValid()
-    //    //{
-    //    //    return NextBlock
-    //    //        && NextBlock.Block
-    //    //        && NextBlock.playGrid == block.Slot.playGrid;
-    //    //}
-    //    //BlockSlot OldLocation = block.Slot;
-
-    //    //block.BasicFall();
-    //    //BlockSlot FallenOnto = block.Neighbor(GameManager.Direction.DOWN);
-
-    //    //if (OldLocation.y - block.Slot.y >= FallDestroyThreshold && CanMoveToWithoutCrashing(block, FallenOnto))
-    //    //{
-    //    //    OnMove(block, FallenOnto);
-    //    //}
-    //    //else
-    //    //{
-    //    //    while (NextBlockIsValid())
-    //    //    {
-    //    //        BlockSlot Current = NextBlock;
-    //    //        NextBlock = Current.GetNeighbor(GameManager.Direction.UP);
-    //    //        Current.Block.BasicFall();
-    //    //    }
-    //    //}
-    //}
-
     public virtual void OnMove(Block block, BlockSlot slot, int moveType)
     {
         if (OverrideMove(block, slot)) return;
@@ -83,7 +47,7 @@ public class BlockType : ScriptableObject
 
         if (CanMoveToWithoutCrashing(block, slot))
         {
-            for(int r = moveRules.Length - 1; r >= 0; r--)
+            for (int r = moveRules.Length - 1; r >= 0; r--)
             {
                 if (moveRules[r].CanMoveTo(block, slot))
                 {
@@ -98,11 +62,28 @@ public class BlockType : ScriptableObject
         }
 
     }
-    public virtual void OnActionBreak(Block block)
+
+    public virtual void OnFall(Block block)
     {
-        foreach(BreakRule rule in breakRules)
+        foreach (Rule rule in fallRules)
         {
-            rule.OnBreak(block);
+            rule.Invoke(block);
+        }
+    }
+
+    public virtual void OnKill(Block block)
+    {
+        foreach (Rule rule in killRules)
+        {
+            rule.Invoke(block);
+        }
+    }
+
+    public virtual void OnBreak(Block block)
+    {
+        foreach(Rule rule in breakRules)
+        {
+            rule.Invoke(block);
         }
     }
 

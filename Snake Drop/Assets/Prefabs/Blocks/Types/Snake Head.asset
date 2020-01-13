@@ -14,11 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   moveRules:
-  - {fileID: 11400000, guid: fdd0c6e77166ab240bf04b229ad0cb16, type: 2}
-  - {fileID: 11400000, guid: 03bf64b51ce470b478e794ec861ae897, type: 2}
+  - {fileID: 11400000, guid: 92ab9aa1ed82ac94fbd2d0b8d9a0dc74, type: 2}
+  - {fileID: 11400000, guid: 1656d6f100c381f4ab01b18e07a6b5a3, type: 2}
+  killRules:
+  - {fileID: 11400000, guid: b860ed9adf5caab41a42f7943e50a471, type: 2}
+  - {fileID: 11400000, guid: 79bdd983b114e264187bc93fa88de4a4, type: 2}
   breakRules:
-  - {fileID: 11400000, guid: 595345747a046bb41bac30e35f67b6a0, type: 2}
-  - {fileID: 11400000, guid: e1d32df14c6817243b0b3427b24b1ce4, type: 2}
-  - {fileID: 11400000, guid: 2f31d97d466b67242b34550b42dddb4b, type: 2}
+  - {fileID: 11400000, guid: 9e892d7339cd12c43b3e36d096c29832, type: 2}
   fallRules:
-  - {fileID: 11400000, guid: 0f6b3328f7ee3ca4a94742c6b36e9c49, type: 2}
+  - {fileID: 11400000, guid: 2dbadd6a2f8700844a982e708c69da2d, type: 2}

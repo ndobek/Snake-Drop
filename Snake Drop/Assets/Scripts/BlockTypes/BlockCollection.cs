@@ -66,7 +66,21 @@ public class BlockCollection : IComparable
             }
         }
     }
+    public void UpdateCoords()
+    {
+        LeftCoord = Blocks[0].X;
+        RightCoord = Blocks[0].X;
+        TopCoord = Blocks[0].Y;
+        BottomCoord = Blocks[0].Y;
 
+        foreach (Block block in Blocks)
+        {
+            LeftCoord = Mathf.Min(block.X, LeftCoord);
+            RightCoord = Mathf.Max(block.X, RightCoord);
+            TopCoord = Mathf.Max(block.Y, TopCoord);
+            BottomCoord = Mathf.Min(block.Y, BottomCoord);
+        }
+    }
 
 
     public void Add(Block block)
