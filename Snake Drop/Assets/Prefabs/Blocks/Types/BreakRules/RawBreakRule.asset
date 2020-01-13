@@ -9,8 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5e90c4c0b4195f41a701df82c65af23, type: 3}
-  m_Name: ChangeToDefaultBlock
+  m_Script: {fileID: 11500000, guid: 6e5e5dfd96c8f2449976bca53aba5a4a, type: 3}
+  m_Name: RawBreakRule
   m_EditorClassIdentifier: 
-  ChangeTypeToOnDeath: {fileID: 11400000, guid: f9f87476a3c72e741b635dd7da5b8050,
-    type: 2}

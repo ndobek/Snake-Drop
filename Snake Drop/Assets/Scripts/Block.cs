@@ -129,6 +129,7 @@ public class Block : MonoBehaviour
     public void RawBreak()
     {
         SetGridDirty();
+        Kill();
         Slot.OnUnassignment(this);
         GameObject.Destroy(this.gameObject);
     }
@@ -159,8 +160,6 @@ public class Block : MonoBehaviour
     public void Break()
     {
         blockType.OnActionBreak(this);
-        Kill();
-        RawBreak();
     }
 
     #endregion
@@ -188,6 +187,11 @@ public class Block : MonoBehaviour
     public void Kill()
     {
         isPartOfSnake = false;
+        if (blockType == GameManager.instance.snakeHeadType)
+        {
+            blockType = GameManager.instance.defaultType;
+            GameManager.instance.playerController.SnakeHead = null;
+        }
         UpdateBlock();
     }
     public void KillSnake()

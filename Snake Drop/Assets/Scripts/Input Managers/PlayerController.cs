@@ -72,7 +72,7 @@ public class PlayerController : MonoBehaviour
 
     private void ActivateSnake(Block newSnakeHead)
     {
-        if(snakeHead) snakeHead.SetBlockType(snakeHead.blockColor, GameManager.instance.defaultType);
+        if (snakeHead) snakeHead.SetBlockType(snakeHead.blockColor, GameManager.instance.defaultType);
         if (newSnakeHead)
         {
             snakeHead = newSnakeHead;

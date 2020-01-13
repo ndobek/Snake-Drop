@@ -7,6 +7,7 @@ public class BlockType : ScriptableObject
 {
     public Sprite sprite;
     public MoveRule[] moveRules;
+    public BreakRule[] killRules;
     public BreakRule[] breakRules;
     public FallRule[] fallRules;
     //public int FallDestroyThreshold;
@@ -43,31 +44,6 @@ public class BlockType : ScriptableObject
         }
     }
 
-    //public virtual void OnBasicFall(Block block)
-    //{
-
-
-    //    //    BlockSlot destination = block.Neighbor(GameManager.Direction.DOWN);
-    //    //    while (destination != null &&
-    //    //        destination.Block == null &&
-    //    //        destination.playGrid == block.Slot.playGrid)
-    //    //    {
-    //    //        block.RawMoveTo(destination);
-    //    //        destination = block.Neighbor(GameManager.Direction.DOWN);
-    //    //    }
-    //}
-    //public virtual void OnActionFall(Block block)
-    //{
-    //    block.BasicFall();
-
-    //    //BlockSlot destination = block.Neighbor(GameManager.Direction.DOWN);
-    //    //while (CanMoveToWithoutCrashing(block, destination))
-    //    //{
-    //    //    OnMove(block, destination);
-    //    //    destination = block.Neighbor(GameManager.Direction.DOWN);
-    //    //}
-
-    //    //_____________________________________________________________
     //    //BlockSlot NextBlock = block.Neighbor(GameManager.Direction.UP);
     //    //bool NextBlockIsValid()
     //    //{

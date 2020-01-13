@@ -17,6 +17,13 @@ public class DifficultyManager : MonoBehaviour
     }
     public Text ScoreText;
 
+    public int SnakeLength;
+
+    public float SnakeEntropy;
+
+    public bool HeightLimit;
+    public int HeightLimitModifier;
+
     public void ResetGame()
     {
         Score = 0;

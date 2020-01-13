@@ -10,7 +10,7 @@ public static class BlockMelder
         foreach (BlockColor color in colors)
         {
             Debug.Log(color.name);
-            BlockCollection[] Melded = BlockMelder.GetBlockCollections(grid, C => Temp(C, color));
+            BlockCollection[] Melded = BlockMelder.GetBlockCollections(grid, C => Condition(C, color));
             foreach(BlockCollection obj in Melded)
             {
                 obj.Build(grid);
@@ -18,9 +18,9 @@ public static class BlockMelder
         }
     }
 
-    private static bool Temp(BlockSlot obj, BlockColor color)
+    private static bool Condition(BlockSlot obj, BlockColor color)
     {
-        return obj && obj.Block && obj.Block.blockColor == color && obj.Block.isPartOfSnake == false;
+        return obj && obj.Block && obj.Block.blockColor == color && obj.Block.isPartOfSnake == false && obj.Block.blockType ==  GameManager.instance.defaultType;
     }
 
     private static BlockCollection[] GetBlockCollections(PlayGrid grid, System.Func<BlockSlot, bool> _condition)

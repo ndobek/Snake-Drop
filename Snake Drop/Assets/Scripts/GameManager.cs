@@ -62,9 +62,8 @@ public class GameManager : MonoBehaviour
         else
         {
             playGrid.Fall();
-            BlockMelder.Meld(playGrid, snakeMaker.possibleColors);
             FillPreviewBar();
-            //HeightLimitIndicator.LowerHeightLimit(playerController.SnakeHead.FindSnakeMaxY() + 2);
+            if(difficultyManager.HeightLimit) HeightLimitIndicator.LowerHeightLimit(playerController.SnakeHead.FindSnakeMaxY() + difficultyManager.HeightLimitModifier);
         }
     }
 
@@ -102,7 +101,7 @@ public class GameManager : MonoBehaviour
 
     private void MakeSnake()
     {
-        snakeMaker.MakeSnake(25, .1f);
+        snakeMaker.MakeSnake(difficultyManager.SnakeLength, difficultyManager.SnakeEntropy);
     }
 
     public void StartGame()

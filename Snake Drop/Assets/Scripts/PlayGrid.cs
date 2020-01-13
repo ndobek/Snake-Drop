@@ -160,6 +160,7 @@ public class PlayGrid : MonoBehaviour
             }
             UpdateGrid();
         }
+        BlockMelder.Meld(this, GameManager.instance.snakeMaker.possibleColors);
     }
     private void Fall(int x, int startingY, int maxY, FallRule rule = null)
     {
