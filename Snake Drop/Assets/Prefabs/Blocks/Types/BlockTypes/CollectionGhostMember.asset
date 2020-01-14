@@ -10,13 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6bd3250dde91e984ca21eb1cdd8190dc, type: 3}
-  m_Name: CollectionMember
+  m_Name: CollectionGhostMember
   m_EditorClassIdentifier: 
-  sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  moveRules:
-  - {fileID: 11400000, guid: 262227f8863056f44aebf48883a89c15, type: 2}
+  sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  moveRules: []
   killRules: []
   breakRules:
-  - {fileID: 11400000, guid: e8f676ce9a413824e8eba4055d456d47, type: 2}
+  - {fileID: 0}
   fallRules:
-  - {fileID: 11400000, guid: fa4d615adc4a25d45b91efc15f1a9f24, type: 2}
+  - {fileID: 11400000, guid: d9a6b6c43d0635c4292510654ac76c03, type: 2}

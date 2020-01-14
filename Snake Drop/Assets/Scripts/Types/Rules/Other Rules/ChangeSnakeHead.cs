@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Blocks/BlockTypes/Rules/ChangeSnakeHead")]
+[CreateAssetMenu(menuName = "Rules/General/ChangeSnakeHead")]
 public class ChangeSnakeHead : Rule
 {
     protected override void Action(Block block)

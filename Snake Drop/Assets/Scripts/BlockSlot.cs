@@ -10,6 +10,8 @@ public class BlockSlot : MonoBehaviour
 
     public PlayGrid playGrid;
 
+    public SlotType slotType;
+
     public int x;
     public int y;
     public Vector2 Coords
@@ -55,10 +57,15 @@ public class BlockSlot : MonoBehaviour
 
     #endregion
 
-    protected Block block;
-    public virtual Block Block
+    [HideInInspector]
+    public List<Block> Blocks;
+    public Block Block
     {
-        get { return block; }
+        get
+        {
+            if (Blocks.Count > 0) return Blocks[0];
+            else return null;
+        }
     }
 
     #endregion
@@ -67,11 +74,13 @@ public class BlockSlot : MonoBehaviour
 
     public virtual void OnAssignment(Block obj)
     {
-        block = obj;
+        Blocks.Add(obj);
+        if (slotType) slotType.OnAssignment(obj);
     }
     public virtual void OnUnassignment(Block obj)
     {
-        if (block == obj) block = null;
+        if (slotType) slotType.OnUnassignment(obj);
+        if (Blocks.Contains(obj)) Blocks.Remove(obj);
     }
 
     #endregion
@@ -80,9 +89,9 @@ public class BlockSlot : MonoBehaviour
 
     public virtual void DeleteBlock()
     {
-        if (block)
+        for(int i = Blocks.Count; i > 0; i--)
         {
-            block.RawBreak();
+            Blocks[i-1].RawBreak();
         }
     }
     protected void CreateBlock(BlockColor color, BlockType type)
@@ -96,6 +105,10 @@ public class BlockSlot : MonoBehaviour
         DeleteBlock();
         CreateBlock(color, type);
     }
+    public bool CheckIsClear()
+    {
+        return Blocks.Count == 0;
+    }
 
     #endregion
 
@@ -108,7 +121,10 @@ public class BlockSlot : MonoBehaviour
     }
     public void UpdateBlock()
     {
-        if (block) block.UpdateBlock();
+        foreach (Block block in Blocks)
+        {
+            block.UpdateBlock();
+        }
     }
 
     #endregion

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-[CreateAssetMenu(menuName = "Blocks/BlockTypes/MoveRules/SmashButYouCanEatYourSnake")]
+[CreateAssetMenu(menuName = "Rules/MoveRule/SmashButYouCanEatYourSnake")]
 public class SmashAndYouCanEatYourSnakeMove : MoveRule
 {
     protected override bool MoveCondition(Block block, BlockSlot slot)

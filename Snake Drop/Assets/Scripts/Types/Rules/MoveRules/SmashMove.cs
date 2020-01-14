@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Blocks/BlockTypes/MoveRules/Smash")]
+[CreateAssetMenu(menuName = "Rules/MoveRule/Smash")]
 public class SmashMove : MoveRule
 {
     protected override bool MoveCondition(Block block, BlockSlot slot)

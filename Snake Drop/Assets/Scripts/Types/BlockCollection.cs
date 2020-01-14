@@ -11,6 +11,7 @@ public class BlockCollection : IComparable
 
 
     public Block[] Blocks;
+    public BlockSlot[] Slots;
 
     public int XSize() { return RightCoord - (LeftCoord - 1); }
     public int YSize() { return TopCoord - (BottomCoord - 1); }
@@ -57,12 +58,13 @@ public class BlockCollection : IComparable
     public void Build(PlayGrid grid)
     {
         Blocks = new Block[XSize() * YSize()];
+        Slots = new BlockSlot[XSize() * YSize()];
 
         for (int x = LeftCoord; x <= RightCoord; x++)
         {
             for (int y = BottomCoord; y <= TopCoord; y++)
             {
-                Add(grid.GetSlot(x, y).Block);
+                Add(grid.GetSlot(x, y));
             }
         }
     }
@@ -83,8 +85,12 @@ public class BlockCollection : IComparable
     }
 
 
-    public void Add(Block block)
+    public void Add(BlockSlot slot)
     {
+        Block block = slot.Block;
+
+        Slots[GridCoordsToIndex(block.X, block.Y)] = slot;
+
         block.SetBlockType(block.blockColor, GameManager.instance.collectionType);
         Blocks[GridCoordsToIndex(block.X, block.Y)] = block;
         block.BlockCollection = this;

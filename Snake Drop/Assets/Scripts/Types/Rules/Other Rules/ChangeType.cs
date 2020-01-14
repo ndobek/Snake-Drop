@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Blocks/BlockTypes/Rules/ChangeType")]
+[CreateAssetMenu(menuName = "Rules/General/ChangeType")]
 public class ChangeType : Rule
 {
     public BlockType ChangeTypeTo;

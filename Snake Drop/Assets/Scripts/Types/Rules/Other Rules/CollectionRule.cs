@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Blocks/BlockTypes/Rules/CollectionRule")]
+[CreateAssetMenu(menuName = "Rules/General/CollectionRule")]
 public class CollectionRule : Rule
 {
     public Rule Rule;

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Blocks/BlockColor")]
+[CreateAssetMenu(menuName = "Types/BlockColor")]
 public class BlockColor : ScriptableObject
 {
     //public Sprite sprite;

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Blocks/BlockTypes/BlockType")]
+[CreateAssetMenu(menuName = "Types/BlockType")]
 public class BlockType : ScriptableObject
 {
     public Sprite sprite;
@@ -67,7 +67,7 @@ public class BlockType : ScriptableObject
     {
         foreach (Rule rule in fallRules)
         {
-            rule.Invoke(block);
+            if (block && rule) rule.Invoke(block);
         }
     }
 
@@ -75,15 +75,15 @@ public class BlockType : ScriptableObject
     {
         foreach (Rule rule in killRules)
         {
-            rule.Invoke(block);
+            if (block && rule) rule.Invoke(block);
         }
     }
 
     public virtual void OnBreak(Block block)
     {
-        foreach(Rule rule in breakRules)
+        foreach (Rule rule in breakRules)
         {
-            rule.Invoke(block);
+            if (block && rule) rule.Invoke(block);
         }
     }
 

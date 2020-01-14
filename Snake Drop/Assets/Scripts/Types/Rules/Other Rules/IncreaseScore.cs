@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Blocks/BlockTypes/Rules/IncreaseScore")]
+[CreateAssetMenu(menuName = "Rules/General/IncreaseScore")]
 public class IncreaseScore : Rule
 {
     public int ScoreIncrease;

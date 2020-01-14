@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Blocks/BlockTypes/MoveRules/Basic")]
+[CreateAssetMenu(menuName = "Rules/MoveRule/Basic")]
 public class BasicMove : MoveRule
 {
     protected override bool MoveCondition(Block block, BlockSlot slot)

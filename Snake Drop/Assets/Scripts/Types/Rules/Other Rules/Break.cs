@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Blocks/BlockTypes/Rules/RawBreak")]
+[CreateAssetMenu(menuName = "Rules/General/RawBreak")]
 public class Break : Rule
 {
     protected override void Action(Block block)

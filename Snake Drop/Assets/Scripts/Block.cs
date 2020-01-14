@@ -126,8 +126,8 @@ public class Block : MonoBehaviour
         if (Old) Old.OnUnassignment(this);
         if (obj)
         {
-            obj.OnAssignment(this);
             slot = obj;
+            obj.OnAssignment(this);
             if (Tail != null) Tail.RawMoveTo(Old);
         }
         UpdateBlock();
@@ -165,6 +165,7 @@ public class Block : MonoBehaviour
 
     public void Break()
     {
+        SetGridDirty();
         blockType.OnBreak(this);
     }
 

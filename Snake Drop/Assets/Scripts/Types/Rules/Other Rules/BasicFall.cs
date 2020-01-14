@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Blocks/BlockTypes/Rules/BasicFall")]
+[CreateAssetMenu(menuName = "Rules/General/BasicFall")]
 public class BasicFall : Rule
 {
     public MoveRule BasicMoveRule;
