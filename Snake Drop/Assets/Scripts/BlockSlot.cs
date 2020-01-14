@@ -9,7 +9,6 @@ public class BlockSlot : MonoBehaviour
     #region Grid and Coordinates
 
     public PlayGrid playGrid;
-
     public SlotType slotType;
 
     public int x;
