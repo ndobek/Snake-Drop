@@ -85,6 +85,7 @@ public class Block : MonoBehaviour
         {
             BlockSprite.sprite = blockType.sprite;
             BlockSprite.color = blockColor.color;
+            BlockSprite.sortingOrder = blockType.sortingOrder;
         }
 
         Highlight.enabled = isPartOfSnake;

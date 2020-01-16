@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a87f7500d6e8e94299df392d9c691d3, type: 3}
+  m_Name: Break Collection If No Snake Head
+  m_EditorClassIdentifier: 
+  OnNoneOfType: {fileID: 11400000, guid: e8f676ce9a413824e8eba4055d456d47, type: 2}
+  Type: {fileID: 11400000, guid: 1bb708f6f67e7844993159c157df7353, type: 2}

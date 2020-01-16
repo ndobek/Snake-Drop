@@ -10,7 +10,9 @@ public static class BlockMelder
         foreach (BlockColor color in colors)
         {
             Debug.Log(color.name);
-            BlockCollection[] Melded = BlockMelder.GetBlockCollections(grid, C => Condition(C, color));
+            List<BlockCollection> Melded = BlockMelder.GetBlockCollections(grid, C => Condition(C, color));
+
+
             foreach(BlockCollection obj in Melded)
             {
                 obj.Build(grid);
@@ -23,7 +25,53 @@ public static class BlockMelder
         return obj && obj.Block && obj.Block.blockColor == color && obj.Block.isPartOfSnake == false && obj.Block.blockType ==  GameManager.instance.defaultType;
     }
 
-    private static BlockCollection[] GetBlockCollections(PlayGrid grid, System.Func<BlockSlot, bool> _condition)
+    private static List<BlockCollection> MeldCollections(List<BlockCollection> obj1, List<BlockCollection> obj2)
+    {
+        List<BlockCollection> result = new List<BlockCollection>();
+
+        foreach(BlockCollection collection1 in obj1)
+        {
+            foreach (BlockCollection collection2 in obj2)
+            {
+                if (
+                    (collection1.TopCoord == collection2.TopCoord && collection1.BottomCoord == collection2.BottomCoord) |
+                    (collection1.LeftCoord == collection2.LeftCoord && collection1.RightCoord == collection2.RightCoord)
+                    )
+                {
+                    result.Add(MeldTwoCollections(collection1, collection2));
+                }
+            }
+        }
+        return result;
+
+
+    }
+
+    private static BlockCollection MeldTwoCollections(BlockCollection obj1, BlockCollection obj2)
+    {
+        BlockCollection temp = new BlockCollection
+        {
+            TopCoord = Mathf.Max(obj1.TopCoord, obj2.TopCoord),
+            BottomCoord = Mathf.Min(obj1.BottomCoord, obj2.BottomCoord),
+            LeftCoord = Mathf.Min(obj1.LeftCoord, obj2.LeftCoord),
+            RightCoord = Mathf.Max(obj1.RightCoord, obj2.RightCoord)
+        };
+        return temp;
+    }
+
+    private static List<BlockCollection> GetOldBlockCollections(PlayGrid grid, System.Func<BlockSlot, bool> _condition)
+    {
+        List<BlockCollection> result = new List<BlockCollection>();
+        foreach(BlockSlot slot in grid.slots)
+        {
+            foreach(Block block in slot.Blocks)
+            {
+                if (block.BlockCollection != null && !result.Contains(block.BlockCollection) && _condition(block.Slot)) result.Add(block.BlockCollection);
+            }
+        }
+        return result;
+    }
+    private static List<BlockCollection> GetBlockCollections(PlayGrid grid, System.Func<BlockSlot, bool> _condition)
     {
         List<BlockCollection> result = new List<BlockCollection>();
         List<BlockSlot> addedSlots = new List<BlockSlot>();
@@ -37,9 +85,12 @@ public static class BlockMelder
         while (resultLength != addedSlots.Count)
         {
             resultLength = addedSlots.Count;
-            BlockCollection[] AllRectangles = GetRectInArray(grid, condition);
+            //List<BlockCollection> NewRects = GetRectInArray(grid, condition);
+            //List<BlockCollection> OldRects = GetOldBlockCollections(grid, condition);
+            //List<BlockCollection> MeldedRects = MeldCollections(NewRects, OldRects);
+            List<BlockCollection> AllRectangles = GetRectInArray(grid, condition);
 
-            System.Array.Sort(AllRectangles);
+            AllRectangles.Sort();
 
             foreach (BlockCollection rect in AllRectangles)
             {
@@ -63,7 +114,7 @@ public static class BlockMelder
                 }
             }
         }
-        return result.ToArray();
+        return result;
 
     }
 
@@ -80,7 +131,7 @@ public static class BlockMelder
         return result.ToArray();
     }
 
-    private static BlockCollection[] GetRectInArray(PlayGrid _grid, System.Func<BlockSlot, bool> condition)
+    private static List<BlockCollection> GetRectInArray(PlayGrid _grid, System.Func<BlockSlot, bool> condition)
     {
         int[][] grid = _grid.GridAndBoolToIntArray(condition);
 
@@ -96,12 +147,12 @@ public static class BlockMelder
             rectList.AddRange(GetRectInsideHist(grid[x], x));
         }
 
-        return rectList.ToArray();
+        return rectList;
     }
 
 
 
-    private static BlockCollection[] GetRectInsideHist(int[] column, int xMod = 0)
+    private static List<BlockCollection> GetRectInsideHist(int[] column, int xMod = 0)
     {
         List<BlockCollection> result = new List<BlockCollection>();
         Stack<int> rectangleIndex = new Stack<int>();
@@ -148,6 +199,6 @@ public static class BlockMelder
         {
             registerRect();
         }
-        return result.ToArray();
+        return result;
     }
 }

@@ -6,6 +6,7 @@ using UnityEngine;
 public class BlockType : ScriptableObject
 {
     public Sprite sprite;
+    public int sortingOrder;
     public MoveRule[] moveRules;
     public Rule[] killRules;
     public Rule[] breakRules;

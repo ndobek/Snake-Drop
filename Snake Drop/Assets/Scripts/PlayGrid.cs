@@ -61,7 +61,7 @@ public class PlayGrid : MonoBehaviour
     #region Slots and relevant methods
 
     [SerializeField]
-    private BlockSlot[] slots;
+    public BlockSlot[] slots;
     private int FlattenedIndex(int x, int y)
     {
         return y * xSize + x;

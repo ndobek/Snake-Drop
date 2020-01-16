@@ -9,6 +9,9 @@ public class BlockCollection : IComparable
     public int TopCoord;
     public int BottomCoord;
 
+    //Used in gameplay for when a snake is in a collection. Starts at one to account for when the collection first turns into a ghost
+    public int FillAmount = 1;
+
 
     public Block[] Blocks;
     public BlockSlot[] Slots;
@@ -54,6 +57,19 @@ public class BlockCollection : IComparable
         return GridToCollectionCoords(slot.x, slot.y);
     }
 
+    public bool CoordsAreInCollection(int x, int y)
+    {
+        bool xIn = x >= LeftCoord && x <= RightCoord;
+        bool yIn = y >= BottomCoord && y <= TopCoord;
+
+        return xIn && yIn;
+    }
+
+    public bool isFull()
+    {
+        return FillAmount >= Area();
+    }
+
 
     public void Build(PlayGrid grid)
     {
@@ -95,48 +111,4 @@ public class BlockCollection : IComparable
         Blocks[GridCoordsToIndex(block.X, block.Y)] = block;
         block.BlockCollection = this;
     }
-
-    //private bool CheckArea(BlockSlot origin, System.Func<BlockSlot, bool> action, bool defaultResult = true)
-    //{
-    //    bool result = defaultResult;
-
-    //    BlockSlot temp = origin;
-    //    for (int x = 0; x < xSize; x++)
-    //    {
-    //        for (int y = 0; y < ySize; y++)
-    //        {
-    //            bool tempResult = action.Invoke(temp);
-    //            if (tempResult != defaultResult) result = tempResult;
-    //            temp = temp.GetNeighbor(GameManager.Direction.DOWN);
-    //        }
-    //        temp = temp.GetNeighbor(GameManager.Direction.RIGHT);
-    //    }
-
-    //    return result;
-    //}
-
-    //public override void RawMoveTo(BlockSlot obj)
-    //{
-    //    base.RawMoveTo(obj);
-    //}
-
-    //public override void BasicMoveTo(BlockSlot obj)
-    //{
-    //    bool BasicCheck(BlockSlot slot)
-    //    {
-    //        if (slot && slot.Block && slot.Block == this) return true;
-    //        return blockType.moveRules[0].CanMoveTo(this, obj);
-    //    }
-
-
-    //    if (CheckArea(obj, BasicCheck))
-    //    {
-    //        base.BasicMoveTo(obj);
-    //    }
-    //}
-
-    //public override void ActionMoveTo(BlockSlot obj)
-    //{
-    //    base.ActionMoveTo(obj);
-    //}
 }

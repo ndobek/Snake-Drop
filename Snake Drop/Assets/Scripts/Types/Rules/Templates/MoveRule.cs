@@ -12,7 +12,7 @@ public abstract class MoveRule : ScriptableObject
     }
     public bool CanMoveTo(Block block, BlockSlot slot)
     {
-        return MoveCondition(block, slot) && UniversalRules(block, slot);
+        return UniversalRules(block, slot) && MoveCondition(block, slot);
     }
     public void OnMove(Block block, BlockSlot slot)
     {

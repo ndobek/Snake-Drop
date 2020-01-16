@@ -216,12 +216,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 0
   y: 11
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &8376858
 GameObject:
   m_ObjectHideFlags: 0
@@ -317,12 +319,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 0
   y: 5
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &9304146
 GameObject:
   m_ObjectHideFlags: 0
@@ -378,7 +382,7 @@ MonoBehaviour:
   HeightLimitIndicator: {fileID: 629374640}
   snakeMaker: {fileID: 1631618764}
   waitSlot: {fileID: 1055408767}
-  BasicFall: {fileID: 11400000, guid: 0f6b3328f7ee3ca4a94742c6b36e9c49, type: 2}
+  BasicFall: {fileID: 0}
   blockObj: {fileID: 1568087265349854530, guid: 585e486e84721df45ac5626db1e6f54d,
     type: 3}
   defaultType: {fileID: 11400000, guid: f9f87476a3c72e741b635dd7da5b8050, type: 2}
@@ -525,12 +529,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 4
   y: 1
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &41680411
 GameObject:
   m_ObjectHideFlags: 0
@@ -626,12 +632,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 8
   y: 4
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &45148491
 GameObject:
   m_ObjectHideFlags: 0
@@ -727,12 +735,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 3
   y: 13
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &52130615
 GameObject:
   m_ObjectHideFlags: 0
@@ -828,12 +838,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 9
   y: 0
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &52437275
 GameObject:
   m_ObjectHideFlags: 0
@@ -929,12 +941,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 0
   y: 4
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &53299343
 GameObject:
   m_ObjectHideFlags: 0
@@ -1030,12 +1044,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 3
   y: 0
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &68995128
 GameObject:
   m_ObjectHideFlags: 0
@@ -1131,12 +1147,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 8
   y: 17
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &72810460
 GameObject:
   m_ObjectHideFlags: 0
@@ -1232,12 +1250,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 10
   y: 18
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &76540311
 GameObject:
   m_ObjectHideFlags: 0
@@ -1333,12 +1353,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 4
   y: 15
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &87674137
 GameObject:
   m_ObjectHideFlags: 0
@@ -1384,12 +1406,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 1218598767}
+  slotType: {fileID: 0}
   x: 0
   y: 3
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!212 &87674140
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1535,12 +1559,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 2
   y: 12
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &98272152
 GameObject:
   m_ObjectHideFlags: 0
@@ -1636,12 +1662,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 2
   y: 17
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &123804265
 GameObject:
   m_ObjectHideFlags: 0
@@ -1737,12 +1765,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 5
   y: 12
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &128458774
 GameObject:
   m_ObjectHideFlags: 0
@@ -1838,12 +1868,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 8
   y: 2
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &134550562
 GameObject:
   m_ObjectHideFlags: 0
@@ -1939,12 +1971,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 8
   y: 11
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &149500945
 GameObject:
   m_ObjectHideFlags: 0
@@ -2040,12 +2074,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 8
   y: 3
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &163261094
 GameObject:
   m_ObjectHideFlags: 0
@@ -2141,12 +2177,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 10
   y: 2
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &209225534
 GameObject:
   m_ObjectHideFlags: 0
@@ -2242,12 +2280,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 7
   y: 0
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &218400983
 GameObject:
   m_ObjectHideFlags: 0
@@ -2343,12 +2383,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 3
   y: 18
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &232659001
 GameObject:
   m_ObjectHideFlags: 0
@@ -2573,12 +2615,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 8
   y: 16
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &244615017
 GameObject:
   m_ObjectHideFlags: 0
@@ -2674,12 +2718,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 2
   y: 4
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &256708237
 GameObject:
   m_ObjectHideFlags: 0
@@ -2775,12 +2821,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 6
   y: 0
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &258830556
 GameObject:
   m_ObjectHideFlags: 0
@@ -2826,12 +2874,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 1218598767}
+  slotType: {fileID: 0}
   x: 0
   y: 5
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!212 &258830559
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2913,12 +2963,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 10
   y: 19
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!212 &286243069
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3078,12 +3130,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 6
   y: 6
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &311835439
 GameObject:
   m_ObjectHideFlags: 0
@@ -3179,12 +3233,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 7
   y: 18
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &314592228
 GameObject:
   m_ObjectHideFlags: 0
@@ -3280,12 +3336,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 1
   y: 4
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &315568851
 GameObject:
   m_ObjectHideFlags: 0
@@ -3381,12 +3439,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 2
   y: 10
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &337125043
 GameObject:
   m_ObjectHideFlags: 0
@@ -3482,12 +3542,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 8
   y: 15
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &344562708
 GameObject:
   m_ObjectHideFlags: 0
@@ -3583,12 +3645,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 9
   y: 15
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &346940459
 GameObject:
   m_ObjectHideFlags: 0
@@ -3684,12 +3748,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 7
   y: 1
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &352613890
 GameObject:
   m_ObjectHideFlags: 0
@@ -3785,12 +3851,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 4
   y: 13
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &354576703
 GameObject:
   m_ObjectHideFlags: 0
@@ -4374,12 +4442,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 0
   y: 6
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &373129064
 GameObject:
   m_ObjectHideFlags: 0
@@ -4552,12 +4622,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 7
   y: 15
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &389155024
 GameObject:
   m_ObjectHideFlags: 0
@@ -4653,12 +4725,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 2
   y: 15
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &392134473
 GameObject:
   m_ObjectHideFlags: 0
@@ -4754,12 +4828,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 10
   y: 7
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &395705710
 GameObject:
   m_ObjectHideFlags: 0
@@ -4855,12 +4931,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 8
   y: 12
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &401193708
 GameObject:
   m_ObjectHideFlags: 0
@@ -4956,12 +5034,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 2
   y: 6
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &401398827
 GameObject:
   m_ObjectHideFlags: 0
@@ -5057,12 +5137,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 5
   y: 9
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &404439376
 GameObject:
   m_ObjectHideFlags: 0
@@ -5158,12 +5240,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 5
   y: 7
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &410638772
 GameObject:
   m_ObjectHideFlags: 0
@@ -5259,12 +5343,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 9
   y: 5
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &418378128
 GameObject:
   m_ObjectHideFlags: 0
@@ -5360,12 +5446,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 0
   y: 0
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &418949089
 GameObject:
   m_ObjectHideFlags: 0
@@ -5461,12 +5549,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 6
   y: 18
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &426613861
 GameObject:
   m_ObjectHideFlags: 0
@@ -5562,12 +5652,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 9
   y: 17
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &428641507
 GameObject:
   m_ObjectHideFlags: 0
@@ -5663,12 +5755,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 10
   y: 1
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &442410626
 GameObject:
   m_ObjectHideFlags: 0
@@ -5764,12 +5858,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 1
   y: 14
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &444230214
 GameObject:
   m_ObjectHideFlags: 0
@@ -5865,12 +5961,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 6
   y: 9
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &445484826
 GameObject:
   m_ObjectHideFlags: 0
@@ -5966,12 +6064,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 0
   y: 19
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &450672555
 GameObject:
   m_ObjectHideFlags: 0
@@ -6067,12 +6167,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 7
   y: 13
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &462609105
 GameObject:
   m_ObjectHideFlags: 0
@@ -6168,12 +6270,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 3
   y: 11
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &462888042
 GameObject:
   m_ObjectHideFlags: 0
@@ -6269,12 +6373,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 8
   y: 19
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &478315357
 GameObject:
   m_ObjectHideFlags: 0
@@ -6370,12 +6476,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 2
   y: 14
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &491034136
 GameObject:
   m_ObjectHideFlags: 0
@@ -6471,12 +6579,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 2
   y: 11
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &499824037
 GameObject:
   m_ObjectHideFlags: 0
@@ -6572,12 +6682,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 3
   y: 1
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &508023209
 GameObject:
   m_ObjectHideFlags: 0
@@ -6673,12 +6785,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 4
   y: 16
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &516322666
 GameObject:
   m_ObjectHideFlags: 0
@@ -6774,12 +6888,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 0
   y: 14
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -6958,12 +7074,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 10
   y: 15
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &540303977
 GameObject:
   m_ObjectHideFlags: 0
@@ -7059,12 +7177,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 3
   y: 3
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &550629149
 GameObject:
   m_ObjectHideFlags: 0
@@ -7160,12 +7280,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 9
   y: 11
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &551447316
 GameObject:
   m_ObjectHideFlags: 0
@@ -7261,12 +7383,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 2
   y: 19
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &564598167
 GameObject:
   m_ObjectHideFlags: 0
@@ -7362,12 +7486,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 1
   y: 10
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &565517573
 GameObject:
   m_ObjectHideFlags: 0
@@ -7463,12 +7589,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 3
   y: 15
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &582007112
 GameObject:
   m_ObjectHideFlags: 0
@@ -7564,12 +7692,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 1
   y: 1
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &585278276
 GameObject:
   m_ObjectHideFlags: 0
@@ -7665,12 +7795,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 8
   y: 5
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &588967588
 GameObject:
   m_ObjectHideFlags: 0
@@ -7766,12 +7898,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 0
   y: 17
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &599571140
 GameObject:
   m_ObjectHideFlags: 0
@@ -7867,12 +8001,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 1
   y: 12
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &600288612
 GameObject:
   m_ObjectHideFlags: 0
@@ -7968,12 +8104,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 8
   y: 0
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &601319519
 GameObject:
   m_ObjectHideFlags: 0
@@ -8069,12 +8207,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 0
   y: 12
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &601540271
 GameObject:
   m_ObjectHideFlags: 0
@@ -8170,12 +8310,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 1
   y: 6
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &602176281
 GameObject:
   m_ObjectHideFlags: 0
@@ -8271,12 +8413,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 8
   y: 14
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &623476793
 GameObject:
   m_ObjectHideFlags: 0
@@ -8372,12 +8516,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 1
   y: 5
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &626835665
 GameObject:
   m_ObjectHideFlags: 0
@@ -8473,12 +8619,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 3
   y: 7
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &627480771
 GameObject:
   m_ObjectHideFlags: 0
@@ -8574,12 +8722,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 9
   y: 3
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &628022665
 GameObject:
   m_ObjectHideFlags: 0
@@ -8675,12 +8825,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 7
   y: 19
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &629374637
 GameObject:
   m_ObjectHideFlags: 0
@@ -8873,12 +9025,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 4
   y: 2
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &658353171
 GameObject:
   m_ObjectHideFlags: 0
@@ -8974,12 +9128,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 1
   y: 13
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &667315737
 GameObject:
   m_ObjectHideFlags: 0
@@ -9152,12 +9308,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 4
   y: 6
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &723615775
 GameObject:
   m_ObjectHideFlags: 0
@@ -9253,12 +9411,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 0
   y: 9
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &724299547
 GameObject:
   m_ObjectHideFlags: 0
@@ -9354,12 +9514,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 4
   y: 3
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &730768067
 GameObject:
   m_ObjectHideFlags: 0
@@ -9455,12 +9617,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 4
   y: 17
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &732210438
 GameObject:
   m_ObjectHideFlags: 0
@@ -9556,12 +9720,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 3
   y: 4
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &764320995
 GameObject:
   m_ObjectHideFlags: 0
@@ -9657,12 +9823,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 5
   y: 13
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &768358192
 GameObject:
   m_ObjectHideFlags: 0
@@ -9758,12 +9926,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 6
   y: 7
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &775851353
 GameObject:
   m_ObjectHideFlags: 0
@@ -9859,12 +10029,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 7
   y: 11
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &783090001
 GameObject:
   m_ObjectHideFlags: 0
@@ -9960,12 +10132,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 3
   y: 10
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &793851081
 GameObject:
   m_ObjectHideFlags: 0
@@ -10061,12 +10235,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 5
   y: 16
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &794525209
 GameObject:
   m_ObjectHideFlags: 0
@@ -10162,12 +10338,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 9
   y: 16
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &798833571
 GameObject:
   m_ObjectHideFlags: 0
@@ -10263,12 +10441,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 1
   y: 7
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &802961467
 GameObject:
   m_ObjectHideFlags: 0
@@ -10314,12 +10494,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 1218598767}
+  slotType: {fileID: 0}
   x: 0
   y: 4
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!212 &802961470
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10465,12 +10647,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 0
   y: 10
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &807969001
 GameObject:
   m_ObjectHideFlags: 0
@@ -10566,12 +10750,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 0
   y: 15
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &811307024
 GameObject:
   m_ObjectHideFlags: 0
@@ -10667,12 +10853,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 2
   y: 9
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &817194028
 GameObject:
   m_ObjectHideFlags: 0
@@ -10768,12 +10956,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 6
   y: 2
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &832981117
 GameObject:
   m_ObjectHideFlags: 0
@@ -10869,12 +11059,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 3
   y: 12
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &836341243
 GameObject:
   m_ObjectHideFlags: 0
@@ -10970,12 +11162,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 2
   y: 13
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &839274446
 GameObject:
   m_ObjectHideFlags: 0
@@ -11071,12 +11265,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 5
   y: 17
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &854780864
 GameObject:
   m_ObjectHideFlags: 0
@@ -11172,12 +11368,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 5
   y: 11
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &855265015
 GameObject:
   m_ObjectHideFlags: 0
@@ -11273,12 +11471,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 2
   y: 18
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &867805149
 GameObject:
   m_ObjectHideFlags: 0
@@ -11374,12 +11574,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 7
   y: 12
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &920801766
 GameObject:
   m_ObjectHideFlags: 0
@@ -11475,12 +11677,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 9
   y: 1
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &926675931
 GameObject:
   m_ObjectHideFlags: 0
@@ -11576,12 +11780,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 0
   y: 13
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &946007803
 GameObject:
   m_ObjectHideFlags: 0
@@ -11677,12 +11883,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 4
   y: 18
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &956805694
 GameObject:
   m_ObjectHideFlags: 0
@@ -11778,12 +11986,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 3
   y: 2
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &970864358
 GameObject:
   m_ObjectHideFlags: 0
@@ -11879,12 +12089,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 1
   y: 15
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &976259071
 GameObject:
   m_ObjectHideFlags: 0
@@ -11980,12 +12192,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 5
   y: 15
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &983459222
 GameObject:
   m_ObjectHideFlags: 0
@@ -12081,12 +12295,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 6
   y: 8
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &995206483
 GameObject:
   m_ObjectHideFlags: 0
@@ -12182,12 +12398,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 10
   y: 11
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &995284813
 GameObject:
   m_ObjectHideFlags: 0
@@ -12283,12 +12501,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 5
   y: 3
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &997914389
 GameObject:
   m_ObjectHideFlags: 0
@@ -12384,12 +12604,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 7
   y: 4
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1000106398
 GameObject:
   m_ObjectHideFlags: 0
@@ -12485,12 +12707,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 8
   y: 13
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1004070222
 GameObject:
   m_ObjectHideFlags: 0
@@ -12586,12 +12810,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 8
   y: 6
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1034796367
 GameObject:
   m_ObjectHideFlags: 0
@@ -12687,12 +12913,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 0
   y: 2
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1039632587
 GameObject:
   m_ObjectHideFlags: 0
@@ -12788,12 +13016,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 4
   y: 0
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1055408765
 GameObject:
   m_ObjectHideFlags: 0
@@ -12839,12 +13069,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 1218598767}
+  slotType: {fileID: 0}
   x: 0
   y: 0
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 1500569675}
+  Blocks: []
 --- !u!212 &1055408768
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12990,12 +13222,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 2
   y: 3
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1072348816
 GameObject:
   m_ObjectHideFlags: 0
@@ -13091,12 +13325,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 2
   y: 8
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1073458211
 GameObject:
   m_ObjectHideFlags: 0
@@ -13192,12 +13428,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 1
   y: 18
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1084102851
 GameObject:
   m_ObjectHideFlags: 0
@@ -13293,12 +13531,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 1
   y: 2
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1103005204
 GameObject:
   m_ObjectHideFlags: 0
@@ -13394,12 +13634,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 6
   y: 4
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1105076008
 GameObject:
   m_ObjectHideFlags: 0
@@ -13495,12 +13737,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 4
   y: 8
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1107638605
 GameObject:
   m_ObjectHideFlags: 0
@@ -13596,12 +13840,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 7
   y: 17
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1112264964
 GameObject:
   m_ObjectHideFlags: 0
@@ -13697,12 +13943,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 2
   y: 2
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1125042893
 GameObject:
   m_ObjectHideFlags: 0
@@ -13798,12 +14046,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 6
   y: 3
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1163091463
 GameObject:
   m_ObjectHideFlags: 0
@@ -13899,12 +14149,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 2
   y: 5
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1164383055
 GameObject:
   m_ObjectHideFlags: 0
@@ -14000,12 +14252,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 4
   y: 9
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1166784846
 GameObject:
   m_ObjectHideFlags: 0
@@ -14101,12 +14355,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 10
   y: 4
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1175126663
 GameObject:
   m_ObjectHideFlags: 0
@@ -14202,12 +14458,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 5
   y: 5
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1218598765
 GameObject:
   m_ObjectHideFlags: 0
@@ -14371,12 +14629,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 6
   y: 11
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1224932304
 GameObject:
   m_ObjectHideFlags: 0
@@ -14472,12 +14732,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 5
   y: 10
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1244683139
 GameObject:
   m_ObjectHideFlags: 0
@@ -14573,12 +14835,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 7
   y: 7
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1253676350
 GameObject:
   m_ObjectHideFlags: 0
@@ -14674,12 +14938,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 9
   y: 4
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1261606975
 GameObject:
   m_ObjectHideFlags: 0
@@ -14775,12 +15041,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 10
   y: 8
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1263201260
 GameObject:
   m_ObjectHideFlags: 0
@@ -14876,12 +15144,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 8
   y: 1
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1266981039
 GameObject:
   m_ObjectHideFlags: 0
@@ -14977,12 +15247,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 9
   y: 10
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1277242719
 GameObject:
   m_ObjectHideFlags: 0
@@ -15078,12 +15350,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 0
   y: 1
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1283775144
 GameObject:
   m_ObjectHideFlags: 0
@@ -15179,12 +15453,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 10
   y: 13
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1288008086
 GameObject:
   m_ObjectHideFlags: 0
@@ -15280,12 +15556,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 5
   y: 1
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1294109593
 GameObject:
   m_ObjectHideFlags: 0
@@ -15381,12 +15659,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 10
   y: 10
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1295762930
 GameObject:
   m_ObjectHideFlags: 0
@@ -15482,12 +15762,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 7
   y: 16
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1297404566
 GameObject:
   m_ObjectHideFlags: 0
@@ -15583,12 +15865,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 10
   y: 0
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1302613804
 GameObject:
   m_ObjectHideFlags: 0
@@ -15684,12 +15968,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 1
   y: 0
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1305312231
 GameObject:
   m_ObjectHideFlags: 0
@@ -15785,12 +16071,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 1
   y: 16
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1309932251
 GameObject:
   m_ObjectHideFlags: 0
@@ -15886,12 +16174,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 10
   y: 14
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1352855996
 GameObject:
   m_ObjectHideFlags: 0
@@ -15987,12 +16277,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 1
   y: 9
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1354672010
 GameObject:
   m_ObjectHideFlags: 0
@@ -16088,12 +16380,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 7
   y: 9
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1374437831
 GameObject:
   m_ObjectHideFlags: 0
@@ -16189,12 +16483,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 3
   y: 9
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1380265859
 GameObject:
   m_ObjectHideFlags: 0
@@ -16290,12 +16586,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 9
   y: 14
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1397116139
 GameObject:
   m_ObjectHideFlags: 0
@@ -16391,12 +16689,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 5
   y: 6
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1403433070
 GameObject:
   m_ObjectHideFlags: 0
@@ -16492,12 +16792,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 0
   y: 7
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1404428678
 GameObject:
   m_ObjectHideFlags: 0
@@ -16593,12 +16895,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 6
   y: 5
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1408139161
 GameObject:
   m_ObjectHideFlags: 0
@@ -16694,12 +16998,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 3
   y: 14
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1426565839
 GameObject:
   m_ObjectHideFlags: 0
@@ -16795,12 +17101,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 3
   y: 5
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1427547993
 GameObject:
   m_ObjectHideFlags: 0
@@ -16896,12 +17204,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 10
   y: 17
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1429881954
 GameObject:
   m_ObjectHideFlags: 0
@@ -16997,12 +17307,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 7
   y: 14
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1438944169
 GameObject:
   m_ObjectHideFlags: 0
@@ -17134,12 +17446,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 5
   y: 18
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1449504198
 GameObject:
   m_ObjectHideFlags: 0
@@ -17235,12 +17549,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 7
   y: 3
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1464033264
 GameObject:
   m_ObjectHideFlags: 0
@@ -17336,12 +17652,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 9
   y: 18
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1486933188
 GameObject:
   m_ObjectHideFlags: 0
@@ -17437,12 +17755,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 4
   y: 11
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1500569674
 GameObject:
   m_ObjectHideFlags: 0
@@ -17474,12 +17794,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 5
   y: 19
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!4 &1500569676
 Transform:
   m_ObjectHideFlags: 0
@@ -17639,12 +17961,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 6
   y: 17
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1521515415
 GameObject:
   m_ObjectHideFlags: 0
@@ -17740,12 +18064,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 1
   y: 19
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1527256265
 GameObject:
   m_ObjectHideFlags: 0
@@ -17841,12 +18167,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 7
   y: 10
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1531284353
 GameObject:
   m_ObjectHideFlags: 0
@@ -17942,12 +18270,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 0
   y: 8
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1537992166
 GameObject:
   m_ObjectHideFlags: 0
@@ -18043,12 +18373,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 6
   y: 16
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1539778401
 GameObject:
   m_ObjectHideFlags: 0
@@ -18144,12 +18476,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 0
   y: 16
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1541142227
 GameObject:
   m_ObjectHideFlags: 0
@@ -18245,12 +18579,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 5
   y: 2
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1556522681
 GameObject:
   m_ObjectHideFlags: 0
@@ -18346,12 +18682,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 4
   y: 4
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1585923958
 GameObject:
   m_ObjectHideFlags: 0
@@ -18447,12 +18785,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 4
   y: 5
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1586708535
 GameObject:
   m_ObjectHideFlags: 0
@@ -18548,12 +18888,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 4
   y: 7
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1612939712
 GameObject:
   m_ObjectHideFlags: 0
@@ -18649,12 +18991,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 7
   y: 5
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1614301749
 GameObject:
   m_ObjectHideFlags: 0
@@ -18750,12 +19094,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 3
   y: 8
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1615749265
 GameObject:
   m_ObjectHideFlags: 0
@@ -18851,12 +19197,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 1
   y: 11
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1615859403
 GameObject:
   m_ObjectHideFlags: 0
@@ -18952,12 +19300,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 9
   y: 6
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1620477561
 GameObject:
   m_ObjectHideFlags: 0
@@ -19053,12 +19403,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 7
   y: 8
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1623497288
 GameObject:
   m_ObjectHideFlags: 0
@@ -19154,12 +19506,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 9
   y: 8
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1001 &1631618763
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19454,12 +19808,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 4
   y: 10
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1707474302
 GameObject:
   m_ObjectHideFlags: 0
@@ -19555,12 +19911,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 7
   y: 2
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1709405353
 GameObject:
   m_ObjectHideFlags: 0
@@ -19656,12 +20014,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 10
   y: 3
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1724599275
 GameObject:
   m_ObjectHideFlags: 0
@@ -19757,12 +20117,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 9
   y: 9
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1724666808
 GameObject:
   m_ObjectHideFlags: 0
@@ -19808,12 +20170,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 1218598767}
+  slotType: {fileID: 0}
   x: 0
   y: 7
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!212 &1724666811
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -19959,12 +20323,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 1
   y: 3
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1734155414
 GameObject:
   m_ObjectHideFlags: 0
@@ -20060,12 +20426,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 5
   y: 4
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1734314733
 GameObject:
   m_ObjectHideFlags: 0
@@ -20161,12 +20529,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 4
   y: 12
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1742360413
 GameObject:
   m_ObjectHideFlags: 0
@@ -20262,12 +20632,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 6
   y: 1
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1756125269
 GameObject:
   m_ObjectHideFlags: 0
@@ -20363,12 +20735,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 0
   y: 18
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1756155529
 GameObject:
   m_ObjectHideFlags: 0
@@ -20464,12 +20838,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 6
   y: 10
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1759684810
 GameObject:
   m_ObjectHideFlags: 0
@@ -20565,12 +20941,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 8
   y: 18
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1771217147
 GameObject:
   m_ObjectHideFlags: 0
@@ -20666,12 +21044,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 10
   y: 16
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1789025990
 GameObject:
   m_ObjectHideFlags: 0
@@ -20767,12 +21147,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 3
   y: 6
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1810414761
 GameObject:
   m_ObjectHideFlags: 0
@@ -20868,12 +21250,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 2
   y: 7
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1823947782
 GameObject:
   m_ObjectHideFlags: 0
@@ -20969,12 +21353,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 8
   y: 10
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1856427624
 GameObject:
   m_ObjectHideFlags: 0
@@ -21070,12 +21456,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 2
   y: 16
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1865510618
 GameObject:
   m_ObjectHideFlags: 0
@@ -21171,12 +21559,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 5
   y: 14
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1866114692
 GameObject:
   m_ObjectHideFlags: 0
@@ -21222,12 +21612,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 1218598767}
+  slotType: {fileID: 0}
   x: 0
   y: 1
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!212 &1866114695
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -21439,12 +21831,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 9
   y: 19
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1888595935
 GameObject:
   m_ObjectHideFlags: 0
@@ -21490,12 +21884,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 1218598767}
+  slotType: {fileID: 0}
   x: 0
   y: 2
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!212 &1888595938
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -21641,12 +22037,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 1
   y: 8
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1905313220
 GameObject:
   m_ObjectHideFlags: 0
@@ -21742,12 +22140,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 1
   y: 17
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1920598788
 GameObject:
   m_ObjectHideFlags: 0
@@ -21793,12 +22193,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 1218598767}
+  slotType: {fileID: 0}
   x: 0
   y: 8
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!212 &1920598791
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -21944,12 +22346,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 9
   y: 12
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1925855455
 GameObject:
   m_ObjectHideFlags: 0
@@ -22045,12 +22449,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 3
   y: 19
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1932173713
 GameObject:
   m_ObjectHideFlags: 0
@@ -22146,12 +22552,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 6
   y: 19
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1932630757
 GameObject:
   m_ObjectHideFlags: 0
@@ -22247,12 +22655,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 5
   y: 0
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1933080412
 GameObject:
   m_ObjectHideFlags: 0
@@ -22348,12 +22758,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 6
   y: 12
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1935412523
 GameObject:
   m_ObjectHideFlags: 0
@@ -22449,12 +22861,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 6
   y: 14
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1942063321
 GameObject:
   m_ObjectHideFlags: 0
@@ -22651,12 +23065,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 4
   y: 19
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1967129776
 GameObject:
   m_ObjectHideFlags: 0
@@ -22752,12 +23168,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 6
   y: 13
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1983731746
 GameObject:
   m_ObjectHideFlags: 0
@@ -22853,12 +23271,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 8
   y: 9
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &1994198977
 GameObject:
   m_ObjectHideFlags: 0
@@ -22954,12 +23374,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 9
   y: 2
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &2004236684
 GameObject:
   m_ObjectHideFlags: 0
@@ -23055,12 +23477,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 5
   y: 8
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &2011450588
 GameObject:
   m_ObjectHideFlags: 0
@@ -23156,12 +23580,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 10
   y: 6
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &2034196254
 GameObject:
   m_ObjectHideFlags: 0
@@ -23257,12 +23683,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 8
   y: 8
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &2040889718
 GameObject:
   m_ObjectHideFlags: 0
@@ -23358,12 +23786,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 10
   y: 9
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &2049709642
 GameObject:
   m_ObjectHideFlags: 0
@@ -23459,12 +23889,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 2
   y: 0
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &2052167743
 GameObject:
   m_ObjectHideFlags: 0
@@ -23560,12 +23992,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 0
   y: 3
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &2053185029
 GameObject:
   m_ObjectHideFlags: 0
@@ -23661,12 +24095,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 9
   y: 7
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &2061783568
 GameObject:
   m_ObjectHideFlags: 0
@@ -23762,12 +24198,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 4
   y: 14
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &2063090466
 GameObject:
   m_ObjectHideFlags: 0
@@ -23813,12 +24251,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 1218598767}
+  slotType: {fileID: 0}
   x: 0
   y: 6
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!212 &2063090469
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -23964,12 +24404,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 2
   y: 1
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &2087271787
 GameObject:
   m_ObjectHideFlags: 0
@@ -24065,12 +24507,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 8
   y: 7
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &2088425579
 GameObject:
   m_ObjectHideFlags: 0
@@ -24166,12 +24610,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 3
   y: 16
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &2097998417
 GameObject:
   m_ObjectHideFlags: 0
@@ -24267,12 +24713,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 6
   y: 15
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &2116947056
 GameObject:
   m_ObjectHideFlags: 0
@@ -24368,12 +24816,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 10
   y: 5
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &2118938885
 GameObject:
   m_ObjectHideFlags: 0
@@ -24469,12 +24919,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 3
   y: 17
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &2120153092
 GameObject:
   m_ObjectHideFlags: 0
@@ -24570,12 +25022,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 7
   y: 6
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &2124788520
 GameObject:
   m_ObjectHideFlags: 0
@@ -24671,12 +25125,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 9
   y: 13
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
 --- !u!1 &2130737837
 GameObject:
   m_ObjectHideFlags: 0
@@ -24772,9 +25228,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playGrid: {fileID: 354576705}
+  slotType: {fileID: 0}
   x: 10
   y: 12
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []
