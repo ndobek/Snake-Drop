@@ -7,9 +7,10 @@ public class SmashMove : MoveRule
 {
     protected override bool MoveCondition(Block block, BlockSlot slot)
     {
+
         if (slot && slot.Block)
         {
-            if (slot.Block && slot.Block.isPartOfSnake) return false;
+            if (slot.Block && !slot.Blocks.TrueForAll(Block.isNotPartOfSnake)) return false;
             return slot.Block.blockColor == block.blockColor;
         }
         return false;

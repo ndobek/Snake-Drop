@@ -16,6 +16,7 @@ public abstract class MoveRule : ScriptableObject
     }
     public void OnMove(Block block, BlockSlot slot)
     {
+        block.Slot.playGrid.SetDirty();
         if (CanMoveTo(block, slot)) MoveAction(block, slot);
     }
     protected abstract bool MoveCondition(Block block, BlockSlot slot);

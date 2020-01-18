@@ -39,16 +39,16 @@ public class BlockSlot : MonoBehaviour
         switch (neighbor)
         {
             case GameManager.Direction.RIGHT:
-                if (customRightNeighbor) return customRightNeighbor;
+                if (customRightNeighbor && distance > 0) return customRightNeighbor;
                 else return playGrid.GetSlot(x + distance, y);
             case GameManager.Direction.LEFT:
-                if (customLeftNeighbor) return customLeftNeighbor;
+                if (customLeftNeighbor && distance > 0) return customLeftNeighbor;
                 else return playGrid.GetSlot(x - distance, y);
             case GameManager.Direction.UP:
-                if (customUpNeighbor) return customUpNeighbor;
+                if (customUpNeighbor && distance > 0) return customUpNeighbor;
                 else return playGrid.GetSlot(x, y + distance);
             case GameManager.Direction.DOWN:
-                if (customDownNeighbor) return customDownNeighbor;
+                if (customDownNeighbor && distance > 0) return customDownNeighbor;
                 else return playGrid.GetSlot(x, y - distance);
         }
         return null;
@@ -122,7 +122,7 @@ public class BlockSlot : MonoBehaviour
     {
         foreach (Block block in Blocks)
         {
-            block.UpdateBlock();
+            if(block) block.UpdateBlock();
         }
     }
 

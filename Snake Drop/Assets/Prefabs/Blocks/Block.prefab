@@ -79,7 +79,7 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
+  m_MaskInteraction: 2
   m_SpriteSortPoint: 0
 --- !u!1 &5753319260277344402
 GameObject:
@@ -209,9 +209,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockType: {fileID: 0}
   blockColor: {fileID: 0}
-  Slot: {fileID: 0}
-  animateSpeed: 0.01
-  isPartOfSnake: 0
-  tail: {fileID: 0}
   BlockSprite: {fileID: 1414227870278718605}
   Highlight: {fileID: 4539331065496135913}

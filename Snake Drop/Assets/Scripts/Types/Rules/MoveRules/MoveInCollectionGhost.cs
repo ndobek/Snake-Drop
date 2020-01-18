@@ -8,14 +8,10 @@ public class MoveInCollectionGhost : MoveRule
 
     protected override bool MoveCondition(Block block, BlockSlot slot)
     {
-        bool isNotPartOfSnake(Block obj)
-        {
-            return !obj.isPartOfSnake;
-        }
 
         return slot.Block &&
             slot.Block.blockType == CollectionGhostMemberType && 
-            slot.Blocks.TrueForAll(isNotPartOfSnake);
+            slot.Blocks.TrueForAll(Block.isNotPartOfSnake);
     }
 
     protected override void MoveAction(Block block, BlockSlot slot)

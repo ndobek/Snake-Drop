@@ -167,7 +167,7 @@ public class PlayGrid : MonoBehaviour
         for (int y = startingY; y < maxY; y++)
         {
             Block block = GetBlock(x, y);
-            if (block && block.Slot.playGrid == this && !block.isPartOfSnake)
+            if (block && block.Slot.playGrid == this)
             {
                 if (rule)
                 {

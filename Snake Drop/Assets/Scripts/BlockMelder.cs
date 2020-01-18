@@ -6,10 +6,10 @@ public static class BlockMelder
 {
     public static void Meld(PlayGrid grid, BlockColor[] colors)
     {
-        Debug.Log("ROUND");
+        //Debug.Log("ROUND");
         foreach (BlockColor color in colors)
         {
-            Debug.Log(color.name);
+            //Debug.Log(color.name);
             List<BlockCollection> Melded = BlockMelder.GetBlockCollections(grid, C => Condition(C, color));
 
 
@@ -20,31 +20,55 @@ public static class BlockMelder
         }
     }
 
+    private static bool NewCollectionCondition(BlockSlot obj)
+    {
+        return obj && obj.Block && obj.Block.blockType == GameManager.instance.defaultType;
+    }
+    private static bool OldCollectionCondition(BlockSlot obj)
+    {
+        return true;
+    }
     private static bool Condition(BlockSlot obj, BlockColor color)
     {
-        return obj && obj.Block && obj.Block.blockColor == color && obj.Block.isPartOfSnake == false && obj.Block.blockType ==  GameManager.instance.defaultType;
+        return obj && obj.Block && obj.Block.blockColor == color && obj.Block.isPartOfSnake() == false;/* && obj.Block.blockType == GameManager.instance.defaultType;*/
     }
 
-    private static List<BlockCollection> MeldCollections(List<BlockCollection> obj1, List<BlockCollection> obj2)
+    private static List<BlockCollection> MeldCollections(List<BlockCollection> obj, List<BlockCollection> exclude = null)
     {
         List<BlockCollection> result = new List<BlockCollection>();
+        List<BlockCollection> used = new List<BlockCollection>();
+        bool changes = false;
 
-        foreach(BlockCollection collection1 in obj1)
+
+        foreach (BlockCollection collection1 in obj)
         {
-            foreach (BlockCollection collection2 in obj2)
+            foreach (BlockCollection collection2 in obj)
             {
-                if (
+                if ( collection1 != collection2 &&
+                    (
                     (collection1.TopCoord == collection2.TopCoord && collection1.BottomCoord == collection2.BottomCoord) |
                     (collection1.LeftCoord == collection2.LeftCoord && collection1.RightCoord == collection2.RightCoord)
                     )
+                    )
                 {
+                    changes = true;
                     result.Add(MeldTwoCollections(collection1, collection2));
+                    used.Add(collection1);
+                    used.Add(collection2);
                 }
             }
         }
+
+        foreach (BlockCollection collection in obj)
+        {
+            if (!used.Contains(collection) && (exclude == null || !exclude.Contains(collection)))
+            {
+                    result.Add(collection);
+            }
+        }
+
+        //if (changes) return MeldCollections(result);
         return result;
-
-
     }
 
     private static BlockCollection MeldTwoCollections(BlockCollection obj1, BlockCollection obj2)
@@ -85,10 +109,13 @@ public static class BlockMelder
         while (resultLength != addedSlots.Count)
         {
             resultLength = addedSlots.Count;
-            //List<BlockCollection> NewRects = GetRectInArray(grid, condition);
-            //List<BlockCollection> OldRects = GetOldBlockCollections(grid, condition);
-            //List<BlockCollection> MeldedRects = MeldCollections(NewRects, OldRects);
-            List<BlockCollection> AllRectangles = GetRectInArray(grid, condition);
+            List<BlockCollection> NewRects = GetRectInArray(grid, O => NewCollectionCondition(O) && condition(O));
+            List<BlockCollection> OldRects = GetOldBlockCollections(grid, O => OldCollectionCondition(O) && condition(O));
+
+            List<BlockCollection> AllRectangles = new List<BlockCollection>(NewRects);
+            AllRectangles.AddRange(OldRects);
+            AllRectangles = MeldCollections(AllRectangles, OldRects);
+
 
             AllRectangles.Sort();
 
@@ -110,7 +137,7 @@ public static class BlockMelder
                 {
                     result.Add(rect);
                     addedSlots.AddRange(SlotsInRect);
-                    Debug.Log("Top: " + rect.TopCoord + " Bottom: " + rect.BottomCoord + " Left: " + rect.LeftCoord + " Right: " + rect.RightCoord + " Area: " + rect.Area());
+                    //Debug.Log("Top: " + rect.TopCoord + " Bottom: " + rect.BottomCoord + " Left: " + rect.LeftCoord + " Right: " + rect.RightCoord + " Area: " + rect.Area());
                 }
             }
         }

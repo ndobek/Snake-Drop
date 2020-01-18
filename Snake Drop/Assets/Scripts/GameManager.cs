@@ -17,12 +17,13 @@ public class GameManager : MonoBehaviour
     public HeightLimitIndicator HeightLimitIndicator;
     public SnakeMaker snakeMaker;
     public BlockSlot waitSlot;
-
+    
     public Rule BasicFall;
 
     public Block blockObj;
     public BlockType defaultType;
     public BlockType snakeHeadType;
+    public BlockType snakeType;
     public BlockType collectionType;
 
     public GameObject gameOverScreen;

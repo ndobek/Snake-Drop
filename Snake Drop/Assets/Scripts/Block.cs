@@ -46,13 +46,27 @@ public class Block : MonoBehaviour
 
     public SpriteRenderer BlockSprite;
     public SpriteRenderer Highlight;
+    //public SpriteMask FillMask;
 
     #endregion
 
     #region Snake Data
 
-    [HideInInspector]
-    public bool isPartOfSnake;
+    //[HideInInspector]
+    //public bool isPartOfSnake;
+
+    public bool isPartOfSnake()
+    {
+        return isPartOfSnake(this);
+    }
+    public static bool isPartOfSnake(Block obj)
+    {
+        return obj.blockType == GameManager.instance.snakeHeadType | obj.blockType == GameManager.instance.snakeType;
+    }
+    public static bool isNotPartOfSnake(Block obj)
+    {
+        return !isPartOfSnake(obj);
+    }
 
     private Block tail;
     public Block Tail
@@ -88,18 +102,21 @@ public class Block : MonoBehaviour
             BlockSprite.sortingOrder = blockType.sortingOrder;
         }
 
-        Highlight.enabled = isPartOfSnake;
+        Highlight.enabled = isPartOfSnake();
     }
     private void UpdatePosition()
     {
-        this.transform.SetParent(Slot.transform);
-        this.transform.localPosition = Vector3.zero; /*Vector3.MoveTowards(this.transform.localPosition, Vector3.zero, .01f); */ /*ector3.Lerp(this.transform.localPosition, Vector3.zero, .1f);*/
-        this.transform.localRotation = Quaternion.identity;
-        this.transform.localScale = Vector3.one;
+        if (Slot)
+        {
+            this.transform.SetParent(Slot.transform);
+            this.transform.localPosition = Vector3.zero; /*Vector3.MoveTowards(this.transform.localPosition, Vector3.zero, .01f); */ /*ector3.Lerp(this.transform.localPosition, Vector3.zero, .1f);*/
+            this.transform.localRotation = Quaternion.identity;
+            this.transform.localScale = Vector3.one;
+        }
     }
     public void UpdateBlock()
     {
-        if(Slot) UpdatePosition();
+        UpdatePosition();
         UpdateSprite();
     }
 
@@ -131,6 +148,10 @@ public class Block : MonoBehaviour
             obj.OnAssignment(this);
             if (Tail != null) Tail.RawMoveTo(Old);
         }
+        else
+        {
+            throw new System.Exception("No Slot to move to");
+        }
         UpdateBlock();
     }
     public void RawBreak()
@@ -150,7 +171,6 @@ public class Block : MonoBehaviour
     }
 
 
-
     public void Move(GameManager.Direction neighbor)
     {
         MoveTo(Neighbor(neighbor));
@@ -163,6 +183,8 @@ public class Block : MonoBehaviour
     {
         return blockType.CanMoveToWithoutCrashing(this, obj);
     }
+
+
 
     public void Break()
     {
@@ -184,18 +206,18 @@ public class Block : MonoBehaviour
         //obj.Head = this;
     }
 
-    public void ActivateSnake()
-    {
-        if (tail != null)
-        {
-            tail.ActivateSnake();
-        }
-        isPartOfSnake = true;
-        UpdateBlock();
-    }
+    //public void ActivateSnake()
+    //{
+    //    if (tail != null)
+    //    {
+    //        tail.ActivateSnake();
+    //    }
+    //    isPartOfSnake = true;
+    //    UpdateBlock();
+    //}
+
     public void Kill()
     {
-        isPartOfSnake = false;
         blockType.OnKill(this);
     }
     public void KillSnake()

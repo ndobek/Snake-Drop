@@ -10,17 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6bd3250dde91e984ca21eb1cdd8190dc, type: 3}
-  m_Name: Snake Head
+  m_Name: SnakeMember
   m_EditorClassIdentifier: 
-  sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
   sortingOrder: 0
-  moveRules:
-  - {fileID: 11400000, guid: 92ab9aa1ed82ac94fbd2d0b8d9a0dc74, type: 2}
-  - {fileID: 11400000, guid: 1656d6f100c381f4ab01b18e07a6b5a3, type: 2}
-  - {fileID: 11400000, guid: 9e55e9c83562a514d8e32d15a967f646, type: 2}
+  moveRules: []
   killRules:
   - {fileID: 11400000, guid: b860ed9adf5caab41a42f7943e50a471, type: 2}
-  - {fileID: 11400000, guid: 79bdd983b114e264187bc93fa88de4a4, type: 2}
-  breakRules:
-  - {fileID: 11400000, guid: 9e892d7339cd12c43b3e36d096c29832, type: 2}
+  breakRules: []
   fallRules: []

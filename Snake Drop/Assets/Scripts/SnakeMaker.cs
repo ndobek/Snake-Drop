@@ -17,7 +17,7 @@ public class SnakeMaker : BlockSlot
             for (int i = 1; i < length; i++)
             {
                 if (Random.value < entropy) color = Random.Range(0, possibleColors.Length);
-                CreateBlock(possibleColors[color], GameManager.instance.defaultType);
+                CreateBlock(possibleColors[color], GameManager.instance.snakeType);
                 //Blocks[i].isPartOfSnake = true;
                 if (i > 0) Blocks[i - 1].SetTail(Blocks[i]);
             }

@@ -77,7 +77,7 @@ public class PlayerController : MonoBehaviour
         {
             snakeHead = newSnakeHead;
             snakeHead.SetBlockType(snakeHead.blockColor, GameManager.instance.snakeHeadType);
-            snakeHead.ActivateSnake();
+            //snakeHead.ActivateSnake();
         }
         else
         {
