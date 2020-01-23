@@ -46,14 +46,10 @@ public class Block : MonoBehaviour
 
     public SpriteRenderer BlockSprite;
     public SpriteRenderer Highlight;
-    //public SpriteMask FillMask;
 
     #endregion
 
     #region Snake Data
-
-    //[HideInInspector]
-    //public bool isPartOfSnake;
 
     public bool isPartOfSnake()
     {
@@ -61,7 +57,7 @@ public class Block : MonoBehaviour
     }
     public static bool isPartOfSnake(Block obj)
     {
-        return obj.blockType == GameManager.instance.snakeHeadType | obj.blockType == GameManager.instance.snakeType;
+        return obj.blockType.isPartOfSnake;
     }
     public static bool isNotPartOfSnake(Block obj)
     {
@@ -74,12 +70,6 @@ public class Block : MonoBehaviour
         get { return tail; }
         set { SetTail(value); }
     }
-    //private Block head;
-    //public Block Head
-    //{
-    //    get { return head; }
-    //    set { head = value; }
-    //}
 
     #endregion
 
@@ -169,8 +159,6 @@ public class Block : MonoBehaviour
         SetGridDirty();
         blockType.OnFall(this);
     }
-
-
     public void Move(GameManager.Direction neighbor)
     {
         MoveTo(Neighbor(neighbor));
@@ -183,8 +171,6 @@ public class Block : MonoBehaviour
     {
         return blockType.CanMoveToWithoutCrashing(this, obj);
     }
-
-
 
     public void Break()
     {
@@ -203,18 +189,7 @@ public class Block : MonoBehaviour
     public void SetTail(Block obj)
     {
         tail = obj;
-        //obj.Head = this;
     }
-
-    //public void ActivateSnake()
-    //{
-    //    if (tail != null)
-    //    {
-    //        tail.ActivateSnake();
-    //    }
-    //    isPartOfSnake = true;
-    //    UpdateBlock();
-    //}
 
     public void Kill()
     {

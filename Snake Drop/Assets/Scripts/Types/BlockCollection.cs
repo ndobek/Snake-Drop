@@ -12,7 +12,6 @@ public class BlockCollection : IComparable
     //Used in gameplay for when a snake is in a collection. Starts at one to account for when the collection first turns into a ghost
     public int FillAmount = 1;
 
-
     public Block[] Blocks;
     public BlockSlot[] Slots;
 
@@ -84,6 +83,7 @@ public class BlockCollection : IComparable
             }
         }
     }
+
     public void UpdateCoords()
     {
         LeftCoord = Blocks[0].X;
@@ -101,12 +101,11 @@ public class BlockCollection : IComparable
     }
 
 
-    public void Add(BlockSlot slot)
+    private void Add(BlockSlot slot)
     {
         Slots[GridCoordsToIndex(slot.x, slot.y)] = slot;
-
-
     }
+
     public void SetType(BlockType type)
     {
         foreach(BlockSlot slot in Slots)

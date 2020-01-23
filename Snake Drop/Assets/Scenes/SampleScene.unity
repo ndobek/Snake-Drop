@@ -420,8 +420,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ScoreText: {fileID: 667315739}
-  SnakeLength: 15
-  SnakeEntropy: 0
+  SnakeLength: 20
+  SnakeEntropy: 0.3
   HeightLimit: 0
   HeightLimitModifier: 2
 --- !u!114 &9304151

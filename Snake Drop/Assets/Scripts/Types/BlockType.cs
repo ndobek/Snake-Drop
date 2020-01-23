@@ -7,11 +7,13 @@ public class BlockType : ScriptableObject
 {
     public Sprite sprite;
     public int sortingOrder;
+
+    public bool isPartOfSnake;
+
     public MoveRule[] moveRules;
     public Rule[] killRules;
     public Rule[] breakRules;
     public Rule[] fallRules;
-    //public int FallDestroyThreshold;
 
     #region Permissions
 
@@ -63,7 +65,6 @@ public class BlockType : ScriptableObject
         }
 
     }
-
     public virtual void OnFall(Block block)
     {
         foreach (Rule rule in fallRules)
