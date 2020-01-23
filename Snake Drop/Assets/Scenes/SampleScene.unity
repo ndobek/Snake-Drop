@@ -389,6 +389,8 @@ MonoBehaviour:
   snakeHeadType: {fileID: 11400000, guid: 1bb708f6f67e7844993159c157df7353, type: 2}
   snakeType: {fileID: 11400000, guid: 7d50d8ff5e938a6439c218aa18290334, type: 2}
   collectionType: {fileID: 11400000, guid: 5c7e6b4afee2d5e44ac32eecd7a8699e, type: 2}
+  collectionGhostType: {fileID: 11400000, guid: e6b2ec42c7e382244ae39199d03b8ae6,
+    type: 2}
   gameOverScreen: {fileID: 1438944169}
 --- !u!114 &9304149
 MonoBehaviour:

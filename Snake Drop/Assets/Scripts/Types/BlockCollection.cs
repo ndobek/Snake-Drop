@@ -103,12 +103,25 @@ public class BlockCollection : IComparable
 
     public void Add(BlockSlot slot)
     {
-        Block block = slot.Block;
+        Slots[GridCoordsToIndex(slot.x, slot.y)] = slot;
 
-        Slots[GridCoordsToIndex(block.X, block.Y)] = slot;
 
-        block.SetBlockType(block.blockColor, GameManager.instance.collectionType);
-        Blocks[GridCoordsToIndex(block.X, block.Y)] = block;
-        block.BlockCollection = this;
+    }
+    public void SetType(BlockType type)
+    {
+        foreach(BlockSlot slot in Slots)
+        {
+            Block block = slot.Block;
+            if (block)
+            {
+                block.SetBlockType(block.blockColor, type);
+                Blocks[GridCoordsToIndex(block.X, block.Y)] = block;
+                block.BlockCollection = this;
+            }
+            else
+            {
+                throw new SystemException("Trying to set the type of an incomplete block collection");
+            }
+        }
     }
 }

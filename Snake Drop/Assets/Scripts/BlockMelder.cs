@@ -16,91 +16,92 @@ public static class BlockMelder
             foreach(BlockCollection obj in Melded)
             {
                 obj.Build(grid);
+                obj.SetType(GameManager.instance.collectionType);
             }
         }
     }
 
-    private static bool NewCollectionCondition(BlockSlot obj)
-    {
-        return obj && obj.Block && obj.Block.blockType == GameManager.instance.defaultType;
-    }
-    private static bool OldCollectionCondition(BlockSlot obj)
-    {
-        return true;
-    }
     private static bool Condition(BlockSlot obj, BlockColor color)
     {
-        return obj && obj.Block && obj.Block.blockColor == color && obj.Block.isPartOfSnake() == false;/* && obj.Block.blockType == GameManager.instance.defaultType;*/
+        return obj && obj.Block && obj.Block.blockColor == color && obj.Block.isPartOfSnake() == false && obj.Block.blockType != GameManager.instance.collectionGhostType;
     }
 
-    private static List<BlockCollection> MeldCollections(List<BlockCollection> obj, List<BlockCollection> exclude = null)
+    private static BlockCollection MeldCollections(List<BlockCollection> obj)
+    {
+        BlockCollection result = obj[0];
+        foreach(BlockCollection collection in obj)
+        {
+            result = MeldCollections(result, collection);
+        }
+        return result;
+    }
+    private static BlockCollection MeldCollections(BlockCollection obj1, BlockCollection obj2)
+    {
+
+            BlockCollection temp = new BlockCollection
+            {
+                TopCoord = Mathf.Max(obj1.TopCoord, obj2.TopCoord),
+                BottomCoord = Mathf.Min(obj1.BottomCoord, obj2.BottomCoord),
+                LeftCoord = Mathf.Min(obj1.LeftCoord, obj2.LeftCoord),
+                RightCoord = Mathf.Max(obj1.RightCoord, obj2.RightCoord)
+            };
+            return temp;
+
+    }
+
+    private static List<BlockCollection> CheckForOldCollections(List<BlockCollection> obj)
     {
         List<BlockCollection> result = new List<BlockCollection>();
-        List<BlockCollection> used = new List<BlockCollection>();
-        bool changes = false;
-
-
-        foreach (BlockCollection collection1 in obj)
+        obj.Sort();
+        foreach(BlockCollection collection in obj)
         {
-            foreach (BlockCollection collection2 in obj)
+            BlockCollection temp = CheckForOldCollection(collection);
+            if(temp != null) result.Add(temp);
+        }
+        return result;
+    }
+    private static BlockCollection CheckForOldCollection(BlockCollection obj)
+    {
+        if (obj == null) return obj;
+        obj.Build(GameManager.instance.playGrid);
+        List<BlockCollection> OldCollections = new List<BlockCollection>();
+        bool rectValid = true;
+
+        foreach (BlockSlot slot in obj.Slots)
+        {
+            if (slot.Block != null && slot.Block.BlockCollection != null)
             {
-                if ( collection1 != collection2 &&
-                    (
-                    (collection1.TopCoord == collection2.TopCoord && collection1.BottomCoord == collection2.BottomCoord) |
-                    (collection1.LeftCoord == collection2.LeftCoord && collection1.RightCoord == collection2.RightCoord)
-                    )
+                BlockCollection obj2 = slot.Block.BlockCollection;
+
+                if (
+                        !(
+                           obj != obj2 &&
+                            (
+                            (obj.TopCoord == obj2.TopCoord && obj.BottomCoord == obj2.BottomCoord) |
+                            (obj.LeftCoord == obj2.LeftCoord && obj.RightCoord == obj2.RightCoord)
+                            )
+                        )
                     )
                 {
-                    changes = true;
-                    result.Add(MeldTwoCollections(collection1, collection2));
-                    used.Add(collection1);
-                    used.Add(collection2);
+                    rectValid = false;
                 }
+
+
+                OldCollections.Add(obj2);
+
             }
         }
-
-        foreach (BlockCollection collection in obj)
-        {
-            if (!used.Contains(collection) && (exclude == null || !exclude.Contains(collection)))
-            {
-                    result.Add(collection);
-            }
-        }
-
-        //if (changes) return MeldCollections(result);
-        return result;
+        OldCollections.Add(obj);
+        if (rectValid) return MeldCollections(OldCollections);
+        return null;
     }
 
-    private static BlockCollection MeldTwoCollections(BlockCollection obj1, BlockCollection obj2)
-    {
-        BlockCollection temp = new BlockCollection
-        {
-            TopCoord = Mathf.Max(obj1.TopCoord, obj2.TopCoord),
-            BottomCoord = Mathf.Min(obj1.BottomCoord, obj2.BottomCoord),
-            LeftCoord = Mathf.Min(obj1.LeftCoord, obj2.LeftCoord),
-            RightCoord = Mathf.Max(obj1.RightCoord, obj2.RightCoord)
-        };
-        return temp;
-    }
-
-    private static List<BlockCollection> GetOldBlockCollections(PlayGrid grid, System.Func<BlockSlot, bool> _condition)
-    {
-        List<BlockCollection> result = new List<BlockCollection>();
-        foreach(BlockSlot slot in grid.slots)
-        {
-            foreach(Block block in slot.Blocks)
-            {
-                if (block.BlockCollection != null && !result.Contains(block.BlockCollection) && _condition(block.Slot)) result.Add(block.BlockCollection);
-            }
-        }
-        return result;
-    }
     private static List<BlockCollection> GetBlockCollections(PlayGrid grid, System.Func<BlockSlot, bool> _condition)
     {
         List<BlockCollection> result = new List<BlockCollection>();
         List<BlockSlot> addedSlots = new List<BlockSlot>();
 
-        bool condition(BlockSlot slot)
+        bool LocalCondition(BlockSlot slot)
         {
             return !addedSlots.Contains(slot) && _condition.Invoke(slot);
         }
@@ -109,21 +110,18 @@ public static class BlockMelder
         while (resultLength != addedSlots.Count)
         {
             resultLength = addedSlots.Count;
-            List<BlockCollection> NewRects = GetRectInArray(grid, O => NewCollectionCondition(O) && condition(O));
-            List<BlockCollection> OldRects = GetOldBlockCollections(grid, O => OldCollectionCondition(O) && condition(O));
 
-            List<BlockCollection> AllRectangles = new List<BlockCollection>(NewRects);
-            AllRectangles.AddRange(OldRects);
-            AllRectangles = MeldCollections(AllRectangles, OldRects);
-
-
+            List<BlockCollection> AllRectangles = CheckForOldCollections(GetRectInArray(grid, LocalCondition));
             AllRectangles.Sort();
 
             foreach (BlockCollection rect in AllRectangles)
             {
+                bool AddRect = true;
+
+                BlockCollection rectToAdd = rect;
                 BlockSlot[] SlotsInRect = RectToBlockSlots(grid, rect);
 
-                bool AddRect = true;
+
                 foreach (BlockSlot slot in SlotsInRect)
                 {
                     if (addedSlots.Contains(slot))
@@ -135,7 +133,7 @@ public static class BlockMelder
 
                 if (AddRect)
                 {
-                    result.Add(rect);
+                    result.Add(rectToAdd);
                     addedSlots.AddRange(SlotsInRect);
                     //Debug.Log("Top: " + rect.TopCoord + " Bottom: " + rect.BottomCoord + " Left: " + rect.LeftCoord + " Right: " + rect.RightCoord + " Area: " + rect.Area());
                 }

@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
     public BlockType snakeHeadType;
     public BlockType snakeType;
     public BlockType collectionType;
+    public BlockType collectionGhostType;
 
     public GameObject gameOverScreen;
 
