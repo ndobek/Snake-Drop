@@ -4,21 +4,26 @@ using UnityEngine;
 
 public class SnakeMaker : BlockSlot
 {
+    [HideInInspector]
     public Block mostRecentSnake;
+
+    public BlockType SnakeHeadType;
+    public BlockType[] possibleTypes;
     public BlockColor[] possibleColors;
+
 
     public void MakeSnake(int length, float entropy)
     {
-        //Blocks.Clear();
         if (CheckIsClear())
         {
             int color = Random.Range(0, possibleColors.Length);
-            CreateBlock(possibleColors[color], GameManager.instance.snakeHeadType);
+            int type = Random.Range(0, possibleTypes.Length);
+            CreateBlock(possibleColors[color], SnakeHeadType);
             for (int i = 1; i < length; i++)
             {
                 if (Random.value < entropy) color = Random.Range(0, possibleColors.Length);
-                CreateBlock(possibleColors[color], GameManager.instance.snakeType);
-                //Blocks[i].isPartOfSnake = true;
+                CreateBlock(possibleColors[color], possibleTypes[type]);
+
                 if (i > 0) Blocks[i - 1].SetTail(Blocks[i]);
             }
             mostRecentSnake = Blocks[0];

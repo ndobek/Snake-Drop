@@ -58,7 +58,7 @@ public class MoveInCollectionGhost : MoveRule
                 obj1.SetTail(null);
 
                 obj2.RawMoveTo(obj1.Slot);
-                obj1.Break();
+                obj1.RawBreak();
             }
             else
             {

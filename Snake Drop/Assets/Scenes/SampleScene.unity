@@ -421,7 +421,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ScoreText: {fileID: 667315739}
   SnakeLength: 20
-  SnakeEntropy: 0.3
+  SnakeEntropy: 0.2
   HeightLimit: 0
   HeightLimitModifier: 2
 --- !u!114 &9304151
@@ -19529,11 +19529,6 @@ PrefabInstance:
       propertyPath: playGrid
       value: 
       objectReference: {fileID: 1218598767}
-    - target: {fileID: 6524436789554765001, guid: b7af8bd94075c194f9f86a7ebacb1111,
-        type: 3}
-      propertyPath: y
-      value: 9
-      objectReference: {fileID: 0}
     - target: {fileID: 8652555683676818982, guid: b7af8bd94075c194f9f86a7ebacb1111,
         type: 3}
       propertyPath: m_SortingLayerID

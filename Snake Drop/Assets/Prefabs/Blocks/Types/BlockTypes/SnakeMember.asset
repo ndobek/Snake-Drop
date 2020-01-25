@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
   sortingOrder: 0
+  isPartOfSnake: 1
   moveRules: []
   killRules:
   - {fileID: 11400000, guid: b860ed9adf5caab41a42f7943e50a471, type: 2}
