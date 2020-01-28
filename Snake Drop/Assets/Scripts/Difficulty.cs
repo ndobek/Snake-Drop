@@ -7,12 +7,25 @@ public class Difficulty : ScriptableObject
 {
     public Level[] Levels;
 
+
+    public SnakeInfo GetRandomSnakeInfo(int score)
+    {
+        List<SnakeInfo> possibleResults = new List<SnakeInfo>();
+        foreach (Level level in Levels)
+        {
+            if (level.ScoreInRange(score)) possibleResults.Add(level.GetRandomSnakeInfo());
+        }
+        if (possibleResults.Count > 0) return possibleResults[Random.Range(0, possibleResults.Count)];
+
+        throw new System.Exception("No Acceptable Difficulty Settings");
+    }
+
     public BlockColor[] GetAllPossibleColors()
     {
         List<BlockColor> results = new List<BlockColor>();
         foreach (Level level in Levels)
         {
-            foreach(BlockColor color in level.possibleColors)
+            foreach (BlockColor color in level.possibleColors)
             {
                 if (!results.Contains(color)) results.Add(color);
             }
@@ -25,7 +38,7 @@ public class Difficulty : ScriptableObject
     public BlockType[] GetRandomBlockTypes(int score)
     {
         List<BlockType[]> possibleResults = new List<BlockType[]>();
-        foreach(Level level in Levels)
+        foreach (Level level in Levels)
         {
             if (level.ScoreInRange(score)) possibleResults.Add(level.possibleTypes);
         }

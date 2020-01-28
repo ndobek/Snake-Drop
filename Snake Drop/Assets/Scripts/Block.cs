@@ -18,6 +18,12 @@ public class Block : MonoBehaviour
     {
         get { return slot; }
     }
+    private PlayerManager owner;
+    public PlayerManager Owner
+    {
+        get { return owner; }
+        set { SetOwner(value); }
+    }
 
     #endregion
 
@@ -177,10 +183,18 @@ public class Block : MonoBehaviour
         blockType.OnBreak(this, player);
     }
 
+
     #endregion
 
     #region Snake Controls
-
+    public void SetOwner(PlayerManager NewOwner)
+    {
+        if (Tail != null)
+        {
+            Tail.SetOwner(NewOwner);
+        }
+        owner = NewOwner;
+    }
     public void SetTail(GameManager.Direction neighbor)
     {
         SetTail(Neighbor(neighbor).Block);
@@ -193,6 +207,7 @@ public class Block : MonoBehaviour
     public void Kill(PlayerManager player = null)
     {
         blockType.OnKill(this, player);
+        SetOwner(null);
     }
     public void KillSnake(PlayerManager player = null)
     {

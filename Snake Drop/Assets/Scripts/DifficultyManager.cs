@@ -9,7 +9,7 @@ public class DifficultyManager : MonoBehaviour
     public int HeightLimitModifier;
 
     public Difficulty Difficulty;
-
+    [HideInInspector]
     public BlockColor[] PossibleColors;
 
     private void Awake()
@@ -34,7 +34,7 @@ public class DifficultyManager : MonoBehaviour
         return Difficulty.GetRandomEntropy(score);
     }
 
-    public SnakeInfo GetSnakeInfo(int score)
+    public SnakeInfo GetDetachedSnakeInfo(int score)
     {
         return new SnakeInfo()
         {
@@ -43,6 +43,10 @@ public class DifficultyManager : MonoBehaviour
             length = GetRandomSnakeLength(score),
             entropy = GetRandomSnakeEntropy(score)
         };
+    }
+    public SnakeInfo GetSnakeInfo(int score)
+    {
+        return Difficulty.GetRandomSnakeInfo(score);
     }
 
 }

@@ -133,6 +133,7 @@ public class PlayerManager : MonoBehaviour
         {
             snakeHead = newSnakeHead;
             snakeHead.SetBlockType(snakeHead.blockColor, GameManager.instance.snakeHeadType);
+            snakeHead.SetOwner(this);
             //snakeHead.ActivateSnake();
         }
         else

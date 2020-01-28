@@ -32,4 +32,15 @@ public class Level : ScriptableObject
     {
         return Random.Range(minSnakeEntropy, maxSnakeEntropy);
     }
+
+    public SnakeInfo GetRandomSnakeInfo()
+    {
+        return new SnakeInfo()
+        {
+            entropy = GetRandomEntropy(),
+            length = GetRandomLength(),
+            possibleColors = possibleColors,
+            possibleTypes = possibleTypes
+        };
+    }
 }

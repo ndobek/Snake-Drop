@@ -10,7 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 07d51716c8e850d4fa1a360381239ba5, type: 3}
-  m_Name: Difficulty
+  m_Name: Normal
   m_EditorClassIdentifier: 
   Levels:
+  - {fileID: 11400000, guid: f307d31060e941f44aedfad7bd63fdc9, type: 2}
   - {fileID: 11400000, guid: e7c0054dfdea4fc499242b56b453459a, type: 2}
