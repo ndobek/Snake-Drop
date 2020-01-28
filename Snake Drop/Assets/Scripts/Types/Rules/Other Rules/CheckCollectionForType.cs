@@ -8,7 +8,7 @@ public class CheckCollectionForType : Rule
     public Rule OnNoneOfType;
     public BlockType Type;
 
-    protected override void Action(Block block)
+    protected override void Action(Block block, PlayerManager player = null)
     {
         if (block.BlockCollection == null) throw new System.ArgumentException("No Collection on this block");
 
@@ -24,6 +24,6 @@ public class CheckCollectionForType : Rule
 
         }
 
-        if (!CollectionContainsType) OnNoneOfType.Invoke(block);
+        if (!CollectionContainsType) OnNoneOfType.Invoke(block, player);
     }
 }

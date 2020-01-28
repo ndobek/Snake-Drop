@@ -4,10 +4,10 @@ using UnityEngine;
 
 public abstract class Rule : ScriptableObject
 {
-    public void Invoke(Block block)
+    public void Invoke(Block block, PlayerManager player = null)
     {
-        Action(block);
+        Action(block, player);
     }
 
-    protected abstract void Action(Block block);
+    protected abstract void Action(Block block, PlayerManager player = null);
 }

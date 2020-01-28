@@ -2,31 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SnakeMaker : BlockSlot
+public static class SnakeMaker
 {
-    [HideInInspector]
-    public Block mostRecentSnake;
-
-    public BlockType SnakeHeadType;
-    public BlockType[] possibleTypes;
-    public BlockColor[] possibleColors;
-
-
-    public void MakeSnake(int length, float entropy)
+    public static void MakeSnake(BlockSlot slot, SnakeInfo info)
     {
-        if (CheckIsClear())
+        if (slot.CheckIsClear())
         {
-            int color = Random.Range(0, possibleColors.Length);
-            int type = Random.Range(0, possibleTypes.Length);
-            CreateBlock(possibleColors[color], SnakeHeadType);
-            for (int i = 1; i < length; i++)
+            int color = Random.Range(0, info.possibleColors.Length);
+            int type = Random.Range(0, info.possibleTypes.Length);
+            slot.CreateBlock(info.possibleColors[color], GameManager.instance.snakeHeadType);
+            for (int i = 1; i < info.length; i++)
             {
-                if (Random.value < entropy) color = Random.Range(0, possibleColors.Length);
-                CreateBlock(possibleColors[color], possibleTypes[type]);
+                if (Random.value < info.entropy) color = Random.Range(0, info.possibleColors.Length);
+                slot.CreateBlock(info.possibleColors[color], info.possibleTypes[type]);
 
-                if (i > 0) Blocks[i - 1].SetTail(Blocks[i]);
+                if (i > 0) slot.Blocks[i - 1].SetTail(slot.Blocks[i]);
             }
-            mostRecentSnake = Blocks[0];
         }
     }
 }

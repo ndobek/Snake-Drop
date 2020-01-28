@@ -7,7 +7,7 @@ public class SnakeFall : Rule
 {
     public MoveRule moveType;
 
-    protected override void Action(Block block)
+    protected override void Action(Block block, PlayerManager player = null)
     {
         int fallDistance = SnakeMaxFallDistance(block);
 

@@ -17,11 +17,11 @@ public class HeightLimitIndicator : MonoBehaviour
 
     public void ResetHeightLimit()
     {
-        HeightLimit = GameManager.instance.playGrid.YSize + 1;
+        HeightLimit = affectedGrid.YSize + 1;
     }
     void Update()
     {
-        Vector2 obj = GameManager.instance.playGrid.CoordsPosition(0, HeightLimit + offset);
+        Vector2 obj = affectedGrid.CoordsPosition(0, HeightLimit + offset);
         this.transform.position = new Vector2(0, obj.y);
     }
     public bool CheckHeightLimit(BlockSlot slot)

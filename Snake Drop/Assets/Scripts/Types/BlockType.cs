@@ -17,15 +17,15 @@ public class BlockType : ScriptableObject
 
     #region Permissions
 
-    public virtual bool CanMoveToWithoutCrashing(Block block, BlockSlot slot)
+    public virtual bool CanMoveToWithoutCrashing(Block block, BlockSlot slot, PlayerManager player = null)
     {
         foreach(MoveRule rule in moveRules)
         {
-            if (rule.CanMoveTo(block, slot)) return true;
+            if (rule.CanMoveTo(block, slot, player)) return true;
         }
         return false;
     }
-    public virtual bool OverrideMove(Block block, BlockSlot slot)
+    public virtual bool OverrideMove(Block block, BlockSlot slot, PlayerManager player = null)
     {
         if (slot &&
             slot.Block &&
@@ -38,23 +38,23 @@ public class BlockType : ScriptableObject
     #endregion
 
     #region Actions
-    public virtual void OnMove(Block block, BlockSlot slot, int moveType)
+    public virtual void OnMove(Block block, BlockSlot slot, int moveType, PlayerManager player = null)
     {
-        if (OverrideMove(block, slot)) return;
+        if (OverrideMove(block, slot, player)) return;
 
-        moveRules[moveType].OnMove(block, slot);
+        moveRules[moveType].OnMove(block, slot, player);
     }
-    public virtual void OnMove(Block block, BlockSlot slot)
+    public virtual void OnMove(Block block, BlockSlot slot, PlayerManager player = null)
     {
-        if (OverrideMove(block, slot)) return;
+        if (OverrideMove(block, slot, player)) return;
 
-        if (CanMoveToWithoutCrashing(block, slot))
+        if (CanMoveToWithoutCrashing(block, slot, player))
         {
             for (int r = moveRules.Length - 1; r >= 0; r--)
             {
-                if (moveRules[r].CanMoveTo(block, slot))
+                if (moveRules[r].CanMoveTo(block, slot, player))
                 {
-                    moveRules[r].OnMove(block, slot);
+                    moveRules[r].OnMove(block, slot, player);
                     break;
                 }
             }
@@ -65,27 +65,27 @@ public class BlockType : ScriptableObject
         }
 
     }
-    public virtual void OnFall(Block block)
+    public virtual void OnFall(Block block, PlayerManager player = null)
     {
         foreach (Rule rule in fallRules)
         {
-            if (block && rule) rule.Invoke(block);
+            if (block && rule) rule.Invoke(block, player);
         }
     }
 
-    public virtual void OnKill(Block block)
+    public virtual void OnKill(Block block, PlayerManager player = null)
     {
         foreach (Rule rule in killRules)
         {
-            if (block && rule) rule.Invoke(block);
+            if (block && rule) rule.Invoke(block, player);
         }
     }
 
-    public virtual void OnBreak(Block block)
+    public virtual void OnBreak(Block block, PlayerManager player = null)
     {
         foreach (Rule rule in breakRules)
         {
-            if (block && rule) rule.Invoke(block);
+            if (block && rule) rule.Invoke(block, player);
         }
     }
 

@@ -6,7 +6,7 @@ public class MoveInCollectionGhost : MoveRule
 {
     public BlockType CollectionGhostMemberType;
 
-    protected override bool MoveCondition(Block block, BlockSlot slot)
+    protected override bool MoveCondition(Block block, BlockSlot slot, PlayerManager player = null)
     {
 
         return slot.Block &&
@@ -14,7 +14,7 @@ public class MoveInCollectionGhost : MoveRule
             slot.Blocks.TrueForAll(Block.isNotPartOfSnake);
     }
 
-    protected override void MoveAction(Block block, BlockSlot slot)
+    protected override void MoveAction(Block block, BlockSlot slot, PlayerManager player = null)
     {
         if (block.blockColor == slot.Block.blockColor && !CollectionIsFull(slot.Block))
         {
@@ -25,7 +25,7 @@ public class MoveInCollectionGhost : MoveRule
                 //block.Tail.RawMoveTo(block.Slot);
                 block.Tail.RawMoveTo(slot);
             }
-            block.Break();
+            block.Break(player);
 
         } else if(block.blockColor != slot.Block.blockColor && !CollectionIsFull(slot.Block))
         {
@@ -39,7 +39,7 @@ public class MoveInCollectionGhost : MoveRule
 
         if (CollectionIsFull(slot.Block))
         {
-            slot.Block.Break();
+            slot.Block.Break(player);
         }
         Debug.Log("Fill: " + slot.Block.BlockCollection.FillAmount + "/" + slot.Block.BlockCollection.Area());
     }

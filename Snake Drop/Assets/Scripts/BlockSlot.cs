@@ -71,14 +71,14 @@ public class BlockSlot : MonoBehaviour
 
     #region Methods to Assign and Unassign Blocks
 
-    public virtual void OnAssignment(Block obj)
+    public virtual void OnAssignment(Block obj, PlayerManager player = null)
     {
         Blocks.Add(obj);
-        if (slotType) slotType.OnAssignment(obj);
+        if (slotType) slotType.OnAssignment(obj, player);
     }
-    public virtual void OnUnassignment(Block obj)
+    public virtual void OnUnassignment(Block obj, PlayerManager player = null)
     {
-        if (slotType) slotType.OnUnassignment(obj);
+        if (slotType) slotType.OnUnassignment(obj, player);
         if (Blocks.Contains(obj)) Blocks.Remove(obj);
     }
 
@@ -93,7 +93,7 @@ public class BlockSlot : MonoBehaviour
             Blocks[i-1].RawBreak();
         }
     }
-    protected void CreateBlock(BlockColor color, BlockType type)
+    public void CreateBlock(BlockColor color, BlockType type)
     {
         Block newBlock = Instantiate(GameManager.instance.blockObj, playGrid.CoordsPosition(x, y), Quaternion.identity, this.transform);
         newBlock.SetBlockType(color, type);

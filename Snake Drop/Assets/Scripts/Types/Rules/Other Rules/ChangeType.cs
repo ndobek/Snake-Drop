@@ -7,7 +7,7 @@ public class ChangeType : Rule
 {
     public BlockType ChangeTypeTo;
 
-    protected override void Action(Block block)
+    protected override void Action(Block block, PlayerManager player = null)
     {
         if (ChangeTypeTo) block.SetBlockType(block.blockColor, ChangeTypeTo);
     }

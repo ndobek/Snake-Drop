@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Rules/MoveRule/Smash")]
 public class SmashMove : MoveRule
 {
-    protected override bool MoveCondition(Block block, BlockSlot slot)
+    protected override bool MoveCondition(Block block, BlockSlot slot, PlayerManager player = null)
     {
 
         if (slot && slot.Block)
@@ -15,21 +15,21 @@ public class SmashMove : MoveRule
         }
         return false;
     }
-    protected override void MoveAction(Block block, BlockSlot slot)
+    protected override void MoveAction(Block block, BlockSlot slot, PlayerManager player = null)
     {
         Block tail = null;
         if (block.Tail) { tail = block.Tail; }
         //if (slot.Block && slot.Block.isPartOfSnake) slot.Block.KillSnake();
-        slot.Block.Break();
+        slot.Block.Break(player);
         block.RawMoveTo(slot);
-        block.Break();
+        block.Break(player);
         if (tail)
         {
             tail.RawMoveTo(slot);
         }
         else
         {
-            GameManager.instance.OnCrash();
+            player.OnCrash();
         }
 
     }

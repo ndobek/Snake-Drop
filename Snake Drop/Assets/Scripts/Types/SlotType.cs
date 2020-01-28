@@ -8,18 +8,18 @@ public class SlotType : ScriptableObject
     public Rule[] AssignmentRules;
     public Rule[] UnassignmentRules;
 
-    public void OnAssignment(Block block)
+    public void OnAssignment(Block block, PlayerManager player = null)
     {
         foreach(Rule rule in AssignmentRules)
         {
-            rule.Invoke(block);
+            rule.Invoke(block, player);
         }
     }
-    public void OnUnassignment(Block block)
+    public void OnUnassignment(Block block, PlayerManager player = null)
     {
         foreach (Rule rule in UnassignmentRules)
         {
-            rule.Invoke(block);
+            rule.Invoke(block, player);
         }
     }
 }

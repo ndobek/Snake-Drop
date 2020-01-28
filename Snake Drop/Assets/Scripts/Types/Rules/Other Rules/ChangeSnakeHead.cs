@@ -5,18 +5,21 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Rules/General/ChangeSnakeHead")]
 public class ChangeSnakeHead : Rule
 {
-    protected override void Action(Block block)
+    protected override void Action(Block block, PlayerManager player = null)
     {
-        if (block == GameManager.instance.playerController.SnakeHead)
+        if (player)
         {
-            if (block.Tail)
+            if (block == player.SnakeHead)
             {
-                GameManager.instance.playerController.SnakeHead = block.Tail;
-            }
-            else
-            {
-                GameManager.instance.playerController.SnakeHead = null;
-                GameManager.instance.OnCrash();
+                if (block.Tail)
+                {
+                    player.SnakeHead = block.Tail;
+                }
+                else
+                {
+                    player.SnakeHead = null;
+                    player.OnCrash();
+                }
             }
         }
     }

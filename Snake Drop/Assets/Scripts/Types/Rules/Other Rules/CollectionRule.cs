@@ -7,13 +7,13 @@ public class CollectionRule : Rule
 {
     public Rule Rule;
 
-    protected override void Action(Block block)
+    protected override void Action(Block block, PlayerManager player = null)
     {
         Block[] blocks = block.BlockCollection.Blocks;
 
         foreach (Block obj in blocks)
         {
-            Rule.Invoke(obj);
+            Rule.Invoke(obj, player);
         }
     }
 }

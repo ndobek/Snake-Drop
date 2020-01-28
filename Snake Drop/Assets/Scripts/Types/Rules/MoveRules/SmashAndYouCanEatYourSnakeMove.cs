@@ -6,7 +6,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Rules/MoveRule/SmashButYouCanEatYourSnake")]
 public class SmashAndYouCanEatYourSnakeMove : MoveRule
 {
-    protected override bool MoveCondition(Block block, BlockSlot slot)
+    protected override bool MoveCondition(Block block, BlockSlot slot, PlayerManager player = null)
     {
         if (slot && slot.Block)
         {
@@ -15,14 +15,14 @@ public class SmashAndYouCanEatYourSnakeMove : MoveRule
         }
         return false;
     }
-    protected override void MoveAction(Block block, BlockSlot slot)
+    protected override void MoveAction(Block block, BlockSlot slot, PlayerManager player = null)
     {
         Block tail = null;
         if (block.Tail) { tail = block.Tail; }
-        if (slot.Block && slot.Block.isPartOfSnake()) slot.Block.KillSnake();
-        slot.Block.Break();
+        if (slot.Block && slot.Block.isPartOfSnake()) slot.Block.KillSnake(player);
+        slot.Block.Break(player);
         block.RawMoveTo(slot);
-        block.Break();
+        block.Break(player);
         if (tail)
         {
             tail.RawMoveTo(slot);

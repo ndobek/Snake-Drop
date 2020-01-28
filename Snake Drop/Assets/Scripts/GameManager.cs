@@ -5,21 +5,21 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    public PlayerController playerController;
-    public DifficultyManager difficultyManager;
-    [HideInInspector]
-    public bool GameInProgress;
-    [HideInInspector]
-    public bool RoundInProgress;
 
-    public PlayGrid playGrid;
-    public PlayGrid previewGrid;
-    public HeightLimitIndicator HeightLimitIndicator;
-    public SnakeMaker snakeMaker;
-    public BlockSlot waitSlot;
+    public PlayerManager[] playerManagers;
+    public DifficultyManager difficultyManager;
+
+    public bool GameInProgress()
+    {
+        foreach(PlayerManager player in playerManagers)
+        {
+            if (player.GameInProgress) return true;
+        }
+        return false;
+    }
+
     
     public Rule BasicFall;
-
     public Block blockObj;
     public BlockType defaultType;
     public BlockType snakeHeadType;
@@ -53,89 +53,94 @@ public class GameManager : MonoBehaviour
 
     public void OnCrash()
     {
-        RoundInProgress = false;
+        foreach(PlayerManager player in playerManagers)
+        {
+            OnCrash(player);
+        }
     }
-    public void MidRound()
+    public void OnCrash(PlayerManager player = null)
     {
-        if (!RoundInProgress)
-        {
-            EndRound();
-        }
-        else
-        {
-            playGrid.Fall();
-            FillPreviewBar();
-            if(difficultyManager.HeightLimit) HeightLimitIndicator.LowerHeightLimit(playerController.SnakeHead.FindSnakeMaxY() + difficultyManager.HeightLimitModifier);
-        }
+        player.OnCrash();
     }
 
-    private void EndRound()
-    {
-        if (playerController.SnakeHead)
-        {
-            playerController.SnakeHead.KillSnake();
-        }
-        playGrid.Fall();
+    //public void MidRound()
+    //{
+    //    if (!RoundInProgress)
+    //    {
+    //        EndRound();
+    //    }
+    //    else
+    //    {
+    //        playGrid.Fall();
+    //        FillPreviewBar();
+    //        if(difficultyManager.HeightLimit) HeightLimitIndicator.LowerHeightLimit(playerController.SnakeHead.FindSnakeMaxY() + difficultyManager.HeightLimitModifier);
+    //    }
+    //}
 
-        if (waitSlot.GetNeighbor(Direction.DOWN).Block != null)
-        {
-            EndGame();
-        }
-        else
-        {
-            ContinueGame();
-        }
-    }
+    //private void EndRound()
+    //{
+    //    if (playerController.SnakeHead)
+    //    {
+    //        playerController.SnakeHead.KillSnake();
+    //    }
+    //    playGrid.Fall();
 
-    private void ShufflePreviewBar()
-    {
-        previewGrid.Fall(BasicFall);
-        MakeSnake();
-    }
-    public void FillPreviewBar()
-    {
-        ShufflePreviewBar();
-        while (snakeMaker.Blocks.Count == 0 | waitSlot.Block == null)
-        {
-            ShufflePreviewBar();
-        }
-    }
+    //    if (waitSlot.GetNeighbor(Direction.DOWN).Block != null)
+    //    {
+    //        EndGame();
+    //    }
+    //    else
+    //    {
+    //        ContinueGame();
+    //    }
+    //}
 
-    private void MakeSnake()
-    {
-        snakeMaker.MakeSnake(difficultyManager.SnakeLength, difficultyManager.SnakeEntropy);
-    }
+    //private void ShufflePreviewBar()
+    //{
+    //    previewGrid.Fall(BasicFall);
+    //    MakeSnake();
+    //}
+    //public void FillPreviewBar()
+    //{
+    //    ShufflePreviewBar();
+    //    while (snakeMaker.Blocks.Count == 0 | waitSlot.Block == null)
+    //    {
+    //        ShufflePreviewBar();
+    //    }
+    //}
+
+    //private void MakeSnake()
+    //{
+    //    difficultyManager.MakeSnake(difficultyManager.SnakeLength, difficultyManager.SnakeEntropy);
+    //}
 
     public void StartGame()
     {
-        difficultyManager.ResetGame();
-        playerController.ResetGame();
         gameOverScreen.SetActive(false);
-        playGrid.ClearGrid();
-        previewGrid.ClearGrid();
-        GameInProgress = true;
-        ContinueGame();
+        foreach (PlayerManager player in playerManagers)
+        {
+            player.ResetGame();
+        }
+        foreach (PlayerManager player in playerManagers)
+        {
+            StartNewRound(player);
+        }
     }
-    private void ContinueGame()
+    private void StartNewRound(PlayerManager player)
     {
-        FillPreviewBar();
-        ResetMoveRestrictions();
-        playerController.SnakeHead = waitSlot.Block;
-        playerController.SnakeHead.RawMove(Direction.DOWN);
-        FillPreviewBar();
-        RoundInProgress = true;
+        player.StartNewRound();
     }
+
     private void EndGame()
     {
-        GameInProgress = false;
         gameOverScreen.SetActive(true);
     }
 
 
-    public void ResetMoveRestrictions()
-    {
-        HeightLimitIndicator.ResetHeightLimit();
-        playerController.ResetGame();
-    }
+    //public void ResetMoveRestrictions()
+    //{
+    //    HeightLimitIndicator.ResetHeightLimit();
+    //    playerController.ResetGame();
+    //}
 
 }

@@ -49,21 +49,21 @@ public static class BlockMelder
 
     }
 
-    private static List<BlockCollection> CheckForOldCollections(List<BlockCollection> obj)
+    private static List<BlockCollection> CheckForOldCollections(List<BlockCollection> obj, PlayGrid grid)
     {
         List<BlockCollection> result = new List<BlockCollection>();
         obj.Sort();
         foreach(BlockCollection collection in obj)
         {
-            BlockCollection temp = CheckForOldCollection(collection);
+            BlockCollection temp = CheckForOldCollection(collection, grid);
             if(temp != null) result.Add(temp);
         }
         return result;
     }
-    private static BlockCollection CheckForOldCollection(BlockCollection obj)
+    private static BlockCollection CheckForOldCollection(BlockCollection obj, PlayGrid grid)
     {
         if (obj == null) return obj;
-        obj.Build(GameManager.instance.playGrid);
+        obj.Build(grid);
         List<BlockCollection> OldCollections = new List<BlockCollection>();
         bool rectValid = true;
 
@@ -111,7 +111,7 @@ public static class BlockMelder
         {
             resultLength = addedSlots.Count;
 
-            List<BlockCollection> AllRectangles = CheckForOldCollections(GetRectInArray(grid, LocalCondition));
+            List<BlockCollection> AllRectangles = CheckForOldCollections(GetRectInArray(grid, LocalCondition), grid);
             AllRectangles.Sort();
 
             foreach (BlockCollection rect in AllRectangles)

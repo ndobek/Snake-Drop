@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Rules/MoveRule/Collection")]
 public class CollectionMove : MoveRule
 {
-    protected override bool MoveCondition(Block block, BlockSlot slot)
+    protected override bool MoveCondition(Block block, BlockSlot slot, PlayerManager player)
     {
         if(block && slot && block.BlockCollection != null)
         {
@@ -29,7 +29,7 @@ public class CollectionMove : MoveRule
         return slot && slot.Block == null;
     }
 
-    protected override void MoveAction(Block block, BlockSlot slot)
+    protected override void MoveAction(Block block, BlockSlot slot, PlayerManager player)
     {
         Block[] blocks = block.BlockCollection.Blocks;
         int xDistance = slot.x - block.X;

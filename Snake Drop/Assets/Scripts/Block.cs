@@ -147,35 +147,34 @@ public class Block : MonoBehaviour
     public void RawBreak()
     {
         SetGridDirty();
-        Kill();
         Slot.OnUnassignment(this);
         GameObject.Destroy(this.gameObject);
     }
 
     #endregion
 
-    public void Fall()
+    public void Fall(PlayerManager player = null)
     {
         SetGridDirty();
-        blockType.OnFall(this);
+        blockType.OnFall(this, player);
     }
-    public void Move(GameManager.Direction neighbor)
+    public void Move(GameManager.Direction neighbor, PlayerManager player = null)
     {
-        MoveTo(Neighbor(neighbor));
+        MoveTo(Neighbor(neighbor), player);
     }
-    public virtual void MoveTo(BlockSlot obj)
+    public virtual void MoveTo(BlockSlot obj, PlayerManager player = null)
     {
-        blockType.OnMove(this, obj);
+        blockType.OnMove(this, obj, player);
     }
-    public bool CanMoveToWithoutCrashing(BlockSlot obj)
+    public bool CanMoveToWithoutCrashing(BlockSlot obj, PlayerManager player = null)
     {
-        return blockType.CanMoveToWithoutCrashing(this, obj);
+        return blockType.CanMoveToWithoutCrashing(this, obj, player);
     }
 
-    public void Break()
+    public void Break(PlayerManager player = null)
     {
         SetGridDirty();
-        blockType.OnBreak(this);
+        blockType.OnBreak(this, player);
     }
 
     #endregion
@@ -191,19 +190,19 @@ public class Block : MonoBehaviour
         tail = obj;
     }
 
-    public void Kill()
+    public void Kill(PlayerManager player = null)
     {
-        blockType.OnKill(this);
+        blockType.OnKill(this, player);
     }
-    public void KillSnake()
+    public void KillSnake(PlayerManager player = null)
     {
 
         if (Tail != null)
         {
-            if (Tail.Slot.playGrid == GameManager.instance.playGrid) Tail.KillSnake();
+            if (Tail.Slot.playGrid == Slot.playGrid) Tail.KillSnake(player);
             SetTail(null);
         }
-        Kill();
+        Kill(player);
     }
 
     public int FindSnakeMaxY()

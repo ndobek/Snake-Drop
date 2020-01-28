@@ -4,23 +4,23 @@ using UnityEngine;
 
 public abstract class MoveRule : ScriptableObject
 {
-    protected virtual bool UniversalRules(Block block, BlockSlot slot)
+    protected virtual bool UniversalRules(Block block, BlockSlot slot, PlayerManager player = null)
     {
         if (slot == null) return false;
-        if (!GameManager.instance.HeightLimitIndicator.CheckHeightLimit(slot)) return false;
+        if (player && !player.HeightLimitIndicator.CheckHeightLimit(slot)) return false;
         return true;
     }
-    public bool CanMoveTo(Block block, BlockSlot slot)
+    public bool CanMoveTo(Block block, BlockSlot slot, PlayerManager player = null)
     {
-        return UniversalRules(block, slot) && MoveCondition(block, slot);
+        return UniversalRules(block, slot, player) && MoveCondition(block, slot, player);
     }
-    public void OnMove(Block block, BlockSlot slot)
+    public void OnMove(Block block, BlockSlot slot, PlayerManager player = null)
     {
         block.Slot.playGrid.SetDirty();
-        if (CanMoveTo(block, slot)) MoveAction(block, slot);
+        if (CanMoveTo(block, slot, player)) MoveAction(block, slot, player);
     }
-    protected abstract bool MoveCondition(Block block, BlockSlot slot);
-    protected abstract void MoveAction(Block block, BlockSlot slot);
+    protected abstract bool MoveCondition(Block block, BlockSlot slot, PlayerManager player = null);
+    protected abstract void MoveAction(Block block, BlockSlot slot, PlayerManager player = null);
 
 
 }

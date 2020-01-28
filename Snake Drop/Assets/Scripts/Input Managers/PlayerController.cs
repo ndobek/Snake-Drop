@@ -5,18 +5,11 @@ using static GameManager;
 
 public class PlayerController : MonoBehaviour
 {
-    [HideInInspector]
-    private Block snakeHead;
-    public Block SnakeHead
-    {
-        get { return snakeHead; }
-        set { ActivateSnake(value); }
-    }
-
-    private Direction mostRecentDirection;
+    public PlayerManager player;
     [SerializeField]
     private float autoMoveInterval;
     private float timeSinceLastAutoMove;
+    private Direction mostRecentDirection;
 
     public void Awake()
     {
@@ -36,10 +29,7 @@ public class PlayerController : MonoBehaviour
 
     private void MoveSnakeOnSwipe(TouchManager.TouchData Swipe)
     {
-        if (snakeHead)
-        {
-            MoveSnake(Swipe.direction);
-        }
+        MoveSnake(Swipe.direction);
     }
 
     private void MoveSnakeOnHold(TouchManager.TouchData Hold)
@@ -58,31 +48,10 @@ public class PlayerController : MonoBehaviour
     {
         MoveSnake(mostRecentDirection);
     }
-
     public void MoveSnake(Direction direction)
     {
-
-        if (GameManager.instance.GameInProgress)
-        {
-            mostRecentDirection = direction;
-            SnakeHead.Move(direction);
-            GameManager.instance.MidRound();
-        }
-    }
-
-    private void ActivateSnake(Block newSnakeHead)
-    {
-        if (snakeHead) snakeHead.Kill(); /*snakeHead.SetBlockType(snakeHead.blockColor, GameManager.instance.defaultType);*/
-        if (newSnakeHead)
-        {
-            snakeHead = newSnakeHead;
-            snakeHead.SetBlockType(snakeHead.blockColor, GameManager.instance.snakeHeadType);
-            //snakeHead.ActivateSnake();
-        }
-        else
-        {
-            snakeHead = null;
-        }
+        mostRecentDirection = direction;
+        if (player) player.MoveSnake(direction);
     }
 
     public void ResetGame()

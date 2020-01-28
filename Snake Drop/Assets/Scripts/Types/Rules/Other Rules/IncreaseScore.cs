@@ -6,8 +6,8 @@ using UnityEngine;
 public class IncreaseScore : Rule
 {
     public int ScoreIncrease;
-    protected override void Action(Block block)
+    protected override void Action(Block block, PlayerManager player = null)
     {
-        GameManager.instance.difficultyManager.Score += ScoreIncrease;
+        if(player) player.Score += ScoreIncrease;
     }
 }
