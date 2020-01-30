@@ -2,14 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Difficulty/Levels")]
-public class Level : ScriptableObject
+[CreateAssetMenu(menuName = "Difficulty/SnakeType")]
+public class SnakeType : ScriptableObject
 {
-
-    public int MinScore;
-    public int MaxScore;
-    public bool HasMaxScore;
-
     public BlockType[] possibleTypes;
     public BlockColor[] possibleColors;
 
@@ -18,11 +13,6 @@ public class Level : ScriptableObject
 
     public float minSnakeEntropy;
     public float maxSnakeEntropy;
-
-    public bool ScoreInRange(int score)
-    {
-        return score >= MinScore && (!HasMaxScore || score <= MaxScore);
-    }
 
     public int GetRandomLength()
     {

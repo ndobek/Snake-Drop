@@ -195,6 +195,14 @@ public class Block : MonoBehaviour
         }
         owner = NewOwner;
     }
+    public void ApplyRuleToSnake(Rule rule, PlayerManager player = null)
+    {
+        if(Tail != null)
+        {
+            Tail.ApplyRuleToSnake(rule);
+        }
+        rule.Invoke(this, player);
+    }
     public void SetTail(GameManager.Direction neighbor)
     {
         SetTail(Neighbor(neighbor).Block);

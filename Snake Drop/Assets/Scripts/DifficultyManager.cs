@@ -17,36 +17,36 @@ public class DifficultyManager : MonoBehaviour
         PossibleColors = Difficulty.GetAllPossibleColors();
     }
 
-    public BlockType[] GetRandomTypes(int score)
+    public BlockType[] GetRandomTypes(int score, int snakeNumber)
     {
-        return Difficulty.GetRandomBlockTypes(score);
+        return Difficulty.GetRandomBlockTypes(score, snakeNumber);
     }
-    public BlockColor[] GetRandomColors(int score)
+    public BlockColor[] GetRandomColors(int score, int snakeNumber)
     {
-        return Difficulty.GetRandomBlockColors(score);
+        return Difficulty.GetRandomBlockColors(score, snakeNumber);
     }
-    public int GetRandomSnakeLength(int score)
+    public int GetRandomSnakeLength(int score, int snakeNumber)
     {
-        return Difficulty.GetRandomLength(score);
+        return Difficulty.GetRandomLength(score, snakeNumber);
     }
-    public float GetRandomSnakeEntropy(int score)
+    public float GetRandomSnakeEntropy(int score, int snakeNumber)
     {
-        return Difficulty.GetRandomEntropy(score);
+        return Difficulty.GetRandomEntropy(score, snakeNumber);
     }
 
-    public SnakeInfo GetDetachedSnakeInfo(int score)
+    public SnakeInfo GetDetachedSnakeInfo(int score, int snakeNumber)
     {
         return new SnakeInfo()
         {
-            possibleTypes = GetRandomTypes(score),
-            possibleColors = GetRandomColors(score),
-            length = GetRandomSnakeLength(score),
-            entropy = GetRandomSnakeEntropy(score)
+            possibleTypes = GetRandomTypes(score, snakeNumber),
+            possibleColors = GetRandomColors(score, snakeNumber),
+            length = GetRandomSnakeLength(score, snakeNumber),
+            entropy = GetRandomSnakeEntropy(score, snakeNumber)
         };
     }
-    public SnakeInfo GetSnakeInfo(int score)
+    public SnakeInfo GetSnakeInfo(int score, int snakeNumber)
     {
-        return Difficulty.GetRandomSnakeInfo(score);
+        return Difficulty.GetRandomSnakeInfo(score, snakeNumber);
     }
 
 }

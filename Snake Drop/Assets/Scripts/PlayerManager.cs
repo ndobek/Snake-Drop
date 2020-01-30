@@ -13,19 +13,14 @@ public class PlayerManager : MonoBehaviour
         set { ActivateSnake(value); }
     }
 
-
-    [HideInInspector]
-    private int score;
+    [SerializeField]
+    private ScoreManager scoreManager;
     public int Score
     {
-        get { return score; }
-        set
-        {
-            score = value;
-            ScoreText.text = "Score: " + score.ToString();
-        }
+        get { return scoreManager.Score; }
+        set { scoreManager.Score = value; }
     }
-    public Text ScoreText;
+    private int NumberOfSnakes;
 
     public PlayerController playerController;
 
@@ -54,9 +49,10 @@ public class PlayerManager : MonoBehaviour
         }
         else
         {
-            DifficultyManager difficulty = GameManager.instance.difficultyManager;
             playGrid.Fall();
             FillPreviewBar();
+
+            DifficultyManager difficulty = GameManager.instance.difficultyManager;
             if (difficulty.HeightLimit) HeightLimitIndicator.LowerHeightLimit(SnakeHead.FindSnakeMaxY() + difficulty.HeightLimitModifier);
         }
     }
@@ -95,12 +91,18 @@ public class PlayerManager : MonoBehaviour
 
     public void MakeSnake()
     {
-        SnakeMaker.MakeSnake(startSlot, GameManager.instance.difficultyManager.GetSnakeInfo(score));
+        if (startSlot.CheckIsClear())
+        {
+            NumberOfSnakes += 1;
+            SnakeMaker.MakeSnake(startSlot, GameManager.instance.difficultyManager.GetSnakeInfo(Score, NumberOfSnakes));
+        }
     }
 
     public void ResetGame()
     {
-        playerController.ResetGame();
+        Score = 0;
+        NumberOfSnakes = 0;
+        ResetMoveRestrictions();
         playGrid.ClearGrid();
         previewGrid.ClearGrid();
         GameInProgress = true;
@@ -117,6 +119,7 @@ public class PlayerManager : MonoBehaviour
     private void EndGame()
     {
         GameInProgress = false;
+        GameManager.instance.CheckForGameOver();
     }
 
 
@@ -128,13 +131,12 @@ public class PlayerManager : MonoBehaviour
 
     private void ActivateSnake(Block newSnakeHead)
     {
-        if (snakeHead) snakeHead.Kill(this); /*snakeHead.SetBlockType(snakeHead.blockColor, GameManager.instance.defaultType);*/
+        if (snakeHead) snakeHead.Kill(this);
         if (newSnakeHead)
         {
             snakeHead = newSnakeHead;
             snakeHead.SetBlockType(snakeHead.blockColor, GameManager.instance.snakeHeadType);
             snakeHead.SetOwner(this);
-            //snakeHead.ActivateSnake();
         }
         else
         {

@@ -13,5 +13,21 @@ MonoBehaviour:
   m_Name: Normal
   m_EditorClassIdentifier: 
   Levels:
-  - {fileID: 11400000, guid: f307d31060e941f44aedfad7bd63fdc9, type: 2}
-  - {fileID: 11400000, guid: e7c0054dfdea4fc499242b56b453459a, type: 2}
+  - MinScore: 0
+    MaxScore: 0
+    UseMinScore: 0
+    UseMaxScore: 0
+    MinSnakeNumber: 0
+    MaxSnakeNumber: 5
+    UseMinSnakeNumber: 0
+    UseMaxSnakeNumber: 1
+    SnakeType: {fileID: 11400000, guid: f307d31060e941f44aedfad7bd63fdc9, type: 2}
+  - MinScore: 0
+    MaxScore: 0
+    UseMinScore: 0
+    UseMaxScore: 0
+    MinSnakeNumber: 5
+    MaxSnakeNumber: 0
+    UseMinSnakeNumber: 1
+    UseMaxSnakeNumber: 0
+    SnakeType: {fileID: 11400000, guid: e7c0054dfdea4fc499242b56b453459a, type: 2}

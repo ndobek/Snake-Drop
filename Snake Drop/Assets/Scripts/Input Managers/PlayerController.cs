@@ -8,7 +8,10 @@ public class PlayerController : MonoBehaviour
     public PlayerManager player;
     [SerializeField]
     private float autoMoveInterval;
-    private float timeSinceLastAutoMove;
+    [SerializeField]
+    private float intervalToWaitBeforeHold;
+    private float timeSinceLastMove;
+    private float timePressed;
     private Direction mostRecentDirection;
 
     public void Awake()
@@ -21,32 +24,60 @@ public class PlayerController : MonoBehaviour
     //Temp to add keyboard controls
     public void Update()
     {
-        if (Input.GetKeyDown("w")) { MoveSnake(Direction.UP); }
-        if (Input.GetKeyDown("s")) { MoveSnake(Direction.DOWN); }
-        if (Input.GetKeyDown("a")) { MoveSnake(Direction.LEFT); }
-        if (Input.GetKeyDown("d")) { MoveSnake(Direction.RIGHT); }
+        if (Input.GetKeyDown("w")) { FirstPress(Direction.UP); }
+        if (Input.GetKeyDown("s")) { FirstPress(Direction.DOWN); }
+        if (Input.GetKeyDown("a")) { FirstPress(Direction.LEFT); }
+        if (Input.GetKeyDown("d")) { FirstPress(Direction.RIGHT); }
+
+        if (Input.GetKey("w")) { Hold(Direction.UP); }
+        if (Input.GetKey("s")) { Hold(Direction.DOWN); }
+        if (Input.GetKey("a")) { Hold(Direction.LEFT); }
+        if (Input.GetKey("d")) { Hold(Direction.RIGHT); }
     }
 
     private void MoveSnakeOnSwipe(TouchManager.TouchData Swipe)
     {
-        MoveSnake(Swipe.direction);
+        Press(Swipe.direction); 
     }
 
-    private void MoveSnakeOnHold(TouchManager.TouchData Hold)
+    private void MoveSnakeOnHold(TouchManager.TouchData HoldData)
     {
-        if (timeSinceLastAutoMove > autoMoveInterval)
-        {
-            timeSinceLastAutoMove = 0;
-            MoveSnake(mostRecentDirection);
-        }
-        else
-        {
-            timeSinceLastAutoMove += Time.deltaTime;
-        }
+        Hold(mostRecentDirection);
     }
     private void MoveSnakeOnTap(TouchManager.TouchData Tap)
     {
-        MoveSnake(mostRecentDirection);
+        Press();
+    }
+
+    private void Press(Direction direction)
+    {
+        timeSinceLastMove = 0;
+        MoveSnake(direction);
+    }
+    private void Press()
+    {
+        Press(mostRecentDirection);
+    }
+    private void FirstPress(Direction direction)
+    {
+        timePressed = Time.time;
+        Press(direction);
+    }
+    private void FirstPress()
+    {
+        FirstPress(mostRecentDirection);
+    }
+
+    private void Hold(Direction direction)
+    {
+        if (timeSinceLastMove > autoMoveInterval && (Time.time - timePressed) >= intervalToWaitBeforeHold)
+        {
+            Press(direction);
+        }
+        else
+        {
+            timeSinceLastMove += Time.deltaTime;
+        }
     }
     public void MoveSnake(Direction direction)
     {

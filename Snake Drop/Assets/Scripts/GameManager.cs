@@ -58,61 +58,10 @@ public class GameManager : MonoBehaviour
             OnCrash(player);
         }
     }
-    public void OnCrash(PlayerManager player = null)
+    public void OnCrash(PlayerManager player)
     {
         player.OnCrash();
     }
-
-    //public void MidRound()
-    //{
-    //    if (!RoundInProgress)
-    //    {
-    //        EndRound();
-    //    }
-    //    else
-    //    {
-    //        playGrid.Fall();
-    //        FillPreviewBar();
-    //        if(difficultyManager.HeightLimit) HeightLimitIndicator.LowerHeightLimit(playerController.SnakeHead.FindSnakeMaxY() + difficultyManager.HeightLimitModifier);
-    //    }
-    //}
-
-    //private void EndRound()
-    //{
-    //    if (playerController.SnakeHead)
-    //    {
-    //        playerController.SnakeHead.KillSnake();
-    //    }
-    //    playGrid.Fall();
-
-    //    if (waitSlot.GetNeighbor(Direction.DOWN).Block != null)
-    //    {
-    //        EndGame();
-    //    }
-    //    else
-    //    {
-    //        ContinueGame();
-    //    }
-    //}
-
-    //private void ShufflePreviewBar()
-    //{
-    //    previewGrid.Fall(BasicFall);
-    //    MakeSnake();
-    //}
-    //public void FillPreviewBar()
-    //{
-    //    ShufflePreviewBar();
-    //    while (snakeMaker.Blocks.Count == 0 | waitSlot.Block == null)
-    //    {
-    //        ShufflePreviewBar();
-    //    }
-    //}
-
-    //private void MakeSnake()
-    //{
-    //    difficultyManager.MakeSnake(difficultyManager.SnakeLength, difficultyManager.SnakeEntropy);
-    //}
 
     public void StartGame()
     {
@@ -131,16 +80,26 @@ public class GameManager : MonoBehaviour
         player.StartNewRound();
     }
 
+    private bool GameIsOver()
+    {
+        foreach (PlayerManager player in playerManagers)
+        {
+            if (player.GameInProgress) return false;
+        }
+        return true;
+    }
+
+    public void CheckForGameOver()
+    {
+        if (GameIsOver())
+        {
+            EndGame();
+        }
+    }
+
     private void EndGame()
     {
         gameOverScreen.SetActive(true);
     }
-
-
-    //public void ResetMoveRestrictions()
-    //{
-    //    HeightLimitIndicator.ResetHeightLimit();
-    //    playerController.ResetGame();
-    //}
 
 }

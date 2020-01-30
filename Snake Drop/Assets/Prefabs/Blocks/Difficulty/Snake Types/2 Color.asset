@@ -10,18 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9f06480c29a65744988433b79d09f895, type: 3}
-  m_Name: 3 Color
+  m_Name: 2 Color
   m_EditorClassIdentifier: 
-  MinScore: 0
-  MaxScore: 15
-  HasMaxScore: 1
   possibleTypes:
   - {fileID: 11400000, guid: 7d50d8ff5e938a6439c218aa18290334, type: 2}
   possibleColors:
-  - {fileID: 11400000, guid: 5438ed90547356044a3c13328a354b08, type: 2}
-  - {fileID: 11400000, guid: 48847a2b7d2594e4a885a17b2eb9b0da, type: 2}
-  - {fileID: 11400000, guid: 1f96a88418ae4d64594066b606e5646b, type: 2}
-  minSnakeLength: 2
-  maxSnakeLength: 7
-  minSnakeEntropy: 0.2
-  maxSnakeEntropy: 0.4
+  - {fileID: 11400000, guid: dc0a2986a68ec8447b283e6fc5dbf9cd, type: 2}
+  - {fileID: 11400000, guid: 06922463012b1f24fb757d5ffdabbd6b, type: 2}
+  minSnakeLength: 3
+  maxSnakeLength: 5
+  minSnakeEntropy: 1
+  maxSnakeEntropy: 1
