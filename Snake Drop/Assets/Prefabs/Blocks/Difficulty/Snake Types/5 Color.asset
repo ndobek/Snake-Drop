@@ -12,9 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f06480c29a65744988433b79d09f895, type: 3}
   m_Name: 5 Color
   m_EditorClassIdentifier: 
-  MinScore: 15
-  MaxScore: 0
-  HasMaxScore: 0
   possibleTypes:
   - {fileID: 11400000, guid: 7d50d8ff5e938a6439c218aa18290334, type: 2}
   possibleColors:
@@ -25,5 +22,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1f96a88418ae4d64594066b606e5646b, type: 2}
   minSnakeLength: 10
   maxSnakeLength: 20
-  minSnakeEntropy: 0
-  maxSnakeEntropy: 0.2
+  minSnakeEntropy: 0.1
+  maxSnakeEntropy: 0.3
