@@ -94,7 +94,9 @@ public class PlayerManager : MonoBehaviour
         if (startSlot.CheckIsClear())
         {
             NumberOfSnakes += 1;
-            SnakeMaker.MakeSnake(startSlot, GameManager.instance.difficultyManager.GetSnakeInfo(Score, NumberOfSnakes));
+            SnakeInfo info = GameManager.instance.difficultyManager.GetSnakeInfo(Score, NumberOfSnakes);
+            Debug.Log("Entropy: " + info.entropy + "Length: " + info.length);
+            SnakeMaker.MakeSnake(startSlot, info);
         }
     }
 

@@ -46,7 +46,7 @@ public class Difficulty : ScriptableObject
         List<SnakeInfo> possibleResults = new List<SnakeInfo>();
         foreach (Level level in Levels)
         {
-            if (level.LevelInRange(score, snakeNumber)) possibleResults.Add(level.SnakeType.GetRandomSnakeInfo());
+            if (level.LevelInRange(score, snakeNumber)) possibleResults.Add(level.SnakeType.GetRandomSnakeInfo(score, snakeNumber));
         }
         if (possibleResults.Count > 0) return possibleResults[Random.Range(0, possibleResults.Count)];
 

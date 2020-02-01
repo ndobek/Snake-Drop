@@ -37,10 +37,6 @@ public class MoveInCollectionGhost : MoveRule
             block.RawMoveTo(slot);
         }
 
-        if (CollectionIsFull(slot.Block))
-        {
-            slot.Block.Break(player);
-        }
         Debug.Log("Fill: " + slot.Block.BlockCollection.FillAmount + "/" + slot.Block.BlockCollection.Area());
     }
 
@@ -57,7 +53,7 @@ public class MoveInCollectionGhost : MoveRule
                 block.SetTail(obj2);
                 obj1.SetTail(null);
 
-                obj2.RawMoveTo(obj1.Slot);
+                if(obj2) obj2.RawMoveTo(obj1.Slot);
                 obj1.RawBreak();
             }
             else

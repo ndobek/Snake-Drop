@@ -175,7 +175,7 @@ public class PlayGrid : MonoBehaviour
                 }
                 else
                 {
-                    block.Fall();
+                    block.Fall(block.Owner);
                 }
             }
         }

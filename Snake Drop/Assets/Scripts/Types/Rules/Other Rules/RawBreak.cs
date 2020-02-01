@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Rules/General/CommandToBreak")]
-public class Break : Rule
+[CreateAssetMenu(menuName = "Rules/General/RawBreak")]
+public class RawBreak : Rule
 {
     protected override void Action(Block block, PlayerManager player)
     {
-        block.Break(player);
+        block.Kill(player);
+        block.RawBreak();
     }
 }
