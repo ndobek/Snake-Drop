@@ -104,6 +104,13 @@ public class BlockSlot : MonoBehaviour
         DeleteBlock();
         CreateBlock(color, type);
     }
+    public void SetOwner(PlayerManager player)
+    {
+        foreach(Block block in Blocks)
+        {
+            block.SetOwner(player);
+        }
+    }
     public bool CheckIsClear()
     {
         return Blocks.Count == 0;
