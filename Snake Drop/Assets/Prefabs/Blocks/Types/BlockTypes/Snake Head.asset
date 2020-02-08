@@ -23,5 +23,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b860ed9adf5caab41a42f7943e50a471, type: 2}
   - {fileID: 11400000, guid: 79bdd983b114e264187bc93fa88de4a4, type: 2}
   breakRules:
+  - {fileID: 11400000, guid: 3eb11e2b5f833f4419626ec57de25cc1, type: 2}
   - {fileID: 11400000, guid: 4a872cf92c97bfc4f8d6373090c51616, type: 2}
   fallRules: []

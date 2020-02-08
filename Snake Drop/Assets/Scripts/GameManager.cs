@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
 
     
     public Rule BasicFall;
+    public MoveRule BasicMove;
     public Block blockObj;
     public BlockType defaultType;
     public BlockType snakeHeadType;
@@ -77,7 +78,7 @@ public class GameManager : MonoBehaviour
     }
     private void StartNewRound(PlayerManager player)
     {
-        player.StartNewRound();
+        player.PrepareNewRound();
     }
 
     private bool GameIsOver()

@@ -13,6 +13,7 @@ public class CollectionRule : Rule
 
         foreach (Block obj in blocks)
         {
+            obj.Slot.playGrid.SetDirty();
             Rule.Invoke(obj, player);
         }
     }

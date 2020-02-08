@@ -30,6 +30,11 @@ public class PlayerManager : MonoBehaviour
 
     public BlockSlot startSlot;
     public BlockSlot waitSlot;
+    public BlockSlot EnterSlot
+    {
+        get { return waitSlot.customDownNeighbor; }
+        set { SetWaitSlotNeightbor(value); }
+    }
 
     [HideInInspector]
     public bool RoundInProgress;
@@ -65,14 +70,28 @@ public class PlayerManager : MonoBehaviour
         }
         playGrid.Fall();
 
-        if (waitSlot.GetNeighbor(GameManager.Direction.DOWN).Block != null)
+        if (GameIsOver())
         {
             EndGame();
         }
         else
         {
-            StartNewRound();
+            PrepareNewRound();
         }
+    }
+
+    private bool GameIsOver()
+    {
+        //return (waitSlot.GetNeighbor(GameManager.Direction.DOWN).Block != null);
+        bool result = true;
+        for(int i = 0; i < playGrid.XSize; i++)
+        {
+            if(playGrid.GetBlock(i, playGrid.YSize - 1) == null)
+            {
+                result = false;
+            }
+        }
+        return result;
     }
 
     private void ShufflePreviewBar()
@@ -100,6 +119,15 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
+    public void SetWaitSlotNeightbor(BlockSlot slot)
+    {
+        if (slot)
+        {
+            waitSlot.customDownNeighbor = slot;
+            waitSlot.playGrid.transform.position = new Vector3(playGrid.CoordsPosition(slot.x, 0).x, waitSlot.playGrid.transform.position.y);
+        }
+    }
+
     public void ResetGame()
     {
         Score = 0;
@@ -109,14 +137,21 @@ public class PlayerManager : MonoBehaviour
         previewGrid.ClearGrid();
         GameInProgress = true;
     }
-    public void StartNewRound()
+    public void PrepareNewRound()
     {
         FillPreviewBar();
         ResetMoveRestrictions();
         SnakeHead = waitSlot.Block;
-        SnakeHead.RawMove(GameManager.Direction.DOWN);
-        FillPreviewBar();
-        RoundInProgress = true;
+    }
+
+    public void StartNewRound()
+    {
+        BlockSlot destination = snakeHead.Slot.GetNeighbor(GameManager.Direction.DOWN);
+        if (/*destination && SnakeHead && */GameManager.instance.BasicMove.CanMoveTo(SnakeHead, destination, this))
+        {
+            GameManager.instance.BasicMove.OnMove(SnakeHead, destination, this);
+            RoundInProgress = true;
+        }
     }
     private void EndGame()
     {
@@ -151,8 +186,23 @@ public class PlayerManager : MonoBehaviour
 
         if (GameInProgress)
         {
-            SnakeHead.Move(direction, this);
-            MidRound();
+            if (RoundInProgress)
+            {
+                SnakeHead.Move(direction, this);
+                MidRound();
+            }
+            else
+            {
+                if(direction == GameManager.Direction.LEFT || direction == GameManager.Direction.RIGHT)
+                {
+                    EnterSlot = EnterSlot.GetNeighbor(direction);
+                }
+                if(direction == GameManager.Direction.DOWN)
+                {
+
+                    StartNewRound();
+                }
+            }
         }
     }
 }

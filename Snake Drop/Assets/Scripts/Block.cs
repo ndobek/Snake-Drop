@@ -170,7 +170,7 @@ public class Block : MonoBehaviour
     }
     public virtual void MoveTo(BlockSlot obj, PlayerManager player = null)
     {
-        if(player) obj.SetOwner(player);
+        if(player && obj) obj.SetOwner(player);
         blockType.OnMove(this, obj, player);
     }
     public bool CanMoveToWithoutCrashing(BlockSlot obj, PlayerManager player = null)
@@ -222,7 +222,8 @@ public class Block : MonoBehaviour
 
         if (Tail != null)
         {
-            if (Tail.Slot.playGrid == Slot.playGrid) Tail.KillSnake(player);
+/*            if (Tail.Slot.playGrid == Slot.playGrid) */
+            Tail.KillSnake(player);
             SetTail(null);
         }
         Kill(player);

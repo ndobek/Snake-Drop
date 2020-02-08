@@ -17,6 +17,8 @@ MonoBehaviour:
   isPartOfSnake: 1
   moveRules: []
   killRules:
+  - {fileID: 11400000, guid: 63387f52336adaa45986784d410e6659, type: 2}
+  - {fileID: 11400000, guid: 3fa86c385cec3ee4e99f6fda90063626, type: 2}
   - {fileID: 11400000, guid: b860ed9adf5caab41a42f7943e50a471, type: 2}
   breakRules: []
   fallRules: []
