@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Rules/General/RawKill")]
-public class RawKill : Rule
+[CreateAssetMenu(menuName = "Rules/General/Block Functions/Kill")]
+public class R_Kill : Rule
 {
     protected override void Action(Block block, PlayerManager player)
     {

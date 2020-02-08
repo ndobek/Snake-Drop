@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Rules/General/CheckCollectionForSnake")]
-public class CheckCollectionForType : Rule
+[CreateAssetMenu(menuName = "Rules/General/Collection Rules/Check Collection For Type")]
+public class R_CheckCollectionForType : Rule
 {
     public Rule OnNoneOfType;
+    public Rule OnType;
     public BlockType Type;
 
     protected override void Action(Block block, PlayerManager player = null)
@@ -24,6 +25,7 @@ public class CheckCollectionForType : Rule
 
         }
 
-        if (!CollectionContainsType) OnNoneOfType.Invoke(block, player);
+        if (!CollectionContainsType && OnNoneOfType != null) OnNoneOfType.Invoke(block, player);
+        if (CollectionContainsType && OnType != null) OnType.Invoke(block, player);
     }
 }

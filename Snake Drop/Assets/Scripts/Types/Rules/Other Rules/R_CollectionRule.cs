@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Rules/General/CollectionRule")]
-public class CollectionRule : Rule
+[CreateAssetMenu(menuName = "Rules/General/Collection Rules/Collection Rule")]
+public class R_CollectionRule : Rule
 {
     public Rule Rule;
 

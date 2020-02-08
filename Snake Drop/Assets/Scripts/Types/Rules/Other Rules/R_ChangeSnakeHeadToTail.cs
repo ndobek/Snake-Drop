@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Rules/General/ChangeSnakeHead")]
-public class ChangeSnakeHead : Rule
+[CreateAssetMenu(menuName = "Rules/General/Change Snake Head To Tail")]
+public class R_ChangeSnakeHeadToTail : Rule
 {
     protected override void Action(Block block, PlayerManager player = null)
     {

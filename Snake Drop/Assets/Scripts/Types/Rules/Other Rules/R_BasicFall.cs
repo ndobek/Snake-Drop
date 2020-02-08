@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Rules/General/BasicFall")]
-public class BasicFall : Rule
+[CreateAssetMenu(menuName = "Rules/General/Fall Rules/Basic Fall")]
+public class R_BasicFall : Rule
 {
     public MoveRule BasicMoveRule;
 
