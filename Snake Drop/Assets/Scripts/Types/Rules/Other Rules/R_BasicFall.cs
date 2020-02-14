@@ -5,14 +5,14 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Rules/General/Fall Rules/Basic Fall")]
 public class R_BasicFall : Rule
 {
-    public MoveRule MoveRule;
+    public MoveRule BasicMoveRule;
 
     protected override void Action(Block block, PlayerManager player = null)
     {
         BlockSlot destination = block.Neighbor(GameManager.Direction.DOWN);
-        while (MoveRule.CanMoveTo(block, destination, player) && destination.playGrid == block.Slot.playGrid)
+        while (BasicMoveRule.CanMoveTo(block, destination, player) && destination.playGrid == block.Slot.playGrid)
         {
-            MoveRule.OnMove(block, destination, player);
+            BasicMoveRule.OnMove(block, destination, player);
             destination = block.Neighbor(GameManager.Direction.DOWN);
         }
     }
