@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c7ee13669a2927d4e9ca8a130827b502, type: 3}
-  m_Name: Burn
+  m_Name: Decrease By One
   m_EditorClassIdentifier: 
-  ScoreIncrease: -1
+  ScoreIncrease: 0

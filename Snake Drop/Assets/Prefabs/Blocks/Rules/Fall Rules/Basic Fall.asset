@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1dd9a0fb6dc5a5c47a950802f15e4cc0, type: 3}
-  m_Name: Collection Break
-  m_EditorClassIdentifier: Assembly-CSharp::CollectionRule
-  Rule: {fileID: 11400000, guid: 9e892d7339cd12c43b3e36d096c29832, type: 2}
+  m_Script: {fileID: 11500000, guid: 8b62cab26735b6c48858a02c1572b8dc, type: 3}
+  m_Name: BasicFall
+  m_EditorClassIdentifier: 
+  BasicMoveRule: {fileID: 0}
