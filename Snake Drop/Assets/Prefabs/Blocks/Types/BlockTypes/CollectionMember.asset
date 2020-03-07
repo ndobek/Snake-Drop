@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bd3250dde91e984ca21eb1cdd8190dc, type: 3}
   m_Name: CollectionMember
   m_EditorClassIdentifier: 
-  sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  sprite: {fileID: 21300000, guid: 9d359615f9c5d024d8a90b2629391f2f, type: 3}
+  sortingOrder: 0
+  isPartOfSnake: 0
   moveRules:
   - {fileID: 11400000, guid: 262227f8863056f44aebf48883a89c15, type: 2}
   killRules: []

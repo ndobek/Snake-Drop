@@ -105,7 +105,7 @@ public class Block : MonoBehaviour
         if (Slot)
         {
             this.transform.SetParent(Slot.transform);
-            this.transform.localPosition = Vector3.zero; /*Vector3.MoveTowards(this.transform.localPosition, Vector3.zero, .01f); */ /*ector3.Lerp(this.transform.localPosition, Vector3.zero, .1f);*/
+            this.transform.localPosition = /*Vector3.zero; *//*Vector3.MoveTowards(this.transform.localPosition, Vector3.zero, .01f);*/  Vector3.Lerp(this.transform.localPosition, Vector3.zero, .1f);
             this.transform.localRotation = Quaternion.identity;
             this.transform.localScale = Vector3.one;
         }
