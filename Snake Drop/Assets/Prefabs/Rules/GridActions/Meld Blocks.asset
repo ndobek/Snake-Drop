@@ -9,7 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b62cab26735b6c48858a02c1572b8dc, type: 3}
-  m_Name: Collection Fall
+  m_Script: {fileID: 11500000, guid: 0e7222469ca513543827220544bc8ed4, type: 3}
+  m_Name: Meld Blocks
   m_EditorClassIdentifier: 
-  BasicMoveRule: {fileID: 11400000, guid: 262227f8863056f44aebf48883a89c15, type: 2}

@@ -20,5 +20,4 @@ MonoBehaviour:
   killRules: []
   breakRules:
   - {fileID: 11400000, guid: bd92a44cb717550499351307348d27d2, type: 2}
-  fallRules:
-  - {fileID: 11400000, guid: fa4d615adc4a25d45b91efc15f1a9f24, type: 2}
+  gridActionRules: []

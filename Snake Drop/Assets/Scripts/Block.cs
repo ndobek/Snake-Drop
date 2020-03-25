@@ -159,10 +159,9 @@ public class Block : MonoBehaviour
 
     #endregion
 
-    public void Fall(PlayerManager player = null)
+    public void OnGridAction(PlayerManager player = null)
     {
-        SetGridDirty();
-        blockType.OnFall(this, player);
+        blockType.OnGridAction(this, player);
     }
     public void Move(GameManager.Direction neighbor, PlayerManager player = null)
     {
@@ -170,7 +169,8 @@ public class Block : MonoBehaviour
     }
     public virtual void MoveTo(BlockSlot obj, PlayerManager player = null)
     {
-        if(player && obj) obj.SetOwner(player);
+        SetGridDirty();
+        if (player && obj) obj.SetOwner(player);
         blockType.OnMove(this, obj, player);
     }
     public bool CanMoveToWithoutCrashing(BlockSlot obj, PlayerManager player = null)

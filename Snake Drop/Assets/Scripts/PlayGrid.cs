@@ -9,6 +9,7 @@ public class PlayGrid : MonoBehaviour
     #region Grid Information
 
     public BlockSlot slotObj;
+    public GridAction[] gridActions;
 
     [SerializeField]
     private int xSize;
@@ -127,7 +128,7 @@ public class PlayGrid : MonoBehaviour
 
     #region Methods for updating and maintenance.
 
-    private void Update()
+    public void Update()
     {
         UpdateGrid();
     }
@@ -142,44 +143,20 @@ public class PlayGrid : MonoBehaviour
         }
     }
 
-    private bool dirty = false;
+    public bool dirty = false;
     public void SetDirty()
     {
         dirty = true;
     }
-    public void Fall(Rule fallRule = null)
-    {
-        bool dirty = true;
 
-        while (dirty)
-        {
-            dirty = false;
-            for (int x = 0; x < xSize; x++)
-            {
-                Fall(x, 0, ySize, fallRule);
-            }
-            UpdateGrid();
-        }
-        BlockMelder.Meld(this, GameManager.instance.difficultyManager.PossibleColors);
-    }
-    private void Fall(int x, int startingY, int maxY, Rule rule = null)
+    public void InvokeGridAction()
     {
-        for (int y = startingY; y < maxY; y++)
+        foreach(GridAction action in gridActions)
         {
-            Block block = GetBlock(x, y);
-            if (block && block.Slot.playGrid == this)
-            {
-                if (rule)
-                {
-                    rule.Invoke(block);
-                }
-                else
-                {
-                    block.Fall(block.Owner);
-                }
-            }
+            action.Invoke(this);
         }
     }
+
     public void ClearGrid()
     {
         foreach (BlockSlot slot in slots)

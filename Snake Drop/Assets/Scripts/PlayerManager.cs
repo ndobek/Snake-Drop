@@ -54,7 +54,7 @@ public class PlayerManager : MonoBehaviour
         }
         else
         {
-            playGrid.Fall();
+            playGrid.InvokeGridAction();
             FillPreviewBar();
 
             DifficultyManager difficulty = GameManager.instance.difficultyManager;
@@ -68,7 +68,7 @@ public class PlayerManager : MonoBehaviour
         {
             SnakeHead.KillSnake(this);
         }
-        playGrid.Fall();
+        playGrid.InvokeGridAction();
 
         if (GameIsOver())
         {
@@ -96,7 +96,7 @@ public class PlayerManager : MonoBehaviour
 
     private void ShufflePreviewBar()
     {
-        previewGrid.Fall(GameManager.instance.BasicFall);
+        previewGrid.InvokeGridAction();
         MakeSnake();
     }
     public void FillPreviewBar()
@@ -146,6 +146,7 @@ public class PlayerManager : MonoBehaviour
 
     public void StartNewRound()
     {
+
         BlockSlot destination = snakeHead.Slot.GetNeighbor(GameManager.Direction.DOWN);
         if (/*destination && SnakeHead && */GameManager.instance.BasicMove.CanMoveTo(SnakeHead, destination, this))
         {

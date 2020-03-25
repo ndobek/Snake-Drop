@@ -13,7 +13,7 @@ public class BlockType : ScriptableObject
     public MoveRule[] moveRules;
     public Rule[] killRules;
     public Rule[] breakRules;
-    public Rule[] fallRules;
+    public Rule[] gridActionRules;
 
     #region Permissions
 
@@ -65,9 +65,9 @@ public class BlockType : ScriptableObject
         }
 
     }
-    public virtual void OnFall(Block block, PlayerManager player = null)
+    public virtual void OnGridAction(Block block, PlayerManager player = null)
     {
-        foreach (Rule rule in fallRules)
+        foreach (Rule rule in gridActionRules)
         {
             if (block && rule) rule.Invoke(block, player);
         }

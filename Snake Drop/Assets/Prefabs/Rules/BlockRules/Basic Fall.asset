@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a87f7500d6e8e94299df392d9c691d3, type: 3}
-  m_Name: Break Collection If No Snake Head
+  m_Script: {fileID: 11500000, guid: 8b62cab26735b6c48858a02c1572b8dc, type: 3}
+  m_Name: Basic Fall
   m_EditorClassIdentifier: 
-  OnNoneOfType: {fileID: 11400000, guid: e8f676ce9a413824e8eba4055d456d47, type: 2}
-  Type: {fileID: 11400000, guid: 1bb708f6f67e7844993159c157df7353, type: 2}
+  BasicMoveRule: {fileID: 11400000, guid: 92ab9aa1ed82ac94fbd2d0b8d9a0dc74, type: 2}
+  Direction: 1

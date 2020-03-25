@@ -2256,6 +2256,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slotObj: {fileID: 8801716192784943556, guid: 57e0accb7532d95498b10343a4e2fa7e, type: 3}
+  gridActions:
+  - {fileID: 11400000, guid: 3d350aacdee8ecf468c2272b40740429, type: 2}
+  - {fileID: 11400000, guid: 4bb5f8a94bc973043a60ef672a7bb4e6, type: 2}
   xSize: 11
   ySize: 11
   gridSpace: 0.4
@@ -2381,6 +2384,7 @@ MonoBehaviour:
   - {fileID: 1723752394}
   - {fileID: 440095774}
   - {fileID: 658576802}
+  dirty: 0
 --- !u!1 &360298880
 GameObject:
   m_ObjectHideFlags: 0
@@ -8845,6 +8849,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slotObj: {fileID: 8801716192784943556, guid: 57e0accb7532d95498b10343a4e2fa7e, type: 3}
+  gridActions:
+  - {fileID: 11400000, guid: 3d30337a6a85dff40bbf383eb58a95df, type: 2}
   xSize: 1
   ySize: 9
   gridSpace: 0.3
@@ -8858,6 +8864,7 @@ MonoBehaviour:
   - {fileID: 2063090468}
   - {fileID: 1724666810}
   - {fileID: 1920598790}
+  dirty: 0
 --- !u!1 &1246010076
 GameObject:
   m_ObjectHideFlags: 0
