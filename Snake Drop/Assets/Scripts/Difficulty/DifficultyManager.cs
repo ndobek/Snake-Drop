@@ -19,11 +19,11 @@ public class DifficultyManager : MonoBehaviour
 
     public BlockType[] GetRandomTypes(int score, int snakeNumber)
     {
-        return Difficulty.GetRandomBlockTypes(score, snakeNumber);
+        return Difficulty.GetTypes(score, snakeNumber);
     }
     public BlockColor[] GetRandomColors(int score, int snakeNumber)
     {
-        return Difficulty.GetRandomBlockColors(score, snakeNumber);
+        return Difficulty.GetColors(score, snakeNumber);
     }
     public int GetRandomSnakeLength(int score, int snakeNumber)
     {
@@ -34,20 +34,14 @@ public class DifficultyManager : MonoBehaviour
         return Difficulty.GetRandomEntropy(score, snakeNumber);
     }
 
-    public SnakeInfo GetDetachedSnakeInfo(int score, int snakeNumber)
-    {
-        return new SnakeInfo()
-        {
-            possibleTypes = GetRandomTypes(score, snakeNumber),
-            possibleColors = GetRandomColors(score, snakeNumber),
-            length = GetRandomSnakeLength(score, snakeNumber),
-            entropy = GetRandomSnakeEntropy(score, snakeNumber)
-        };
-    }
     public SnakeInfo GetSnakeInfo(int score, int snakeNumber)
     {
-        return Difficulty.GetRandomSnakeInfo(score, snakeNumber);
+        return Difficulty.GetSnakeInfo(score, snakeNumber);
     }
+    //public SnakeInfo GetSnakeInfo(int score, int snakeNumber)
+    //{
+    //    return Difficulty.GetRandomSnakeInfo(score, snakeNumber);
+    //}
 
 }
 

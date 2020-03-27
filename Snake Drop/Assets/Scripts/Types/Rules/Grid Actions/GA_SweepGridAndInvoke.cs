@@ -56,9 +56,6 @@ public class GA_SweepGridAndInvoke : GridAction
                     }
                     break;
             }
-
-
-            grid.Update();
         }
     }
     public void InvokeOnBlock(Block block, PlayGrid grid)

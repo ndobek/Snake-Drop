@@ -128,11 +128,11 @@ public class PlayGrid : MonoBehaviour
 
     #region Methods for updating and maintenance.
 
-    public void Update()
+    public void FixedUpdate()
     {
         UpdateGrid();
     }
-    private void UpdateGrid()
+    public void UpdateGrid()
     {
         for (int x = 0; x < xSize; x++)
         {

@@ -14,6 +14,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Levels:
   - MinScore: 0
+    MaxScore: 20
+    UseMinScore: 0
+    UseMaxScore: 0
+    MinSnakeNumber: 0
+    MaxSnakeNumber: 0
+    UseMinSnakeNumber: 0
+    UseMaxSnakeNumber: 0
+    possibleTypes:
+    - {fileID: 11400000, guid: 7d50d8ff5e938a6439c218aa18290334, type: 2}
+    possibleColors:
+    - {fileID: 11400000, guid: 5438ed90547356044a3c13328a354b08, type: 2}
+    - {fileID: 11400000, guid: 1f96a88418ae4d64594066b606e5646b, type: 2}
+    - {fileID: 11400000, guid: 48847a2b7d2594e4a885a17b2eb9b0da, type: 2}
+    Stats: []
+  - MinScore: 0
     MaxScore: 100
     UseMinScore: 0
     UseMaxScore: 0
@@ -21,4 +36,65 @@ MonoBehaviour:
     MaxSnakeNumber: 0
     UseMinSnakeNumber: 0
     UseMaxSnakeNumber: 0
-    SnakeType: {fileID: 11400000, guid: f307d31060e941f44aedfad7bd63fdc9, type: 2}
+    possibleTypes: []
+    possibleColors: []
+    Stats:
+    - StatType: 0
+      value: 10
+    - StatType: 1
+      value: 15
+    - StatType: 8
+      value: 0
+    - StatType: 9
+      value: 100
+    - StatType: 4
+      value: 0.01
+    - StatType: 5
+      value: 1
+  - MinScore: 0
+    MaxScore: 100
+    UseMinScore: 0
+    UseMaxScore: 0
+    MinSnakeNumber: 0
+    MaxSnakeNumber: 0
+    UseMinSnakeNumber: 0
+    UseMaxSnakeNumber: 0
+    possibleTypes: []
+    possibleColors: []
+    Stats:
+    - StatType: 2
+      value: 0.1
+    - StatType: 3
+      value: 0.3
+    - StatType: 10
+      value: 0.2
+    - StatType: 11
+      value: 1
+    - StatType: 6
+      value: 0.001
+    - StatType: 7
+      value: 0
+  - MinScore: 40
+    MaxScore: 100
+    UseMinScore: 1
+    UseMaxScore: 0
+    MinSnakeNumber: 0
+    MaxSnakeNumber: 0
+    UseMinSnakeNumber: 0
+    UseMaxSnakeNumber: 0
+    possibleTypes: []
+    possibleColors:
+    - {fileID: 11400000, guid: 06922463012b1f24fb757d5ffdabbd6b, type: 2}
+    Stats:
+    - StatType: 2
+      value: 0.1
+    - StatType: 3
+      value: 0.3
+    - StatType: 10
+      value: 0.2
+    - StatType: 11
+      value: 1
+    - StatType: 6
+      value: 0.001
+    - StatType: 7
+      value: 0
