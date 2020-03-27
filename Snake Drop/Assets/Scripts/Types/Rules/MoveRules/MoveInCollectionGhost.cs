@@ -29,7 +29,7 @@ public class MoveInCollectionGhost : MoveRule
 
         } else if(block.blockColor != slot.Block.blockColor && !CollectionIsFull(slot.Block))
         {
-            if(block.Tail) RemoveFirstColorInTail(block, slot);
+            //if(block.Tail) RemoveFirstColorInTail(block, slot);
             block.RawMoveTo(slot);
         }
         else

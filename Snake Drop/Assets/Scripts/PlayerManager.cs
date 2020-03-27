@@ -30,11 +30,13 @@ public class PlayerManager : MonoBehaviour
 
     public BlockSlot startSlot;
     public BlockSlot waitSlot;
-    public BlockSlot EnterSlot
-    {
-        get { return waitSlot.customDownNeighbor; }
-        set { SetWaitSlotNeightbor(value); }
-    }
+
+    private EntranceSlot enterSlot;
+    public EntranceManager entranceManager;
+    //{
+    //    get { return (EntranceSlot)waitSlot.customDownNeighbor; }
+    //    set { SetWaitSlotNeightbor(value); }
+    //}
 
     [HideInInspector]
     public bool RoundInProgress;
@@ -83,15 +85,7 @@ public class PlayerManager : MonoBehaviour
     private bool GameIsOver()
     {
         //return (waitSlot.GetNeighbor(GameManager.Direction.DOWN).Block != null);
-        bool result = true;
-        for(int i = 0; i < playGrid.XSize; i++)
-        {
-            if(playGrid.GetBlock(i, playGrid.YSize - 1) == null)
-            {
-                result = false;
-            }
-        }
-        return result;
+        return !entranceManager.CheckForValidEntrancesToGrid(this, playGrid);
     }
 
     private void ShufflePreviewBar()
@@ -119,12 +113,19 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
-    public void SetWaitSlotNeightbor(BlockSlot slot)
+    public void PositionWaitSlot(BlockSlot slot)
     {
         if (slot)
         {
-            waitSlot.customDownNeighbor = slot;
-            waitSlot.playGrid.transform.position = new Vector3(playGrid.CoordsPosition(slot.x, 0).x, waitSlot.playGrid.transform.position.y);
+            waitSlot.customDownNeighbor = slot.customDownNeighbor;
+            waitSlot.customUpNeighbor = slot.customUpNeighbor;
+            waitSlot.customLeftNeighbor = slot.customLeftNeighbor;
+            waitSlot.customRightNeighbor = slot.customRightNeighbor;
+
+            waitSlot.playGrid.transform.position = slot.transform.position;
+            waitSlot.playGrid.transform.rotation = slot.transform.rotation;
+
+            enterSlot = (EntranceSlot)slot;
         }
     }
 
@@ -135,6 +136,7 @@ public class PlayerManager : MonoBehaviour
         ResetMoveRestrictions();
         playGrid.ClearGrid();
         previewGrid.ClearGrid();
+        PositionWaitSlot(entranceManager.StartingSlot);
         GameInProgress = true;
     }
     public void PrepareNewRound()
@@ -144,10 +146,10 @@ public class PlayerManager : MonoBehaviour
         SnakeHead = waitSlot.Block;
     }
 
-    public void StartNewRound()
+    public void StartNewRound(GameManager.Direction direction)
     {
 
-        BlockSlot destination = snakeHead.Slot.GetNeighbor(GameManager.Direction.DOWN);
+        BlockSlot destination = snakeHead.Slot.GetNeighbor(direction);
         if (/*destination && SnakeHead && */GameManager.instance.BasicMove.CanMoveTo(SnakeHead, destination, this))
         {
             GameManager.instance.BasicMove.OnMove(SnakeHead, destination, this);
@@ -194,14 +196,15 @@ public class PlayerManager : MonoBehaviour
             }
             else
             {
-                if(direction == GameManager.Direction.LEFT || direction == GameManager.Direction.RIGHT)
+                BlockSlot destination = enterSlot.GetNeighbor(direction);
+                if(!destination || destination.playGrid != playGrid)
                 {
-                    EnterSlot = EnterSlot.GetNeighbor(direction);
+                    PositionWaitSlot(enterSlot.GetNextValidSlot(direction,this));
                 }
-                if(direction == GameManager.Direction.DOWN)
+                else
                 {
 
-                    StartNewRound();
+                    StartNewRound(direction);
                 }
             }
         }

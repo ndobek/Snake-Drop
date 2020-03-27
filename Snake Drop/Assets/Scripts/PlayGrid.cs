@@ -63,7 +63,7 @@ public class PlayGrid : MonoBehaviour
 
     [SerializeField]
     public BlockSlot[] slots;
-    private int FlattenedIndex(int x, int y)
+    protected int FlattenedIndex(int x, int y)
     {
         return y * xSize + x;
     }
@@ -96,7 +96,7 @@ public class PlayGrid : MonoBehaviour
 
     #region Grid initialization
 
-    public void CreateGrid()
+    public virtual void CreateGrid()
     {
         slots = new BlockSlot[xSize * ySize];
         for (int x = 0; x < xSize; x++)
@@ -107,12 +107,12 @@ public class PlayGrid : MonoBehaviour
             }
         }
     }
-    private void CreateSlot(int x, int y, BlockColor color, BlockType type)
+    protected void CreateSlot(int x, int y, BlockColor color, BlockType type)
     {
         CreateSlot(x, y);
         SetBlock(x, y, color, type);
     }
-    private void CreateSlot(int x, int y)
+    protected virtual void CreateSlot(int x, int y)
     {
         if (CheckInGrid(x, y) && slots[FlattenedIndex(x, y)] == null)
         {
@@ -138,12 +138,18 @@ public class PlayGrid : MonoBehaviour
         {
             for (int y = 0; y < ySize; y++)
             {
-                GetSlot(x, y).UpdateBlock();
+                BlockSlot slot = GetSlot(x, y);
+                if(slot) slot.UpdateBlock();
             }
         }
     }
 
-    public bool dirty = false;
+    private bool dirty = false;
+    public bool Dirty
+    {
+        get { return dirty; }
+        set { dirty = value; }
+    }
     public void SetDirty()
     {
         dirty = true;

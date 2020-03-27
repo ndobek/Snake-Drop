@@ -9,11 +9,11 @@ public class GA_SweepGridAndInvoke : GridAction
     public GameManager.Direction Direction;
     protected override void Action(PlayGrid grid)
     {
-        grid.dirty = true;
+        grid.Dirty = true;
 
-        while (grid.dirty)
+        while (grid.Dirty)
         {
-            grid.dirty = false;
+            grid.Dirty = false;
             switch (Direction)
             {
                 case GameManager.Direction.UP:
