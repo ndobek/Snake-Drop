@@ -38,10 +38,6 @@ public class DifficultyManager : MonoBehaviour
     {
         return Difficulty.GetSnakeInfo(score, snakeNumber);
     }
-    //public SnakeInfo GetSnakeInfo(int score, int snakeNumber)
-    //{
-    //    return Difficulty.GetRandomSnakeInfo(score, snakeNumber);
-    //}
 
 }
 

@@ -16,12 +16,51 @@ public class ScoreManager : MonoBehaviour
             ScoreText.text = "Score: " + score.ToString();
         }
     }
-
     [SerializeField]
     private Text ScoreText;
 
+    [HideInInspector]
+    private int multiplier;
+    public int Multiplier
+    {
+        get { return multiplier; }
+        set
+        {
+            multiplier = value;
+            MultiplierText.text = "Multiplier: " + multiplier.ToString();
+        }
+    }
+    [SerializeField]
+    private Text MultiplierText;
+
+    public int numberOfSnakes;
+    public int NumberOfSnakes
+    {
+        get { return numberOfSnakes; }
+        set { numberOfSnakes = value; }
+    }
+
     private void Awake()
     {
-        Score = 0;
+        ResetGame();
     }
+
+    public void ResetGame()
+    {
+        Score = 0;
+        NumberOfSnakes = 0;
+        ResetMultiplier();
+    }
+
+    public void ResetMultiplier()
+    {
+        Multiplier = 1;
+    }
+
+    public void IncreaseScoreUsingMultiplier(int amount)
+    {
+        Score = score + (amount * multiplier);
+    }
+
+
 }

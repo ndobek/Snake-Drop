@@ -71,10 +71,10 @@ MonoBehaviour:
     - StatType: 11
       value: 1
     - StatType: 6
-      value: 0.001
-    - StatType: 7
       value: 0
-  - MinScore: 40
+    - StatType: 7
+      value: 0.005
+  - MinScore: 1000
     MaxScore: 100
     UseMinScore: 1
     UseMaxScore: 0
@@ -85,16 +85,16 @@ MonoBehaviour:
     possibleTypes: []
     possibleColors:
     - {fileID: 11400000, guid: 06922463012b1f24fb757d5ffdabbd6b, type: 2}
-    Stats:
-    - StatType: 2
-      value: 0.1
-    - StatType: 3
-      value: 0.3
-    - StatType: 10
-      value: 0.2
-    - StatType: 11
-      value: 1
-    - StatType: 6
-      value: 0.001
-    - StatType: 7
-      value: 0
+    Stats: []
+  - MinScore: 2000
+    MaxScore: 100
+    UseMinScore: 1
+    UseMaxScore: 0
+    MinSnakeNumber: 0
+    MaxSnakeNumber: 0
+    UseMinSnakeNumber: 0
+    UseMaxSnakeNumber: 0
+    possibleTypes: []
+    possibleColors:
+    - {fileID: 11400000, guid: dc0a2986a68ec8447b283e6fc5dbf9cd, type: 2}
+    Stats: []

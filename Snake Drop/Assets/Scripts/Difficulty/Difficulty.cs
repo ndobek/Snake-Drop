@@ -175,12 +175,12 @@ public class Difficulty : ScriptableObject
         return Random.Range(GetRandomStat(minStatType, score, snakeNumber), GetRandomStat(maxStatType, score, snakeNumber));
     }
 
-    private int GetStatModifier(Level.StatTypes ScoreMod, Level.StatTypes SnakeNumberMod, int score, int snakeNumber)
+    private float GetStatModifier(Level.StatTypes ScoreMod, Level.StatTypes SnakeNumberMod, int score, int snakeNumber)
     {
-        int result = 0;
+        float result = 0;
 
-        result += (int)(score * GetRandomStat(ScoreMod, score, snakeNumber));
-        result += (int)(snakeNumber * GetRandomStat(SnakeNumberMod, score, snakeNumber));
+        result += (score * GetRandomStat(ScoreMod, score, snakeNumber));
+        result += (snakeNumber * GetRandomStat(SnakeNumberMod, score, snakeNumber));
 
         return result;
     }

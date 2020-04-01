@@ -14,13 +14,7 @@ public class PlayerManager : MonoBehaviour
     }
 
     [SerializeField]
-    private ScoreManager scoreManager;
-    public int Score
-    {
-        get { return scoreManager.Score; }
-        set { scoreManager.Score = value; }
-    }
-    private int NumberOfSnakes;
+    public ScoreManager Score;
 
     public PlayerController playerController;
 
@@ -33,10 +27,6 @@ public class PlayerManager : MonoBehaviour
 
     private EntranceSlot enterSlot;
     public EntranceManager entranceManager;
-    //{
-    //    get { return (EntranceSlot)waitSlot.customDownNeighbor; }
-    //    set { SetWaitSlotNeightbor(value); }
-    //}
 
     [HideInInspector]
     public bool RoundInProgress;
@@ -71,6 +61,7 @@ public class PlayerManager : MonoBehaviour
             SnakeHead.KillSnake(this);
         }
         playGrid.InvokeGridAction();
+        Score.ResetMultiplier();
 
         if (GameIsOver())
         {
@@ -106,9 +97,9 @@ public class PlayerManager : MonoBehaviour
     {
         if (startSlot.CheckIsClear())
         {
-            NumberOfSnakes += 1;
-            SnakeInfo info = GameManager.instance.difficultyManager.GetSnakeInfo(Score, NumberOfSnakes);
-            Debug.Log("Entropy: " + info.entropy + "Length: " + info.length);
+            Score.NumberOfSnakes += 1;
+            SnakeInfo info = GameManager.instance.difficultyManager.GetSnakeInfo(Score.Score, Score.NumberOfSnakes);
+            Debug.Log("Entropy: " + info.entropy + " Length: " + info.length + " Snake Number: " + Score.NumberOfSnakes + " Score: " + Score.Score);
             SnakeMaker.MakeSnake(startSlot, info);
         }
     }
@@ -131,8 +122,7 @@ public class PlayerManager : MonoBehaviour
 
     public void ResetGame()
     {
-        Score = 0;
-        NumberOfSnakes = 0;
+        Score.ResetGame();
         ResetMoveRestrictions();
         playGrid.ClearGrid();
         previewGrid.ClearGrid();

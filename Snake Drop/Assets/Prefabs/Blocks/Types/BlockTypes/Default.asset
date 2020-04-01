@@ -21,4 +21,5 @@ MonoBehaviour:
   breakRules:
   - {fileID: 11400000, guid: 05e5646cb1e173643b7e398a324acce3, type: 2}
   - {fileID: 11400000, guid: 4a872cf92c97bfc4f8d6373090c51616, type: 2}
+  - {fileID: 11400000, guid: 3ea51636f31fbf44db95bf1795a6ddcb, type: 2}
   gridActionRules: []

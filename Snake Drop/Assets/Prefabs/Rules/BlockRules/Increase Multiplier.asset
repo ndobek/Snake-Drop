@@ -9,8 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7ee13669a2927d4e9ca8a130827b502, type: 3}
-  m_Name: Increase Score
+  m_Script: {fileID: 11500000, guid: c58474225aafe284096aaed39d2bb28d, type: 3}
+  m_Name: Increase Multiplier
   m_EditorClassIdentifier: 
-  ScoreIncrease: 1
-  ApplyMultiplier: 1
+  MultiplierIncrease: 1

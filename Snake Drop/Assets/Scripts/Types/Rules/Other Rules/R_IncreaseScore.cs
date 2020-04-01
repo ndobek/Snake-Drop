@@ -6,8 +6,14 @@ using UnityEngine;
 public class R_IncreaseScore : Rule
 {
     public int ScoreIncrease;
+    [SerializeField]
+    private bool ApplyMultiplier;
     protected override void Action(Block block, PlayerManager player = null)
     {
-        if(player) player.Score += ScoreIncrease;
+        if (player)
+        {
+            if (ApplyMultiplier) player.Score.IncreaseScoreUsingMultiplier(ScoreIncrease);
+            else player.Score.Score += ScoreIncrease;
+        }
     }
 }

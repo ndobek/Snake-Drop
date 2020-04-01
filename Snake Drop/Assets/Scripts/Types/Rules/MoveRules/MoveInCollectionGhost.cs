@@ -18,18 +18,17 @@ public class MoveInCollectionGhost : MoveRule
     {
         if (block.blockColor == slot.Block.blockColor && !CollectionIsFull(slot.Block))
         {
-            IncreaseFillAmmount(slot.Block);
+            IncreaseFillAmmount(slot.Block, player);
             block.RawMoveTo(slot);
             if (block.Tail)
             {
-                //block.Tail.RawMoveTo(block.Slot);
                 block.Tail.RawMoveTo(slot);
             }
             block.Break(player);
 
         } else if(block.blockColor != slot.Block.blockColor && !CollectionIsFull(slot.Block))
         {
-            //if(block.Tail) RemoveFirstColorInTail(block, slot);
+            //if (block.Tail) RemoveFirstColorInTail(block, slot, player);
             block.RawMoveTo(slot);
         }
         else
@@ -40,13 +39,13 @@ public class MoveInCollectionGhost : MoveRule
         Debug.Log("Fill: " + slot.Block.BlockCollection.FillAmount + "/" + slot.Block.BlockCollection.Area());
     }
 
-    private void RemoveFirstColorInTail(Block block, BlockSlot slot)
+    private void RemoveFirstColorInTail(Block block, BlockSlot slot, PlayerManager player)
     {
         if (block.Tail && !CollectionIsFull(slot.Block) && slot.Block.BlockCollection.CoordsAreInCollection(block.X, block.Y))
         {
             if(block.Tail.blockColor == slot.Block.blockColor)
             {
-                IncreaseFillAmmount(slot.Block);
+                IncreaseFillAmmount(slot.Block, player);
                 Block obj1 = block.Tail;
                 Block obj2 = block.Tail.Tail;
 
@@ -58,7 +57,7 @@ public class MoveInCollectionGhost : MoveRule
             }
             else
             {
-                RemoveFirstColorInTail(block.Tail, slot);
+                RemoveFirstColorInTail(block.Tail, slot, player);
             }
         }
     }
@@ -67,8 +66,9 @@ public class MoveInCollectionGhost : MoveRule
     {
         return block.BlockCollection.isFull();
     }
-    private void IncreaseFillAmmount(Block block)
+    private void IncreaseFillAmmount(Block block, PlayerManager player)
     {
         block.BlockCollection.FillAmount += 1;
+        player.Score.Multiplier += 1;
     }
 }
