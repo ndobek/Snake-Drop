@@ -12,7 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bd3250dde91e984ca21eb1cdd8190dc, type: 3}
   m_Name: SnakeMember
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: fcc48e28b7fb82a4db2689b6236c53a8, type: 3}
+  fullBlockSprite: {fileID: 21300000, guid: fcc48e28b7fb82a4db2689b6236c53a8, type: 3}
+  leftBlockSprite: {fileID: 0}
+  rightBlockSprite: {fileID: 0}
+  topBlockSprite: {fileID: 0}
+  bottomBlockSprite: {fileID: 0}
+  topLeftBlockSprite: {fileID: 0}
+  topRightBlockSprite: {fileID: 0}
+  bottomLeftBlockSprite: {fileID: 0}
+  bottomRightBlockSprite: {fileID: 0}
   sortingOrder: 0
   isPartOfSnake: 1
   moveRules: []
@@ -21,4 +29,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3fa86c385cec3ee4e99f6fda90063626, type: 2}
   - {fileID: 11400000, guid: b860ed9adf5caab41a42f7943e50a471, type: 2}
   breakRules: []
-  fallRules: []
+  specialActionRules: []

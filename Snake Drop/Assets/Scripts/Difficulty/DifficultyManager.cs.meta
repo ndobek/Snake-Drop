@@ -3,7 +3,22 @@ guid: 61bf6a15bd2f3af4386cf9e6688e461f
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - Difficulty: {instanceID: 0}
+  - minBaseLength: {fileID: 11400000, guid: 25ef4499148f23345b64c542146e1476, type: 2}
+  - maxBaseLength: {fileID: 11400000, guid: bcf7fc9d50be8564a911997e01665bee, type: 2}
+  - minBaseEntropy: {fileID: 11400000, guid: 47708f29cd0d5c24a8f8445c2f47e8d5, type: 2}
+  - maxBaseEntropy: {fileID: 11400000, guid: 39645c16b2ef8a742a25b80069dab812, type: 2}
+  - LengthScoreMod: {fileID: 11400000, guid: 4f58ca63e41b9474db393f701a582bb3, type: 2}
+  - LengthSnakeNumberMod: {fileID: 11400000, guid: bab21731275250e469dc795e8abe4f86,
+      type: 2}
+  - EntropyScoreMod: {fileID: 11400000, guid: 4d5a564ae89279e4a9bdeaf677e5634d, type: 2}
+  - EntropySnakeNumberMod: {fileID: 11400000, guid: c11a0ed99d1b9254bb1a834dc1addb5a,
+      type: 2}
+  - minTotalLength: {fileID: 11400000, guid: da1fea61c1219ab458d9a73e7ac950f6, type: 2}
+  - maxTotalLength: {fileID: 11400000, guid: 180b49891043d474eb2b9435c540d056, type: 2}
+  - minTotalEntropy: {fileID: 11400000, guid: f8b95da70db68684287a503e7cb2fdf9, type: 2}
+  - maxTotalEntropy: {fileID: 11400000, guid: 962e849cc16b8d84a89901a886af65ba, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

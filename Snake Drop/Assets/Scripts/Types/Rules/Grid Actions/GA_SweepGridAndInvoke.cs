@@ -62,13 +62,14 @@ public class GA_SweepGridAndInvoke : GridAction
     {
         if (block && block.Slot.playGrid == grid)
         {
+
             if (RuleToInvoke != null)
             {
-                RuleToInvoke.Invoke(block);
+                RuleToInvoke.Invoke(block, block.Owner);
             }
             else
             {
-                block.OnGridAction(block.Owner);
+                block.SpecialAction(block.Owner);
             }
         }
     }

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1066207485187696101}
   - component: {fileID: 1414227870278718605}
+  - component: {fileID: 7566206208769517561}
   m_Layer: 0
   m_Name: Block Renderer
   m_TagString: Untagged
@@ -46,6 +47,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -81,6 +83,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 2
   m_SpriteSortPoint: 0
+--- !u!95 &7566206208769517561
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5160469156817390096}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5753319260277344402
 GameObject:
   m_ObjectHideFlags: 0
@@ -127,6 +148,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -172,6 +194,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7373180677079298218}
   - component: {fileID: 1568087265349854530}
+  - component: {fileID: 4786225535629730373}
   m_Layer: 0
   m_Name: Block
   m_TagString: Untagged
@@ -209,5 +232,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockType: {fileID: 0}
   blockColor: {fileID: 0}
+  BlockSprite: {fileID: 4786225535629730373}
+--- !u!114 &4786225535629730373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7373180677079298216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 801538c514ba07440ab39e1bab2a631b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  block: {fileID: 1568087265349854530}
   BlockSprite: {fileID: 1414227870278718605}
   Highlight: {fileID: 4539331065496135913}

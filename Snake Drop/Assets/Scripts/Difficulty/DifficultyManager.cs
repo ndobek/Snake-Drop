@@ -12,32 +12,50 @@ public class DifficultyManager : MonoBehaviour
     [HideInInspector]
     public BlockColor[] PossibleColors;
 
+    public SnakeStatType minBaseLength;
+    public SnakeStatType maxBaseLength;
+    public SnakeStatType minBaseEntropy;
+    public SnakeStatType maxBaseEntropy;
+    public SnakeStatType LengthScoreMod;
+    public SnakeStatType LengthSnakeNumberMod;
+    public SnakeStatType EntropyScoreMod;
+    public SnakeStatType EntropySnakeNumberMod;
+    public SnakeStatType minTotalLength;
+    public SnakeStatType maxTotalLength;
+    public SnakeStatType minTotalEntropy;
+    public SnakeStatType maxTotalEntropy;
+
     private void Awake()
     {
         PossibleColors = Difficulty.GetAllPossibleColors();
     }
 
-    public BlockType[] GetRandomTypes(int score, int snakeNumber)
+    public Stat<BlockType>[] GetTypes(int score, int snakeNumber)
     {
         return Difficulty.GetTypes(score, snakeNumber);
     }
-    public BlockColor[] GetRandomColors(int score, int snakeNumber)
+    public Stat<BlockColor>[] GetColors(int score, int snakeNumber)
     {
         return Difficulty.GetColors(score, snakeNumber);
     }
-    public int GetRandomSnakeLength(int score, int snakeNumber)
+    public int GetRandomLength(int score, int snakeNumber)
     {
-        return Difficulty.GetRandomLength(score, snakeNumber);
+        return (int)Difficulty.GetModifiedStat(minBaseLength, maxBaseLength, LengthScoreMod, LengthSnakeNumberMod, minTotalLength, maxTotalLength, score, snakeNumber);
     }
-    public float GetRandomSnakeEntropy(int score, int snakeNumber)
+    public float GetRandomEntropy(int score, int snakeNumber)
     {
-        return Difficulty.GetRandomEntropy(score, snakeNumber);
+        return Difficulty.GetModifiedStat(minBaseEntropy, maxBaseEntropy, EntropyScoreMod, EntropySnakeNumberMod, minTotalEntropy, maxTotalEntropy, score, snakeNumber);
     }
 
     public SnakeInfo GetSnakeInfo(int score, int snakeNumber)
     {
-        return Difficulty.GetSnakeInfo(score, snakeNumber);
+        return new SnakeInfo()
+        {
+            possibleTypes = GetTypes(score, snakeNumber),
+            possibleColors = GetColors(score, snakeNumber),
+            length = GetRandomLength(score, snakeNumber),
+            entropy = GetRandomEntropy(score, snakeNumber)
+        };
     }
-
 }
 

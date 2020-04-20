@@ -12,7 +12,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bd3250dde91e984ca21eb1cdd8190dc, type: 3}
   m_Name: CollectionGhostMember
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 771d493a709cee64482523f9e7389118, type: 3}
+  fullBlockSprite: {fileID: 21300000, guid: 771d493a709cee64482523f9e7389118, type: 3}
+  topLeftBlockSprite: {fileID: 5694512942562580874, guid: 5cfc914d0ffa2ff43b334040872d18d8,
+    type: 3}
+  topBlockSprite: {fileID: 4652002621484922972, guid: 5cfc914d0ffa2ff43b334040872d18d8,
+    type: 3}
+  topRightBlockSprite: {fileID: 5025767244856647853, guid: 5cfc914d0ffa2ff43b334040872d18d8,
+    type: 3}
+  leftBlockSprite: {fileID: -3251016112246919575, guid: 5cfc914d0ffa2ff43b334040872d18d8,
+    type: 3}
+  centerBlockSprite: {fileID: -6472357534005796191, guid: 5cfc914d0ffa2ff43b334040872d18d8,
+    type: 3}
+  rightBlockSprite: {fileID: 3672442499344041853, guid: 5cfc914d0ffa2ff43b334040872d18d8,
+    type: 3}
+  bottomLeftBlockSprite: {fileID: -4763268405258465457, guid: 5cfc914d0ffa2ff43b334040872d18d8,
+    type: 3}
+  bottomBlockSprite: {fileID: 7707703984770129899, guid: 5cfc914d0ffa2ff43b334040872d18d8,
+    type: 3}
+  bottomRightBlockSprite: {fileID: -8752870444828884891, guid: 5cfc914d0ffa2ff43b334040872d18d8,
+    type: 3}
   sortingOrder: -1
   isPartOfSnake: 0
   moveRules: []
@@ -20,5 +38,5 @@ MonoBehaviour:
   breakRules:
   - {fileID: 11400000, guid: 05e5646cb1e173643b7e398a324acce3, type: 2}
   - {fileID: 11400000, guid: 4a872cf92c97bfc4f8d6373090c51616, type: 2}
-  gridActionRules:
+  specialActionRules:
   - {fileID: 11400000, guid: d9a6b6c43d0635c4292510654ac76c03, type: 2}

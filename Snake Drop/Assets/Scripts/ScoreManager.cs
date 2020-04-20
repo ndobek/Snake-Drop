@@ -49,10 +49,10 @@ public class ScoreManager : MonoBehaviour
     {
         Score = 0;
         NumberOfSnakes = 0;
-        ResetMultiplier();
+        ResetRound();
     }
 
-    public void ResetMultiplier()
+    public void ResetRound()
     {
         Multiplier = 1;
     }

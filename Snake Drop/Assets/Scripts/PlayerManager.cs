@@ -61,7 +61,7 @@ public class PlayerManager : MonoBehaviour
             SnakeHead.KillSnake(this);
         }
         playGrid.InvokeGridAction();
-        Score.ResetMultiplier();
+        Score.ResetRound();
 
         if (GameIsOver())
         {

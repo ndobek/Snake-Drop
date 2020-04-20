@@ -5,7 +5,18 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Types/BlockType")]
 public class BlockType : ScriptableObject
 {
-    public Sprite sprite;
+    public Sprite fullBlockSprite;
+
+    public Sprite topLeftBlockSprite;
+    public Sprite topBlockSprite;
+    public Sprite topRightBlockSprite;
+    public Sprite leftBlockSprite;
+    public Sprite centerBlockSprite;
+    public Sprite rightBlockSprite;
+    public Sprite bottomLeftBlockSprite;
+    public Sprite bottomBlockSprite;
+    public Sprite bottomRightBlockSprite;
+
     public int sortingOrder;
 
     public bool isPartOfSnake;
@@ -13,7 +24,7 @@ public class BlockType : ScriptableObject
     public MoveRule[] moveRules;
     public Rule[] killRules;
     public Rule[] breakRules;
-    public Rule[] gridActionRules;
+    public Rule[] specialActionRules;
 
     #region Permissions
 
@@ -65,9 +76,9 @@ public class BlockType : ScriptableObject
         }
 
     }
-    public virtual void OnGridAction(Block block, PlayerManager player = null)
+    public virtual void SpecialAction(Block block, PlayerManager player = null)
     {
-        foreach (Rule rule in gridActionRules)
+        foreach (Rule rule in specialActionRules)
         {
             if (block && rule) rule.Invoke(block, player);
         }

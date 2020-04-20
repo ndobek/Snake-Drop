@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4db5fe0030a4c8142b2973068cc026f9, type: 3}
   m_Name: BottomToTop
   m_EditorClassIdentifier: 
-  RuleToInvoke: {fileID: 0}
+  RuleToInvoke: {fileID: 11400000, guid: ad2465fd9c8315a4fad9e17d48423d8e, type: 2}
+  Direction: 0

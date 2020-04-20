@@ -50,8 +50,8 @@ public class Block : MonoBehaviour
 
     #region GameObject Components
 
-    public SpriteRenderer BlockSprite;
-    public SpriteRenderer Highlight;
+    public BlockSpriteController BlockSprite;
+
 
     #endregion
 
@@ -91,14 +91,7 @@ public class Block : MonoBehaviour
     }
     private void UpdateSprite()
     {
-        if (blockColor != null && blockType != null)
-        {
-            BlockSprite.sprite = blockType.sprite;
-            BlockSprite.color = blockColor.color;
-            BlockSprite.sortingOrder = blockType.sortingOrder;
-        }
-
-        Highlight.enabled = isPartOfSnake();
+        BlockSprite.UpdateSprite();
     }
     private void UpdatePosition()
     {
@@ -159,9 +152,9 @@ public class Block : MonoBehaviour
 
     #endregion
 
-    public void OnGridAction(PlayerManager player = null)
+    public void SpecialAction(PlayerManager player = null)
     {
-        blockType.OnGridAction(this, player);
+        blockType.SpecialAction(this, player);
     }
     public void Move(GameManager.Direction neighbor, PlayerManager player = null)
     {

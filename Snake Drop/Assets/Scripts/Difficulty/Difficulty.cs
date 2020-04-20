@@ -6,29 +6,23 @@ using UnityEngine;
 public class Difficulty : ScriptableObject
 {
     [System.Serializable]
-    public class Stat
-    {
-        public Difficulty.Level.StatTypes StatType;
-        public float value;
-    }
-    [System.Serializable]
     public class Level
     {
-        public enum StatTypes
-        {
-            minBaseLength,
-            maxBaseLength,
-            minBaseEntropy,
-            maxBaseEntropy,
-            LengthScoreMod,
-            LengthSnakeNumberMod,
-            EntropyScoreMod,
-            EntropySnakeNumberMod,
-            minTotalLength,
-            maxTotalLength,
-            minTotalEntropy,
-            maxTotalEntropy
-        }
+        //public enum StatTypes
+        //{
+        //    minBaseLength,
+        //    maxBaseLength,
+        //    minBaseEntropy,
+        //    maxBaseEntropy,
+        //    LengthScoreMod,
+        //    LengthSnakeNumberMod,
+        //    EntropyScoreMod,
+        //    EntropySnakeNumberMod,
+        //    minTotalLength,
+        //    maxTotalLength,
+        //    minTotalEntropy,
+        //    maxTotalEntropy
+        //}
 
         public int MinScore;
         public int MaxScore;
@@ -40,11 +34,9 @@ public class Difficulty : ScriptableObject
         public bool UseMinSnakeNumber;
         public bool UseMaxSnakeNumber;
 
-        public BlockType[] possibleTypes;
-        public BlockColor[] possibleColors;
-        public Stat[] Stats;
-        //public SnakeType SnakeType;
-
+        public Stat<BlockType>[] possibleTypes;
+        public Stat<BlockColor>[] possibleColors;
+        public Stat<float>[] Stats;
 
         private bool ScoreInRange(int score)
         {
@@ -78,14 +70,14 @@ public class Difficulty : ScriptableObject
 
     //    throw new System.Exception("No Acceptable Difficulty Settings");
     //}
-    public BlockType[] GetTypes(int score, int snakeNumber)
+    public Stat<BlockType>[] GetTypes(int score, int snakeNumber)
     {
-        List<BlockType> results = new List<BlockType>();
+        List<Stat<BlockType>> results = new List<Stat<BlockType>>();
         foreach (Level level in Levels)
         {
             if (level.LevelInRange(score, snakeNumber))
             {
-                foreach (BlockType type in level.possibleTypes)
+                foreach (Stat<BlockType> type in level.possibleTypes)
                 {
                     results.Add(type);
                 }
@@ -95,14 +87,14 @@ public class Difficulty : ScriptableObject
 
         throw new System.Exception("No Acceptable Difficulty Settings");
     }
-    public BlockColor[] GetColors(int score, int snakeNumber)
+    public Stat<BlockColor>[] GetColors(int score, int snakeNumber)
     {
-        List<BlockColor> results = new List<BlockColor>();
+        List<Stat<BlockColor>> results = new List<Stat<BlockColor>>();
         foreach (Level level in Levels)
         {
             if (level.LevelInRange(score, snakeNumber))
             {
-                foreach (BlockColor color in level.possibleColors)
+                foreach (Stat<BlockColor> color in level.possibleColors)
                 {
                     if (!results.Contains(color)) results.Add(color);
                 }
@@ -113,14 +105,28 @@ public class Difficulty : ScriptableObject
         throw new System.Exception("No Acceptable Difficulty Settings");
     }
 
+    public Stat<BlockColor>[] GetAllPossibleColorStats()
+    {
+        List<Stat<BlockColor>> results = new List<Stat<BlockColor>>();
+        foreach (Level level in Levels)
+        {
+            foreach (Stat<BlockColor> color in level.possibleColors)
+            {
+                if (!results.Contains(color)) results.Add(color);
+            }
+        }
+        if (results.Count > 0) return results.ToArray();
+
+        throw new System.Exception("No Acceptable Difficulty Settings");
+    }
     public BlockColor[] GetAllPossibleColors()
     {
         List<BlockColor> results = new List<BlockColor>();
         foreach (Level level in Levels)
         {
-            foreach (BlockColor color in level.possibleColors)
+            foreach (Stat<BlockColor> color in level.possibleColors)
             {
-                if (!results.Contains(color)) results.Add(color);
+                if (!results.Contains(color.value)) results.Add(color.value);
             }
         }
         if (results.Count > 0) return results.ToArray();
@@ -152,14 +158,14 @@ public class Difficulty : ScriptableObject
     //}
 
 
-    public float GetRandomStat(Level.StatTypes statType, int score, int snakeNumber)
+    public float GetRandomStat(SnakeStatType statType, int score, int snakeNumber)
     {
-        List<Stat> possibleResults = new List<Stat>();
+        List<Stat<float>> possibleResults = new List<Stat<float>>();
         foreach (Level level in Levels)
         {
             if (level.LevelInRange(score, snakeNumber))
             {
-                foreach(Stat stat in level.Stats)
+                foreach(Stat<float> stat in level.Stats)
                 {
                     if(stat.StatType == statType) possibleResults.Add(stat);
                 }
@@ -167,15 +173,16 @@ public class Difficulty : ScriptableObject
         }
         if (possibleResults.Count > 0) return possibleResults[Random.Range(0, possibleResults.Count)].value;
 
-        throw new System.Exception("No Acceptable Difficulty Settings");
+        Debug.Log("No Acceptable Difficulty Settings, Returning default:" + statType + ": " + statType.defaultValue);
+        return statType.defaultValue;
     }
 
-    public float GetRandomStatRange(Level.StatTypes minStatType, Level.StatTypes maxStatType, int score, int snakeNumber)
+    public float GetRandomStatRange(SnakeStatType minStatType, SnakeStatType maxStatType, int score, int snakeNumber)
     {
         return Random.Range(GetRandomStat(minStatType, score, snakeNumber), GetRandomStat(maxStatType, score, snakeNumber));
     }
 
-    private float GetStatModifier(Level.StatTypes ScoreMod, Level.StatTypes SnakeNumberMod, int score, int snakeNumber)
+    private float GetStatModifier(SnakeStatType ScoreMod, SnakeStatType SnakeNumberMod, int score, int snakeNumber)
     {
         float result = 0;
 
@@ -185,7 +192,7 @@ public class Difficulty : ScriptableObject
         return result;
     }
 
-    public float GetModifiedStat(Level.StatTypes minBase, Level.StatTypes maxBase, Level.StatTypes scoreMod, Level.StatTypes snakeNumberMod, Level.StatTypes minTotal, Level.StatTypes maxTotal, int score, int snakeNumber)
+    public float GetModifiedStat(SnakeStatType minBase, SnakeStatType maxBase, SnakeStatType scoreMod, SnakeStatType snakeNumberMod, SnakeStatType minTotal, SnakeStatType maxTotal, int score, int snakeNumber)
     {
         float Base = GetRandomStatRange(minBase, maxBase, score, snakeNumber);
         float Modifier = GetStatModifier(scoreMod, snakeNumberMod, score, snakeNumber);
@@ -195,23 +202,7 @@ public class Difficulty : ScriptableObject
         return Mathf.Clamp(Base + Modifier, min, max);
     }
 
-    public int GetRandomLength(int score, int snakeNumber)
-    {
-        return (int)GetModifiedStat(Level.StatTypes.minBaseLength, Level.StatTypes.maxBaseLength, Level.StatTypes.LengthScoreMod, Level.StatTypes.LengthSnakeNumberMod, Level.StatTypes.minTotalLength, Level.StatTypes.maxTotalLength, score, snakeNumber);
-    }
-    public float GetRandomEntropy(int score, int snakeNumber)
-    {
-        return GetModifiedStat(Level.StatTypes.minBaseEntropy, Level.StatTypes.maxBaseEntropy, Level.StatTypes.EntropyScoreMod, Level.StatTypes.EntropySnakeNumberMod, Level.StatTypes.minTotalEntropy, Level.StatTypes.maxTotalEntropy, score, snakeNumber);
-    }
 
-    public SnakeInfo GetSnakeInfo(int score, int snakeNumber)
-    {
-        return new SnakeInfo()
-        {
-            possibleTypes = GetTypes(score, snakeNumber),
-            possibleColors = GetColors(score, snakeNumber),
-            length = GetRandomLength(score, snakeNumber),
-            entropy = GetRandomEntropy(score, snakeNumber)
-        };
-    }
+
+
 }
