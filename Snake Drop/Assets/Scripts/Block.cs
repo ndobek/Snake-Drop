@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,6 +13,10 @@ public class Block : MonoBehaviour
     [HideInInspector]
     public BlockColor blockColor;
     public BlockCollection BlockCollection;
+
+    public SpriteRenderer BlockSprite;
+    public LineRenderer Highlight;
+
     private BlockSlot slot;
     public BlockSlot Slot
     {
@@ -45,13 +49,6 @@ public class Block : MonoBehaviour
     {
         return Slot.GetNeighbor(direction);
     }
-
-    #endregion
-
-    #region GameObject Components
-
-    public BlockSpriteController BlockSprite;
-
 
     #endregion
 
@@ -91,7 +88,7 @@ public class Block : MonoBehaviour
     }
     private void UpdateSprite()
     {
-        BlockSprite.UpdateSprite();
+        blockType.UpdateSprite(this);
     }
     private void UpdatePosition()
     {
@@ -220,6 +217,14 @@ public class Block : MonoBehaviour
             SetTail(null);
         }
         Kill(player);
+    }
+    public GameManager.Direction TailDirection()
+    {
+        foreach (GameManager.Direction dir in Enum.GetValues(typeof(GameManager.Direction)))
+        {
+            if (Neighbor(dir) == tail) return dir;
+        }
+        return default;
     }
 
     public int FindSnakeMaxY()

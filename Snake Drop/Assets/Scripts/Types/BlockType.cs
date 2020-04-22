@@ -5,17 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Types/BlockType")]
 public class BlockType : ScriptableObject
 {
-    public Sprite fullBlockSprite;
-
-    public Sprite topLeftBlockSprite;
-    public Sprite topBlockSprite;
-    public Sprite topRightBlockSprite;
-    public Sprite leftBlockSprite;
-    public Sprite centerBlockSprite;
-    public Sprite rightBlockSprite;
-    public Sprite bottomLeftBlockSprite;
-    public Sprite bottomBlockSprite;
-    public Sprite bottomRightBlockSprite;
+    [SerializeReference]
+    public BlockSpriteController BlockSprite;
 
     public int sortingOrder;
 
@@ -98,6 +89,10 @@ public class BlockType : ScriptableObject
         {
             if (block && rule) rule.Invoke(block, player);
         }
+    }
+    public virtual void UpdateSprite(Block block)
+    {
+        BlockSprite.UpdateSprite(block);
     }
 
     #endregion

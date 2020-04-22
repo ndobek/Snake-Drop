@@ -12,15 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bd3250dde91e984ca21eb1cdd8190dc, type: 3}
   m_Name: SnakeMember
   m_EditorClassIdentifier: 
-  fullBlockSprite: {fileID: 21300000, guid: fcc48e28b7fb82a4db2689b6236c53a8, type: 3}
-  leftBlockSprite: {fileID: 0}
-  rightBlockSprite: {fileID: 0}
-  topBlockSprite: {fileID: 0}
-  bottomBlockSprite: {fileID: 0}
-  topLeftBlockSprite: {fileID: 0}
-  topRightBlockSprite: {fileID: 0}
-  bottomLeftBlockSprite: {fileID: 0}
-  bottomRightBlockSprite: {fileID: 0}
+  BlockSprite: {fileID: 11400000, guid: 8173dc2d8bedfcd43bf99b9f6e906d63, type: 2}
   sortingOrder: 0
   isPartOfSnake: 1
   moveRules: []

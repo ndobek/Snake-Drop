@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     private float intervalToWaitBeforeHold;
     private float timeSinceLastMove;
     private float timePressed;
-    private Direction mostRecentDirection;
+    public Direction mostRecentDirection;
 
     public void Awake()
     {

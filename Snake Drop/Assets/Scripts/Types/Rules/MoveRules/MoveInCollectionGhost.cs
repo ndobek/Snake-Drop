@@ -5,6 +5,7 @@ using UnityEngine;
 public class MoveInCollectionGhost : MoveRule
 {
     public BlockType CollectionGhostMemberType;
+    public bool AbsorbFromTail;
 
     protected override bool MoveCondition(Block block, BlockSlot slot, PlayerManager player = null)
     {
@@ -28,7 +29,7 @@ public class MoveInCollectionGhost : MoveRule
 
         } else if(block.blockColor != slot.Block.blockColor && !CollectionIsFull(slot.Block))
         {
-            //if (block.Tail) RemoveFirstColorInTail(block, slot, player);
+            if (block.Tail && AbsorbFromTail) RemoveFirstColorInTail(block, slot, player);
             block.RawMoveTo(slot);
         }
         else

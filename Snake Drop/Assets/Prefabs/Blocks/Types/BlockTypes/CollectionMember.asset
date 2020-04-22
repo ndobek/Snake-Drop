@@ -12,25 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bd3250dde91e984ca21eb1cdd8190dc, type: 3}
   m_Name: CollectionMember
   m_EditorClassIdentifier: 
-  fullBlockSprite: {fileID: 21300000, guid: 5b602e6f97e853845b52ff02b243fa2c, type: 3}
-  topLeftBlockSprite: {fileID: 309138647891203882, guid: 0ebcc09b163430546bd56b0f90ea4fab,
-    type: 3}
-  topBlockSprite: {fileID: 6619854499421291385, guid: 0ebcc09b163430546bd56b0f90ea4fab,
-    type: 3}
-  topRightBlockSprite: {fileID: 7206694041134073624, guid: 0ebcc09b163430546bd56b0f90ea4fab,
-    type: 3}
-  leftBlockSprite: {fileID: 4666086757493642198, guid: 0ebcc09b163430546bd56b0f90ea4fab,
-    type: 3}
-  centerBlockSprite: {fileID: 7081548054188117033, guid: 0ebcc09b163430546bd56b0f90ea4fab,
-    type: 3}
-  rightBlockSprite: {fileID: 5387662168207662423, guid: 0ebcc09b163430546bd56b0f90ea4fab,
-    type: 3}
-  bottomLeftBlockSprite: {fileID: -3287853420543077034, guid: 0ebcc09b163430546bd56b0f90ea4fab,
-    type: 3}
-  bottomBlockSprite: {fileID: 3824020666043502266, guid: 0ebcc09b163430546bd56b0f90ea4fab,
-    type: 3}
-  bottomRightBlockSprite: {fileID: -7784320621223123208, guid: 0ebcc09b163430546bd56b0f90ea4fab,
-    type: 3}
+  BlockSprite: {fileID: 11400000, guid: 264c8b1add880a940920edf9d072e45b, type: 2}
   sortingOrder: 0
   isPartOfSnake: 0
   moveRules:

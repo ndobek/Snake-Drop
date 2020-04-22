@@ -1,34 +1,19 @@
 fileFormatVersion: 2
-guid: 058bc6a41861ad749afb6d93139d7950
+guid: 2f5538cccf364d54c92370307ef50d4e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5025452294411486425
-    second: LargeBlock_0
+      213: -2775109236177576168
+    second: SnakeHead_0
   - first:
-      213: -1523655337029502408
-    second: LargeBlock_1
+      213: -7944608707589560660
+    second: SnakeHead_1
   - first:
-      213: 6327511564681949650
-    second: LargeBlock_2
+      213: 2828524253419947484
+    second: SnakeHead_2
   - first:
-      213: -3464525146616165680
-    second: LargeBlock_3
-  - first:
-      213: 4638646856900384705
-    second: LargeBlock_4
-  - first:
-      213: 5056582580593528413
-    second: LargeBlock_5
-  - first:
-      213: 4265356913219933234
-    second: LargeBlock_6
-  - first:
-      213: -2545928074358577572
-    second: LargeBlock_7
-  - first:
-      213: -110524963265635356
-    second: LargeBlock_8
+      213: 7590423009441051839
+    second: SnakeHead_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -140,70 +125,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: LargeBlock_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 1000
-        width: 500
-        height: 500
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9d4811c5c3efdb540800000000000000
-      internalID: 5025452294411486425
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: LargeBlock_1
-      rect:
-        serializedVersion: 2
-        x: 500
-        y: 1000
-        width: 500
-        height: 500
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 83a7a3c2b83eadae0800000000000000
-      internalID: -1523655337029502408
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: LargeBlock_2
-      rect:
-        serializedVersion: 2
-        x: 1000
-        y: 1000
-        width: 500
-        height: 500
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2d13b055e36dfc750800000000000000
-      internalID: 6327511564681949650
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: LargeBlock_3
+      name: SnakeHead_0
       rect:
         serializedVersion: 2
         x: 0
@@ -217,14 +139,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0da09882cb88befc0800000000000000
-      internalID: -3464525146616165680
+      spriteID: 81fdab45ad4dc79d0800000000000000
+      internalID: -2775109236177576168
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LargeBlock_4
+      name: SnakeHead_1
       rect:
         serializedVersion: 2
         x: 500
@@ -238,35 +160,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1c797006db8cf5040800000000000000
-      internalID: 4638646856900384705
+      spriteID: ca626a809741fb190800000000000000
+      internalID: -7944608707589560660
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LargeBlock_5
-      rect:
-        serializedVersion: 2
-        x: 1000
-        y: 500
-        width: 500
-        height: 500
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d5e84bde0179c2640800000000000000
-      internalID: 5056582580593528413
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: LargeBlock_6
+      name: SnakeHead_2
       rect:
         serializedVersion: 2
         x: 0
@@ -280,14 +181,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2341bb48387913b30800000000000000
-      internalID: 4265356913219933234
+      spriteID: cd54ca382dfe04720800000000000000
+      internalID: 2828524253419947484
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LargeBlock_7
+      name: SnakeHead_3
       rect:
         serializedVersion: 2
         x: 500
@@ -301,29 +202,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c56a920c7eb0bacd0800000000000000
-      internalID: -2545928074358577572
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: LargeBlock_8
-      rect:
-        serializedVersion: 2
-        x: 1000
-        y: 0
-        width: 500
-        height: 500
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4eb1db9a126577ef0800000000000000
-      internalID: -110524963265635356
+      spriteID: fb47fa4e289965960800000000000000
+      internalID: 7590423009441051839
       vertices: []
       indices: 
       edges: []
@@ -340,7 +220,7 @@ TextureImporter:
     secondaryTextures: []
   spritePackingTag: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 1
+  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
