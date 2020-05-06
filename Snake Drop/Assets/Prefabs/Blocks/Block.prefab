@@ -202,10 +202,7 @@ LineRenderer:
   m_SortingLayerID: 1986032229
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Positions:
-  - {x: 0, y: 0, z: 0}
-  - {x: 1.73, y: 0, z: 0}
-  - {x: 1.72, y: 2.27, z: 0}
+  m_Positions: []
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -213,8 +210,8 @@ LineRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.07860184
-        value: 0.5789528
+        time: 0.054584503
+        value: 0.80862045
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -226,7 +223,7 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.2971698, g: 0.67851955, b: 1, a: 1}
+      key0: {r: 1, g: 1, b: 1, a: 1}
       key1: {r: 1, g: 1, b: 1, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
@@ -234,7 +231,7 @@ LineRenderer:
       key5: {r: 0, g: 0, b: 0, a: 0}
       key6: {r: 0, g: 0, b: 0, a: 0}
       key7: {r: 0, g: 0, b: 0, a: 0}
-      ctime0: 46646
+      ctime0: 10023
       ctime1: 65535
       ctime2: 0
       ctime3: 0

@@ -35,6 +35,7 @@ public class DirectionalSpriteController : BlockSpriteController
 
     public void CreateSnakeLine(Block block)
     {
+        block.Highlight.enabled = true;
         Block current = block;
         List<Vector3> result = new List<Vector3>();
 

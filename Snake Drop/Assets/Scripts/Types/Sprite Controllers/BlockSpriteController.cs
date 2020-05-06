@@ -14,6 +14,8 @@ public class BlockSpriteController : ScriptableObject
             block.BlockSprite.color = block.blockColor.color;
             block.BlockSprite.sortingOrder = block.blockType.sortingOrder;
         }
+
+        block.Highlight.enabled = false;
     }
     public void SetSprite(Block block, Sprite sprite)
     {
