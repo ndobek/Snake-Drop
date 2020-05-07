@@ -14,8 +14,12 @@ public class Block : MonoBehaviour
     public BlockColor blockColor;
     public BlockCollection BlockCollection;
 
+    public BlockAnimator animator;
     public SpriteRenderer BlockSprite;
     public LineRenderer Highlight;
+
+    public float AnimationArrivalTolerance;
+    public float AnimationLerpSpeed;
 
     private BlockSlot slot;
     public BlockSlot Slot
@@ -92,13 +96,7 @@ public class Block : MonoBehaviour
     }
     private void UpdatePosition()
     {
-        if (Slot)
-        {
-            this.transform.SetParent(Slot.transform);
-            this.transform.localPosition = /*Vector3.zero; *//*Vector3.MoveTowards(this.transform.localPosition, Vector3.zero, .01f);*/  Vector3.Lerp(this.transform.localPosition, Vector3.zero, .2f);
-            this.transform.localRotation = Quaternion.identity;
-            this.transform.localScale = Vector3.one;
-        }
+        //animator.AnimateStep();
     }
     public void UpdateBlock()
     {
@@ -123,13 +121,15 @@ public class Block : MonoBehaviour
     {
         RawMoveTo(Neighbor(neighbor));
     }
-    public virtual void RawMoveTo(BlockSlot obj)
+    public virtual void RawMoveTo(BlockSlot obj, IBlockAnimation animation = null)
     {
         SetGridDirty();
         BlockSlot Old = Slot;
         if (Old) Old.OnUnassignment(this);
         if (obj)
         {
+            if (animation == null) animation = new BlockMoveAnimation(this, obj, AnimationArrivalTolerance, AnimationLerpSpeed);
+            animator.AddAnimation(animation);
             slot = obj;
             obj.OnAssignment(this);
             if (Tail != null) Tail.RawMoveTo(Old);

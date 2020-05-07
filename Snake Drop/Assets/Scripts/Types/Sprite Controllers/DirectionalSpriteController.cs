@@ -12,7 +12,6 @@ public class DirectionalSpriteController : BlockSpriteController
 
     public override void UpdateSprite(Block block)
     {
-        base.UpdateSprite(block);
         GameManager.Direction dir = GameManager.Direction.DOWN;
         if (block && block.Owner && block.Owner.playerController && block.Owner.RoundInProgress) dir = block.Owner.playerController.mostRecentDirection;
         switch (dir) 
@@ -30,7 +29,7 @@ public class DirectionalSpriteController : BlockSpriteController
                 SetSprite(block, RightSprite);
                 break;
         }
-        CreateSnakeLine(block);
+        if(block.blockType.HighlightTail) CreateSnakeLine(block);
     }
 
     public void CreateSnakeLine(Block block)

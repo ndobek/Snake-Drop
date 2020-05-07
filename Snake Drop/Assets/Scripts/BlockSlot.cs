@@ -129,7 +129,7 @@ public class BlockSlot : MonoBehaviour
     {
         foreach (Block block in Blocks)
         {
-            if(block) block.UpdateBlock();
+            if (block) block.UpdateBlock();
         }
     }
 

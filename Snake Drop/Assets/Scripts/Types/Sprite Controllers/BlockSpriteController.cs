@@ -8,17 +8,10 @@ public class BlockSpriteController : ScriptableObject
     public Sprite sprite;
     public virtual void UpdateSprite(Block block)
     {
-        if (block.blockColor != null && block.blockType != null)
-        {
-            block.BlockSprite.sprite = sprite;
-            block.BlockSprite.color = block.blockColor.color;
-            block.BlockSprite.sortingOrder = block.blockType.sortingOrder;
-        }
-
-        block.Highlight.enabled = false;
+        SetSprite(block, sprite);
     }
     public void SetSprite(Block block, Sprite sprite)
     {
-        block.BlockSprite.sprite = sprite;
+        block.animator.AddAnimation(new BlockSpriteChangeAnimation(block, sprite));
     }
 }

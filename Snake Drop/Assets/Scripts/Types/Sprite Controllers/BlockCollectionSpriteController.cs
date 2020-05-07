@@ -19,12 +19,7 @@ public class BlockCollectionSpriteController : BlockSpriteController
 
     public override void UpdateSprite(Block block)
     {
-        if (block.blockColor != null && block.blockType != null)
-        {
-            SetEdge(block);
-            block.BlockSprite.color = block.blockColor.color;
-            block.BlockSprite.sortingOrder = block.blockType.sortingOrder;
-        }
+        SetEdge(block);
     }
 
     public void SetEdge(Block block)
