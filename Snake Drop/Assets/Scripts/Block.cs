@@ -14,7 +14,7 @@ public class Block : MonoBehaviour
     public BlockColor blockColor;
     public BlockCollection BlockCollection;
 
-    public BlockAnimator animator;
+    public BlockAnimationManager animator;
     public SpriteRenderer BlockSprite;
     public LineRenderer Highlight;
 
@@ -92,7 +92,7 @@ public class Block : MonoBehaviour
     }
     private void UpdateSprite()
     {
-        blockType.UpdateSprite(this);
+        animator.AddAnimation(new BlockAnimation(this, blockType.blockSpriteAnimator, slot));
     }
     private void UpdatePosition()
     {
@@ -121,15 +121,15 @@ public class Block : MonoBehaviour
     {
         RawMoveTo(Neighbor(neighbor));
     }
-    public virtual void RawMoveTo(BlockSlot obj, IBlockAnimation animation = null)
+    public virtual void RawMoveTo(BlockSlot obj, IBlockAnimator animation = null)
     {
         SetGridDirty();
         BlockSlot Old = Slot;
         if (Old) Old.OnUnassignment(this);
         if (obj)
         {
-            if (animation == null) animation = new BlockMoveAnimation(this, obj, AnimationArrivalTolerance, AnimationLerpSpeed);
-            animator.AddAnimation(animation);
+            if (animation == null) animation = blockType.defaultMoveAnimator;
+            animator.AddAnimation(new BlockAnimation(this, animation, obj));
             slot = obj;
             obj.OnAssignment(this);
             if (Tail != null) Tail.RawMoveTo(Old);

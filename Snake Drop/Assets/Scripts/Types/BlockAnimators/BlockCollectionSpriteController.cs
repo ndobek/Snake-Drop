@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "SpriteControllers/CollectionSpriteController")]
-public class BlockCollectionSpriteController : BlockSpriteController
+public class BlockCollectionSpriteController : BlockSpriteAnimator
 {
     public Sprite fullBlockSprite;
 
@@ -17,9 +17,9 @@ public class BlockCollectionSpriteController : BlockSpriteController
     public Sprite bottomBlockSprite;
     public Sprite bottomRightBlockSprite;
 
-    public override void UpdateSprite(Block block)
+    public override void AnimationStep(BlockAnimation blockAnimation)
     {
-        SetEdge(block);
+        SetEdge(blockAnimation.block);
     }
 
     public void SetEdge(Block block)

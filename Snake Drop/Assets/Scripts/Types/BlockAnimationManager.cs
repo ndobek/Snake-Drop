@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BlockAnimator : MonoBehaviour
+public class BlockAnimationManager : MonoBehaviour
 {
 
-    private Queue<IBlockAnimation> Animations = new Queue<IBlockAnimation>();
+    private Queue<BlockAnimation> Animations = new Queue<BlockAnimation>();
 
-    public void AddAnimation(IBlockAnimation animation)
+    public void AddAnimation(BlockAnimation animation)
     {
         Animations.Enqueue(animation);
     }

@@ -6,7 +6,8 @@ using UnityEngine;
 public class BlockType : ScriptableObject
 {
     [SerializeReference]
-    public BlockSpriteController BlockSprite;
+    public BlockSpriteAnimator blockSpriteAnimator;
+    public BlockMoveAnimator defaultMoveAnimator;
     public bool HighlightTail;
 
     public int sortingOrder;
@@ -90,10 +91,6 @@ public class BlockType : ScriptableObject
         {
             if (block && rule) rule.Invoke(block, player);
         }
-    }
-    public virtual void UpdateSprite(Block block)
-    {
-        BlockSprite.UpdateSprite(block);
     }
 
     #endregion

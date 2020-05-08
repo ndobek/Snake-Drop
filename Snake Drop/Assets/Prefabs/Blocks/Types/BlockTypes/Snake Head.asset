@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Snake Head
   m_EditorClassIdentifier: 
   BlockSprite: {fileID: 11400000, guid: 170115787ec640547ac9a38e212e921c, type: 2}
+  HighlightTail: 1
   sortingOrder: 0
   isPartOfSnake: 1
   moveRules:

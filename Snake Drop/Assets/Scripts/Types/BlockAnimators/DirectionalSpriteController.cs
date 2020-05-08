@@ -3,15 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "SpriteControllers/DirectionalSpriteController")]
-public class DirectionalSpriteController : BlockSpriteController
+public class DirectionalSpriteController : BlockSpriteAnimator
 {
     public Sprite UpSprite;
     public Sprite DownSprite;
     public Sprite LeftSprite;
     public Sprite RightSprite;
+    public bool HighlightTail;
 
-    public override void UpdateSprite(Block block)
+    public override void AnimationStep(BlockAnimation blockAnimation)
     {
+        Block block = blockAnimation.block;
         GameManager.Direction dir = GameManager.Direction.DOWN;
         if (block && block.Owner && block.Owner.playerController && block.Owner.RoundInProgress) dir = block.Owner.playerController.mostRecentDirection;
         switch (dir) 
@@ -29,24 +31,7 @@ public class DirectionalSpriteController : BlockSpriteController
                 SetSprite(block, RightSprite);
                 break;
         }
-        if(block.blockType.HighlightTail) CreateSnakeLine(block);
     }
 
-    public void CreateSnakeLine(Block block)
-    {
-        block.Highlight.enabled = true;
-        Block current = block;
-        List<Vector3> result = new List<Vector3>();
-
-        while (current.Tail != null)
-        {
-            result.Add(current.Highlight.transform.position);
-            current = current.Tail;
-        }
-        result.Add(current.Highlight.transform.position);
-        block.Highlight.positionCount = result.Count;
-        block.Highlight.SetPositions(result.ToArray());
-
-    }
 
 }
