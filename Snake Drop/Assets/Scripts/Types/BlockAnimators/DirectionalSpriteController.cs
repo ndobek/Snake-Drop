@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "SpriteControllers/DirectionalSpriteController")]
+[CreateAssetMenu(menuName = "BlockAnimators/DirectionalSpriteAnimator")]
 public class DirectionalSpriteController : BlockSpriteAnimator
 {
     public Sprite UpSprite;

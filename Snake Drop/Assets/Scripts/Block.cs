@@ -8,18 +8,15 @@ public class Block : MonoBehaviour
 
     #region Block Info
 
-    //[HideInInspector]
+    [HideInInspector]
     public BlockType blockType;
     [HideInInspector]
     public BlockColor blockColor;
     public BlockCollection BlockCollection;
 
-    public BlockAnimationManager animator;
+    public BlockAnimationManager AnimationManager;
     public SpriteRenderer BlockSprite;
     public LineRenderer Highlight;
-
-    public float AnimationArrivalTolerance;
-    public float AnimationLerpSpeed;
 
     private BlockSlot slot;
     public BlockSlot Slot
@@ -92,7 +89,7 @@ public class Block : MonoBehaviour
     }
     private void UpdateSprite()
     {
-        animator.AddAnimation(new BlockAnimation(this, blockType.blockSpriteAnimator, slot));
+        AnimationManager.AddAnimation(new BlockAnimation(this, blockType.blockSpriteAnimator, slot));
     }
     private void UpdatePosition()
     {
@@ -129,7 +126,7 @@ public class Block : MonoBehaviour
         if (obj)
         {
             if (animation == null) animation = blockType.defaultMoveAnimator;
-            animator.AddAnimation(new BlockAnimation(this, animation, obj));
+            AnimationManager.AddAnimation(new BlockAnimation(this, animation, obj));
             slot = obj;
             obj.OnAssignment(this);
             if (Tail != null) Tail.RawMoveTo(Old);

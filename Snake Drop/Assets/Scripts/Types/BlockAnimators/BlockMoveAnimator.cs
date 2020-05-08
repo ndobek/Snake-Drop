@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(menuName = "BlockAnimators/BlockMoveAnimator")]
 public class BlockMoveAnimator : ScriptableObject, IBlockAnimator
 {
 

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d1b4b6431781e44d9fa23909d2eee38, type: 3}
   m_Name: SnakeHeadSpriteController
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
+  newSprite: {fileID: 0}
   UpSprite: {fileID: -2775109236177576168, guid: 2f5538cccf364d54c92370307ef50d4e,
     type: 3}
   DownSprite: {fileID: 2828524253419947484, guid: 2f5538cccf364d54c92370307ef50d4e,
@@ -21,3 +21,4 @@ MonoBehaviour:
     type: 3}
   RightSprite: {fileID: 7590423009441051839, guid: 2f5538cccf364d54c92370307ef50d4e,
     type: 3}
+  HighlightTail: 0

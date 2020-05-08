@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "SpriteControllers/CollectionSpriteController")]
+[CreateAssetMenu(menuName = "BlockAnimators/CollectionSpriteAnimator")]
 public class BlockCollectionSpriteController : BlockSpriteAnimator
 {
     public Sprite fullBlockSprite;
