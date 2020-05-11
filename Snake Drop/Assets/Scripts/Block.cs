@@ -89,15 +89,18 @@ public class Block : MonoBehaviour
     }
     private void UpdateSprite()
     {
-        AnimationManager.AddAnimation(new BlockAnimation(this, blockType.blockSpriteAnimator, slot));
+        foreach(IBlockAnimator obj in blockType.SpriteAnimators)
+        {
+            AnimationManager.AddAnimation(new BlockAnimation(this, obj, slot));
+        }
     }
-    private void UpdatePosition()
-    {
-        //animator.AnimateStep();
-    }
+    //private void UpdatePosition()
+    //{
+    //    //animator.AnimateStep();
+    //}
     public void UpdateBlock()
     {
-        UpdatePosition();
+        //UpdatePosition();
         UpdateSprite();
     }
 

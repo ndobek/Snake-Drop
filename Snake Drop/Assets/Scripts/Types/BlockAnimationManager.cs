@@ -5,24 +5,57 @@ using UnityEngine;
 public class BlockAnimationManager : MonoBehaviour
 {
 
-    private Queue<BlockAnimation> Animations = new Queue<BlockAnimation>();
+    private Queue<BlockAnimation> UpcomingAnimations = new Queue<BlockAnimation>();
+    [SerializeField]
+    private List<BlockAnimation> ActiveAnimations = new List<BlockAnimation>();
 
     public void AddAnimation(BlockAnimation animation)
     {
-        Animations.Enqueue(animation);
+        if (animation.Concurrent)
+        {
+            ActiveAnimations.Add(animation);
+        } else
+        {
+            UpcomingAnimations.Enqueue(animation);
+        }
+    }
+
+    private bool NonConcurrentInProgress()
+    {
+        bool result = false;
+        foreach(BlockAnimation obj in ActiveAnimations)
+        {
+            if (!obj.Concurrent) result = true;
+        }
+        return result;
+    }
+    private void AddNonConcurrent()
+    {
+        if (!NonConcurrentInProgress() && UpcomingAnimations.Count > 0)
+        {
+            ActiveAnimations.Add(UpcomingAnimations.Dequeue());
+        }
     }
 
     public void AnimateStep()
     {
-        if (Animations.Count > 0)
+        foreach(BlockAnimation animation in ActiveAnimations)
         {
-            Animations.Peek().AnimationStep();
-            if (Animations.Peek().AnimationIsComplete() && Animations.Count > 1) Animations.Dequeue();
+            animation.AnimationStep();
+        }
+    }
+    public void RemoveComplete()
+    {
+        for(int i = ActiveAnimations.Count - 1; i == 0; i--)
+        {
+            if (ActiveAnimations[i].AnimationIsComplete()) ActiveAnimations.RemoveAt(i);
         }
     }
 
-    public void Update()
+    public void FixedUpdate()
     {
+        AddNonConcurrent();
         AnimateStep();
+        RemoveComplete();
     }
 }
