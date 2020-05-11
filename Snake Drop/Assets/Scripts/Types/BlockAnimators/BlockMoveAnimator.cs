@@ -8,9 +8,6 @@ public class BlockMoveAnimator : ScriptableObject, IBlockAnimator
 
     public float ArrivalTolerance;
     public float LerpSpeed;
-    //public AnimationCurve Curve;
-    public bool animationConcurrent;
-    public bool AnimationConcurrent { get; }
 
     public bool AnimationIsComplete(BlockAnimation blockAnimation)
     {

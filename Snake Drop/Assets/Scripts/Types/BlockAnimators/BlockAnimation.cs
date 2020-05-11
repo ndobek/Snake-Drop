@@ -8,8 +8,6 @@ public class BlockAnimation
     public BlockSlot destination;
     public IBlockAnimator Animator;
     public bool complete;
-    public bool Concurrent { get { return Animator.AnimationConcurrent; } }
-
 
     public BlockAnimation(Block _block, IBlockAnimator _Animator, BlockSlot _destination)
     {
@@ -21,7 +19,7 @@ public class BlockAnimation
     public void AnimationStep()
     {
         Animator.AnimationStep(this);
-        complete = AnimationIsComplete();
+        complete = Animator.AnimationIsComplete(this);
     }
 
     public bool AnimationIsComplete()

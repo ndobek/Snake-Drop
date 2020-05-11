@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bd3250dde91e984ca21eb1cdd8190dc, type: 3}
   m_Name: Default
   m_EditorClassIdentifier: 
-  SpriteAnimators:
-  - {fileID: 11400000, guid: 8173dc2d8bedfcd43bf99b9f6e906d63, type: 2}
+  blockSpriteAnimator: {fileID: 11400000, guid: 8173dc2d8bedfcd43bf99b9f6e906d63,
+    type: 2}
   defaultMoveAnimator: {fileID: 11400000, guid: 23332f0fafefb3c419d44f2c79d052d7,
     type: 2}
   HighlightTail: 0
