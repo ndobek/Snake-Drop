@@ -6,8 +6,10 @@ using UnityEngine;
 public class BlockType : ScriptableObject
 {
     [SerializeReference]
-    public BlockSpriteAnimator blockSpriteAnimator;
+    public List<BlockSpriteAnimator> SpriteAnimators;
+    //public BlockSpriteAnimator blockSpriteAnimator;
     public BlockMoveAnimator defaultMoveAnimator;
+
 
     public bool HighlightTail;
 

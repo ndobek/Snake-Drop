@@ -6,6 +6,8 @@ using UnityEngine;
 public class BlockSpriteAnimator : ScriptableObject, IBlockAnimator
 {
     public Sprite newSprite;
+    public bool animationConcurrent;
+    public bool AnimationConcurrent { get; }
 
     public bool AnimationIsComplete(BlockAnimation blockAnimation)
     {
@@ -34,7 +36,7 @@ public class BlockSpriteAnimator : ScriptableObject, IBlockAnimator
 
     protected void CreateSnakeLine(Block block)
     {
-        block.Highlight.enabled = true;
+        //block.Highlight.enabled = true;
         Block current = block;
         List<Vector3> result = new List<Vector3>();
 

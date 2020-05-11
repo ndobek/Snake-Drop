@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Basic Move Animation
   m_EditorClassIdentifier: 
   ArrivalTolerance: 0.01
-  LerpSpeed: 0.2
+  LerpSpeed: 70
+  animationConcurrent: 0

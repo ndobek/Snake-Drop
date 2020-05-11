@@ -6,4 +6,5 @@ public interface IBlockAnimator
 {
     void AnimationStep(BlockAnimation blockAnimation);
     bool AnimationIsComplete(BlockAnimation blockAnimation);
+    bool AnimationConcurrent { get; }
 }
