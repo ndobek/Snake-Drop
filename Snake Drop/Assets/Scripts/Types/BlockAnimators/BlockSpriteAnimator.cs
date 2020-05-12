@@ -3,17 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "BlockAnimators/BlockSpriteAnimator")]
-public class BlockSpriteAnimator : ScriptableObject, IBlockAnimator
+public class BlockSpriteAnimator : BlockAnimator
 {
     public Sprite newSprite;
-    public bool animationConcurrent;
-    public bool AnimationConcurrent { get; }
 
-    public bool AnimationIsComplete(BlockAnimation blockAnimation)
-    {
-        return true;
-    }
-    public virtual void AnimationStep(BlockAnimation blockAnimation)
+    public override void AnimationStep(BlockAnimation blockAnimation)
     {
         SetSprite(blockAnimation.block, newSprite);
     }

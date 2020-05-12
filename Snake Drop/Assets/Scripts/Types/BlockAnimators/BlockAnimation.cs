@@ -6,28 +6,38 @@ public class BlockAnimation
 {
     public Block block;
     public BlockSlot destination;
-    public IBlockAnimator Animator;
+    public BlockAnimator Animator;
+    public float elapsedTime;
+    public bool begun = false;
     public bool complete;
     public bool Concurrent { get { return Animator.AnimationConcurrent; } }
 
 
-    public BlockAnimation(Block _block, IBlockAnimator _Animator, BlockSlot _destination)
+    public BlockAnimation(Block _block, BlockAnimator _Animator, BlockSlot _destination)
     {
         block = _block;
         Animator = _Animator;
         destination = _destination;
-    }
-
-    public void AnimationStep()
-    {
-        Animator.AnimationStep(this);
-        complete = AnimationIsComplete();
+        elapsedTime = 0;
     }
 
     public bool AnimationIsComplete()
     {
         return Animator.AnimationIsComplete(this);
     }
+
+    public IEnumerator Animate()
+    {
+        if (!begun)
+        {
+            begun = true;
+            return Animator.Animate(this);
+        }
+        return null;
+    }
+
+
+
 
 
 }

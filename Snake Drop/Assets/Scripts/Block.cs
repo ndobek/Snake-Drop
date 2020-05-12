@@ -89,7 +89,7 @@ public class Block : MonoBehaviour
     }
     private void UpdateSprite()
     {
-        foreach(IBlockAnimator obj in blockType.SpriteAnimators)
+        foreach(BlockAnimator obj in blockType.SpriteAnimators)
         {
             AnimationManager.AddAnimation(new BlockAnimation(this, obj, slot));
         }
@@ -121,7 +121,7 @@ public class Block : MonoBehaviour
     {
         RawMoveTo(Neighbor(neighbor));
     }
-    public virtual void RawMoveTo(BlockSlot obj, IBlockAnimator animation = null)
+    public virtual void RawMoveTo(BlockSlot obj, BlockAnimator animation = null)
     {
         SetGridDirty();
         BlockSlot Old = Slot;

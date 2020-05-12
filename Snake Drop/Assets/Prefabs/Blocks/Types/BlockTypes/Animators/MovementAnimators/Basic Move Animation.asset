@@ -12,6 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f70762dc065e53449af81de48b25e29, type: 3}
   m_Name: Basic Move Animation
   m_EditorClassIdentifier: 
-  ArrivalTolerance: 0.01
-  LerpSpeed: 70
-  animationConcurrent: 0
+  AnimationConcurrent: 0
+  AnimationTotalTime: 0

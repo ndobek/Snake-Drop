@@ -1,0 +1,50 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public abstract class BlockAnimator: ScriptableObject
+{
+
+    public bool AnimationConcurrent;
+    public float AnimationTotalTime;
+
+    public abstract void AnimationStep(BlockAnimation blockAnimation);
+    public void TimeStep(BlockAnimation blockAnimation)
+    {
+        blockAnimation.elapsedTime += Time.deltaTime;
+    }
+    public virtual bool IsComplete(BlockAnimation blockAnimation)
+    {
+        return true;
+    }
+    public virtual void OnComplete(BlockAnimation blockAnimation)
+    {
+        blockAnimation.complete = true;
+    }
+
+    public IEnumerator Animate(BlockAnimation blockAnimation)
+    {
+        while (!blockAnimation.complete)
+        {
+            AnimationStep(blockAnimation);
+            TimeStep(blockAnimation);
+            yield return null;
+        }
+
+        OnComplete(blockAnimation);
+    }
+
+    public float percentageComplete(float elapsedTime)
+    {
+        return elapsedTime / AnimationTotalTime;
+    }
+    public float percentageComplete(BlockAnimation blockAnimation)
+    {
+        return percentageComplete(blockAnimation.elapsedTime);
+    }
+
+    public bool AnimationIsComplete(BlockAnimation blockAnimation)
+    {
+        return percentageComplete(blockAnimation) >= 1.0f;
+    }
+}

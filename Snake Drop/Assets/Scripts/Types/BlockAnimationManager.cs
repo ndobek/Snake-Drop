@@ -13,7 +13,7 @@ public class BlockAnimationManager : MonoBehaviour
     {
         if (animation.Concurrent)
         {
-            ActiveAnimations.Add(animation);
+            BeginAnimation(animation);
         } else
         {
             UpcomingAnimations.Enqueue(animation);
@@ -33,17 +33,19 @@ public class BlockAnimationManager : MonoBehaviour
     {
         if (!NonConcurrentInProgress() && UpcomingAnimations.Count > 0)
         {
-            ActiveAnimations.Add(UpcomingAnimations.Dequeue());
+            BeginAnimation(UpcomingAnimations.Dequeue());
         }
     }
 
-    public void AnimateStep()
+    public void BeginAnimation(BlockAnimation animation)
     {
-        foreach(BlockAnimation animation in ActiveAnimations)
+        if (!animation.begun)
         {
-            animation.AnimationStep();
+            ActiveAnimations.Add(animation);
+            StartCoroutine(animation.Animate());
         }
     }
+
     public void RemoveComplete()
     {
         for(int i = ActiveAnimations.Count - 1; i == 0; i--)
@@ -52,10 +54,9 @@ public class BlockAnimationManager : MonoBehaviour
         }
     }
 
-    public void FixedUpdate()
+    public void Update()
     {
         AddNonConcurrent();
-        AnimateStep();
         RemoveComplete();
     }
 }
