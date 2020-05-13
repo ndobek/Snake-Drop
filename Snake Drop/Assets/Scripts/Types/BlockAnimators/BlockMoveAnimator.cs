@@ -8,10 +8,11 @@ public class BlockMoveAnimator : BlockAnimator
 
     public override void AnimationStep(BlockAnimation blockAnimation)
     {
-            blockAnimation.block.transform.SetParent(blockAnimation.destination.transform);
-            blockAnimation.block.transform.localRotation = Quaternion.identity;
-            blockAnimation.block.transform.localScale = Vector3.one;
-            blockAnimation.block.transform.localPosition = Evaluate(blockAnimation.block.transform.InverseTransformPoint(blockAnimation.origin.position), Vector3.zero, percentageComplete(blockAnimation));
+        Transform obj = blockAnimation.block.transform;
+        obj.SetParent(blockAnimation.destination.transform);
+        obj.localRotation = Quaternion.identity;
+        obj.localScale = Vector3.one;
+        obj.position = Evaluate(blockAnimation.origin.position, blockAnimation.destination.position, percentageComplete(blockAnimation));
     }
 
     public override void OnComplete(BlockAnimation blockAnimation)
@@ -21,9 +22,9 @@ public class BlockMoveAnimator : BlockAnimator
 
     public Vector3 Evaluate(Vector3 origin, Vector3 destination, float time)
     {
-        Vector3 result = origin + ((destination - origin) * time);
+        //Vector3 result = origin + ((destination - origin) * time);
         //Debug.Log("Origin: " + origin + " Destination: " + destination + "Time: " + time + " Result: " + result);
-        Debug.Log(time);
+        //Debug.Log(time);
         return origin + ((destination - origin) * time);
     }
 }
