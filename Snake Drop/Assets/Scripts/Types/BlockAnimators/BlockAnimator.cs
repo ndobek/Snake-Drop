@@ -12,15 +12,9 @@ public abstract class BlockAnimator: ScriptableObject
     public void TimeStep(BlockAnimation blockAnimation)
     {
         blockAnimation.elapsedTime += Time.deltaTime;
+        if(AnimationIsComplete(blockAnimation)) blockAnimation.complete = true;
     }
-    public virtual bool IsComplete(BlockAnimation blockAnimation)
-    {
-        return true;
-    }
-    public virtual void OnComplete(BlockAnimation blockAnimation)
-    {
-        blockAnimation.complete = true;
-    }
+    public virtual void OnComplete(BlockAnimation blockAnimation) { }
 
     public IEnumerator Animate(BlockAnimation blockAnimation)
     {
@@ -36,14 +30,18 @@ public abstract class BlockAnimator: ScriptableObject
 
     public float percentageComplete(float elapsedTime)
     {
-        return elapsedTime / AnimationTotalTime;
+        if (AnimationTotalTime != 0)
+        {
+            return elapsedTime / AnimationTotalTime;
+        }
+        else return 1;
     }
     public float percentageComplete(BlockAnimation blockAnimation)
     {
         return percentageComplete(blockAnimation.elapsedTime);
     }
 
-    public bool AnimationIsComplete(BlockAnimation blockAnimation)
+    public virtual bool AnimationIsComplete(BlockAnimation blockAnimation)
     {
         return percentageComplete(blockAnimation) >= 1.0f;
     }

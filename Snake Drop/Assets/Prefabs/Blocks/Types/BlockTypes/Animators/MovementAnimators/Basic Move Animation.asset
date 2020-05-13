@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Basic Move Animation
   m_EditorClassIdentifier: 
   AnimationConcurrent: 0
-  AnimationTotalTime: 0
+  AnimationTotalTime: 0.2

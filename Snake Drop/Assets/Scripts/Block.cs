@@ -91,7 +91,7 @@ public class Block : MonoBehaviour
     {
         foreach(BlockAnimator obj in blockType.SpriteAnimators)
         {
-            AnimationManager.AddAnimation(new BlockAnimation(this, obj, slot));
+            AnimationManager.AddAnimation(new BlockAnimation(this, obj));
         }
     }
     //private void UpdatePosition()
@@ -129,7 +129,7 @@ public class Block : MonoBehaviour
         if (obj)
         {
             if (animation == null) animation = blockType.defaultMoveAnimator;
-            AnimationManager.AddAnimation(new BlockAnimation(this, animation, obj));
+            AnimationManager.AddAnimation(new BlockAnimation(this, animation, Old == null ? obj.transform : Old.transform, obj.transform));
             slot = obj;
             obj.OnAssignment(this);
             if (Tail != null) Tail.RawMoveTo(Old);

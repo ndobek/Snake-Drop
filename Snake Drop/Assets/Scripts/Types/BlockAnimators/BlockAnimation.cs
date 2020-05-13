@@ -5,7 +5,8 @@ using UnityEngine;
 public class BlockAnimation
 {
     public Block block;
-    public BlockSlot destination;
+    public Transform origin;
+    public Transform destination;
     public BlockAnimator Animator;
     public float elapsedTime;
     public bool begun = false;
@@ -13,10 +14,17 @@ public class BlockAnimation
     public bool Concurrent { get { return Animator.AnimationConcurrent; } }
 
 
-    public BlockAnimation(Block _block, BlockAnimator _Animator, BlockSlot _destination)
+    public BlockAnimation(Block _block, BlockAnimator _Animator)
     {
         block = _block;
         Animator = _Animator;
+        elapsedTime = 0;
+    }
+    public BlockAnimation(Block _block, BlockAnimator _Animator, Transform _origin, Transform _destination)
+    {
+        block = _block;
+        Animator = _Animator;
+        origin = _origin;
         destination = _destination;
         elapsedTime = 0;
     }
