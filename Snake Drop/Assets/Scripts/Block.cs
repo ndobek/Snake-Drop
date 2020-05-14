@@ -85,24 +85,24 @@ public class Block : MonoBehaviour
     {
         blockType = type;
         blockColor = color;
-        UpdateBlock();
+        UpdateSprite();
     }
-    private void UpdateSprite()
+    private void AddAnimations()
     {
-        foreach(BlockAnimator obj in blockType.SpriteAnimators)
+        foreach (BlockAnimator obj in blockType.EveryFrameAnimations)
         {
             AnimationManager.AddAnimation(new BlockAnimation(this, obj));
         }
     }
-    //private void UpdatePosition()
-    //{
-    //    //animator.AnimateStep();
-    //}
-    public void UpdateBlock()
+    private void UpdateSprite()
     {
-        //UpdatePosition();
-        UpdateSprite();
+            AnimationManager.AddAnimation(new BlockAnimation(this, blockType.SpriteAnimator));
     }
+    private void Update()
+    {
+        AddAnimations();
+    }
+
 
     //Tells the grid that it needs to check for fall movement and update
     private void SetGridDirty()
@@ -138,7 +138,7 @@ public class Block : MonoBehaviour
         {
             throw new System.Exception("No Slot to move to");
         }
-        UpdateBlock();
+        UpdateSprite();
     }
     public void RawBreak()
     {

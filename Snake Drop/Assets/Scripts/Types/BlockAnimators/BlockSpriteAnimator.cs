@@ -7,7 +7,7 @@ public class BlockSpriteAnimator : BlockAnimator
 {
     public Sprite newSprite;
 
-    public override void AnimationStep(BlockAnimation blockAnimation)
+    public override void OnComplete(BlockAnimation blockAnimation)
     {
         SetSprite(blockAnimation.block, newSprite);
     }
@@ -20,28 +20,10 @@ public class BlockSpriteAnimator : BlockAnimator
             block.BlockSprite.color = block.blockColor.color;
             block.BlockSprite.sortingOrder = block.blockType.sortingOrder;
 
-            if (block.blockType.HighlightTail) CreateSnakeLine(block);
-
             block.Highlight.enabled = block.blockType.HighlightTail;
         }
 
 
     }
 
-    protected void CreateSnakeLine(Block block)
-    {
-        //block.Highlight.enabled = true;
-        Block current = block;
-        List<Vector3> result = new List<Vector3>();
-
-        while (current.Tail != null)
-        {
-            result.Add(current.Highlight.transform.position);
-            current = current.Tail;
-        }
-        result.Add(current.Highlight.transform.position);
-        block.Highlight.positionCount = result.Count;
-        block.Highlight.SetPositions(result.ToArray());
-
-    }
 }

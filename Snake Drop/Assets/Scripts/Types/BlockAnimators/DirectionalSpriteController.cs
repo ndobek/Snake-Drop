@@ -11,7 +11,7 @@ public class DirectionalSpriteController : BlockSpriteAnimator
     public Sprite RightSprite;
     public bool HighlightTail;
 
-    public override void AnimationStep(BlockAnimation blockAnimation)
+    public override void OnComplete(BlockAnimation blockAnimation)
     {
         Block block = blockAnimation.block;
         GameManager.Direction dir = GameManager.Direction.DOWN;

@@ -125,14 +125,6 @@ public class BlockSlot : MonoBehaviour
         //Don't Change this, add to OnAssignment instead
         obj.RawMoveTo(this);
     }
-    public void UpdateBlock()
-    {
-        foreach (Block block in Blocks)
-        {
-            if (block) block.UpdateBlock();
-        }
-    }
-
     #endregion
 
 }

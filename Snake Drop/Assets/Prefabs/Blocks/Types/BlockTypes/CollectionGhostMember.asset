@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bd3250dde91e984ca21eb1cdd8190dc, type: 3}
   m_Name: CollectionGhostMember
   m_EditorClassIdentifier: 
-  SpriteAnimators:
-  - {fileID: 11400000, guid: c67b44cc1bbc51c4a839e9034b3f3def, type: 2}
+  SpriteAnimator: {fileID: 11400000, guid: c67b44cc1bbc51c4a839e9034b3f3def, type: 2}
   defaultMoveAnimator: {fileID: 11400000, guid: 23332f0fafefb3c419d44f2c79d052d7,
     type: 2}
+  OtherAnimators: {fileID: 0}
   HighlightTail: 0
   sortingOrder: -1
   isPartOfSnake: 0

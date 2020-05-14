@@ -24,8 +24,7 @@ public class PlayerController : MonoBehaviour
     //Temp to add keyboard controls
     public void Update()
     {
-        if (Input.GetKeyDown("w")) 
-        { FirstPress(Direction.UP); }
+        if (Input.GetKeyDown("w")) { FirstPress(Direction.UP); }
         if (Input.GetKeyDown("s")) { FirstPress(Direction.DOWN); }
         if (Input.GetKeyDown("a")) { FirstPress(Direction.LEFT); }
         if (Input.GetKeyDown("d")) { FirstPress(Direction.RIGHT); }

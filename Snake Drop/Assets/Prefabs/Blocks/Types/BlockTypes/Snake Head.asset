@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bd3250dde91e984ca21eb1cdd8190dc, type: 3}
   m_Name: Snake Head
   m_EditorClassIdentifier: 
-  SpriteAnimators:
-  - {fileID: 11400000, guid: 170115787ec640547ac9a38e212e921c, type: 2}
+  SpriteAnimator: {fileID: 11400000, guid: 170115787ec640547ac9a38e212e921c, type: 2}
   defaultMoveAnimator: {fileID: 11400000, guid: 23332f0fafefb3c419d44f2c79d052d7,
     type: 2}
+  EveryFrameAnimations:
+  - {fileID: 11400000, guid: cc0478ed4f5acb14b8bc9e33b2c7cdd7, type: 2}
   HighlightTail: 1
   sortingOrder: 0
   isPartOfSnake: 1

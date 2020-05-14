@@ -10,7 +10,6 @@ public class BlockAnimation
     public BlockAnimator Animator;
     public float elapsedTime;
     public bool begun = false;
-    public bool complete;
     public bool Concurrent { get { return Animator.AnimationConcurrent; } }
 
 

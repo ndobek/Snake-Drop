@@ -57,10 +57,10 @@ MonoBehaviour:
     - value: 0
       probability: 1
       StatType: {fileID: 11400000, guid: c11a0ed99d1b9254bb1a834dc1addb5a, type: 2}
-    - value: 50
+    - value: 1
       probability: 1
       StatType: {fileID: 11400000, guid: da1fea61c1219ab458d9a73e7ac950f6, type: 2}
-    - value: 50
+    - value: 1
       probability: 1
       StatType: {fileID: 11400000, guid: 180b49891043d474eb2b9435c540d056, type: 2}
     - value: 1

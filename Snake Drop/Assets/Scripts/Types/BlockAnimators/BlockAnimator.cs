@@ -8,17 +8,16 @@ public abstract class BlockAnimator: ScriptableObject
     public bool AnimationConcurrent;
     public float AnimationTotalTime;
 
-    public abstract void AnimationStep(BlockAnimation blockAnimation);
+    public virtual void AnimationStep(BlockAnimation blockAnimation) { }
     public void TimeStep(BlockAnimation blockAnimation)
     {
         blockAnimation.elapsedTime += Time.deltaTime;
-        if(AnimationIsComplete(blockAnimation)) blockAnimation.complete = true;
     }
     public virtual void OnComplete(BlockAnimation blockAnimation) { }
 
     public IEnumerator Animate(BlockAnimation blockAnimation)
     {
-        while (!blockAnimation.complete)
+        while (!blockAnimation.AnimationIsComplete())
         {
             AnimationStep(blockAnimation);
             TimeStep(blockAnimation);

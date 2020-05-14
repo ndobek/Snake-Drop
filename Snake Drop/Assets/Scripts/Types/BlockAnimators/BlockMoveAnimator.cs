@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "BlockAnimators/BlockMoveAnimator")]
 public class BlockMoveAnimator : BlockAnimator
 {
-
+    public AnimationCurve Curve;
     public override void AnimationStep(BlockAnimation blockAnimation)
     {
         Transform obj = blockAnimation.block.transform;
@@ -25,6 +25,6 @@ public class BlockMoveAnimator : BlockAnimator
         //Vector3 result = origin + ((destination - origin) * time);
         //Debug.Log("Origin: " + origin + " Destination: " + destination + "Time: " + time + " Result: " + result);
         //Debug.Log(time);
-        return origin + ((destination - origin) * time);
+        return origin + ((destination - origin) * Curve.Evaluate(time));
     }
 }

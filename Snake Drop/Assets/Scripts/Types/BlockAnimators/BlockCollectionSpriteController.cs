@@ -17,7 +17,7 @@ public class BlockCollectionSpriteController : BlockSpriteAnimator
     public Sprite bottomBlockSprite;
     public Sprite bottomRightBlockSprite;
 
-    public override void AnimationStep(BlockAnimation blockAnimation)
+    public override void OnComplete(BlockAnimation blockAnimation)
     {
         SetEdge(blockAnimation.block);
     }

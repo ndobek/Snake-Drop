@@ -128,21 +128,6 @@ public class PlayGrid : MonoBehaviour
 
     #region Methods for updating and maintenance.
 
-    public void FixedUpdate()
-    {
-        UpdateGrid();
-    }
-    public void UpdateGrid()
-    {
-        for (int x = 0; x < xSize; x++)
-        {
-            for (int y = 0; y < ySize; y++)
-            {
-                BlockSlot slot = GetSlot(x, y);
-                if(slot) slot.UpdateBlock();
-            }
-        }
-    }
 
     private bool dirty = false;
     public bool Dirty

@@ -29,9 +29,14 @@ public class BlockAnimationManager : MonoBehaviour
         }
         return result;
     }
+    private bool CanStartNewNonConcurrent()
+    {
+        RemoveComplete();
+        return (!NonConcurrentInProgress()) && UpcomingAnimations.Count > 0;
+    }
     private void AddNonConcurrent()
     {
-        if (!NonConcurrentInProgress() && UpcomingAnimations.Count > 0)
+        if (CanStartNewNonConcurrent())
         {
             BeginAnimation(UpcomingAnimations.Dequeue());
         }
@@ -39,16 +44,16 @@ public class BlockAnimationManager : MonoBehaviour
 
     public void BeginAnimation(BlockAnimation animation)
     {
-        if (!animation.begun)
-        {
+        //if (!animation.begun)
+        //{
             ActiveAnimations.Add(animation);
             StartCoroutine(animation.Animate());
-        }
+        //}
     }
 
     public void RemoveComplete()
     {
-        for(int i = ActiveAnimations.Count - 1; i == 0; i--)
+        for(int i = ActiveAnimations.Count - 1; i >= 0; i--)
         {
             if (ActiveAnimations[i].AnimationIsComplete()) ActiveAnimations.RemoveAt(i);
         }
@@ -56,7 +61,12 @@ public class BlockAnimationManager : MonoBehaviour
 
     public void Update()
     {
-        AddNonConcurrent();
-        RemoveComplete();
+        //Debug.Log(ActiveAnimations.Count);
+        //RemoveComplete();
+        while (CanStartNewNonConcurrent())
+        {
+            AddNonConcurrent();
+        }
+
     }
 }
