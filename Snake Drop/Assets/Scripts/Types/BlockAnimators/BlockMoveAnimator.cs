@@ -6,6 +6,7 @@ using UnityEngine;
 public class BlockMoveAnimator : BlockAnimator
 {
     public AnimationCurve Curve;
+    public bool BaseSpeedOnAllQueuedAnimations;
     public override void AnimationStep(BlockAnimation blockAnimation)
     {
         Transform obj = blockAnimation.block.transform;
@@ -17,6 +18,7 @@ public class BlockMoveAnimator : BlockAnimator
 
     public override void OnComplete(BlockAnimation blockAnimation)
     {
+        blockAnimation.block.transform.SetParent(blockAnimation.destination.transform);
         blockAnimation.block.transform.localPosition = Vector3.zero;
     }
 

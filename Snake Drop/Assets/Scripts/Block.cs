@@ -124,6 +124,7 @@ public class Block : MonoBehaviour
     public virtual void RawMoveTo(BlockSlot obj, BlockAnimator animation = null)
     {
         SetGridDirty();
+        UpdateSprite();
         BlockSlot Old = Slot;
         if (Old) Old.OnUnassignment(this);
         if (obj)

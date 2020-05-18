@@ -12,6 +12,7 @@ public abstract class BlockAnimator: ScriptableObject
     public void TimeStep(BlockAnimation blockAnimation)
     {
         blockAnimation.elapsedTime += Time.deltaTime;
+        //Debug.Log(blockAnimation.elapsedTime);
     }
     public virtual void OnComplete(BlockAnimation blockAnimation) { }
 

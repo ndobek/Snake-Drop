@@ -8,7 +8,7 @@ public class BlockAnimation
     public Transform origin;
     public Transform destination;
     public BlockAnimator Animator;
-    public float elapsedTime;
+    public float elapsedTime = 0;
     public bool begun = false;
     public bool Concurrent { get { return Animator.AnimationConcurrent; } }
 

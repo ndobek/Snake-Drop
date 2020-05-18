@@ -42,7 +42,17 @@ public class BlockAnimationManager : MonoBehaviour
         }
     }
 
-    public void BeginAnimation(BlockAnimation animation)
+    public float GetLengthOfUpcomingAnimations()
+    {
+        float result = 0;
+        foreach(BlockAnimation obj in UpcomingAnimations)
+        {
+            result += obj.Animator.AnimationTotalTime;
+        }
+        return result;
+    }
+
+    private void BeginAnimation(BlockAnimation animation)
     {
         //if (!animation.begun)
         //{
@@ -62,7 +72,6 @@ public class BlockAnimationManager : MonoBehaviour
     public void Update()
     {
         //Debug.Log(ActiveAnimations.Count);
-        //RemoveComplete();
         while (CanStartNewNonConcurrent())
         {
             AddNonConcurrent();
