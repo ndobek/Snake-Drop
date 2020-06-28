@@ -38,7 +38,7 @@ public class CollectionMove : MoveRule
         foreach (Block obj in blocks)
         {
             BlockSlot destination = obj.Slot.GetNeighbor(xDistance, yDistance);
-            obj.RawMoveTo(destination);
+            obj.RawMoveTo(destination, Animation);
         }
 
         block.BlockCollection.UpdateCoords();

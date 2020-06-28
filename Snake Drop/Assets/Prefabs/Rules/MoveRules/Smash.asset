@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bc8ba6852e1fb04ca20affecb1bf859, type: 3}
   m_Name: Smash
   m_EditorClassIdentifier: 
+  Animation: {fileID: 11400000, guid: ceae3ff0e6ba02842a1d0e2ab8f10595, type: 2}
+  CanEatYourSnake: 0

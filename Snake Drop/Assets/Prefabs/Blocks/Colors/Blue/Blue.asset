@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40021cae352ce664488076a625cf3512, type: 3}
   m_Name: Blue
   m_EditorClassIdentifier: 
-  color: {r: 0, g: 0.7193136, b: 1, a: 1}
+  BlockSpriteOverrides: []

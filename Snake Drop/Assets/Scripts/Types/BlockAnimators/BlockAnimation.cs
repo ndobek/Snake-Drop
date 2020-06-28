@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BlockAnimation
+public class BlockAnimation : PlayerManager.IPreventPlayerInput
 {
     public Block block;
     public Transform origin;

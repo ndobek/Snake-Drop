@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "BlockAnimators/CollectionSpriteAnimator")]
-public class BlockCollectionSpriteController : BlockSpriteAnimator
+public class BlockCollectionSpriteController : BlockAnimator
 {
     public Sprite fullBlockSprite;
 
@@ -16,6 +16,9 @@ public class BlockCollectionSpriteController : BlockSpriteAnimator
     public Sprite bottomLeftBlockSprite;
     public Sprite bottomBlockSprite;
     public Sprite bottomRightBlockSprite;
+
+    public Color color;
+    public int sortingOrder;
 
     public override void OnComplete(BlockAnimation blockAnimation)
     {
@@ -37,7 +40,7 @@ public class BlockCollectionSpriteController : BlockSpriteAnimator
             right = block.BlockCollection.CheckEdge(GameManager.Direction.RIGHT, block);
             SetEdge(block, top, bottom, left, right);
         }
-        else SetSprite(block, fullBlockSprite);
+        else SetSprite(block, fullBlockSprite, color, sortingOrder);
 
     }
 
@@ -45,27 +48,27 @@ public class BlockCollectionSpriteController : BlockSpriteAnimator
     {
         if (top)
         {
-            if (left) SetSprite(block, topLeftBlockSprite);
-            else if (right) SetSprite(block, topRightBlockSprite);
-            else SetSprite(block, topBlockSprite);
+            if (left) SetSprite(block, topLeftBlockSprite, color, sortingOrder);
+            else if (right) SetSprite(block, topRightBlockSprite, color, sortingOrder);
+            else SetSprite(block, topBlockSprite, color, sortingOrder);
         }
         else if (bottom)
         {
-            if (left) SetSprite(block, bottomLeftBlockSprite);
-            else if (right) SetSprite(block, bottomRightBlockSprite);
-            else SetSprite(block, bottomBlockSprite);
+            if (left) SetSprite(block, bottomLeftBlockSprite, color, sortingOrder);
+            else if (right) SetSprite(block, bottomRightBlockSprite, color, sortingOrder);
+            else SetSprite(block, bottomBlockSprite, color, sortingOrder);
         }
         else if (left)
         {
-            SetSprite(block, leftBlockSprite);
+            SetSprite(block, leftBlockSprite, color, sortingOrder);
         }
         else if (right)
         {
-            SetSprite(block, rightBlockSprite);
+            SetSprite(block, rightBlockSprite, color, sortingOrder);
         }
         else
         {
-            SetSprite(block, centerBlockSprite);
+            SetSprite(block, centerBlockSprite, color, sortingOrder);
         }
     }
 }

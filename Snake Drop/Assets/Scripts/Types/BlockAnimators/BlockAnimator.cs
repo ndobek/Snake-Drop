@@ -6,6 +6,7 @@ public abstract class BlockAnimator: ScriptableObject
 {
 
     public bool AnimationConcurrent;
+    public bool PreventPlayerInput;
     public float AnimationTotalTime;
 
     public virtual void AnimationStep(BlockAnimation blockAnimation) { }
@@ -18,6 +19,7 @@ public abstract class BlockAnimator: ScriptableObject
 
     public IEnumerator Animate(BlockAnimation blockAnimation)
     {
+        if (PreventPlayerInput && blockAnimation.block.Owner) blockAnimation.block.Owner.PreventInput(blockAnimation);
         while (!blockAnimation.AnimationIsComplete())
         {
             AnimationStep(blockAnimation);
@@ -26,6 +28,7 @@ public abstract class BlockAnimator: ScriptableObject
         }
 
         OnComplete(blockAnimation);
+        if (PreventPlayerInput && blockAnimation.block.Owner) blockAnimation.block.Owner.AllowInput(blockAnimation);
     }
 
     public float percentageComplete(float elapsedTime)
@@ -44,5 +47,19 @@ public abstract class BlockAnimator: ScriptableObject
     public virtual bool AnimationIsComplete(BlockAnimation blockAnimation)
     {
         return percentageComplete(blockAnimation) >= 1.0f;
+    }
+    protected void SetSprite(Block block, Sprite sprite, Color color, int sortingOrder)
+    {
+        if (block.blockColor != null && block.blockType != null)
+        {
+
+            block.BlockSprite.sprite = sprite;
+            block.BlockSprite.color = color;
+            block.BlockSprite.sortingOrder = sortingOrder;
+
+            block.Highlight.enabled = block.blockType.HighlightTail;
+        }
+
+
     }
 }

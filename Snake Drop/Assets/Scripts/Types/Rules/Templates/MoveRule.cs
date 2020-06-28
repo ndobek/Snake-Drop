@@ -4,6 +4,7 @@ using UnityEngine;
 
 public abstract class MoveRule : ScriptableObject
 {
+    public BlockAnimator Animation;
     protected virtual bool UniversalRules(Block block, BlockSlot slot, PlayerManager player = null)
     {
         if (slot == null) return false;

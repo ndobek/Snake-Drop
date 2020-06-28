@@ -18,7 +18,7 @@ public class R_ChangeSnakeHeadToTail : Rule
                 else
                 {
                     player.SnakeHead = null;
-                    player.OnCrash();
+                    player.OnSnakeEnd();
                 }
             }
         }

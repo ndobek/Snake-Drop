@@ -20,21 +20,21 @@ public class MoveInCollectionGhost : MoveRule
         if (block.blockColor == slot.Block.blockColor && !CollectionIsFull(slot.Block))
         {
             IncreaseFillAmmount(slot.Block, player);
-            block.RawMoveTo(slot);
+            block.RawMoveTo(slot, Animation);
             if (block.Tail)
             {
-                block.Tail.RawMoveTo(slot);
+                block.Tail.RawMoveTo(slot, Animation);
             }
             block.Break(player);
 
         } else if(block.blockColor != slot.Block.blockColor && !CollectionIsFull(slot.Block))
         {
             if (block.Tail && AbsorbFromTail) RemoveFirstColorInTail(block, slot, player);
-            block.RawMoveTo(slot);
+            block.RawMoveTo(slot, Animation);
         }
         else
         {
-            block.RawMoveTo(slot);
+            block.RawMoveTo(slot, Animation);
         }
 
         Debug.Log("Fill: " + slot.Block.BlockCollection.FillAmount + "/" + slot.Block.BlockCollection.Area());
@@ -53,7 +53,7 @@ public class MoveInCollectionGhost : MoveRule
                 block.SetTail(obj2);
                 obj1.SetTail(null);
 
-                if(obj2) obj2.RawMoveTo(obj1.Slot);
+                if(obj2) obj2.RawMoveTo(obj1.Slot, Animation);
                 obj1.RawBreak();
             }
             else
