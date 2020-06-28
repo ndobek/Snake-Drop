@@ -3,17 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "BlockAnimators/DirectionalSpriteAnimator")]
-public class DirectionalSpriteController : BlockAnimator
+public class DirectionalSpriteController : BlockSpriteAnimator
 {
     public Sprite UpSprite;
     public Sprite DownSprite;
     public Sprite LeftSprite;
     public Sprite RightSprite;
     public bool HighlightTail;
-
-
-    public Color color;
-    public int sortingOrder;
 
     public override void OnComplete(BlockAnimation blockAnimation)
     {
@@ -23,16 +19,16 @@ public class DirectionalSpriteController : BlockAnimator
         switch (dir) 
         {
             case GameManager.Direction.UP:
-                SetSprite(block, UpSprite, color, sortingOrder);
+                SetSprite(block, UpSprite);
                 break;
             case GameManager.Direction.DOWN:
-                SetSprite(block, DownSprite, color, sortingOrder);
+                SetSprite(block, DownSprite);
                 break;
             case GameManager.Direction.LEFT:
-                SetSprite(block, LeftSprite, color, sortingOrder);
+                SetSprite(block, LeftSprite);
                 break;
             case GameManager.Direction.RIGHT:
-                SetSprite(block, RightSprite, color, sortingOrder);
+                SetSprite(block, RightSprite);
                 break;
         }
     }

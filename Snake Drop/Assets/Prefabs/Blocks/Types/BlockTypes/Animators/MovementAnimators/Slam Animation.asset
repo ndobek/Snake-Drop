@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: Slam Animation
   m_EditorClassIdentifier: 
   AnimationConcurrent: 0
-  PreventPlayerInput: 0
-  AnimationTotalTime: 0.1
+  AnimationTotalTime: 1
   Curve:
     serializedVersion: 2
     m_Curve:
@@ -39,4 +38,3 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  BaseSpeedOnAllQueuedAnimations: 1

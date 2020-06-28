@@ -96,7 +96,7 @@ public class Block : MonoBehaviour
     }
     private void UpdateSprite()
     {
-        AnimationManager.AddAnimation(new BlockAnimation(this, blockColor.GetBlockSpriteAnimator(blockType)));
+            AnimationManager.AddAnimation(new BlockAnimation(this, blockType.SpriteAnimator));
     }
     private void Update()
     {

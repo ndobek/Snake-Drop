@@ -5,14 +5,12 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Rules/MoveRule/Smash")]
 public class SmashMove : MoveRule
 {
-    public bool CanEatYourSnake;
-
     protected override bool MoveCondition(Block block, BlockSlot slot, PlayerManager player = null)
     {
 
         if (slot && slot.Block)
         {
-            if (!CanEatYourSnake && slot.Block && !slot.Blocks.TrueForAll(Block.isNotPartOfSnake)) return false;
+            if (slot.Block && !slot.Blocks.TrueForAll(Block.isNotPartOfSnake)) return false;
             return slot.Block.blockColor == block.blockColor;
         }
         return false;
@@ -21,13 +19,13 @@ public class SmashMove : MoveRule
     {
         Block tail = null;
         if (block.Tail) { tail = block.Tail; }
-        if (CanEatYourSnake && slot.Block && slot.Block.isPartOfSnake()) slot.Block.KillSnake(player);
+        //if (slot.Block && slot.Block.isPartOfSnake) slot.Block.KillSnake();
         slot.Block.Break(player);
-        block.RawMoveTo(slot, Animation);
+        block.RawMoveTo(slot);
         block.Break(player);
         if (tail)
         {
-            tail.RawMoveTo(slot, Animation);
+            tail.RawMoveTo(slot);
         }
         else
         {
