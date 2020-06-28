@@ -11,6 +11,6 @@ public class BasicMove : MoveRule
     }
     protected override void MoveAction(Block block, BlockSlot slot, PlayerManager player = null)
     {
-        block.RawMoveTo(slot);
+        block.RawMoveTo(slot, Animation);
     }
 }

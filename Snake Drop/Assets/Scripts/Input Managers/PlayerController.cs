@@ -24,15 +24,15 @@ public class PlayerController : MonoBehaviour
     //Temp to add keyboard controls
     public void Update()
     {
-        if (Input.GetKeyDown("w")) { FirstPress(Direction.UP); }
-        if (Input.GetKeyDown("s")) { FirstPress(Direction.DOWN); }
-        if (Input.GetKeyDown("a")) { FirstPress(Direction.LEFT); }
-        if (Input.GetKeyDown("d")) { FirstPress(Direction.RIGHT); }
+        if (Input.GetKeyDown("w") | Input.GetKeyDown("up")) { FirstPress(Direction.UP); }
+        if (Input.GetKeyDown("s") | Input.GetKeyDown("down")) { FirstPress(Direction.DOWN); }
+        if (Input.GetKeyDown("a") | Input.GetKeyDown("left")) { FirstPress(Direction.LEFT); }
+        if (Input.GetKeyDown("d") | Input.GetKeyDown("right")) { FirstPress(Direction.RIGHT); }
 
-        if (Input.GetKey("w")) { Hold(Direction.UP); }
-        if (Input.GetKey("s")) { Hold(Direction.DOWN); }
-        if (Input.GetKey("a")) { Hold(Direction.LEFT); }
-        if (Input.GetKey("d")) { Hold(Direction.RIGHT); }
+        if (Input.GetKey("w") | Input.GetKey("up")) { Hold(Direction.UP); }
+        if (Input.GetKey("s") | Input.GetKey("down")) { Hold(Direction.DOWN); }
+        if (Input.GetKey("a") | Input.GetKey("left")) { Hold(Direction.LEFT); }
+        if (Input.GetKey("d") | Input.GetKey("right")) { Hold(Direction.RIGHT); }
     }
 
     private void MoveSnakeOnSwipe(TouchManager.TouchData Swipe)
