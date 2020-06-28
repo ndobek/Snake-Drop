@@ -6,11 +6,13 @@ using UnityEngine;
 public class BlockType : ScriptableObject
 {
     [SerializeReference]
-    public BlockAnimator defaultSpriteAnimator;
+    public BlockSpriteAnimator SpriteAnimator;
     public BlockMoveAnimator defaultMoveAnimator;
     public List<BlockAnimator> EveryFrameAnimations;
 
     public bool HighlightTail;
+
+    public int sortingOrder;
 
     public bool isPartOfSnake;
 

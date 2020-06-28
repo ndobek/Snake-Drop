@@ -6,25 +6,5 @@ using UnityEngine;
 public class BlockColor : ScriptableObject
 {
     //public Sprite sprite;
-
-    [System.Serializable]
-    public struct BlockTypeInfo
-    {
-        public BlockType blockType;
-        public BlockSpriteAnimator blockSpriteAnimator;
-    }
-
-    public BlockTypeInfo[] BlockSpriteOverrides;
-
-    public BlockSpriteAnimator GetBlockSpriteAnimator(BlockType blockType)
-    {
-        foreach(BlockTypeInfo obj in BlockSpriteOverrides)
-        {
-            if(obj.blockType == blockType)
-            {
-                return obj.blockSpriteAnimator;
-            }
-        }
-        return (BlockSpriteAnimator)blockType.defaultSpriteAnimator;
-    }
+    public Color color;
 }

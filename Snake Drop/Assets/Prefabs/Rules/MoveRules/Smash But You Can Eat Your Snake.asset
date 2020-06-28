@@ -9,7 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40021cae352ce664488076a625cf3512, type: 3}
-  m_Name: Yellow
+  m_Script: {fileID: 11500000, guid: a0fb4a4521ba31d44b5b3eb5ff2d28df, type: 3}
+  m_Name: Smash But You Can Eat Your Snake
   m_EditorClassIdentifier: 
-  color: {r: 0.9622642, g: 0.7184281, b: 0, a: 1}

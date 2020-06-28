@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d1b4b6431781e44d9fa23909d2eee38, type: 3}
   m_Name: SnakeHeadSpriteController
   m_EditorClassIdentifier: 
-  AnimationConcurrent: 0
+  AnimationConcurrent: 1
   AnimationTotalTime: 0
   newSprite: {fileID: 0}
   UpSprite: {fileID: -2775109236177576168, guid: 2f5538cccf364d54c92370307ef50d4e,

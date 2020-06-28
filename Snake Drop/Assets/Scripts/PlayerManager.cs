@@ -35,11 +35,6 @@ public class PlayerManager : MonoBehaviour
 
     public void OnCrash()
     {
-        Score.ResetRound();
-        OnSnakeEnd();
-    }
-    public void OnSnakeEnd()
-    {
         RoundInProgress = false;
     }
 
@@ -66,7 +61,7 @@ public class PlayerManager : MonoBehaviour
             SnakeHead.KillSnake(this);
         }
         playGrid.InvokeGridAction();
-        //Score.ResetRound();
+        Score.ResetRound();
 
         if (GameIsOver())
         {
@@ -178,25 +173,11 @@ public class PlayerManager : MonoBehaviour
             snakeHead = null;
         }
     }
-    public interface IPreventPlayerInput { }
-    private List<IPreventPlayerInput> inputPreventers = new List<IPreventPlayerInput>();
-    public bool InputAllowed()
-    {
-        return inputPreventers.Count == 0;
-    }
-    public void PreventInput(IPreventPlayerInput obj)
-    {
-        inputPreventers.Add(obj);
-    }
-    public void AllowInput(IPreventPlayerInput obj)
-    {
-        if (inputPreventers.Contains(obj)) inputPreventers.Remove(obj);
-    }
 
     public void MoveSnake(GameManager.Direction direction)
     {
 
-        if (GameInProgress && InputAllowed())
+        if (GameInProgress)
         {
             if (RoundInProgress)
             {
