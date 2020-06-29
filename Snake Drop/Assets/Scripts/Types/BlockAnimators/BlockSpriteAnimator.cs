@@ -6,6 +6,8 @@ using UnityEngine;
 public class BlockSpriteAnimator : BlockAnimator
 {
     public Sprite newSprite;
+    public bool useBlockColorSprite;
+    public bool useBlockColorColor;
 
     public override void OnComplete(BlockAnimation blockAnimation)
     {
@@ -16,11 +18,15 @@ public class BlockSpriteAnimator : BlockAnimator
     {
         if (block.blockColor != null && block.blockType != null)
         {
-            block.BlockSprite.sprite = sprite;
-            block.BlockSprite.color = block.blockColor.color;
+            if (useBlockColorSprite && block.blockColor.sprite != null) block.BlockSprite.sprite = block.blockColor.sprite;
+            else block.BlockSprite.sprite = sprite;
+
+            if (useBlockColorColor) block.BlockSprite.color = block.blockColor.color;
+
             block.BlockSprite.sortingOrder = block.blockType.sortingOrder;
 
             block.Highlight.enabled = block.blockType.HighlightTail;
+
         }
 
 
