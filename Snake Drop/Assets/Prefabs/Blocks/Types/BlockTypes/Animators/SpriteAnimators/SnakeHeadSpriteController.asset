@@ -15,6 +15,8 @@ MonoBehaviour:
   AnimationConcurrent: 1
   AnimationTotalTime: 0
   newSprite: {fileID: 0}
+  useBlockColorSprite: 0
+  useBlockColorColor: 1
   UpSprite: {fileID: -2775109236177576168, guid: 2f5538cccf364d54c92370307ef50d4e,
     type: 3}
   DownSprite: {fileID: 2828524253419947484, guid: 2f5538cccf364d54c92370307ef50d4e,

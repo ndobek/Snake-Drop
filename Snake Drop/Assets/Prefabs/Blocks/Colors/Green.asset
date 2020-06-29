@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40021cae352ce664488076a625cf3512, type: 3}
   m_Name: Green
   m_EditorClassIdentifier: 
+  sprite: {fileID: -2065256202139931042, guid: ed410316aea862046baa5fc3395d131b, type: 3}
   color: {r: 0.1486618, g: 0.5754717, b: 0, a: 1}
+  useSprite: 1
+  useColor: 0

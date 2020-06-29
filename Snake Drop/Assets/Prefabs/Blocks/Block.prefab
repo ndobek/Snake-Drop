@@ -131,8 +131,6 @@ MonoBehaviour:
   blockType: {fileID: 0}
   blockColor: {fileID: 0}
   AnimationManager: {fileID: -7966044424637155706}
-  defaultMoveAnimator: {fileID: 11400000, guid: 23332f0fafefb3c419d44f2c79d052d7,
-    type: 2}
   BlockSprite: {fileID: 1414227870278718605}
   Highlight: {fileID: 5953743069245659295}
 --- !u!114 &-7966044424637155706

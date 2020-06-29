@@ -15,9 +15,9 @@ MonoBehaviour:
   SpriteAnimator: {fileID: 11400000, guid: c67b44cc1bbc51c4a839e9034b3f3def, type: 2}
   defaultMoveAnimator: {fileID: 11400000, guid: 23332f0fafefb3c419d44f2c79d052d7,
     type: 2}
-  OtherAnimators: {fileID: 0}
+  EveryFrameAnimations: []
   HighlightTail: 0
-  sortingOrder: -1
+  sortingOrder: 0
   isPartOfSnake: 0
   moveRules: []
   killRules: []

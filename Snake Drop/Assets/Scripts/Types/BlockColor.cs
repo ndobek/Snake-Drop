@@ -7,4 +7,7 @@ public class BlockColor : ScriptableObject
 {
     public Sprite sprite;
     public Color color;
+
+    public bool useSprite;
+    public bool useColor;
 }
