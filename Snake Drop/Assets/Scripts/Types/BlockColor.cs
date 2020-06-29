@@ -4,10 +4,23 @@ using UnityEngine;
 
 [CreateAssetMenu(menuName = "Types/BlockColor")]
 public class BlockColor : ScriptableObject
-{
-    public Sprite sprite;
-    public Color color;
+{        
+    [System.Serializable]
+    public struct AnimatorInfo
+    {
+        public BlockType BlockType;
+        public BlockSpriteAnimator Animator;
+    }
 
-    public bool useSprite;
-    public bool useColor;
+    public AnimatorInfo[] animatorInfos;
+
+    public BlockSpriteAnimator GetAnimator(BlockType blockType)
+    {
+        foreach(AnimatorInfo obj in animatorInfos)
+        {
+            if (obj.BlockType == blockType) return obj.Animator;
+        }
+        return null;
+    }
+
 }

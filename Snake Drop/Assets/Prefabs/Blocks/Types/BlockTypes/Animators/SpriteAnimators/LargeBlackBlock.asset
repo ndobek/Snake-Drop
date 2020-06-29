@@ -14,9 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationConcurrent: 0
   AnimationTotalTime: 0
-  newSprite: {fileID: 0}
-  useBlockColorSprite: 0
-  useBlockColorColor: 1
   fullBlockSprite: {fileID: 21300000, guid: 771d493a709cee64482523f9e7389118, type: 3}
   topLeftBlockSprite: {fileID: 5694512942562580874, guid: 5cfc914d0ffa2ff43b334040872d18d8,
     type: 3}

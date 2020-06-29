@@ -5,14 +5,10 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Types/BlockType")]
 public class BlockType : ScriptableObject
 {
-    [SerializeReference]
-    public BlockSpriteAnimator SpriteAnimator;
     public BlockMoveAnimator defaultMoveAnimator;
     public List<BlockAnimator> EveryFrameAnimations;
 
     public bool HighlightTail;
-
-    public int sortingOrder;
 
     public bool isPartOfSnake;
 

@@ -4,19 +4,19 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: 8283720136329804685
-    second: Helix
+    second: Helix-Gray
   - first:
       213: -1813407641667750476
-    second: Leaf
+    second: Leaf-Gray
   - first:
       213: -4220057840173080920
-    second: Bee
+    second: Bee-Gray
   - first:
       213: 4353863680621800348
-    second: Sun
+    second: Sun-Gray
   - first:
       213: 7264364044619547476
-    second: Water
+    second: Water-Gray
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -61,7 +61,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 85
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -140,7 +140,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Helix
+      name: Helix-Gray
       rect:
         serializedVersion: 2
         x: 0
@@ -161,7 +161,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Leaf
+      name: Leaf-Gray
       rect:
         serializedVersion: 2
         x: 17
@@ -182,7 +182,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bee
+      name: Bee-Gray
       rect:
         serializedVersion: 2
         x: 34
@@ -203,7 +203,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sun
+      name: Sun-Gray
       rect:
         serializedVersion: 2
         x: 51
@@ -224,7 +224,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Water
+      name: Water-Gray
       rect:
         serializedVersion: 2
         x: 68
