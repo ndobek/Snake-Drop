@@ -12,14 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40021cae352ce664488076a625cf3512, type: 3}
   m_Name: Green
   m_EditorClassIdentifier: 
+  defaultAnimator: {fileID: 11400000, guid: a405f6ba2a4325c4687a5a5085bceb14, type: 2}
   animatorInfos:
-  - BlockType: {fileID: 11400000, guid: f9f87476a3c72e741b635dd7da5b8050, type: 2}
-    Animator: {fileID: 11400000, guid: 9bca90b746891c6438ed318e5aee61ac, type: 2}
-  - BlockType: {fileID: 11400000, guid: 7d50d8ff5e938a6439c218aa18290334, type: 2}
-    Animator: {fileID: 11400000, guid: 9bca90b746891c6438ed318e5aee61ac, type: 2}
-  - BlockType: {fileID: 11400000, guid: 1bb708f6f67e7844993159c157df7353, type: 2}
-    Animator: {fileID: 11400000, guid: 9bca90b746891c6438ed318e5aee61ac, type: 2}
   - BlockType: {fileID: 11400000, guid: 5c7e6b4afee2d5e44ac32eecd7a8699e, type: 2}
-    Animator: {fileID: 11400000, guid: 9bca90b746891c6438ed318e5aee61ac, type: 2}
+    Animator: {fileID: 11400000, guid: f623d51b00bfa3c4e96a40eff58c6836, type: 2}
   - BlockType: {fileID: 11400000, guid: e6b2ec42c7e382244ae39199d03b8ae6, type: 2}
-    Animator: {fileID: 11400000, guid: 9bca90b746891c6438ed318e5aee61ac, type: 2}
+    Animator: {fileID: 11400000, guid: 97815004ea3778646a063aafac257591, type: 2}

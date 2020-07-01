@@ -11,6 +11,9 @@ public class DirectionalSpriteController : BlockSpriteAnimator
     public Sprite RightSprite;
     public bool HighlightTail;
 
+    public Color color;
+    public int sortingOrder;
+
     public override void OnComplete(BlockAnimation blockAnimation)
     {
         Block block = blockAnimation.block;
@@ -19,16 +22,16 @@ public class DirectionalSpriteController : BlockSpriteAnimator
         switch (dir) 
         {
             case GameManager.Direction.UP:
-                SetSprite(block, UpSprite);
+                SetSprite(block, UpSprite, color, sortingOrder);
                 break;
             case GameManager.Direction.DOWN:
-                SetSprite(block, DownSprite);
+                SetSprite(block, DownSprite, color, sortingOrder);
                 break;
             case GameManager.Direction.LEFT:
-                SetSprite(block, LeftSprite);
+                SetSprite(block, LeftSprite, color, sortingOrder);
                 break;
             case GameManager.Direction.RIGHT:
-                SetSprite(block, RightSprite);
+                SetSprite(block, RightSprite, color, sortingOrder);
                 break;
         }
     }

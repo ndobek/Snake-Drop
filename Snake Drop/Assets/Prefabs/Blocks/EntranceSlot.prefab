@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1206344098515344493}
   - component: {fileID: 1190667603107733429}
   - component: {fileID: 743836663841153224}
+  - component: {fileID: 2406651093775116778}
   m_Layer: 0
   m_Name: EntranceSlot
   m_TagString: Untagged
@@ -47,6 +48,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -71,8 +73,9 @@ SpriteRenderer:
   m_SortingLayerID: -358638985
   m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0.8962264, g: 0.63320327, b: 0.021137413, a: 1}
+  m_Sprite: {fileID: -8288992365014709943, guid: ed410316aea862046baa5fc3395d131b,
+    type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -105,3 +108,19 @@ MonoBehaviour:
   Blocks: []
   Active: 0
   AllowedPlayers: []
+--- !u!114 &2406651093775116778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6027495627444647842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7d6817a1ae5ddb499e58d6bca9e01bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 1190667603107733429}
+  grid: {fileID: 0}
+  Open: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
+  Closed: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}

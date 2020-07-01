@@ -33,8 +33,9 @@ public class PlayerManager : MonoBehaviour
     [HideInInspector]
     public bool GameInProgress;
 
-    public void OnCrash()
+    public void OnCrash(bool resetMultiplier = true)
     {
+        if(resetMultiplier) Score.ResetMultiplier();
         RoundInProgress = false;
     }
 
@@ -61,7 +62,6 @@ public class PlayerManager : MonoBehaviour
             SnakeHead.KillSnake(this);
         }
         playGrid.InvokeGridAction();
-        Score.ResetRound();
 
         if (GameIsOver())
         {

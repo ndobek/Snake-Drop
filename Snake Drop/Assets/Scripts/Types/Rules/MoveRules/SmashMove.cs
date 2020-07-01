@@ -29,7 +29,7 @@ public class SmashMove : MoveRule
         }
         else
         {
-            player.OnCrash();
+            player.OnCrash(false);
         }
 
     }

@@ -4,7 +4,9 @@ using UnityEngine;
 
 [CreateAssetMenu(menuName = "Types/BlockColor")]
 public class BlockColor : ScriptableObject
-{        
+{
+    public BlockSpriteAnimator defaultAnimator;
+
     [System.Serializable]
     public struct AnimatorInfo
     {
@@ -20,7 +22,7 @@ public class BlockColor : ScriptableObject
         {
             if (obj.BlockType == blockType) return obj.Animator;
         }
-        return null;
+        return defaultAnimator;
     }
 
 }

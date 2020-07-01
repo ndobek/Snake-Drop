@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 5842934707549262566}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -46,6 +46,8 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -57,6 +59,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -69,7 +72,7 @@ SpriteRenderer:
   m_SortingLayerID: -358638985
   m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 705629f3ec018184a9961fd6d192b73c, type: 3}
   m_Color: {r: 0.2830189, g: 0.23896407, b: 0.23896407, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -92,10 +95,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ed121b051360254dbdfb62fc702ce7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playGrid: {fileID: 0}
+  slotType: {fileID: 0}
   x: 0
   y: 0
-  playGrid: {fileID: 0}
   customRightNeighbor: {fileID: 0}
   customLeftNeighbor: {fileID: 0}
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
+  Blocks: []

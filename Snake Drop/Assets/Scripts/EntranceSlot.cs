@@ -74,4 +74,13 @@ public class EntranceSlot : BlockSlot
         if (customDownNeighbor && customDownNeighbor.playGrid == grid && customDownNeighbor.Block == null) result = true;
         return result;
     }
+    public BlockSlot getLinkedSlot(PlayGrid grid)
+    {
+        BlockSlot result = null;
+        if (customLeftNeighbor && customLeftNeighbor.playGrid == grid) result = customLeftNeighbor;
+        if (customRightNeighbor && customRightNeighbor.playGrid == grid) result = customRightNeighbor;
+        if (customUpNeighbor && customUpNeighbor.playGrid == grid) result = customUpNeighbor;
+        if (customDownNeighbor && customDownNeighbor.playGrid == grid) result = customDownNeighbor;
+        return result;
+    }
 }

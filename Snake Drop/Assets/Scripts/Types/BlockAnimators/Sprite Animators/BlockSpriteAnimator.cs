@@ -5,10 +5,10 @@ using UnityEngine;
 
 public abstract class BlockSpriteAnimator : BlockAnimator
 {
-    protected void SetSprite(Block block, Sprite sprite)
-    {
-        SetSprite(block, sprite, Color.white, 0);
-    }
+    //protected void SetSprite(Block block, Sprite sprite)
+    //{
+    //    SetSprite(block, sprite, Color.white, 0);
+    //}
 
     protected void SetSprite(Block block, Sprite sprite, Color color, int sortingOrder)
     {
