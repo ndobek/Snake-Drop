@@ -122,5 +122,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 1190667603107733429}
   grid: {fileID: 0}
-  Open: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
-  Closed: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
+  OpenSingle: {fileID: 8555243619926184695, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenLeft: {fileID: -6856153320251408523, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenCenter: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenRight: {fileID: -1461568427728303182, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedSingle: {fileID: -9101114243206089488, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedLeft: {fileID: -1042110323006699558, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedCenter: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedRight: {fileID: 1154880629740850122, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}

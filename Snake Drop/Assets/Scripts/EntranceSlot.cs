@@ -19,7 +19,7 @@ public class EntranceSlot : BlockSlot
             next = (EntranceSlot)result.GetNeighbor(nextDirection);
             if (!next)
             {
-                nextDirection = GetNextDirection(nextDirection, previous);
+                nextDirection = GetNextDirection(previous);
             }
             else
             {
@@ -30,7 +30,7 @@ public class EntranceSlot : BlockSlot
         return result;
     }
 
-    public GameManager.Direction GetNextDirection(GameManager.Direction PreviousDirection, EntranceSlot previousSlot)
+    public GameManager.Direction GetEdge(EntranceSlot slot)
     {
         GameManager.Direction result = GameManager.Direction.DOWN;
 
@@ -40,25 +40,29 @@ public class EntranceSlot : BlockSlot
         int RightX = playGrid.XSize - 1;
         int LeftX = 0;
 
-        if (previousSlot.y == TopY)
-        {
-            result = GameManager.Direction.DOWN;
-        }
-        if (previousSlot.y == BottomY)
+        if (slot.y == TopY)
         {
             result = GameManager.Direction.UP;
         }
-        if (previousSlot.x == RightX)
+        if (slot.y == BottomY)
         {
-            result = GameManager.Direction.LEFT;
+            result = GameManager.Direction.DOWN;
         }
-        if (previousSlot.x == LeftX)
+        if (slot.x == RightX)
         {
             result = GameManager.Direction.RIGHT;
         }
+        if (slot.x == LeftX)
+        {
+            result = GameManager.Direction.LEFT;
+        }
 
         return result;
+    }
 
+    public GameManager.Direction GetNextDirection(EntranceSlot slot)
+    {
+        return GameManager.GetOppositeDirection(GetEdge(slot));
     }
 
     public bool CheckIfEntranceValid(PlayerManager player)
@@ -67,14 +71,10 @@ public class EntranceSlot : BlockSlot
     }
     public bool CheckIfEntranceHasOpeningToGrid(PlayGrid grid)
     {
-        bool result = false;
-        if (customLeftNeighbor && customLeftNeighbor.playGrid == grid && customLeftNeighbor.Block == null) result = true;
-        if (customRightNeighbor && customRightNeighbor.playGrid == grid && customRightNeighbor.Block == null) result = true;
-        if (customUpNeighbor && customUpNeighbor.playGrid == grid && customUpNeighbor.Block == null) result = true;
-        if (customDownNeighbor && customDownNeighbor.playGrid == grid && customDownNeighbor.Block == null) result = true;
-        return result;
+        BlockSlot slot = getOpeningToGrid(grid);
+        return (slot && slot.Block == null);
     }
-    public BlockSlot getLinkedSlot(PlayGrid grid)
+    public BlockSlot getOpeningToGrid(PlayGrid grid)
     {
         BlockSlot result = null;
         if (customLeftNeighbor && customLeftNeighbor.playGrid == grid) result = customLeftNeighbor;

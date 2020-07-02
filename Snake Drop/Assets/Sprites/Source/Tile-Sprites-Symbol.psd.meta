@@ -1,22 +1,22 @@
 fileFormatVersion: 2
-guid: 12ec9a82c2964f7488bd02ddfd368020
+guid: ed410316aea862046baa5fc3395d131b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7155809290274538578
-    second: Red
+      213: -6199891538504907145
+    second: Helix
   - first:
-      213: -5585691934934631921
-    second: Green
+      213: -2065256202139931042
+    second: Leaf
   - first:
-      213: -7657738842413522063
-    second: Yellow
+      213: -8288992365014709943
+    second: Bee
   - first:
-      213: -2457783342741323471
-    second: Orange
+      213: -5490088532922545962
+    second: Sun
   - first:
-      213: -1765745944750547204
-    second: Blue
+      213: -4065304124308622816
+    second: Water
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -57,11 +57,11 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
-  spriteExtrude: 0
+  spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 18
+  spritePixelsToUnits: 20
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -140,7 +140,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Red
+      name: Helix
       rect:
         serializedVersion: 2
         x: 0
@@ -148,20 +148,20 @@ TextureImporter:
         width: 17
         height: 17
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 254014be2aa8e4360800000000000000
-      internalID: 7155809290274538578
+      spriteID: 77607718e7f85f9a0800000000000000
+      internalID: -6199891538504907145
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Green
+      name: Leaf
       rect:
         serializedVersion: 2
         x: 17
@@ -169,20 +169,20 @@ TextureImporter:
         width: 17
         height: 17
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f0af47987c2ab72b0800000000000000
-      internalID: -5585691934934631921
+      spriteID: e5ee6452d6cb653e0800000000000000
+      internalID: -2065256202139931042
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Yellow
+      name: Bee
       rect:
         serializedVersion: 2
         x: 34
@@ -190,20 +190,20 @@ TextureImporter:
         width: 17
         height: 17
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1732b33681f3ab590800000000000000
-      internalID: -7657738842413522063
+      spriteID: 9498f596c5597fc80800000000000000
+      internalID: -8288992365014709943
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Orange
+      name: Sun
       rect:
         serializedVersion: 2
         x: 51
@@ -211,20 +211,20 @@ TextureImporter:
         width: 17
         height: 17
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1310809521334edd0800000000000000
-      internalID: -2457783342741323471
+      spriteID: 6d8c4b921994fc3b0800000000000000
+      internalID: -5490088532922545962
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Blue
+      name: Water
       rect:
         serializedVersion: 2
         x: 68
@@ -232,14 +232,14 @@ TextureImporter:
         width: 17
         height: 17
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cfe9e872b6fce77e0800000000000000
-      internalID: -1765745944750547204
+      spriteID: 02277a610732597c0800000000000000
+      internalID: -4065304124308622816
       vertices: []
       indices: 
       edges: []

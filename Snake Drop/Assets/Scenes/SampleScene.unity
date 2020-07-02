@@ -274,8 +274,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 17070955}
   grid: {fileID: 354576705}
-  Open: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
-  Closed: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
+  OpenSingle: {fileID: 8555243619926184695, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenLeft: {fileID: -6856153320251408523, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenCenter: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenRight: {fileID: -1461568427728303182, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedSingle: {fileID: -9101114243206089488, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedLeft: {fileID: -1042110323006699558, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedCenter: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedRight: {fileID: 1154880629740850122, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
 --- !u!212 &17070955
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -815,8 +829,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 121410572}
   grid: {fileID: 354576705}
-  Open: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
-  Closed: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
+  OpenSingle: {fileID: 8555243619926184695, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenLeft: {fileID: -6856153320251408523, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenCenter: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenRight: {fileID: -1461568427728303182, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedSingle: {fileID: -9101114243206089488, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedLeft: {fileID: -1042110323006699558, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedCenter: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedRight: {fileID: 1154880629740850122, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
 --- !u!212 &121410572
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1044,8 +1072,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 139667306}
   grid: {fileID: 354576705}
-  Open: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
-  Closed: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
+  OpenSingle: {fileID: 8555243619926184695, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenLeft: {fileID: -6856153320251408523, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenCenter: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenRight: {fileID: -1461568427728303182, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedSingle: {fileID: -9101114243206089488, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedLeft: {fileID: -1042110323006699558, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedCenter: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedRight: {fileID: 1154880629740850122, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
 --- !u!212 &139667306
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1491,8 +1533,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 173293911}
   grid: {fileID: 354576705}
-  Open: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
-  Closed: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
+  OpenSingle: {fileID: 8555243619926184695, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenLeft: {fileID: -6856153320251408523, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenCenter: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenRight: {fileID: -1461568427728303182, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedSingle: {fileID: -9101114243206089488, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedLeft: {fileID: -1042110323006699558, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedCenter: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedRight: {fileID: 1154880629740850122, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
 --- !u!212 &173293911
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1606,8 +1662,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 192909623}
   grid: {fileID: 354576705}
-  Open: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
-  Closed: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
+  OpenSingle: {fileID: 8555243619926184695, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenLeft: {fileID: -6856153320251408523, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenCenter: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenRight: {fileID: -1461568427728303182, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedSingle: {fileID: -9101114243206089488, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedLeft: {fileID: -1042110323006699558, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedCenter: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedRight: {fileID: 1154880629740850122, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
 --- !u!212 &192909623
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2043,8 +2113,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 218041723}
   grid: {fileID: 354576705}
-  Open: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
-  Closed: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
+  OpenSingle: {fileID: 8555243619926184695, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenLeft: {fileID: -6856153320251408523, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenCenter: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenRight: {fileID: -1461568427728303182, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedSingle: {fileID: -9101114243206089488, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedLeft: {fileID: -1042110323006699558, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedCenter: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedRight: {fileID: 1154880629740850122, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
 --- !u!212 &218041723
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2168,8 +2252,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 222757739}
   grid: {fileID: 354576705}
-  Open: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
-  Closed: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
+  OpenSingle: {fileID: 8555243619926184695, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenLeft: {fileID: -6856153320251408523, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenCenter: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenRight: {fileID: -1461568427728303182, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedSingle: {fileID: -9101114243206089488, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedLeft: {fileID: -1042110323006699558, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedCenter: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedRight: {fileID: 1154880629740850122, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
 --- !u!212 &222757739
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2633,8 +2731,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 252278888}
   grid: {fileID: 354576705}
-  Open: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
-  Closed: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
+  OpenSingle: {fileID: 8555243619926184695, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenLeft: {fileID: -6856153320251408523, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenCenter: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenRight: {fileID: -1461568427728303182, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedSingle: {fileID: -9101114243206089488, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedLeft: {fileID: -1042110323006699558, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedCenter: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedRight: {fileID: 1154880629740850122, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
 --- !u!212 &252278888
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3018,8 +3130,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 264441740}
   grid: {fileID: 354576705}
-  Open: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
-  Closed: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
+  OpenSingle: {fileID: 8555243619926184695, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenLeft: {fileID: -6856153320251408523, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenCenter: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenRight: {fileID: -1461568427728303182, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedSingle: {fileID: -9101114243206089488, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedLeft: {fileID: -1042110323006699558, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedCenter: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedRight: {fileID: 1154880629740850122, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
 --- !u!212 &264441740
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3143,8 +3269,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 265056594}
   grid: {fileID: 354576705}
-  Open: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
-  Closed: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
+  OpenSingle: {fileID: 8555243619926184695, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenLeft: {fileID: -6856153320251408523, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenCenter: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenRight: {fileID: -1461568427728303182, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedSingle: {fileID: -9101114243206089488, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedLeft: {fileID: -1042110323006699558, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedCenter: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedRight: {fileID: 1154880629740850122, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
 --- !u!212 &265056594
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3788,8 +3928,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 338177035}
   grid: {fileID: 354576705}
-  Open: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
-  Closed: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
+  OpenSingle: {fileID: 8555243619926184695, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenLeft: {fileID: -6856153320251408523, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenCenter: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenRight: {fileID: -1461568427728303182, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedSingle: {fileID: -9101114243206089488, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedLeft: {fileID: -1042110323006699558, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedCenter: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedRight: {fileID: 1154880629740850122, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
 --- !u!212 &338177035
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3913,8 +4067,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 338739662}
   grid: {fileID: 354576705}
-  Open: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
-  Closed: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
+  OpenSingle: {fileID: 8555243619926184695, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenLeft: {fileID: -6856153320251408523, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenCenter: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenRight: {fileID: -1461568427728303182, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedSingle: {fileID: -9101114243206089488, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedLeft: {fileID: -1042110323006699558, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedCenter: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedRight: {fileID: 1154880629740850122, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
 --- !u!212 &338739662
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4038,8 +4206,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 349686844}
   grid: {fileID: 354576705}
-  Open: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
-  Closed: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
+  OpenSingle: {fileID: 8555243619926184695, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenLeft: {fileID: -6856153320251408523, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenCenter: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenRight: {fileID: -1461568427728303182, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedSingle: {fileID: -9101114243206089488, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedLeft: {fileID: -1042110323006699558, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedCenter: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedRight: {fileID: 1154880629740850122, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
 --- !u!212 &349686844
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4639,8 +4821,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 391418720}
   grid: {fileID: 354576705}
-  Open: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
-  Closed: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
+  OpenSingle: {fileID: 8555243619926184695, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenLeft: {fileID: -6856153320251408523, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenCenter: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenRight: {fileID: -1461568427728303182, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedSingle: {fileID: -9101114243206089488, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedLeft: {fileID: -1042110323006699558, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedCenter: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedRight: {fileID: 1154880629740850122, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
 --- !u!212 &391418720
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5076,8 +5272,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 443184018}
   grid: {fileID: 354576705}
-  Open: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
-  Closed: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
+  OpenSingle: {fileID: 8555243619926184695, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenLeft: {fileID: -6856153320251408523, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenCenter: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenRight: {fileID: -1461568427728303182, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedSingle: {fileID: -9101114243206089488, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedLeft: {fileID: -1042110323006699558, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedCenter: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedRight: {fileID: 1154880629740850122, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
 --- !u!212 &443184018
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5201,8 +5411,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 452556835}
   grid: {fileID: 354576705}
-  Open: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
-  Closed: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
+  OpenSingle: {fileID: 8555243619926184695, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenLeft: {fileID: -6856153320251408523, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenCenter: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenRight: {fileID: -1461568427728303182, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedSingle: {fileID: -9101114243206089488, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedLeft: {fileID: -1042110323006699558, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedCenter: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedRight: {fileID: 1154880629740850122, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
 --- !u!212 &452556835
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5630,10 +5854,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a160d838ff8b4b4693ac20007e008c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AssetsPPU: 18
+  m_AssetsPPU: 20
   m_RefResolutionX: 336
   m_RefResolutionY: 258
-  m_UpscaleRT: 0
+  m_UpscaleRT: 1
   m_PixelSnapping: 1
   m_CropFrameX: 0
   m_CropFrameY: 0
@@ -5742,8 +5966,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 532617262}
   grid: {fileID: 354576705}
-  Open: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
-  Closed: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
+  OpenSingle: {fileID: 8555243619926184695, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenLeft: {fileID: -6856153320251408523, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenCenter: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenRight: {fileID: -1461568427728303182, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedSingle: {fileID: -9101114243206089488, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedLeft: {fileID: -1042110323006699558, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedCenter: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedRight: {fileID: 1154880629740850122, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
 --- !u!212 &532617262
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6865,8 +7103,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 604741899}
   grid: {fileID: 354576705}
-  Open: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
-  Closed: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
+  OpenSingle: {fileID: 8555243619926184695, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenLeft: {fileID: -6856153320251408523, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenCenter: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenRight: {fileID: -1461568427728303182, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedSingle: {fileID: -9101114243206089488, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedLeft: {fileID: -1042110323006699558, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedCenter: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedRight: {fileID: 1154880629740850122, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
 --- !u!212 &604741899
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6990,8 +7242,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 609089366}
   grid: {fileID: 354576705}
-  Open: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
-  Closed: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
+  OpenSingle: {fileID: 8555243619926184695, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenLeft: {fileID: -6856153320251408523, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenCenter: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenRight: {fileID: -1461568427728303182, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedSingle: {fileID: -9101114243206089488, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedLeft: {fileID: -1042110323006699558, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedCenter: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedRight: {fileID: 1154880629740850122, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
 --- !u!212 &609089366
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7421,8 +7687,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 642452580}
   grid: {fileID: 354576705}
-  Open: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
-  Closed: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
+  OpenSingle: {fileID: 8555243619926184695, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenLeft: {fileID: -6856153320251408523, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenCenter: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenRight: {fileID: -1461568427728303182, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedSingle: {fileID: -9101114243206089488, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedLeft: {fileID: -1042110323006699558, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedCenter: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedRight: {fileID: 1154880629740850122, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
 --- !u!212 &642452580
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7546,8 +7826,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 647440728}
   grid: {fileID: 354576705}
-  Open: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
-  Closed: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
+  OpenSingle: {fileID: 8555243619926184695, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenLeft: {fileID: -6856153320251408523, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenCenter: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenRight: {fileID: -1461568427728303182, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedSingle: {fileID: -9101114243206089488, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedLeft: {fileID: -1042110323006699558, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedCenter: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedRight: {fileID: 1154880629740850122, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
 --- !u!212 &647440728
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7958,8 +8252,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 680296535}
   grid: {fileID: 354576705}
-  Open: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
-  Closed: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
+  OpenSingle: {fileID: 8555243619926184695, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenLeft: {fileID: -6856153320251408523, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenCenter: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenRight: {fileID: -1461568427728303182, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedSingle: {fileID: -9101114243206089488, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedLeft: {fileID: -1042110323006699558, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedCenter: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedRight: {fileID: 1154880629740850122, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
 --- !u!212 &680296535
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8083,8 +8391,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 686536089}
   grid: {fileID: 354576705}
-  Open: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
-  Closed: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
+  OpenSingle: {fileID: 8555243619926184695, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenLeft: {fileID: -6856153320251408523, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenCenter: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenRight: {fileID: -1461568427728303182, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedSingle: {fileID: -9101114243206089488, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedLeft: {fileID: -1042110323006699558, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedCenter: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedRight: {fileID: 1154880629740850122, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
 --- !u!212 &686536089
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8312,8 +8634,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 720007327}
   grid: {fileID: 354576705}
-  Open: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
-  Closed: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
+  OpenSingle: {fileID: 8555243619926184695, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenLeft: {fileID: -6856153320251408523, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenCenter: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenRight: {fileID: -1461568427728303182, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedSingle: {fileID: -9101114243206089488, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedLeft: {fileID: -1042110323006699558, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedCenter: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedRight: {fileID: 1154880629740850122, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
 --- !u!212 &720007327
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8541,8 +8877,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 752898171}
   grid: {fileID: 354576705}
-  Open: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
-  Closed: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
+  OpenSingle: {fileID: 8555243619926184695, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenLeft: {fileID: -6856153320251408523, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenCenter: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenRight: {fileID: -1461568427728303182, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedSingle: {fileID: -9101114243206089488, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedLeft: {fileID: -1042110323006699558, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedCenter: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedRight: {fileID: 1154880629740850122, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
 --- !u!212 &752898171
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9082,8 +9432,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 788861992}
   grid: {fileID: 354576705}
-  Open: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
-  Closed: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
+  OpenSingle: {fileID: 8555243619926184695, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenLeft: {fileID: -6856153320251408523, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenCenter: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenRight: {fileID: -1461568427728303182, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedSingle: {fileID: -9101114243206089488, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedLeft: {fileID: -1042110323006699558, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedCenter: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedRight: {fileID: 1154880629740850122, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
 --- !u!212 &788861992
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9623,8 +9987,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 824527504}
   grid: {fileID: 354576705}
-  Open: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
-  Closed: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
+  OpenSingle: {fileID: 8555243619926184695, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenLeft: {fileID: -6856153320251408523, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenCenter: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenRight: {fileID: -1461568427728303182, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedSingle: {fileID: -9101114243206089488, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedLeft: {fileID: -1042110323006699558, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedCenter: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedRight: {fileID: 1154880629740850122, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
 --- !u!212 &824527504
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9748,8 +10126,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 831617940}
   grid: {fileID: 354576705}
-  Open: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
-  Closed: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
+  OpenSingle: {fileID: 8555243619926184695, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenLeft: {fileID: -6856153320251408523, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenCenter: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenRight: {fileID: -1461568427728303182, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedSingle: {fileID: -9101114243206089488, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedLeft: {fileID: -1042110323006699558, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedCenter: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedRight: {fileID: 1154880629740850122, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
 --- !u!212 &831617940
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9977,8 +10369,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 837318184}
   grid: {fileID: 354576705}
-  Open: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
-  Closed: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
+  OpenSingle: {fileID: 8555243619926184695, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenLeft: {fileID: -6856153320251408523, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenCenter: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenRight: {fileID: -1461568427728303182, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedSingle: {fileID: -9101114243206089488, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedLeft: {fileID: -1042110323006699558, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedCenter: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedRight: {fileID: 1154880629740850122, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
 --- !u!212 &837318184
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10414,8 +10820,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 866962089}
   grid: {fileID: 354576705}
-  Open: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
-  Closed: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
+  OpenSingle: {fileID: 8555243619926184695, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenLeft: {fileID: -6856153320251408523, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenCenter: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenRight: {fileID: -1461568427728303182, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedSingle: {fileID: -9101114243206089488, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedLeft: {fileID: -1042110323006699558, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedCenter: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedRight: {fileID: 1154880629740850122, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
 --- !u!212 &866962089
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11683,8 +12103,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 1024921900}
   grid: {fileID: 354576705}
-  Open: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
-  Closed: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
+  OpenSingle: {fileID: 8555243619926184695, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenLeft: {fileID: -6856153320251408523, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenCenter: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenRight: {fileID: -1461568427728303182, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedSingle: {fileID: -9101114243206089488, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedLeft: {fileID: -1042110323006699558, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedCenter: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedRight: {fileID: 1154880629740850122, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
 --- !u!212 &1024921900
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11808,8 +12242,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 1037231615}
   grid: {fileID: 354576705}
-  Open: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
-  Closed: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
+  OpenSingle: {fileID: 8555243619926184695, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenLeft: {fileID: -6856153320251408523, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenCenter: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenRight: {fileID: -1461568427728303182, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedSingle: {fileID: -9101114243206089488, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedLeft: {fileID: -1042110323006699558, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedCenter: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedRight: {fileID: 1154880629740850122, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
 --- !u!212 &1037231615
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12557,8 +13005,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 1143778239}
   grid: {fileID: 354576705}
-  Open: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
-  Closed: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
+  OpenSingle: {fileID: 8555243619926184695, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenLeft: {fileID: -6856153320251408523, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenCenter: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenRight: {fileID: -1461568427728303182, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedSingle: {fileID: -9101114243206089488, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedLeft: {fileID: -1042110323006699558, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedCenter: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedRight: {fileID: 1154880629740850122, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
 --- !u!212 &1143778239
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13618,8 +14080,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 1203833782}
   grid: {fileID: 354576705}
-  Open: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
-  Closed: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
+  OpenSingle: {fileID: 8555243619926184695, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenLeft: {fileID: -6856153320251408523, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenCenter: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenRight: {fileID: -1461568427728303182, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedSingle: {fileID: -9101114243206089488, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedLeft: {fileID: -1042110323006699558, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedCenter: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedRight: {fileID: 1154880629740850122, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
 --- !u!212 &1203833782
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14123,8 +14599,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 1311150288}
   grid: {fileID: 354576705}
-  Open: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
-  Closed: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
+  OpenSingle: {fileID: 8555243619926184695, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenLeft: {fileID: -6856153320251408523, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenCenter: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenRight: {fileID: -1461568427728303182, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedSingle: {fileID: -9101114243206089488, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedLeft: {fileID: -1042110323006699558, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedCenter: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedRight: {fileID: 1154880629740850122, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
 --- !u!212 &1311150288
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14248,8 +14738,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 1317921337}
   grid: {fileID: 354576705}
-  Open: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
-  Closed: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
+  OpenSingle: {fileID: 8555243619926184695, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenLeft: {fileID: -6856153320251408523, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenCenter: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenRight: {fileID: -1461568427728303182, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedSingle: {fileID: -9101114243206089488, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedLeft: {fileID: -1042110323006699558, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedCenter: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedRight: {fileID: 1154880629740850122, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
 --- !u!212 &1317921337
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14954,8 +15458,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 1388801070}
   grid: {fileID: 354576705}
-  Open: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
-  Closed: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
+  OpenSingle: {fileID: 8555243619926184695, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenLeft: {fileID: -6856153320251408523, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenCenter: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenRight: {fileID: -1461568427728303182, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedSingle: {fileID: -9101114243206089488, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedLeft: {fileID: -1042110323006699558, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedCenter: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedRight: {fileID: 1154880629740850122, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
 --- !u!212 &1388801070
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15079,8 +15597,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 1390587198}
   grid: {fileID: 354576705}
-  Open: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
-  Closed: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
+  OpenSingle: {fileID: 8555243619926184695, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenLeft: {fileID: -6856153320251408523, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenCenter: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenRight: {fileID: -1461568427728303182, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedSingle: {fileID: -9101114243206089488, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedLeft: {fileID: -1042110323006699558, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedCenter: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedRight: {fileID: 1154880629740850122, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
 --- !u!212 &1390587198
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15204,8 +15736,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 1409355704}
   grid: {fileID: 354576705}
-  Open: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
-  Closed: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
+  OpenSingle: {fileID: 8555243619926184695, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenLeft: {fileID: -6856153320251408523, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenCenter: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenRight: {fileID: -1461568427728303182, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedSingle: {fileID: -9101114243206089488, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedLeft: {fileID: -1042110323006699558, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedCenter: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedRight: {fileID: 1154880629740850122, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
 --- !u!212 &1409355704
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15573,8 +16119,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 1448284954}
   grid: {fileID: 354576705}
-  Open: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
-  Closed: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
+  OpenSingle: {fileID: 8555243619926184695, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenLeft: {fileID: -6856153320251408523, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenCenter: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenRight: {fileID: -1461568427728303182, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedSingle: {fileID: -9101114243206089488, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedLeft: {fileID: -1042110323006699558, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedCenter: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedRight: {fileID: 1154880629740850122, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
 --- !u!212 &1448284954
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15698,8 +16258,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 1458893078}
   grid: {fileID: 354576705}
-  Open: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
-  Closed: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
+  OpenSingle: {fileID: 8555243619926184695, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenLeft: {fileID: -6856153320251408523, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenCenter: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenRight: {fileID: -1461568427728303182, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedSingle: {fileID: -9101114243206089488, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedLeft: {fileID: -1042110323006699558, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedCenter: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedRight: {fileID: 1154880629740850122, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
 --- !u!212 &1458893078
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15823,8 +16397,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 1476195073}
   grid: {fileID: 354576705}
-  Open: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
-  Closed: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
+  OpenSingle: {fileID: 8555243619926184695, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenLeft: {fileID: -6856153320251408523, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenCenter: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenRight: {fileID: -1461568427728303182, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedSingle: {fileID: -9101114243206089488, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedLeft: {fileID: -1042110323006699558, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedCenter: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedRight: {fileID: 1154880629740850122, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
 --- !u!212 &1476195073
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -17483,8 +18071,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 1694008600}
   grid: {fileID: 354576705}
-  Open: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
-  Closed: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
+  OpenSingle: {fileID: 8555243619926184695, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenLeft: {fileID: -6856153320251408523, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenCenter: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenRight: {fileID: -1461568427728303182, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedSingle: {fileID: -9101114243206089488, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedLeft: {fileID: -1042110323006699558, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedCenter: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedRight: {fileID: 1154880629740850122, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
 --- !u!212 &1694008600
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -17791,8 +18393,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 1728343925}
   grid: {fileID: 354576705}
-  Open: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
-  Closed: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
+  OpenSingle: {fileID: 8555243619926184695, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenLeft: {fileID: -6856153320251408523, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenCenter: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenRight: {fileID: -1461568427728303182, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedSingle: {fileID: -9101114243206089488, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedLeft: {fileID: -1042110323006699558, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedCenter: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedRight: {fileID: 1154880629740850122, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
 --- !u!212 &1728343925
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -17916,8 +18532,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 1729860420}
   grid: {fileID: 354576705}
-  Open: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
-  Closed: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
+  OpenSingle: {fileID: 8555243619926184695, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenLeft: {fileID: -6856153320251408523, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenCenter: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenRight: {fileID: -1461568427728303182, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedSingle: {fileID: -9101114243206089488, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedLeft: {fileID: -1042110323006699558, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedCenter: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedRight: {fileID: 1154880629740850122, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
 --- !u!212 &1729860420
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -18249,8 +18879,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 1765919623}
   grid: {fileID: 354576705}
-  Open: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
-  Closed: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
+  OpenSingle: {fileID: 8555243619926184695, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenLeft: {fileID: -6856153320251408523, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenCenter: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenRight: {fileID: -1461568427728303182, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedSingle: {fileID: -9101114243206089488, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedLeft: {fileID: -1042110323006699558, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedCenter: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedRight: {fileID: 1154880629740850122, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
 --- !u!212 &1765919623
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -20310,8 +20954,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 1986546960}
   grid: {fileID: 354576705}
-  Open: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
-  Closed: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
+  OpenSingle: {fileID: 8555243619926184695, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenLeft: {fileID: -6856153320251408523, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenCenter: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenRight: {fileID: -1461568427728303182, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedSingle: {fileID: -9101114243206089488, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedLeft: {fileID: -1042110323006699558, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedCenter: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedRight: {fileID: 1154880629740850122, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
 --- !u!212 &1986546960
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -20643,8 +21301,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 1994643605}
   grid: {fileID: 354576705}
-  Open: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
-  Closed: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed, type: 3}
+  OpenSingle: {fileID: 8555243619926184695, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenLeft: {fileID: -6856153320251408523, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenCenter: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  OpenRight: {fileID: -1461568427728303182, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedSingle: {fileID: -9101114243206089488, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedLeft: {fileID: -1042110323006699558, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedCenter: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
+  ClosedRight: {fileID: 1154880629740850122, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+    type: 3}
 --- !u!212 &1994643605
 SpriteRenderer:
   m_ObjectHideFlags: 0

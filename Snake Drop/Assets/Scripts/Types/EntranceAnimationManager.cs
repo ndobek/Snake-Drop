@@ -9,8 +9,15 @@ public class EntranceAnimationManager : MonoBehaviour
     private EntranceSlot slot;
     public PlayGrid grid;
 
-    public Sprite Open;
-    public Sprite Closed;
+    public Sprite OpenSingle;
+    public Sprite OpenLeft;
+    public Sprite OpenCenter;
+    public Sprite OpenRight;
+
+    public Sprite ClosedSingle;
+    public Sprite ClosedLeft;
+    public Sprite ClosedCenter;
+    public Sprite ClosedRight;
 
 
     private void Awake()
@@ -19,7 +26,28 @@ public class EntranceAnimationManager : MonoBehaviour
     }
     void Update()
     {
-        if (slot.CheckIfEntranceHasOpeningToGrid(grid)) spriteRenderer.sprite = Open;
-        else spriteRenderer.sprite = Closed;
+        UpdateSprite();
+    }
+
+    private void UpdateSprite()
+    {
+        ////BlockSlot opening = slot.getOpeningToGrid(grid);
+        //if (/*opening != null && (opening.Block == null || opening.Block.isPartOfSnake())*/slot.CheckIfEntranceHasOpeningToGrid(grid)) spriteRenderer.sprite = Open;
+        //else spriteRenderer.sprite = Closed;
+
+        bool leftOpen = ((EntranceSlot)slot.GetNeighbor(GameManager.GetCounterClockwiseNeighborDirection(slot.GetEdge(slot)))).CheckIfEntranceHasOpeningToGrid(grid);
+        bool rightOpen = ((EntranceSlot)slot.GetNeighbor(GameManager.GetClockwiseNeighborDirection(slot.GetEdge(slot)))).CheckIfEntranceHasOpeningToGrid(grid);
+        bool thisOpen = slot.CheckIfEntranceHasOpeningToGrid(grid);
+
+        if (!leftOpen &&  thisOpen && !rightOpen) spriteRenderer.sprite = OpenSingle;
+        if (!leftOpen &&  thisOpen &&  rightOpen) spriteRenderer.sprite = OpenLeft;
+        if ( leftOpen &&  thisOpen &&  rightOpen) spriteRenderer.sprite = OpenCenter;
+        if ( leftOpen &&  thisOpen && !rightOpen) spriteRenderer.sprite = OpenRight;
+
+        if ( leftOpen && !thisOpen &&  rightOpen) spriteRenderer.sprite = ClosedSingle;
+        if ( leftOpen && !thisOpen && !rightOpen) spriteRenderer.sprite = ClosedLeft;
+        if (!leftOpen && !thisOpen && !rightOpen) spriteRenderer.sprite = ClosedCenter;
+        if (!leftOpen && !thisOpen &&  rightOpen) spriteRenderer.sprite = ClosedRight;
+
     }
 }
