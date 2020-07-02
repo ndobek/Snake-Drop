@@ -71,5 +71,10 @@ public class MoveInCollectionGhost : MoveRule
     {
         block.BlockCollection.FillAmount += 1;
         player.Score.Multiplier += 1;
+
+        //Sprite Update
+        FillManager.UpdateBlockCollectionFill(block);
     }
+
+
 }

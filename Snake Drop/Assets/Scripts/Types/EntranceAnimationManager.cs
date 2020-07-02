@@ -26,17 +26,19 @@ public class EntranceAnimationManager : MonoBehaviour
     }
     void Update()
     {
-        UpdateSprite();
+        //UpdateSprite();
     }
 
-    private void UpdateSprite()
+    public void UpdateSprite()
     {
         ////BlockSlot opening = slot.getOpeningToGrid(grid);
         //if (/*opening != null && (opening.Block == null || opening.Block.isPartOfSnake())*/slot.CheckIfEntranceHasOpeningToGrid(grid)) spriteRenderer.sprite = Open;
         //else spriteRenderer.sprite = Closed;
 
-        bool leftOpen = ((EntranceSlot)slot.GetNeighbor(GameManager.GetCounterClockwiseNeighborDirection(slot.GetEdge(slot)))).CheckIfEntranceHasOpeningToGrid(grid);
-        bool rightOpen = ((EntranceSlot)slot.GetNeighbor(GameManager.GetClockwiseNeighborDirection(slot.GetEdge(slot)))).CheckIfEntranceHasOpeningToGrid(grid);
+        EntranceSlot Left = (EntranceSlot)slot.GetNeighbor(GameManager.GetCounterClockwiseNeighborDirection(slot.GetEdge(slot)));
+        bool leftOpen = Left != null && Left.CheckIfEntranceHasOpeningToGrid(grid);
+        EntranceSlot Right = (EntranceSlot)slot.GetNeighbor(GameManager.GetClockwiseNeighborDirection(slot.GetEdge(slot)));
+        bool rightOpen = Right != null && Right.CheckIfEntranceHasOpeningToGrid(grid);
         bool thisOpen = slot.CheckIfEntranceHasOpeningToGrid(grid);
 
         if (!leftOpen &&  thisOpen && !rightOpen) spriteRenderer.sprite = OpenSingle;

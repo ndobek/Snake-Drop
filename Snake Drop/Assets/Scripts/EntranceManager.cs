@@ -7,6 +7,7 @@ public class EntranceManager : PlayGrid
     public PlayGrid LinkedTo;
     public List<PlayerManager> AllowedPlayers;
 
+    public EntranceAnimationManager EntranceAnimationManager;
     public EntranceSlot StartingSlot;
 
     public override void CreateGrid()
@@ -66,5 +67,14 @@ public class EntranceManager : PlayGrid
         }
         return result;
     }
+
+    public void UpdateAnimations()
+    {
+        foreach(EntranceSlot slot in slots)
+        {
+            if(slot) slot.UpdateAnimations();
+        }
+    }
+
 
 }

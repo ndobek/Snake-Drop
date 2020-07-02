@@ -29,9 +29,6 @@ MonoBehaviour:
     - value: {fileID: 11400000, guid: 06922463012b1f24fb757d5ffdabbd6b, type: 2}
       probability: 10
       StatType: {fileID: 0}
-    - value: {fileID: 11400000, guid: 5438ed90547356044a3c13328a354b08, type: 2}
-      probability: 1
-      StatType: {fileID: 0}
     Stats:
     - value: 10
       probability: 1
@@ -57,10 +54,10 @@ MonoBehaviour:
     - value: 0
       probability: 1
       StatType: {fileID: 11400000, guid: c11a0ed99d1b9254bb1a834dc1addb5a, type: 2}
-    - value: 1
+    - value: 15
       probability: 1
       StatType: {fileID: 11400000, guid: da1fea61c1219ab458d9a73e7ac950f6, type: 2}
-    - value: 1
+    - value: 15
       probability: 1
       StatType: {fileID: 11400000, guid: 180b49891043d474eb2b9435c540d056, type: 2}
     - value: 1

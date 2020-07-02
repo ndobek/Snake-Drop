@@ -6,6 +6,12 @@ public class EntranceSlot : BlockSlot
 {
     public bool Active;
     public List<PlayerManager> AllowedPlayers;
+    private EntranceAnimationManager EntranceAnimationManager;
+
+    void Awake()
+    {
+        EntranceAnimationManager = GetComponent<EntranceAnimationManager>();
+    }
 
     public EntranceSlot GetNextValidSlot(GameManager.Direction direction, PlayerManager player)
     {
@@ -82,5 +88,10 @@ public class EntranceSlot : BlockSlot
         if (customUpNeighbor && customUpNeighbor.playGrid == grid) result = customUpNeighbor;
         if (customDownNeighbor && customDownNeighbor.playGrid == grid) result = customDownNeighbor;
         return result;
+    }
+
+    public void UpdateAnimations()
+    {
+        /*if(EntranceAnimationManager !=null)*/ EntranceAnimationManager.UpdateSprite();
     }
 }

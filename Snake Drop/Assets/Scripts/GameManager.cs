@@ -64,6 +64,9 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         if(!instance) instance = this;
+    }
+    private void Start()
+    {
         StartGame();
     }
 

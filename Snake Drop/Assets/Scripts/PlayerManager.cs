@@ -131,6 +131,7 @@ public class PlayerManager : MonoBehaviour
     }
     public void PrepareNewRound()
     {
+        entranceManager.UpdateAnimations();
         FillPreviewBar();
         ResetMoveRestrictions();
         SnakeHead = waitSlot.Block;
@@ -148,6 +149,7 @@ public class PlayerManager : MonoBehaviour
     }
     private void EndGame()
     {
+        entranceManager.UpdateAnimations();
         GameInProgress = false;
         GameManager.instance.CheckForGameOver();
     }

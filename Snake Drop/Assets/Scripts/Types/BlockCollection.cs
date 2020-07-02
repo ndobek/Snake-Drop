@@ -12,6 +12,7 @@ public class BlockCollection : IComparable
     //Used in gameplay for when a snake is in a collection. Starts at one to account for when the collection first turns into a ghost
     public int FillAmount = 1;
 
+
     public Block[] Blocks;
     public BlockSlot[] Slots;
 
@@ -86,7 +87,11 @@ public class BlockCollection : IComparable
 
     public bool isFull()
     {
-        return FillAmount >= Area();
+        return PercentageFull() >= 1;
+    }
+    public float PercentageFull()
+    {
+        return FillAmount/Area();
     }
 
 
@@ -142,5 +147,6 @@ public class BlockCollection : IComparable
                 throw new SystemException("Trying to set the type of an incomplete block collection");
             }
         }
+        FillManager.UpdateBlockCollectionFill(this);
     }
 }
