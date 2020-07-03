@@ -152,8 +152,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: 90f72741e36e80b4bb3fb708566cad3a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -300,6 +299,7 @@ MonoBehaviour:
   BlockSprite: {fileID: 1414227870278718605}
   Highlight: {fileID: 5953743069245659295}
   FillMaskTransform: {fileID: 7127000334172316186}
+  FillSpriteRenderer: {fileID: 8853788976239101160}
 --- !u!114 &-7966044424637155706
 MonoBehaviour:
   m_ObjectHideFlags: 0

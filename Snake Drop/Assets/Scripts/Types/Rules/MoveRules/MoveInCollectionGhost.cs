@@ -6,6 +6,7 @@ public class MoveInCollectionGhost : MoveRule
 {
     public BlockType CollectionGhostMemberType;
     public bool AbsorbFromTail;
+    public float blockFillAnimationSpeed;
 
     protected override bool MoveCondition(Block block, BlockSlot slot, PlayerManager player = null)
     {
@@ -71,9 +72,6 @@ public class MoveInCollectionGhost : MoveRule
     {
         block.BlockCollection.FillAmount += 1;
         player.Score.Multiplier += 1;
-
-        //Sprite Update
-        FillManager.UpdateBlockCollectionFill(block);
     }
 
 

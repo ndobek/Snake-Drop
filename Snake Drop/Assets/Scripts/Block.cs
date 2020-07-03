@@ -18,6 +18,7 @@ public class Block : MonoBehaviour
     public SpriteRenderer BlockSprite;
     public LineRenderer Highlight;
     public Transform FillMaskTransform;
+    public SpriteRenderer FillSpriteRenderer;
 
     private BlockSlot slot;
     public BlockSlot Slot

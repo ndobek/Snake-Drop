@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-[CreateAssetMenu(menuName = "BlockAnimators/BlockFillAnimator")]
+
 public abstract class BlockAnimator: ScriptableObject
 {
 

@@ -34,3 +34,4 @@ MonoBehaviour:
     type: 3}
   color: {r: 1, g: 0.67058825, b: 0.30588236, a: 1}
   sortingOrder: -1
+  detectFillAmount: 1

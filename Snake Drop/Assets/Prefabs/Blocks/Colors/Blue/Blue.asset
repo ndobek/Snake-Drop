@@ -15,6 +15,6 @@ MonoBehaviour:
   defaultAnimator: {fileID: 11400000, guid: 2bb0fb2c33eda2c4abf4d84c464ea515, type: 2}
   animatorInfos:
   - BlockType: {fileID: 11400000, guid: 5c7e6b4afee2d5e44ac32eecd7a8699e, type: 2}
-    Animator: {fileID: 11400000, guid: c2c6a75a6b6f4dd47bb309e43cee5a61, type: 2}
+    Animator: {fileID: 11400000, guid: 6fb422f0e11455142a4a50111e7049e4, type: 2}
   - BlockType: {fileID: 11400000, guid: e6b2ec42c7e382244ae39199d03b8ae6, type: 2}
     Animator: {fileID: 11400000, guid: d2bdec4b4eaf82b47b86223ebec4f1f5, type: 2}

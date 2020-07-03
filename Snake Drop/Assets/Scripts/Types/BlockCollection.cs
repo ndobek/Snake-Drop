@@ -147,6 +147,7 @@ public class BlockCollection : IComparable
                 throw new SystemException("Trying to set the type of an incomplete block collection");
             }
         }
-        FillManager.UpdateBlockCollectionFill(this);
     }
+
+
 }
