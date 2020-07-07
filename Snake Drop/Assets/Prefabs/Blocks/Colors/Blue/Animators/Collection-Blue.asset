@@ -14,23 +14,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationConcurrent: 0
   AnimationTotalTime: 0
-  topLeftBlockSprite: {fileID: 309138647891203882, guid: 0ebcc09b163430546bd56b0f90ea4fab,
+  topLeftBlockSprite: {fileID: -1857836319033188875, guid: 39e2167c6abcead4a975471befdf80ee,
     type: 3}
-  topBlockSprite: {fileID: 6619854499421291385, guid: 0ebcc09b163430546bd56b0f90ea4fab,
+  topBlockSprite: {fileID: 2410102430594570463, guid: 39e2167c6abcead4a975471befdf80ee,
     type: 3}
-  topRightBlockSprite: {fileID: 7206694041134073624, guid: 0ebcc09b163430546bd56b0f90ea4fab,
+  topRightBlockSprite: {fileID: 3056977932031636558, guid: ca4f16dd8a5bd5d42909d23b0907f516,
     type: 3}
-  leftBlockSprite: {fileID: 4666086757493642198, guid: 0ebcc09b163430546bd56b0f90ea4fab,
+  leftBlockSprite: {fileID: 2788352656005669620, guid: 39e2167c6abcead4a975471befdf80ee,
     type: 3}
-  centerBlockSprite: {fileID: 7081548054188117033, guid: 0ebcc09b163430546bd56b0f90ea4fab,
+  centerBlockSprite: {fileID: 5580436708008158676, guid: 39e2167c6abcead4a975471befdf80ee,
     type: 3}
-  rightBlockSprite: {fileID: 5387662168207662423, guid: 0ebcc09b163430546bd56b0f90ea4fab,
+  rightBlockSprite: {fileID: 648307563280673453, guid: 39e2167c6abcead4a975471befdf80ee,
     type: 3}
-  bottomLeftBlockSprite: {fileID: -3287853420543077034, guid: 0ebcc09b163430546bd56b0f90ea4fab,
+  bottomLeftBlockSprite: {fileID: 8356755701238176518, guid: 39e2167c6abcead4a975471befdf80ee,
     type: 3}
-  bottomBlockSprite: {fileID: 3824020666043502266, guid: 0ebcc09b163430546bd56b0f90ea4fab,
+  bottomBlockSprite: {fileID: -8494310080388650307, guid: 39e2167c6abcead4a975471befdf80ee,
     type: 3}
-  bottomRightBlockSprite: {fileID: -7784320621223123208, guid: 0ebcc09b163430546bd56b0f90ea4fab,
+  bottomRightBlockSprite: {fileID: 8989539738191421810, guid: 39e2167c6abcead4a975471befdf80ee,
     type: 3}
-  color: {r: 0.24705884, g: 0.52156866, b: 0.7607844, a: 1}
+  color: {r: 1, g: 1, b: 1, a: 1}
   sortingOrder: 0

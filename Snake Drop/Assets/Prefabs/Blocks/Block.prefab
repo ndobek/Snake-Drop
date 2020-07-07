@@ -25,8 +25,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2483930665985644479}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.5, z: 0}
-  m_LocalScale: {x: 1, y: 0, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 1}
   m_Children: []
   m_Father: {fileID: 418729047616522900}
   m_RootOrder: 0
@@ -149,8 +149,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1986032229
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 90f72741e36e80b4bb3fb708566cad3a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -233,7 +233,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -4065304124308622816, guid: b09044ae8d292854ab319676626f4a48,
     type: 3}
   m_Color: {r: 0.89411783, g: 0, b: 1, a: 1}
@@ -298,6 +298,7 @@ MonoBehaviour:
   AnimationManager: {fileID: -7966044424637155706}
   BlockSprite: {fileID: 1414227870278718605}
   Highlight: {fileID: 5953743069245659295}
+  FillMask: {fileID: 6466254674296656373}
   FillMaskTransform: {fileID: 7127000334172316186}
   FillSpriteRenderer: {fileID: 8853788976239101160}
 --- !u!114 &-7966044424637155706
