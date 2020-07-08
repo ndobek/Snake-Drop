@@ -5,7 +5,7 @@ using UnityEngine;
 public class EntranceAnimationManager : MonoBehaviour
 {
     [SerializeField]
-    private SpriteRenderer spriteRenderer;
+    protected SpriteRenderer spriteRenderer;
     private EntranceSlot slot;
     public PlayGrid grid;
 
@@ -29,7 +29,7 @@ public class EntranceAnimationManager : MonoBehaviour
         //UpdateSprite();
     }
 
-    public void UpdateSprite()
+    public virtual void UpdateSprite()
     {
         ////BlockSlot opening = slot.getOpeningToGrid(grid);
         //if (/*opening != null && (opening.Block == null || opening.Block.isPartOfSnake())*/slot.CheckIfEntranceHasOpeningToGrid(grid)) spriteRenderer.sprite = Open;

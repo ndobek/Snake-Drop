@@ -14,4 +14,9 @@ public class LilGuy : MonoBehaviour
         SpriteController = GetComponent<ILilGuySpriteController>();
         MovementController = GetComponent<ILilGuyMovementController>();
     }
+
+    public void MoveTo(Vector3 destination)
+    {
+        MovementController.MoveTo(this, destination);
+    }
 }

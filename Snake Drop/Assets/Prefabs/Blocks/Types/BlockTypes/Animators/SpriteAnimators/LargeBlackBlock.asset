@@ -14,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationConcurrent: 0
   AnimationTotalTime: 0
-  fullBlockSprite: {fileID: 21300000, guid: 771d493a709cee64482523f9e7389118, type: 3}
   topLeftBlockSprite: {fileID: 5694512942562580874, guid: 5cfc914d0ffa2ff43b334040872d18d8,
     type: 3}
   topBlockSprite: {fileID: 4652002621484922972, guid: 5cfc914d0ffa2ff43b334040872d18d8,
@@ -33,3 +32,5 @@ MonoBehaviour:
     type: 3}
   bottomRightBlockSprite: {fileID: -8752870444828884891, guid: 5cfc914d0ffa2ff43b334040872d18d8,
     type: 3}
+  color: {r: 0, g: 0, b: 0, a: 0}
+  sortingOrder: -2

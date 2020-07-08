@@ -92,6 +92,6 @@ public class EntranceSlot : BlockSlot
 
     public void UpdateAnimations()
     {
-        /*if(EntranceAnimationManager !=null)*/ EntranceAnimationManager.UpdateSprite();
+        if (EntranceAnimationManager != null) EntranceAnimationManager.UpdateSprite();
     }
 }

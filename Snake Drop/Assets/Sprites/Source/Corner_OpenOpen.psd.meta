@@ -1,13 +1,19 @@
 fileFormatVersion: 2
-guid: fb6d3027eabb1b94381363515c15f6f1
+guid: f98a50163f8a6fb42aa93b896e92715d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2163131631856871079
-    second: Dandelion-Seed-1_0
+      213: 3826043606365564563
+    second: Corner_OpenOpen_TopLeft
   - first:
-      213: 8568318388336638686
-    second: Dandelion-Seed-1_1
+      213: 8483305580187956713
+    second: Corner_OpenOpen_TopRight
+  - first:
+      213: -4162745884611618486
+    second: Corner_OpenOpen_BottomLeft
+  - first:
+      213: -1418586820646209101
+    second: Corner_OpenOpen_BottomRight
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -72,7 +78,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -84,7 +90,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -96,7 +102,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -108,7 +114,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -120,7 +126,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -131,7 +137,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Dandelion-Seed-1_0
+      name: Corner_OpenOpen_TopLeft
       rect:
         serializedVersion: 2
         x: 0
@@ -139,20 +145,20 @@ TextureImporter:
         width: 20
         height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7a66d3722ccf40e10800000000000000
-      internalID: 2163131631856871079
+      spriteID: 39ee2948366d81530800000000000000
+      internalID: 3826043606365564563
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dandelion-Seed-1_1
+      name: Corner_OpenOpen_TopRight
       rect:
         serializedVersion: 2
         x: 20
@@ -160,14 +166,56 @@ TextureImporter:
         width: 20
         height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: edab0436d28c8e670800000000000000
-      internalID: 8568318388336638686
+      spriteID: 9e5313c8a71cab570800000000000000
+      internalID: 8483305580187956713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Corner_OpenOpen_BottomLeft
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 0
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4951815ca4fa36c0800000000000000
+      internalID: -4162745884611618486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Corner_OpenOpen_BottomRight
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 0
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b9f4587dca205ce0800000000000000
+      internalID: -1418586820646209101
       vertices: []
       indices: 
       edges: []

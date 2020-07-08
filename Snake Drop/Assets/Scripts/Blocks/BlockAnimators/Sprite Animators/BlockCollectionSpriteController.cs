@@ -74,7 +74,7 @@ public class BlockCollectionSpriteController : BlockSpriteAnimator
         }
 
         //Temp Jank Solution
-        if (top & right) block.BlockSprite.sortingOrder = 10;
+        if (top & right) block.BlockSprite.sortingOrder = -1;
     }
 
 

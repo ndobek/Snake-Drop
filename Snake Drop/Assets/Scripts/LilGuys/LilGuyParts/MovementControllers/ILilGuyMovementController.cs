@@ -5,4 +5,5 @@ using UnityEngine;
 public interface ILilGuyMovementController
 {
     void MoveTo(LilGuy Guy, Vector3 position);
+    void Jump(LilGuy Guy);
 }

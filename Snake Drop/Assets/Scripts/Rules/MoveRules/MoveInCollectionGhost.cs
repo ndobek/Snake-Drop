@@ -47,7 +47,7 @@ public class MoveInCollectionGhost : MoveRule
         {
             if(block.Tail.blockColor == slot.Block.blockColor)
             {
-                block.BlockCollection.IncreaseFillAmmount(player);
+                slot.Block.BlockCollection.IncreaseFillAmmount(player);
                 Block obj1 = block.Tail;
                 Block obj2 = block.Tail.Tail;
 
