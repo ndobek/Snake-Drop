@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: -358638985
   m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: -8288992365014709943, guid: ed410316aea862046baa5fc3395d131b,
+  m_Sprite: {fileID: -1185315685514132615, guid: 18ba7c1f8dc701c45b817d73a9e24aa1,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -106,7 +106,10 @@ MonoBehaviour:
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
   Blocks: []
+  ActiveByDefault: 1
+  SelectableByDefault: 1
   Active: 0
+  Selectable: 1
   AllowedPlayers: []
 --- !u!114 &2406651093775116778
 MonoBehaviour:
@@ -122,19 +125,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 1190667603107733429}
   grid: {fileID: 0}
-  OpenSingle: {fileID: 8555243619926184695, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+  OpenSingle: {fileID: 4209839059990207638, guid: 18ba7c1f8dc701c45b817d73a9e24aa1,
     type: 3}
-  OpenLeft: {fileID: -6856153320251408523, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+  OpenLeft: {fileID: 4049302417372789580, guid: 18ba7c1f8dc701c45b817d73a9e24aa1,
     type: 3}
-  OpenCenter: {fileID: 910673996735819090, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+  OpenCenter: {fileID: -1185315685514132615, guid: 18ba7c1f8dc701c45b817d73a9e24aa1,
     type: 3}
-  OpenRight: {fileID: -1461568427728303182, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+  OpenRight: {fileID: 5964097291955165205, guid: 18ba7c1f8dc701c45b817d73a9e24aa1,
     type: 3}
-  ClosedSingle: {fileID: -9101114243206089488, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+  ClosedSingle: {fileID: 160576533649211304, guid: 18ba7c1f8dc701c45b817d73a9e24aa1,
     type: 3}
-  ClosedLeft: {fileID: -1042110323006699558, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+  ClosedLeft: {fileID: -8895813556242909240, guid: 18ba7c1f8dc701c45b817d73a9e24aa1,
     type: 3}
-  ClosedCenter: {fileID: -8972527171573858858, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+  ClosedCenter: {fileID: 3268709914190090969, guid: 18ba7c1f8dc701c45b817d73a9e24aa1,
     type: 3}
-  ClosedRight: {fileID: 1154880629740850122, guid: b6f3dbc080fb16a4090d3290a93c2fed,
+  ClosedRight: {fileID: -6116871143283034805, guid: 18ba7c1f8dc701c45b817d73a9e24aa1,
     type: 3}

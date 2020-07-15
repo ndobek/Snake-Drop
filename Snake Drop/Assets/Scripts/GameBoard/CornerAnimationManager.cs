@@ -1,23 +1,50 @@
-﻿using System.Collections;
+﻿using JetBrains.Annotations;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CornerAnimationManager : EntranceAnimationManager
+public class CornerAnimationManager : MonoBehaviour, IEntranceAnimationBehavior
 {
-    public Sprite Open;
-    public Sprite Closed;
+    public Sprite OpenOpen;
+    public Sprite ClosedClosed;
+    public Sprite OpenClosed;
+    public Sprite ClosedOpen;
 
-    public BlockSlot SlotToCheck;
 
-    public override void UpdateSprite()
+
+    public SpriteRenderer spriteRenderer;
+    private EntranceSlot ClockwiseNeighbor;
+    private EntranceSlot CounterClockwiseNeighbor;
+    private void Awake()
     {
-        if (SlotToCheck.Block != null)
+        GetNeighbors(GetComponent<EntranceSlot>());
+    }
+    public void UpdateSprite()
+    {
+        bool left = CounterClockwiseNeighbor.Active;
+        bool right = ClockwiseNeighbor.Active;
+
+        if (left)
         {
-            spriteRenderer.sprite = Closed;
+            if (right) SetSprite(OpenOpen);
+            else SetSprite(OpenClosed);
         }
         else
         {
-            spriteRenderer.sprite = Open;
+            if (right) SetSprite(ClosedOpen);
+            else SetSprite(ClosedClosed);
         }
     }
+    public void SetSprite(Sprite sprite)
+    {
+        spriteRenderer.sprite = sprite;
+    }
+
+    public void GetNeighbors(EntranceSlot slot)
+    {
+        BlockSlot.EdgeInfo info = slot.GetEdgeInfo();
+        ClockwiseNeighbor = (EntranceSlot)slot.GetNeighbor(info.ClockwiseNeighborDirection());
+        CounterClockwiseNeighbor = (EntranceSlot)slot.GetNeighbor(info.CounterClockwiseNeighborDirection());
+    }
 }
+

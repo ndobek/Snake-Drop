@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EntranceAnimationManager : MonoBehaviour
+public class EntranceAnimationManager : MonoBehaviour, IEntranceAnimationBehavior
 {
     [SerializeField]
     protected SpriteRenderer spriteRenderer;
@@ -35,11 +35,9 @@ public class EntranceAnimationManager : MonoBehaviour
         //if (/*opening != null && (opening.Block == null || opening.Block.isPartOfSnake())*/slot.CheckIfEntranceHasOpeningToGrid(grid)) spriteRenderer.sprite = Open;
         //else spriteRenderer.sprite = Closed;
 
-        EntranceSlot Left = (EntranceSlot)slot.GetNeighbor(GameManager.GetCounterClockwiseNeighborDirection(slot.GetEdge(slot)));
-        bool leftOpen = Left != null && Left.CheckIfEntranceHasOpeningToGrid(grid);
-        EntranceSlot Right = (EntranceSlot)slot.GetNeighbor(GameManager.GetClockwiseNeighborDirection(slot.GetEdge(slot)));
-        bool rightOpen = Right != null && Right.CheckIfEntranceHasOpeningToGrid(grid);
-        bool thisOpen = slot.CheckIfEntranceHasOpeningToGrid(grid);
+        bool leftOpen = CheckIfSlotOpen((EntranceSlot)slot.GetNeighbor(GameManager.GetCounterClockwiseNeighborDirection(slot.GetEdgeInfo().direction())));
+        bool rightOpen = CheckIfSlotOpen((EntranceSlot)slot.GetNeighbor(GameManager.GetClockwiseNeighborDirection(slot.GetEdgeInfo().direction())));
+        bool thisOpen = CheckIfSlotOpen(slot);
 
         if (!leftOpen &&  thisOpen && !rightOpen) spriteRenderer.sprite = OpenSingle;
         if (!leftOpen &&  thisOpen &&  rightOpen) spriteRenderer.sprite = OpenLeft;
@@ -51,5 +49,10 @@ public class EntranceAnimationManager : MonoBehaviour
         if (!leftOpen && !thisOpen && !rightOpen) spriteRenderer.sprite = ClosedCenter;
         if (!leftOpen && !thisOpen &&  rightOpen) spriteRenderer.sprite = ClosedRight;
 
+    }
+
+    public bool CheckIfSlotOpen(EntranceSlot slot)
+    {
+        return slot != null && slot.Active;
     }
 }

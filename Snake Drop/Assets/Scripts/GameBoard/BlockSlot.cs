@@ -18,6 +18,86 @@ public class BlockSlot : MonoBehaviour
         get { return new Vector2(x, y); }
     }
 
+    public class EdgeInfo
+    {
+        public bool Top;
+        public bool Bottom;
+        public bool Left;
+        public bool Right;
+
+        public GameManager.Direction direction()
+        {
+            GameManager.Direction result = GameManager.Direction.DOWN;
+
+            if (Top)
+            {
+                result = GameManager.Direction.UP;
+            }
+            if (Bottom)
+            {
+                result = GameManager.Direction.DOWN;
+            }
+            if (Right)
+            {
+                result = GameManager.Direction.RIGHT;
+            }
+            if (Left)
+            {
+                result = GameManager.Direction.LEFT;
+            }
+            return result;
+        }
+
+        public GameManager.Direction ClockwiseNeighborDirection()
+        {
+            GameManager.Direction result = GameManager.Direction.DOWN;
+            if (Top)
+            {
+                result = GameManager.Direction.RIGHT;
+            }
+            if (Right)
+            {
+                result = GameManager.Direction.DOWN;
+            }
+            if (Bottom)
+            {
+                result = GameManager.Direction.LEFT;
+            }
+            if (Left)
+            {
+                result = GameManager.Direction.UP;
+                if (Top)
+                {
+                    result = GameManager.Direction.RIGHT;
+                }
+            }
+            return result;
+        }
+        public GameManager.Direction CounterClockwiseNeighborDirection()
+        {
+            return GameManager.GetClockwiseNeighborDirection(ClockwiseNeighborDirection());
+        }
+
+    }
+    public EdgeInfo GetEdgeInfo()
+    {
+        int TopY = playGrid.YSize - 1;
+        int BottomY = 0;
+
+        int RightX = playGrid.XSize - 1;
+        int LeftX = 0;
+
+        return new EdgeInfo()
+        {
+            Top = y == TopY,
+            Bottom = y == BottomY,
+            Right = x == RightX,
+            Left = x == LeftX
+        };
+    
+            
+    }
+
     #endregion
 
     #region Neighbors

@@ -1,16 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using UnityEngine;
 
 public class EntranceSlot : BlockSlot
 {
+    public bool ActiveByDefault;
+    public bool SelectableByDefault;
+    [HideInInspector]
     public bool Active;
+    [HideInInspector]
+    public bool Selectable = true;
     public List<PlayerManager> AllowedPlayers;
-    private EntranceAnimationManager EntranceAnimationManager;
+    private IEntranceAnimationBehavior EntranceAnimationManager;
 
     void Awake()
     {
-        EntranceAnimationManager = GetComponent<EntranceAnimationManager>();
+        EntranceAnimationManager = GetComponent<IEntranceAnimationBehavior>();
+        ReActivate();
     }
 
     public EntranceSlot GetNextValidSlot(GameManager.Direction direction, PlayerManager player)
@@ -20,7 +27,7 @@ public class EntranceSlot : BlockSlot
         EntranceSlot result = (EntranceSlot)previous.GetNeighbor(nextDirection);
         EntranceSlot next;
 
-        while (result && result != this && !result.CheckIfEntranceValid(player))
+        while (result && result != this && result.Selectable == false/*&& !result.CheckIfEntranceValid(player)*/)
         {
             next = (EntranceSlot)result.GetNeighbor(nextDirection);
             if (!next)
@@ -36,49 +43,25 @@ public class EntranceSlot : BlockSlot
         return result;
     }
 
-    public GameManager.Direction GetEdge(EntranceSlot slot)
-    {
-        GameManager.Direction result = GameManager.Direction.DOWN;
 
-        int TopY = playGrid.YSize - 1;
-        int BottomY = 0;
-
-        int RightX = playGrid.XSize - 1;
-        int LeftX = 0;
-
-        if (slot.y == TopY)
-        {
-            result = GameManager.Direction.UP;
-        }
-        if (slot.y == BottomY)
-        {
-            result = GameManager.Direction.DOWN;
-        }
-        if (slot.x == RightX)
-        {
-            result = GameManager.Direction.RIGHT;
-        }
-        if (slot.x == LeftX)
-        {
-            result = GameManager.Direction.LEFT;
-        }
-
-        return result;
-    }
 
     public GameManager.Direction GetNextDirection(EntranceSlot slot)
     {
-        return GameManager.GetOppositeDirection(GetEdge(slot));
+        return GameManager.GetOppositeDirection(slot.GetEdgeInfo().direction()); ;
     }
 
-    public bool CheckIfEntranceValid(PlayerManager player)
+    public bool CheckIfEntranceValid(PlayerManager player = null, PlayGrid playGrid = null)
     {
-        return Active == true && AllowedPlayers.Contains(player);
+                
+        return Active == true 
+            && (player == null || AllowedPlayers.Contains(player))
+            && CheckIfEntranceHasOpeningToGrid(playGrid)
+            && player.GetNextSnakeHead().CanMoveToWithoutCrashing(getOpeningToGrid(playGrid));
     }
     public bool CheckIfEntranceHasOpeningToGrid(PlayGrid grid)
     {
         BlockSlot slot = getOpeningToGrid(grid);
-        return (slot && slot.Block == null);
+        return (slot/* && slot.Block == null*/);
     }
     public BlockSlot getOpeningToGrid(PlayGrid grid)
     {
@@ -93,5 +76,11 @@ public class EntranceSlot : BlockSlot
     public void UpdateAnimations()
     {
         if (EntranceAnimationManager != null) EntranceAnimationManager.UpdateSprite();
+    }
+
+    public void ReActivate()
+    {
+        Active = ActiveByDefault;
+        Selectable = SelectableByDefault;
     }
 }

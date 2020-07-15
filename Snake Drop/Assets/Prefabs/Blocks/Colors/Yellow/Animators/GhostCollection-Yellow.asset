@@ -14,24 +14,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationConcurrent: 0
   AnimationTotalTime: 0
-  topLeftBlockSprite: {fileID: 5694512942562580874, guid: 5cfc914d0ffa2ff43b334040872d18d8,
+  topLeftBlockSprite: {fileID: -7756855429402607996, guid: dcf922cb990888f46b89396faa544881,
     type: 3}
-  topBlockSprite: {fileID: 4652002621484922972, guid: 5cfc914d0ffa2ff43b334040872d18d8,
+  topBlockSprite: {fileID: 1081669270236193365, guid: dcf922cb990888f46b89396faa544881,
     type: 3}
-  topRightBlockSprite: {fileID: 5025767244856647853, guid: 5cfc914d0ffa2ff43b334040872d18d8,
+  topRightBlockSprite: {fileID: 2278284632806999956, guid: ca4f16dd8a5bd5d42909d23b0907f516,
     type: 3}
-  leftBlockSprite: {fileID: -3251016112246919575, guid: 5cfc914d0ffa2ff43b334040872d18d8,
+  leftBlockSprite: {fileID: -1363857841621640634, guid: dcf922cb990888f46b89396faa544881,
     type: 3}
-  centerBlockSprite: {fileID: -6472357534005796191, guid: 5cfc914d0ffa2ff43b334040872d18d8,
+  centerBlockSprite: {fileID: -2371980670118396864, guid: dcf922cb990888f46b89396faa544881,
     type: 3}
-  rightBlockSprite: {fileID: 3672442499344041853, guid: 5cfc914d0ffa2ff43b334040872d18d8,
+  rightBlockSprite: {fileID: -6188952582595361485, guid: dcf922cb990888f46b89396faa544881,
     type: 3}
-  bottomLeftBlockSprite: {fileID: -4763268405258465457, guid: 5cfc914d0ffa2ff43b334040872d18d8,
+  bottomLeftBlockSprite: {fileID: 5012963936938638760, guid: dcf922cb990888f46b89396faa544881,
     type: 3}
-  bottomBlockSprite: {fileID: 7707703984770129899, guid: 5cfc914d0ffa2ff43b334040872d18d8,
+  bottomBlockSprite: {fileID: -6391264139155818346, guid: dcf922cb990888f46b89396faa544881,
     type: 3}
-  bottomRightBlockSprite: {fileID: -8752870444828884891, guid: 5cfc914d0ffa2ff43b334040872d18d8,
+  bottomRightBlockSprite: {fileID: -7659561833898520197, guid: dcf922cb990888f46b89396faa544881,
     type: 3}
-  color: {r: 1, g: 0.67058825, b: 0.30588236, a: 1}
-  sortingOrder: -1
-  detectFillAmount: 1
+  color: {r: 0.5283019, g: 0.5283019, b: 0.5283019, a: 1}
+  sortingOrder: -2
+  highlightSortingOrder: -1

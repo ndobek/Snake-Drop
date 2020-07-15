@@ -66,7 +66,7 @@ public class BlockFillAnimator : BlockAnimator
 
     public AnimationCurve GetCurve(Block block)
     {
-        int index = (block.X * block.Y) % PossibleAnimationCurves.Length;
-        return PossibleAnimationCurves[index];
+        Random.InitState(block.X * block.Y);
+        return PossibleAnimationCurves[Random.Range(0, PossibleAnimationCurves.Length)];
     }
 }

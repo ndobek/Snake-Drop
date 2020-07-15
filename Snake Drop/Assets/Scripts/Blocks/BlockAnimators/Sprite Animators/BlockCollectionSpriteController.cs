@@ -20,6 +20,8 @@ public class BlockCollectionSpriteController : BlockSpriteAnimator
     public Color color;
     public int sortingOrder;
 
+    public int highlightSortingOrder;
+
     public override void OnComplete(BlockAnimation blockAnimation)
     {
         SetEdge(blockAnimation.block);
@@ -74,7 +76,7 @@ public class BlockCollectionSpriteController : BlockSpriteAnimator
         }
 
         //Temp Jank Solution
-        if (top & right) block.BlockSprite.sortingOrder = -1;
+        if (top & right) block.BlockSprite.sortingOrder = highlightSortingOrder;
     }
 
 

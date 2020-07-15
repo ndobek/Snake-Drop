@@ -25,7 +25,7 @@ public class PlayerManager : MonoBehaviour
     public BlockSlot startSlot;
     public BlockSlot waitSlot;
 
-    private EntranceSlot enterSlot;
+    public EntranceSlot enterSlot;
     public EntranceManager entranceManager;
 
     [HideInInspector]
@@ -124,6 +124,7 @@ public class PlayerManager : MonoBehaviour
     {
         Score.ResetGame();
         ResetMoveRestrictions();
+        entranceManager.ReactivateEntrances();
         playGrid.ClearGrid();
         previewGrid.ClearGrid();
         PositionWaitSlot(entranceManager.StartingSlot);
@@ -141,19 +142,30 @@ public class PlayerManager : MonoBehaviour
     {
 
         BlockSlot destination = snakeHead.Slot.GetNeighbor(direction);
-        if (/*destination && SnakeHead && */GameManager.instance.BasicMove.CanMoveTo(SnakeHead, destination, this))
+        if (SnakeHead.CanMoveToWithoutCrashing(destination, this) && enterSlot.Active/*GameManager.instance.BasicMove.CanMoveTo(SnakeHead, destination, this)*/)
         {
-            GameManager.instance.BasicMove.OnMove(SnakeHead, destination, this);
+            snakeHead.MoveTo(destination, this);/*GameManager.instance.BasicMove.OnMove(SnakeHead, destination, this)*/;
             RoundInProgress = true;
         }
     }
     private void EndGame()
     {
+        PrepareNewRound();
         entranceManager.UpdateAnimations();
         GameInProgress = false;
         GameManager.instance.CheckForGameOver();
     }
+    public Block GetNextSnakeHead()
+    {
+        FillPreviewBar();
+        Block result = waitSlot.Block;
+        while((result.Tail != null && result.blockType != GameManager.instance.snakeHeadType))
+        {
 
+            result = result.Slot.GetNeighbor(GameManager.Direction.UP).Block;
+        }
+        return result;
+    }
 
     public void ResetMoveRestrictions()
     {
