@@ -25,57 +25,57 @@ public class BlockSlot : MonoBehaviour
         public bool Left;
         public bool Right;
 
-        public GameManager.Direction direction()
+        public Directions.Direction direction()
         {
-            GameManager.Direction result = GameManager.Direction.DOWN;
+            Directions.Direction result = Directions.Direction.DOWN;
 
             if (Top)
             {
-                result = GameManager.Direction.UP;
+                result = Directions.Direction.UP;
             }
             if (Bottom)
             {
-                result = GameManager.Direction.DOWN;
+                result = Directions.Direction.DOWN;
             }
             if (Right)
             {
-                result = GameManager.Direction.RIGHT;
+                result = Directions.Direction.RIGHT;
             }
             if (Left)
             {
-                result = GameManager.Direction.LEFT;
+                result = Directions.Direction.LEFT;
             }
             return result;
         }
 
-        public GameManager.Direction ClockwiseNeighborDirection()
+        public Directions.Direction ClockwiseNeighborDirection()
         {
-            GameManager.Direction result = GameManager.Direction.DOWN;
+            Directions.Direction result = Directions.Direction.DOWN;
             if (Top)
             {
-                result = GameManager.Direction.RIGHT;
+                result = Directions.Direction.RIGHT;
             }
             if (Right)
             {
-                result = GameManager.Direction.DOWN;
+                result = Directions.Direction.DOWN;
             }
             if (Bottom)
             {
-                result = GameManager.Direction.LEFT;
+                result = Directions.Direction.LEFT;
             }
             if (Left)
             {
-                result = GameManager.Direction.UP;
+                result = Directions.Direction.UP;
                 if (Top)
                 {
-                    result = GameManager.Direction.RIGHT;
+                    result = Directions.Direction.RIGHT;
                 }
             }
             return result;
         }
-        public GameManager.Direction CounterClockwiseNeighborDirection()
+        public Directions.Direction CounterClockwiseNeighborDirection()
         {
-            return GameManager.GetClockwiseNeighborDirection(ClockwiseNeighborDirection());
+            return Directions.GetClockwiseNeighborDirection(ClockwiseNeighborDirection());
         }
 
     }
@@ -110,24 +110,24 @@ public class BlockSlot : MonoBehaviour
     public BlockSlot GetNeighbor(int x, int y)
     {
         BlockSlot destination = this;
-        destination = destination.GetNeighbor(GameManager.Direction.RIGHT, x);
-        destination = destination.GetNeighbor(GameManager.Direction.UP, y);
+        destination = destination.GetNeighbor(Directions.Direction.RIGHT, x);
+        destination = destination.GetNeighbor(Directions.Direction.UP, y);
         return destination;
     }
-    public BlockSlot GetNeighbor(GameManager.Direction neighbor, int distance = 1)
+    public BlockSlot GetNeighbor(Directions.Direction neighbor, int distance = 1)
     {
         switch (neighbor)
         {
-            case GameManager.Direction.RIGHT:
+            case Directions.Direction.RIGHT:
                 if (customRightNeighbor && distance > 0) return customRightNeighbor;
                 else return playGrid.GetSlot(x + distance, y);
-            case GameManager.Direction.LEFT:
+            case Directions.Direction.LEFT:
                 if (customLeftNeighbor && distance > 0) return customLeftNeighbor;
                 else return playGrid.GetSlot(x - distance, y);
-            case GameManager.Direction.UP:
+            case Directions.Direction.UP:
                 if (customUpNeighbor && distance > 0) return customUpNeighbor;
                 else return playGrid.GetSlot(x, y + distance);
-            case GameManager.Direction.DOWN:
+            case Directions.Direction.DOWN:
                 if (customDownNeighbor && distance > 0) return customDownNeighbor;
                 else return playGrid.GetSlot(x, y - distance);
         }

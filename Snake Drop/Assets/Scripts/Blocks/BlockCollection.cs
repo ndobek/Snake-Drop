@@ -58,22 +58,22 @@ public class BlockCollection : IComparable
         return GridToCollectionCoords(slot.x, slot.y);
     }
 
-    public bool CheckEdge(GameManager.Direction edge, int GridX, int GridY)
+    public bool CheckEdge(Directions.Direction edge, int GridX, int GridY)
     {
         switch (edge)
         {
-            case GameManager.Direction.UP: return GridY == TopCoord;
-            case GameManager.Direction.DOWN: return GridY == BottomCoord;
-            case GameManager.Direction.LEFT: return GridX == LeftCoord;
-            case GameManager.Direction.RIGHT: return GridX == RightCoord;
+            case Directions.Direction.UP: return GridY == TopCoord;
+            case Directions.Direction.DOWN: return GridY == BottomCoord;
+            case Directions.Direction.LEFT: return GridX == LeftCoord;
+            case Directions.Direction.RIGHT: return GridX == RightCoord;
         }
         return false;
     }
-    public bool CheckEdge(GameManager.Direction edge, Block block)
+    public bool CheckEdge(Directions.Direction edge, Block block)
     {
         return CheckEdge(edge, block.X, block.Y);
     }
-    public bool CheckEdge(GameManager.Direction edge, BlockSlot slot)
+    public bool CheckEdge(Directions.Direction edge, BlockSlot slot)
     {
         return CheckEdge(edge, slot.x, slot.y);
     }

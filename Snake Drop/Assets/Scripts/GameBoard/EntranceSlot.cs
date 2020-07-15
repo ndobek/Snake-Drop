@@ -20,9 +20,9 @@ public class EntranceSlot : BlockSlot
         ReActivate();
     }
 
-    public EntranceSlot GetNextValidSlot(GameManager.Direction direction, PlayerManager player)
+    public EntranceSlot GetNextValidSlot(Directions.Direction direction, PlayerManager player)
     {
-        GameManager.Direction nextDirection = direction;
+        Directions.Direction nextDirection = direction;
         EntranceSlot previous = this;
         EntranceSlot result = (EntranceSlot)previous.GetNeighbor(nextDirection);
         EntranceSlot next;
@@ -45,9 +45,9 @@ public class EntranceSlot : BlockSlot
 
 
 
-    public GameManager.Direction GetNextDirection(EntranceSlot slot)
+    public Directions.Direction GetNextDirection(EntranceSlot slot)
     {
-        return GameManager.GetOppositeDirection(slot.GetEdgeInfo().direction()); ;
+        return Directions.GetOppositeDirection(slot.GetEdgeInfo().direction()); ;
     }
 
     public bool CheckIfEntranceValid(PlayerManager player = null, PlayGrid playGrid = null)

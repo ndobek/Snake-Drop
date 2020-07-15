@@ -11,7 +11,7 @@ public class TouchManager : MonoBehaviour
     private Vector2 fingerUpPos;
 
     private float fingerHeldTime;
-    private GameManager.Direction mostRecentSwipedDirection;
+    private Directions.Direction mostRecentSwipedDirection;
     [SerializeField]
     private float minHoldLength;
 
@@ -64,16 +64,16 @@ public class TouchManager : MonoBehaviour
     {
         if (LongEnoughForSwipe())
         {
-            GameManager.Direction dir;
+            Directions.Direction dir;
             if (IsVerticalSwipe())
             {
                 if(fingerUpPos.y > fingerDownPos.y)
                 {
-                    dir = GameManager.Direction.UP;
+                    dir = Directions.Direction.UP;
                 }
                 else
                 {
-                    dir = GameManager.Direction.DOWN;
+                    dir = Directions.Direction.DOWN;
                 }
 
             }
@@ -81,11 +81,11 @@ public class TouchManager : MonoBehaviour
             {
                 if (fingerUpPos.x > fingerDownPos.x)
                 {
-                    dir = GameManager.Direction.RIGHT;
+                    dir = Directions.Direction.RIGHT;
                 }
                 else
                 {
-                    dir = GameManager.Direction.LEFT;
+                    dir = Directions.Direction.LEFT;
                 }
             }
             mostRecentSwipedDirection = dir;
@@ -153,7 +153,7 @@ public class TouchManager : MonoBehaviour
     {
         public Vector2 startPos;
         public Vector2 endPos;
-        public GameManager.Direction direction;
+        public Directions.Direction direction;
         public float TimeHeld;
     }
 

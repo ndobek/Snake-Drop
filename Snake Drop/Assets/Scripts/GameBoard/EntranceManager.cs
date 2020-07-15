@@ -82,6 +82,7 @@ public class EntranceManager : PlayGrid
         {
             if(slot) slot.ReActivate();
         }
+        UpdateAnimations();
     }
 
 

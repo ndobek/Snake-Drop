@@ -23,7 +23,7 @@ public class R_SnakeFall : Rule
             Fall(tempTail, distance);
         }
         Debug.Log(distance);
-        BlockSlot destination = block.Slot.GetNeighbor(GameManager.Direction.DOWN, distance);
+        BlockSlot destination = block.Slot.GetNeighbor(Directions.Direction.DOWN, distance);
         block.RawMoveTo(destination);
         //moveType.OnMove(block, destination);
         block.SetTail(tempTail);
@@ -37,7 +37,7 @@ public class R_SnakeFall : Rule
         while (true)
         {
             i += 1;
-            destination = block.Slot.GetNeighbor(GameManager.Direction.DOWN, i);
+            destination = block.Slot.GetNeighbor(Directions.Direction.DOWN, i);
 
             if (!moveType.CanMoveTo(block, destination) && !(destination && destination.Block && destination.Block.isPartOfSnake())) break;
 

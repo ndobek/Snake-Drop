@@ -35,8 +35,8 @@ public class EntranceAnimationManager : MonoBehaviour, IEntranceAnimationBehavio
         //if (/*opening != null && (opening.Block == null || opening.Block.isPartOfSnake())*/slot.CheckIfEntranceHasOpeningToGrid(grid)) spriteRenderer.sprite = Open;
         //else spriteRenderer.sprite = Closed;
 
-        bool leftOpen = CheckIfSlotOpen((EntranceSlot)slot.GetNeighbor(GameManager.GetCounterClockwiseNeighborDirection(slot.GetEdgeInfo().direction())));
-        bool rightOpen = CheckIfSlotOpen((EntranceSlot)slot.GetNeighbor(GameManager.GetClockwiseNeighborDirection(slot.GetEdgeInfo().direction())));
+        bool leftOpen = CheckIfSlotOpen((EntranceSlot)slot.GetNeighbor(Directions.GetCounterClockwiseNeighborDirection(slot.GetEdgeInfo().direction())));
+        bool rightOpen = CheckIfSlotOpen((EntranceSlot)slot.GetNeighbor(Directions.GetClockwiseNeighborDirection(slot.GetEdgeInfo().direction())));
         bool thisOpen = CheckIfSlotOpen(slot);
 
         if (!leftOpen &&  thisOpen && !rightOpen) spriteRenderer.sprite = OpenSingle;

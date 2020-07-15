@@ -17,20 +17,20 @@ public class DirectionalSpriteController : BlockSpriteAnimator
     public override void OnComplete(BlockAnimation blockAnimation)
     {
         Block block = blockAnimation.block;
-        GameManager.Direction dir = GameManager.Direction.DOWN;
+        Directions.Direction dir = Directions.Direction.DOWN;
         if (block && block.Owner && block.Owner.playerController && block.Owner.RoundInProgress) dir = block.Owner.playerController.mostRecentDirection;
         switch (dir) 
         {
-            case GameManager.Direction.UP:
+            case Directions.Direction.UP:
                 SetSprite(block, UpSprite, color, sortingOrder);
                 break;
-            case GameManager.Direction.DOWN:
+            case Directions.Direction.DOWN:
                 SetSprite(block, DownSprite, color, sortingOrder);
                 break;
-            case GameManager.Direction.LEFT:
+            case Directions.Direction.LEFT:
                 SetSprite(block, LeftSprite, color, sortingOrder);
                 break;
-            case GameManager.Direction.RIGHT:
+            case Directions.Direction.RIGHT:
                 SetSprite(block, RightSprite, color, sortingOrder);
                 break;
         }

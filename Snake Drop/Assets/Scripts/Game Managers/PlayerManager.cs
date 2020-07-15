@@ -33,9 +33,13 @@ public class PlayerManager : MonoBehaviour
     [HideInInspector]
     public bool GameInProgress;
 
-    public void OnCrash(bool resetMultiplier = true)
+    public void OnCrash(bool SnakeComplete = false)
     {
-        if(resetMultiplier) Score.ResetMultiplier();
+        if (SnakeComplete) entranceManager.ReactivateEntrances();
+        else
+        {
+            Score.ResetMultiplier();
+        }
         RoundInProgress = false;
     }
 
@@ -47,12 +51,18 @@ public class PlayerManager : MonoBehaviour
         }
         else
         {
-            playGrid.InvokeGridAction();
+            DoGridActions();
             FillPreviewBar();
 
             DifficultyManager difficulty = GameManager.instance.difficultyManager;
             if (difficulty.HeightLimit) HeightLimitIndicator.LowerHeightLimit(SnakeHead.FindSnakeMaxY() + difficulty.HeightLimitModifier);
         }
+    }
+
+    public void DoGridActions()
+    {
+        playGrid.InvokeGridAction();
+        entranceManager.InvokeGridAction();
     }
 
     private void EndRound()
@@ -61,7 +71,7 @@ public class PlayerManager : MonoBehaviour
         {
             SnakeHead.KillSnake(this);
         }
-        playGrid.InvokeGridAction();
+        DoGridActions();
 
         if (GameIsOver())
         {
@@ -75,7 +85,7 @@ public class PlayerManager : MonoBehaviour
 
     private bool GameIsOver()
     {
-        //return (waitSlot.GetNeighbor(GameManager.Direction.DOWN).Block != null);
+        //return (waitSlot.GetNeighbor(Directions.Direction.DOWN).Block != null);
         return !entranceManager.CheckForValidEntrancesToGrid(this, playGrid);
     }
 
@@ -138,7 +148,7 @@ public class PlayerManager : MonoBehaviour
         SnakeHead = waitSlot.Block;
     }
 
-    public void StartNewRound(GameManager.Direction direction)
+    public void StartNewRound(Directions.Direction direction)
     {
 
         BlockSlot destination = snakeHead.Slot.GetNeighbor(direction);
@@ -162,7 +172,7 @@ public class PlayerManager : MonoBehaviour
         while((result.Tail != null && result.blockType != GameManager.instance.snakeHeadType))
         {
 
-            result = result.Slot.GetNeighbor(GameManager.Direction.UP).Block;
+            result = result.Slot.GetNeighbor(Directions.Direction.UP).Block;
         }
         return result;
     }
@@ -188,7 +198,7 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
-    public void MoveSnake(GameManager.Direction direction)
+    public void MoveSnake(Directions.Direction direction)
     {
 
         if (GameInProgress)

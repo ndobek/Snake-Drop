@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
         return false;
     }
 
-    
+
     public Rule BasicFall;
     public MoveRule BasicMove;
     public Block blockObj;
@@ -29,37 +29,6 @@ public class GameManager : MonoBehaviour
     public BlockType collectionGhostType;
 
     public GameObject gameOverScreen;
-
-    public enum Direction
-    {
-        UP, DOWN, LEFT, RIGHT
-    }
-    public static Direction GetOppositeDirection(Direction direction)
-    {
-        switch (direction)
-        {
-            case Direction.UP: return Direction.DOWN;
-            case Direction.DOWN: return Direction.UP;
-            case Direction.LEFT: return Direction.RIGHT;
-            case Direction.RIGHT: return Direction.LEFT;
-            default: throw new System.Exception("Big OOPsy Doopsy that is not a real direction dumbass");
-        }
-    }
-    public static Direction GetClockwiseNeighborDirection(Direction direction)
-    {
-        switch (direction)
-        {
-            case Direction.UP: return Direction.RIGHT;
-            case Direction.DOWN: return Direction.LEFT;
-            case Direction.LEFT: return Direction.UP;
-            case Direction.RIGHT: return Direction.DOWN;
-            default: throw new System.Exception("Big OOPsy Doopsy that is not a real direction dumbass");
-        }
-    }
-    public static Direction GetCounterClockwiseNeighborDirection(Direction direction)
-    {
-        return GetOppositeDirection(GetClockwiseNeighborDirection(direction));
-    }
 
     private void Awake()
     {

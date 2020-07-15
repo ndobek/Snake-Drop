@@ -50,7 +50,7 @@ public class Block : MonoBehaviour
     {
         get { return Slot.y; }
     }
-    public BlockSlot Neighbor(GameManager.Direction direction)
+    public BlockSlot Neighbor(Directions.Direction direction)
     {
         return Slot.GetNeighbor(direction);
     }
@@ -121,7 +121,7 @@ public class Block : MonoBehaviour
     //Base for all movement code, doesn't follow game rules.
     #region Raw Movement
 
-    public void RawMove(GameManager.Direction neighbor)
+    public void RawMove(Directions.Direction neighbor)
     {
         RawMoveTo(Neighbor(neighbor));
     }
@@ -158,7 +158,7 @@ public class Block : MonoBehaviour
     {
         blockType.SpecialAction(this, player);
     }
-    public void Move(GameManager.Direction neighbor, PlayerManager player = null)
+    public void Move(Directions.Direction neighbor, PlayerManager player = null)
     {
         MoveTo(Neighbor(neighbor), player);
     }
@@ -199,7 +199,7 @@ public class Block : MonoBehaviour
         }
         rule.Invoke(this, player);
     }
-    public void SetTail(GameManager.Direction neighbor)
+    public void SetTail(Directions.Direction neighbor)
     {
         SetTail(Neighbor(neighbor).Block);
     }
@@ -223,14 +223,7 @@ public class Block : MonoBehaviour
         }
         Kill(player);
     }
-    public GameManager.Direction TailDirection()
-    {
-        foreach (GameManager.Direction dir in Enum.GetValues(typeof(GameManager.Direction)))
-        {
-            if (Neighbor(dir) == tail) return dir;
-        }
-        return default;
-    }
+
 
     public int FindSnakeMaxY()
     {

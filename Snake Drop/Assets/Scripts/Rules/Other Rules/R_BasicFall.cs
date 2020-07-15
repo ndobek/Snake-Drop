@@ -6,7 +6,7 @@ using UnityEngine;
 public class R_BasicFall : Rule
 {
     public MoveRule BasicMoveRule;
-    public GameManager.Direction Direction;
+    public Directions.Direction Direction;
 
     protected override void Action(Block block, PlayerManager player = null)
     {

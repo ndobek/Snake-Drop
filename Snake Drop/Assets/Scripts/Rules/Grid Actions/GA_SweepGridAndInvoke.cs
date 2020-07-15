@@ -6,7 +6,7 @@ using UnityEngine;
 public class GA_SweepGridAndInvoke : GridAction
 {
     public Rule RuleToInvoke;
-    public GameManager.Direction Direction;
+    public Directions.Direction Direction;
     protected override void Action(PlayGrid grid)
     {
         grid.Dirty = true;
@@ -16,7 +16,7 @@ public class GA_SweepGridAndInvoke : GridAction
             grid.Dirty = false;
             switch (Direction)
             {
-                case GameManager.Direction.UP:
+                case Directions.Direction.UP:
                     for (int x = 0; x < grid.XSize; x++)
                     {
                         for (int y = 0; y < grid.YSize; y++)
@@ -26,7 +26,7 @@ public class GA_SweepGridAndInvoke : GridAction
                     }
                     break;
 
-                case GameManager.Direction.DOWN:
+                case Directions.Direction.DOWN:
                     for (int x = grid.XSize - 1; x >= 0; x--)
                     {
                         for (int y = grid.YSize - 1; y >= 0 ; y--)
@@ -36,7 +36,7 @@ public class GA_SweepGridAndInvoke : GridAction
                     }
                     break;
 
-                case GameManager.Direction.LEFT:
+                case Directions.Direction.LEFT:
                     for (int y = grid.YSize - 1; y >= 0; y--)
                     {
                         for (int x = grid.XSize - 1; x >= 0; x--)
@@ -46,7 +46,7 @@ public class GA_SweepGridAndInvoke : GridAction
                     }
                     break;
 
-                case GameManager.Direction.RIGHT:
+                case Directions.Direction.RIGHT:
                     for (int y = 0; y < grid.YSize; y++)
                     {
                         for (int x = 0; x < grid.XSize; x++)

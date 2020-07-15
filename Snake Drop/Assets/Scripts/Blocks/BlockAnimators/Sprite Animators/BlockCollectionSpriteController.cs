@@ -38,10 +38,10 @@ public class BlockCollectionSpriteController : BlockSpriteAnimator
 
         if (block.BlockCollection != null)
         {
-            top = block.BlockCollection.CheckEdge(GameManager.Direction.UP, block);
-            bottom = block.BlockCollection.CheckEdge(GameManager.Direction.DOWN, block);
-            left = block.BlockCollection.CheckEdge(GameManager.Direction.LEFT, block);
-            right = block.BlockCollection.CheckEdge(GameManager.Direction.RIGHT, block);
+            top = block.BlockCollection.CheckEdge(Directions.Direction.UP, block);
+            bottom = block.BlockCollection.CheckEdge(Directions.Direction.DOWN, block);
+            left = block.BlockCollection.CheckEdge(Directions.Direction.LEFT, block);
+            right = block.BlockCollection.CheckEdge(Directions.Direction.RIGHT, block);
             SetEdge(block, top, bottom, left, right);
         }
         //else SetSprite(block, fullBlockSprite);

@@ -27,10 +27,10 @@ public class SmashMove : MoveRule
         {
             tail.RawMoveTo(slot);
         }
-        else
-        {
-            player.OnCrash(false);
-        }
+        //else
+        //{
+        //    player.OnCrash(true);
+        //}
 
     }
 }
