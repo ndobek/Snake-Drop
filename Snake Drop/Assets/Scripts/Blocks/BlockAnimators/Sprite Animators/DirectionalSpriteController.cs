@@ -18,7 +18,7 @@ public class DirectionalSpriteController : BlockSpriteAnimator
     {
         Block block = blockAnimation.block;
         Directions.Direction dir = Directions.Direction.DOWN;
-        if (block && block.Owner && block.Owner.playerController && block.Owner.RoundInProgress) dir = block.Owner.playerController.mostRecentDirection;
+        if (block && block.Owner && block.Owner.RoundInProgress) dir = block.Owner.mostRecentDirection;
         switch (dir) 
         {
             case Directions.Direction.UP:

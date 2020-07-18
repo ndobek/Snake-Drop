@@ -16,7 +16,8 @@ public class PlayerManager : MonoBehaviour
     [SerializeField]
     public ScoreManager Score;
 
-    public PlayerController playerController;
+    //public PlayerController playerController;
+    public Directions.Direction mostRecentDirection;
 
     public PlayGrid playGrid;
     public PlayGrid previewGrid;
@@ -180,7 +181,7 @@ public class PlayerManager : MonoBehaviour
     public void ResetMoveRestrictions()
     {
         HeightLimitIndicator.ResetHeightLimit();
-        playerController.ResetGame();
+        //playerController.ResetGame();
     }
 
     private void ActivateSnake(Block newSnakeHead)

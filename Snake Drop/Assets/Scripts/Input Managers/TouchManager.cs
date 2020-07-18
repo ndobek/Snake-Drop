@@ -11,7 +11,6 @@ public class TouchManager : MonoBehaviour
     private Vector2 fingerUpPos;
 
     private float fingerHeldTime;
-    private Directions.Direction mostRecentSwipedDirection;
     [SerializeField]
     private float minHoldLength;
 
@@ -42,8 +41,8 @@ public class TouchManager : MonoBehaviour
                     }
 
                     fingerHeldTime += Time.deltaTime;
-                    DetectHold();
                     fingerUpPos = touch.position;
+                    DetectHold();
 
                     if (detectSwipeBeforeRelease && touch.phase == TouchPhase.Moved)
                     {
@@ -64,31 +63,6 @@ public class TouchManager : MonoBehaviour
     {
         if (LongEnoughForSwipe())
         {
-            Directions.Direction dir;
-            if (IsVerticalSwipe())
-            {
-                if(fingerUpPos.y > fingerDownPos.y)
-                {
-                    dir = Directions.Direction.UP;
-                }
-                else
-                {
-                    dir = Directions.Direction.DOWN;
-                }
-
-            }
-            else
-            {
-                if (fingerUpPos.x > fingerDownPos.x)
-                {
-                    dir = Directions.Direction.RIGHT;
-                }
-                else
-                {
-                    dir = Directions.Direction.LEFT;
-                }
-            }
-            mostRecentSwipedDirection = dir;
             OnSwipe(RegisterTouch());
         }
     }
@@ -108,6 +82,34 @@ public class TouchManager : MonoBehaviour
             OnTap(RegisterTouch());
         }
     }
+    private Directions.Direction GetDirection()
+    {
+        Directions.Direction dir;
+        if (IsVerticalSwipe())
+        {
+            if (fingerUpPos.y > fingerDownPos.y)
+            {
+                dir = Directions.Direction.UP;
+            }
+            else
+            {
+                dir = Directions.Direction.DOWN;
+            }
+
+        }
+        else
+        {
+            if (fingerUpPos.x > fingerDownPos.x)
+            {
+                dir = Directions.Direction.RIGHT;
+            }
+            else
+            {
+                dir = Directions.Direction.LEFT;
+            }
+        }
+        return dir;
+    }
 
     private bool IsVerticalSwipe()
     {
@@ -116,7 +118,12 @@ public class TouchManager : MonoBehaviour
 
     private bool LongEnoughForSwipe()
     {
-        return Vector2.Distance(fingerUpPos, fingerDownPos) > deadZone;
+        return Distance() > deadZone;
+    }
+
+    private float Distance()
+    {
+        return Vector2.Distance(fingerUpPos, fingerDownPos);
     }
 
     private bool LongEnoughForHold()
@@ -145,7 +152,10 @@ public class TouchManager : MonoBehaviour
         {
             startPos = fingerDownPos,
             endPos = fingerUpPos,
-            direction = mostRecentSwipedDirection
+            direction = GetDirection(),
+            distance = Distance(),
+            timeHeld = fingerHeldTime
+            
         };
     }
 
@@ -154,7 +164,8 @@ public class TouchManager : MonoBehaviour
         public Vector2 startPos;
         public Vector2 endPos;
         public Directions.Direction direction;
-        public float TimeHeld;
+        public float timeHeld;
+        public float distance;
     }
 
     //public enum SwipeDirection
