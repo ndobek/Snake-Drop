@@ -19,12 +19,15 @@ public class TouchManager : MonoBehaviour
     private float deadZone;
 
 
-    [SerializeField]
-    private bool detectSwipeBeforeRelease = false;
+    //[SerializeField]
+    //private bool detectDrag = false;
 
+    public static event Action<TouchData> OnTouchBegin = delegate { };
     public static event Action<TouchData> OnSwipe = delegate {};
     public static event Action<TouchData> OnHold = delegate { };
     public static event Action<TouchData> OnTap = delegate { };
+    public static event Action<TouchData> OnDrag = delegate { };
+    public static event Action<TouchData> OnTouchEnd = delegate { };
 
     private void Update()
     {
@@ -39,21 +42,27 @@ public class TouchManager : MonoBehaviour
                         fingerDownPos = touch.position;
                         fingerUpPos = touch.position;
                         fingerHeldTime = 0;
+                        OnTouchBegin(RegisterTouch());
                     }
 
                     fingerHeldTime += Time.deltaTime;
-                    DetectHold();
                     fingerUpPos = touch.position;
 
-                    if (detectSwipeBeforeRelease && touch.phase == TouchPhase.Moved)
+
+                    if (touch.phase == TouchPhase.Moved)
                     {
-                        DetectSwipe();
+                        DetectDrag();
+                    }
+                    else
+                    {
+                        DetectHold();
                     }
 
                     if (touch.phase == TouchPhase.Ended)
                     {
                         DetectSwipe();
                         DetectTap();
+                        OnTouchEnd(RegisterTouch());
                     }
                 }
             }
@@ -62,7 +71,7 @@ public class TouchManager : MonoBehaviour
 
     private void DetectSwipe()
     {
-        if (LongEnoughForSwipe())
+        if (DistanceLongEnoughForSwipe() && !TimeLongEnoughForHold())
         {
             Directions.Direction dir;
             if (IsVerticalSwipe())
@@ -93,9 +102,21 @@ public class TouchManager : MonoBehaviour
         }
     }
 
+    private void DetectDrag()
+    {
+        if (TimeLongEnoughForHold())
+        {
+            OnDrag(RegisterTouch());
+        }
+    }
+    //private void OnTouchEnd()
+    //{
+    //    OnTouchEnd(RegisterTouch());
+    //}
+
     private void DetectHold()
     {
-        if(LongEnoughForHold())
+        if(TimeLongEnoughForHold())
         {
             OnHold(RegisterTouch());
         }
@@ -103,7 +124,7 @@ public class TouchManager : MonoBehaviour
 
     private void DetectTap()
     {
-        if(!LongEnoughForHold() && !LongEnoughForSwipe())
+        if(!TimeLongEnoughForHold() && !DistanceLongEnoughForSwipe())
         {
             OnTap(RegisterTouch());
         }
@@ -114,14 +135,19 @@ public class TouchManager : MonoBehaviour
         return VerticalSwipeDistance() > HorizontalSwipeDistance();
     }
 
-    private bool LongEnoughForSwipe()
+    private bool DistanceLongEnoughForSwipe()
     {
-        return Vector2.Distance(fingerUpPos, fingerDownPos) > deadZone;
+        return Distance() > deadZone;
     }
 
-    private bool LongEnoughForHold()
+    private bool TimeLongEnoughForHold()
     {
         return fingerHeldTime >= minHoldLength;
+    }
+
+    private float Distance()
+    {
+        return Vector2.Distance(fingerUpPos, fingerDownPos);
     }
 
     private float VerticalSwipeDistance()

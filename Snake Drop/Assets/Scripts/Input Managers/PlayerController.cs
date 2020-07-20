@@ -12,12 +12,19 @@ public class PlayerController : MonoBehaviour
     private float intervalToWaitBeforeHold;
     private float timeSinceLastMove;
     private float timePressed;
+
+    [HideInInspector]
     public Direction mostRecentDirection;
+
+    private Vector2 DistanceMovedThisTouch;
+    public float DistanceNeededToDragBeforeSnakeMoves = 1;
 
     public void Awake()
     {
+        TouchManager.OnTouchBegin += ResetDistanceMovedThisTouch;
         TouchManager.OnSwipe += MoveSnakeOnSwipe;
-        TouchManager.OnHold += MoveSnakeOnHold;
+        TouchManager.OnDrag += MoveSnakeOnDrag;
+        //TouchManager.OnHold += MoveSnakeOnHold;
         TouchManager.OnTap += MoveSnakeOnTap;
     }
 
@@ -33,6 +40,30 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey("s") || Input.GetKey("down")) { Hold(Direction.DOWN); }
         if (Input.GetKey("a") || Input.GetKey("left")) { Hold(Direction.LEFT); }
         if (Input.GetKey("d") || Input.GetKey("right")) { Hold(Direction.RIGHT); }
+    }
+
+    private void ResetDistanceMovedThisTouch(TouchManager.TouchData unused)
+    {
+        DistanceMovedThisTouch = Vector2.zero;
+    }
+
+    private void MoveSnakeOnDrag(TouchManager.TouchData Drag)
+    {
+        Vector2 DragDistance = Camera.main.ScreenToWorldPoint(Drag.endPos) - Camera.main.ScreenToWorldPoint(Drag.startPos);
+        Vector2 UnmovedDistance = DragDistance - DistanceMovedThisTouch;
+        if (IntervalToWaitBeforeHoldElapsed())
+        {
+            if (Mathf.Abs(UnmovedDistance.y) > DistanceNeededToDragBeforeSnakeMoves)
+            {
+                if (UnmovedDistance.y > 0) Press(Direction.UP);
+                else Press(Direction.DOWN);
+            }
+            if (Mathf.Abs(UnmovedDistance.x) > DistanceNeededToDragBeforeSnakeMoves)
+            {
+                if (UnmovedDistance.x > 0) Press(Directions.Direction.RIGHT);
+                else Press(Directions.Direction.LEFT);
+            }
+        }
     }
 
     private void MoveSnakeOnSwipe(TouchManager.TouchData Swipe)
@@ -51,6 +82,21 @@ public class PlayerController : MonoBehaviour
 
     private void Press(Direction direction)
     {
+        switch (direction)
+        {
+            case Direction.UP: 
+                DistanceMovedThisTouch.y += DistanceNeededToDragBeforeSnakeMoves;
+                break;
+            case Direction.DOWN:
+                DistanceMovedThisTouch.y -= DistanceNeededToDragBeforeSnakeMoves;
+                break;
+            case Direction.LEFT:
+                DistanceMovedThisTouch.x -= DistanceNeededToDragBeforeSnakeMoves;
+                break;
+            case Direction.RIGHT: 
+                DistanceMovedThisTouch.x += DistanceNeededToDragBeforeSnakeMoves;
+                break;
+        }
         timeSinceLastMove = 0;
         MoveSnake(direction);
     }
@@ -70,7 +116,7 @@ public class PlayerController : MonoBehaviour
 
     private void Hold(Direction direction)
     {
-        if (timeSinceLastMove > autoMoveInterval && (Time.time - timePressed) >= intervalToWaitBeforeHold)
+        if (timeSinceLastMove > autoMoveInterval && IntervalToWaitBeforeHoldElapsed())
         {
             Press(direction);
         }
@@ -78,6 +124,11 @@ public class PlayerController : MonoBehaviour
         {
             timeSinceLastMove += Time.deltaTime;
         }
+    }
+
+    public bool IntervalToWaitBeforeHoldElapsed()
+    {
+        return (Time.time - timePressed) >= intervalToWaitBeforeHold;
     }
     public void MoveSnake(Direction direction)
     {
