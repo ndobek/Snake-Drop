@@ -12,12 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bd3250dde91e984ca21eb1cdd8190dc, type: 3}
   m_Name: Default
   m_EditorClassIdentifier: 
-  SpriteAnimator: {fileID: 11400000, guid: 8173dc2d8bedfcd43bf99b9f6e906d63, type: 2}
   defaultMoveAnimator: {fileID: 11400000, guid: 23332f0fafefb3c419d44f2c79d052d7,
     type: 2}
+  BlockFillAnimator: {fileID: 0}
   EveryFrameAnimations: []
   HighlightTail: 0
-  sortingOrder: 0
   isPartOfSnake: 0
   moveRules:
   - {fileID: 11400000, guid: 92ab9aa1ed82ac94fbd2d0b8d9a0dc74, type: 2}

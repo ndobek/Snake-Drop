@@ -24,5 +24,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3fa86c385cec3ee4e99f6fda90063626, type: 2}
   - {fileID: 11400000, guid: 29adbe807d323654499414c9f2288c0c, type: 2}
   - {fileID: 11400000, guid: b860ed9adf5caab41a42f7943e50a471, type: 2}
-  breakRules: []
+  breakRules:
+  - {fileID: 11400000, guid: dffb2289c4e0e9d48b95284ffd995d22, type: 2}
   specialActionRules: []

@@ -132,6 +132,7 @@ public class PlayerManager : MonoBehaviour
 
     public void ResetGame()
     {
+        GameManager.instance.plantManager.Reset();
         Score.ResetGame();
         ResetMoveRestrictions();
         entranceManager.ReactivateEntrances();
@@ -155,6 +156,7 @@ public class PlayerManager : MonoBehaviour
         if (SnakeHead.CanMoveToWithoutCrashing(destination, this) && enterSlot.Active/*GameManager.instance.BasicMove.CanMoveTo(SnakeHead, destination, this)*/)
         {
             snakeHead.MoveTo(destination, this);/*GameManager.instance.BasicMove.OnMove(SnakeHead, destination, this)*/;
+            GameManager.instance.plantManager.PlantNewPlants(destination.transform.position);
             RoundInProgress = true;
         }
     }

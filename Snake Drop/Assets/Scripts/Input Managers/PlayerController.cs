@@ -23,8 +23,8 @@ public class PlayerController : MonoBehaviour
     {
         TouchManager.OnTouchBegin += ResetDistanceMovedThisTouch;
         TouchManager.OnSwipe += MoveSnakeOnSwipe;
-        TouchManager.OnDrag += MoveSnakeOnDrag;
-        //TouchManager.OnHold += MoveSnakeOnHold;
+        //TouchManager.OnDrag += MoveSnakeOnDrag;
+        TouchManager.OnHold += MoveSnakeOnHold;
         TouchManager.OnTap += MoveSnakeOnTap;
     }
 
