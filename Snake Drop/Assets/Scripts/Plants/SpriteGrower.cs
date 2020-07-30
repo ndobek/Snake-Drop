@@ -7,6 +7,11 @@ public class SpriteGrower : MonoBehaviour, IGrowable
     public SpriteRenderer Renderer;
     [HideInInspector]
     public int currentState = 0;
+    public int GrowthStage
+    {
+        get { return currentState; }
+        set { currentState = value; }
+    }
 
     public Sprite[] GrowthStates;
 

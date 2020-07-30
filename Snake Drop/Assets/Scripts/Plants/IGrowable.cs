@@ -5,4 +5,5 @@ using UnityEngine;
 public interface IGrowable
 {
     void Grow();
+    int GrowthStage { get; set; }
 }

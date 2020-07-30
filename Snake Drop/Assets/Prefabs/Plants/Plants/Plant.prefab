@@ -62,9 +62,10 @@ MonoBehaviour:
   Renderer: {fileID: 4654389062393277317}
   currentState: 0
   GrowthStates:
-  - {fileID: 21300000, guid: 17987082ed61ef347b878d2dc63fa44e, type: 3}
-  - {fileID: 21300000, guid: d1f1f934d93073c4cba0d32f71c1d768, type: 3}
-  - {fileID: 21300000, guid: 0ca0851dee7f5b14bb4efc972a94bc43, type: 3}
+  - {fileID: -3277100406873990545, guid: 917af8939d45ae844841fbf5ec328509, type: 3}
+  - {fileID: -8091415404199333376, guid: 917af8939d45ae844841fbf5ec328509, type: 3}
+  - {fileID: 587752749293879001, guid: 917af8939d45ae844841fbf5ec328509, type: 3}
+  - {fileID: -8807663436775956950, guid: 917af8939d45ae844841fbf5ec328509, type: 3}
 --- !u!212 &4654389062393277317
 SpriteRenderer:
   m_ObjectHideFlags: 0
