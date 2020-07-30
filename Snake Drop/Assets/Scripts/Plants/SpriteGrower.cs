@@ -6,7 +6,8 @@ public class SpriteGrower : MonoBehaviour, IGrowable
 {
     public SpriteRenderer Renderer;
     [HideInInspector]
-    public int currentState = 0;
+    public int growthStage = 0;
+    public int GrowthStage { get; set; }
 
     public Sprite[] GrowthStates;
 
@@ -18,13 +19,13 @@ public class SpriteGrower : MonoBehaviour, IGrowable
 
     public void Grow()
     {
-        if (GrowthStates.Length > currentState + 1) currentState += 1;
+        if (GrowthStates.Length > growthStage + 1) growthStage += 1;
         SetSprite();
     }
 
     private void SetSprite()
     {
-        Renderer.sprite = GrowthStates[currentState];
+        Renderer.sprite = GrowthStates[growthStage];
     }
 
 }
