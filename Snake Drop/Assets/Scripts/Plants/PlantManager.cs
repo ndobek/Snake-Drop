@@ -70,13 +70,4 @@ public class PlantManager : MonoBehaviour
         AllPlants = new List<Plant>();
     }
 
-    private void Update()
-    {
-        //Stress Test
-        //PlantNewPlants(Vector3.zero); 
-        foreach (Plant plant in AllPlants)
-        {
-            if (plant.ShouldGrow()) plant.Grow();
-        }
-    }
 }

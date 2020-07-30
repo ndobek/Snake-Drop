@@ -1627,7 +1627,7 @@ PrefabInstance:
     - target: {fileID: 4999121427684628168, guid: 4903b2260670f8f4486524b47a7bbdc7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -12
+      value: -11
       objectReference: {fileID: 0}
     - target: {fileID: 4999121427684628168, guid: 4903b2260670f8f4486524b47a7bbdc7,
         type: 3}
@@ -4292,7 +4292,7 @@ PrefabInstance:
     - target: {fileID: 4999121427684628168, guid: 4903b2260670f8f4486524b47a7bbdc7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7
+      value: -6
       objectReference: {fileID: 0}
     - target: {fileID: 4999121427684628168, guid: 4903b2260670f8f4486524b47a7bbdc7,
         type: 3}
@@ -6493,7 +6493,7 @@ PrefabInstance:
     - target: {fileID: 4999121427684628168, guid: 4903b2260670f8f4486524b47a7bbdc7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4999121427684628168, guid: 4903b2260670f8f4486524b47a7bbdc7,
         type: 3}
@@ -14354,10 +14354,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawners: []
-  DefaultNumberOfPlantsPerSpawn: 3
+  DefaultNumberOfPlantsPerSpawn: 1
   AllPlants: []
   currentlyGrowing: []
-  MaximumDistanceFromPoint: 3
+  MaximumDistanceFromPoint: 2
 --- !u!1 &1508359104
 GameObject:
   m_ObjectHideFlags: 0
@@ -22640,7 +22640,7 @@ PrefabInstance:
     - target: {fileID: 4999121427684628168, guid: 4903b2260670f8f4486524b47a7bbdc7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4999121427684628168, guid: 4903b2260670f8f4486524b47a7bbdc7,
         type: 3}

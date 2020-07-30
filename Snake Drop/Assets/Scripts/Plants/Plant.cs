@@ -15,6 +15,11 @@ public class Plant : MonoBehaviour
         growable = gameObject.GetComponent<IGrowable>();
     }
 
+    private void Update()
+    {
+        if (ShouldGrow()) Grow();
+    }
+
     public bool ShouldGrow()
     {
         return xp >= xpPerGrow;
