@@ -9,6 +9,8 @@ public class PlantManager : MonoBehaviour
     public PlantSpawner[] spawners;
 
     public int DefaultNumberOfPlantsPerSpawn = 1;
+
+    public List<Plant> AllPlants;
     public Plant[] currentlyGrowing;
 
     public float MaximumDistanceFromPoint;
@@ -41,7 +43,7 @@ public class PlantManager : MonoBehaviour
         }
     }
 
-    public void GetPlants(Vector3 position, int amount)
+    public void PlantNewPlants(Vector3 position, int amount)
     {
         Plant[] plants = new Plant[amount];
         for(int i = 0; i < amount; i++)
@@ -51,11 +53,12 @@ public class PlantManager : MonoBehaviour
         }
 
         currentlyGrowing = plants;
+        AllPlants.AddRange(plants.ToList());
     }
 
-    public void GetPlants(Vector3 position)
+    public void PlantNewPlants(Vector3 position)
     {
-        GetPlants(position, DefaultNumberOfPlantsPerSpawn);
+        PlantNewPlants(position, DefaultNumberOfPlantsPerSpawn);
     }
 
     public void Reset()
