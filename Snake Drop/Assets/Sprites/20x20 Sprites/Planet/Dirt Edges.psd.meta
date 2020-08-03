@@ -4,10 +4,10 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: 632967189913976638
-    second: Dirt Edges_0
+    second: Corner
   - first:
       213: -4414378431951925296
-    second: Dirt Edges_1
+    second: Edge
   - first:
       213: 5771703074827178179
     second: Dirt Edges_2
@@ -138,7 +138,49 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Corner
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 6
+        width: 41
+        height: 41
+      alignment: 9
+      pivot: {x: 0.17073171, y: 0.8292683}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3fbc4d3e40c8c800800000000000000
+      internalID: 632967189913976638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Edge
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 40
+        width: 220
+        height: 4
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0df0c5b543afcb2c0800000000000000
+      internalID: -4414378431951925296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

@@ -6,4 +6,5 @@ public interface IGrowable
 {
     void Grow();
     int GrowthStage { get; set; }
+    void ResetGrowth();
 }

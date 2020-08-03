@@ -14,9 +14,29 @@ public class PlantSpawner : MonoBehaviour
 
     private void Awake()
     {
-        while(Plants.Count < MaxPlants)
+        ResetPlants();
+    }
+    public void ResetPlants()
+    {
+        DestroyPlants();
+        CreatePlants();
+    }
+
+    private void DestroyPlants()
+    {
+        foreach(Plant obj in Plants)
+        {
+            GameObject.Destroy(obj.gameObject);
+        }
+        Plants = new List<Plant>();
+    }
+
+    private void CreatePlants()
+    {
+        while (Plants.Count < MaxPlants)
         {
             Plants.Add(Spawn().GetComponent<Plant>());
+            Plants.Sort();
         }
     }
 

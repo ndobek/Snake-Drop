@@ -14,6 +14,18 @@ TextureImporter:
   - first:
       213: -689565992342851298
     second: Corner_Stone_BottomRight
+  - first:
+      213: 3416883178726390132
+    second: Corner_Stone_TopLeft
+  - first:
+      213: -8486133347968942860
+    second: Corner_Stone_TopRight
+  - first:
+      213: 8854819410827224280
+    second: Corner_Stone_BottomLeft
+  - first:
+      213: 3323490585174245618
+    second: Corner_Stone_BottomRight
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -142,17 +154,17 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 22
+        height: 22
+      alignment: 9
+      pivot: {x: 0.54545456, y: 0.45454547}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d8e85d960485f6d40800000000000000
-      internalID: 5579775497012088461
+      spriteID: 4797efac5253b6f20800000000000000
+      internalID: 3416883178726390132
       vertices: []
       indices: 
       edges: []
@@ -161,19 +173,19 @@ TextureImporter:
       name: Corner_Stone_TopRight
       rect:
         serializedVersion: 2
-        x: 20
+        x: 22
         y: 0
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 22
+        height: 22
+      alignment: 9
+      pivot: {x: 0.45454547, y: 0.45454547}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5ac304d4f502794b0800000000000000
-      internalID: -5433838831709176667
+      spriteID: 4fcf6b57ea23b3a80800000000000000
+      internalID: -8486133347968942860
       vertices: []
       indices: 
       edges: []
@@ -182,19 +194,19 @@ TextureImporter:
       name: Corner_Stone_BottomLeft
       rect:
         serializedVersion: 2
-        x: 40
+        x: 44
         y: 0
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 22
+        height: 22
+      alignment: 9
+      pivot: {x: 0.54545456, y: 0.54545456}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2b14760b1ef55f730800000000000000
-      internalID: 4032234464311984562
+      spriteID: 8d4279cd653a2ea70800000000000000
+      internalID: 8854819410827224280
       vertices: []
       indices: 
       edges: []
@@ -203,19 +215,19 @@ TextureImporter:
       name: Corner_Stone_BottomRight
       rect:
         serializedVersion: 2
-        x: 60
+        x: 66
         y: 0
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 22
+        height: 22
+      alignment: 9
+      pivot: {x: 0.45454547, y: 0.54545456}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e11f639226b2e66f0800000000000000
-      internalID: -689565992342851298
+      spriteID: 2f08aaf14196f1e20800000000000000
+      internalID: 3323490585174245618
       vertices: []
       indices: 
       edges: []

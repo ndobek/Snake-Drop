@@ -31,5 +31,8 @@ public class SpriteGrower : MonoBehaviour, IGrowable
     {
         Renderer.sprite = GrowthStates[currentState];
     }
-
+    public void ResetGrowth()
+    {
+        GrowthStage = 0;
+    }
 }

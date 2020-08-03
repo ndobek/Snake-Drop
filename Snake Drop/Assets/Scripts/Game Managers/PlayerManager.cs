@@ -21,6 +21,7 @@ public class PlayerManager : MonoBehaviour
     public PlayGrid playGrid;
     public PlayGrid previewGrid;
     public HeightLimitIndicator HeightLimitIndicator;
+    public GameObject EntranceIndicator;
 
     public BlockSlot startSlot;
     public BlockSlot waitSlot;
@@ -123,16 +124,21 @@ public class PlayerManager : MonoBehaviour
             waitSlot.customLeftNeighbor = slot.customLeftNeighbor;
             waitSlot.customRightNeighbor = slot.customRightNeighbor;
 
-            waitSlot.playGrid.transform.position = slot.transform.position;
-            waitSlot.playGrid.transform.rotation = slot.transform.rotation;
+            PositionEntranceIndicator(slot.transform);
 
             enterSlot = (EntranceSlot)slot;
         }
     }
 
+    public void PositionEntranceIndicator(Transform newTransfrom)
+    {
+        EntranceIndicator.transform.position = newTransfrom.position;
+        EntranceIndicator.transform.rotation = newTransfrom.rotation;
+    }
+
     public void ResetGame()
     {
-        GameManager.instance.plantManager.Reset();
+        GameManager.instance.plantManager.ResetGrowth();
         Score.ResetGame();
         ResetMoveRestrictions();
         entranceManager.ReactivateEntrances();

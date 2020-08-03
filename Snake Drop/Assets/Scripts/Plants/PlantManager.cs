@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Linq;
 using UnityEngine;
 
@@ -10,7 +11,6 @@ public class PlantManager : MonoBehaviour
 
     public int DefaultNumberOfPlantsPerSpawn = 1;
 
-    public List<Plant> AllPlants;
     public Plant[] currentlyGrowing;
 
     public float MaximumDistanceFromPoint;
@@ -22,17 +22,23 @@ public class PlantManager : MonoBehaviour
     }
     public PlantSpawner GetRandSpawnerNearTo(Vector3 position)
     {
-        List<PlantSpawner> possibleResults = new List<PlantSpawner>();
-        foreach(PlantSpawner obj in spawners)
-        {
-            if(MaximumDistanceFromPoint == 0 || Vector3.Distance(obj.transform.position, position) < MaximumDistanceFromPoint)
-            {
-                possibleResults.Add(obj);
-            }
-        }
+        List<PlantSpawner> possibleResults = GetAllPossibleSpawnersNearTo(position);
 
         if (possibleResults.Count > 0) return possibleResults[(int)Random.Range(0, possibleResults.Count)];
         else return null;
+    }
+
+    public List<PlantSpawner> GetAllPossibleSpawnersNearTo(Vector3 position)
+    {
+        List<PlantSpawner> results = new List<PlantSpawner>();
+        foreach (PlantSpawner obj in spawners)
+        {
+            if (MaximumDistanceFromPoint == 0 || Vector3.Distance(obj.transform.position, position) < MaximumDistanceFromPoint)
+            {
+                results.Add(obj);
+            }
+        }
+        return results;
     }
 
     public void AddXP(int amount)
@@ -42,39 +48,73 @@ public class PlantManager : MonoBehaviour
             if(obj) obj.xp += amount;
         }
     }
-
-    public void PlantNewPlants(Vector3 position, int amount)
+    private List<Plant> GetAllPossiblePlantsInSpawnerList(List<PlantSpawner> possibleSpawners)
     {
-        Plant[] plants = new Plant[amount];
-        for(int i = 0; i < amount; i++)
+        List<Plant> result = new List<Plant>();
+        foreach (PlantSpawner spawner in possibleSpawners)
         {
-            PlantSpawner spawner = GetRandSpawnerNearTo(position);
-            if(spawner) plants[i] = spawner.Spawn().GetComponent<Plant>();
+            result.AddRange(spawner.Plants);
         }
-
-        currentlyGrowing = plants;
-        AllPlants.AddRange(plants.ToList());
+        return result;
     }
 
+    public List<Plant> GetAllPossiblePlantsNearTo(Vector3 position)
+    {
+        return GetAllPossiblePlantsInSpawnerList(GetAllPossibleSpawnersNearTo(position));
+    }
+
+    public List<Plant> GetLeastGrownPlantsInPlantList(List<Plant> plants, int quantity)
+    {
+        List<Plant> result = new List<Plant>();
+        plants.Sort();
+        for (int i = 0; i < quantity && i < plants.Count; i++)
+        {
+            if (plants[i] != null) result.Add(plants[i]);
+        }
+        return result;
+    }
+    public List<Plant> GetRandPlantsFromList(List<Plant> plants, int quantity)
+    {
+        List<Plant> result = new List<Plant>();
+        while(plants.Count > 0 && result.Count < quantity)
+        {
+            int i = Random.Range(0, plants.Count);
+            result.Add(plants[i]);
+            plants.RemoveAt(i);
+        }
+        return result;
+    }
+
+    public List<Plant> GetRandPlantsNearTo(Vector3 position, int quantity)
+    {
+        return GetRandPlantsFromList(GetAllPossiblePlantsNearTo(position), quantity);
+    }
+
+    public List<Plant> GetLeastGrownPlantsNearTo(Vector3 position, int quantity)
+    {
+        return GetLeastGrownPlantsInPlantList(GetAllPossiblePlantsNearTo(position), quantity);
+    }
+
+    public List<Plant> AllPlants()
+    {
+        return GetAllPossiblePlantsInSpawnerList(spawners.ToList());
+    }
+
+    public void ResetGrowth()
+    {
+        foreach(PlantSpawner obj in spawners )
+        {
+            obj.ResetPlants();
+        }
+    }
     public void PlantNewPlants(Vector3 position)
     {
-        PlantNewPlants(position, DefaultNumberOfPlantsPerSpawn);
-    }
-
-    public void Reset()
-    {
-        foreach(Plant obj in AllPlants)
-        {
-            GameObject.Destroy(obj.gameObject);
-        }
-        AllPlants = new List<Plant>();
+        currentlyGrowing = GetRandPlantsNearTo(position, DefaultNumberOfPlantsPerSpawn).ToArray();
     }
 
     private void Update()
     {
-        //Stress Test
-        //PlantNewPlants(Vector3.zero); 
-        foreach (Plant plant in AllPlants)
+        foreach (Plant plant in currentlyGrowing)
         {
             if (plant.ShouldGrow()) plant.Grow();
         }
