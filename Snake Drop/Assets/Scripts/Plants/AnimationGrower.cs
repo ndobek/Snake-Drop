@@ -4,9 +4,16 @@ using UnityEngine;
 
 public class AnimationGrower : MonoBehaviour, IGrowable
 {
+    [HideInInspector]
     public Animator animator;
 
-    public void ResetGrowth() { }
+    public void Awake()
+    {
+        animator = gameObject.GetComponent<Animator>();
+    }
+
+    public void ResetGrowth() { growthStage = 0; }
+
     private int growthStage;
     public int GrowthStage
     {
