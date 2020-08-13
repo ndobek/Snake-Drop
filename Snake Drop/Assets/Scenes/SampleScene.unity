@@ -315,7 +315,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HeightLimit: 0
   HeightLimitModifier: 0
-  Difficulty: {fileID: 11400000, guid: c2e656447e47e8e40a4eff65f4f27d8a, type: 2}
+  Difficulty: {fileID: 11400000, guid: 5063c639fcff9264f9b990d1b37a1a9c, type: 2}
   PossibleColors: []
   minBaseLength: {fileID: 11400000, guid: 25ef4499148f23345b64c542146e1476, type: 2}
   maxBaseLength: {fileID: 11400000, guid: bcf7fc9d50be8564a911997e01665bee, type: 2}

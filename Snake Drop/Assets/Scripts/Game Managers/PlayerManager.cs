@@ -36,11 +36,6 @@ public class PlayerManager : MonoBehaviour
 
     public void OnCrash(bool SnakeComplete = false)
     {
-        if (SnakeComplete) entranceManager.ReactivateEntrances();
-        else
-        {
-            Score.ResetMultiplier();
-        }
         RoundInProgress = false;
     }
 
@@ -53,10 +48,11 @@ public class PlayerManager : MonoBehaviour
         else
         {
             DoGridActions();
+
             FillPreviewBar();
 
-            DifficultyManager difficulty = GameManager.instance.difficultyManager;
-            if (difficulty.HeightLimit) HeightLimitIndicator.LowerHeightLimit(SnakeHead.FindSnakeMaxY() + difficulty.HeightLimitModifier);
+            //DifficultyManager difficulty = GameManager.instance.difficultyManager;
+            //if (difficulty.HeightLimit) HeightLimitIndicator.LowerHeightLimit(SnakeHead.FindSnakeMaxY() + difficulty.HeightLimitModifier);
         }
     }
 
@@ -149,6 +145,11 @@ public class PlayerManager : MonoBehaviour
     }
     public void PrepareNewRound()
     {
+        if (snakeHead == null) entranceManager.ReactivateEntrances();
+        else
+        {
+            Score.ResetMultiplier();
+        }
         entranceManager.UpdateAnimations();
         FillPreviewBar();
         ResetMoveRestrictions();

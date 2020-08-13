@@ -9,12 +9,15 @@ public class R_CollectionRule : Rule
 
     protected override void Action(Block block, PlayerManager player = null)
     {
-        Block[] blocks = block.BlockCollection.Blocks;
-
-        foreach (Block obj in blocks)
+        if (block.BlockCollection != null)
         {
-            obj.Slot.playGrid.SetDirty();
-            Rule.Invoke(obj, player);
+            Block[] blocks = block.BlockCollection.Blocks;
+
+            foreach (Block obj in blocks)
+            {
+                obj.Slot.playGrid.SetDirty();
+                Rule.Invoke(obj, player);
+            }
         }
     }
 }
