@@ -5,17 +5,19 @@ using UnityEngine;
 public class PlantAnimator : MonoBehaviour
 {
     //This script should go on the plants.
-    //TODO: make this script give its movement values to the animator, make the animator use those numbers to change the state
+  
     float sunMovementValue;
     float windMovementValue;
     float offset;
 
     PlantMovement plantMovement;
+    Animator anim;
+
     private void Awake()
     {
         plantMovement = GameObject.Find("PlantMovement").GetComponent<PlantMovement>();
         offset = plantMovement.GetMovementOffset(gameObject.transform.position);
-        
+        anim = gameObject.GetComponent<Animator>();
     }
 
     private void Update()
@@ -23,5 +25,7 @@ public class PlantAnimator : MonoBehaviour
         
         sunMovementValue = plantMovement.AccessPlantMovementWave(plantMovement.sunRate, offset);
         windMovementValue = plantMovement.AccessPlantMovementWave(plantMovement.windRate, offset);
+        anim.SetFloat("Sun", sunMovementValue);
+        anim.SetFloat("Wind", windMovementValue);
     }
 }

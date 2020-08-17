@@ -17979,8 +17979,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99c120b3b16f2134d8e0bf2c83ab6ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sunRate: 1
-  windRate: 4
+  sunRate: 0.5
+  windRate: 0.25
   plantAnimMarker0: {fileID: 1493791403}
   plantAnimMarker1: {fileID: 754571548}
   plantAnimMarkersVector: {x: 0, y: 0}
