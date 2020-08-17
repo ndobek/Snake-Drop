@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlantAnimator : MonoBehaviour
+public class PlantAnimator : MonoBehaviour, IGrowable
 {
     //This script should go on the plants.
   
@@ -12,7 +12,23 @@ public class PlantAnimator : MonoBehaviour
 
     PlantMovement plantMovement;
     Animator anim;
+    public void ResetGrowth() { GrowthStage = 0; }
 
+    private int growthStage;
+    public int GrowthStage
+    {
+        get { return growthStage; }
+        set
+        {
+            growthStage = value;
+            anim.SetInteger("Growth Stage", growthStage);
+        }
+    }
+
+    public void Grow()
+    {
+        GrowthStage += 1;
+    }
     private void Awake()
     {
         plantMovement = GameObject.Find("PlantMovement").GetComponent<PlantMovement>();
