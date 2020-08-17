@@ -12,6 +12,7 @@ public class AnimationGrower : MonoBehaviour, IGrowable
         animator = gameObject.GetComponent<Animator>();
     }
 
+
     public void ResetGrowth() { growthStage = 0; }
 
     private int growthStage;

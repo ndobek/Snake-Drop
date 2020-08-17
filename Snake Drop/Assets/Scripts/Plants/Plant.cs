@@ -10,7 +10,6 @@ public class Plant : MonoBehaviour, IComparable<Plant>
     [HideInInspector]
     public int xp = 0;
     public int xpPerGrow = 5;
-
     private void Awake()
     {
         growable = gameObject.GetComponent<IGrowable>();
