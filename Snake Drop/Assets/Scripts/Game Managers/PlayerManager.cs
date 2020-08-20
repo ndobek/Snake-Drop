@@ -34,7 +34,7 @@ public class PlayerManager : MonoBehaviour
     [HideInInspector]
     public bool GameInProgress;
 
-    public void OnCrash(/*bool SnakeComplete = false*/)
+    public void OnCrash()
     {
         RoundInProgress = false;
     }

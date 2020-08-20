@@ -48,4 +48,4 @@ MonoBehaviour:
   MaxPlants: 1
   Plants: []
   HorizontalVariance: 0.01
-  VerticalVariance: 0.1
+  VerticalVariance: 0
