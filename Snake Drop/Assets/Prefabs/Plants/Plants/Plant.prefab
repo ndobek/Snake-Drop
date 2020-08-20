@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4654389062393277317}
   - component: {fileID: 1222747213231454093}
   - component: {fileID: 4217413434063157449}
-  - component: {fileID: 8880401173281128641}
+  - component: {fileID: 7198136767064684176}
   m_Layer: 0
   m_Name: Plant
   m_TagString: Untagged
@@ -94,7 +94,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 4.95, y: 10.1}
+  m_Size: {x: 1.6, y: 1.6}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87c066df82314244ab885428bf0fef42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8880401173281128641
+--- !u!114 &7198136767064684176
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,3 +143,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65ad884760af8b54299695054b515ea3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waveData: {fileID: 0}

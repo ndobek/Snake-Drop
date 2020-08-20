@@ -10,8 +10,8 @@ public class PlantAnimator : MonoBehaviour, IGrowable
     float windMovementValue;
     float offset;
 
-    PlantMovement plantMovement;
     Animator anim;
+    public WaveData waveData;
     public void ResetGrowth() { GrowthStage = 0; }
 
     private int growthStage;
@@ -31,16 +31,17 @@ public class PlantAnimator : MonoBehaviour, IGrowable
     }
     private void Awake()
     {
-        plantMovement = GameObject.Find("PlantMovement").GetComponent<PlantMovement>();
-        offset = plantMovement.GetMovementOffset(gameObject.transform.position);
+     
+        offset = waveData.GetMovementOffset(gameObject.transform.position);
         anim = gameObject.GetComponent<Animator>();
+       
     }
 
     private void Update()
     {
         
-        sunMovementValue = plantMovement.AccessPlantMovementWave(plantMovement.sunRate, offset);
-        windMovementValue = plantMovement.AccessPlantMovementWave(plantMovement.windRate, offset);
+        sunMovementValue = MovementWave.AccessMovementWave(waveData.sunRate, offset);
+        windMovementValue = MovementWave.AccessMovementWave(waveData.windRate, offset);
         anim.SetFloat("Sun", sunMovementValue);
         anim.SetFloat("Wind", windMovementValue);
     }
