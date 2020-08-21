@@ -34,13 +34,14 @@ public class BlockType : ScriptableObject
             slot.Block &&
             block &&
             block.Tail &&
-            slot.Block == block.Tail) return true;
+            block.Tail.Slot == slot)
+             return true;
 
         if (block &&
             block.Tail &&
             block.Slot.playGrid != block.Tail.Slot.playGrid &&
             slot == null &&
-            block.Tail.Slot.GetNeighbor(player.playerController.mostRecentDirection) == block.Slot) return true;
+            block.Tail.Slot.GetNeighbor(Directions.GetOppositeDirection(player.playerController.mostRecentDirectionMoved)) == block.Slot) return true;
 
         return false;
     }

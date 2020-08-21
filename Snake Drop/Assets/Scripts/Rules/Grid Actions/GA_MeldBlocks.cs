@@ -193,10 +193,10 @@ public class GA_MeldBlocks : GridAction
         void registerRect()
         {
 
-            int x1 = xMod - (column[rectangleIndex.Pop()] - 1);
+            int x1 = xMod - (column[rectangleIndex.Peek()] - 1);
             int x2 = xMod;
             int y1 = i - 1;
-            int y2 = rectangleIndex.Count > 0 ? rectangleIndex.Peek() + 1 : 0;
+            int y2 = rectangleIndex.Count > 0 ? rectangleIndex.Peek(): 0;
 
             BlockCollection temp = new BlockCollection
             {
@@ -211,13 +211,15 @@ public class GA_MeldBlocks : GridAction
                 result.Add(temp);
 
             }
+            rectangleIndex.Pop();
         }
 
         while (i < ySize)
         {
             if (rectangleIndex.Count == 0 || column[rectangleIndex.Peek()] <= column[i])
             {
-                rectangleIndex.Push(i++);
+                rectangleIndex.Push(i);
+                i++;
             }
             else
             {

@@ -38,9 +38,13 @@ public static class Directions
     }
     public static Directions.Direction TailDirection(Block block)
     {
+        return DirectionTo(block, block.Tail);
+    }
+    public static Directions.Direction DirectionTo(Block blockFrom, Block blockTo)
+    {
         foreach (Directions.Direction dir in Enum.GetValues(typeof(Directions.Direction)))
         {
-            if (block.Neighbor(dir) == block.Tail) return dir;
+            if (blockFrom.Neighbor(dir) == blockTo) return dir;
         }
         return default;
     }

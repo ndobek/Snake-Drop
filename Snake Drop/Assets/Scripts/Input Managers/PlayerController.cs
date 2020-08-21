@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     private float timePressed;
 
     [HideInInspector]
-    public Direction mostRecentDirection;
+    public Direction mostRecentDirectionMoved;
 
     private Vector2 DistanceMovedThisTouch;
     public float DistanceNeededToDragBeforeSnakeMoves = 1;
@@ -73,7 +73,7 @@ public class PlayerController : MonoBehaviour
 
     private void MoveSnakeOnHold(TouchManager.TouchData HoldData)
     {
-        Hold(mostRecentDirection);
+        Hold(mostRecentDirectionMoved);
     }
     private void MoveSnakeOnTap(TouchManager.TouchData Tap)
     {
@@ -102,7 +102,7 @@ public class PlayerController : MonoBehaviour
     }
     private void Press()
     {
-        Press(mostRecentDirection);
+        Press(mostRecentDirectionMoved);
     }
     private void FirstPress(Direction direction)
     {
@@ -111,7 +111,7 @@ public class PlayerController : MonoBehaviour
     }
     private void FirstPress()
     {
-        FirstPress(mostRecentDirection);
+        FirstPress(mostRecentDirectionMoved);
     }
 
     private void Hold(Direction direction)
@@ -132,13 +132,13 @@ public class PlayerController : MonoBehaviour
     }
     public void MoveSnake(Direction direction)
     {
-        mostRecentDirection = direction;
+        mostRecentDirectionMoved = direction;
         if (player) player.MoveSnake(direction);
     }
 
     public void ResetGame()
     {
-        mostRecentDirection = Direction.DOWN;
+        mostRecentDirectionMoved = Direction.DOWN;
     }
 
 }
