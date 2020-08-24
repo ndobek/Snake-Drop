@@ -5,11 +5,13 @@ using System;
 
 
 //Plants get data from this class
-public class WaveData : MonoBehaviour
+[CreateAssetMenu]
+public class WaveData : ScriptableObject
 {
     //Default movement rates to use for sun and wind animations
     public float sunRate;
     public float windRate;
+    public float windSpeedRate;
 
 
     public GameObject plantAnimMarker0;

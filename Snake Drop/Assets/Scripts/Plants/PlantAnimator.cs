@@ -8,7 +8,8 @@ public class PlantAnimator : MonoBehaviour, IGrowable
   
     float sunMovementValue;
     float windMovementValue;
-    float offset;
+    float windSpeedValue;
+    public float offset;
 
     Animator anim;
     public WaveData waveData;
@@ -42,7 +43,9 @@ public class PlantAnimator : MonoBehaviour, IGrowable
         
         sunMovementValue = MovementWave.AccessMovementWave(waveData.sunRate, offset);
         windMovementValue = MovementWave.AccessMovementWave(waveData.windRate, offset);
+        windSpeedValue = MovementWave.AccessMovementWave(waveData.windSpeedRate);
         anim.SetFloat("Sun", sunMovementValue);
         anim.SetFloat("Wind", windMovementValue);
+        anim.SetFloat("Wind Speed", windSpeedValue);
     }
 }
