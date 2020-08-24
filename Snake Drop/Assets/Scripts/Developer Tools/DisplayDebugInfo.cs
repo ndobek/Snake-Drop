@@ -22,13 +22,13 @@ public class DisplayDebugInfo : MonoBehaviour
     {
         StringBuilder plantString = new StringBuilder("Plant Stages: ");
         StringBuilder offsetString = new StringBuilder("Offset: ");
-        plantsList = pM.AllPlants();
+       //can be in void start// plantsList = pM.AllPlants();
 
-        foreach (Plant p in plantsList)
-        {
-            plantString.Append(p.growable.GrowthStage);
-            offsetString.Append(p.gameObject.GetComponent<PlantAnimator>().offset);
-        }
+        //foreach (Plant p in plantsList)
+        //{
+        //    plantString.Append(p.growable.GrowthStage);
+        //   // don't do this because too much in 1 loop getcomponent is slow going to void start if I use it // offsetString.Append(p.gameObject.GetComponent<PlantAnimator>().offset);
+        //}
         
         sun = MovementWave.AccessMovementWave(waveData.sunRate);
         windGustFrequency = MovementWave.AccessMovementWave(waveData.windRate);

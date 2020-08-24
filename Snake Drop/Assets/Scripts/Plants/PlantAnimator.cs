@@ -34,6 +34,7 @@ public class PlantAnimator : MonoBehaviour, IGrowable
     {
      
         offset = waveData.GetMovementOffset(gameObject.transform.position);
+        Debug.Log(offset);
         anim = gameObject.GetComponent<Animator>();
        
     }
