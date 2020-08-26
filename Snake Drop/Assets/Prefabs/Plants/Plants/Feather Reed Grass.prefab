@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 5671817483375771637}
   - component: {fileID: -4160740208620165931}
   - component: {fileID: 3749149093674335167}
-  - component: {fileID: -7579352602753115989}
   - component: {fileID: 6139035584766531580}
   m_Layer: 0
   m_Name: Feather Reed Grass
@@ -97,23 +96,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8077d02c4df4194ea90b938a6fef9f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xp: 0
-  xpPerGrow: 4
---- !u!114 &-7579352602753115989
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3247554293500808389}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65ad884760af8b54299695054b515ea3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   lat: {fileID: 11400000, guid: 3d350608af687db49893c22277df0e4b, type: 2}
   sun: {fileID: 11400000, guid: e42d853b5b28e024fa215b89bf455a71, type: 2}
   wind: {fileID: 11400000, guid: 38e213984942e7945ba622b67034255a, type: 2}
+  xp: 0
+  xpPerGrow: 4
 --- !u!95 &6139035584766531580
 Animator:
   serializedVersion: 3

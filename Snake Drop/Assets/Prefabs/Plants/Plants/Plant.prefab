@@ -12,8 +12,6 @@ GameObject:
   - component: {fileID: 4654389062393277306}
   - component: {fileID: 4654389062393277317}
   - component: {fileID: 1222747213231454093}
-  - component: {fileID: 4217413434063157449}
-  - component: {fileID: 7198136767064684176}
   m_Layer: 0
   m_Name: Plant
   m_TagString: Untagged
@@ -47,6 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8077d02c4df4194ea90b938a6fef9f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lat: {fileID: 11400000, guid: 3d350608af687db49893c22277df0e4b, type: 2}
+  sun: {fileID: 11400000, guid: e42d853b5b28e024fa215b89bf455a71, type: 2}
+  wind: {fileID: 11400000, guid: 38e213984942e7945ba622b67034255a, type: 2}
   xp: 0
   xpPerGrow: 4
 --- !u!212 &4654389062393277317
@@ -119,30 +120,3 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &4217413434063157449
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4654389062393277305}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87c066df82314244ab885428bf0fef42, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &7198136767064684176
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4654389062393277305}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65ad884760af8b54299695054b515ea3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lat: {fileID: 11400000, guid: 3d350608af687db49893c22277df0e4b, type: 2}
-  sun: {fileID: 11400000, guid: e42d853b5b28e024fa215b89bf455a71, type: 2}
-  wind: {fileID: 11400000, guid: 38e213984942e7945ba622b67034255a, type: 2}

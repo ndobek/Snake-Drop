@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce0cd8db46dca42459b716a3033ff76f, type: 3}
   m_Name: Wind
   m_EditorClassIdentifier: 
-  gustFrequency: 0
-  gustStrengthLoopFrequency: 0
+  gustFrequency: 0.75
+  gustStrengthLoopFrequency: 0.25
