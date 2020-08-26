@@ -2,17 +2,42 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlantAnimator : MonoBehaviour, IGrowable
+//Summary: This class provides animation data to the Animator controller on the plant.
+//This script should go on the plants.
+public class PlantAnimator : MonoBehaviour, IGrowable, ILatitudeDependent, IWindReactive, ISunReactive
 {
-    //This script should go on the plants.
-  
-    float sunMovementValue;
-    float windMovementValue;
-    float windSpeedValue;
-    public float offset;
-
     Animator anim;
-    public WaveData waveData;
+    public Latitude lat;
+    public Sun sun;
+    public Wind wind;
+
+    float latitude;
+
+    public void AnimUpdate()
+    {
+        Gust();
+        GustStrength();
+        SunZenith();
+    }
+    public void Gust()
+    {
+        anim.SetFloat("Gust", wind.Gust(latitude));
+    }
+
+    public void GustStrength()
+    {
+        anim.SetFloat("Gust Strength", wind.GustStrength(latitude));
+    }
+    public void SunZenith()
+    {
+        anim.SetFloat("Sun Zenith", sun.SunZenith(latitude));     
+    }
+  
+    public float ReturnLatitude()
+    {
+        float result = lat.GetLatitude(this.gameObject.transform.position);
+        return result;
+    }
     public void ResetGrowth() { GrowthStage = 0; }
 
     private int growthStage;
@@ -32,21 +57,8 @@ public class PlantAnimator : MonoBehaviour, IGrowable
     }
     private void Awake()
     {
-     
-        offset = waveData.GetMovementOffset(gameObject.transform.position);
-        Debug.Log(offset);
+        latitude = ReturnLatitude();
         anim = gameObject.GetComponent<Animator>();
-       
     }
 
-    private void Update()
-    {
-        
-        sunMovementValue = MovementWave.AccessMovementWave(waveData.sunRate, offset);
-        windMovementValue = MovementWave.AccessMovementWave(waveData.windRate, offset);
-        windSpeedValue = MovementWave.AccessMovementWave(waveData.windSpeedRate);
-        anim.SetFloat("Sun", sunMovementValue);
-        anim.SetFloat("Wind", windMovementValue);
-        anim.SetFloat("Wind Speed", windSpeedValue);
-    }
 }

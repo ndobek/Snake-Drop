@@ -111,7 +111,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65ad884760af8b54299695054b515ea3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveData: {fileID: 11400000, guid: fbaf8a1b7b9df054db5be254166cdfc6, type: 2}
+  lat: {fileID: 11400000, guid: 3d350608af687db49893c22277df0e4b, type: 2}
+  sun: {fileID: 11400000, guid: e42d853b5b28e024fa215b89bf455a71, type: 2}
+  wind: {fileID: 11400000, guid: 38e213984942e7945ba622b67034255a, type: 2}
 --- !u!95 &6139035584766531580
 Animator:
   serializedVersion: 3

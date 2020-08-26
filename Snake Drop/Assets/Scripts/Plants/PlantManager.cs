@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using JetBrains.Annotations;
+using System.Collections;
 using System.Collections.Generic;
 using System.Dynamic;
 using System.Linq;
@@ -8,6 +9,9 @@ public class PlantManager : MonoBehaviour
 {
     [HideInInspector]
     public PlantSpawner[] spawners;
+
+    //Added this to hold the PlantAnimators to animate
+    List<PlantAnimator> plantAnimators;
 
     public int DefaultNumberOfPlantsPerSpawn = 1;
 
@@ -19,6 +23,9 @@ public class PlantManager : MonoBehaviour
     private void Awake()
     {
         spawners = GetComponentsInChildren<PlantSpawner>();
+        //Added this to get all the PlantAnimators
+        plantAnimators = GetAllPlantAnimators();
+
     }
     public PlantSpawner GetRandSpawnerNearTo(Vector3 position)
     {
@@ -111,12 +118,29 @@ public class PlantManager : MonoBehaviour
     {
         currentlyGrowing = GetRandPlantsNearTo(position, DefaultNumberOfPlantsPerSpawn).ToArray();
     }
-
+    //Added this to get the PlantAnimators from the plants
+    //TODO: Please replace this if redundant
+    public List<PlantAnimator> GetAllPlantAnimators()
+    {
+        List<Plant> plants = AllPlants();
+        List<PlantAnimator> result = new List<PlantAnimator>();
+        foreach (Plant p in plants)
+        {
+            result.Add(p.gameObject.GetComponent<PlantAnimator>());
+        }
+        return result;
+    }
     private void Update()
     {
         foreach (Plant plant in currentlyGrowing)
         {
             if (plant.ShouldGrow()) plant.Grow();
+        }
+
+        //Added this to animate the plants
+        foreach (PlantAnimator anim in plantAnimators)
+        {
+            anim.AnimUpdate();
         }
     }
 }

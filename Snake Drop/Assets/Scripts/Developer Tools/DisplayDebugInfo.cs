@@ -6,34 +6,34 @@ using System.Text;
 
 public class DisplayDebugInfo : MonoBehaviour
 {
-    public Text waveDataDisplay;
-    public Text plantDataDisplay;
-    public WaveData waveData;
-    float sun;
-    float windGustFrequency;
-    float windSpeed;
-    public PlantManager pM;
+    //public Text waveDataDisplay;
+    //public Text plantDataDisplay;
+    //public Sun sun;
+    //public Wind wind;
+
+ 
+    //public PlantManager pM;
 
 
-    List<Plant> plantsList;
+    //List<Plant> plantsList;
 
-    // Update is called once per frame
-    void Update()
-    {
-        StringBuilder plantString = new StringBuilder("Plant Stages: ");
-        StringBuilder offsetString = new StringBuilder("Offset: ");
-       //can be in void start// plantsList = pM.AllPlants();
+    //// Update is called once per frame
+    //void Update()
+    //{
+    //    StringBuilder plantString = new StringBuilder("Plant Stages: ");
+    //    StringBuilder offsetString = new StringBuilder("Offset: ");
+    //   //can be in void start// plantsList = pM.AllPlants();
 
-        //foreach (Plant p in plantsList)
-        //{
-        //    plantString.Append(p.growable.GrowthStage);
-        //   // don't do this because too much in 1 loop getcomponent is slow going to void start if I use it // offsetString.Append(p.gameObject.GetComponent<PlantAnimator>().offset);
-        //}
+    //    //foreach (Plant p in plantsList)
+    //    //{
+    //    //    plantString.Append(p.growable.GrowthStage);
+    //    //   // don't do this because too much in 1 loop getcomponent is slow going to void start if I use it // offsetString.Append(p.gameObject.GetComponent<PlantAnimator>().offset);
+    //    //}
         
-        sun = MovementWave.AccessMovementWave(waveData.sunRate);
-        windGustFrequency = MovementWave.AccessMovementWave(waveData.windRate);
-        windSpeed = MovementWave.AccessMovementWave(waveData.windSpeedRate);
-        plantDataDisplay.text = plantString + "\n" + offsetString;
-        waveDataDisplay.text = "Sun: " + sun + "\nWind Gust Frequency: " + windGustFrequency + "\nWind Speed: " + windSpeed;
-    }
+    //    sun = MovementWave.AccessMovementWave(waveData.sunRate);
+    //    windGustFrequency = MovementWave.AccessMovementWave(waveData.windRate);
+    //    windSpeed = MovementWave.AccessMovementWave(waveData.windSpeedRate);
+    //    plantDataDisplay.text = plantString + "\n" + offsetString;
+    //    waveDataDisplay.text = "Sun: " + sun + "\nWind Gust Frequency: " + windGustFrequency + "\nWind Speed: " + windSpeed;
+    //}
 }
