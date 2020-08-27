@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Analytics;
+using UnityEngine.Timeline;
 
 [CreateAssetMenu(menuName = "Rules/Grid Actions/MeldBlocks")]
 public class GA_MeldBlocks : GridAction
@@ -116,7 +118,7 @@ public class GA_MeldBlocks : GridAction
         {
             resultLength = addedSlots.Count;
 
-            List<BlockCollection> AllRectangles = CheckForOldCollections(GetRectInArray(grid, LocalCondition), grid);
+            List<BlockCollection> AllRectangles = CheckForOldCollections(GetRectInArray(grid.GridAndBoolToIntArray(LocalCondition)), grid);
             AllRectangles.Sort();
 
             foreach (BlockCollection rect in AllRectangles)
@@ -161,15 +163,50 @@ public class GA_MeldBlocks : GridAction
         return result.ToArray();
     }
 
-    private static List<BlockCollection> GetRectInArray(PlayGrid _grid, System.Func<BlockSlot, bool> condition)
-    {
-        int[][] grid = _grid.GridAndBoolToIntArray(condition);
+    //private static List<BlockCollection> GetRectInArray(int[][] grid)
+    //{
 
+    //    List<BlockCollection> result = new List<BlockCollection>();
+
+    //    for(int x = 0; x < grid.Length; x++)
+    //    {
+    //        for (int y = 0; y < grid[x].Length; y++)
+    //        {
+    //            void RegisterRect()
+    //            {
+    //                if (xSize > 2 && ySize > 2)
+    //                {
+    //                    result.Add(new BlockCollection
+    //                    {
+    //                        TopCoord = y,
+    //                        BottomCoord = y + ySize,
+    //                        LeftCoord = x,
+    //                        RightCoord = x + xSize
+    //                    });
+    //                }
+    //            }
+    //            int xSize = 0;
+    //            int ySize = 0;
+
+    //            while (x + xSize < grid.Length && grid[x + xSize][y] == 1)
+    //            {
+    //                xSize += 1;
+    //                while (y + ySize < grid[x].Length && grid[x + xSize][y + ySize] == 1) { ySize += 1; }
+    //            }
+    //        }
+    //    }
+
+    //    return result;
+    //}
+
+
+    private static List<BlockCollection> GetRectInArray(int[][] grid)
+    {
         List<BlockCollection> rectList = new List<BlockCollection>(GetRectInsideHist(grid[0]));
 
-        for (int x = 1; x < _grid.XSize; x++)
+        for (int x = 1; x < grid.Length; x++)
         {
-            for (int y = 0; y < _grid.YSize; y++)
+            for (int y = 0; y < grid[x].Length; y++)
             {
                 if (grid[x][y] == 1) grid[x][y] += grid[x - 1][y];
             }
@@ -180,23 +217,25 @@ public class GA_MeldBlocks : GridAction
         return rectList;
     }
 
-
-
     private static List<BlockCollection> GetRectInsideHist(int[] column, int xMod = 0)
     {
         List<BlockCollection> result = new List<BlockCollection>();
-        Stack<int> rectangleIndex = new Stack<int>();
+        Stack<int> pStack = new Stack<int>();
+        Stack<int> wStack = new Stack<int>();
 
         int ySize = column.Length;
-        int i = 0;
+        int pos = 0;
+        int tempPos = 0;
 
         void registerRect()
         {
+            tempPos = pStack.Pop();
 
-            int x1 = xMod - (column[rectangleIndex.Peek()] - 1);
+
+            int x1 = xMod - (wStack.Pop() - 1);
             int x2 = xMod;
-            int y1 = i - 1;
-            int y2 = rectangleIndex.Count > 0 ? rectangleIndex.Peek(): 0;
+            int y1 = pos - 1;
+            int y2 = tempPos;
 
             BlockCollection temp = new BlockCollection
             {
@@ -211,26 +250,83 @@ public class GA_MeldBlocks : GridAction
                 result.Add(temp);
 
             }
-            rectangleIndex.Pop();
+
         }
 
-        while (i < ySize)
+        for (int i = 0; i <= ySize; i++)
         {
-            if (rectangleIndex.Count == 0 || column[rectangleIndex.Peek()] <= column[i])
+            pos = i;
+            int width = i < ySize ? column[i] : 0;
+            if (wStack.Count == 0 || width > wStack.Peek())
             {
-                rectangleIndex.Push(i);
-                i++;
+                pStack.Push(i);
+                wStack.Push(width);
             }
-            else
+            else if (width < wStack.Peek())
             {
-                registerRect();
+                while (wStack.Count > 0 && width < wStack.Peek()) { registerRect(); }
+                wStack.Push(width);
+                pStack.Push(tempPos);
             }
         }
 
-        while (rectangleIndex.Count > 0)
-        {
-            registerRect();
-        }
+        while (wStack.Count > 0) { registerRect(); }
+
         return result;
+
     }
+
+
+
+    //private static List<BlockCollection> GetRectInsideHist(int[] column, int xMod = 0)
+    //{
+    //    List<BlockCollection> result = new List<BlockCollection>();
+    //    Stack<int> rectangleIndex = new Stack<int>();
+
+    //    int ySize = column.Length;
+    //    int i = 0;
+
+    //    void registerRect()
+    //    {
+
+    //        int x1 = xMod - (column[rectangleIndex.Peek()] - 1);
+    //        int x2 = xMod;
+    //        int y1 = i - 1;
+    //        int y2 = rectangleIndex.Count > 0 ? rectangleIndex.Peek(): 0;
+
+    //        BlockCollection temp = new BlockCollection
+    //        {
+    //            TopCoord = y1,
+    //            BottomCoord = y2,
+    //            LeftCoord = x1,
+    //            RightCoord = x2
+    //        };
+
+    //        if (temp.XSize() >= 2 && temp.YSize() >= 2)
+    //        {
+    //            result.Add(temp);
+
+    //        }
+    //        rectangleIndex.Pop();
+    //    }
+
+    //    while (i < ySize)
+    //    {
+    //        if (rectangleIndex.Count == 0 || column[rectangleIndex.Peek()] <= column[i])
+    //        {
+    //            rectangleIndex.Push(i);
+    //            i++;
+    //        }
+    //        else
+    //        {
+    //            registerRect();
+    //        }
+    //    }
+
+    //    while (rectangleIndex.Count > 0)
+    //    {
+    //        registerRect();
+    //    }
+    //    return result;
+    //}
 }
