@@ -6,23 +6,18 @@ using UnityEngine;
 public class Plant : MonoBehaviour, IComparable<Plant>
 {
     public IGrowable growable;
+    public IWindReactive windReactive;
+    public ISunReactive sunReactive;
 
-    [HideInInspector]
-    public int xp = 0;
-    public int xpPerGrow = 5;
     private void Awake()
     {
         growable = gameObject.GetComponent<IGrowable>();
+        windReactive = gameObject.GetComponent<IWindReactive>();
+        sunReactive = gameObject.GetComponent<ISunReactive>();
     }
-
-    public bool ShouldGrow()
+    public void AddXP(int xp)
     {
-        return xp >= xpPerGrow;
-    }
-    public void Grow()
-    {
-        xp = 0;
-        growable.Grow();
+        growable.AddXP(xp);
     }
     public int CompareTo(Plant plant)
     {
@@ -36,8 +31,11 @@ public class Plant : MonoBehaviour, IComparable<Plant>
         return 0;
     }
 
-    public void ResetGrowth()
+    public void UpdatePlant()
     {
-        growable.ResetGrowth();
+        if(growable != null) growable.UpdateGrowable();
+        if (windReactive != null) windReactive.UpdateWind();
+        if (sunReactive != null) sunReactive.UpdateSun();
     }
+
 }
