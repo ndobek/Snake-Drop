@@ -26,7 +26,7 @@ public class AnimationGrower : MonoBehaviour, IGrowable
         set
         {
             growthStage = value;
-            animator.SetInteger("Growth State", growthStage);
+            animator.SetInteger("Growth Stage", growthStage);
         }
     }
 

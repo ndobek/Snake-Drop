@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 4654389062393277317}
   - component: {fileID: 1222747213231454093}
   - component: {fileID: 4217413434063157449}
-  - component: {fileID: 7198136767064684176}
+  - component: {fileID: 2415798101465701885}
+  - component: {fileID: 1109144632406522629}
   m_Layer: 0
   m_Name: Plant
   m_TagString: Untagged
@@ -47,8 +48,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8077d02c4df4194ea90b938a6fef9f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xp: 0
-  xpPerGrow: 4
 --- !u!212 &4654389062393277317
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -131,7 +130,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87c066df82314244ab885428bf0fef42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7198136767064684176
+  animator: {fileID: 0}
+  xp: 0
+  xpPerGrow: 5
+--- !u!114 &2415798101465701885
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -140,7 +142,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 4654389062393277305}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65ad884760af8b54299695054b515ea3, type: 3}
+  m_Script: {fileID: 11500000, guid: e14c31afd47e015438219994fdd05755, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveData: {fileID: 11400000, guid: fbaf8a1b7b9df054db5be254166cdfc6, type: 2}
+  Sun: {fileID: 0}
+--- !u!114 &1109144632406522629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4654389062393277305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbb1472e19a503844bde2ab516813e6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -17,7 +17,7 @@ public class Plant : MonoBehaviour, IComparable<Plant>
     }
     public void AddXP(int xp)
     {
-        growable.AddXP(xp);
+        if(growable != null) growable.AddXP(xp);
     }
     public int CompareTo(Plant plant)
     {
