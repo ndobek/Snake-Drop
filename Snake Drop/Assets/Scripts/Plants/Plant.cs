@@ -6,14 +6,14 @@ using UnityEngine;
 public class Plant : MonoBehaviour, IComparable<Plant>
 {
     public IGrowable growable;
-    public IWindReactive windReactive;
-    public ISunReactive sunReactive;
+    public IWindReactor windReactive;
+    public ISunReactor sunReactive;
 
     private void Awake()
     {
         growable = gameObject.GetComponent<IGrowable>();
-        windReactive = gameObject.GetComponent<IWindReactive>();
-        sunReactive = gameObject.GetComponent<ISunReactive>();
+        windReactive = gameObject.GetComponent<IWindReactor>();
+        sunReactive = gameObject.GetComponent<ISunReactor>();
     }
     public void AddXP(int xp)
     {

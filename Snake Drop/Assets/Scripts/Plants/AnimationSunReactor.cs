@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AnimationSunReactor : MonoBehaviour, ISunReactive
+public class AnimationSunReactor : MonoBehaviour, ISunReactor
 {
+    [HideInInspector]
     public GameObject Sun;
 
     public void Awake()
