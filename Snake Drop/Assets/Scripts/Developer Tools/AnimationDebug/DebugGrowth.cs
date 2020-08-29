@@ -15,9 +15,13 @@ public class DebugGrowth : MonoBehaviour //trying to narrow down the weird no pl
     string growthStageStr;
     private void Awake()
     {
-        plants = pm.GetAllPlants();
+        
         display = gameObject.GetComponent<Text>();
         displayContents = new StringBuilder();
+    }
+    void Start()
+    {
+        plants = pm.GetAllPlants();
     }
     public void UpdateGrowth()
     {
@@ -30,17 +34,6 @@ public class DebugGrowth : MonoBehaviour //trying to narrow down the weird no pl
         str = displayContents.ToString();
         display.text = str;
         
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        if (plants == null) Debug.LogError("Plants is null");
-        Debug.Log("Number of plants: " + plants.Count);
-        foreach (Plant p in plants) 
-        {
-            Debug.Log (p.growable.GrowthStage.ToString());
-        }
     }
 
     // Update is called once per frame

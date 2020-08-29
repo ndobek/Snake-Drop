@@ -27,11 +27,9 @@ public class PlantManager : MonoBehaviour
     private void Start()
     {
         allPlants = GetAllPlants().ToArray();
-        foreach (Plant p in allPlants)
-        {
-            p.InitializePlant();
-        }
+
     }
+    
     public PlantSpawner GetRandSpawnerNearTo(Vector3 position)
     {
         List<PlantSpawner> possibleResults = GetAllPossibleSpawnersNearTo(position);
