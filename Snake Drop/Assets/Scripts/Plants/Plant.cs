@@ -3,66 +3,31 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 
-public class Plant : MonoBehaviour, IComparable<Plant>, IGrowable, ILatitudeDependent, IWindReactive, ISunReactive
+public class Plant : MonoBehaviour, IComparable<Plant>
 {
-    Animator anim;
-    public Latitude lat;
-    public Sun sun;
-    public Wind wind;
-
     public IGrowable growable;
+    public ISunReactive sunReactive;
+    public IWindReactive windReactive;
     [HideInInspector]
     public int xp = 0;
     public int xpPerGrow = 5;
 
-    float latitude;
-
-    public void AnimUpdate()
+    public void InitializePlant()
     {
-        Gust();
-        GustStrength();
-        SunZenith();
+        growable = this.gameObject.GetComponent<IGrowable>();
+        sunReactive = this.gameObject.GetComponent<ISunReactive>();
+        windReactive = this.gameObject.GetComponent<IWindReactive>();
     }
-    public void Gust()
+    public void UpdatePlant()
     {
-        anim.SetFloat("Gust", wind.Gust(latitude));
-    }
-
-    public void GustStrength()
-    {
-        anim.SetFloat("Gust Strength", wind.GustStrength(latitude));
-    }
-    public void SunZenith()
-    {
-        anim.SetFloat("Sun Zenith", sun.SunZenith(latitude));
+        if (growable != null) growable.UpdateGrowth();
+        if (sunReactive != null) sunReactive.UpdateSunReaction();
+        if (windReactive != null) windReactive.UpdateWindReaction();
     }
 
-    public float ReturnLatitude()
+    public void AddXP(int xp)
     {
-        float result = lat.GetLatitude(this.gameObject.transform.position);
-        return result;
-    }
-    public bool ShouldGrow()
-    {
-        return xp >= xpPerGrow;
-    }
-    public void ResetGrowth() { GrowthStage = 0; }
-
-
-    private int growthStage;
-    public int GrowthStage
-    {
-        get { return growthStage; }
-        set
-        {
-            growthStage = value;
-            anim.SetInteger("Growth Stage", growthStage);
-        }
-    }
-    public void Grow()
-    {
-        xp = 0;
-        GrowthStage += 1;
+        if (growable != null) growable.AddXP(xp);
     }
     public int CompareTo(Plant plant)
     {
@@ -76,11 +41,4 @@ public class Plant : MonoBehaviour, IComparable<Plant>, IGrowable, ILatitudeDepe
         return 0;
     }
 
-    void Awake()
-    {
-        anim = gameObject.GetComponent<Animator>();
-        growable = gameObject.GetComponent<IGrowable>();
-
-        latitude = ReturnLatitude();
-    }
 }

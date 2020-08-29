@@ -17,11 +17,20 @@ public class PlantManager : MonoBehaviour
 
     public float MaximumDistanceFromPoint;
 
+    public Plant[] allPlants;
 
     private void Awake()
     {
         spawners = GetComponentsInChildren<PlantSpawner>();
-
+        
+    }
+    private void Start()
+    {
+        allPlants = GetAllPlants().ToArray();
+        foreach (Plant p in allPlants)
+        {
+            p.InitializePlant();
+        }
     }
     public PlantSpawner GetRandSpawnerNearTo(Vector3 position)
     {
@@ -48,7 +57,7 @@ public class PlantManager : MonoBehaviour
     {
         foreach(Plant obj in currentlyGrowing)
         {
-            if(obj) obj.xp += amount;
+            if(obj) obj.AddXP(amount);
         }
     }
     private List<Plant> GetAllPossiblePlantsInSpawnerList(List<PlantSpawner> possibleSpawners)
@@ -98,7 +107,7 @@ public class PlantManager : MonoBehaviour
         return GetLeastGrownPlantsInPlantList(GetAllPossiblePlantsNearTo(position), quantity);
     }
 
-    public List<Plant> AllPlants()
+    public List<Plant> GetAllPlants()
     {
         return GetAllPossiblePlantsInSpawnerList(spawners.ToList());
     }
@@ -116,15 +125,11 @@ public class PlantManager : MonoBehaviour
     }
     private void Update()
     {
-        foreach (Plant plant in currentlyGrowing)
+        foreach (Plant plant in allPlants)
         {
-            if (plant.ShouldGrow()) plant.Grow();
+            plant.UpdatePlant();
         }
 
-        //Added this to animate the plants
-        foreach (Plant plant in AllPlants())
-        {
-            plant.AnimUpdate();
-        }
+
     }
 }

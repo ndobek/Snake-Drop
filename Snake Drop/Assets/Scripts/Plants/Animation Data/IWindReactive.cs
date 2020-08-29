@@ -4,9 +4,7 @@ using UnityEngine;
 
 public interface IWindReactive
 {
-    void Gust();
-    void GustStrength();
-   
+    void UpdateWindReaction();  
 
   
 }

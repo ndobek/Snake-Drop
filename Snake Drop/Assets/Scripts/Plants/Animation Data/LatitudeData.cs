@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-[CreateAssetMenu]
-public class Latitude: ScriptableObject
+public class LatitudeData: MonoBehaviour
 {
+    
     public GameObject plantAnimMarker0;
     public GameObject plantAnimMarker1;
     [HideInInspector]
@@ -15,6 +15,7 @@ public class Latitude: ScriptableObject
     {
         Vector2 result;
         result = plantAnimMarker1.transform.position - plantAnimMarker0.transform.position;
+        Debug.Log(result);
         return result;
     }
     //This function is supposed to give you the offset of the plant, starting with 0 in the bottom left 
@@ -31,8 +32,8 @@ public class Latitude: ScriptableObject
         return latitude;
 
     }
-    void Start()
-    {
+    void Awake()
+    {      
         plantAnimMarkersVector = GetPlantAnimMarkersVector();
     }
 

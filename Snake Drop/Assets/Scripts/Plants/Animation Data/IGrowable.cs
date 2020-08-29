@@ -7,4 +7,8 @@ public interface IGrowable
     void Grow();
     int GrowthStage { get; set; }
     void ResetGrowth();
+
+    void UpdateGrowth();
+    bool ShouldGrow();
+    void AddXP(int XP);
 }

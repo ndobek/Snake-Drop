@@ -1,8 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[CreateAssetMenu]
-public class Wind : ScriptableObject
+public class WindData : MonoBehaviour
 {
     public float gustFrequency;
     public float gustStrengthLoopFrequency;
@@ -14,10 +13,10 @@ public class Wind : ScriptableObject
         return result;
     }
 
-    public float GustStrength(float latitude)
+    public float GustStrength()
     {
         float result;
-        result = MovementWave.AccessMovementWave(gustStrengthLoopFrequency, latitude);
+        result = MovementWave.AccessMovementWave(gustStrengthLoopFrequency);
         return result;
     }
 }

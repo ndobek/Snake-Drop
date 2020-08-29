@@ -4,6 +4,6 @@ using UnityEngine;
 
 public interface ISunReactive
 {
-    void SunZenith();
+    void UpdateSunReaction();
 
 }
