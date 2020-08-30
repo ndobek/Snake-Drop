@@ -10,7 +10,6 @@ public class Plant : MonoBehaviour, IComparable<Plant>
     public IWindReactive windReactive;
     [HideInInspector]
     public int xp = 0;
-    public int xpPerGrow = 5;
     
     void Awake()
     {

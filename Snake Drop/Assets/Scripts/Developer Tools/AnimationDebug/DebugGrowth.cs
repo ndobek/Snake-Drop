@@ -21,7 +21,7 @@ public class DebugGrowth : MonoBehaviour //trying to narrow down the weird no pl
     }
     void Start()
     {
-        plants = pm.GetAllPlants();
+        plants = pm.AllPlants();
     }
     public void UpdateGrowth()
     {

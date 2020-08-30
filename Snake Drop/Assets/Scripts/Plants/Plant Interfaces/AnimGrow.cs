@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class AnimGrow : MonoBehaviour, IGrowable
@@ -38,6 +39,8 @@ public class AnimGrow : MonoBehaviour, IGrowable
     public void AddXP(int XP)
     {
         xp += XP;
+        Debug.Log("xp = " + xp);
+
     }
     public void UpdateGrowth()
     {

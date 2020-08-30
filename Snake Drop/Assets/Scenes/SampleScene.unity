@@ -15133,9 +15133,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawners: []
-  DefaultNumberOfPlantsPerSpawn: 1
+  PlantsPerSpawn: 1
   currentlyGrowing: []
-  MaximumDistanceFromPoint: 3
+  MaxDistance: 5
   allPlants: []
 --- !u!1 &1508359104
 GameObject:
@@ -17288,7 +17288,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1759510132}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b3cd9d4f28daf2a47acb540f487d5a20, type: 3}
   m_Name: 

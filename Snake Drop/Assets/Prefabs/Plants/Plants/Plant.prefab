@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1222747213231454093}
   - component: {fileID: -8809825436378806880}
   - component: {fileID: -1787645538526959898}
+  - component: {fileID: 215868288594650462}
   - component: {fileID: 7997589880240888823}
   m_Layer: 0
   m_Name: Plant
@@ -50,6 +51,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xp: 0
   xpPerGrow: 4
+  isGrowing: 0
 --- !u!212 &4654389062393277317
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -150,6 +152,20 @@ MonoBehaviour:
   anim: {fileID: 0}
   wind: {fileID: 0}
   latitude: 0
+--- !u!114 &215868288594650462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4654389062393277305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef8bd7fbcbc6f3046acd27ee3cdf1e51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xp: 0
+  xpPerGrow: 5
 --- !u!114 &7997589880240888823
 MonoBehaviour:
   m_ObjectHideFlags: 0
