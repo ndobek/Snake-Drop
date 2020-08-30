@@ -14,7 +14,7 @@ public class DebugSun : MonoBehaviour, ISunReactive
     }
     public void UpdateSunReaction()
     {
-        display.text = sun.SunZenith(0).ToString();
+        display.text = "Sun: " + sun.SunZenith(0).ToString();
     }
 
 
