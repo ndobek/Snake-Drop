@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Feather Reed Stage 2 Growth Movement
+  m_Name: Pine Growth Stage 2 Neutral
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -22,7 +22,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 3.55
+        value: 1.95
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -41,7 +41,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1.7
+        value: 2.4
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -58,13 +58,7 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 5170756552005731259, guid: 83ded50087e4cba4ab527c449a0de165,
-        type: 3}
-    - time: 0.23333333
-      value: {fileID: 5865425713281656656, guid: 83ded50087e4cba4ab527c449a0de165,
-        type: 3}
-    - time: 0.48333332
-      value: {fileID: 5170756552005731259, guid: 83ded50087e4cba4ab527c449a0de165,
+      value: {fileID: 6416623631815030269, guid: 48d985c0cf2f3d34eb972fb701d32ec3,
         type: 3}
     attribute: m_Sprite
     path: 
@@ -99,15 +93,13 @@ AnimationClip:
       customType: 0
       isPPtrCurve: 0
     pptrCurveMapping:
-    - {fileID: 5170756552005731259, guid: 83ded50087e4cba4ab527c449a0de165, type: 3}
-    - {fileID: 5865425713281656656, guid: 83ded50087e4cba4ab527c449a0de165, type: 3}
-    - {fileID: 5170756552005731259, guid: 83ded50087e4cba4ab527c449a0de165, type: 3}
+    - {fileID: 6416623631815030269, guid: 48d985c0cf2f3d34eb972fb701d32ec3, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.5
+    m_StopTime: 0.016666668
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -128,7 +120,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 3.55
+        value: 1.95
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -147,7 +139,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1.7
+        value: 2.4
         inSlope: 0
         outSlope: 0
         tangentMode: 136

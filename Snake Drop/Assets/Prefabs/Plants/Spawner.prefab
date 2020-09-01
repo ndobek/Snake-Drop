@@ -44,8 +44,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlantPrefabs:
-  - {fileID: 4654389062393277305, guid: 08c3c21140b9eca4c9e12a7e68d99494, type: 3}
   - {fileID: 3247554293500808389, guid: bf273e1c6b3157a47ac19c320185eabd, type: 3}
+  - {fileID: 5526921751661114468, guid: db07d880882536145a2a6161712214ac, type: 3}
   MaxPlants: 1
   Plants: []
   HorizontalVariance: 0.01

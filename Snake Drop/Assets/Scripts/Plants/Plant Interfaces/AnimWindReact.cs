@@ -33,9 +33,14 @@ public class AnimWindReact : MonoBehaviour,  IWindReactive
     {
         if (anim != null) anim.SetFloat("Gust Strength", wind.GustStrength());
     }
+    public void Quiver()
+    {
+        if (anim != null) anim.SetFloat("Quiver", wind.Quiver(latitude));
+    }
     public void UpdateWindReaction()
     {
         Gust();
         GustStrength();
+        Quiver();
     }
 }

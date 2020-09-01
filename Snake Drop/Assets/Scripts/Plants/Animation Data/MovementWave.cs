@@ -12,6 +12,11 @@ public static class MovementWave
         float movementValue = (float)Math.Sin(Time.time * rate + offset);
         return movementValue;
     }
+    public static float AccessComplexMovementWave(float rate1 = 1, float rate2 = 1, float rate3 = 1, float offset = 0)
+    {
+        float movementValue = (float)Math.Sin(rate1 * (float)Math.Sin(rate2 * (float)Math.Sin( rate3 * Time.time + offset)));
+        return movementValue;
+    }
 
 
 

@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Feather Reed Stage 2 Growth Movement
+  m_Name: Pine Stage 1 Wind
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -22,7 +22,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 3.55
+        value: 0.8
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -41,7 +41,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1.7
+        value: 0.8
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -58,13 +58,19 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 5170756552005731259, guid: 83ded50087e4cba4ab527c449a0de165,
+      value: {fileID: -3627045240619415822, guid: 41f3d11e4aa43014f9544d1335bbc1b3,
         type: 3}
     - time: 0.23333333
-      value: {fileID: 5865425713281656656, guid: 83ded50087e4cba4ab527c449a0de165,
+      value: {fileID: -6256062702181899340, guid: 41f3d11e4aa43014f9544d1335bbc1b3,
         type: 3}
     - time: 0.48333332
-      value: {fileID: 5170756552005731259, guid: 83ded50087e4cba4ab527c449a0de165,
+      value: {fileID: -3627045240619415822, guid: 41f3d11e4aa43014f9544d1335bbc1b3,
+        type: 3}
+    - time: 0.73333335
+      value: {fileID: 8101902900694933741, guid: 41f3d11e4aa43014f9544d1335bbc1b3,
+        type: 3}
+    - time: 1
+      value: {fileID: -3627045240619415822, guid: 41f3d11e4aa43014f9544d1335bbc1b3,
         type: 3}
     attribute: m_Sprite
     path: 
@@ -99,15 +105,17 @@ AnimationClip:
       customType: 0
       isPPtrCurve: 0
     pptrCurveMapping:
-    - {fileID: 5170756552005731259, guid: 83ded50087e4cba4ab527c449a0de165, type: 3}
-    - {fileID: 5865425713281656656, guid: 83ded50087e4cba4ab527c449a0de165, type: 3}
-    - {fileID: 5170756552005731259, guid: 83ded50087e4cba4ab527c449a0de165, type: 3}
+    - {fileID: -3627045240619415822, guid: 41f3d11e4aa43014f9544d1335bbc1b3, type: 3}
+    - {fileID: -6256062702181899340, guid: 41f3d11e4aa43014f9544d1335bbc1b3, type: 3}
+    - {fileID: -3627045240619415822, guid: 41f3d11e4aa43014f9544d1335bbc1b3, type: 3}
+    - {fileID: 8101902900694933741, guid: 41f3d11e4aa43014f9544d1335bbc1b3, type: 3}
+    - {fileID: -3627045240619415822, guid: 41f3d11e4aa43014f9544d1335bbc1b3, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.5
+    m_StopTime: 1.0166667
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -128,7 +136,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 3.55
+        value: 0.8
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -147,7 +155,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1.7
+        value: 0.8
         inSlope: 0
         outSlope: 0
         tangentMode: 136
