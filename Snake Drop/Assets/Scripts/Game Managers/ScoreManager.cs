@@ -33,6 +33,16 @@ public class ScoreManager : MonoBehaviour
     [SerializeField]
     private Text MultiplierText;
 
+    private int highScore;
+    public int HighScore
+    {
+        get { return highScore; }
+        set { HighScoreText.text = "High Score: " + value; highScore = value; }
+    }
+    public Text HighScoreText;
+
+
+
     public int numberOfSnakes;
     public int NumberOfSnakes
     {
@@ -47,9 +57,11 @@ public class ScoreManager : MonoBehaviour
 
     public void ResetGame()
     {
+        SaveScore();
         Score = 0;
         NumberOfSnakes = 0;
         ResetMultiplier();
+        UpdateScore();
     }
 
     public void ResetMultiplier()
@@ -62,5 +74,23 @@ public class ScoreManager : MonoBehaviour
         Score = score + (amount * multiplier);
     }
 
+    public void SaveScore()
+    {
+        HighScore = LoadScore();
+        if (score > highScore)
+        {
+            PlayerPrefs.SetInt("High Score", score);
+        }
+        UpdateScore();
+        //PlayerPrefs.SetInt("High Score", 0);
+    }
 
+    private int LoadScore()
+    {
+        return PlayerPrefs.GetInt("High Score");
+    }
+    private void UpdateScore()
+    {
+        HighScore = LoadScore();
+    }
 }
