@@ -77,7 +77,6 @@ public class ScoreManager : MonoBehaviour
     { 
         PlayerPrefs.SetInt("High Score", score);
         SaveManager.Save("High Score", GameManager.instance.plantManager.SavePlanet());
-        //PlayerPrefs.SetInt("High Score", 0);
     }
 
     private int LoadScore()
@@ -91,5 +90,6 @@ public class ScoreManager : MonoBehaviour
         {
             SaveScore();
         }
+        //SaveScore();
     }
 }
