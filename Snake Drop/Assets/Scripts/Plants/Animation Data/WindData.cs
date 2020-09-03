@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public class WindData : MonoBehaviour
+
+[CreateAssetMenu(menuName = "Plant Data/Wind Data")]
+public class WindData : ScriptableObject
 {
     public float gustFrequency;
     public float gustStrengthLoopFrequency;

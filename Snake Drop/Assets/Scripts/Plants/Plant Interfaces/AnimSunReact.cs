@@ -6,7 +6,7 @@ public class AnimSunReact : MonoBehaviour, ISunReactive
 {
     [HideInInspector]
     public Animator anim;
-    [HideInInspector]
+
     public SunData sun;
     public ILatitudeDependent l;
     [HideInInspector]
@@ -14,7 +14,6 @@ public class AnimSunReact : MonoBehaviour, ISunReactive
 
     public void Awake()
     {
-        sun = GameObject.Find("SunData").GetComponent<SunData>();
         anim = gameObject.GetComponent<Animator>();
         l = gameObject.GetComponent<ILatitudeDependent>();
     }

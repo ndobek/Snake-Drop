@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public class SunData : MonoBehaviour
+
+[CreateAssetMenu(menuName = "Plant Data/Sun Data")]
+public class SunData : ScriptableObject
 {
 
     public float sunOrbitalVelocity = 1;

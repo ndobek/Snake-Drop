@@ -6,7 +6,7 @@ public class AnimWindReact : MonoBehaviour,  IWindReactive
 {
     [HideInInspector]
     public Animator anim;
-    [HideInInspector]
+
     public WindData wind;
     public ILatitudeDependent l;
     [HideInInspector]
@@ -15,7 +15,7 @@ public class AnimWindReact : MonoBehaviour,  IWindReactive
 
     public void Awake()
     {
-        wind = GameObject.Find("WindData").GetComponent<WindData>();
+
         anim = this.gameObject.GetComponent<Animator>();
         l = this.gameObject.GetComponent<ILatitudeDependent>();
     }

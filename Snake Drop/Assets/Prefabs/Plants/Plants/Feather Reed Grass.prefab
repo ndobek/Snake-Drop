@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
-  sun: {fileID: 0}
+  sun: {fileID: 11400000, guid: 08e4d14376c59944581398903589c143, type: 2}
   latitude: 0
 --- !u!114 &-6156710244970153848
 MonoBehaviour:
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
-  wind: {fileID: 0}
+  wind: {fileID: 11400000, guid: 6f6995a824b3e1246a601f214928c622, type: 2}
   latitude: 0
 --- !u!95 &6139035584766531580
 Animator:
