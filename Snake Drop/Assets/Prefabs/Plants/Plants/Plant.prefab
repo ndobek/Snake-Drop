@@ -49,9 +49,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8077d02c4df4194ea90b938a6fef9f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  plantName: Dingle Plant
   xp: 0
-  xpPerGrow: 4
-  isGrowing: 0
 --- !u!212 &4654389062393277317
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8077d02c4df4194ea90b938a6fef9f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  plantName: Feather Reed Grass
   xp: 0
 --- !u!114 &-4777394427998619292
 MonoBehaviour:

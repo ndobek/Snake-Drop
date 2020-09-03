@@ -106,6 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8077d02c4df4194ea90b938a6fef9f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  plantName: Pine Tree
   xp: 0
 --- !u!212 &5322462638928519705
 SpriteRenderer:

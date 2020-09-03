@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Plant : MonoBehaviour, IComparable<Plant>
 {
+    public string plantName;
     public IGrowable growable;
     public ISunReactive sunReactive;
     public IWindReactive windReactive;
@@ -43,6 +44,18 @@ public class Plant : MonoBehaviour, IComparable<Plant>
         if (plant1.growable.GrowthStage < plant2.growable.GrowthStage) return -1;
         if (plant1.growable.GrowthStage > plant2.growable.GrowthStage) return 1;
         return 0;
+    }
+
+    public PlantSaveData SavePlant()
+    {
+        PlantSaveData result = new PlantSaveData();
+
+        result.position = gameObject.transform.position;
+        result.rotation = gameObject.transform.rotation;
+
+        result.plantName = plantName;
+
+        return result;
     }
 
 }

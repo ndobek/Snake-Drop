@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 
@@ -44,7 +45,15 @@ public static class SaveManager
 
     public static BinaryFormatter GetBinaryFormatter()
     {
-        return new BinaryFormatter();
+        BinaryFormatter formatter = new BinaryFormatter();
+        SurrogateSelector selector = new SurrogateSelector();
+
+        selector.AddSurrogate(typeof(Vector3), new StreamingContext(StreamingContextStates.All), new Vector3SerializationSurrogate());
+        selector.AddSurrogate(typeof(Quaternion), new StreamingContext(StreamingContextStates.All), new QuaternionSerializationSurrogate());
+
+        formatter.SurrogateSelector = selector;
+
+        return formatter;
     }
 
 }

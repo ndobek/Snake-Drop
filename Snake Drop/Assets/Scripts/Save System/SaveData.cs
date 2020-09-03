@@ -3,7 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class SaveData
+public class PlanetSaveData
 {
+    public List<PlantSaveData> plantData = new List<PlantSaveData>();
+}
 
+[System.Serializable]
+public class PlantSaveData
+{
+    public Vector3 position;
+    public Quaternion rotation;
+
+    public string plantName;
 }

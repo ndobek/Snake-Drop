@@ -179,6 +179,19 @@ public class PlantManager : MonoBehaviour
 
     }
     #endregion
+
+    public PlanetSaveData SavePlanet()
+    {
+        PlanetSaveData result = new PlanetSaveData();
+
+        foreach (Plant plant in allPlants)
+        {
+            result.plantData.Add(plant.SavePlant());
+        }
+
+        return result;
+    }
+
     private void Update()
     {
         foreach (Plant plant in allPlants)
