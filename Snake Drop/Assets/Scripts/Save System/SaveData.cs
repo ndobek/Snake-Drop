@@ -13,6 +13,7 @@ public class PlantSaveData
 {
     public Vector3 position;
     public Quaternion rotation;
+    public int growthStage;
 
     public string plantName;
 }

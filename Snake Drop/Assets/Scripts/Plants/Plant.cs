@@ -53,9 +53,19 @@ public class Plant : MonoBehaviour, IComparable<Plant>
         result.position = gameObject.transform.position;
         result.rotation = gameObject.transform.rotation;
 
+        result.growthStage = growable.GrowthStage;
+
         result.plantName = plantName;
 
         return result;
+    }
+
+    public void LoadPlant(PlantSaveData obj)
+    {
+        gameObject.transform.position = obj.position;
+        gameObject.transform.rotation = obj.rotation;
+
+        growable.GrowthStage = obj.growthStage;
     }
 
 }

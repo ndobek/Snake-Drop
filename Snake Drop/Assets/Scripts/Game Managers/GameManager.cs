@@ -55,6 +55,7 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
+        UpdateScore();
         gameOverScreen.SetActive(false);
         foreach (PlayerManager player in playerManagers)
         {
@@ -89,15 +90,15 @@ public class GameManager : MonoBehaviour
 
     private void EndGame()
     {
-        SaveScore();
+        UpdateScore();
         gameOverScreen.SetActive(true);
     }
 
-    private void SaveScore()
+    private void UpdateScore()
     {
         foreach(PlayerManager player in playerManagers)
         {
-            player.Score.SaveScore();
+            player.Score.UpdateScore();
         }
     }
 }

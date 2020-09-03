@@ -57,11 +57,10 @@ public class ScoreManager : MonoBehaviour
 
     public void ResetGame()
     {
-        SaveScore();
+        UpdateScore();
         Score = 0;
         NumberOfSnakes = 0;
         ResetMultiplier();
-        UpdateScore();
     }
 
     public void ResetMultiplier()
@@ -74,14 +73,10 @@ public class ScoreManager : MonoBehaviour
         Score = score + (amount * multiplier);
     }
 
-    public void SaveScore()
-    {
-        HighScore = LoadScore();
-        if (score > highScore)
-        {
-            PlayerPrefs.SetInt("High Score", score);
-        }
-        UpdateScore();
+    private void SaveScore()
+    { 
+        PlayerPrefs.SetInt("High Score", score);
+        SaveManager.Save("High Score", GameManager.instance.plantManager.SavePlanet());
         //PlayerPrefs.SetInt("High Score", 0);
     }
 
@@ -89,8 +84,12 @@ public class ScoreManager : MonoBehaviour
     {
         return PlayerPrefs.GetInt("High Score");
     }
-    private void UpdateScore()
+    public void UpdateScore()
     {
         HighScore = LoadScore();
+        if (score > HighScore)
+        {
+            SaveScore();
+        }
     }
 }

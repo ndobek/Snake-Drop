@@ -43,6 +43,11 @@ public static class SaveManager
         }
     }
 
+    public static object LoadByName(string name)
+    {
+        return Load(Application.persistentDataPath + "/saves/" + name + ".planet");
+    }
+
     public static BinaryFormatter GetBinaryFormatter()
     {
         BinaryFormatter formatter = new BinaryFormatter();
