@@ -8,21 +8,21 @@ public class AnimWindReact : MonoBehaviour,  IWindReactive
     public Animator anim;
 
     public WindData wind;
-    public ILatitudeDependent l;
+    //public ILatitudeDependent l;
     [HideInInspector]
     public float latitude;
 
 
     public void Awake()
     {
-
+        latitude = gameObject.transform.position.y;
         anim = this.gameObject.GetComponent<Animator>();
-        l = this.gameObject.GetComponent<ILatitudeDependent>();
+        //l = this.gameObject.GetComponent<ILatitudeDependent>();
     }
-    public void Start()
-    {
-        latitude = l.ReturnLatitude();
-    }
+    //public void Start()
+    //{
+    //    latitude = l.ReturnLatitude();
+    //}
 
     public void Gust()
     {
