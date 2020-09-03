@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//public interface ILatitudeDependent 
-//{
-//    float ReturnLatitude();
-//}
+public interface ILatitudeDependent 
+{
+    float ReturnLatitude();
+}

@@ -10,13 +10,13 @@ public class DisplayDebugInfo : MonoBehaviour
     ISunReactive debugSun;
     IWindReactive debugWind;
     DebugGrowth debugGrowth;
-    //DebugLatitude debugLatitude;
+    DebugLatitude debugLatitude;
     void Awake()
     {
         debugSun = GameObject.Find("Sun Display").GetComponent<ISunReactive>();
         debugWind = GameObject.Find("Wind Display").GetComponent<IWindReactive>();
         debugGrowth = GameObject.Find("Growth Display").GetComponent<DebugGrowth>();
-        //debugLatitude = GameObject.Find("Latitude Display").GetComponent<DebugLatitude>();
+        debugLatitude = GameObject.Find("Latitude Display").GetComponent<DebugLatitude>();
     }
     void DebugUpdate()
     {
@@ -27,7 +27,7 @@ public class DisplayDebugInfo : MonoBehaviour
     }
     private void Start()
     {
-        //debugLatitude.UpdateLatitude();
+        debugLatitude.UpdateLatitude();
     }
     private void Update()
     {
