@@ -7,12 +7,19 @@ using UnityEngine;
 
 public static class SaveFormatter
 {
+    public static string defaultPath = Application.persistentDataPath + "/saves/";
+
+
+    public static bool SaveExists(string saveName)
+    {
+        return File.Exists(defaultPath + saveName + ".planet");
+    }
     public static void Save(string saveName, object saveData)
     {
         BinaryFormatter formatter = GetBinaryFormatter();
-        if (!Directory.Exists(Application.persistentDataPath + "/saves")) Directory.CreateDirectory(Application.persistentDataPath + "/saves");
+        if (!Directory.Exists(defaultPath)) Directory.CreateDirectory(defaultPath);
 
-        string path = Application.persistentDataPath + "/saves/" + saveName + ".planet";
+        string path = defaultPath + saveName + ".planet";
 
         FileStream file = File.Create(path);
         formatter.Serialize(file, saveData);
@@ -45,7 +52,7 @@ public static class SaveFormatter
 
     public static object LoadByName(string name)
     {
-        return Load(Application.persistentDataPath + "/saves/" + name + ".planet");
+        return Load(defaultPath + name + ".planet");
     }
 
     public static BinaryFormatter GetBinaryFormatter()

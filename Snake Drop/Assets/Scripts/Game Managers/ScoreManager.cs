@@ -73,26 +73,13 @@ public class ScoreManager : MonoBehaviour
         Score = score + (amount * multiplier);
     }
 
-    private void SaveScore()
-    {
-        //PlayerPrefs.SetInt("High Score", score);
-        SaveFormatter.Save("High Score", GameManager.instance.SaveGame());
-    }
-
-    private int LoadScore()
-    {
-        //return PlayerPrefs.GetInt("High Score");
-        SaveData highScoreSave = SaveFormatter.LoadByName("High Score") as SaveData;
-
-        if (highScoreSave != null) return highScoreSave.score;
-        else return 0;
-    }
     public void UpdateScore()
     {
-        HighScore = LoadScore();
+        SaveData oldScore = SaveManager.LoadHighScore();
+        HighScore = oldScore.score;
         if (score > HighScore)
         {
-            SaveScore();
+            SaveManager.SaveHighScore();
         }
         //SaveScore();
     }
