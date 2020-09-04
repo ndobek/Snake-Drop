@@ -5,7 +5,7 @@ using UnityEngine;
 public class SavedPlanetSpawner : MonoBehaviour
 {
     public GameObject planetViewer;
-
+    public int quantity;
     public float xDistance;
 
     private void Awake()
@@ -15,9 +15,9 @@ public class SavedPlanetSpawner : MonoBehaviour
 
     public void LoadAll()
     {
-        List<SaveData> saves = SaveManager.LoadAll();
-
-        for (int i = 0; i < saves.Count; i++)
+        string[] saves = SaveManager.GetAllSaveNames();
+        quantity = saves.Length;
+        for (int i = 0; i < quantity; i++)
         {
             GameObject spawned = Instantiate(planetViewer, transform);
             spawned.transform.position = new Vector3(xDistance * i, spawned.transform.position.y);

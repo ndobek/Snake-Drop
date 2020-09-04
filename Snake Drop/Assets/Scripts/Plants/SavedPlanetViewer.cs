@@ -5,10 +5,21 @@ using UnityEngine.UI;
 
 public class SavedPlanetViewer : MonoBehaviour
 {
-
+    public string saveName;
     public Text score;
     public SaveablePlantPrefabs prefabs;
     public List<Plant> plants = new List<Plant>();
+
+    public void LoadPlanet(string name)
+    {
+        saveName = name;
+        LoadPlanet(SaveManager.LoadGame(name));
+    }
+    public void DeleteSaveFile()
+    {
+        SaveManager.DeleteSave(saveName);
+        Destroy(this.gameObject);
+    }
     public void LoadPlanet(SaveData saveData)
     {
         DestroyPlants();

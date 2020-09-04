@@ -12,18 +12,18 @@ public static class SaveManager
 
     public static void SaveGame(string name)
     {
-        CheckPathExists();
-        SaveFormatter.Save(defaultPath + name + defaultSuffix, GameManager.instance.GetSaveData());
+        CheckDirExists();
+        SaveFormatter.Save(GetPath(name), GameManager.instance.GetSaveData());
     }
 
-    public static bool SaveExists(string saveName)
+    public static bool SaveExists(string name)
     {
-        return File.Exists(defaultPath + saveName + ".planet");
+        return File.Exists(GetPath(name));
     }
 
-    public static object LoadGame(string name)
+    public static SaveData LoadGame(string name)
     {
-        return SaveFormatter.Load(defaultPath + name + ".planet");
+        return SaveFormatter.Load(GetPath(name)) as SaveData;
     }
 
     public static void SaveHighScore()
@@ -33,7 +33,7 @@ public static class SaveManager
     public static SaveData LoadHighScore()
     {
         if (!SaveExists(HighScoreSaveName)) SaveHighScore();
-        return LoadGame(HighScoreSaveName) as SaveData;
+        return LoadGame(HighScoreSaveName);
     }
 
     public static void SaveGame()
@@ -44,8 +44,18 @@ public static class SaveManager
     }
     public static string[] GetAllSaveDataPaths()
     {
-        CheckPathExists();
+        CheckDirExists();
         return Directory.GetFiles(defaultPath);
+    }
+
+    public static string[] GetAllSaveNames()
+    {
+        string[] result = GetAllSaveDataPaths();
+        for(int i = 0; i < result.Length; i++)
+        {
+            result[i] = GetName(result[i]);
+        }
+        return result;
     }
 
     public static List<SaveData> LoadAll()
@@ -60,9 +70,27 @@ public static class SaveManager
         return result;
     }
 
-    private static void CheckPathExists()
+    public static void DeleteSave(string name)
+    {
+        if (SaveExists(name)) File.Delete(GetPath(name));
+    }
+
+    private static void CheckDirExists()
     {
         if (!Directory.Exists(defaultPath)) Directory.CreateDirectory(defaultPath);
+    }
+
+    public static string GetPath(string name)
+    {
+        return defaultPath + name + defaultSuffix;
+    }
+
+    public static string GetName(string path)
+    {
+        string result = path.Replace(defaultPath, "");
+        result = result.Replace(defaultSuffix, "");
+
+        return result;
     }
 }
 

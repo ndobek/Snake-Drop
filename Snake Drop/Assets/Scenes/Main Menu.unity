@@ -220,6 +220,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planetViewer: {fileID: 2906215053977518406, guid: 9b607089589b9304aab7c21e44e3f2b8,
     type: 3}
+  quantity: 0
   xDistance: 30
 --- !u!4 &1532782109
 Transform:
@@ -325,10 +326,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 330047541, guid: 9b607089589b9304aab7c21e44e3f2b8, type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 1616815819}
     - target: {fileID: 2906215053977518404, guid: 9b607089589b9304aab7c21e44e3f2b8,
         type: 3}
       propertyPath: m_LocalPosition.x
