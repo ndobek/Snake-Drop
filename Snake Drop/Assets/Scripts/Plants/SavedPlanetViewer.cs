@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SavedPlanetSpawner : MonoBehaviour
+public class SavedPlanetViewer : MonoBehaviour
 {
 
     public Text score;
@@ -26,7 +26,7 @@ public class SavedPlanetSpawner : MonoBehaviour
 
     public void LoadHighScore()
     {
-        LoadPlanet(SaveFormatter.LoadByName("High Score") as SaveData);
+        LoadPlanet(SaveManager.LoadHighScore());
     }
 
     public void UpdatePlants()

@@ -102,7 +102,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public SaveData SaveGame()
+    public SaveData GetSaveData()
     {
         SaveData result = new SaveData();
 
@@ -110,5 +110,10 @@ public class GameManager : MonoBehaviour
         result.planetData = plantManager.SavePlanet();
 
         return result;
+    }
+
+    public void SaveGame()
+    {
+        SaveManager.SaveGame();
     }
 }
