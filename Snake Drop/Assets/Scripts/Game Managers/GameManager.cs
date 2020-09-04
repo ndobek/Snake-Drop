@@ -101,4 +101,14 @@ public class GameManager : MonoBehaviour
             player.Score.UpdateScore();
         }
     }
+
+    public SaveData SaveGame()
+    {
+        SaveData result = new SaveData();
+
+        result.score = playerManagers[0].Score.Score;
+        result.planetData = plantManager.SavePlanet();
+
+        return result;
+    }
 }

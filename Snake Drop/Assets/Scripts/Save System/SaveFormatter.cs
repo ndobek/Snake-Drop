@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 
-public static class SaveManager
+public static class SaveFormatter
 {
     public static void Save(string saveName, object saveData)
     {

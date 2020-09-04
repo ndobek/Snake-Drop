@@ -1,14 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SavedPlanetSpawner : MonoBehaviour
 {
+
+    public Text score;
     public SaveablePlantPrefabs prefabs;
     public List<Plant> plants = new List<Plant>();
-    public void LoadPlanet(PlanetSaveData saveData)
+    public void LoadPlanet(SaveData saveData)
     {
-        foreach(PlantSaveData obj in saveData.plantData)
+        DestroyPlants();
+        foreach(PlantSaveData obj in saveData.planetData.plantData)
         {
             GameObject spawnedGameObject = GameObject.Instantiate(prefabs.getPlantObject(obj.plantName), gameObject.transform);
             Plant spawnedPlant = spawnedGameObject.GetComponent<Plant>();
@@ -17,11 +21,12 @@ public class SavedPlanetSpawner : MonoBehaviour
             plants.Add(spawnedPlant);
 
         }
+        score.text = saveData.score.ToString();
     }
 
     public void LoadHighScore()
     {
-        LoadPlanet(SaveManager.LoadByName("High Score") as PlanetSaveData);
+        LoadPlanet(SaveFormatter.LoadByName("High Score") as SaveData);
     }
 
     public void UpdatePlants()
@@ -29,6 +34,14 @@ public class SavedPlanetSpawner : MonoBehaviour
         foreach(Plant obj in plants)
         {
             obj.UpdatePlant();
+        }
+    }
+
+    private void DestroyPlants()
+    {
+        for(int i = 0; i < plants.Count; i++)
+        {
+            if(plants[i] != null) GameObject.Destroy(plants[i].gameObject);
         }
     }
 

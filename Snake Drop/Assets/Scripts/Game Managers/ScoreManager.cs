@@ -74,14 +74,18 @@ public class ScoreManager : MonoBehaviour
     }
 
     private void SaveScore()
-    { 
-        PlayerPrefs.SetInt("High Score", score);
-        SaveManager.Save("High Score", GameManager.instance.plantManager.SavePlanet());
+    {
+        //PlayerPrefs.SetInt("High Score", score);
+        SaveFormatter.Save("High Score", GameManager.instance.SaveGame());
     }
 
     private int LoadScore()
     {
-        return PlayerPrefs.GetInt("High Score");
+        //return PlayerPrefs.GetInt("High Score");
+        SaveData highScoreSave = SaveFormatter.LoadByName("High Score") as SaveData;
+
+        if (highScoreSave != null) return highScoreSave.score;
+        else return 0;
     }
     public void UpdateScore()
     {
