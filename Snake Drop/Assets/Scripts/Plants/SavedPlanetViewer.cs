@@ -10,6 +10,10 @@ public class SavedPlanetViewer : MonoBehaviour
     public SaveablePlantPrefabs prefabs;
     public List<Plant> plants = new List<Plant>();
 
+    public void Awake()
+    {
+        if (saveName != null) LoadPlanet(saveName);
+    }
     public void LoadPlanet(string name)
     {
         saveName = name;
@@ -22,17 +26,20 @@ public class SavedPlanetViewer : MonoBehaviour
     }
     public void LoadPlanet(SaveData saveData)
     {
-        DestroyPlants();
-        foreach(PlantSaveData obj in saveData.planetData.plantData)
+        if (saveData != null)
         {
-            GameObject spawnedGameObject = GameObject.Instantiate(prefabs.getPlantObject(obj.plantName), gameObject.transform);
-            Plant spawnedPlant = spawnedGameObject.GetComponent<Plant>();
+            DestroyPlants();
+            foreach (PlantSaveData obj in saveData.planetData.plantData)
+            {
+                GameObject spawnedGameObject = GameObject.Instantiate(prefabs.getPlantObject(obj.plantName), gameObject.transform);
+                Plant spawnedPlant = spawnedGameObject.GetComponent<Plant>();
 
-            spawnedPlant.LoadPlant(obj);
-            plants.Add(spawnedPlant);
+                spawnedPlant.LoadPlant(obj);
+                plants.Add(spawnedPlant);
 
+            }
+            score.text = saveData.score.ToString();
         }
-        score.text = saveData.score.ToString();
     }
 
     public void LoadHighScore()
