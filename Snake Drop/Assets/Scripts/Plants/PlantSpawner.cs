@@ -16,12 +16,21 @@ public class PlantSpawner : MonoBehaviour
     {
         ResetPlants();
     }
+    #region Methods
+
+    /// <summary>
+    /// Destroys all plants, then spawns new plants.
+    /// </summary>
     public void ResetPlants()
     {
         DestroyPlants();
         CreatePlants();
     }
-
+    
+    
+    /// <summary>
+    /// Destroys all plants.
+    /// </summary>
     private void DestroyPlants()
     {
         foreach(Plant obj in Plants)
@@ -31,6 +40,9 @@ public class PlantSpawner : MonoBehaviour
         Plants = new List<Plant>();
     }
 
+    /// <summary>
+    /// Spawns new plants until the maximum number is reached.
+    /// </summary>
     private void CreatePlants()
     {
         while (Plants.Count < MaxPlants)
@@ -40,6 +52,10 @@ public class PlantSpawner : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Instantiates a plant prefab. Prefab will have a transform within a range defined by HorizontalVariance and VerticalVariance.
+    /// </summary>
+    /// <returns>A new plant prefab.</returns>
     private GameObject Spawn()
     {
         GameObject PlantPrefab = PlantPrefabs[Random.Range(0, PlantPrefabs.Length)];
@@ -48,4 +64,5 @@ public class PlantSpawner : MonoBehaviour
 
         return result;
     }
+    #endregion
 }
