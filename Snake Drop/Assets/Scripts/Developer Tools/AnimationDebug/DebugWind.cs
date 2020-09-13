@@ -14,7 +14,7 @@ public class DebugWind : MonoBehaviour, IWindReactive
     }
     public void UpdateWindReaction()
     {
-        display.text = "Wind: " + wind.Gust(0).ToString() + "\nWind Gust Strength: " + wind.GustStrength().ToString();
+        display.text = "Wind: " + wind.Gust(0).ToString() + "\nWind Gust Strength: " + wind.GustStrength().ToString() + "\nMedium Tree Cycle: " + wind.MediumTreeCycle(wind.GustStrength()).ToString();
     }
 
 
