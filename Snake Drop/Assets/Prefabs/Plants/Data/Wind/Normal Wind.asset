@@ -12,8 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce0cd8db46dca42459b716a3033ff76f, type: 3}
   m_Name: Normal Wind
   m_EditorClassIdentifier: 
-  gustFrequency: 1
-  gustStrengthLoopFrequency: 0.125
+  gustLengthLoopPeriod: 100
+  gustLengthLoopAmplitude: 10
+  gustLengthLoopMin: 20
+  gustStrengthLoopPeriod: 100
+  gustStrengthLoopAmplitude: 3
   quiverFrequency: 2
   quiverFrequencyFrequency: 3
   quiverFrequencyFrequencyFrequency: 0.5
