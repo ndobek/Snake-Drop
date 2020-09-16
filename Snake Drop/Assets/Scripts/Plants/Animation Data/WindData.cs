@@ -13,15 +13,6 @@ public class WindData : ScriptableObject
     public float quiverFrequency;
     public float quiverFrequencyFrequency;
     public float quiverFrequencyFrequencyFrequency;
-    public float mediumTreePeriod;
-    
-
-    public float MediumTreeCycle( float amplitude)
-    {
-        float result;
-        result = MovementWave.AccessTriangleWave(amplitude, mediumTreePeriod);
-        return result;
-    }
 
     public float Gust(float latitude)
     {

@@ -39,15 +39,10 @@ public class AnimWindReact : MonoBehaviour,  IWindReactive
     {
         if (anim != null) anim.SetFloat("Quiver", wind.Quiver(latitude));
     }
-    public void MediumTreeCycle()
-    {
-        if (anim != null) anim.SetFloat("Medium Tree Cycle",  wind.MediumTreeCycle(wind.GustStrength()));
-    }
     public void UpdateWindReaction()
     {
         Gust();
         GustStrength();
         Quiver();
-        MediumTreeCycle();
     }
 }
