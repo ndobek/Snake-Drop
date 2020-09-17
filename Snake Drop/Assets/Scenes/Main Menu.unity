@@ -601,8 +601,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1316143151}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -36.9, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -728,6 +728,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1532782109}
+  - component: {fileID: 1532782110}
   - component: {fileID: 1532782108}
   m_Layer: 0
   m_Name: Planet Spawner
@@ -750,8 +751,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planetViewer: {fileID: 2906215053977518406, guid: 9b607089589b9304aab7c21e44e3f2b8,
     type: 3}
-  quantity: 0
-  xDistance: 30
+  manager: {fileID: 1532782110}
   excludeHighScore: 1
 --- !u!4 &1532782109
 Transform:
@@ -767,6 +767,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1532782110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1532782107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e500eb94684c9b54d8b90944d7b07611, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xDistance: 35
+  LerpSpeed: 0.1
 --- !u!1 &1616815817
 GameObject:
   m_ObjectHideFlags: 0
@@ -844,7 +858,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1616815817}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.64, z: -1}
+  m_LocalPosition: {x: 3.2, y: -3.64, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

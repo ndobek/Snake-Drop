@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class SavedPlanetViewer : MonoBehaviour
 {
+    PlanetManager planetManager;
     public string saveName;
     public Text score;
     public SaveablePlantPrefabs prefabs;
@@ -13,6 +14,16 @@ public class SavedPlanetViewer : MonoBehaviour
     public void Awake()
     {
         if (saveName != null) LoadPlanet(saveName);
+        if (planetManager) SetManager(planetManager);
+    }
+    public void SetManager(PlanetManager manager)
+    {
+        planetManager = manager;
+        if(planetManager) planetManager.Add(this);
+    }
+    public void OnDestroy()
+    {
+        if (planetManager != null) planetManager.Remove(this);
     }
     public void LoadPlanet(string name)
     {
