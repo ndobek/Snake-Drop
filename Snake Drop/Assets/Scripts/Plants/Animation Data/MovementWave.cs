@@ -9,7 +9,7 @@ public static class MovementWave
     //This function gives you the value the animation state will be based on for the plant movement.
     public static float AccessMovementWave(float period = 1, float phaseShift = 0, float amplitude = 1, float verticalShift = 0)
     {
-        float movementValue = amplitude * (float)Math.Sin((1f / period)*((float)Math.PI*2f)*(Time.time + phaseShift)) + verticalShift;
+        float movementValue = amplitude * (float)Math.Sin((((float)Math.PI*2f) / period )* (Time.time + phaseShift)) + verticalShift;
         return movementValue;
     }
 
