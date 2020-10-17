@@ -12,8 +12,10 @@ GameObject:
   - component: {fileID: 4654389062393277306}
   - component: {fileID: 4654389062393277317}
   - component: {fileID: 1222747213231454093}
-  - component: {fileID: 4217413434063157449}
-  - component: {fileID: 7198136767064684176}
+  - component: {fileID: -8809825436378806880}
+  - component: {fileID: -1787645538526959898}
+  - component: {fileID: 215868288594650462}
+  - component: {fileID: 7997589880240888823}
   m_Layer: 0
   m_Name: Plant
   m_TagString: Untagged
@@ -47,8 +49,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8077d02c4df4194ea90b938a6fef9f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  plantName: Dingle Plant
   xp: 0
-  xpPerGrow: 4
 --- !u!212 &4654389062393277317
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -119,7 +121,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &4217413434063157449
+--- !u!114 &-8809825436378806880
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -128,10 +130,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 4654389062393277305}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87c066df82314244ab885428bf0fef42, type: 3}
+  m_Script: {fileID: 11500000, guid: 6ab77dbf32ce9c145af54527bb8035e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7198136767064684176
+  anim: {fileID: 0}
+  sun: {fileID: 11400000, guid: 08e4d14376c59944581398903589c143, type: 2}
+  latitude: 0
+--- !u!114 &-1787645538526959898
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -140,7 +145,36 @@ MonoBehaviour:
   m_GameObject: {fileID: 4654389062393277305}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65ad884760af8b54299695054b515ea3, type: 3}
+  m_Script: {fileID: 11500000, guid: 3419d908426698e468272ce801a4b549, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveData: {fileID: 11400000, guid: fbaf8a1b7b9df054db5be254166cdfc6, type: 2}
+  anim: {fileID: 0}
+  wind: {fileID: 11400000, guid: 6f6995a824b3e1246a601f214928c622, type: 2}
+  latitude: 0
+--- !u!114 &215868288594650462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4654389062393277305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef8bd7fbcbc6f3046acd27ee3cdf1e51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xp: 0
+  xpPerGrow: 5
+--- !u!114 &7997589880240888823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4654389062393277305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60d8b2eb651ec2f46ae11018c1910104, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lat: {fileID: 0}

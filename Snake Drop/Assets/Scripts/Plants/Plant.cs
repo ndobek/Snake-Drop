@@ -5,24 +5,34 @@ using UnityEngine;
 
 public class Plant : MonoBehaviour, IComparable<Plant>
 {
+    public string plantName;
     public IGrowable growable;
-
+    public ISunReactive sunReactive;
+    public IWindReactive windReactive;
     [HideInInspector]
     public int xp = 0;
-    public int xpPerGrow = 5;
-    private void Awake()
+    
+    void Awake()
     {
-        growable = gameObject.GetComponent<IGrowable>();
+        InitializePlant();
     }
 
-    public bool ShouldGrow()
+    public void InitializePlant()
     {
-        return xp >= xpPerGrow;
+        growable = this.gameObject.GetComponent<IGrowable>();
+        sunReactive = this.gameObject.GetComponent<ISunReactive>();
+        windReactive = this.gameObject.GetComponent<IWindReactive>();
     }
-    public void Grow()
+    public void UpdatePlant()
     {
-        xp = 0;
-        growable.Grow();
+        if (growable != null) growable.UpdateGrowth();
+        if (sunReactive != null) sunReactive.UpdateSunReaction();
+        if (windReactive != null) windReactive.UpdateWindReaction();
+    }
+
+    public void AddXP(int xp)
+    {
+        if (growable != null) growable.AddXP(xp);
     }
     public int CompareTo(Plant plant)
     {
@@ -36,8 +46,26 @@ public class Plant : MonoBehaviour, IComparable<Plant>
         return 0;
     }
 
-    public void ResetGrowth()
+    public PlantSaveData SavePlant()
     {
-        growable.ResetGrowth();
+        PlantSaveData result = new PlantSaveData();
+
+        result.position = gameObject.transform.position;
+        result.rotation = gameObject.transform.rotation;
+
+        result.growthStage = growable.GrowthStage;
+
+        result.plantName = plantName;
+
+        return result;
     }
+
+    public void LoadPlant(PlantSaveData obj)
+    {
+        gameObject.transform.localPosition = obj.position;
+        gameObject.transform.localRotation = obj.rotation;
+
+        growable.GrowthStage = obj.growthStage;
+    }
+
 }
