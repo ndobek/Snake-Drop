@@ -6,7 +6,7 @@ using static Directions;
 public class PlayerController : MonoBehaviour
 {
     public PlayerManager player;
-    public CameraController cameraRotator;
+    public BoardRotator cameraRotator;
     [SerializeField]
     private float autoMoveInterval;
     [SerializeField]
@@ -50,8 +50,8 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown("a") || Input.GetKeyDown("left")) { FirstPress(CameraDirectionTranslate(Direction.LEFT)); }
         if (Input.GetKeyDown("d") || Input.GetKeyDown("right")) { FirstPress(CameraDirectionTranslate(Direction.RIGHT)); }
 
-        if (Input.GetKeyDown("e") || Input.GetKeyDown("right ctrl")) { cameraRotator.RotateClockwise(); }
-        if (Input.GetKeyDown("q") || Input.GetKeyDown("[0]")) { cameraRotator.RotateCounterClockwise(); }
+        if (Input.GetKeyDown("e") || Input.GetKeyDown("right ctrl")) { cameraRotator.RotateCounterClockwise(); }
+        if (Input.GetKeyDown("q") || Input.GetKeyDown("[0]")) { cameraRotator.RotateClockwise(); }
 
         if (Input.GetKey("w") || Input.GetKey("up")) { Hold(CameraDirectionTranslate(Direction.UP)); }
         if (Input.GetKey("s") || Input.GetKey("down")) { Hold(CameraDirectionTranslate(Direction.DOWN)); }

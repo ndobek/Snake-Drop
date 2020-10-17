@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraController : MonoBehaviour
+public class BoardRotator : MonoBehaviour
 {
     [SerializeField]
     private float rotationLerpSpeed = 1;
@@ -13,17 +13,17 @@ public class CameraController : MonoBehaviour
 
     public void Update()
     {
-        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0,0,GetRotation()), rotationLerpSpeed);
+        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 0, GetRotation()), rotationLerpSpeed);
     }
 
     public void RotateClockwise()
     {
-        currentDirection = Directions.GetClockwiseNeighborDirection(currentDirection);
+        currentDirection = Directions.GetCounterClockwiseNeighborDirection(currentDirection);
         targetRotation += 90;
     }
     public void RotateCounterClockwise()
     {
-        currentDirection = Directions.GetCounterClockwiseNeighborDirection(currentDirection);
+        currentDirection = Directions.GetClockwiseNeighborDirection(currentDirection);
         targetRotation -= 90;
     }
 
