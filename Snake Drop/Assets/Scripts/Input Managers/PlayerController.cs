@@ -6,6 +6,7 @@ using static Directions;
 public class PlayerController : MonoBehaviour
 {
     public PlayerManager player;
+    public CameraController cameraRotator;
     [SerializeField]
     private float autoMoveInterval;
     [SerializeField]
@@ -31,15 +32,36 @@ public class PlayerController : MonoBehaviour
     //Temp to add keyboard controls
     public void Update()
     {
-        if (Input.GetKeyDown("w") || Input.GetKeyDown("up")) { FirstPress(Direction.UP); }
-        if (Input.GetKeyDown("s") || Input.GetKeyDown("down")) { FirstPress(Direction.DOWN); }
-        if (Input.GetKeyDown("a") || Input.GetKeyDown("left")) { FirstPress(Direction.LEFT); }
-        if (Input.GetKeyDown("d") || Input.GetKeyDown("right")) { FirstPress(Direction.RIGHT); }
+        //if (Input.GetButtonDown("Up")) { FirstPress(CameraDirectionTranslate(Direction.UP)); }
+        //if (Input.GetButtonDown("Down")) { FirstPress(CameraDirectionTranslate(Direction.DOWN)); }
+        //if (Input.GetButtonDown("Left")) { FirstPress(CameraDirectionTranslate(Direction.LEFT)); }
+        //if (Input.GetButtonDown("Right")) { FirstPress(CameraDirectionTranslate(Direction.RIGHT)); }
 
-        if (Input.GetKey("w") || Input.GetKey("up")) { Hold(Direction.UP); }
-        if (Input.GetKey("s") || Input.GetKey("down")) { Hold(Direction.DOWN); }
-        if (Input.GetKey("a") || Input.GetKey("left")) { Hold(Direction.LEFT); }
-        if (Input.GetKey("d") || Input.GetKey("right")) { Hold(Direction.RIGHT); }
+
+
+        //if (Input.GetButton("Up")) { Hold(CameraDirectionTranslate(Direction.UP)); }
+        //if (Input.GetButton("Down")) { Hold(CameraDirectionTranslate(Direction.DOWN)); }
+        //if (Input.GetButton("Left")) { Hold(CameraDirectionTranslate(Direction.LEFT)); }
+        //if (Input.GetButton("Right")) { Hold(CameraDirectionTranslate(Direction.RIGHT)); }
+
+
+        if (Input.GetKeyDown("w") || Input.GetKeyDown("up")) { FirstPress(CameraDirectionTranslate(Direction.UP)); }
+        if (Input.GetKeyDown("s") || Input.GetKeyDown("down")) { FirstPress(CameraDirectionTranslate(Direction.DOWN)); }
+        if (Input.GetKeyDown("a") || Input.GetKeyDown("left")) { FirstPress(CameraDirectionTranslate(Direction.LEFT)); }
+        if (Input.GetKeyDown("d") || Input.GetKeyDown("right")) { FirstPress(CameraDirectionTranslate(Direction.RIGHT)); }
+
+        if (Input.GetKeyDown("e") || Input.GetKeyDown("right ctrl")) { cameraRotator.RotateClockwise(); }
+        if (Input.GetKeyDown("q") || Input.GetKeyDown("[0]")) { cameraRotator.RotateCounterClockwise(); }
+
+        if (Input.GetKey("w") || Input.GetKey("up")) { Hold(CameraDirectionTranslate(Direction.UP)); }
+        if (Input.GetKey("s") || Input.GetKey("down")) { Hold(CameraDirectionTranslate(Direction.DOWN)); }
+        if (Input.GetKey("a") || Input.GetKey("left")) { Hold(CameraDirectionTranslate(Direction.LEFT)); }
+        if (Input.GetKey("d") || Input.GetKey("right")) { Hold(CameraDirectionTranslate(Direction.RIGHT)); }
+    }
+
+    public Direction CameraDirectionTranslate(Direction direction)
+    {
+        return TranslateDirection(direction, cameraRotator.currentDirection);
     }
 
     private void ResetDistanceMovedThisTouch(TouchManager.TouchData unused)

@@ -10,6 +10,18 @@ public static class Directions
         UP, DOWN, LEFT, RIGHT
     }
 
+    public static Direction TranslateDirection(Direction directionToTranslate, Direction newUpDirection)
+    {
+        switch (newUpDirection)
+        {
+            case Direction.UP: return directionToTranslate;
+            case Direction.DOWN: return GetOppositeDirection(directionToTranslate);
+            case Direction.LEFT: return GetClockwiseNeighborDirection(directionToTranslate);
+            case Direction.RIGHT: return GetCounterClockwiseNeighborDirection(directionToTranslate);
+            default: throw new System.Exception("Big OOPsy Doopsy that is not a real direction dumbass");
+        }
+    }
+
     public static Direction GetOppositeDirection(Direction direction)
     {
         switch (direction)
