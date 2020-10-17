@@ -19,57 +19,18 @@ BlendTree:
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: 6092a1ea6a73e2a40b9652d8ee7f3ad9, type: 2}
     m_Threshold: 1
-    m_Position: {x: 0, y: 0}
-    m_TimeScale: 2
+    m_Position: {x: 1, y: 1}
+    m_TimeScale: 1
     m_CycleOffset: 0
     m_DirectBlendParameter: Sun
     m_Mirror: 0
-  m_BlendParameter: Sun Zenith
-  m_BlendParameterY: Gust
+  m_BlendParameter: Sun
+  m_BlendParameterY: Wind
   m_MinThreshold: 0
   m_MaxThreshold: 1
   m_UseAutomaticThresholds: 1
   m_NormalizedBlendValues: 0
   m_BlendType: 3
---- !u!206 &-8807117122720520112
-BlendTree:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: BlendTree
-  m_Childs:
-  - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: f80db40d5aff7ad409fcb8c93d70265b, type: 2}
-    m_Threshold: 0
-    m_Position: {x: 0, y: 0}
-    m_TimeScale: 1
-    m_CycleOffset: 0
-    m_DirectBlendParameter: Sun Zenith
-    m_Mirror: 0
-  - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 6e948a49ed1f300478dd5c0cd3a2f209, type: 2}
-    m_Threshold: 0.5
-    m_Position: {x: 0, y: 0}
-    m_TimeScale: 1
-    m_CycleOffset: 0
-    m_DirectBlendParameter: Sun Zenith
-    m_Mirror: 0
-  - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 6e948a49ed1f300478dd5c0cd3a2f209, type: 2}
-    m_Threshold: 1
-    m_Position: {x: 0, y: 0}
-    m_TimeScale: 5
-    m_CycleOffset: 0
-    m_DirectBlendParameter: Sun Zenith
-    m_Mirror: 0
-  m_BlendParameter: Quiver
-  m_BlendParameterY: Blend
-  m_MinThreshold: 0
-  m_MaxThreshold: 1
-  m_UseAutomaticThresholds: 1
-  m_NormalizedBlendValues: 0
-  m_BlendType: 0
 --- !u!1101 &-7663511919991800138
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -94,7 +55,7 @@ AnimatorStateTransition:
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
-  m_CanTransitionToSelf: 0
+  m_CanTransitionToSelf: 1
 --- !u!1101 &-6637897911185690697
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -119,7 +80,7 @@ AnimatorStateTransition:
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
-  m_CanTransitionToSelf: 0
+  m_CanTransitionToSelf: 1
 --- !u!1101 &-6297800821425705967
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -144,7 +105,7 @@ AnimatorStateTransition:
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
-  m_CanTransitionToSelf: 0
+  m_CanTransitionToSelf: 1
 --- !u!206 &-4146798764073695633
 BlendTree:
   m_ObjectHideFlags: 1
@@ -162,17 +123,17 @@ BlendTree:
     m_DirectBlendParameter: Sun
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 3621007298673220364}
-    m_Threshold: 0
-    m_Position: {x: 0, y: 0}
-    m_TimeScale: 1
+    m_Motion: {fileID: 7400000, guid: 2eacbdb76dd1ed44c9d9c2632895af0f, type: 2}
+    m_Threshold: 1
+    m_Position: {x: 1, y: 1}
+    m_TimeScale: 0.5
     m_CycleOffset: 0
-    m_DirectBlendParameter: Sun Zenith
+    m_DirectBlendParameter: Sun
     m_Mirror: 0
-  m_BlendParameter: Sun Zenith
-  m_BlendParameterY: Gust
+  m_BlendParameter: Sun
+  m_BlendParameterY: Wind
   m_MinThreshold: 0
-  m_MaxThreshold: 0
+  m_MaxThreshold: 1
   m_UseAutomaticThresholds: 1
   m_NormalizedBlendValues: 0
   m_BlendType: 3
@@ -184,7 +145,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Growth 3
-  m_Speed: 0.5
+  m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
   m_StateMachineBehaviours: []
@@ -235,7 +196,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Growth 4
-  m_Speed: 0.5
+  m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
   m_StateMachineBehaviours: []
@@ -265,22 +226,22 @@ BlendTree:
     m_Motion: {fileID: 7400000, guid: 1f7ee0cdb19a58249aaae6aa3d7a7954, type: 2}
     m_Threshold: 0
     m_Position: {x: -1, y: -1}
-    m_TimeScale: 0.1
+    m_TimeScale: 0.01
     m_CycleOffset: 0
     m_DirectBlendParameter: Sun
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: -260001158160085788}
-    m_Threshold: 0
-    m_Position: {x: 0, y: 0}
+    m_Motion: {fileID: 7400000, guid: 20d50242e81c253449101dfb4723d864, type: 2}
+    m_Threshold: 1
+    m_Position: {x: 1, y: 1}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: Sun Zenith
+    m_DirectBlendParameter: Sun
     m_Mirror: 0
-  m_BlendParameter: Sun Zenith
-  m_BlendParameterY: Gust
+  m_BlendParameter: Sun
+  m_BlendParameterY: Wind
   m_MinThreshold: 0
-  m_MaxThreshold: 0
+  m_MaxThreshold: 1
   m_UseAutomaticThresholds: 1
   m_NormalizedBlendValues: 0
   m_BlendType: 3
@@ -308,46 +269,7 @@ AnimatorStateTransition:
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
-  m_CanTransitionToSelf: 0
---- !u!206 &-260001158160085788
-BlendTree:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: BlendTree
-  m_Childs:
-  - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 1f7ee0cdb19a58249aaae6aa3d7a7954, type: 2}
-    m_Threshold: 0
-    m_Position: {x: 0, y: 0}
-    m_TimeScale: 1
-    m_CycleOffset: 0
-    m_DirectBlendParameter: Sun Zenith
-    m_Mirror: 0
-  - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 20d50242e81c253449101dfb4723d864, type: 2}
-    m_Threshold: 0.5
-    m_Position: {x: 0, y: 0}
-    m_TimeScale: 1
-    m_CycleOffset: 0
-    m_DirectBlendParameter: Sun Zenith
-    m_Mirror: 0
-  - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 20d50242e81c253449101dfb4723d864, type: 2}
-    m_Threshold: 1
-    m_Position: {x: 0, y: 0}
-    m_TimeScale: 5
-    m_CycleOffset: 0
-    m_DirectBlendParameter: Sun Zenith
-    m_Mirror: 0
-  m_BlendParameter: Quiver
-  m_BlendParameterY: Blend
-  m_MinThreshold: 0
-  m_MaxThreshold: 1
-  m_UseAutomaticThresholds: 1
-  m_NormalizedBlendValues: 0
-  m_BlendType: 0
+  m_CanTransitionToSelf: 1
 --- !u!91 &9100000
 AnimatorController:
   m_ObjectHideFlags: 0
@@ -357,13 +279,13 @@ AnimatorController:
   m_Name: Feather Reed Animations
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: Sun Zenith
+  - m_Name: Sun
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: Gust
+  - m_Name: Wind
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -375,13 +297,7 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: Gust Strength
-    m_Type: 1
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 0}
-  - m_Name: Quiver
+  - m_Name: Wind Speed
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -409,7 +325,7 @@ BlendTree:
   m_Name: Blend Tree
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 6e948a49ed1f300478dd5c0cd3a2f209, type: 2}
+    m_Motion: {fileID: 7400000, guid: f80db40d5aff7ad409fcb8c93d70265b, type: 2}
     m_Threshold: 0
     m_Position: {x: -1, y: -1}
     m_TimeScale: 0.01
@@ -417,17 +333,17 @@ BlendTree:
     m_DirectBlendParameter: Sun
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: -8807117122720520112}
-    m_Threshold: 0
-    m_Position: {x: 0, y: 0}
-    m_TimeScale: 1
+    m_Motion: {fileID: 7400000, guid: 6e948a49ed1f300478dd5c0cd3a2f209, type: 2}
+    m_Threshold: 1
+    m_Position: {x: 1, y: 1}
+    m_TimeScale: 0.5
     m_CycleOffset: 0
-    m_DirectBlendParameter: Sun Zenith
+    m_DirectBlendParameter: Sun
     m_Mirror: 0
-  m_BlendParameter: Sun Zenith
-  m_BlendParameterY: Gust
+  m_BlendParameter: Sun
+  m_BlendParameterY: Wind
   m_MinThreshold: 0
-  m_MaxThreshold: 0
+  m_MaxThreshold: 1
   m_UseAutomaticThresholds: 1
   m_NormalizedBlendValues: 0
   m_BlendType: 3
@@ -450,13 +366,13 @@ BlendTree:
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: 1a1f85982f8afbb4997fe846f156da3d, type: 2}
     m_Threshold: 1
-    m_Position: {x: 0, y: 0}
-    m_TimeScale: 2
+    m_Position: {x: 1, y: 1}
+    m_TimeScale: 1
     m_CycleOffset: 0
     m_DirectBlendParameter: Sun
     m_Mirror: 0
-  m_BlendParameter: Sun Zenith
-  m_BlendParameterY: Gust
+  m_BlendParameter: Sun
+  m_BlendParameterY: Wind
   m_MinThreshold: 0
   m_MaxThreshold: 1
   m_UseAutomaticThresholds: 1
@@ -470,7 +386,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Growth 2
-  m_Speed: 0.5
+  m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
   m_StateMachineBehaviours: []
@@ -512,7 +428,7 @@ AnimatorStateTransition:
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
-  m_CanTransitionToSelf: 0
+  m_CanTransitionToSelf: 1
 --- !u!206 &3354610363633967043
 BlendTree:
   m_ObjectHideFlags: 1
@@ -525,64 +441,25 @@ BlendTree:
     m_Motion: {fileID: 7400000, guid: 6a4e11eb2c4fcb24db9549053d5f3aa8, type: 2}
     m_Threshold: 0
     m_Position: {x: -1, y: -1}
-    m_TimeScale: 0.1
+    m_TimeScale: 0.01
     m_CycleOffset: 0
     m_DirectBlendParameter: Sun
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: 1d1c79304406da54890af6d0eb1ce502, type: 2}
     m_Threshold: 1
-    m_Position: {x: 0, y: 0}
-    m_TimeScale: 2
+    m_Position: {x: 1, y: 1}
+    m_TimeScale: 1
     m_CycleOffset: 0
     m_DirectBlendParameter: Sun
     m_Mirror: 0
-  m_BlendParameter: Sun Zenith
-  m_BlendParameterY: Gust
+  m_BlendParameter: Sun
+  m_BlendParameterY: Wind
   m_MinThreshold: 0
   m_MaxThreshold: 1
   m_UseAutomaticThresholds: 1
   m_NormalizedBlendValues: 0
   m_BlendType: 3
---- !u!206 &3621007298673220364
-BlendTree:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: BlendTree
-  m_Childs:
-  - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 294611d7e3c55b446879efff221ec85a, type: 2}
-    m_Threshold: 0
-    m_Position: {x: 0, y: 0}
-    m_TimeScale: 1
-    m_CycleOffset: 0
-    m_DirectBlendParameter: Sun Zenith
-    m_Mirror: 0
-  - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 2eacbdb76dd1ed44c9d9c2632895af0f, type: 2}
-    m_Threshold: 0.5
-    m_Position: {x: 0, y: 0}
-    m_TimeScale: 1
-    m_CycleOffset: 0
-    m_DirectBlendParameter: Sun Zenith
-    m_Mirror: 0
-  - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 2eacbdb76dd1ed44c9d9c2632895af0f, type: 2}
-    m_Threshold: 1
-    m_Position: {x: 0, y: 0}
-    m_TimeScale: 5
-    m_CycleOffset: 0
-    m_DirectBlendParameter: Sun Zenith
-    m_Mirror: 0
-  m_BlendParameter: Quiver
-  m_BlendParameterY: Blend
-  m_MinThreshold: 0
-  m_MaxThreshold: 1
-  m_UseAutomaticThresholds: 1
-  m_NormalizedBlendValues: 0
-  m_BlendType: 0
 --- !u!1102 &3715557896382570055
 AnimatorState:
   serializedVersion: 5
@@ -617,7 +494,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Growth 6
-  m_Speed: 0.5
+  m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
   m_StateMachineBehaviours: []
@@ -659,7 +536,7 @@ AnimatorStateTransition:
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
-  m_CanTransitionToSelf: 0
+  m_CanTransitionToSelf: 1
 --- !u!1107 &4576145940914971430
 AnimatorStateMachine:
   serializedVersion: 5
@@ -716,7 +593,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Growth 1
-  m_Speed: 0.5
+  m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
   m_StateMachineBehaviours: []
@@ -733,7 +610,7 @@ AnimatorState:
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
-  m_TimeParameter: Sun Zenith
+  m_TimeParameter: 
 --- !u!1101 &7988719155165818441
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -758,7 +635,7 @@ AnimatorStateTransition:
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
-  m_CanTransitionToSelf: 0
+  m_CanTransitionToSelf: 1
 --- !u!1102 &8298292912270952748
 AnimatorState:
   serializedVersion: 5
@@ -767,7 +644,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Growth 5
-  m_Speed: 0.5
+  m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
   m_StateMachineBehaviours: []
