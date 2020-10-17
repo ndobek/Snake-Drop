@@ -1,5 +1,4 @@
-﻿using JetBrains.Annotations;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.Dynamic;
 using System.Linq;
@@ -10,56 +9,31 @@ public class PlantManager : MonoBehaviour
     [HideInInspector]
     public PlantSpawner[] spawners;
 
-
-    /// <summary>
-    /// Default number of plants per spawn.
-    /// </summary>
-    public int PlantsPerSpawn = 1;
+    public int DefaultNumberOfPlantsPerSpawn = 1;
 
     public Plant[] currentlyGrowing;
 
-    /// <summary>
-    /// Maximum distance from point.
-    /// </summary>
-    public float MaxDistance;
+    public float MaximumDistanceFromPoint;
 
-    public Plant[] allPlants;
 
     private void Awake()
     {
         spawners = GetComponentsInChildren<PlantSpawner>();
-        
     }
-    private void Start()
+    public PlantSpawner GetRandSpawnerNearTo(Vector3 position)
     {
-        allPlants = AllPlants().ToArray();
-
-    }
-    #region Methods
-    /// <summary>
-    /// Returns a random PlantSpawner near to a Vector3 position.
-    /// </summary>
-    /// <param name="position">The Vector3 position to be checked.</param>
-    /// <returns> PlantSpawner </returns>
-    public PlantSpawner RandSpawnerNear(Vector3 position)
-    {
-        List<PlantSpawner> possibleResults = AllSpawnersNear(position);
+        List<PlantSpawner> possibleResults = GetAllPossibleSpawnersNearTo(position);
 
         if (possibleResults.Count > 0) return possibleResults[(int)Random.Range(0, possibleResults.Count)];
         else return null;
     }
-    
-    /// <summary>
-    /// Returns a list of all the possible PlantSpawners near to a Vector3 position.
-    /// </summary>
-    /// <param name="position">The Vector3 position to be checked.</param>
-    /// <returns>List of type PlantSpawners.</returns>
-    public List<PlantSpawner> AllSpawnersNear(Vector3 position)
+
+    public List<PlantSpawner> GetAllPossibleSpawnersNearTo(Vector3 position)
     {
         List<PlantSpawner> results = new List<PlantSpawner>();
         foreach (PlantSpawner obj in spawners)
         {
-            if (MaxDistance == 0 || Vector3.Distance(obj.transform.position, position) < MaxDistance)
+            if (MaximumDistanceFromPoint == 0 || Vector3.Distance(obj.transform.position, position) < MaximumDistanceFromPoint)
             {
                 results.Add(obj);
             }
@@ -71,16 +45,10 @@ public class PlantManager : MonoBehaviour
     {
         foreach(Plant obj in currentlyGrowing)
         {
-            if(obj) obj.AddXP(amount);
+            if(obj) obj.xp += amount;
         }
     }
-
-    /// <summary>
-    /// Returns a list of all the possible Plants in a spawner list.
-    /// </summary>
-    /// <param name="possibleSpawners">List of PlantSpawners to be checked.</param>
-    /// <returns>List of type Plant.</returns>
-    private List<Plant> AllPlantsIn(List<PlantSpawner> possibleSpawners)
+    private List<Plant> GetAllPossiblePlantsInSpawnerList(List<PlantSpawner> possibleSpawners)
     {
         List<Plant> result = new List<Plant>();
         foreach (PlantSpawner spawner in possibleSpawners)
@@ -90,23 +58,12 @@ public class PlantManager : MonoBehaviour
         return result;
     }
 
-    /// <summary>
-    /// Returns list of all possible Plants near to a Vector3 position.
-    /// </summary>
-    /// <param name="position">The Vector3 position to be checked.</param>
-    /// <returns>List of type Plant.</returns>
-    public List<Plant> AllPlantsNear(Vector3 position)
+    public List<Plant> GetAllPossiblePlantsNearTo(Vector3 position)
     {
-        return AllPlantsIn(AllSpawnersNear(position));
+        return GetAllPossiblePlantsInSpawnerList(GetAllPossibleSpawnersNearTo(position));
     }
 
-    /// <summary>
-    /// Returns a list of the n least grown plants in a plant list.
-    /// </summary>
-    /// <param name="plants">The list of plants to be checked.</param>
-    /// <param name="quantity">The integer quantity of plants to be returned. (n)</param>
-    /// <returns>List of type Plant and length n.</returns>
-    public List<Plant> LGPlantsIn(List<Plant> plants, int quantity)
+    public List<Plant> GetLeastGrownPlantsInPlantList(List<Plant> plants, int quantity)
     {
         List<Plant> result = new List<Plant>();
         plants.Sort();
@@ -116,14 +73,7 @@ public class PlantManager : MonoBehaviour
         }
         return result;
     }
-
-    /// <summary>
-    /// Returns a list of n random plants from a plant list.
-    /// </summary>
-    /// <param name="plants">The list of plants to be checked.</param>
-    /// <param name="quantity">The integer quantity of plants to be returned. (n) </param>
-    /// <returns>List of type Plant and length n.</returns>
-    public List<Plant> RandPlantsIn(List<Plant> plants, int quantity)
+    public List<Plant> GetRandPlantsFromList(List<Plant> plants, int quantity)
     {
         List<Plant> result = new List<Plant>();
         while(plants.Count > 0 && result.Count < quantity)
@@ -135,35 +85,19 @@ public class PlantManager : MonoBehaviour
         return result;
     }
 
-    /// <summary>
-    /// Returns a list of n random Plants near to a Vector3 position.
-    /// </summary>
-    /// <param name="position">The Vector3 position to be checked.</param>
-    /// <param name="quantity">The integer quantity of plants to be returned. (n)</param>
-    /// <returns>List of type Plant and length n.</returns>
-    public List<Plant> RandPlantsNear(Vector3 position, int quantity)
+    public List<Plant> GetRandPlantsNearTo(Vector3 position, int quantity)
     {
-        return RandPlantsIn(AllPlantsNear(position), quantity);
+        return GetRandPlantsFromList(GetAllPossiblePlantsNearTo(position), quantity);
     }
 
-    /// <summary>
-    /// Returns a list of the n least grown plants near to a Vector3 position.
-    /// </summary>
-    /// <param name="position">The Vector3 position to be checked.</param>
-    /// <param name="quantity">The integer quantity of plants to be returned. (n)</param>
-    /// <returns>List of type Plant and length n.</returns>
-    public List<Plant> LGPlantsNear(Vector3 position, int quantity)
+    public List<Plant> GetLeastGrownPlantsNearTo(Vector3 position, int quantity)
     {
-        return LGPlantsIn(AllPlantsNear(position), quantity);
+        return GetLeastGrownPlantsInPlantList(GetAllPossiblePlantsNearTo(position), quantity);
     }
 
-    /// <summary>
-    /// Returns a list of all the plants.
-    /// </summary>
-    /// <returns>List of type Plant.</returns>
     public List<Plant> AllPlants()
     {
-        return AllPlantsIn(spawners.ToList());
+        return GetAllPossiblePlantsInSpawnerList(spawners.ToList());
     }
 
     public void ResetGrowth()
@@ -175,30 +109,14 @@ public class PlantManager : MonoBehaviour
     }
     public void PlantNewPlants(Vector3 position)
     {
-        currentlyGrowing = RandPlantsNear(position, PlantsPerSpawn).ToArray();
-
-    }
-    #endregion
-
-    public PlanetSaveData SavePlanet()
-    {
-        PlanetSaveData result = new PlanetSaveData();
-
-        foreach (Plant plant in allPlants)
-        {
-            result.plantData.Add(plant.SavePlant());
-        }
-
-        return result;
+        currentlyGrowing = GetRandPlantsNearTo(position, DefaultNumberOfPlantsPerSpawn).ToArray();
     }
 
     private void Update()
     {
-        foreach (Plant plant in allPlants)
+        foreach (Plant plant in currentlyGrowing)
         {
-            plant.UpdatePlant();
+            if (plant.ShouldGrow()) plant.Grow();
         }
-
-
     }
 }

@@ -11,11 +11,8 @@ GameObject:
   - component: {fileID: 5671817483375771637}
   - component: {fileID: -4160740208620165931}
   - component: {fileID: 3749149093674335167}
-  - component: {fileID: -4777394427998619292}
-  - component: {fileID: 6812774662545991134}
-  - component: {fileID: -6156710244970153848}
+  - component: {fileID: -7579352602753115989}
   - component: {fileID: 6139035584766531580}
-  - component: {fileID: -7789169731458517772}
   m_Layer: 0
   m_Name: Feather Reed Grass
   m_TagString: Untagged
@@ -100,23 +97,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8077d02c4df4194ea90b938a6fef9f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  plantName: Feather Reed Grass
-  xp: 0
---- !u!114 &-4777394427998619292
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3247554293500808389}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef8bd7fbcbc6f3046acd27ee3cdf1e51, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   xp: 0
   xpPerGrow: 4
---- !u!114 &6812774662545991134
+--- !u!114 &-7579352602753115989
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -125,27 +108,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3247554293500808389}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ab77dbf32ce9c145af54527bb8035e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 65ad884760af8b54299695054b515ea3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 0}
-  sun: {fileID: 11400000, guid: 08e4d14376c59944581398903589c143, type: 2}
-  latitude: 0
---- !u!114 &-6156710244970153848
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3247554293500808389}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3419d908426698e468272ce801a4b549, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 0}
-  wind: {fileID: 11400000, guid: 6f6995a824b3e1246a601f214928c622, type: 2}
-  latitude: 0
+  waveData: {fileID: 11400000, guid: fbaf8a1b7b9df054db5be254166cdfc6, type: 2}
 --- !u!95 &6139035584766531580
 Animator:
   serializedVersion: 3
@@ -165,16 +131,3 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &-7789169731458517772
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3247554293500808389}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60d8b2eb651ec2f46ae11018c1910104, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lat: {fileID: 0}

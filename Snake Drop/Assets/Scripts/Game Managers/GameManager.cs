@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -55,7 +54,6 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
-        UpdateScore();
         gameOverScreen.SetActive(false);
         foreach (PlayerManager player in playerManagers)
         {
@@ -90,30 +88,7 @@ public class GameManager : MonoBehaviour
 
     private void EndGame()
     {
-        UpdateScore();
         gameOverScreen.SetActive(true);
     }
 
-    private void UpdateScore()
-    {
-        foreach(PlayerManager player in playerManagers)
-        {
-            player.Score.UpdateScore();
-        }
-    }
-
-    public SaveData GetSaveData()
-    {
-        SaveData result = new SaveData();
-
-        result.score = playerManagers[0].Score.Score;
-        result.planetData = plantManager.SavePlanet();
-
-        return result;
-    }
-
-    public void SaveGame()
-    {
-        SaveManager.SaveGame();
-    }
 }
