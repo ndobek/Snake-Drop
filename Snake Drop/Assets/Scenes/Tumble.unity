@@ -3811,6 +3811,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slotObj: {fileID: 8801716192784943556, guid: 57e0accb7532d95498b10343a4e2fa7e, type: 3}
   gridActions:
+  - {fileID: 11400000, guid: 4bb5f8a94bc973043a60ef672a7bb4e6, type: 2}
   - {fileID: 11400000, guid: 3d350aacdee8ecf468c2272b40740429, type: 2}
   - {fileID: 11400000, guid: 4bb5f8a94bc973043a60ef672a7bb4e6, type: 2}
   xSize: 11
@@ -12408,7 +12409,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0.000061035156, y: 275}
+  m_AnchoredPosition: {x: 0, y: 275}
   m_SizeDelta: {x: 120, y: 50}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &1246753291

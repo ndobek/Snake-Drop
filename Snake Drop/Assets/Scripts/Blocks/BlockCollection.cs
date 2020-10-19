@@ -94,9 +94,12 @@ public class BlockCollection : IComparable
     {
         return (float)FillAmount/(float)Area();
     }
+    private void Rebuild()
+    {
+       if(Blocks[0] != null) Build(Blocks[0].Slot.playGrid, Blocks[0].blockType);
+    }
 
-
-    public void Build(PlayGrid grid)
+    public void Build(PlayGrid grid, BlockType type = null)
     {
         Blocks = new Block[XSize() * YSize()];
         Slots = new BlockSlot[XSize() * YSize()];
@@ -109,6 +112,7 @@ public class BlockCollection : IComparable
             }
         }
         UpdateFillSprites();
+        if (type) SetType(type);
     }
 
     public void UpdateCoords()
@@ -125,6 +129,8 @@ public class BlockCollection : IComparable
             TopCoord = Mathf.Max(block.Y, TopCoord);
             BottomCoord = Mathf.Min(block.Y, BottomCoord);
         }
+
+        Rebuild();
     }
 
 

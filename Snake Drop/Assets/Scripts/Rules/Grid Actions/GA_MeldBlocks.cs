@@ -23,8 +23,7 @@ public class GA_MeldBlocks : GridAction
 
             foreach (BlockCollection obj in Melded)
             {
-                obj.Build(grid);
-                obj.SetType(GameManager.instance.collectionType);
+                obj.Build(grid, GameManager.instance.collectionType);
             }
         }
     }
