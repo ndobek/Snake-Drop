@@ -111,7 +111,7 @@ public class BlockSlot : MonoBehaviour
     {
         BlockSlot destination = this;
         destination = destination.GetNeighbor(Directions.Direction.RIGHT, x);
-        destination = destination.GetNeighbor(Directions.Direction.UP, y);
+        if(destination != null) destination = destination.GetNeighbor(Directions.Direction.UP, y);
         return destination;
     }
     public BlockSlot GetNeighbor(Directions.Direction neighbor, int distance = 1)

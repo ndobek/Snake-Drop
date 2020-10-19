@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey("d") || Input.GetKey("right")) { Hold(CameraDirectionTranslate(Direction.RIGHT)); }
     }
 
-    public Direction CameraDirectionTranslate(Direction direction)
+    private Direction CameraDirectionTranslate(Direction direction)
     {
         return TranslateDirection(direction, cameraRotator.currentDirection);
     }

@@ -20,11 +20,18 @@ public class BoardRotator : MonoBehaviour
     {
         currentDirection = Directions.GetCounterClockwiseNeighborDirection(currentDirection);
         targetRotation += 90;
+        OnRotate();
     }
     public void RotateCounterClockwise()
     {
         currentDirection = Directions.GetClockwiseNeighborDirection(currentDirection);
         targetRotation -= 90;
+        OnRotate();
+    }
+
+    private void OnRotate()
+    {
+        GameManager.instance.playerManagers[0].playGrid.InvokeGridAction();
     }
 
 

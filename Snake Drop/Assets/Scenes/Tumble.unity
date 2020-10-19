@@ -280,11 +280,11 @@ MonoBehaviour:
   BasicMove: {fileID: 11400000, guid: 92ab9aa1ed82ac94fbd2d0b8d9a0dc74, type: 2}
   blockObj: {fileID: 1568087265349854530, guid: 585e486e84721df45ac5626db1e6f54d,
     type: 3}
-  defaultType: {fileID: 11400000, guid: f9f87476a3c72e741b635dd7da5b8050, type: 2}
-  snakeHeadType: {fileID: 11400000, guid: 1bb708f6f67e7844993159c157df7353, type: 2}
-  snakeType: {fileID: 11400000, guid: 7d50d8ff5e938a6439c218aa18290334, type: 2}
-  collectionType: {fileID: 11400000, guid: 5c7e6b4afee2d5e44ac32eecd7a8699e, type: 2}
-  collectionGhostType: {fileID: 11400000, guid: e6b2ec42c7e382244ae39199d03b8ae6,
+  defaultType: {fileID: 11400000, guid: 3f4df5bbee79cf242a4a5fc8d4e61e3a, type: 2}
+  snakeHeadType: {fileID: 11400000, guid: cc74619ca7c94984c917b3df933aaf03, type: 2}
+  snakeType: {fileID: 11400000, guid: e9f5c31751b7b4d4883703c414c61f90, type: 2}
+  collectionType: {fileID: 11400000, guid: 16024ba8efc0c5847a725e9453faf177, type: 2}
+  collectionGhostType: {fileID: 11400000, guid: d90fcc1025da6c64983c1dfcbf46ce6b,
     type: 2}
   gameOverScreen: {fileID: 1438944169}
 --- !u!114 &9304149
@@ -315,7 +315,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HeightLimit: 0
   HeightLimitModifier: 0
-  Difficulty: {fileID: 11400000, guid: 5063c639fcff9264f9b990d1b37a1a9c, type: 2}
+  Difficulty: {fileID: 11400000, guid: 3e517405548e4f746b2d770d62db463f, type: 2}
   PossibleColors: []
   minBaseLength: {fileID: 11400000, guid: 25ef4499148f23345b64c542146e1476, type: 2}
   maxBaseLength: {fileID: 11400000, guid: bcf7fc9d50be8564a911997e01665bee, type: 2}

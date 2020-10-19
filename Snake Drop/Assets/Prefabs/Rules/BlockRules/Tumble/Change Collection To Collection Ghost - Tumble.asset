@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5e90c4c0b4195f41a701df82c65af23, type: 3}
-  m_Name: Change To Collection Chost
+  m_Script: {fileID: 11500000, guid: 1dd9a0fb6dc5a5c47a950802f15e4cc0, type: 3}
+  m_Name: Change Collection To Collection Ghost - Tumble
   m_EditorClassIdentifier: 
-  ChangeTypeTo: {fileID: 11400000, guid: e6b2ec42c7e382244ae39199d03b8ae6, type: 2}
+  Rule: {fileID: 11400000, guid: bd47381fc16193e4ebceeaeb444a6202, type: 2}
