@@ -212,6 +212,11 @@ public class PlayerManager : MonoBehaviour
         PositionWaitSlot(enterSlot.GetNextValidSlot(direction, this));
     }
 
+    public void MoveWaitSlot(bool clockwise)
+    {
+        PositionWaitSlot(enterSlot.GetNextValidSlot(clockwise, this));
+    }
+
     public void MoveSnake(Directions.Direction direction)
     {
 

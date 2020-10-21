@@ -22386,7 +22386,6 @@ MonoBehaviour:
   previewGrid: {fileID: 1218598767}
   HeightLimitIndicator: {fileID: 629374640}
   EntranceIndicator: {fileID: 1218598765}
-  KeepEntranceSlotAtTop: 0
   startSlot: {fileID: 1920598790}
   waitSlot: {fileID: 1055408767}
   enterSlot: {fileID: 0}
@@ -22440,6 +22439,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationLerpSpeed: 0.2
   EnterSlotMoveDistance: 11
+  KeepEntranceSlotAtTop: 1
   currentDirection: 0
 --- !u!1 &2037546159
 GameObject:

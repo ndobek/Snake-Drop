@@ -8,48 +8,73 @@ public class BoardRotator : MonoBehaviour
     private float rotationLerpSpeed = 1;
     private float targetRotation = 0;
     public int EnterSlotMoveDistance = 11;
+    public bool KeepEntranceSlotAtTop;
 
     [HideInInspector]
     public Directions.Direction currentDirection = Directions.Direction.UP;
 
     public void Update()
     {
-        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 0, GetRotation()), rotationLerpSpeed);
+        if (!GameManager.instance.playerManagers[0].RoundInProgress && KeepEntranceSlotAtTop) SetRotation(GameManager.instance.playerManagers[0].enterSlot.GetEdgeInfo().direction());
+        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 0, targetRotation), rotationLerpSpeed);
+    }
+
+    public void SetRotation(Directions.Direction UpDirection)
+    {
+        currentDirection = UpDirection;
+        OnRotate();
     }
 
     public void RotateClockwise()
     {
-        currentDirection = Directions.GetCounterClockwiseNeighborDirection(currentDirection);
-        targetRotation += 90;
-        OnRotate();
+        Rotate(true);
     }
     public void RotateCounterClockwise()
     {
-        currentDirection = Directions.GetClockwiseNeighborDirection(currentDirection);
-        targetRotation -= 90;
-        OnRotate();
+        Rotate(false);
+    }
+
+    public void Rotate(bool clockwise)
+    {
+        bool roundInProgress = GameManager.instance.playerManagers[0].RoundInProgress;
+        Directions.Direction newDirection = clockwise ? Directions.GetClockwiseNeighborDirection(currentDirection) : Directions.GetCounterClockwiseNeighborDirection(currentDirection);
+
+        if (!(KeepEntranceSlotAtTop && !roundInProgress)) SetRotation(newDirection);
+        if (KeepEntranceSlotAtTop && !roundInProgress)
+        {
+            int i = 0;
+            while (i < EnterSlotMoveDistance)
+            {
+                i += 1;
+                GameManager.instance.playerManagers[0].MoveWaitSlot(!clockwise);
+            }
+
+        }
     }
 
     private void OnRotate()
     {
+        UpdateRotation();
         GameManager.instance.playerManagers[0].playGrid.InvokeGridAction();
     }
 
 
-    public float GetRotation()
+    public void UpdateRotation()
     {
-        return targetRotation;
-        //switch (currentDirection)
-        //{
-        //    case Directions.Direction.UP:
-        //        return 0;
-        //    case Directions.Direction.DOWN:
-        //        return 180;
-        //    case Directions.Direction.LEFT:
-        //        return 270;
-        //    case Directions.Direction.RIGHT:
-        //        return 90;
-        //}
-        //return 0;
+        switch (currentDirection)
+        {
+            case Directions.Direction.UP:
+                targetRotation = 0;
+                return;
+            case Directions.Direction.DOWN:
+                targetRotation = 180;
+                return;
+            case Directions.Direction.LEFT:
+                targetRotation = 270;
+                return;
+            case Directions.Direction.RIGHT:
+                targetRotation = 90;
+                return;
+        }
     }
 }

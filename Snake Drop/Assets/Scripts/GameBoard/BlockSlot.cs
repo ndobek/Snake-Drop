@@ -49,36 +49,6 @@ public class BlockSlot : MonoBehaviour
             return result;
         }
 
-        public Directions.Direction ClockwiseNeighborDirection()
-        {
-            Directions.Direction result = Directions.Direction.DOWN;
-            if (Top)
-            {
-                result = Directions.Direction.RIGHT;
-            }
-            if (Right)
-            {
-                result = Directions.Direction.DOWN;
-            }
-            if (Bottom)
-            {
-                result = Directions.Direction.LEFT;
-            }
-            if (Left)
-            {
-                result = Directions.Direction.UP;
-                if (Top)
-                {
-                    result = Directions.Direction.RIGHT;
-                }
-            }
-            return result;
-        }
-        public Directions.Direction CounterClockwiseNeighborDirection()
-        {
-            return Directions.GetClockwiseNeighborDirection(ClockwiseNeighborDirection());
-        }
-
     }
     public EdgeInfo GetEdgeInfo()
     {

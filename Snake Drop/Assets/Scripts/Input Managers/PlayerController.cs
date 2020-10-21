@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown("d") || Input.GetKeyDown("right")) { FirstPress(CameraDirectionTranslate(Direction.RIGHT)); }
 
         if (Input.GetKeyDown("e") || Input.GetKeyDown("right ctrl")) { cameraRotator.RotateCounterClockwise(); }
-        if (Input.GetKeyDown("q") || Input.GetKeyDown("[0]")) { RotateClockwise(); }
+        if (Input.GetKeyDown("q") || Input.GetKeyDown("[0]")) { cameraRotator.RotateClockwise(); }
 
         if (Input.GetKey("w") || Input.GetKey("up")) { Hold(CameraDirectionTranslate(Direction.UP)); }
         if (Input.GetKey("s") || Input.GetKey("down")) { Hold(CameraDirectionTranslate(Direction.DOWN)); }
@@ -69,17 +69,6 @@ public class PlayerController : MonoBehaviour
     {
         DistanceMovedThisTouch = Vector2.zero;
     }
-
-    private void RotateClockwise()
-    {
-        cameraRotator.RotateClockwise();
-        //if(KeepEntranceRelativePositionOnRotate) 
-    }
-    private void RotateCounterClockwise()
-    {
-        cameraRotator.RotateCounterClockwise();
-    }
-
 
     private void MoveSnakeOnDrag(TouchManager.TouchData Drag)
     {
