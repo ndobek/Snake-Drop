@@ -18,6 +18,7 @@ public class BlockSlot : MonoBehaviour
         get { return new Vector2(x, y); }
     }
 
+
     public class EdgeInfo
     {
         public bool Top;
@@ -175,7 +176,7 @@ public class BlockSlot : MonoBehaviour
     }
     public void CreateBlock(BlockColor color, BlockType type)
     {
-        Block newBlock = Instantiate(GameManager.instance.blockObj, playGrid.CoordsPosition(x, y), Quaternion.identity, this.transform);
+        Block newBlock = Instantiate(GameManager.instance.types.blockObj, playGrid.CoordsPosition(x, y), Quaternion.identity, this.transform);
         newBlock.SetBlockType(color, type);
         MoveBlockHere(newBlock);
     }

@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public PlayerManager[] playerManagers;
     public DifficultyManager difficultyManager;
     public PlantManager plantManager;
+    public TypeBank types;
 
     public bool GameInProgress()
     {
@@ -19,16 +20,6 @@ public class GameManager : MonoBehaviour
         }
         return false;
     }
-
-
-    public Rule BasicFall;
-    public MoveRule BasicMove;
-    public Block blockObj;
-    public BlockType defaultType;
-    public BlockType snakeHeadType;
-    public BlockType snakeType;
-    public BlockType collectionType;
-    public BlockType collectionGhostType;
 
     public GameObject gameOverScreen;
 

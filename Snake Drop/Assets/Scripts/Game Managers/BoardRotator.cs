@@ -7,6 +7,7 @@ public class BoardRotator : MonoBehaviour
     [SerializeField]
     private float rotationLerpSpeed = 1;
     private float targetRotation = 0;
+    public int EnterSlotMoveDistance = 11;
 
     [HideInInspector]
     public Directions.Direction currentDirection = Directions.Direction.UP;

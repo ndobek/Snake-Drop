@@ -276,16 +276,7 @@ MonoBehaviour:
   - {fileID: 2036380545}
   difficultyManager: {fileID: 9304150}
   plantManager: {fileID: 1499433460}
-  BasicFall: {fileID: 11400000, guid: 2dbadd6a2f8700844a982e708c69da2d, type: 2}
-  BasicMove: {fileID: 11400000, guid: 92ab9aa1ed82ac94fbd2d0b8d9a0dc74, type: 2}
-  blockObj: {fileID: 1568087265349854530, guid: 585e486e84721df45ac5626db1e6f54d,
-    type: 3}
-  defaultType: {fileID: 11400000, guid: 3f4df5bbee79cf242a4a5fc8d4e61e3a, type: 2}
-  snakeHeadType: {fileID: 11400000, guid: cc74619ca7c94984c917b3df933aaf03, type: 2}
-  snakeType: {fileID: 11400000, guid: e9f5c31751b7b4d4883703c414c61f90, type: 2}
-  collectionType: {fileID: 11400000, guid: 16024ba8efc0c5847a725e9453faf177, type: 2}
-  collectionGhostType: {fileID: 11400000, guid: d90fcc1025da6c64983c1dfcbf46ce6b,
-    type: 2}
+  types: {fileID: 11400000, guid: cce71968a3a680f45ac55e56224bc36a, type: 2}
   gameOverScreen: {fileID: 1438944169}
 --- !u!114 &9304149
 MonoBehaviour:
@@ -22395,6 +22386,7 @@ MonoBehaviour:
   previewGrid: {fileID: 1218598767}
   HeightLimitIndicator: {fileID: 629374640}
   EntranceIndicator: {fileID: 1218598765}
+  KeepEntranceSlotAtTop: 0
   startSlot: {fileID: 1920598790}
   waitSlot: {fileID: 1055408767}
   enterSlot: {fileID: 0}
@@ -22447,6 +22439,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationLerpSpeed: 0.2
+  EnterSlotMoveDistance: 11
   currentDirection: 0
 --- !u!1 &2037546159
 GameObject:
