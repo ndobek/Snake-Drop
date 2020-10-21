@@ -178,7 +178,7 @@ public class PlayerManager : MonoBehaviour
     {
         FillPreviewBar();
         Block result = waitSlot.Block;
-        while((result.Tail != null && result.blockType != GameManager.instance.snakeHeadType))
+        while((result.Tail != null && result.blockType != GameManager.instance.types.snakeHeadType))
         {
 
             result = result.Slot.GetNeighbor(Directions.Direction.UP).Block;
@@ -198,13 +198,23 @@ public class PlayerManager : MonoBehaviour
         if (newSnakeHead)
         {
             snakeHead = newSnakeHead;
-            snakeHead.SetBlockType(snakeHead.blockColor, GameManager.instance.snakeHeadType);
+            snakeHead.SetBlockType(snakeHead.blockColor, GameManager.instance.types.snakeHeadType);
             snakeHead.SetOwner(this);
         }
         else
         {
             snakeHead = null;
         }
+    }
+
+    public void MoveWaitSlot(Directions.Direction direction)
+    {
+        PositionWaitSlot(enterSlot.GetNextValidSlot(direction, this));
+    }
+
+    public void MoveWaitSlot(bool clockwise)
+    {
+        PositionWaitSlot(enterSlot.GetNextValidSlot(clockwise, this));
     }
 
     public void MoveSnake(Directions.Direction direction)
@@ -222,7 +232,7 @@ public class PlayerManager : MonoBehaviour
                 BlockSlot destination = enterSlot.GetNeighbor(direction);
                 if(!destination || destination.playGrid != playGrid)
                 {
-                    PositionWaitSlot(enterSlot.GetNextValidSlot(direction,this));
+                    MoveWaitSlot(direction);
                 }
                 else
                 {

@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultMoveAnimator: {fileID: 11400000, guid: 23332f0fafefb3c419d44f2c79d052d7,
     type: 2}
+  BlockFillAnimator: {fileID: 0}
   EveryFrameAnimations: []
   HighlightTail: 0
   isPartOfSnake: 0

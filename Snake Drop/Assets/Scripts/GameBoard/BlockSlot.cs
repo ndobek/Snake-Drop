@@ -18,6 +18,7 @@ public class BlockSlot : MonoBehaviour
         get { return new Vector2(x, y); }
     }
 
+
     public class EdgeInfo
     {
         public bool Top;
@@ -46,36 +47,6 @@ public class BlockSlot : MonoBehaviour
                 result = Directions.Direction.LEFT;
             }
             return result;
-        }
-
-        public Directions.Direction ClockwiseNeighborDirection()
-        {
-            Directions.Direction result = Directions.Direction.DOWN;
-            if (Top)
-            {
-                result = Directions.Direction.RIGHT;
-            }
-            if (Right)
-            {
-                result = Directions.Direction.DOWN;
-            }
-            if (Bottom)
-            {
-                result = Directions.Direction.LEFT;
-            }
-            if (Left)
-            {
-                result = Directions.Direction.UP;
-                if (Top)
-                {
-                    result = Directions.Direction.RIGHT;
-                }
-            }
-            return result;
-        }
-        public Directions.Direction CounterClockwiseNeighborDirection()
-        {
-            return Directions.GetClockwiseNeighborDirection(ClockwiseNeighborDirection());
         }
 
     }
@@ -111,7 +82,7 @@ public class BlockSlot : MonoBehaviour
     {
         BlockSlot destination = this;
         destination = destination.GetNeighbor(Directions.Direction.RIGHT, x);
-        destination = destination.GetNeighbor(Directions.Direction.UP, y);
+        if(destination != null) destination = destination.GetNeighbor(Directions.Direction.UP, y);
         return destination;
     }
     public BlockSlot GetNeighbor(Directions.Direction neighbor, int distance = 1)
@@ -175,7 +146,7 @@ public class BlockSlot : MonoBehaviour
     }
     public void CreateBlock(BlockColor color, BlockType type)
     {
-        Block newBlock = Instantiate(GameManager.instance.blockObj, playGrid.CoordsPosition(x, y), Quaternion.identity, this.transform);
+        Block newBlock = Instantiate(GameManager.instance.types.blockObj, playGrid.CoordsPosition(x, y), Quaternion.identity, this.transform);
         newBlock.SetBlockType(color, type);
         MoveBlockHere(newBlock);
     }

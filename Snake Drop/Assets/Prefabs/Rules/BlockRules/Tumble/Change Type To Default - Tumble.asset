@@ -9,9 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e28ddb7691094bc45a773e74a85d217b, type: 3}
-  m_Name: Snake Fall
+  m_Script: {fileID: 11500000, guid: e5e90c4c0b4195f41a701df82c65af23, type: 3}
+  m_Name: Change Type To Default - Tumble
   m_EditorClassIdentifier: 
-  moveType: {fileID: 11400000, guid: 92ab9aa1ed82ac94fbd2d0b8d9a0dc74, type: 2}
-  Direction: 1
-  RelativeToCamera: 1
+  ChangeTypeTo: {fileID: 11400000, guid: 3f4df5bbee79cf242a4a5fc8d4e61e3a, type: 2}

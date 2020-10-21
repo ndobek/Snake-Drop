@@ -43,8 +43,37 @@ public class CornerAnimationManager : MonoBehaviour, IEntranceAnimationBehavior
     public void GetNeighbors(EntranceSlot slot)
     {
         BlockSlot.EdgeInfo info = slot.GetEdgeInfo();
-        ClockwiseNeighbor = (EntranceSlot)slot.GetNeighbor(info.ClockwiseNeighborDirection());
-        CounterClockwiseNeighbor = (EntranceSlot)slot.GetNeighbor(info.CounterClockwiseNeighborDirection());
+        Directions.Direction ClockwiseDir = Directions.Direction.DOWN;
+        Directions.Direction CounterClockwiseDir = Directions.Direction.DOWN;
+
+        if (info.Top)
+        {
+            ClockwiseDir = Directions.Direction.RIGHT;
+            CounterClockwiseDir = Directions.Direction.DOWN;
+        }
+        if (info.Right)
+        {
+            ClockwiseDir = Directions.Direction.DOWN;
+            CounterClockwiseDir = Directions.Direction.LEFT;
+        }
+        if (info.Bottom)
+        {
+            ClockwiseDir = Directions.Direction.LEFT;
+            CounterClockwiseDir = Directions.Direction.UP;
+        }
+        if (info.Left)
+        {
+            ClockwiseDir = Directions.Direction.UP;
+            CounterClockwiseDir = Directions.Direction.RIGHT;
+            if (info.Top)
+            {
+                ClockwiseDir = Directions.Direction.RIGHT;
+                CounterClockwiseDir = Directions.Direction.DOWN;
+            }
+        }
+
+        ClockwiseNeighbor = (EntranceSlot)slot.GetNeighbor(ClockwiseDir);
+        CounterClockwiseNeighbor = (EntranceSlot)slot.GetNeighbor(CounterClockwiseDir);
     }
 }
 

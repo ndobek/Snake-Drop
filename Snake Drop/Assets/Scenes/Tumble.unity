@@ -276,7 +276,7 @@ MonoBehaviour:
   - {fileID: 2036380545}
   difficultyManager: {fileID: 9304150}
   plantManager: {fileID: 1499433460}
-  types: {fileID: 11400000, guid: 7ec1805175cff954e9ecd79b0e66eecc, type: 2}
+  types: {fileID: 11400000, guid: cce71968a3a680f45ac55e56224bc36a, type: 2}
   gameOverScreen: {fileID: 1438944169}
 --- !u!114 &9304149
 MonoBehaviour:
@@ -306,7 +306,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HeightLimit: 0
   HeightLimitModifier: 0
-  Difficulty: {fileID: 11400000, guid: c2e656447e47e8e40a4eff65f4f27d8a, type: 2}
+  Difficulty: {fileID: 11400000, guid: 3e517405548e4f746b2d770d62db463f, type: 2}
   PossibleColors: []
   minBaseLength: {fileID: 11400000, guid: 25ef4499148f23345b64c542146e1476, type: 2}
   maxBaseLength: {fileID: 11400000, guid: bcf7fc9d50be8564a911997e01665bee, type: 2}
@@ -1584,8 +1584,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -175.17}
-  m_SizeDelta: {x: 100, y: 52.82785}
+  m_AnchoredPosition: {x: 0, y: -84}
+  m_SizeDelta: {x: 100, y: 144}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &166297738
 MonoBehaviour:
@@ -1620,7 +1620,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: 'Latitudes:'
 --- !u!222 &166297739
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1636,7 +1636,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 166297736}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dd03a985af712544897b87f687fe9bae, type: 3}
   m_Name: 
@@ -3802,6 +3802,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slotObj: {fileID: 8801716192784943556, guid: 57e0accb7532d95498b10343a4e2fa7e, type: 3}
   gridActions:
+  - {fileID: 11400000, guid: 4bb5f8a94bc973043a60ef672a7bb4e6, type: 2}
   - {fileID: 11400000, guid: 3d350aacdee8ecf468c2272b40740429, type: 2}
   - {fileID: 11400000, guid: 4bb5f8a94bc973043a60ef672a7bb4e6, type: 2}
   xSize: 11
@@ -4173,7 +4174,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: -24}
-  m_SizeDelta: {x: 200, y: 151.17052}
+  m_SizeDelta: {x: 200, y: 40}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &370462777
 MonoBehaviour:
@@ -12399,7 +12400,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0.000061035156, y: 275}
+  m_AnchoredPosition: {x: 0, y: 275}
   m_SizeDelta: {x: 120, y: 50}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &1246753291
@@ -17763,7 +17764,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -183.85}
+  m_AnchoredPosition: {x: 0, y: -48}
   m_SizeDelta: {x: 55, y: 60}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1771919120
@@ -22437,6 +22438,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationLerpSpeed: 0.2
+  EnterSlotMoveDistance: 11
+  KeepEntranceSlotAtTop: 1
   currentDirection: 0
 --- !u!1 &2037546159
 GameObject:

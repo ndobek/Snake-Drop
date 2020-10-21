@@ -20,3 +20,9 @@ MonoBehaviour:
     Animator: {fileID: 11400000, guid: 8189ecf4147e5a14eb054977ca5a1c85, type: 2}
   - BlockType: {fileID: 11400000, guid: 1bb708f6f67e7844993159c157df7353, type: 2}
     Animator: {fileID: 11400000, guid: 1840cdbd1adb93544b188fe977f27d66, type: 2}
+  - BlockType: {fileID: 11400000, guid: 16024ba8efc0c5847a725e9453faf177, type: 2}
+    Animator: {fileID: 11400000, guid: 261482d31192d7e4ca78ab4999b66c97, type: 2}
+  - BlockType: {fileID: 11400000, guid: d90fcc1025da6c64983c1dfcbf46ce6b, type: 2}
+    Animator: {fileID: 11400000, guid: 8189ecf4147e5a14eb054977ca5a1c85, type: 2}
+  - BlockType: {fileID: 11400000, guid: cc74619ca7c94984c917b3df933aaf03, type: 2}
+    Animator: {fileID: 11400000, guid: 1840cdbd1adb93544b188fe977f27d66, type: 2}
