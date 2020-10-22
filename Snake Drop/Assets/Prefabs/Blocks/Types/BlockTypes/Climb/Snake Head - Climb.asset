@@ -22,7 +22,7 @@ MonoBehaviour:
   moveRules:
   - {fileID: 11400000, guid: 92ab9aa1ed82ac94fbd2d0b8d9a0dc74, type: 2}
   - {fileID: 11400000, guid: 1656d6f100c381f4ab01b18e07a6b5a3, type: 2}
-  - {fileID: 11400000, guid: 9e55e9c83562a514d8e32d15a967f646, type: 2}
+  - {fileID: 11400000, guid: 9eb4bf8c4631aa74ea8cceabdcbd1a15, type: 2}
   killRules:
   - {fileID: 11400000, guid: e829cc5dea4b8124abbacf6a047b1f22, type: 2}
   - {fileID: 11400000, guid: 79bdd983b114e264187bc93fa88de4a4, type: 2}

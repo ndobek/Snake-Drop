@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 07d51716c8e850d4fa1a360381239ba5, type: 3}
-  m_Name: Normal - Tumble
+  m_Name: Climb - Normal
   m_EditorClassIdentifier: 
+  GameModeTypeBank: {fileID: 11400000, guid: d9e9f9f8a889d024a9223a79b9cb74d8, type: 2}
   Levels:
   - MinScore: 0
     MaxScore: 20
@@ -22,7 +23,7 @@ MonoBehaviour:
     UseMinSnakeNumber: 0
     UseMaxSnakeNumber: 0
     possibleTypes:
-    - value: {fileID: 11400000, guid: e9f5c31751b7b4d4883703c414c61f90, type: 2}
+    - value: {fileID: 11400000, guid: ad43690eabf122f4b8579cddc23f5bef, type: 2}
       probability: 1
       StatType: {fileID: 0}
     possibleColors:
@@ -59,7 +60,7 @@ MonoBehaviour:
     - value: 25
       probability: 1
       StatType: {fileID: 11400000, guid: bcf7fc9d50be8564a911997e01665bee, type: 2}
-    - value: 1
+    - value: 5
       probability: 1
       StatType: {fileID: 11400000, guid: da1fea61c1219ab458d9a73e7ac950f6, type: 2}
     - value: 100
@@ -68,7 +69,7 @@ MonoBehaviour:
     - value: 0.001
       probability: 1
       StatType: {fileID: 11400000, guid: 4f58ca63e41b9474db393f701a582bb3, type: 2}
-    - value: 0.25
+    - value: -0.2
       probability: 1
       StatType: {fileID: 11400000, guid: bab21731275250e469dc795e8abe4f86, type: 2}
   - MinScore: 0
@@ -88,7 +89,7 @@ MonoBehaviour:
     - value: 0.2
       probability: 1
       StatType: {fileID: 11400000, guid: 39645c16b2ef8a742a25b80069dab812, type: 2}
-    - value: 0.1
+    - value: 0.8
       probability: 1
       StatType: {fileID: 11400000, guid: f8b95da70db68684287a503e7cb2fdf9, type: 2}
     - value: 1

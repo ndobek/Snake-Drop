@@ -178,7 +178,7 @@ public class PlayerManager : MonoBehaviour
     {
         FillPreviewBar();
         Block result = waitSlot.Block;
-        while((result.Tail != null && result.blockType != GameManager.instance.types.snakeHeadType))
+        while((result.Tail != null && result.blockType != GameManager.instance.difficultyManager.Difficulty.GameModeTypeBank.snakeHeadType))
         {
 
             result = result.Slot.GetNeighbor(Directions.Direction.UP).Block;
@@ -198,7 +198,7 @@ public class PlayerManager : MonoBehaviour
         if (newSnakeHead)
         {
             snakeHead = newSnakeHead;
-            snakeHead.SetBlockType(snakeHead.blockColor, GameManager.instance.types.snakeHeadType);
+            snakeHead.SetBlockType(snakeHead.blockColor, GameManager.instance.difficultyManager.Difficulty.GameModeTypeBank.snakeHeadType);
             snakeHead.SetOwner(this);
         }
         else

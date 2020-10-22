@@ -8,14 +8,15 @@ public class BoardRotator : MonoBehaviour
     private float rotationLerpSpeed = 1;
     private float targetRotation = 0;
     public int EnterSlotMoveDistance = 11;
-    public bool KeepEntranceSlotAtTop;
+    public bool KeepEntranceSlotOnOneSide;
+    public Directions.Direction EntranceSide;
 
     [HideInInspector]
     public Directions.Direction currentDirection = Directions.Direction.UP;
 
     public void Update()
     {
-        if (!GameManager.instance.playerManagers[0].RoundInProgress && KeepEntranceSlotAtTop) SetRotation(GameManager.instance.playerManagers[0].enterSlot.GetEdgeInfo().direction());
+        if (!GameManager.instance.playerManagers[0].RoundInProgress && KeepEntranceSlotOnOneSide) SetRotation(Directions.TranslateDirection(GameManager.instance.playerManagers[0].enterSlot.GetEdgeInfo().direction(), EntranceSide));
         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 0, targetRotation), rotationLerpSpeed);
     }
 
@@ -27,20 +28,21 @@ public class BoardRotator : MonoBehaviour
 
     public void RotateClockwise()
     {
-        Rotate(true);
+        DoRotation(true);
     }
     public void RotateCounterClockwise()
     {
-        Rotate(false);
+        DoRotation(false);
     }
 
-    public void Rotate(bool clockwise)
+    private void DoRotation(bool clockwise)
     {
+
         bool roundInProgress = GameManager.instance.playerManagers[0].RoundInProgress;
         Directions.Direction newDirection = clockwise ? Directions.GetClockwiseNeighborDirection(currentDirection) : Directions.GetCounterClockwiseNeighborDirection(currentDirection);
 
-        if (!(KeepEntranceSlotAtTop && !roundInProgress)) SetRotation(newDirection);
-        if (KeepEntranceSlotAtTop && !roundInProgress)
+        if (!(KeepEntranceSlotOnOneSide && !roundInProgress)) SetRotation(newDirection);
+        if (KeepEntranceSlotOnOneSide && !roundInProgress)
         {
             int i = 0;
             while (i < EnterSlotMoveDistance)
@@ -50,6 +52,7 @@ public class BoardRotator : MonoBehaviour
             }
 
         }
+
     }
 
     private void OnRotate()

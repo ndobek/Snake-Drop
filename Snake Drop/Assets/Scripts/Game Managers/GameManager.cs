@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public PlayerManager[] playerManagers;
     public DifficultyManager difficultyManager;
     public PlantManager plantManager;
-    public TypeBank types;
+
 
     public bool GameInProgress()
     {

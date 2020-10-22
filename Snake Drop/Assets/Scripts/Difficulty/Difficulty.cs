@@ -5,6 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Difficulty/Difficulties")]
 public class Difficulty : ScriptableObject
 {
+
+    public TypeBank GameModeTypeBank;
     [System.Serializable]
     public class Level
     {

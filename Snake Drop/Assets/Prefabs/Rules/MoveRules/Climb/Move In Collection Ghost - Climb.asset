@@ -9,7 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5e90c4c0b4195f41a701df82c65af23, type: 3}
-  m_Name: Change To Collection Ghost - Climb
+  m_Script: {fileID: 11500000, guid: bcfd2e49aa4f26f4fb0076f7496e2a98, type: 3}
+  m_Name: Move In Collection Ghost - Climb
   m_EditorClassIdentifier: 
-  ChangeTypeTo: {fileID: 11400000, guid: 80ca505de1b3dd84d8dd6c1586a07f69, type: 2}
+  CollectionGhostMemberType: {fileID: 11400000, guid: 80ca505de1b3dd84d8dd6c1586a07f69,
+    type: 2}
+  AbsorbFromTail: 1
+  blockFillAnimationSpeed: 0

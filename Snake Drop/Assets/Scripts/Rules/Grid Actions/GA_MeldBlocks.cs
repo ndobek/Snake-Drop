@@ -23,14 +23,14 @@ public class GA_MeldBlocks : GridAction
 
             foreach (BlockCollection obj in Melded)
             {
-                obj.Build(grid, GameManager.instance.types.collectionType);
+                obj.Build(grid, GameManager.instance.difficultyManager.Difficulty.GameModeTypeBank.collectionType);
             }
         }
     }
 
     private static bool Condition(BlockSlot obj, BlockColor color)
     {
-        return obj && obj.Block && obj.Block.blockColor == color && obj.Block.isPartOfSnake() == false && obj.Block.blockType != GameManager.instance.types.collectionGhostType;
+        return obj && obj.Block && obj.Block.blockColor == color && obj.Block.isPartOfSnake() == false && obj.Block.blockType != GameManager.instance.difficultyManager.Difficulty.GameModeTypeBank.collectionGhostType;
     }
 
     private static BlockCollection MeldCollections(List<BlockCollection> obj)
