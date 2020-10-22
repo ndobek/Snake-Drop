@@ -46,7 +46,7 @@ public class BoardRotator : MonoBehaviour
             while (i < EnterSlotMoveDistance)
             {
                 i += 1;
-                GameManager.instance.playerManagers[0].MoveWaitSlot(!clockwise);
+                GameManager.instance.playerManagers[0].MoveWaitSlot(clockwise);
             }
 
         }

@@ -1,0 +1,97 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &987620008699396769
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 987620008699396768}
+  - component: {fileID: 987620008699396775}
+  - component: {fileID: 987620008699396774}
+  - component: {fileID: 987620008699396773}
+  m_Layer: 0
+  m_Name: Game Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &987620008699396768
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 987620008699396769}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &987620008699396775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 987620008699396769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81ffc1cd49430e64b8a007a5ca518150, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerManagers:
+  - {fileID: 0}
+  difficultyManager: {fileID: 987620008699396773}
+  plantManager: {fileID: 0}
+  types: {fileID: 11400000, guid: 7ec1805175cff954e9ecd79b0e66eecc, type: 2}
+  gameOverScreen: {fileID: 0}
+--- !u!114 &987620008699396774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 987620008699396769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df3f7ea2a5c50bc4884f63dbc93b8073, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minHoldLength: 0.3
+  deadZone: 20
+--- !u!114 &987620008699396773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 987620008699396769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61bf6a15bd2f3af4386cf9e6688e461f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HeightLimit: 0
+  HeightLimitModifier: 0
+  Difficulty: {fileID: 11400000, guid: c2e656447e47e8e40a4eff65f4f27d8a, type: 2}
+  PossibleColors: []
+  minBaseLength: {fileID: 11400000, guid: 25ef4499148f23345b64c542146e1476, type: 2}
+  maxBaseLength: {fileID: 11400000, guid: bcf7fc9d50be8564a911997e01665bee, type: 2}
+  minBaseEntropy: {fileID: 11400000, guid: 47708f29cd0d5c24a8f8445c2f47e8d5, type: 2}
+  maxBaseEntropy: {fileID: 11400000, guid: 39645c16b2ef8a742a25b80069dab812, type: 2}
+  LengthScoreMod: {fileID: 11400000, guid: 4f58ca63e41b9474db393f701a582bb3, type: 2}
+  LengthSnakeNumberMod: {fileID: 11400000, guid: bab21731275250e469dc795e8abe4f86,
+    type: 2}
+  EntropyScoreMod: {fileID: 11400000, guid: 4d5a564ae89279e4a9bdeaf677e5634d, type: 2}
+  EntropySnakeNumberMod: {fileID: 11400000, guid: c11a0ed99d1b9254bb1a834dc1addb5a,
+    type: 2}
+  minTotalLength: {fileID: 11400000, guid: da1fea61c1219ab458d9a73e7ac950f6, type: 2}
+  maxTotalLength: {fileID: 11400000, guid: 180b49891043d474eb2b9435c540d056, type: 2}
+  minTotalEntropy: {fileID: 11400000, guid: f8b95da70db68684287a503e7cb2fdf9, type: 2}
+  maxTotalEntropy: {fileID: 11400000, guid: 962e849cc16b8d84a89901a886af65ba, type: 2}
