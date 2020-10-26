@@ -7,13 +7,17 @@ public class GA_SpawnRandomBlock : GridAction
 {
     public BlockColor color;
     public BlockType type;
-    public bool GameOverIfUnable;
+    //public bool GameOverIfUnable;
 
     protected override void Action(PlayGrid grid)
     {
         List<BlockSlot> emptyBlockSlots = grid.EmptyBlockSlots();
-        BlockSlot randomSlot = emptyBlockSlots[Random.Range(0, emptyBlockSlots.Count)];
-        if (randomSlot) randomSlot.CreateBlock(color, type);
-        else if (GameOverIfUnable) GameManager.instance.playerManagers[0].EndGame();
+
+        if (emptyBlockSlots.Count > 0) 
+        {
+            BlockSlot randomSlot = emptyBlockSlots[Random.Range(0, emptyBlockSlots.Count)];
+            randomSlot.CreateBlock(color, type);
+        }
+        //else if (GameOverIfUnable) GameManager.instance.playerManagers[0].EndGame();
     }
 }

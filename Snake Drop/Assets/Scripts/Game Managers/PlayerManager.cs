@@ -147,6 +147,9 @@ public class PlayerManager : MonoBehaviour
         previewGrid.ClearGrid();
         PositionWaitSlot(entranceManager.StartingSlot);
         GameInProgress = true;
+
+
+        if (GameManager.instance.GameModeManager.GameMode.OnGameStart) GameManager.instance.GameModeManager.GameMode.OnGameStart.Invoke(playGrid);
     }
     public void PrepareNewRound()
     {

@@ -7,6 +7,8 @@ public class GameMode : ScriptableObject
 {
     public EndGameCondition EndGameCondition;
     public TypeBank TypeBank;
+    public GridAction OnGameStart;
+
     [System.Serializable]
     public class Level
     {

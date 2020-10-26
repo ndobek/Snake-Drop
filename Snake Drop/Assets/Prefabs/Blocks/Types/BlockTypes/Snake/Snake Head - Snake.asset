@@ -22,7 +22,6 @@ MonoBehaviour:
   moveRules:
   - {fileID: 11400000, guid: 92ab9aa1ed82ac94fbd2d0b8d9a0dc74, type: 2}
   - {fileID: 11400000, guid: c93f41c2346c68a42bafb53cc9382d9c, type: 2}
-  killRules:
-  - {fileID: 11400000, guid: 5e14f4587b98e1f43b8b4dd46e60c8f0, type: 2}
+  killRules: []
   breakRules: []
   specialActionRules: []
