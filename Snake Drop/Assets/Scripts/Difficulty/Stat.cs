@@ -11,6 +11,7 @@ public class Stat<T>
 
     public static Y GetRandomFromStats<Y>(Stat<Y>[] stats)
     {
+        if (stats == null) return default(Y);
         float total = 0;
         foreach (Stat<Y> stat in stats)
         {

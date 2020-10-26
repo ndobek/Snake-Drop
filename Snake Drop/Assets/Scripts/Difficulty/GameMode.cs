@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "GameModes/GameMode")]
 public class GameMode : ScriptableObject
 {
-
+    public EndGameCondition EndGameCondition;
     public TypeBank TypeBank;
     [System.Serializable]
     public class Level
@@ -87,7 +87,8 @@ public class GameMode : ScriptableObject
         }
         if (results.Count > 0) return results.ToArray();
 
-        throw new System.Exception("No Acceptable Difficulty Settings");
+        return null;
+        //throw new System.Exception("No Acceptable Difficulty Settings");
     }
     public Stat<BlockColor>[] GetColors(int score, int snakeNumber)
     {
@@ -104,7 +105,8 @@ public class GameMode : ScriptableObject
         }
         if (results.Count > 0) return results.ToArray();
 
-        throw new System.Exception("No Acceptable Difficulty Settings");
+        return null;
+        //throw new System.Exception("No Acceptable Difficulty Settings");
     }
 
     public Stat<BlockColor>[] GetAllPossibleColorStats()
@@ -119,7 +121,8 @@ public class GameMode : ScriptableObject
         }
         if (results.Count > 0) return results.ToArray();
 
-        throw new System.Exception("No Acceptable Difficulty Settings");
+        return null;
+        //throw new System.Exception("No Acceptable Difficulty Settings");
     }
     public BlockColor[] GetAllPossibleColors()
     {
@@ -132,8 +135,9 @@ public class GameMode : ScriptableObject
             }
         }
         if (results.Count > 0) return results.ToArray();
-
-        throw new System.Exception("No Acceptable Difficulty Settings");
+        
+        return null;
+        //throw new System.Exception("No Acceptable Difficulty Settings");
     }
 
     //public BlockType[] GetRandomTypes(int score, int snakeNumber)

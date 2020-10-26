@@ -47,9 +47,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerManagers:
   - {fileID: 0}
-  difficultyManager: {fileID: 987620008699396773}
+  GameModeManager: {fileID: 987620008699396773}
   plantManager: {fileID: 0}
-  types: {fileID: 11400000, guid: 7ec1805175cff954e9ecd79b0e66eecc, type: 2}
   gameOverScreen: {fileID: 0}
 --- !u!114 &987620008699396774
 MonoBehaviour:
@@ -79,7 +78,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HeightLimit: 0
   HeightLimitModifier: 0
-  Difficulty: {fileID: 11400000, guid: c2e656447e47e8e40a4eff65f4f27d8a, type: 2}
+  GameMode: {fileID: 11400000, guid: c2e656447e47e8e40a4eff65f4f27d8a, type: 2}
   PossibleColors: []
   minBaseLength: {fileID: 11400000, guid: 25ef4499148f23345b64c542146e1476, type: 2}
   maxBaseLength: {fileID: 11400000, guid: bcf7fc9d50be8564a911997e01665bee, type: 2}

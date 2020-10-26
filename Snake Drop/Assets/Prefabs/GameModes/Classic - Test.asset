@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07d51716c8e850d4fa1a360381239ba5, type: 3}
   m_Name: Classic - Test
   m_EditorClassIdentifier: 
-  GameModeTypeBank: {fileID: 11400000, guid: 7ec1805175cff954e9ecd79b0e66eecc, type: 2}
+  EndGameCondition: {fileID: 11400000, guid: 6920d85594e06554683bdc470d3948f6, type: 2}
+  TypeBank: {fileID: 11400000, guid: 7ec1805175cff954e9ecd79b0e66eecc, type: 2}
   Levels:
   - MinScore: 0
     MaxScore: 0

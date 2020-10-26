@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     public PlayerManager[] playerManagers;
-    public GameModeManager difficultyManager;
+    public GameModeManager GameModeManager;
     public PlantManager plantManager;
 
 

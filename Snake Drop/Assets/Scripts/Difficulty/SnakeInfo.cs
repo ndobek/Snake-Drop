@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public struct SnakeInfo
+public class SnakeInfo
 {
     public int length;
     public float entropy;

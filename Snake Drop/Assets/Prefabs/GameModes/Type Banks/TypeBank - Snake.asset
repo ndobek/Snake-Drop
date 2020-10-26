@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5d9b3a54f594d424c8c5d6445c96838a, type: 3}
-  m_Name: TypeBank - Classic
+  m_Name: TypeBank - Snake
   m_EditorClassIdentifier: 
   blockObj: {fileID: 1568087265349854530, guid: 585e486e84721df45ac5626db1e6f54d,
     type: 3}
-  snakeHeadType: {fileID: 11400000, guid: 1bb708f6f67e7844993159c157df7353, type: 2}
+  snakeHeadType: {fileID: 11400000, guid: 65936e9f00af11c4e86c4c3075e2c78a, type: 2}
   collectionType: {fileID: 11400000, guid: 5c7e6b4afee2d5e44ac32eecd7a8699e, type: 2}
   collectionGhostType: {fileID: 11400000, guid: e6b2ec42c7e382244ae39199d03b8ae6,
     type: 2}
+  specialType: {fileID: 11400000, guid: b46088e707a3108468f6f9c1a5a4cbf8, type: 2}

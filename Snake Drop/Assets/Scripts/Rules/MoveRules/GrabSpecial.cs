@@ -14,7 +14,7 @@ public class GrabSpecial : MoveRule
         if (slot && slot.Block)
         {
             if (slot.Block && !slot.Blocks.TrueForAll(Block.isNotPartOfSnake)) return false;
-            return slot.Block.blockType == GameManager.instance.difficultyManager.Difficulty.TypeBank.specialType;
+            return slot.Block.blockType == GameManager.instance.GameModeManager.GameMode.TypeBank.specialType;
         }
         return false;
     }

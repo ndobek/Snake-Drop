@@ -8,7 +8,7 @@ public class GameModeManager : MonoBehaviour
     public bool HeightLimit;
     public int HeightLimitModifier;
 
-    public GameMode Difficulty;
+    public GameMode GameMode;
     [HideInInspector]
     public BlockColor[] PossibleColors;
 
@@ -27,35 +27,40 @@ public class GameModeManager : MonoBehaviour
 
     private void Awake()
     {
-        PossibleColors = Difficulty.GetAllPossibleColors();
+        PossibleColors = GameMode.GetAllPossibleColors();
     }
 
     public Stat<BlockType>[] GetTypes(int score, int snakeNumber)
     {
-        return Difficulty.GetTypes(score, snakeNumber);
+        return GameMode.GetTypes(score, snakeNumber);
     }
     public Stat<BlockColor>[] GetColors(int score, int snakeNumber)
     {
-        return Difficulty.GetColors(score, snakeNumber);
+        return GameMode.GetColors(score, snakeNumber);
     }
     public int GetRandomLength(int score, int snakeNumber)
     {
-        return (int)Difficulty.GetModifiedStat(minBaseLength, maxBaseLength, LengthScoreMod, LengthSnakeNumberMod, minTotalLength, maxTotalLength, score, snakeNumber);
+        return (int)GameMode.GetModifiedStat(minBaseLength, maxBaseLength, LengthScoreMod, LengthSnakeNumberMod, minTotalLength, maxTotalLength, score, snakeNumber);
     }
     public float GetRandomEntropy(int score, int snakeNumber)
     {
-        return Difficulty.GetModifiedStat(minBaseEntropy, maxBaseEntropy, EntropyScoreMod, EntropySnakeNumberMod, minTotalEntropy, maxTotalEntropy, score, snakeNumber);
+        return GameMode.GetModifiedStat(minBaseEntropy, maxBaseEntropy, EntropyScoreMod, EntropySnakeNumberMod, minTotalEntropy, maxTotalEntropy, score, snakeNumber);
     }
 
     public SnakeInfo GetSnakeInfo(int score, int snakeNumber)
     {
-        return new SnakeInfo()
+        SnakeInfo result = new SnakeInfo()
         {
             possibleTypes = GetTypes(score, snakeNumber),
             possibleColors = GetColors(score, snakeNumber),
             length = GetRandomLength(score, snakeNumber),
             entropy = GetRandomEntropy(score, snakeNumber)
         };
+
+        if (result.possibleColors == null
+            || result.possibleTypes == null) return null;
+
+        return result;
     }
 }
 

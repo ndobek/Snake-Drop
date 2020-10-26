@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6b3e7863c37dd85449bfcedbe1c508a5, type: 3}
-  m_Name: Add Tail
+  m_Name: Grab Special - Snake
   m_EditorClassIdentifier: 
-  DoToGridOnGrab: {fileID: 0}
-  DoToSnakeOnGrab: {fileID: 0}
+  DoToGridOnGrab: {fileID: 11400000, guid: 113c213c36f9f67448c39a53d62f3249, type: 2}
+  DoToSnakeOnGrab: {fileID: 11400000, guid: 84a9916f433fe984b8be387382429bfe, type: 2}

@@ -146,7 +146,7 @@ public class BlockSlot : MonoBehaviour
     }
     public Block CreateBlock(BlockColor color, BlockType type)
     {
-        Block newBlock = Instantiate(GameManager.instance.difficultyManager.Difficulty.TypeBank.blockObj, playGrid.CoordsPosition(x, y), Quaternion.identity, this.transform);
+        Block newBlock = Instantiate(GameManager.instance.GameModeManager.GameMode.TypeBank.blockObj, playGrid.CoordsPosition(x, y), Quaternion.identity, this.transform);
         newBlock.SetBlockType(color, type);
         MoveBlockHere(newBlock);
         return newBlock;

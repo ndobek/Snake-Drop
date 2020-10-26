@@ -8,7 +8,10 @@ public static class SnakeMaker
     {
         BlockType currentType = Stat<BlockType>.GetRandomFromStats(info.possibleTypes);
         BlockColor currentColor = Stat<BlockColor>.GetRandomFromStats(info.possibleColors);
-        slot.CreateBlock(currentColor, GameManager.instance.difficultyManager.Difficulty.TypeBank.snakeHeadType);
+
+        if (currentType == null || currentColor == null) return;
+
+        slot.CreateBlock(currentColor, GameManager.instance.GameModeManager.GameMode.TypeBank.snakeHeadType);
         for (int i = 1; i < info.length; i++)
         {
             if (Random.value < info.entropy) currentColor = Stat<BlockColor>.GetRandomFromStats(info.possibleColors);

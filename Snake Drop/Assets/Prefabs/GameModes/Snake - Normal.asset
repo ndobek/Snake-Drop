@@ -10,97 +10,65 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 07d51716c8e850d4fa1a360381239ba5, type: 3}
-  m_Name: Climb - Normal
+  m_Name: Snake - Normal
   m_EditorClassIdentifier: 
-  GameModeTypeBank: {fileID: 11400000, guid: d9e9f9f8a889d024a9223a79b9cb74d8, type: 2}
+  EndGameCondition: {fileID: 11400000, guid: 622863349914cc146b08950dd07ed384, type: 2}
+  TypeBank: {fileID: 11400000, guid: 508f969c40b2ddd43957e8755da38f95, type: 2}
   Levels:
   - MinScore: 0
-    MaxScore: 20
+    MaxScore: 0
     UseMinScore: 0
     UseMaxScore: 0
     MinSnakeNumber: 0
-    MaxSnakeNumber: 0
+    MaxSnakeNumber: 1
     UseMinSnakeNumber: 0
-    UseMaxSnakeNumber: 0
+    UseMaxSnakeNumber: 1
     possibleTypes:
-    - value: {fileID: 11400000, guid: ad43690eabf122f4b8579cddc23f5bef, type: 2}
+    - value: {fileID: 11400000, guid: e35cddcaeb69048459a3c8994a27dbdf, type: 2}
       probability: 1
       StatType: {fileID: 0}
     possibleColors:
     - value: {fileID: 11400000, guid: 5438ed90547356044a3c13328a354b08, type: 2}
       probability: 1
       StatType: {fileID: 0}
-    - value: {fileID: 11400000, guid: 1f96a88418ae4d64594066b606e5646b, type: 2}
-      probability: 1
-      StatType: {fileID: 0}
-    - value: {fileID: 11400000, guid: 48847a2b7d2594e4a885a17b2eb9b0da, type: 2}
-      probability: 1
-      StatType: {fileID: 0}
-    - value: {fileID: 11400000, guid: 06922463012b1f24fb757d5ffdabbd6b, type: 2}
-      probability: 1
-      StatType: {fileID: 0}
-    - value: {fileID: 11400000, guid: dc0a2986a68ec8447b283e6fc5dbf9cd, type: 2}
-      probability: 1
-      StatType: {fileID: 0}
-    - value: {fileID: 11400000, guid: 3f38e98313a26c941af2c4c7b088e733, type: 2}
-      probability: 1
-      StatType: {fileID: 0}
-    - value: {fileID: 11400000, guid: bfb8631288e84f94b85f487e7187c88c, type: 2}
-      probability: 1
-      StatType: {fileID: 0}
-    - value: {fileID: 11400000, guid: d0ddbef91c972b04dbe8a54f1da41324, type: 2}
-      probability: 1
-      StatType: {fileID: 0}
-    - value: {fileID: 11400000, guid: 0697f5ab3bd4cb94490bd8930be0282a, type: 2}
-      probability: 1
-      StatType: {fileID: 0}
-    - value: {fileID: 11400000, guid: 97095f07216cb734895e21306cd334c0, type: 2}
-      probability: 1
-      StatType: {fileID: 0}
-    - value: {fileID: 11400000, guid: a9df396d84dda3b479030fb99851ff72, type: 2}
-      probability: 1
-      StatType: {fileID: 0}
-    - value: {fileID: 11400000, guid: 4aab396b0786c1142959ee3aba55a703, type: 2}
-      probability: 1
-      StatType: {fileID: 0}
     Stats: []
   - MinScore: 0
-    MaxScore: 100
+    MaxScore: 0
     UseMinScore: 0
     UseMaxScore: 0
     MinSnakeNumber: 0
-    MaxSnakeNumber: 0
+    MaxSnakeNumber: 1
     UseMinSnakeNumber: 0
-    UseMaxSnakeNumber: 0
+    UseMaxSnakeNumber: 1
     possibleTypes: []
     possibleColors: []
     Stats:
-    - value: 5
+    - value: 10
       probability: 1
       StatType: {fileID: 11400000, guid: 25ef4499148f23345b64c542146e1476, type: 2}
-    - value: 7
+    - value: 10
       probability: 1
       StatType: {fileID: 11400000, guid: bcf7fc9d50be8564a911997e01665bee, type: 2}
-    - value: 5
+    - value: 10
       probability: 1
       StatType: {fileID: 11400000, guid: da1fea61c1219ab458d9a73e7ac950f6, type: 2}
-    - value: 100
+    - value: 10
       probability: 1
       StatType: {fileID: 11400000, guid: 180b49891043d474eb2b9435c540d056, type: 2}
     - value: 0
       probability: 1
       StatType: {fileID: 11400000, guid: 4f58ca63e41b9474db393f701a582bb3, type: 2}
-    - value: 0.0002
+    - value: 0
       probability: 1
       StatType: {fileID: 11400000, guid: bab21731275250e469dc795e8abe4f86, type: 2}
   - MinScore: 0
-    MaxScore: 100
+    MaxScore: 0
     UseMinScore: 0
     UseMaxScore: 0
     MinSnakeNumber: 0
-    MaxSnakeNumber: 0
+    MaxSnakeNumber: 1
     UseMinSnakeNumber: 0
-    UseMaxSnakeNumber: 0
+    UseMaxSnakeNumber: 1
     possibleTypes: []
     possibleColors: []
     Stats:
@@ -113,10 +81,10 @@ MonoBehaviour:
     - value: 0
       probability: 1
       StatType: {fileID: 11400000, guid: f8b95da70db68684287a503e7cb2fdf9, type: 2}
-    - value: 0.5
+    - value: 0
       probability: 1
       StatType: {fileID: 11400000, guid: 962e849cc16b8d84a89901a886af65ba, type: 2}
-    - value: 0.0001
+    - value: 0
       probability: 1
       StatType: {fileID: 11400000, guid: 4d5a564ae89279e4a9bdeaf677e5634d, type: 2}
     - value: 0

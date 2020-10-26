@@ -33,6 +33,7 @@ public class PlayerManager : MonoBehaviour
     public bool RoundInProgress;
     [HideInInspector]
     public bool GameInProgress;
+    private bool StopMakingSnakes = false;
 
     public void OnCrash()
     {
@@ -82,8 +83,8 @@ public class PlayerManager : MonoBehaviour
 
     private bool GameIsOver()
     {
-        //return (waitSlot.GetNeighbor(Directions.Direction.DOWN).Block != null);
-        return !entranceManager.CheckForValidEntrancesToGrid(this, playGrid);
+        return GameManager.instance.GameModeManager.GameMode.EndGameCondition.GameIsOver(this);
+
     }
 
     private void ShufflePreviewBar()
@@ -94,7 +95,7 @@ public class PlayerManager : MonoBehaviour
     public void FillPreviewBar()
     {
         ShufflePreviewBar();
-        while (startSlot.Blocks.Count == 0 | waitSlot.Block == null)
+        while ((startSlot.Blocks.Count == 0 | waitSlot.Block == null) && !StopMakingSnakes)
         {
             ShufflePreviewBar();
         }
@@ -105,9 +106,13 @@ public class PlayerManager : MonoBehaviour
         if (startSlot.CheckIsClear())
         {
             Score.NumberOfSnakes += 1;
-            SnakeInfo info = GameManager.instance.difficultyManager.GetSnakeInfo(Score.Score, Score.NumberOfSnakes);
-            Debug.Log("Entropy: " + info.entropy + " Length: " + info.length + " Snake Number: " + Score.NumberOfSnakes + " Score: " + Score.Score);
-            SnakeMaker.MakeSnake(startSlot, info);
+            SnakeInfo info = GameManager.instance.GameModeManager.GetSnakeInfo(Score.Score, Score.NumberOfSnakes);
+            StopMakingSnakes = info == null;
+            if (!StopMakingSnakes)
+            {
+                Debug.Log("Entropy: " + info.entropy + " Length: " + info.length + " Snake Number: " + Score.NumberOfSnakes + " Score: " + Score.Score);
+                SnakeMaker.MakeSnake(startSlot, info);
+            }
         }
     }
 
@@ -178,7 +183,7 @@ public class PlayerManager : MonoBehaviour
     {
         FillPreviewBar();
         Block result = waitSlot.Block;
-        while((result.Tail != null && result.blockType != GameManager.instance.difficultyManager.Difficulty.TypeBank.snakeHeadType))
+        while((result.Tail != null && result.blockType != GameManager.instance.GameModeManager.GameMode.TypeBank.snakeHeadType))
         {
 
             result = result.Slot.GetNeighbor(Directions.Direction.UP).Block;
@@ -198,7 +203,7 @@ public class PlayerManager : MonoBehaviour
         if (newSnakeHead)
         {
             snakeHead = newSnakeHead;
-            snakeHead.SetBlockType(snakeHead.blockColor, GameManager.instance.difficultyManager.Difficulty.TypeBank.snakeHeadType);
+            snakeHead.SetBlockType(snakeHead.blockColor, GameManager.instance.GameModeManager.GameMode.TypeBank.snakeHeadType);
             snakeHead.SetOwner(this);
         }
         else

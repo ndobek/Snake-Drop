@@ -9,7 +9,7 @@ public class GA_MeldBlocks : GridAction
 {
     protected override void Action(PlayGrid grid)
     {
-        Meld(grid, GameManager.instance.difficultyManager.PossibleColors);
+        Meld(grid, GameManager.instance.GameModeManager.PossibleColors);
     }
 
     public static void Meld(PlayGrid grid, BlockColor[] colors)
@@ -23,14 +23,14 @@ public class GA_MeldBlocks : GridAction
 
             foreach (BlockCollection obj in Melded)
             {
-                obj.Build(grid, GameManager.instance.difficultyManager.Difficulty.TypeBank.collectionType);
+                obj.Build(grid, GameManager.instance.GameModeManager.GameMode.TypeBank.collectionType);
             }
         }
     }
 
     private static bool Condition(BlockSlot obj, BlockColor color)
     {
-        return obj && obj.Block && obj.Block.blockColor == color && obj.Block.isPartOfSnake() == false && obj.Block.blockType != GameManager.instance.difficultyManager.Difficulty.TypeBank.collectionGhostType;
+        return obj && obj.Block && obj.Block.blockColor == color && obj.Block.isPartOfSnake() == false && obj.Block.blockType != GameManager.instance.GameModeManager.GameMode.TypeBank.collectionGhostType;
     }
 
     private static BlockCollection MeldCollections(List<BlockCollection> obj)

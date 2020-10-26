@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40021cae352ce664488076a625cf3512, type: 3}
   m_Name: Colorless
   m_EditorClassIdentifier: 
-  defaultAnimator: {fileID: 0}
+  defaultAnimator: {fileID: 11400000, guid: fe648d2cb38cb3d46b061922c6b33728, type: 2}
   animatorInfos: []
