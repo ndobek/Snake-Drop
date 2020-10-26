@@ -9,4 +9,5 @@ public class TypeBank : ScriptableObject
     public BlockType snakeHeadType;
     public BlockType collectionType;
     public BlockType collectionGhostType;
+    public BlockType specialType;
 }

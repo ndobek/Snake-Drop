@@ -7,7 +7,6 @@ public class PlayerController : MonoBehaviour
 {
     public PlayerManager player;
     public BoardRotator cameraRotator;
-    private float KeepEntranceRelativePositionOnRotate;
     [SerializeField]
     private float autoMoveInterval;
     [SerializeField]

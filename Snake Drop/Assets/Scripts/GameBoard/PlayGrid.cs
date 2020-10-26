@@ -173,4 +173,14 @@ public class PlayGrid : MonoBehaviour
 
         return result;
     }
+
+    public List<BlockSlot> EmptyBlockSlots()
+    {
+        List<BlockSlot> result = new List<BlockSlot>();
+        foreach(BlockSlot slot in slots)
+        {
+            if (slot.Block == null) result.Add(slot);
+        }
+        return result;
+    }
 }

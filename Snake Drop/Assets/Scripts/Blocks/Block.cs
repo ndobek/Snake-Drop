@@ -207,6 +207,11 @@ public class Block : MonoBehaviour
     {
         tail = obj;
     }
+    public Block GetLastTail()
+    {
+        if (tail) return tail.GetLastTail();
+        else return this;
+    }
 
     public void Kill(PlayerManager player = null)
     {

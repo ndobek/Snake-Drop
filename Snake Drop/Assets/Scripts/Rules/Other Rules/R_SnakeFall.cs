@@ -24,7 +24,6 @@ public class R_SnakeFall : Rule
             block.SetTail(null);
             Fall(tempTail, distance, player);
         }
-        Debug.Log(distance);
         BlockSlot destination = block.Slot.GetNeighbor(GetDirection(player), distance);
         if(destination != block.Slot) block.RawMoveTo(destination);
         //moveType.OnMove(block, destination);

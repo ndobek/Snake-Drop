@@ -72,7 +72,7 @@ public class PlayerManager : MonoBehaviour
 
         if (GameIsOver())
         {
-            EndGame();
+            EndGame(); 
         }
         else
         {
@@ -167,7 +167,7 @@ public class PlayerManager : MonoBehaviour
             RoundInProgress = true;
         }
     }
-    private void EndGame()
+    public void EndGame()
     {
         PrepareNewRound();
         entranceManager.UpdateAnimations();
@@ -178,7 +178,7 @@ public class PlayerManager : MonoBehaviour
     {
         FillPreviewBar();
         Block result = waitSlot.Block;
-        while((result.Tail != null && result.blockType != GameManager.instance.difficultyManager.Difficulty.GameModeTypeBank.snakeHeadType))
+        while((result.Tail != null && result.blockType != GameManager.instance.difficultyManager.Difficulty.TypeBank.snakeHeadType))
         {
 
             result = result.Slot.GetNeighbor(Directions.Direction.UP).Block;
@@ -198,7 +198,7 @@ public class PlayerManager : MonoBehaviour
         if (newSnakeHead)
         {
             snakeHead = newSnakeHead;
-            snakeHead.SetBlockType(snakeHead.blockColor, GameManager.instance.difficultyManager.Difficulty.GameModeTypeBank.snakeHeadType);
+            snakeHead.SetBlockType(snakeHead.blockColor, GameManager.instance.difficultyManager.Difficulty.TypeBank.snakeHeadType);
             snakeHead.SetOwner(this);
         }
         else

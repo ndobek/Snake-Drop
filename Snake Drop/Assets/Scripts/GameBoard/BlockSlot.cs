@@ -144,11 +144,12 @@ public class BlockSlot : MonoBehaviour
             Blocks[i-1].RawBreak();
         }
     }
-    public void CreateBlock(BlockColor color, BlockType type)
+    public Block CreateBlock(BlockColor color, BlockType type)
     {
-        Block newBlock = Instantiate(GameManager.instance.difficultyManager.Difficulty.GameModeTypeBank.blockObj, playGrid.CoordsPosition(x, y), Quaternion.identity, this.transform);
+        Block newBlock = Instantiate(GameManager.instance.difficultyManager.Difficulty.TypeBank.blockObj, playGrid.CoordsPosition(x, y), Quaternion.identity, this.transform);
         newBlock.SetBlockType(color, type);
         MoveBlockHere(newBlock);
+        return newBlock;
     }
     public void SetBlock(BlockColor color, BlockType type)
     {
