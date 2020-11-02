@@ -32,7 +32,7 @@ public class PlantManager : MonoBehaviour
     }
     private void Start()
     {
-        allPlants = AllPlants().ToArray();
+        ResetGrowth();
 
     }
     #region Methods
@@ -172,6 +172,7 @@ public class PlantManager : MonoBehaviour
         {
             obj.ResetPlants();
         }
+        allPlants = AllPlants().ToArray();
     }
     public void PlantNewPlants(Vector3 position)
     {
