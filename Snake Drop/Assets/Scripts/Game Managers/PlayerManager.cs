@@ -139,7 +139,7 @@ public class PlayerManager : MonoBehaviour
 
     public void ResetGame()
     {
-        GameManager.instance.plantManager.ResetGrowth();
+        //GameManager.instance.plantManager.ResetGrowth();
         Score.ResetGame();
         ResetMoveRestrictions();
         entranceManager.ReactivateEntrances();

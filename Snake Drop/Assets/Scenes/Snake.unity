@@ -123,6 +123,38 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &708998365 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6322816129438426007, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1456770335}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &708998367 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6322816129438425960, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1456770335}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 708998365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26bba0005f3ed9b4bb3828c2ae75f81e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &708998371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 708998365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4338536837becb4408485e08501328d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerController: {fileID: 708998367}
+  TimePerMove: 0.1
 --- !u!1001 &1456770335
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -130,6 +162,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6322816129438425960, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
+        type: 3}
+      propertyPath: MoveOnCommand
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6322816130843638185, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
         type: 3}
       propertyPath: gridActions.Array.size

@@ -6,7 +6,6 @@ using UnityEngine;
 public class BlockMoveAnimator : BlockAnimator
 {
     public AnimationCurve Curve;
-    public bool BaseSpeedOnAllQueuedAnimations;
     public override void AnimationStep(BlockAnimation blockAnimation)
     {
         Transform obj = blockAnimation.block.transform;

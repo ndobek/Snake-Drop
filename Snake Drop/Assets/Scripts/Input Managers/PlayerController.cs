@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     public PlayerManager player;
     public BoardRotator cameraRotator;
+    public bool MoveOnCommand = true;
     [SerializeField]
     private float autoMoveInterval;
     [SerializeField]
@@ -104,23 +105,27 @@ public class PlayerController : MonoBehaviour
 
     private void Press(Direction direction)
     {
-        switch (direction)
+        mostRecentDirectionMoved = direction;
+        if (MoveOnCommand)
         {
-            case Direction.UP: 
-                DistanceMovedThisTouch.y += DistanceNeededToDragBeforeSnakeMoves;
-                break;
-            case Direction.DOWN:
-                DistanceMovedThisTouch.y -= DistanceNeededToDragBeforeSnakeMoves;
-                break;
-            case Direction.LEFT:
-                DistanceMovedThisTouch.x -= DistanceNeededToDragBeforeSnakeMoves;
-                break;
-            case Direction.RIGHT: 
-                DistanceMovedThisTouch.x += DistanceNeededToDragBeforeSnakeMoves;
-                break;
+            switch (direction)
+            {
+                case Direction.UP:
+                    DistanceMovedThisTouch.y += DistanceNeededToDragBeforeSnakeMoves;
+                    break;
+                case Direction.DOWN:
+                    DistanceMovedThisTouch.y -= DistanceNeededToDragBeforeSnakeMoves;
+                    break;
+                case Direction.LEFT:
+                    DistanceMovedThisTouch.x -= DistanceNeededToDragBeforeSnakeMoves;
+                    break;
+                case Direction.RIGHT:
+                    DistanceMovedThisTouch.x += DistanceNeededToDragBeforeSnakeMoves;
+                    break;
+            }
+            timeSinceLastMove = 0;
+            MoveSnake(direction);
         }
-        timeSinceLastMove = 0;
-        MoveSnake(direction);
     }
     private void Press()
     {
@@ -154,7 +159,7 @@ public class PlayerController : MonoBehaviour
     }
     public void MoveSnake(Direction direction)
     {
-        mostRecentDirectionMoved = direction;
+
         if (player) player.MoveSnake(direction);
     }
 

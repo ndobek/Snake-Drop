@@ -181,7 +181,7 @@ public class GameMode : ScriptableObject
         }
         if (possibleResults.Count > 0) return possibleResults[Random.Range(0, possibleResults.Count)].value;
 
-        Debug.Log("No Acceptable Difficulty Settings, Returning default:" + statType + ": " + statType.defaultValue);
+        //Debug.Log("No Acceptable Difficulty Settings, Returning default:" + statType + ": " + statType.defaultValue);
         return statType.defaultValue;
     }
 
