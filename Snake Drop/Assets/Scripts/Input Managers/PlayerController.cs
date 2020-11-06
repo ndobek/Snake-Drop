@@ -6,8 +6,10 @@ using static Directions;
 public class PlayerController : MonoBehaviour
 {
     public PlayerManager player;
+    public PlayerAutoMover autoMover;
     public BoardRotator cameraRotator;
-    public bool MoveOnCommand = true;
+    public bool MoveOnCommandDuringRound = true;
+    public bool MoveOnCommandBetweenRounds = true;
     [SerializeField]
     private float autoMoveInterval;
     [SerializeField]
@@ -106,7 +108,8 @@ public class PlayerController : MonoBehaviour
     private void Press(Direction direction)
     {
         mostRecentDirectionMoved = direction;
-        if (MoveOnCommand)
+        if (autoMover != null) autoMover.Queue(direction);
+        if ((MoveOnCommandDuringRound && player.RoundInProgress) || (MoveOnCommandBetweenRounds && !player.RoundInProgress))
         {
             switch (direction)
             {

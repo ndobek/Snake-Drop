@@ -10,18 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6bd3250dde91e984ca21eb1cdd8190dc, type: 3}
-  m_Name: Default - Climb
+  m_Name: SnakeMember - Blitz
   m_EditorClassIdentifier: 
   defaultMoveAnimator: {fileID: 11400000, guid: 23332f0fafefb3c419d44f2c79d052d7,
     type: 2}
   BlockFillAnimator: {fileID: 0}
   EveryFrameAnimations: []
   HighlightTail: 0
-  isPartOfSnake: 0
-  moveRules:
-  - {fileID: 11400000, guid: 92ab9aa1ed82ac94fbd2d0b8d9a0dc74, type: 2}
-  killRules: []
-  breakRules:
-  - {fileID: 11400000, guid: 05e5646cb1e173643b7e398a324acce3, type: 2}
-  - {fileID: 11400000, guid: 4a872cf92c97bfc4f8d6373090c51616, type: 2}
+  isPartOfSnake: 1
+  moveRules: []
+  killRules:
+  - {fileID: 11400000, guid: 63387f52336adaa45986784d410e6659, type: 2}
+  - {fileID: 11400000, guid: 3fa86c385cec3ee4e99f6fda90063626, type: 2}
+  - {fileID: 11400000, guid: 29adbe807d323654499414c9f2288c0c, type: 2}
+  - {fileID: 11400000, guid: b860ed9adf5caab41a42f7943e50a471, type: 2}
+  breakRules: []
   specialActionRules: []

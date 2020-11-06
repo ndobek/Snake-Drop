@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6bd3250dde91e984ca21eb1cdd8190dc, type: 3}
-  m_Name: Default - Climb
+  m_Name: Default -Blitz
   m_EditorClassIdentifier: 
   defaultMoveAnimator: {fileID: 11400000, guid: 23332f0fafefb3c419d44f2c79d052d7,
     type: 2}
@@ -24,4 +24,5 @@ MonoBehaviour:
   breakRules:
   - {fileID: 11400000, guid: 05e5646cb1e173643b7e398a324acce3, type: 2}
   - {fileID: 11400000, guid: 4a872cf92c97bfc4f8d6373090c51616, type: 2}
+  - {fileID: 11400000, guid: 3ea51636f31fbf44db95bf1795a6ddcb, type: 2}
   specialActionRules: []

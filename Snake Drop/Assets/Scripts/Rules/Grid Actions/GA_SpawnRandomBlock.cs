@@ -9,9 +9,18 @@ public class GA_SpawnRandomBlock : GridAction
     public BlockType type;
     //public bool GameOverIfUnable;
 
+    [SerializeField]
+    private int minX;
+    [SerializeField]
+    private int maxX;
+    [SerializeField]
+    private int minY;
+    [SerializeField]
+    private int maxY;
+
     protected override void Action(PlayGrid grid)
     {
-        List<BlockSlot> emptyBlockSlots = grid.EmptyBlockSlots();
+        List<BlockSlot> emptyBlockSlots = grid.EmptyBlockSlots(minX, maxX, minY, maxY);
 
         if (emptyBlockSlots.Count > 0) 
         {

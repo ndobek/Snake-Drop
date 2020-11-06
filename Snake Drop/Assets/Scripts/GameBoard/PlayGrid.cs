@@ -174,13 +174,24 @@ public class PlayGrid : MonoBehaviour
         return result;
     }
 
-    public List<BlockSlot> EmptyBlockSlots()
+    public List<BlockSlot> EmptyBlockSlots(int minX, int maxX, int minY, int maxY)
     {
         List<BlockSlot> result = new List<BlockSlot>();
-        foreach(BlockSlot slot in slots)
+        foreach (BlockSlot slot in slots)
         {
-            if (slot.Block == null) result.Add(slot);
+            if (slot.Block == null &&
+                slot.x >= minX &&
+                slot.x < maxX &&
+                slot.y >= minY &&
+                slot.y < maxY)
+
+                result.Add(slot);
         }
         return result;
+    }
+
+    public List<BlockSlot> EmptyBlockSlots()
+    {
+        return EmptyBlockSlots(0, XSize, 0, ySize);
     }
 }
