@@ -166,7 +166,11 @@ public class PlayerManager : MonoBehaviour
 
     public void StartNewRound(Directions.Direction direction)
     {
-
+        if (playerController.autoMover != null)
+        {
+            playerController.autoMover.prevMovedDirection = direction;
+            playerController.autoMover.resetTime();
+        }
         BlockSlot destination = snakeHead.Slot.GetNeighbor(direction);
         if (SnakeHead.CanMoveToWithoutCrashing(destination, this) && enterSlot.Active/*GameManager.instance.BasicMove.CanMoveTo(SnakeHead, destination, this)*/)
         {

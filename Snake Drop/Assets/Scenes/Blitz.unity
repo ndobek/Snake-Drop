@@ -201,6 +201,16 @@ PrefabInstance:
       propertyPath: MoveOnCommandDuringRound
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6322816129438425960, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
+        type: 3}
+      propertyPath: autoMover
+      value: 
+      objectReference: {fileID: 1364835512}
+    - target: {fileID: 6322816129438425964, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
+        type: 3}
+      propertyPath: rotationLerpSpeed
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 9134113234743710312, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
         type: 3}
       propertyPath: m_Name
@@ -266,6 +276,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9134113235047743137, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a168f4bdbb2ced42aeabbe202a35da1, type: 3}
 --- !u!114 &1364835510 stripped
@@ -298,6 +313,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4338536837becb4408485e08501328d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MaxQueuedDirections: 2
   playerController: {fileID: 1364835510}
   TimePerMove: 0.3
   MoveBetweenRounds: 0
+  prevMovedDirection: 1

@@ -108,7 +108,6 @@ public class PlayerController : MonoBehaviour
     private void Press(Direction direction)
     {
         mostRecentDirectionMoved = direction;
-        if (autoMover != null) autoMover.Queue(direction);
         if ((MoveOnCommandDuringRound && player.RoundInProgress) || (MoveOnCommandBetweenRounds && !player.RoundInProgress))
         {
             switch (direction)
@@ -137,6 +136,7 @@ public class PlayerController : MonoBehaviour
     private void FirstPress(Direction direction)
     {
         timePressed = Time.time;
+        if (autoMover != null && player.RoundInProgress) autoMover.Queue(direction);
         Press(direction);
     }
     private void FirstPress()

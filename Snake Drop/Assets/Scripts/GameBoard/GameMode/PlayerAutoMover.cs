@@ -11,11 +11,18 @@ public class PlayerAutoMover : MonoBehaviour
     public float TimePerMove;
     public bool MoveBetweenRounds = false;
     private float currentTime = 0;
-    private Directions.Direction prevDirection = Directions.Direction.DOWN;
+    private Directions.Direction prevQueuedDirection;
+    [HideInInspector]
+    public Directions.Direction prevMovedDirection = Directions.Direction.DOWN;
 
     public void Queue(Directions.Direction direction)
     {
-        if (upcomingDirections.Count < MaxQueuedDirections) upcomingDirections.Enqueue(direction);
+        if (upcomingDirections.Count < MaxQueuedDirections && direction != prevQueuedDirection)
+        {
+            prevQueuedDirection = direction;
+            upcomingDirections.Enqueue(direction);
+        }
+
     }
 
     private void Update()
@@ -28,10 +35,16 @@ public class PlayerAutoMover : MonoBehaviour
             {
                 currentTime -= TimePerMove;
                 if (playerController.player.RoundInProgress || MoveBetweenRounds) MovePlayer();
-                else prevDirection = playerController.mostRecentDirectionMoved;
+                else prevMovedDirection = playerController.mostRecentDirectionMoved;
             }
         }
 
+    }
+
+    public void resetTime()
+    {
+        currentTime = 0;
+        upcomingDirections.Clear();
     }
 
     private void MovePlayer()
@@ -39,8 +52,8 @@ public class PlayerAutoMover : MonoBehaviour
         Directions.Direction directionToMove = playerController.mostRecentDirectionMoved;
         Debug.Log(upcomingDirections.ToString());
         if (upcomingDirections.Count > 0) directionToMove = upcomingDirections.Dequeue();
-        if (directionToMove == Directions.GetOppositeDirection(prevDirection)) directionToMove = prevDirection;
-        else prevDirection = directionToMove;
+        if (directionToMove == Directions.GetOppositeDirection(prevMovedDirection)) directionToMove = prevMovedDirection;
+        else prevMovedDirection = directionToMove;
         playerController.MoveSnake(directionToMove);
     }
 }
