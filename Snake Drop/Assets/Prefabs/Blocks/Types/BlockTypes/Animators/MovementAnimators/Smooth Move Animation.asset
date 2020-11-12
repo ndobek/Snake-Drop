@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Smooth Move Animation
   m_EditorClassIdentifier: 
   AnimationConcurrent: 0
-  AnimationTotalTime: 0.07
+  AnimationTotalTime: 0.1
   Curve:
     serializedVersion: 2
     m_Curve:

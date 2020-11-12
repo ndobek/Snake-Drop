@@ -153,10 +153,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4338536837becb4408485e08501328d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxQueuedDirections: 3
+  MaxQueuedDirections: 2
   playerController: {fileID: 708998367}
   TimePerMove: 0.3
   MoveBetweenRounds: 0
+  prevMovedDirection: 1
 --- !u!1001 &1456770335
 PrefabInstance:
   m_ObjectHideFlags: 0

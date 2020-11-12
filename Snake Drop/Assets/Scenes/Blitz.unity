@@ -211,6 +211,11 @@ PrefabInstance:
       propertyPath: rotationLerpSpeed
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 6322816129438425964, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
+        type: 3}
+      propertyPath: KeepEntranceSlotOnOneSide
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9134113234743710312, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
         type: 3}
       propertyPath: m_Name
