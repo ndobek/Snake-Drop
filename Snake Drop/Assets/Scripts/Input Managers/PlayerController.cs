@@ -93,12 +93,12 @@ public class PlayerController : MonoBehaviour
 
     private void MoveSnakeOnSwipe(TouchManager.TouchData Swipe)
     {
-        Press(Swipe.direction); 
+        Press(CameraDirectionTranslate(Swipe.direction)); 
     }
 
     private void MoveSnakeOnHold(TouchManager.TouchData HoldData)
     {
-        Hold(mostRecentDirectionMoved);
+        Hold(CameraDirectionTranslate(mostRecentDirectionMoved));
     }
     private void MoveSnakeOnTap(TouchManager.TouchData Tap)
     {
