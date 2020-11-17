@@ -6,24 +6,23 @@ public class AnimSunReact : MonoBehaviour, ISunReactive
 {
     [HideInInspector]
     public Animator anim;
+    public string SunAngleAnimatorVar = "Sun Angle";
 
-    public SunData sun;
-    public ILatitudeDependent l;
     [HideInInspector]
-    public float latitude;
+    public Transform SunLocation;
 
     public void Awake()
     {
         anim = gameObject.GetComponent<Animator>();
-        l = gameObject.GetComponent<ILatitudeDependent>();
-    }
-    public void Start()
-    {
-        latitude = l.ReturnLatitude();
     }
 
     public void UpdateSunReaction()
     {
-        if (anim != null) anim.SetFloat("Sun Zenith", sun.SunZenith(latitude));
+        if (anim != null && SunLocation) anim.SetFloat(SunAngleAnimatorVar, GetAngle());
+    }
+
+    private float GetAngle()
+    {
+        return Mathf.Atan2(SunLocation.position.y - transform.position.y, SunLocation.position.x - transform.position.x);
     }
 }

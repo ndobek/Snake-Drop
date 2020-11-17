@@ -7,7 +7,6 @@ public class AnimGrow : MonoBehaviour, IGrowable
 {
     Animator anim;
 
-    [HideInInspector]
     public int xp = 0;
     public int xpPerGrow = 5;
     public void Awake()

@@ -9,7 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3527b4a7898cdf140a3239abd5f8c96a, type: 3}
-  m_Name: Normal Sun
+  m_Script: {fileID: 11500000, guid: 9765f69d78c9c974fb0f73350bbeb5a1, type: 3}
+  m_Name: Default Wind
   m_EditorClassIdentifier: 
-  sunOrbitalVelocity: 0.5
+  xDistanceModifier: 1.6
+  yDistanceModifier: 1.6
+  periodLength: 11.3
