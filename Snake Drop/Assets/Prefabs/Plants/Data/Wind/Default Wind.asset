@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9765f69d78c9c974fb0f73350bbeb5a1, type: 3}
   m_Name: Default Wind
   m_EditorClassIdentifier: 
-  xDistanceModifier: 0.01
-  yDistanceModifier: 0.01
+  xDistanceModifier: 1.6
+  yDistanceModifier: 1.6
   windCurve:
     serializedVersion: 2
     m_Curve:
@@ -102,3 +102,4 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   periodLength: 6.75
+  scalar: 0
