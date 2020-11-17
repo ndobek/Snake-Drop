@@ -730,7 +730,6 @@ Transform:
   - {fileID: 7360507375241807709}
   - {fileID: 7360507376082885261}
   - {fileID: 7360507374564549795}
-  - {fileID: 7360507374547497839}
   - {fileID: 7360507375842212689}
   - {fileID: 7360507374813968958}
   m_Father: {fileID: 7360507374275313743}
@@ -4404,7 +4403,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 7360507374275313740}
+  autoMover: {fileID: 0}
   cameraRotator: {fileID: 7360507374275313737}
+  MoveOnCommandDuringRound: 1
+  MoveOnCommandBetweenRounds: 1
   autoMoveInterval: 0.1
   intervalToWaitBeforeHold: 0.3
   mostRecentDirectionMoved: 0
@@ -4439,7 +4441,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationLerpSpeed: 0.1
   EnterSlotMoveDistance: 11
-  KeepEntranceSlotAtTop: 1
+  KeepEntranceSlotOnOneSide: 0
+  EntranceSide: 0
   currentDirection: 0
 --- !u!1 &7360507374285536694
 GameObject:
@@ -7637,54 +7640,6 @@ MonoBehaviour:
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
   Blocks: []
---- !u!1 &7360507374547497836
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7360507374547497839}
-  - component: {fileID: 7360507374547497838}
-  m_Layer: 0
-  m_Name: LatitudeData
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7360507374547497839
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7360507374547497836}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 9183237395307713640}
-  - {fileID: 7360507375017589097}
-  m_Father: {fileID: 7360507374004665289}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7360507374547497838
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7360507374547497836}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d72070a4877589f4ebf849cc59f4618d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  plantAnimMarker0: {fileID: 7360507375540249137}
-  plantAnimMarker1: {fileID: 9183237395307713641}
-  plantAnimMarkersVector: {x: 0, y: 0}
 --- !u!1 &7360507374552569004
 GameObject:
   m_ObjectHideFlags: 0
@@ -10899,7 +10854,7 @@ Transform:
   - {fileID: 2541635503835136975}
   - {fileID: 2541635504052526088}
   m_Father: {fileID: 7360507374004665289}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7360507374813968953
 MonoBehaviour:
@@ -16674,36 +16629,6 @@ MonoBehaviour:
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
   Blocks: []
---- !u!1 &7360507375540249137
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7360507375017589097}
-  m_Layer: 0
-  m_Name: PlantAnimMarker0
-  m_TagString: Untagged
-  m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7360507375017589097
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7360507375540249137}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9, y: -14, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 7360507374547497839}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7360507375544995076
 GameObject:
   m_ObjectHideFlags: 0
@@ -19216,7 +19141,7 @@ Transform:
   - {fileID: 5262867770216941580}
   - {fileID: 5262867770327809511}
   m_Father: {fileID: 7360507374004665289}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7360507375857666571
 GameObject:
@@ -21535,36 +21460,6 @@ MonoBehaviour:
   customUpNeighbor: {fileID: 0}
   customDownNeighbor: {fileID: 0}
   Blocks: []
---- !u!1 &9183237395307713641
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 9183237395307713640}
-  m_Layer: 0
-  m_Name: PlantAnimMarker1
-  m_TagString: Untagged
-  m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &9183237395307713640
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9183237395307713641}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9, y: 4, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 7360507374547497839}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &38337468589231178
 PrefabInstance:
   m_ObjectHideFlags: 0
