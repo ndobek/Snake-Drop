@@ -9,7 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3bc8ba6852e1fb04ca20affecb1bf859, type: 3}
-  m_Name: Smash
+  m_Script: {fileID: 11500000, guid: 4db5fe0030a4c8142b2973068cc026f9, type: 3}
+  m_Name: Break All
   m_EditorClassIdentifier: 
-  OnSmash: {fileID: 11400000, guid: ee06cf4e8d7b8724e97ff5e4e2fcc66b, type: 2}
+  RuleToInvoke: {fileID: 11400000, guid: 4a872cf92c97bfc4f8d6373090c51616, type: 2}
+  Direction: 0

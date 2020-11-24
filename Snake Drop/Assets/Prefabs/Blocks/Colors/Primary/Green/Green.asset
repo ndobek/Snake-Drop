@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Green
   m_EditorClassIdentifier: 
   defaultAnimator: {fileID: 11400000, guid: a405f6ba2a4325c4687a5a5085bceb14, type: 2}
+  deathParticleColor: {r: 0.54509807, g: 0.64705884, b: 0.3529412, a: 1}
   animatorInfos:
   - BlockType: {fileID: 11400000, guid: 5c7e6b4afee2d5e44ac32eecd7a8699e, type: 2}
     Animator: {fileID: 11400000, guid: f0be240af02bbda46ad17faac37327c6, type: 2}

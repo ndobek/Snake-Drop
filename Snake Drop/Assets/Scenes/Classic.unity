@@ -228,6 +228,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 6.7
       objectReference: {fileID: 0}
+    - target: {fileID: 5203543728698532145, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6322816129438425964, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
         type: 3}
       propertyPath: KeepEntranceSlotOnOneSide
@@ -237,6 +242,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 6402294665221582489, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9134113234743710312, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
         type: 3}
@@ -306,7 +316,7 @@ PrefabInstance:
     - target: {fileID: 9134113235047743137, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.00012207031
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a168f4bdbb2ced42aeabbe202a35da1, type: 3}

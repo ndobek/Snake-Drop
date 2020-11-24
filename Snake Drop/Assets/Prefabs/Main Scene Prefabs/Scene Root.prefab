@@ -231,6 +231,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 61152496271089961}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6151640925158967094 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6162689054464206367, guid: 3f3fb188545baca4d9f6112f1c0f42b0,
+    type: 3}
+  m_PrefabInstance: {fileID: 61152496271089961}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2712831965167378140
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -313,6 +325,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9134113234743710319}
     m_Modifications:
+    - target: {fileID: 5684111980003649006, guid: ba28145764ca10040b2f33bbf1016700,
+        type: 3}
+      propertyPath: ProgressBar
+      value: 
+      objectReference: {fileID: 6151640925158967094}
     - target: {fileID: 5717322093591452684, guid: ba28145764ca10040b2f33bbf1016700,
         type: 3}
       propertyPath: m_LocalPosition.x

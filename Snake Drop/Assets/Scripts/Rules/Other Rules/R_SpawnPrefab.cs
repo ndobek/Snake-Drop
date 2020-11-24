@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Rules/SpawnPrefab")]
+[CreateAssetMenu(menuName = "Rules/General/SpawnPrefab")]
 public class R_SpawnPrefab : Rule
 {
     public GameObject prefab;

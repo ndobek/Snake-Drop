@@ -63,7 +63,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   xp: 0
-  xpPerGrow: 0
+  xpPerGrow: 5
 --- !u!114 &-5521937721092750096
 MonoBehaviour:
   m_ObjectHideFlags: 0

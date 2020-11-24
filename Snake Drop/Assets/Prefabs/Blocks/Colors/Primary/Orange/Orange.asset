@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Orange
   m_EditorClassIdentifier: 
   defaultAnimator: {fileID: 11400000, guid: 05e6aa068be47e74a903f51d94d58c98, type: 2}
+  deathParticleColor: {r: 0.87843144, g: 0.38431376, b: 0.13333334, a: 1}
   animatorInfos:
   - BlockType: {fileID: 11400000, guid: 5c7e6b4afee2d5e44ac32eecd7a8699e, type: 2}
     Animator: {fileID: 11400000, guid: 656f54a4996685e4aa205213332a74f4, type: 2}

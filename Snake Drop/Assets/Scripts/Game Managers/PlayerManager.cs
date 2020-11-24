@@ -159,6 +159,7 @@ public class PlayerManager : MonoBehaviour
             Score.ResetMultiplier();
         }
         entranceManager.UpdateAnimations();
+        Score.checkpointManager.TryCheckpoint();
         FillPreviewBar();
         ResetMoveRestrictions();
         SnakeHead = waitSlot.Block;
