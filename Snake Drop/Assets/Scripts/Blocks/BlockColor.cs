@@ -6,6 +6,7 @@ using UnityEngine;
 public class BlockColor : ScriptableObject
 {
     public BlockSpriteAnimator defaultAnimator;
+    public Color deathParticleColor;
 
     [System.Serializable]
     public struct AnimatorInfo
