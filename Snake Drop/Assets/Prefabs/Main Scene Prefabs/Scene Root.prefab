@@ -41,6 +41,76 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9134113234743710319}
     m_Modifications:
+    - target: {fileID: 1447158894692868232, guid: 3f3fb188545baca4d9f6112f1c0f42b0,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1447158894692868232, guid: 3f3fb188545baca4d9f6112f1c0f42b0,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8907504684116937870}
+    - target: {fileID: 1447158894692868232, guid: 3f3fb188545baca4d9f6112f1c0f42b0,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PowerupManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1447158894692868232, guid: 3f3fb188545baca4d9f6112f1c0f42b0,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TryActivate
+      objectReference: {fileID: 0}
+    - target: {fileID: 1447158894692868232, guid: 3f3fb188545baca4d9f6112f1c0f42b0,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1447158894692868232, guid: 3f3fb188545baca4d9f6112f1c0f42b0,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1447158894692868232, guid: 3f3fb188545baca4d9f6112f1c0f42b0,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1694576600832886155, guid: 3f3fb188545baca4d9f6112f1c0f42b0,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1694576600832886155, guid: 3f3fb188545baca4d9f6112f1c0f42b0,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8907504684116937870}
+    - target: {fileID: 1694576600832886155, guid: 3f3fb188545baca4d9f6112f1c0f42b0,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PowerupManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1694576600832886155, guid: 3f3fb188545baca4d9f6112f1c0f42b0,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TryActivate
+      objectReference: {fileID: 0}
+    - target: {fileID: 1694576600832886155, guid: 3f3fb188545baca4d9f6112f1c0f42b0,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1694576600832886155, guid: 3f3fb188545baca4d9f6112f1c0f42b0,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1694576600832886155, guid: 3f3fb188545baca4d9f6112f1c0f42b0,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5435205153187733782, guid: 3f3fb188545baca4d9f6112f1c0f42b0,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -325,6 +395,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9134113234743710319}
     m_Modifications:
+    - target: {fileID: 5334287123915763627, guid: ba28145764ca10040b2f33bbf1016700,
+        type: 3}
+      propertyPath: progressBar
+      value: 
+      objectReference: {fileID: 6151640925158967094}
     - target: {fileID: 5684111980003649006, guid: ba28145764ca10040b2f33bbf1016700,
         type: 3}
       propertyPath: ProgressBar
@@ -420,12 +495,18 @@ PrefabInstance:
       propertyPath: HighScoreText
       value: 
       objectReference: {fileID: 9134113234623876250}
+    - target: {fileID: 7360507374275313742, guid: ba28145764ca10040b2f33bbf1016700,
+        type: 3}
+      propertyPath: checkpointManager
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7360507374275313743, guid: ba28145764ca10040b2f33bbf1016700,
         type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5684111980003649006, guid: ba28145764ca10040b2f33bbf1016700, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ba28145764ca10040b2f33bbf1016700, type: 3}
 --- !u!4 &6322816129438425962 stripped
 Transform:
@@ -443,6 +524,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9b99f20d08691f4468c9f7c06ccbd44e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8907504684116937870 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5334287123915763627, guid: ba28145764ca10040b2f33bbf1016700,
+    type: 3}
+  m_PrefabInstance: {fileID: 3574417402669785893}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b75b61386d400c94da33631041670d28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &6322816129438425964 stripped

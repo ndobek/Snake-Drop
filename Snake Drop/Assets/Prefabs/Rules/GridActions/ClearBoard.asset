@@ -10,9 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2b5add053506a4f46a2d98e357dd8597, type: 3}
-  m_Name: OnCheckpoint
+  m_Name: ClearBoard
   m_EditorClassIdentifier: 
   gridActions:
   - {fileID: 11400000, guid: 237dd6e6deb03724085e091ee68cc1f6, type: 2}
-  - {fileID: 11400000, guid: 5f62b89d3c74fd14f9c0adc565817d10, type: 2}
   - {fileID: 11400000, guid: 6212f575b4218cb4194cb4211b20a649, type: 2}

@@ -9,7 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21d0905f8109aad47a31ec732f5913fb, type: 3}
-  m_Name: Check For Checkpoint
+  m_Script: {fileID: 11500000, guid: 2cd1092a6d3d9fb459193ff080eb7a1f, type: 3}
+  m_Name: Raw Break and Spawn Particles
   m_EditorClassIdentifier: 
-  OnCheckpoint: {fileID: 11400000, guid: 4eb41edadc0888841a372cee3c5406c8, type: 2}
+  Rules:
+  - {fileID: 11400000, guid: 4a872cf92c97bfc4f8d6373090c51616, type: 2}
+  - {fileID: 11400000, guid: ee06cf4e8d7b8724e97ff5e4e2fcc66b, type: 2}

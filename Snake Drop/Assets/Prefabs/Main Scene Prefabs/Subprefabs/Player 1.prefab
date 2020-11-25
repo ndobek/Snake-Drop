@@ -4340,7 +4340,7 @@ GameObject:
   - component: {fileID: 7360507374275313743}
   - component: {fileID: 7360507374275313740}
   - component: {fileID: 7360507374275313741}
-  - component: {fileID: 5684111980003649006}
+  - component: {fileID: 5334287123915763627}
   - component: {fileID: 7360507374275313742}
   - component: {fileID: 7360507374275313737}
   m_Layer: 0
@@ -4380,6 +4380,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Score: {fileID: 7360507374275313742}
+  Powerup: {fileID: 5334287123915763627}
   playerController: {fileID: 7360507374275313741}
   playGrid: {fileID: 7360507376082885260}
   previewGrid: {fileID: 7360507374564549794}
@@ -4412,7 +4413,7 @@ MonoBehaviour:
   intervalToWaitBeforeHold: 0.3
   mostRecentDirectionMoved: 0
   DistanceNeededToDragBeforeSnakeMoves: 1
---- !u!114 &5684111980003649006
+--- !u!114 &5334287123915763627
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4421,13 +4422,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 7360507374275313842}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2050c81360eedb048addf82cf5bf281c, type: 3}
+  m_Script: {fileID: 11500000, guid: b75b61386d400c94da33631041670d28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnCheckpoint: {fileID: 11400000, guid: 4eb41edadc0888841a372cee3c5406c8, type: 2}
-  CheckpointFrequency: 10000
-  CheckpointDue: 0
-  ProgressBar: {fileID: 0}
+  powerupFrequency: 10000
+  possiblePowerups:
+  - {fileID: 11400000, guid: 9d43332ab0eefdd44aef41d8f0227d3e, type: 2}
+  currentPowerup: {fileID: 0}
+  iconRenderer: {fileID: 0}
 --- !u!114 &7360507374275313742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4440,7 +4442,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7924ea5a043d5748b4d966e36d7671e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkpointManager: {fileID: 5684111980003649006}
   ScoreText: {fileID: 0}
   MultiplierText: {fileID: 0}
   HighScoreText: {fileID: 0}

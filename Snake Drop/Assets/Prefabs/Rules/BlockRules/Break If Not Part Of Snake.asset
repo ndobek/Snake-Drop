@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4db5fe0030a4c8142b2973068cc026f9, type: 3}
-  m_Name: Break All
+  m_Script: {fileID: 11500000, guid: 404220e1ccd5d1947a7c3ce351bacbd5, type: 3}
+  m_Name: Break If Not Part Of Snake
   m_EditorClassIdentifier: 
-  RuleToInvoke: {fileID: 11400000, guid: 8a14fa2d07f036c4d8a8490758f3c417, type: 2}
-  Direction: 0
+  DoIfPartOfSnake: {fileID: 0}
+  DoIfNotPartOfSnake: {fileID: 11400000, guid: b8d69dd150136ad47870a00cbdf8576e, type: 2}

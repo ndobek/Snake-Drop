@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
-    public CheckpointManager checkpointManager;
     [HideInInspector]
     private int score;
     public int Score
@@ -13,8 +12,8 @@ public class ScoreManager : MonoBehaviour
         get { return score; }
         set
         {
+            GameManager.instance.playerManagers[0].Powerup.UpdateProgress(value - score);
             score = value;
-            if(checkpointManager != null) checkpointManager.UpdateScore(score);
             ScoreText.text = "Score: " + score.ToString();
         }
     }
@@ -63,7 +62,6 @@ public class ScoreManager : MonoBehaviour
         Score = 0;
         NumberOfSnakes = 0;
         ResetMultiplier();
-        checkpointManager.ResetGame();
     }
 
     public void ResetMultiplier()

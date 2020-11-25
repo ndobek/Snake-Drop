@@ -7,6 +7,6 @@ public class EndClassicGame : EndGameCondition
 {
     public override bool GameIsOver(PlayerManager player)
     {
-        return !player.entranceManager.CheckForValidEntrancesToGrid(player, player.playGrid);
+        return (!player.entranceManager.CheckForValidEntrancesToGrid(player, player.playGrid) && player.Powerup.currentPowerup == null);
     }
 }

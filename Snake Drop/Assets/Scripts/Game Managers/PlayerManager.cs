@@ -15,6 +15,8 @@ public class PlayerManager : MonoBehaviour
 
     [SerializeField]
     public ScoreManager Score;
+    [SerializeField]
+    public PowerupManager Powerup;
 
     public PlayerController playerController;
 
@@ -141,6 +143,7 @@ public class PlayerManager : MonoBehaviour
     {
         GameManager.instance.plantManager.ResetGrowth();
         Score.ResetGame();
+        Powerup.ResetGame();
         ResetMoveRestrictions();
         entranceManager.ReactivateEntrances();
         playGrid.ClearGrid();
@@ -159,7 +162,7 @@ public class PlayerManager : MonoBehaviour
             Score.ResetMultiplier();
         }
         entranceManager.UpdateAnimations();
-        Score.checkpointManager.TryCheckpoint();
+        //Score.checkpointManager.TryCheckpoint();
         FillPreviewBar();
         ResetMoveRestrictions();
         SnakeHead = waitSlot.Block;
