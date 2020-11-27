@@ -41,20 +41,30 @@ public class PowerupManager : MonoBehaviour
         UpdateSprite();
     }
 
+
+
     public void UpdateSprite()
     {
         if (currentPowerup != null && currentPowerup.sprite != null) iconRenderer.sprite = currentPowerup.sprite;
-        if (progressBar != null) progressBar.fillAmount = ProgressPercentage();
+        if (progressBar != null) progressBar.fillAmount = FillBarPercentage();
     }
     public void UpdateProgress(int amount)
     {
         currentProgress += amount;
-        if (ProgressPercentage() >= 1) GetPowerUp();
+        if (ProgressToNextPowerup() >= 1)
+        {
+            GetPowerUp();
+            currentProgress -= powerupFrequency;
+        }
         UpdateSprite();
     }
-    public float ProgressPercentage()
+    public float ProgressToNextPowerup()
+    {
+        return (float)currentProgress / powerupFrequency;
+    }
+    public float FillBarPercentage()
     {
         if (currentPowerup != null) return 1;
-        return (float)currentProgress / powerupFrequency;
+        return ProgressToNextPowerup();
     }
 }
