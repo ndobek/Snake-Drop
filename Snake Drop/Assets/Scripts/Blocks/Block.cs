@@ -243,4 +243,21 @@ public class Block : MonoBehaviour
     }
 
     #endregion
+
+
+    public BlockSaveData Save()
+    {
+        return Save(tail.slot.Blocks.BinarySearch(tail));
+    }
+    public BlockSaveData Save(int i)
+    {
+        return new BlockSaveData()
+        {
+            blockColor = blockColor.Name,
+            blockType = blockType.Name,
+            tailX = tail.X,
+            tailY = tail.Y,
+            tailI = i
+        };
+    }
 }

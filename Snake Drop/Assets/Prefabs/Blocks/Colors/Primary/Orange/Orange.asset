@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40021cae352ce664488076a625cf3512, type: 3}
   m_Name: Orange
   m_EditorClassIdentifier: 
+  ColorName: Orange
   defaultAnimator: {fileID: 11400000, guid: 05e6aa068be47e74a903f51d94d58c98, type: 2}
   deathParticleColor: {r: 0.87843144, g: 0.38431376, b: 0.13333334, a: 1}
   animatorInfos:

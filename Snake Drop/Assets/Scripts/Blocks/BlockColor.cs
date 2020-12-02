@@ -5,6 +5,9 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Types/BlockColor")]
 public class BlockColor : ScriptableObject
 {
+    [SerializeField]
+    private string ColorName;
+    public string Name { get { return ColorName; } set { ColorName = value; } }
     public BlockSpriteAnimator defaultAnimator;
     public Color deathParticleColor;
 

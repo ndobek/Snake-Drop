@@ -194,4 +194,16 @@ public class PlayGrid : MonoBehaviour
     {
         return EmptyBlockSlots(0, XSize, 0, ySize);
     }
+
+    public GridSaveData Save()
+    {
+        List<BlockSlotSaveData> BlockSlotSaveData = new List<BlockSlotSaveData>();
+        foreach (BlockSlot slot in slots) BlockSlotSaveData.Add(slot.Save());
+
+        return new GridSaveData()
+        {
+            BlockSlotData = BlockSlotSaveData
+        };
+        
+    }
 }

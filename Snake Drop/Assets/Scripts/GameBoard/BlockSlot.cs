@@ -179,4 +179,19 @@ public class BlockSlot : MonoBehaviour
     }
     #endregion
 
+    public BlockSlotSaveData Save()
+    {
+        List<BlockSaveData> BlockSaveData = new List<BlockSaveData>();
+        for(int i = 0; i < Blocks.Count; i++)
+        {
+            BlockSaveData.Add(Blocks[i].Save(i));
+        }
+        return new BlockSlotSaveData()
+        {
+            BlockData = BlockSaveData,
+            x = x,
+            y = y
+        };
+    }
+
 }

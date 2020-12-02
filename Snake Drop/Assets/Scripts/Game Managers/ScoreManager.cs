@@ -13,7 +13,7 @@ public class ScoreManager : MonoBehaviour
         set
         {
             GameManager.instance.playerManagers[0].Powerup.UpdateProgress(value - score);
-            score = value;
+             score = value;
             ScoreText.text = "Score: " + score.ToString();
         }
     }

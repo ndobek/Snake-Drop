@@ -173,4 +173,16 @@ public class BlockCollection : IComparable
         }
     }
 
+    public BlockCollectionSaveData Save()
+    {
+        return new BlockCollectionSaveData
+        {
+            LeftCoord = LeftCoord,
+            RightCoord = RightCoord,
+            TopCoord = TopCoord,
+            BottomCoord = BottomCoord,
+            FillAmount = FillAmount
+        };
+    }
+
 }

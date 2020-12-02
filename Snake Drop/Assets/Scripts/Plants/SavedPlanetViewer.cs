@@ -7,7 +7,7 @@ public class SavedPlanetViewer : MonoBehaviour
 {
     public string saveName;
     public Text score;
-    public SaveablePlantPrefabs prefabs;
+    public SaveableObjects prefabs;
     public List<Plant> plants = new List<Plant>();
 
     public void Awake()
@@ -31,7 +31,7 @@ public class SavedPlanetViewer : MonoBehaviour
             DestroyPlants();
             foreach (PlantSaveData obj in saveData.planetData.plantData)
             {
-                GameObject spawnedGameObject = GameObject.Instantiate(prefabs.getPlantObject(obj.plantName), gameObject.transform);
+                GameObject spawnedGameObject = GameObject.Instantiate(prefabs.getObject(obj.plantName) as GameObject, gameObject.transform);
                 Plant spawnedPlant = spawnedGameObject.GetComponent<Plant>();
 
                 spawnedPlant.LoadPlant(obj);

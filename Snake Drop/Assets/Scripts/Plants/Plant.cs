@@ -3,9 +3,14 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 
-public class Plant : MonoBehaviour, IComparable<Plant>
+public class Plant : MonoBehaviour, IComparable<Plant>, ISaveable
 {
     public string plantName;
+    public string Name
+    {
+        get { return plantName; }
+        set { plantName = value; }
+    }
     public IGrowable growable;
     public ISunReactive sunReactive;
     public IWindReactive windReactive;
