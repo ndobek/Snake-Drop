@@ -46,12 +46,18 @@ public class Plant : MonoBehaviour, IComparable<Plant>
         return 0;
     }
 
-    public PlantSaveData SavePlant()
+    public PlantSaveData SavePlant(Transform relativeTo = null)
     {
         PlantSaveData result = new PlantSaveData();
 
         result.position = gameObject.transform.position;
         result.rotation = gameObject.transform.rotation;
+
+        if(relativeTo != null)
+        {
+            result.position = relativeTo.InverseTransformPoint(result.position);
+            result.rotation *= Quaternion.Inverse(relativeTo.rotation);
+        }
 
         result.growthStage = growable.GrowthStage;
 

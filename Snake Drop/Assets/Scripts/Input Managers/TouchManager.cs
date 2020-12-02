@@ -161,8 +161,8 @@ public class TouchManager : MonoBehaviour
 
     private bool InValidArea(Touch touch)
     {
-        return true;
-        //return !EventSystem.current.IsPointerOverGameObject(touch.fingerId);
+        //return true;
+        return !EventSystem.current.IsPointerOverGameObject(touch.fingerId);
     }
 
     public TouchData RegisterTouch()

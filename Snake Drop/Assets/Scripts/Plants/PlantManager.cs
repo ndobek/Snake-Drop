@@ -187,7 +187,7 @@ public class PlantManager : MonoBehaviour
 
         foreach (Plant plant in allPlants)
         {
-            result.plantData.Add(plant.SavePlant());
+            result.plantData.Add(plant.SavePlant(transform));
         }
 
         return result;

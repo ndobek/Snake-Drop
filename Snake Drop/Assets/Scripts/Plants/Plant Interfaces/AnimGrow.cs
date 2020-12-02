@@ -13,7 +13,7 @@ public class AnimGrow : MonoBehaviour, IGrowable
     {
         anim = gameObject.GetComponent<Animator>();
     }
- 
+
 
     private int growthStage;
     public int GrowthStage

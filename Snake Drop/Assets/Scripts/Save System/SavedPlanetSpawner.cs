@@ -4,28 +4,40 @@ using UnityEngine;
 
 public class SavedPlanetSpawner : MonoBehaviour
 {
-    public GameObject planetViewer;
-    public int quantity;
-    public float xDistance;
-    public bool excludeHighScore;
+    public GameObject[] preExistingPlanetViewers;
+    public GameObject planetViewerPrefab;
+    public SwipeMenuManager SwipeMenuManager;
 
     private void Awake()
     {
         LoadAll();
     }
 
+    //public void LoadAll()
+    //{
+    //    string[] saves = SaveManager.GetAllSaveNames();
+    //    foreach (string save in saves)
+    //    {
+    //        GameObject spawned = Instantiate(planetViewer, SwipeMenuManager.transform);
+    //        spawned.GetComponent<SavedPlanetViewer>().LoadPlanet(save);
+    //        SwipeMenuManager.Add(spawned.transform);
+    //    }
+    //}
+
     public void LoadAll()
     {
         string[] saves = SaveManager.GetAllSaveNames();
-        quantity = saves.Length;
-        for (int i = 0; i < quantity; i++)
+        for(int i = 0; i < saves.Length; i++)
         {
-            if (!(excludeHighScore && saves[i] == SaveManager.HighScoreSaveName))
+            GameObject planetSpawner;
+            if (i < preExistingPlanetViewers.Length && preExistingPlanetViewers[i] != null) planetSpawner = preExistingPlanetViewers[i];
+            else
             {
-                GameObject spawned = Instantiate(planetViewer, transform);
-                spawned.transform.position = new Vector3(xDistance * i, spawned.transform.position.y);
-                spawned.GetComponent<SavedPlanetViewer>().LoadPlanet(saves[i]);
+                planetSpawner = Instantiate(planetViewerPrefab, SwipeMenuManager.transform);
+                SwipeMenuManager.Add(planetSpawner.transform);
             }
+
+            planetSpawner.GetComponent<SavedPlanetViewer>().LoadPlanet(saves[i]);
         }
     }
 

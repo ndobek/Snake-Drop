@@ -4,8 +4,8 @@
 	"CloudVariables":[],
 	"AppleSupported":false,
 	"GoogleSupported":true,
-	"GoogleAppID":"",
-	"GoogleSetupRun":false,
+	"GoogleAppID":"12345",
+	"GoogleSetupRun":true,
 	"DebugModeEnabled":false,
 	"Version":"2.7.1",
 	"SettingsLocation":"0"
