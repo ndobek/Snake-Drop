@@ -245,19 +245,32 @@ public class Block : MonoBehaviour
     #endregion
 
 
-    public BlockSaveData Save()
+    public BlockSaveData Save(SaveData save)
     {
-        return Save(tail.slot.Blocks.BinarySearch(tail));
+        return Save(save, slot.Blocks.BinarySearch(tail));
     }
-    public BlockSaveData Save(int i)
+    public BlockSaveData Save(SaveData save, int i)
     {
-        return new BlockSaveData()
+        BlockSaveData result = new BlockSaveData()
         {
             blockColor = blockColor.Name,
             blockType = blockType.Name,
-            tailX = tail.X,
-            tailY = tail.Y,
-            tailI = i
+            index = i,
+            tail = tail != null,
         };
+
+        if(tail != null)
+        {
+            result.tailOnLoadGrid = tail.slot.playGrid == GameManager.instance.playerManagers[0].previewGrid;
+            result.tailX = tail == null ? tail.X : 0;
+            result.tailY = tail.Y;
+            result.tailI = tail.slot.Blocks.IndexOf(tail);
+        }
+        if(BlockCollection != null)
+        {
+            save.blockCollections.Add(BlockCollection.Save());
+        }
+
+        return result;
     }
 }

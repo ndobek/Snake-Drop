@@ -9,6 +9,10 @@ public class SaveData
     public PlanetSaveData planetData;
     public GridSaveData playGrid;
     public GridSaveData loadGrid;
+    public List<BlockCollectionSaveData> blockCollections = new List<BlockCollectionSaveData>();
+    //LoadGrid Location
+    //Powerup Status
+    //Entrance Grid Open States
 
 }
 
@@ -44,6 +48,9 @@ public class BlockSaveData
 {
     public string blockType;
     public string blockColor;
+    public int index;
+    public bool tail;
+    public bool tailOnLoadGrid;
     public int tailX;
     public int tailY;
     public int tailI;

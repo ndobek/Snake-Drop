@@ -13,10 +13,10 @@ public class PlayerManager : MonoBehaviour
         set { ActivateSnake(value); }
     }
 
-    [SerializeField]
     public ScoreManager Score;
-    [SerializeField]
     public PowerupManager Powerup;
+    public UndoManager Undoer;
+
 
     public PlayerController playerController;
 
@@ -44,6 +44,7 @@ public class PlayerManager : MonoBehaviour
 
     public void MidRound()
     {
+        Undoer.Save();
         if (!RoundInProgress)
         {
             EndRound();
@@ -57,6 +58,7 @@ public class PlayerManager : MonoBehaviour
             //DifficultyManager difficulty = GameManager.instance.difficultyManager;
             //if (difficulty.HeightLimit) HeightLimitIndicator.LowerHeightLimit(SnakeHead.FindSnakeMaxY() + difficulty.HeightLimitModifier);
         }
+
     }
 
     public void DoGridActions()

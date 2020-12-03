@@ -13,10 +13,10 @@ public class SaveableObjects : ScriptableObject
         foreach(Object obj in Objects)
         {
             ISaveable saveable = null;
-            if (obj.GetType() == typeof(ISaveable))
+            if (obj is ISaveable)
             {
                 saveable = obj as ISaveable;
-            } else if (obj.GetType() == typeof(GameObject))
+            } else if (obj is GameObject)
             {
                 GameObject gameObject = (GameObject)obj;
                 saveable = gameObject.GetComponent<ISaveable>();

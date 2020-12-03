@@ -12,6 +12,10 @@ public class GameManager : MonoBehaviour
     public PlantManager plantManager;
 
 
+
+    public SaveableObjects Colors;
+    public SaveableObjects Types;
+
     public bool GameInProgress()
     {
         foreach(PlayerManager player in playerManagers)
@@ -99,6 +103,8 @@ public class GameManager : MonoBehaviour
 
         result.score = playerManagers[0].Score.Score;
         result.planetData = plantManager.SavePlanet();
+        result.playGrid = playerManagers[0].playGrid.Save(result);
+        result.loadGrid = playerManagers[0].previewGrid.Save(result);
 
         return result;
     }
@@ -106,5 +112,17 @@ public class GameManager : MonoBehaviour
     public void SaveGame()
     {
         SaveManager.SaveGame();
+    }
+
+    public void LoadGame(SaveData save)
+    {
+        if (save != null)
+        {
+            playerManagers[0].previewGrid.Load(save.loadGrid);
+            playerManagers[0].playGrid.Load(save.playGrid);
+
+            //foreach (BlockCollection blockCollection in save.blockCollections) blockCollection.Build();
+        }
+        //build BlockCollections
     }
 }

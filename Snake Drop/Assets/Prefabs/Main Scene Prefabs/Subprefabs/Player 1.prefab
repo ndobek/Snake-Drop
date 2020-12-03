@@ -4340,6 +4340,7 @@ GameObject:
   - component: {fileID: 7360507374275313743}
   - component: {fileID: 7360507374275313740}
   - component: {fileID: 7360507374275313741}
+  - component: {fileID: 2014905451708111706}
   - component: {fileID: 5334287123915763627}
   - component: {fileID: 7360507374275313742}
   - component: {fileID: 7360507374275313737}
@@ -4381,6 +4382,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Score: {fileID: 7360507374275313742}
   Powerup: {fileID: 5334287123915763627}
+  Undoer: {fileID: 2014905451708111706}
   playerController: {fileID: 7360507374275313741}
   playGrid: {fileID: 7360507376082885260}
   previewGrid: {fileID: 7360507374564549794}
@@ -4413,6 +4415,18 @@ MonoBehaviour:
   intervalToWaitBeforeHold: 0.3
   mostRecentDirectionMoved: 0
   DistanceNeededToDragBeforeSnakeMoves: 1
+--- !u!114 &2014905451708111706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7360507374275313842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d10be56b1437b645b3c7e2b9868d8be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &5334287123915763627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4430,6 +4444,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9d43332ab0eefdd44aef41d8f0227d3e, type: 2}
   currentPowerup: {fileID: 0}
   iconRenderer: {fileID: 0}
+  progressBar: {fileID: 0}
 --- !u!114 &7360507374275313742
 MonoBehaviour:
   m_ObjectHideFlags: 0
