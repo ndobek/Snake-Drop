@@ -51,6 +51,7 @@ MonoBehaviour:
   plantManager: {fileID: 0}
   Colors: {fileID: 11400000, guid: d73af178a01b17f41920008aff3091a4, type: 2}
   Types: {fileID: 11400000, guid: 1a6cc8bc900fa2c468c7e6da15a6c3f0, type: 2}
+  Powerups: {fileID: 11400000, guid: 06c3d76f1895bbe4691bf46c9c0a66b4, type: 2}
   gameOverScreen: {fileID: 0}
 --- !u!114 &987620008699396774
 MonoBehaviour:

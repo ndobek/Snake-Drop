@@ -7,6 +7,7 @@ public class Powerup : ScriptableObject, ISaveable
 {
     public Sprite sprite;
     public GridAction OnActivate;
+    [SerializeField]
     private string powerupName;
     public string Name { get { return powerupName; } set { powerupName = value; } }
 

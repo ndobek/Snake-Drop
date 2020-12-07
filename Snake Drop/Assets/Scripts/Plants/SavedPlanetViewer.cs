@@ -38,7 +38,7 @@ public class SavedPlanetViewer : MonoBehaviour
                 plants.Add(spawnedPlant);
 
             }
-            score.text = saveData.score.ToString();
+            score.text = saveData.playerData.score.score.ToString();
         }
     }
 

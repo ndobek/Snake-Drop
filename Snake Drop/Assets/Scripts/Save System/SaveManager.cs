@@ -13,7 +13,7 @@ public static class SaveManager
     public static void SaveGame(string name)
     {
         CheckDirExists();
-        SaveFormatter.Save(GetPath(name), GameManager.instance.GetSaveData());
+        SaveFormatter.Save(GetPath(name), new SaveData(GameManager.instance));
     }
 
     public static bool SaveExists(string name)
@@ -32,7 +32,7 @@ public static class SaveManager
     }
     public static SaveData LoadHighScore()
     {
-        if (!SaveExists(HighScoreSaveName)) SaveHighScore();
+        if (!SaveExists(HighScoreSaveName)) return null;
         return LoadGame(HighScoreSaveName);
     }
 
@@ -91,6 +91,11 @@ public static class SaveManager
         result = result.Replace(defaultSuffix, "");
 
         return result;
+    }
+
+    private static void DeleteAll()
+    {
+        foreach (string name in GetAllSaveNames()) DeleteSave(name);
     }
 }
 

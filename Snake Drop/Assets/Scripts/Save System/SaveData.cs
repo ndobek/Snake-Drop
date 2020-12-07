@@ -65,13 +65,13 @@ public class PowerupSaveData
     public PowerupSaveData(PowerupManager SaveObj)
     {
         currentProgress = SaveObj.currentProgress;
-        currentPowerup = SaveObj.currentPowerup.Name;
+        currentPowerup = SaveObj.currentPowerup != null? SaveObj.currentPowerup.Name : "null";
     }
 
     public void LoadTo(PowerupManager LoadObj, GameManager gameManager)
     {
         LoadObj.currentProgress = currentProgress;
-        LoadObj.currentPowerup = gameManager.Powerups.getObject(currentPowerup) as Powerup;
+        if(currentPowerup != "null") LoadObj.currentPowerup = gameManager.Powerups.getObject(currentPowerup) as Powerup;
     }
 }
 
@@ -241,9 +241,12 @@ public class EntranceSlotSaveData
     public bool active;
     public EntranceSlotSaveData(EntranceSlot SaveObj)
     {
-        active = SaveObj.Active;
-        x = SaveObj.x;
-        y = SaveObj.y;
+        if (SaveObj)
+        {
+            active = SaveObj.Active;
+            x = SaveObj.x;
+            y = SaveObj.y;
+        }
     }
 
     public void LoadTo(EntranceSlot LoadObj, GameManager gameManager)
