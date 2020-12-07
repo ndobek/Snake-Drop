@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
 
     public SaveableObjects Colors;
     public SaveableObjects Types;
+    public SaveableObjects Powerups;
 
     public bool GameInProgress()
     {
@@ -97,17 +98,17 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public SaveData GetSaveData()
-    {
-        SaveData result = new SaveData();
+    //public SaveData GetSaveData()
+    //{
+    //    SaveData result = new SaveData();
 
-        result.score = playerManagers[0].Score.Score;
-        result.planetData = plantManager.SavePlanet();
-        result.playGrid = playerManagers[0].playGrid.Save(result);
-        result.loadGrid = playerManagers[0].previewGrid.Save(result);
+    //    result.score = playerManagers[0].Score.Score;
+    //    result.planetData = plantManager.SavePlanet();
+    //    result.playGrid = playerManagers[0].playGrid.Save(result);
+    //    result.loadGrid = playerManagers[0].previewGrid.Save(result);
 
-        return result;
-    }
+    //    return result;
+    //}
 
     public void SaveGame()
     {
@@ -116,13 +117,6 @@ public class GameManager : MonoBehaviour
 
     public void LoadGame(SaveData save)
     {
-        if (save != null)
-        {
-            playerManagers[0].previewGrid.Load(save.loadGrid);
-            playerManagers[0].playGrid.Load(save.playGrid);
-
-            //foreach (BlockCollection blockCollection in save.blockCollections) blockCollection.Build();
-        }
-        //build BlockCollections
+        save.LoadTo(this);
     }
 }

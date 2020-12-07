@@ -8,11 +8,12 @@ public class UndoManager : MonoBehaviour
 
     public void Save()
     {
-        moves.Push(GameManager.instance.GetSaveData());
+        moves.Push(new SaveData(GameManager.instance));
     }
 
     public void Undo()
     {
         GameManager.instance.LoadGame(moves.Pop());
+
     }
 }

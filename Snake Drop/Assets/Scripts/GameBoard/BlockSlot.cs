@@ -179,28 +179,28 @@ public class BlockSlot : MonoBehaviour
     }
     #endregion
 
-    public BlockSlotSaveData Save(SaveData save)
-    {
-        List<BlockSaveData> BlockSaveData = new List<BlockSaveData>();
-        for(int i = 0; i < Blocks.Count; i++)
-        {
-            BlockSaveData.Add(Blocks[i].Save(save, i));
-        }
-        return new BlockSlotSaveData()
-        {
-            BlockData = BlockSaveData,
-            x = x,
-            y = y
-        };
-    }
+    //public BlockSlotSaveData Save(SaveData save)
+    //{
+    //    List<BlockSaveData> BlockSaveData = new List<BlockSaveData>();
+    //    for(int i = 0; i < Blocks.Count; i++)
+    //    {
+    //        BlockSaveData.Add(Blocks[i].Save(save, i));
+    //    }
+    //    return new BlockSlotSaveData()
+    //    {
+    //        BlockData = BlockSaveData,
+    //        x = x,
+    //        y = y
+    //    };
+    //}
 
-    public void Load(BlockSlotSaveData save)
-    {
-        DeleteBlock();
-        for(int i = 0; i < save.BlockData.Count; i++)
-        {
-            Blocks.Add(CreateBlock(GameManager.instance.Colors.getObject(save.BlockData[i].blockColor) as BlockColor, GameManager.instance.Types.getObject(save.BlockData[i].blockType) as BlockType));
-        }
-    }
+    //public void Load(BlockSlotSaveData save)
+    //{
+    //    DeleteBlock();
+    //    for(int i = 0; i < save.BlockData.Count; i++)
+    //    {
+    //        Blocks.Add(CreateBlock(GameManager.instance.Colors.getObject(save.BlockData[i].blockColor) as BlockColor, GameManager.instance.Types.getObject(save.BlockData[i].blockType) as BlockType));
+    //    }
+    //}
 
 }

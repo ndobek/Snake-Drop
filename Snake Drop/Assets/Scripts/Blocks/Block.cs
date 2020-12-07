@@ -245,32 +245,32 @@ public class Block : MonoBehaviour
     #endregion
 
 
-    public BlockSaveData Save(SaveData save)
-    {
-        return Save(save, slot.Blocks.BinarySearch(tail));
-    }
-    public BlockSaveData Save(SaveData save, int i)
-    {
-        BlockSaveData result = new BlockSaveData()
-        {
-            blockColor = blockColor.Name,
-            blockType = blockType.Name,
-            index = i,
-            tail = tail != null,
-        };
+    //public BlockSaveData Save(SaveData save)
+    //{
+    //    return Save(save, slot.Blocks.IndexOf(tail));
+    //}
+    //public BlockSaveData Save(SaveData save, int i)
+    //{
+    //    BlockSaveData result = new BlockSaveData()
+    //    {
+    //        blockColor = blockColor.Name,
+    //        blockType = blockType.Name,
+    //        index = i,
+    //        tail = tail != null,
+    //    };
 
-        if(tail != null)
-        {
-            result.tailOnLoadGrid = tail.slot.playGrid == GameManager.instance.playerManagers[0].previewGrid;
-            result.tailX = tail == null ? tail.X : 0;
-            result.tailY = tail.Y;
-            result.tailI = tail.slot.Blocks.IndexOf(tail);
-        }
-        if(BlockCollection != null)
-        {
-            save.blockCollections.Add(BlockCollection.Save());
-        }
+    //    if(tail != null)
+    //    {
+    //        result.tailOnLoadGrid = tail.slot.playGrid == GameManager.instance.playerManagers[0].previewGrid;
+    //        result.tailX = tail.X;
+    //        result.tailY = tail.Y;
+    //        result.tailI = tail.slot.Blocks.IndexOf(tail);
+    //    }
+    //    if(BlockCollection != null)
+    //    {
+    //        save.blockCollections.Add(BlockCollection.Save());
+    //    }
 
-        return result;
-    }
+    //    return result;
+    //}
 }

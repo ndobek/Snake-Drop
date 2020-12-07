@@ -7,7 +7,7 @@ public class PowerupManager : MonoBehaviour
 {
     [SerializeField]
     private int powerupFrequency;
-    private int currentProgress;
+    public int currentProgress;
 
     public Powerup[] possiblePowerups;
     public Powerup currentPowerup; 

@@ -44,7 +44,6 @@ public class PlayerManager : MonoBehaviour
 
     public void MidRound()
     {
-        Undoer.Save();
         if (!RoundInProgress)
         {
             EndRound();
@@ -242,6 +241,7 @@ public class PlayerManager : MonoBehaviour
         {
             if (RoundInProgress)
             {
+                Undoer.Save();
                 SnakeHead.Move(direction, this);
                 MidRound();
             }

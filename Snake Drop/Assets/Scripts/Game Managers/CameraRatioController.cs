@@ -65,9 +65,14 @@ public class CameraRatioController : MonoBehaviour
 
     private void PositionCamera()
     {
-        Debug.Log(ControlledCamera.WorldToScreenPoint(targetPosition));
-        //Vector3 adjPosition = targetPosition;
+        //Debug.Log(targetPosition);
+        //Vector3 adjPosition = ControlledCamera.WorldToScreenPoint(targetPosition);
 
+        //adjPosition.x = Mathf.Round(adjPosition.x);
+        //adjPosition.y = Mathf.Round(adjPosition.y);
+        //adjPosition = ControlledCamera.ScreenToWorldPoint(targetPosition);
+
+        //Debug.Log(adjPosition);
         //CameraTransform.position = adjPosition;
     }
 

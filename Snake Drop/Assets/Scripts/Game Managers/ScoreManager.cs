@@ -76,12 +76,12 @@ public class ScoreManager : MonoBehaviour
 
     public void UpdateScore()
     {
-        SaveData oldScore = SaveManager.LoadHighScore();
-        HighScore = oldScore.score;
-        if (score > HighScore)
-        {
-            SaveManager.SaveHighScore();
-        }
-        //SaveScore();
+        throw new System.NotImplementedException();
+        //SaveData oldScore = SaveManager.LoadHighScore();
+        //HighScore = oldScore.score;
+        //if (score > HighScore)
+        //{
+        //    SaveManager.SaveHighScore();
+        //}
     }
 }

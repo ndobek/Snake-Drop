@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EndGameCondition: {fileID: 11400000, guid: 6920d85594e06554683bdc470d3948f6, type: 2}
   TypeBank: {fileID: 11400000, guid: d9e9f9f8a889d024a9223a79b9cb74d8, type: 2}
-  OnGameStart: {fileID: 11400000, guid: 7997d100be10a9f46bf918dfca034906, type: 2}
+  OnGameStart: {fileID: 0}
   Levels:
   - MinScore: 0
     MaxScore: 20
