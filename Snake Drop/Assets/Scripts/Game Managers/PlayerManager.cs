@@ -254,7 +254,7 @@ public class PlayerManager : MonoBehaviour
                 }
                 else
                 {
-
+                    Undoer.Save();
                     StartNewRound(direction);
                 }
             }

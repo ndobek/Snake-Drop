@@ -13,7 +13,10 @@ public class UndoManager : MonoBehaviour
 
     public void Undo()
     {
-        GameManager.instance.LoadGame(moves.Pop());
+        if (moves.Count > 0)
+        {
+            GameManager.instance.LoadGame(moves.Pop());
+        }
 
     }
 }

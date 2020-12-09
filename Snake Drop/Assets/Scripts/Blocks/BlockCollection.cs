@@ -94,7 +94,7 @@ public class BlockCollection : IComparable
     {
         return (float)FillAmount/(float)Area();
     }
-    private void Rebuild()
+    public void Rebuild()
     {
        if(Blocks[0] != null) Build(Blocks[0].Slot.playGrid, Blocks[0].blockType);
     }
@@ -137,6 +137,7 @@ public class BlockCollection : IComparable
     private void Add(BlockSlot slot)
     {
         Slots[GridCoordsToIndex(slot.x, slot.y)] = slot;
+        Blocks[GridCoordsToIndex(slot.x, slot.y)] = slot.Block;
     }
 
     public void SetType(BlockType type)
@@ -149,6 +150,7 @@ public class BlockCollection : IComparable
                 block.SetBlockType(block.blockColor, type);
                 Blocks[GridCoordsToIndex(block.X, block.Y)] = block;
                 block.BlockCollection = this;
+
             }
             else
             {
@@ -166,7 +168,7 @@ public class BlockCollection : IComparable
     {
         foreach(Block block in Blocks)
         {
-            if (block)
+            if (block && block.blockType.BlockFillAnimator)
             {
                 block.AnimationManager.AddAnimation(new BlockAnimation(block, block.blockType.BlockFillAnimator));
             }

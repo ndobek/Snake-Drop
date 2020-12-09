@@ -69,7 +69,7 @@ public class BlockAnimationManager : MonoBehaviour
         }
     }
 
-    public void Update()
+    public void LateUpdate()
     {
         //Debug.Log(ActiveAnimations.Count);
         while (CanStartNewNonConcurrent())

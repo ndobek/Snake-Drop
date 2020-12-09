@@ -98,18 +98,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    //public SaveData GetSaveData()
-    //{
-    //    SaveData result = new SaveData();
-
-    //    result.score = playerManagers[0].Score.Score;
-    //    result.planetData = plantManager.SavePlanet();
-    //    result.playGrid = playerManagers[0].playGrid.Save(result);
-    //    result.loadGrid = playerManagers[0].previewGrid.Save(result);
-
-    //    return result;
-    //}
-
     public void SaveGame()
     {
         SaveManager.SaveGame();

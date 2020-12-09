@@ -30,6 +30,7 @@ public class PlayerSaveData
     public EntranceManagerSaveData entranceManager;
     public bool RoundInProgress;
     public bool GameInProgress;
+    public EntranceSlotSaveData EnterSlot;
 
     public PlayerSaveData(PlayerManager SaveObj)
     {
@@ -41,18 +42,22 @@ public class PlayerSaveData
         entranceManager = new EntranceManagerSaveData(SaveObj.entranceManager);
         RoundInProgress = SaveObj.RoundInProgress;
         GameInProgress = SaveObj.GameInProgress;
+        EnterSlot = new EntranceSlotSaveData(SaveObj.enterSlot);
     }
     
     public void LoadTo(PlayerManager LoadObj, GameManager gameManager)
     {
-        LoadObj.SnakeHead = snakeHead.GetBlock(LoadObj);
         score.LoadTo(LoadObj.Score);
         powerup.LoadTo(LoadObj.Powerup, gameManager);
         playGrid.LoadTo(LoadObj.playGrid, gameManager);
         previewGrid.LoadTo(LoadObj.previewGrid, gameManager);
+        playGrid.LoadReferences(gameManager);
+        previewGrid.LoadReferences(gameManager);
         entranceManager.LoadTo(LoadObj.entranceManager, gameManager);
         LoadObj.RoundInProgress = RoundInProgress;
         LoadObj.GameInProgress = GameInProgress;
+        LoadObj.SnakeHead = snakeHead.GetBlock(LoadObj);
+        LoadObj.PositionWaitSlot(LoadObj.entranceManager.GetSlot(EnterSlot.x, EnterSlot.y));
     }
 }
 
@@ -129,20 +134,25 @@ public class GridSaveData
     public void LoadTo(PlayGrid LoadObj, GameManager gameManager)
     {
         foreach (BlockSlotSaveData slotData in BlockSlotData) slotData.LoadTo(LoadObj.GetSlot(slotData.x, slotData.y), gameManager);
-        foreach (BlockSlotSaveData slotData in BlockSlotData)
-        {
-            foreach (BlockSaveData blockData in slotData.BlockData)
-            {
-                if(blockData.tail) blockData.location.GetBlock(gameManager.playerManagers[0]).SetTail(blockData.tailLocation.GetBlock(gameManager.playerManagers[0]));
-            }
-        }
 
         foreach (BlockCollectionSaveData collectionData in BlockCollectionData)
         {
             BlockCollection newCollection = new BlockCollection(); 
             collectionData.LoadTo(newCollection, gameManager);
-            newCollection.Build(LoadObj);
+            newCollection.Build(LoadObj, gameManager.Types.getObject(collectionData.blockType) as BlockType);
         }
+    }
+
+    public void LoadReferences(GameManager gameManager)
+    {
+        foreach (BlockSlotSaveData slotData in BlockSlotData)
+        {
+            foreach (BlockSaveData blockData in slotData.BlockData)
+            {
+                if (blockData.tail) blockData.location.GetBlock(gameManager.playerManagers[0]).SetTail(blockData.tailLocation.GetBlock(gameManager.playerManagers[0]));
+            }
+        }
+
     }
 }
 [System.Serializable]
@@ -230,6 +240,7 @@ public class EntranceManagerSaveData
     public void LoadTo(EntranceManager LoadObj, GameManager gameManager)
     {
         foreach (EntranceSlotSaveData entranceSlot in EntranceSlots) entranceSlot.LoadTo(LoadObj.GetSlot(entranceSlot.x, entranceSlot.y) as EntranceSlot, gameManager);
+        LoadObj.UpdateAnimations();
     }
 }
 
@@ -263,6 +274,7 @@ public class BlockCollectionSaveData
     public int RightCoord;
     public int TopCoord;
     public int BottomCoord;
+    public string blockType;
 
     public int FillAmount;
 
@@ -273,6 +285,7 @@ public class BlockCollectionSaveData
         TopCoord = SaveObj.TopCoord;
         BottomCoord = SaveObj.BottomCoord;
         FillAmount = SaveObj.FillAmount;
+        blockType = SaveObj.Blocks[0].blockType.Name;
     }
     
     public void LoadTo(BlockCollection LoadObj, GameManager gameManager)

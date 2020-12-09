@@ -19,7 +19,7 @@ public class BoardRotator : MonoBehaviour
         if (!GameManager.instance.playerManagers[0].RoundInProgress && KeepEntranceSlotOnOneSide) SetRotation(Directions.TranslateDirection(GameManager.instance.playerManagers[0].enterSlot.GetEdgeInfo().direction(), EntranceSide));
         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 0, targetRotation), rotationLerpSpeed);
     }
-
+    
     public void SetRotation(Directions.Direction UpDirection)
     {
         currentDirection = UpDirection;
