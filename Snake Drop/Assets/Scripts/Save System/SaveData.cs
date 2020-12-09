@@ -31,6 +31,7 @@ public class PlayerSaveData
     public bool RoundInProgress;
     public bool GameInProgress;
     public EntranceSlotSaveData EnterSlot;
+    public int mostRecentDirectionMoved;
 
     public PlayerSaveData(PlayerManager SaveObj)
     {
@@ -43,6 +44,8 @@ public class PlayerSaveData
         RoundInProgress = SaveObj.RoundInProgress;
         GameInProgress = SaveObj.GameInProgress;
         EnterSlot = new EntranceSlotSaveData(SaveObj.enterSlot);
+        mostRecentDirectionMoved = (int)SaveObj.playerController.SecondMostRecentDirectionMoved;
+
     }
     
     public void LoadTo(PlayerManager LoadObj, GameManager gameManager)
@@ -58,6 +61,7 @@ public class PlayerSaveData
         LoadObj.GameInProgress = GameInProgress;
         LoadObj.SnakeHead = snakeHead.GetBlock(LoadObj);
         LoadObj.PositionWaitSlot(LoadObj.entranceManager.GetSlot(EnterSlot.x, EnterSlot.y));
+        LoadObj.playerController.MostRecentDirectionMoved = (Directions.Direction)mostRecentDirectionMoved;
     }
 }
 

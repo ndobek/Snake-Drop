@@ -241,7 +241,7 @@ public class PlayerManager : MonoBehaviour
         {
             if (RoundInProgress)
             {
-                Undoer.Save();
+                if(!snakeHead.blockType.OverrideMove(snakeHead, snakeHead.Neighbor(direction), this)) Undoer.Save();
                 SnakeHead.Move(direction, this);
                 MidRound();
             }

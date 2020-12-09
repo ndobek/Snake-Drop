@@ -18,7 +18,19 @@ public class PlayerController : MonoBehaviour
     private float timePressed;
 
     [HideInInspector]
-    public Direction mostRecentDirectionMoved;
+    private Direction mostRecentDirectionMoved;
+    public Direction MostRecentDirectionMoved
+    {
+        get { return mostRecentDirectionMoved; }
+        set
+        {
+            SecondMostRecentDirectionMoved = mostRecentDirectionMoved;
+            mostRecentDirectionMoved = value;
+        }
+    }
+
+    [HideInInspector]
+    public Direction SecondMostRecentDirectionMoved;
 
     private Vector2 DistanceMovedThisTouch;
     public float DistanceNeededToDragBeforeSnakeMoves = 1;
@@ -100,7 +112,7 @@ public class PlayerController : MonoBehaviour
 
     private void MoveSnakeOnHold(TouchManager.TouchData HoldData)
     {
-        Hold(CameraDirectionTranslate(mostRecentDirectionMoved));
+        Hold(CameraDirectionTranslate(MostRecentDirectionMoved));
     }
     private void MoveSnakeOnTap(TouchManager.TouchData Tap)
     {
@@ -109,7 +121,7 @@ public class PlayerController : MonoBehaviour
 
     private void Press(Direction direction)
     {
-        mostRecentDirectionMoved = direction;
+        MostRecentDirectionMoved = direction;
         if ((MoveOnCommandDuringRound && player.RoundInProgress) || (MoveOnCommandBetweenRounds && !player.RoundInProgress))
         {
             switch (direction)
@@ -133,7 +145,7 @@ public class PlayerController : MonoBehaviour
     }
     private void Press()
     {
-        Press(mostRecentDirectionMoved);
+        Press(MostRecentDirectionMoved);
     }
     private void FirstPress(Direction direction)
     {
@@ -143,7 +155,7 @@ public class PlayerController : MonoBehaviour
     }
     private void FirstPress()
     {
-        FirstPress(mostRecentDirectionMoved);
+        FirstPress(MostRecentDirectionMoved);
     }
 
     private void Hold(Direction direction)
@@ -170,7 +182,7 @@ public class PlayerController : MonoBehaviour
 
     public void ResetGame()
     {
-        mostRecentDirectionMoved = Direction.DOWN;
+        MostRecentDirectionMoved = Direction.DOWN;
     }
 
 }

@@ -35,7 +35,7 @@ public class PlayerAutoMover : MonoBehaviour
             {
                 currentTime -= TimePerMove;
                 if (playerController.player.RoundInProgress || MoveBetweenRounds) MovePlayer();
-                else prevMovedDirection = playerController.mostRecentDirectionMoved;
+                else prevMovedDirection = playerController.MostRecentDirectionMoved;
             }
         }
 
@@ -49,7 +49,7 @@ public class PlayerAutoMover : MonoBehaviour
 
     private void MovePlayer()
     {
-        Directions.Direction directionToMove = playerController.mostRecentDirectionMoved;
+        Directions.Direction directionToMove = playerController.MostRecentDirectionMoved;
         Debug.Log(upcomingDirections.ToString());
         if (upcomingDirections.Count > 0) directionToMove = upcomingDirections.Dequeue();
         if (directionToMove == Directions.GetOppositeDirection(prevMovedDirection)) directionToMove = prevMovedDirection;
