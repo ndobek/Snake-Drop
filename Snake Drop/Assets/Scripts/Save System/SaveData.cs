@@ -143,7 +143,7 @@ public class GridSaveData
         {
             BlockCollection newCollection = new BlockCollection(); 
             collectionData.LoadTo(newCollection, gameManager);
-            newCollection.Build(LoadObj, gameManager.Types.getObject(collectionData.blockType) as BlockType);
+            newCollection.Build(LoadObj, gameManager.Types.getObject(collectionData.blockType) as BlockType, gameManager.playerManagers[0]);
         }
     }
 
@@ -153,7 +153,9 @@ public class GridSaveData
         {
             foreach (BlockSaveData blockData in slotData.BlockData)
             {
-                if (blockData.tail) blockData.location.GetBlock(gameManager.playerManagers[0]).SetTail(blockData.tailLocation.GetBlock(gameManager.playerManagers[0]));
+                Block block = blockData.location.GetBlock(gameManager.playerManagers[0]);
+                if (blockData.tail) block.SetTail(blockData.tailLocation.GetBlock(gameManager.playerManagers[0]));
+                if (blockData.owned) block.SetOwner();
             }
         }
 
@@ -179,7 +181,11 @@ public class BlockSlotSaveData
     public void LoadTo(BlockSlot LoadObj, GameManager gameManager)
     {
         LoadObj.DeleteBlock();
-        foreach (BlockSaveData block in BlockData) LoadObj.CreateBlock(gameManager.Colors.getObject(block.blockColor) as BlockColor, gameManager.Types.getObject(block.blockType) as BlockType);
+        foreach (BlockSaveData block in BlockData)
+        {
+            LoadObj.CreateBlock(gameManager.Colors.getObject(block.blockColor) as BlockColor, gameManager.Types.getObject(block.blockType) as BlockType);
+
+        }
     }
 }
 [System.Serializable]
@@ -214,6 +220,7 @@ public class BlockSaveData
     public BlockLocationData location;
     public bool tail;
     public BlockLocationData tailLocation;
+    public bool owned;
 
     public BlockSaveData(Block SaveObj)
     {
@@ -221,13 +228,8 @@ public class BlockSaveData
         blockColor = SaveObj.blockColor.Name;
         location = new BlockLocationData(SaveObj);
         tail = SaveObj.Tail != null;
-
+        owned = SaveObj.Owner != null;
         if (tail) tailLocation = new BlockLocationData(SaveObj.Tail);
-    }
-    public void LoadTo(Block LoadObj, GameManager gameManager)
-    {
-        //LoadObj.SetBlockType(gameManager.Colors.getObject(blockColor) as BlockColor, gameManager.Types.getObject(blockType) as BlockType);
-        if (tail) LoadObj.SetTail(tailLocation.GetBlock(gameManager.playerManagers[0]));
     }
 }
 

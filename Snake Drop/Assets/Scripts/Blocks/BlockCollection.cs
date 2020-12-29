@@ -99,7 +99,7 @@ public class BlockCollection : IComparable
        if(Blocks[0] != null) Build(Blocks[0].Slot.playGrid, Blocks[0].blockType);
     }
 
-    public void Build(PlayGrid grid, BlockType type = null)
+    public void Build(PlayGrid grid, BlockType type = null, PlayerManager player = null)
     {
         Blocks = new Block[XSize() * YSize()];
         Slots = new BlockSlot[XSize() * YSize()];
@@ -112,7 +112,7 @@ public class BlockCollection : IComparable
             }
         }
         UpdateFillSprites();
-        if (type) SetType(type);
+        if (type) SetType(type, player);
     }
 
     public void UpdateCoords()
@@ -140,7 +140,7 @@ public class BlockCollection : IComparable
         Blocks[GridCoordsToIndex(slot.x, slot.y)] = slot.Block;
     }
 
-    public void SetType(BlockType type)
+    public void SetType(BlockType type, PlayerManager player = null)
     {
         foreach(BlockSlot slot in Slots)
         {
@@ -150,6 +150,8 @@ public class BlockCollection : IComparable
                 block.SetBlockType(block.blockColor, type);
                 Blocks[GridCoordsToIndex(block.X, block.Y)] = block;
                 block.BlockCollection = this;
+                if (player == null) player = GameManager.instance.playerManagers[0];
+                block.Owner = player;
 
             }
             else

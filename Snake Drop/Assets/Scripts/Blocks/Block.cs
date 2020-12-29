@@ -107,7 +107,6 @@ public class Block : MonoBehaviour
         AddAnimations();
     }
 
-
     //Tells the grid that it needs to check for fall movement and update
     private void SetGridDirty()
     {
@@ -183,8 +182,13 @@ public class Block : MonoBehaviour
     #endregion
 
     #region Snake Controls
-    public void SetOwner(PlayerManager NewOwner)
+    public void SetOwner(PlayerManager NewOwner = null)
     {
+        if (owner == null)
+        {
+            owner = GameManager.instance.playerManagers[0];
+            return;
+        }
         if (Tail != null)
         {
             Tail.SetOwner(NewOwner);
