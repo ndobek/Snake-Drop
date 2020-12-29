@@ -309,7 +309,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BoardRotator, Assembly-CSharp
-        m_MethodName: RotateCounterClockwise
+        m_MethodName: RotateClockwise
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -384,8 +384,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 5967109836943596643, guid: 8cc3153585b27e146bd5af7d2a7ee2d6,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: b8001dfbfca1bea49ac7cc3af5b48498, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -460,8 +459,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 7737253097813100105, guid: 8cc3153585b27e146bd5af7d2a7ee2d6,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: eb00e6f472df0194f9439c0827ac281f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -673,7 +671,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BoardRotator, Assembly-CSharp
-        m_MethodName: RotateClockwise
+        m_MethodName: RotateCounterClockwise
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
