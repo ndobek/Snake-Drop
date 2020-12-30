@@ -517,7 +517,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 498d11f7ff93eb8469eaadb88fb93979, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPosition: {x: 0, y: -3.64, z: 0}
+  targetPosition: {x: 0, y: 0, z: 0}
   targetWidth: 12.5
   targetHeight: 25
   portraitUseHeight: 0

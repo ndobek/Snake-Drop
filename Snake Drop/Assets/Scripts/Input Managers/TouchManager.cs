@@ -17,6 +17,7 @@ public class TouchManager : MonoBehaviour
 
     [SerializeField]
     private float deadZone;
+    private bool disallowTouch = false;
 
 
     //[SerializeField]
@@ -35,7 +36,7 @@ public class TouchManager : MonoBehaviour
         {
             foreach (Touch touch in Input.touches)
             {
-                if (InValidArea(touch))
+                if (AreaValid(touch))
                 {
                     if (touch.phase == TouchPhase.Began)
                     {
@@ -60,9 +61,13 @@ public class TouchManager : MonoBehaviour
 
                     if (touch.phase == TouchPhase.Ended)
                     {
-                        DetectSwipe();
-                        DetectTap();
-                        OnTouchEnd(RegisterTouch());
+                        if (disallowTouch) disallowTouch = false;
+                        else
+                        {
+                            DetectSwipe();
+                            DetectTap();
+                            OnTouchEnd(RegisterTouch());
+                        }
                     }
                 }
             }
@@ -159,10 +164,12 @@ public class TouchManager : MonoBehaviour
         return Mathf.Abs(fingerUpPos.x - fingerDownPos.x);
     }
 
-    private bool InValidArea(Touch touch)
+    private bool AreaValid(Touch touch)
     {
         //return true;
-        return !EventSystem.current.IsPointerOverGameObject(touch.fingerId);
+        bool result = !EventSystem.current.IsPointerOverGameObject(touch.fingerId);
+        if (result == false) disallowTouch = true;
+        return result;
     }
 
     public TouchData RegisterTouch()

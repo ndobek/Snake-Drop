@@ -293,6 +293,11 @@ PrefabInstance:
       propertyPath: powerupFrequency
       value: 5000
       objectReference: {fileID: 0}
+    - target: {fileID: 9134113234099930225, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
+        type: 3}
+      propertyPath: m_BlockingObjects
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 9134113234743710312, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
         type: 3}
       propertyPath: m_Name
@@ -366,7 +371,7 @@ PrefabInstance:
     - target: {fileID: 9134113235925775575, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a168f4bdbb2ced42aeabbe202a35da1, type: 3}
