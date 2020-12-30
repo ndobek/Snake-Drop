@@ -10,7 +10,8 @@ public class PowerupManager : MonoBehaviour
     public int currentProgress;
 
     public Powerup[] possiblePowerups;
-    public Powerup currentPowerup; 
+    public Powerup currentPowerup;
+    public int extraPowerups;
 
     [SerializeField]
     private Image iconRenderer;
@@ -28,7 +29,8 @@ public class PowerupManager : MonoBehaviour
 
     public void GetPowerUp(Powerup powerup)
     {
-        if(currentPowerup == null) currentPowerup = powerup;
+        if (currentPowerup == null) currentPowerup = powerup;
+        else extraPowerups += 1;
     }
 
     public void TryActivate()
@@ -37,6 +39,11 @@ public class PowerupManager : MonoBehaviour
         {
             currentPowerup.Activate();
             currentPowerup = null;
+            if (extraPowerups > 0)
+            {
+                extraPowerups -= 1;
+                GetPowerUp();
+            }
         }
         UpdateSprite();
     }
