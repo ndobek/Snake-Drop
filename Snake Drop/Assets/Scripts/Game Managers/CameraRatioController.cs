@@ -8,10 +8,10 @@ public class CameraRatioController : MonoBehaviour
     //These are the relationships between Camera Size and in game Units
     //var height = 2*Camera.main.orthographicSize;
     //var width = height * Camera.main.aspect;
-    public Vector3 targetPosition;
 
     [HideInInspector]
     private Camera ControlledCamera;
+    [SerializeField]
     private Transform CameraTransform;
     [SerializeField]
     private float targetWidth;
@@ -21,14 +21,18 @@ public class CameraRatioController : MonoBehaviour
     private bool portraitUseHeight;
     [SerializeField]
     private bool landscapeUseHeight;
+    [SerializeField]
+    private bool roundPosToPixelSize;
+    [SerializeField]
+    private float PPU;
 
     private void Awake()
     {
-        ControlledCamera = GetComponent<Camera>();
-        CameraTransform = GetComponent<Transform>();
+        if (ControlledCamera == null) ControlledCamera = GetComponent<Camera>();
+        if (CameraTransform == null) CameraTransform = GetComponent<Transform>();
     }
 
-    private void Update()
+    private void LateUpdate()
     {
         if (ControlledCamera.aspect < 1)
         {
@@ -38,7 +42,7 @@ public class CameraRatioController : MonoBehaviour
         {
             SetLandscape();
         }
-        PositionCamera();
+        if(roundPosToPixelSize) PositionCamera();
     }
 
     private void SetPortrait()
@@ -65,15 +69,14 @@ public class CameraRatioController : MonoBehaviour
 
     private void PositionCamera()
     {
-        //Debug.Log(targetPosition);
-        //Vector3 adjPosition = ControlledCamera.WorldToScreenPoint(targetPosition);
+        Vector3 pos = CameraTransform.position;
+        float pixelSize = 1 / PPU;
 
-        //adjPosition.x = Mathf.Round(adjPosition.x);
-        //adjPosition.y = Mathf.Round(adjPosition.y);
-        //adjPosition = ControlledCamera.ScreenToWorldPoint(targetPosition);
+        float xAdj = pos.x % pixelSize;
+        float yAdj = pos.y % pixelSize;
+        float zAdj = pos.z % pixelSize;
 
-        //Debug.Log(adjPosition);
-        //CameraTransform.position = adjPosition;
+        CameraTransform.position = new Vector3(pos.x - xAdj, pos.y - yAdj, pos.z - zAdj);
     }
 
 
