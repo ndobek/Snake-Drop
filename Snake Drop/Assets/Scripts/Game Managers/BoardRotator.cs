@@ -14,9 +14,20 @@ public class BoardRotator : MonoBehaviour
     [HideInInspector]
     public Directions.Direction currentDirection = Directions.Direction.UP;
 
+    private bool EntranceMismatched = false;
+
     public void Update()
     {
-        if (!GameManager.instance.playerManagers[0].RoundInProgress && KeepEntranceSlotOnOneSide) SetRotation(Directions.TranslateDirection(GameManager.instance.playerManagers[0].enterSlot.GetEdgeInfo().direction(), EntranceSide));
+        if (!GameManager.instance.playerManagers[0].RoundInProgress && KeepEntranceSlotOnOneSide)
+        {
+            if (EntranceMismatched)
+            {
+                EntranceMismatched = false;
+                RotateEntranceToMatchBoard();
+            }
+            RotateBoardToMatchEntrance();
+            
+        }
         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 0, targetRotation), rotationLerpSpeed);
     }
     
@@ -42,17 +53,44 @@ public class BoardRotator : MonoBehaviour
         Directions.Direction newDirection = clockwise ? Directions.GetClockwiseNeighborDirection(currentDirection) : Directions.GetCounterClockwiseNeighborDirection(currentDirection);
 
         if (!(KeepEntranceSlotOnOneSide && !roundInProgress)) SetRotation(newDirection);
-        if (KeepEntranceSlotOnOneSide && !roundInProgress)
+        if (KeepEntranceSlotOnOneSide)
         {
-            int i = 0;
-            while (i < EnterSlotMoveDistance)
-            {
-                i += 1;
-                GameManager.instance.playerManagers[0].MoveWaitSlot(clockwise);
-            }
-
+            if (roundInProgress) EntranceMismatched = true;
+            else RotateEntranceSlot(clockwise);
         }
 
+    }
+
+    public void RotateEntranceSlot(bool clockwise)
+    {
+        int i = 0;
+        while (i < EnterSlotMoveDistance)
+        {
+            i += 1;
+            GameManager.instance.playerManagers[0].MoveWaitSlot(clockwise);
+        }
+    }
+
+    public void RotateEntranceSlotTo(Directions.Direction side)
+    {
+        Directions.Direction currentSide = GameManager.instance.playerManagers[0].enterSlot.GetEdgeInfo().direction();
+        if (currentSide == side) return;
+        else if (Directions.GetClockwiseNeighborDirection(currentSide) == side) RotateEntranceSlot(true);
+        else if (Directions.GetCounterClockwiseNeighborDirection(currentSide) == side) RotateEntranceSlot(false);
+        else
+        {
+            RotateEntranceSlot(true);
+            RotateEntranceSlot(true);
+        }
+    }
+
+    public void RotateEntranceToMatchBoard()
+    {
+        RotateEntranceSlotTo(currentDirection);
+    }
+    public void RotateBoardToMatchEntrance()
+    {
+        SetRotation(Directions.TranslateDirection(GameManager.instance.playerManagers[0].enterSlot.GetEdgeInfo().direction(), EntranceSide));
     }
 
     private void OnRotate()

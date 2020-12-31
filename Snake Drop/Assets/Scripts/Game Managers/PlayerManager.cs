@@ -151,6 +151,7 @@ public class PlayerManager : MonoBehaviour
         previewGrid.ClearGrid();
         PositionWaitSlot(entranceManager.StartingSlot);
         GameInProgress = true;
+        RoundInProgress = false;
 
 
         if (GameManager.instance.GameModeManager.GameMode.OnGameStart) GameManager.instance.GameModeManager.GameMode.OnGameStart.Invoke(playGrid);
@@ -162,6 +163,7 @@ public class PlayerManager : MonoBehaviour
         {
             Score.ResetMultiplier();
         }
+        
         entranceManager.UpdateAnimations();
         //Score.checkpointManager.TryCheckpoint();
         FillPreviewBar();
