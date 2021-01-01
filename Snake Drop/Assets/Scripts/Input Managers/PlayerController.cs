@@ -67,8 +67,8 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown("z") || Input.GetKeyDown("backspace")) { player.Undoer.Undo(); }
 
-        if (Input.GetKeyDown("e") || Input.GetKeyDown("right ctrl")) { cameraRotator.RotateCounterClockwise(); }
-        if (Input.GetKeyDown("q") || Input.GetKeyDown("[0]")) { cameraRotator.RotateClockwise(); }
+        if (Input.GetKeyDown("e") || Input.GetKeyDown("right ctrl")) { cameraRotator.RotateClockwise(); }
+        if (Input.GetKeyDown("q") || Input.GetKeyDown("[0]")) { cameraRotator.RotateCounterClockwise(); }
 
         if (Input.GetKey("w") || Input.GetKey("up")) { Hold(CameraDirectionTranslate(Direction.UP)); }
         if (Input.GetKey("s") || Input.GetKey("down")) { Hold(CameraDirectionTranslate(Direction.DOWN)); }

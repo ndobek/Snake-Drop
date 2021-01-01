@@ -7,15 +7,18 @@ public class SaveData
 {
     public PlayerSaveData playerData;
     public PlanetSaveData planetData;
+    public Random.State randState;
 
     public SaveData(GameManager gameManager)
     {
         playerData = new PlayerSaveData(gameManager.playerManagers[0]);
         planetData = gameManager.plantManager.SavePlanet();
+        randState = Random.state;
     }
 
     public void LoadTo(GameManager LoadObj)
     {
+        Random.state = randState;
         playerData.LoadTo(LoadObj.playerManagers[0], LoadObj);
     }
 }

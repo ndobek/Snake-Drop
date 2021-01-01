@@ -51,7 +51,7 @@ public class ScoreManager : MonoBehaviour
         set { numberOfSnakes = value; }
     }
 
-    private void Awake()
+    private void Start()
     {
         ResetGame();
     }
