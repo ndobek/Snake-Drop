@@ -70,17 +70,20 @@ public class PowerupSaveData
 {
     public int currentProgress;
     public string currentPowerup;
+    public int extraPowerups;
 
     public PowerupSaveData(PowerupManager SaveObj)
     {
         currentProgress = SaveObj.currentProgress;
         currentPowerup = SaveObj.currentPowerup != null? SaveObj.currentPowerup.Name : "null";
+        extraPowerups = SaveObj.extraPowerups;
     }
 
     public void LoadTo(PowerupManager LoadObj, GameManager gameManager)
     {
         LoadObj.currentProgress = currentProgress;
         if(currentPowerup != "null") LoadObj.currentPowerup = gameManager.Powerups.getObject(currentPowerup) as Powerup;
+        LoadObj.extraPowerups = extraPowerups;
     }
 }
 

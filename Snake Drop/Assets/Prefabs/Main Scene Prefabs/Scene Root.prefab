@@ -116,11 +116,21 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 6322816129438425964}
+    - target: {fileID: 6399471933366425548, guid: 3f3fb188545baca4d9f6112f1c0f42b0,
+        type: 3}
+      propertyPath: powerupManager
+      value: 
+      objectReference: {fileID: 8907504684116937870}
     - target: {fileID: 7281281027042213677, guid: 3f3fb188545baca4d9f6112f1c0f42b0,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 6322816129438425964}
+    - target: {fileID: 8249432726558939021, guid: 3f3fb188545baca4d9f6112f1c0f42b0,
+        type: 3}
+      propertyPath: powerupManager
+      value: 
+      objectReference: {fileID: 8907504684116937870}
     - target: {fileID: 9087035105615657618, guid: 3f3fb188545baca4d9f6112f1c0f42b0,
         type: 3}
       propertyPath: pm

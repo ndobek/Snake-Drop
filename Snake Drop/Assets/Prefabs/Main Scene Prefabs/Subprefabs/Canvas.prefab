@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2745876194196443218}
+  - component: {fileID: 6399471933366425548}
   m_Layer: 5
   m_Name: Powerup Button
   m_TagString: Untagged
@@ -30,6 +31,7 @@ RectTransform:
   - {fileID: 8951739585879720922}
   - {fileID: 7762762321906277624}
   - {fileID: 5256431980280529083}
+  - {fileID: 4231346000246138098}
   m_Father: {fileID: 9087035105719182687}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -38,6 +40,22 @@ RectTransform:
   m_AnchoredPosition: {x: -1.0869, y: -250}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &6399471933366425548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1749779938237723207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53211ce18e184e04d8910e4d15c68207, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerupManager: {fileID: 0}
+  text: {fileID: 2420578004888824170}
+  iconRenderer: {fileID: 0}
+  progressBar: {fileID: 6162689054464206367}
 --- !u!1 &1787618297595279060
 GameObject:
   m_ObjectHideFlags: 0
@@ -681,6 +699,102 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &8929643727285328647
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4231346000246138098}
+  - component: {fileID: 6501397013773801792}
+  - component: {fileID: 2420578004888824170}
+  - component: {fileID: 8249432726558939021}
+  m_Layer: 5
+  m_Name: Extra Powerups indicator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &4231346000246138098
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8929643727285328647}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2745876194196443218}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -25.81, y: -15.6}
+  m_SizeDelta: {x: 9.299999, y: 10}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &6501397013773801792
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8929643727285328647}
+  m_CullTransparentMesh: 0
+--- !u!114 &2420578004888824170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8929643727285328647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 2100000, guid: df856cdb9110140419b5d535c1a57636, type: 2}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 1c10051538e484e849e45b324b9b334b, type: 2}
+    m_FontSize: 1
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 40
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 0
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 0
+--- !u!114 &8249432726558939021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8929643727285328647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53211ce18e184e04d8910e4d15c68207, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerupManager: {fileID: 0}
+  text: {fileID: 2420578004888824170}
+  iconRenderer: {fileID: 0}
+  progressBar: {fileID: 0}
 --- !u!1 &8994438423485300651
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,10 +13,7 @@ public class PowerupManager : MonoBehaviour
     public Powerup currentPowerup;
     public int extraPowerups;
 
-    [SerializeField]
-    private Image iconRenderer;
-    [SerializeField]
-    private Image progressBar;
+
 
     public void ResetGame()
     {
@@ -45,16 +42,9 @@ public class PowerupManager : MonoBehaviour
                 GetPowerUp();
             }
         }
-        UpdateSprite();
+        //UpdateSprite();
     }
 
-
-
-    public void UpdateSprite()
-    {
-        if (currentPowerup != null && currentPowerup.sprite != null) iconRenderer.sprite = currentPowerup.sprite;
-        if (progressBar != null) progressBar.fillAmount = FillBarPercentage();
-    }
     public void UpdateProgress(int amount)
     {
         currentProgress += amount;
@@ -63,15 +53,10 @@ public class PowerupManager : MonoBehaviour
             GetPowerUp();
             currentProgress -= powerupFrequency;
         }
-        UpdateSprite();
+        //UpdateSprite();
     }
     public float ProgressToNextPowerup()
     {
         return (float)currentProgress / powerupFrequency;
-    }
-    public float FillBarPercentage()
-    {
-        if (currentPowerup != null) return 1;
-        return ProgressToNextPowerup();
     }
 }
