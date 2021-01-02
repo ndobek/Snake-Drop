@@ -40,7 +40,8 @@ public class PlayerController : MonoBehaviour
         TouchManager.OnTouchBegin += ResetDistanceMovedThisTouch;
         TouchManager.OnSwipe += MoveSnakeOnSwipe;
         //TouchManager.OnDrag += MoveSnakeOnDrag;
-        TouchManager.OnHold += MoveSnakeOnHold;
+        //TouchManager.OnDrag += MoveEntranceSlotToClosest;
+        TouchManager.OnHold += HoldBehavior;
         TouchManager.OnTap += MoveSnakeOnTap;
     }
 
@@ -112,7 +113,7 @@ public class PlayerController : MonoBehaviour
 
     private void MoveSnakeOnHold(TouchManager.TouchData HoldData)
     {
-        Hold(CameraDirectionTranslate(MostRecentDirectionMoved));
+        Hold(MostRecentDirectionMoved);
     }
     private void MoveSnakeOnTap(TouchManager.TouchData Tap)
     {
@@ -185,4 +186,38 @@ public class PlayerController : MonoBehaviour
         MostRecentDirectionMoved = Direction.DOWN;
     }
 
+    public void HoldBehavior(TouchManager.TouchData data)
+    {
+        if (player.GameInProgress && !player.RoundInProgress)
+        {
+            MoveEntranceSlotToClosest(data);
+        }
+        else
+        {
+            MoveSnakeOnHold(data);
+        }
+    }
+
+    public void MoveEntranceSlotToClosest(TouchManager.TouchData data)
+    {
+
+            EntranceSlot result = player.entranceManager.slots[0] as EntranceSlot;
+            float resultDistance = Vector3.Distance(Camera.main.ScreenToWorldPoint(data.endPos), result.transform.position);
+
+            foreach (EntranceSlot slot in player.entranceManager.slots)
+            {
+                if (slot && slot.IsOnEdge(player.enterSlot.GetEdgeInfo().direction()) && slot.Selectable)
+                {
+                    float distance = Vector3.Distance(Camera.main.ScreenToWorldPoint(data.endPos), slot.transform.position);
+                    if (distance < resultDistance)
+                    {
+                        result = slot;
+                        resultDistance = distance;
+                    }
+                }
+            }
+
+            player.PositionWaitSlot(result);
+
+    }
 }

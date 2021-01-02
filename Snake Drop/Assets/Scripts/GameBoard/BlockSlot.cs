@@ -69,6 +69,26 @@ public class BlockSlot : MonoBehaviour
             
     }
 
+    public bool IsOnEdge(Directions.Direction direction)
+    {
+        EdgeInfo info = GetEdgeInfo();
+        switch (direction)
+        {
+            case Directions.Direction.UP:
+                return info.Top;
+            case Directions.Direction.DOWN:
+                return info.Bottom;
+            case Directions.Direction.LEFT:
+                return info.Left;
+            case Directions.Direction.RIGHT:
+                return info.Right;
+            default:
+                return false;
+            
+        }
+
+    }
+
     #endregion
 
     #region Neighbors

@@ -36,7 +36,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7144113058215577168
@@ -120,7 +120,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2401670755604251155}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1141910380594118880}
+        m_TargetAssemblyTypeName: EntranceButtonDisabler, Assembly-CSharp
+        m_MethodName: MoveEntranceSlotHere
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6027495627444647842
 GameObject:
   m_ObjectHideFlags: 0
@@ -133,6 +145,7 @@ GameObject:
   - component: {fileID: 1190667603107733429}
   - component: {fileID: 743836663841153224}
   - component: {fileID: 2406651093775116778}
+  - component: {fileID: 1141910380594118880}
   m_Layer: 0
   m_Name: EntranceSlot
   m_TagString: Untagged
@@ -246,7 +259,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 1190667603107733429}
-  grid: {fileID: 0}
   OpenSingle: {fileID: 4209839059990207638, guid: 18ba7c1f8dc701c45b817d73a9e24aa1,
     type: 3}
   OpenLeft: {fileID: 4049302417372789580, guid: 18ba7c1f8dc701c45b817d73a9e24aa1,
@@ -263,6 +275,19 @@ MonoBehaviour:
     type: 3}
   ClosedRight: {fileID: -6116871143283034805, guid: 18ba7c1f8dc701c45b817d73a9e24aa1,
     type: 3}
+--- !u!114 &1141910380594118880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6027495627444647842}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57044b626fb80d640b3f725e179fa14f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Button: {fileID: 8685852235076409227}
 --- !u!1 &7860548315682155616
 GameObject:
   m_ObjectHideFlags: 0
@@ -354,14 +379,14 @@ GameObject:
   - component: {fileID: 4683468321361476932}
   - component: {fileID: 1464396051087349493}
   - component: {fileID: 2008883498799534915}
-  - component: {fileID: 1047128128922042589}
+  - component: {fileID: 1165298179671198340}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8265713287188692642
 RectTransform:
   m_ObjectHideFlags: 0
@@ -379,8 +404,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 2, y: 2}
+  m_AnchoredPosition: {x: 0, y: 1.7}
+  m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &4683468321361476932
 Canvas:
@@ -442,7 +467,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &1047128128922042589
+--- !u!114 &1165298179671198340
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -451,6 +476,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 8685852235076409227}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fb846e5e70283f4089fd4000fa7394e, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c7bdb022c2f0d042ad8324a2a109fe3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

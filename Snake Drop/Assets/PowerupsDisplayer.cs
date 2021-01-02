@@ -18,7 +18,7 @@ public class PowerupsDisplayer : MonoBehaviour
     {
         if (text != null)
         {
-            int num = powerupManager.extraPowerups + 1;
+            int num = powerupManager.extraPowerups;
             if (num > 0) text.text = num.ToString();
             else text.text = " ";
         }

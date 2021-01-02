@@ -2,13 +2,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 [ExecuteInEditMode]
 public class PlayGrid : MonoBehaviour
 {
     #region Grid Information
 
-    public BlockSlot slotObj;
+    public GameObject slotObj;
     public GridAction[] gridActions;
 
     [SerializeField]
@@ -117,7 +118,9 @@ public class PlayGrid : MonoBehaviour
         if (CheckInGrid(x, y) && slots[FlattenedIndex(x, y)] == null)
         {
             int i = FlattenedIndex(x, y);
-            slots[i] = Instantiate(slotObj, CoordsPosition(x, y), Quaternion.identity, this.transform);
+            GameObject obj = PrefabUtility.InstantiatePrefab(slotObj, this.transform) as GameObject;
+            obj.transform.position = CoordsPosition(x, y);
+            slots[i] = obj.GetComponent<BlockSlot>();
             slots[i].playGrid = this;
             slots[i].x = x;
             slots[i].y = y;
