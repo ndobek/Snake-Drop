@@ -38,35 +38,36 @@ public class TouchManager : MonoBehaviour
             {
                 if (AreaValid(touch))
                 {
-                    if (touch.phase == TouchPhase.Began)
-                    {
-                        fingerDownPos = touch.position;
+                    if (disallowTouch) disallowTouch = false;
+                    else {
+                        if (touch.phase == TouchPhase.Began)
+                        {
+                            fingerDownPos = touch.position;
+                            fingerUpPos = touch.position;
+                            fingerHeldTime = 0;
+                            OnTouchBegin(RegisterTouch());
+                        }
+
+                        fingerHeldTime += Time.deltaTime;
                         fingerUpPos = touch.position;
-                        fingerHeldTime = 0;
-                        OnTouchBegin(RegisterTouch());
-                    }
-
-                    fingerHeldTime += Time.deltaTime;
-                    fingerUpPos = touch.position;
 
 
-                    if (touch.phase == TouchPhase.Moved)
-                    {
-                        DetectDrag();
-                    }
-                    else
-                    {
-                        DetectHold();
-                    }
-
-                    if (touch.phase == TouchPhase.Ended)
-                    {
-                        if (disallowTouch) disallowTouch = false;
+                        if (touch.phase == TouchPhase.Moved)
+                        {
+                            DetectDrag();
+                        }
                         else
                         {
+                            DetectHold();
+                        }
+
+                        if (touch.phase == TouchPhase.Ended)
+                        {
+
                             DetectSwipe();
                             DetectTap();
                             OnTouchEnd(RegisterTouch());
+
                         }
                     }
                 }

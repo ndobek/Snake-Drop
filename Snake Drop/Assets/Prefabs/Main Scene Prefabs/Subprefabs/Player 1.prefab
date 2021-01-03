@@ -15321,6 +15321,11 @@ PrefabInstance:
       propertyPath: AllowedPlayers.Array.data[0]
       value: 
       objectReference: {fileID: 7360507374275313740}
+    - target: {fileID: 743836663841153224, guid: cce9040036a67d2459c2b7218536455d,
+        type: 3}
+      propertyPath: customUpNeighbor
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1206344098515344493, guid: cce9040036a67d2459c2b7218536455d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -15916,6 +15921,11 @@ PrefabInstance:
       propertyPath: AllowedPlayers.Array.data[0]
       value: 
       objectReference: {fileID: 7360507374275313740}
+    - target: {fileID: 743836663841153224, guid: cce9040036a67d2459c2b7218536455d,
+        type: 3}
+      propertyPath: customLeftNeighbor
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1206344098515344493, guid: cce9040036a67d2459c2b7218536455d,
         type: 3}
       propertyPath: m_LocalPosition.x

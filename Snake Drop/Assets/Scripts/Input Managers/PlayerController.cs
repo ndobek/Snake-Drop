@@ -91,18 +91,41 @@ public class PlayerController : MonoBehaviour
     {
         Vector2 DragDistance = Camera.main.ScreenToWorldPoint(Drag.endPos) - Camera.main.ScreenToWorldPoint(Drag.startPos);
         Vector2 UnmovedDistance = DragDistance - DistanceMovedThisTouch;
+
+        //Direction? dir = null;
+
+        bool DraggedUp() { return Mathf.Abs(UnmovedDistance.y) > DistanceNeededToDragBeforeSnakeMoves && UnmovedDistance.y > 0; }
+        bool DraggedDown() { return Mathf.Abs(UnmovedDistance.y) > DistanceNeededToDragBeforeSnakeMoves && UnmovedDistance.y < 0; }
+        bool DraggedLeft() { return Mathf.Abs(UnmovedDistance.x) > DistanceNeededToDragBeforeSnakeMoves && UnmovedDistance.x < 0; }
+        bool DraggedRight() { return Mathf.Abs(UnmovedDistance.x) > DistanceNeededToDragBeforeSnakeMoves && UnmovedDistance.x > 0; }
+
         if (IntervalToWaitBeforeHoldElapsed())
         {
-            if (Mathf.Abs(UnmovedDistance.y) > DistanceNeededToDragBeforeSnakeMoves)
-            {
-                if (UnmovedDistance.y > 0) Press(Direction.UP);
-                else Press(Direction.DOWN);
-            }
-            if (Mathf.Abs(UnmovedDistance.x) > DistanceNeededToDragBeforeSnakeMoves)
-            {
-                if (UnmovedDistance.x > 0) Press(Directions.Direction.RIGHT);
-                else Press(Directions.Direction.LEFT);
-            }
+            //if(dir == null)
+            //{
+            //    //if (Mathf.Abs(UnmovedDistance.y) > DistanceNeededToDragBeforeSnakeMoves)
+            //    //{
+            //    //    if (UnmovedDistance.y > 0) dir = Direction.UP;
+            //    //    else dir = Direction.DOWN;
+            //    //}
+            //    //if (Mathf.Abs(UnmovedDistance.x) > DistanceNeededToDragBeforeSnakeMoves)
+            //    //{
+            //    //    if (UnmovedDistance.x > 0) dir = Direction.RIGHT;
+            //    //    else dir = Direction.LEFT;
+            //    //}
+            //    if (DraggedUp()) dir = Direction.UP;
+            //    if (DraggedDown()) dir = Direction.DOWN;
+            //    if (DraggedLeft()) dir = Direction.LEFT;
+            //    if (DraggedRight()) dir = Direction.RIGHT;
+            //}
+            //if (dir != null)
+            //{
+            if (/*dir == Direction.UP && */DraggedUp()) Press(Direction.UP);
+            if (/*dir == Direction.DOWN && */DraggedDown()) Press(Direction.DOWN);
+            if (/*dir == Direction.LEFT && */DraggedLeft()) Press(Direction.LEFT);
+            if (/*dir == Direction.RIGHT && */DraggedRight()) Press(Direction.RIGHT);
+            //}
+
         }
     }
 
@@ -201,23 +224,28 @@ public class PlayerController : MonoBehaviour
     public void MoveEntranceSlotToClosest(TouchManager.TouchData data)
     {
 
-            EntranceSlot result = player.entranceManager.slots[0] as EntranceSlot;
-            float resultDistance = Vector3.Distance(Camera.main.ScreenToWorldPoint(data.endPos), result.transform.position);
+        EntranceSlot result = default;
+        float resultDistance = default;
 
-            foreach (EntranceSlot slot in player.entranceManager.slots)
+        foreach (EntranceSlot slot in player.entranceManager.slots)
+        {
+            if (slot && slot.IsOnEdge(player.enterSlot.GetEdgeInfo().direction()) && slot.Selectable)
             {
-                if (slot && slot.IsOnEdge(player.enterSlot.GetEdgeInfo().direction()) && slot.Selectable)
+                float distance = Vector3.Distance(Camera.main.ScreenToWorldPoint(data.endPos), slot.transform.position);
+                if (result == default)
                 {
-                    float distance = Vector3.Distance(Camera.main.ScreenToWorldPoint(data.endPos), slot.transform.position);
-                    if (distance < resultDistance)
-                    {
-                        result = slot;
-                        resultDistance = distance;
-                    }
+                    result = slot;
+                    resultDistance = distance;
+                }
+                else if (distance < resultDistance)
+                {
+                    result = slot;
+                    resultDistance = distance;
                 }
             }
+        }
 
-            player.PositionWaitSlot(result);
+        player.PositionWaitSlot(result);
 
     }
 }
