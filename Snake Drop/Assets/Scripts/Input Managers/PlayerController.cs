@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
     [HideInInspector]
     public Direction SecondMostRecentDirectionMoved;
 
-    private Vector2 DistanceMovedThisTouch;
+    private Vector3 DistanceMovedThisTouch;
     public float DistanceNeededToDragBeforeSnakeMoves = 1;
 
     public void Awake()
@@ -89,8 +89,8 @@ public class PlayerController : MonoBehaviour
 
     private void MoveSnakeOnDrag(TouchManager.TouchData Drag)
     {
-        Vector2 DragDistance = Camera.main.ScreenToWorldPoint(Drag.endPos) - Camera.main.ScreenToWorldPoint(Drag.startPos);
-        Vector2 UnmovedDistance = DragDistance - DistanceMovedThisTouch;
+        Vector3 DragDistance = Camera.main.ScreenToWorldPoint(Drag.endPos) - Camera.main.ScreenToWorldPoint(Drag.startPos);
+        Vector3 UnmovedDistance = DragDistance - DistanceMovedThisTouch;
 
         //Direction? dir = null;
 
@@ -120,10 +120,10 @@ public class PlayerController : MonoBehaviour
             //}
             //if (dir != null)
             //{
-            if (/*dir == Direction.UP && */DraggedUp()) Press(Direction.UP);
-            if (/*dir == Direction.DOWN && */DraggedDown()) Press(Direction.DOWN);
-            if (/*dir == Direction.LEFT && */DraggedLeft()) Press(Direction.LEFT);
-            if (/*dir == Direction.RIGHT && */DraggedRight()) Press(Direction.RIGHT);
+            if (/*dir == Direction.UP && */DraggedUp()) Press(CameraDirectionTranslate(Direction.UP));
+            if (/*dir == Direction.DOWN && */DraggedDown()) Press(CameraDirectionTranslate(Direction.DOWN));
+            if (/*dir == Direction.LEFT && */DraggedLeft()) Press(CameraDirectionTranslate(Direction.LEFT));
+            if (/*dir == Direction.RIGHT && */DraggedRight()) Press(CameraDirectionTranslate(Direction.RIGHT));
             //}
 
         }
@@ -213,7 +213,8 @@ public class PlayerController : MonoBehaviour
     {
         if (player.GameInProgress && !player.RoundInProgress)
         {
-            MoveEntranceSlotToClosest(data);
+            //MoveEntranceSlotToClosest(data);
+            MoveSnakeOnDrag(data);
         }
         else
         {
