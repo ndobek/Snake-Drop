@@ -14,12 +14,13 @@ public class ScoreManager : MonoBehaviour
         {
             GameManager.instance.playerManagers[0].Powerup.UpdateProgress(value - score);
              score = value;
-            ScoreText.text = "Score: " + score.ToString();
+            //ScoreText.text = "Score: " + score.ToString();
+            scoreDisplay.UpdateScoreDisplay(value);
         }
     }
     [SerializeField]
-    private Text ScoreText;
-
+    //private Text ScoreText;
+    private ScoreDisplayer scoreDisplay;
     [HideInInspector]
     private int multiplier;
     public int Multiplier
@@ -28,19 +29,24 @@ public class ScoreManager : MonoBehaviour
         set
         {
             multiplier = value;
-            MultiplierText.text = "Multiplier: " + multiplier.ToString();
+            //MultiplierText.text = "Multiplier: " + multiplier.ToString();
+            scoreDisplay.UpdateMultiplierDisplay(value);
         }
     }
-    [SerializeField]
-    private Text MultiplierText;
+    //[SerializeField]
+    //private Text MultiplierText;
 
     private int highScore;
     public int HighScore
     {
         get { return highScore; }
-        set { HighScoreText.text = "High Score: " + value; highScore = value; }
+        set {
+            //HighScoreText.text = "High Score: " + value; 
+            highScore = value; 
+            scoreDisplay.UpdateHighScoreDisplay(value);
+        }
     }
-    public Text HighScoreText;
+    //public Text HighScoreText;
 
 
 
@@ -81,6 +87,8 @@ public class ScoreManager : MonoBehaviour
         if (score > HighScore)
         {
             SaveManager.SaveHighScore();
+            scoreDisplay.NewHighScore();
         }
     }
+
 }
