@@ -3162,7 +3162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b75b61386d400c94da33631041670d28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  powerupFrequency: 10000
+  powerupFrequency: 100
   currentProgress: 0
   possiblePowerups:
   - {fileID: 11400000, guid: 9d43332ab0eefdd44aef41d8f0227d3e, type: 2}
@@ -3180,9 +3180,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7924ea5a043d5748b4d966e36d7671e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ScoreText: {fileID: 0}
-  MultiplierText: {fileID: 0}
-  HighScoreText: {fileID: 0}
   numberOfSnakes: 0
 --- !u!114 &7360507374275313737
 MonoBehaviour:

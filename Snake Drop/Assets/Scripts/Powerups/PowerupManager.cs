@@ -13,7 +13,10 @@ public class PowerupManager : MonoBehaviour
     public Powerup currentPowerup;
     public int extraPowerups;
 
-
+    public int PowerupBank
+    {
+        get{return (currentPowerup != null) ? 1: 0 + extraPowerups;}
+    }
 
     public void ResetGame()
     {
