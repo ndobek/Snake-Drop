@@ -601,6 +601,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9134113234743710319}
     m_Modifications:
+    - target: {fileID: 2908164481314605210, guid: ba28145764ca10040b2f33bbf1016700,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3705682187115819208, guid: ba28145764ca10040b2f33bbf1016700,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3705682187115819208, guid: ba28145764ca10040b2f33bbf1016700,
+        type: 3}
+      propertyPath: m_InstanceId
+      value: -3525862
+      objectReference: {fileID: 0}
     - target: {fileID: 5334287123915763627, guid: ba28145764ca10040b2f33bbf1016700,
         type: 3}
       propertyPath: progressBar
