@@ -47,3 +47,9 @@ TagManager:
   - name: Highlights
     uniqueID: 1986032229
     locked: 0
+  - name: Lighting Sky
+    uniqueID: 1086097033
+    locked: 0
+  - name: Lighting Planet
+    uniqueID: 3036504251
+    locked: 0
