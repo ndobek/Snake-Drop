@@ -582,12 +582,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1013661796582181872, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -4935300809253573312, guid: fb55fda66eaf0954b8e8d9195dfb5d95,
-        type: 3}
     - target: {fileID: 1483937293059445458, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -1736,7 +1730,7 @@ PrefabInstance:
     - target: {fileID: 9134113235925775572, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
         type: 3}
       propertyPath: orthographic size
-      value: 16.001965
+      value: 14.898172
       objectReference: {fileID: 0}
     - target: {fileID: 9134113235925775572, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
         type: 3}

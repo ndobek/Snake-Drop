@@ -259,21 +259,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 1190667603107733429}
-  OpenSingle: {fileID: 4209839059990207638, guid: 18ba7c1f8dc701c45b817d73a9e24aa1,
+  OpenSingle: {fileID: 5425576569299981771, guid: e6ef8309ea224b54f92eaa122e16240e,
     type: 3}
-  OpenLeft: {fileID: 4049302417372789580, guid: 18ba7c1f8dc701c45b817d73a9e24aa1,
+  OpenLeft: {fileID: 2984600389806873925, guid: e6ef8309ea224b54f92eaa122e16240e,
     type: 3}
-  OpenCenter: {fileID: -1185315685514132615, guid: 18ba7c1f8dc701c45b817d73a9e24aa1,
+  OpenCenter: {fileID: 8711249080017096671, guid: e6ef8309ea224b54f92eaa122e16240e,
     type: 3}
-  OpenRight: {fileID: 5964097291955165205, guid: 18ba7c1f8dc701c45b817d73a9e24aa1,
+  OpenRight: {fileID: 8704875784691119991, guid: e6ef8309ea224b54f92eaa122e16240e,
     type: 3}
-  ClosedSingle: {fileID: 160576533649211304, guid: 18ba7c1f8dc701c45b817d73a9e24aa1,
+  ClosedSingle: {fileID: 8351784015165036496, guid: e6ef8309ea224b54f92eaa122e16240e,
     type: 3}
-  ClosedLeft: {fileID: -8895813556242909240, guid: 18ba7c1f8dc701c45b817d73a9e24aa1,
+  ClosedLeft: {fileID: 8996288664312171778, guid: e6ef8309ea224b54f92eaa122e16240e,
     type: 3}
-  ClosedCenter: {fileID: 3268709914190090969, guid: 18ba7c1f8dc701c45b817d73a9e24aa1,
-    type: 3}
-  ClosedRight: {fileID: -6116871143283034805, guid: 18ba7c1f8dc701c45b817d73a9e24aa1,
+  ClosedCenter: {fileID: 21300000, guid: 64e35085d2f27c9469f86e72a47a266d, type: 3}
+  ClosedRight: {fileID: -8695794828696759948, guid: e6ef8309ea224b54f92eaa122e16240e,
     type: 3}
 --- !u!114 &1141910380594118880
 MonoBehaviour:

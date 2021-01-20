@@ -17765,6 +17765,12 @@ PrefabInstance:
       propertyPath: customDownNeighbor
       value: 
       objectReference: {fileID: 1079551970167023442}
+    - target: {fileID: 1190667603107733429, guid: cce9040036a67d2459c2b7218536455d,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 237522086319654432, guid: dd47e2841f1f9414fbea3b6aa0b8fb5f,
+        type: 3}
     - target: {fileID: 1206344098515344493, guid: cce9040036a67d2459c2b7218536455d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -17824,49 +17830,49 @@ PrefabInstance:
         type: 3}
       propertyPath: OpenSingle
       value: 
-      objectReference: {fileID: -4935300809253573312, guid: fb55fda66eaf0954b8e8d9195dfb5d95,
+      objectReference: {fileID: 237522086319654432, guid: dd47e2841f1f9414fbea3b6aa0b8fb5f,
         type: 3}
     - target: {fileID: 2406651093775116778, guid: cce9040036a67d2459c2b7218536455d,
         type: 3}
       propertyPath: OpenLeft
       value: 
-      objectReference: {fileID: -4935300809253573312, guid: fb55fda66eaf0954b8e8d9195dfb5d95,
+      objectReference: {fileID: 237522086319654432, guid: dd47e2841f1f9414fbea3b6aa0b8fb5f,
         type: 3}
     - target: {fileID: 2406651093775116778, guid: cce9040036a67d2459c2b7218536455d,
         type: 3}
       propertyPath: OpenCenter
       value: 
-      objectReference: {fileID: -4935300809253573312, guid: fb55fda66eaf0954b8e8d9195dfb5d95,
+      objectReference: {fileID: 237522086319654432, guid: dd47e2841f1f9414fbea3b6aa0b8fb5f,
         type: 3}
     - target: {fileID: 2406651093775116778, guid: cce9040036a67d2459c2b7218536455d,
         type: 3}
       propertyPath: OpenRight
       value: 
-      objectReference: {fileID: -4935300809253573312, guid: fb55fda66eaf0954b8e8d9195dfb5d95,
+      objectReference: {fileID: 237522086319654432, guid: dd47e2841f1f9414fbea3b6aa0b8fb5f,
         type: 3}
     - target: {fileID: 2406651093775116778, guid: cce9040036a67d2459c2b7218536455d,
         type: 3}
       propertyPath: ClosedSingle
       value: 
-      objectReference: {fileID: -4935300809253573312, guid: fb55fda66eaf0954b8e8d9195dfb5d95,
+      objectReference: {fileID: 237522086319654432, guid: dd47e2841f1f9414fbea3b6aa0b8fb5f,
         type: 3}
     - target: {fileID: 2406651093775116778, guid: cce9040036a67d2459c2b7218536455d,
         type: 3}
       propertyPath: ClosedLeft
       value: 
-      objectReference: {fileID: 1372620210605446356, guid: 72c94cdb27ba2184bac7892fce3fb897,
+      objectReference: {fileID: -4075692437736059541, guid: 7c861b811c6a2cf489a0b3c45aa84629,
         type: 3}
     - target: {fileID: 2406651093775116778, guid: cce9040036a67d2459c2b7218536455d,
         type: 3}
       propertyPath: ClosedCenter
       value: 
-      objectReference: {fileID: 5579775497012088461, guid: ee9979405b199c84f867bf40e088490c,
+      objectReference: {fileID: 8671271848430602440, guid: 5b76c92aea09fe340821b7c8a3c65a19,
         type: 3}
     - target: {fileID: 2406651093775116778, guid: cce9040036a67d2459c2b7218536455d,
         type: 3}
       propertyPath: ClosedRight
       value: 
-      objectReference: {fileID: -9023712604713628185, guid: 197327ec3067f2047b77604fb6b28814,
+      objectReference: {fileID: 6552916632670737434, guid: 3c831d7dc4899364baced1f0191cefd6,
         type: 3}
     - target: {fileID: 6027495627444647842, guid: cce9040036a67d2459c2b7218536455d,
         type: 3}
