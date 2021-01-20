@@ -6,15 +6,24 @@ public class TerrainSpawner : MonoBehaviour, ISpawnTerrain
 {
  
     public ISelectTerrain terrainSelector;
-    private GameObject terrain;
+    public GameObject terrain;
 
     private void Start()
     {
         terrainSelector = GetComponentInParent<ISelectTerrain>();
+        SpawnTerrain();
     }
     public void SpawnTerrain()
     {
-        terrain = Instantiate(terrainSelector.SelectedTerrain, transform);
+        if (terrainSelector.SelectedTerrain)
+        {
+
+            terrain = Instantiate(terrainSelector.SelectedTerrain, transform);
+        }
+        else
+        {
+            terrain = Instantiate(terrain, transform);
+        }
     }
     public void DestroyTerrain()
     {

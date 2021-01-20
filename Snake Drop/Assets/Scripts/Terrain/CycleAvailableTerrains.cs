@@ -7,7 +7,7 @@ public class CycleAvailableTerrains : MonoBehaviour
     [SerializeField]
     public ISelectTerrain terrainSelector;
     public List<GameObject> terrains;
-    private int i = 0;
+    private int i = 1;
     private GameObject selection;
     public ISpawnTerrain terrainSpawner;
 
