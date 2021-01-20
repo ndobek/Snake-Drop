@@ -1,127 +1,157 @@
 fileFormatVersion: 2
-guid: dcf922cb990888f46b89396faa544881
+guid: 3fb9603cf74c6e740b5527a2e336863b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7639136675625910822
-    second: Meld_Red_TopLeft
+      213: 1083371224909827885
+    second: Red Meld Top Left
   - first:
-      213: 6103291703564245960
-    second: Meld_Red_Top
+      213: -7894441835979454406
+    second: Red Meld Top
   - first:
-      213: 7483380141552631424
-    second: Meld_Green_TopLeft
+      213: 4684970329225921195
+    second: Meld_2
   - first:
-      213: -2342022814233978062
-    second: Meld_Green_Top
+      213: 4701543148912994629
+    second: Green Meld Top Left
   - first:
-      213: -7756855429402607996
-    second: Meld_Yellow_TopLeft
+      213: -6275167647628710455
+    second: Green Meld Top
   - first:
-      213: 1081669270236193365
-    second: Meld_Yellow_Top
+      213: -1598461791785392910
+    second: Red Meld Top Left
   - first:
-      213: 28018444208980606
-    second: Meld_Orange_TopLeft
+      213: 5335921577704062033
+    second: Red Meld Top
   - first:
-      213: -7643851968133840957
-    second: Meld_Orange_Top
+      213: -7494800495536067032
+    second: Meld_2
   - first:
-      213: -3298509530739954850
-    second: Meld_Blue_TopLeft
+      213: -7508882177161398549
+    second: Green Meld Top Left
   - first:
-      213: 2083612620808945203
-    second: Meld_Blue_Top
+      213: 8343807257938052332
+    second: Green Meld Top
   - first:
-      213: 2794162088185743754
-    second: Meld_Red_Left
+      213: -1521221639363132110
+    second: Meld_5
   - first:
-      213: -4336278350841811247
-    second: Meld_Red_Center
+      213: -2663223252744058891
+    second: Yellow Meld Top Left
   - first:
-      213: 1547107572119475863
-    second: Meld_Red_Right
+      213: -3185747635148731970
+    second: Yellow Meld Top
   - first:
-      213: 8394684365925037624
-    second: Meld_Green_Left
+      213: 5015346966938653810
+    second: Meld_8
   - first:
-      213: 8054587417023635416
-    second: Meld_Green_Center
+      213: 140171750511629836
+    second: Orange Meld Top Left
   - first:
-      213: -3868734201450859481
-    second: Meld_Green_Right
+      213: 6660769375084159091
+    second: Orange Meld Top
   - first:
-      213: -1363857841621640634
-    second: Meld_Yellow_Left
+      213: 5734994063909601317
+    second: Meld_11
   - first:
-      213: -2371980670118396864
-    second: Meld_Yellow_Center
+      213: 3639222807772194865
+    second: Blue Meld Top Left
   - first:
-      213: -6188952582595361485
-    second: Meld_Yellow_Right
+      213: -9067090967895678046
+    second: Blue Meld Top
   - first:
-      213: -6186008201215907427
-    second: Meld_Orange_Left
+      213: 734026480914132364
+    second: Meld_14
   - first:
-      213: -2637411700917115422
-    second: Meld_Orange_Center
+      213: -60817252860779793
+    second: Red Meld Left
   - first:
-      213: 7053338303413508509
-    second: Meld_Orange_Right
+      213: 2938795732541486512
+    second: Red Meld Center
   - first:
-      213: 3445969472916795644
-    second: Meld_Blue_Left
+      213: 2515138529005827590
+    second: Red Meld Right
   - first:
-      213: -3463140179244408711
-    second: Meld_Blue_Center
+      213: 6400670706616439544
+    second: Green Meld Left
   - first:
-      213: 1887751841822853019
-    second: Meld_Blue_Right
+      213: -5937467067828997663
+    second: Green Meld Center
   - first:
-      213: 1198259037341798735
-    second: Meld_Red_BottomLeft
+      213: 8651058686861577569
+    second: Green Meld Right
   - first:
-      213: -5574410816157884531
-    second: Meld_Red_Bottom
+      213: -826038392414840514
+    second: Yellow Meld Left
   - first:
-      213: 8601084579170791399
-    second: Meld_Red_BottomRight
+      213: -2743052241509395544
+    second: Yellow Meld Center
   - first:
-      213: -7611328018383431958
-    second: Meld_Green_BottomLeft
+      213: -7067366089468093124
+    second: Yellow Meld Right
   - first:
-      213: -5281828842093120805
-    second: Meld_Green_Bottom
+      213: 2036703290531569634
+    second: Orange Meld Left
   - first:
-      213: -9108063602235815740
-    second: Meld_Green_BottomRight
+      213: -2386609651683411001
+    second: Orange Meld Center
   - first:
-      213: 5012963936938638760
-    second: Meld_Yellow_BottomLeft
+      213: 3081773256858935537
+    second: Orange Meld Right
   - first:
-      213: -6391264139155818346
-    second: Meld_Yellow_Bottom
+      213: 1127582697766700823
+    second: Blue Meld Left
   - first:
-      213: -7659561833898520197
-    second: Meld_Yellow_BottomRight
+      213: 689545277611991719
+    second: Blue Meld Center
   - first:
-      213: -84161911010230057
-    second: Meld_Orange_BottomLeft
+      213: -8669486576013865587
+    second: Blue Meld Right
   - first:
-      213: -7268803715368026862
-    second: Meld_Orange_Bottom
+      213: 9034765042899066440
+    second: Red Meld Bottom Left
   - first:
-      213: 6924602202325764400
-    second: Meld_Orange_BottomRight
+      213: 6122835424328933568
+    second: Red Meld Bottom
   - first:
-      213: 5869331413109611088
-    second: Meld_Blue_BottomLeft
+      213: -3985533165059127652
+    second: Red Meld Bottom Right
   - first:
-      213: -3451945831428234548
-    second: Meld_Blue_Bottom
+      213: -6734773643183520744
+    second: Green Meld Bottom Left
   - first:
-      213: -3988048815642563103
-    second: Meld_Blue_BottomRight
+      213: -4265741918430816486
+    second: Green Meld Bottom
+  - first:
+      213: 4055174397896116254
+    second: Green Meld Bottom Right
+  - first:
+      213: -3555928212438000643
+    second: Yellow Meld Bottom Left
+  - first:
+      213: 5185791688912790290
+    second: Yellow Meld Bottom
+  - first:
+      213: -7177662819570259224
+    second: Yellow Meld Bottom Right
+  - first:
+      213: -4276923989154960227
+    second: Orange Meld Bottom Left
+  - first:
+      213: 7047194193229267231
+    second: Orange Meld Bottom
+  - first:
+      213: 2281838150571612472
+    second: Orange Meld Bottom Right
+  - first:
+      213: -2559894031314033030
+    second: Blue Meld Bottom Left
+  - first:
+      213: -616687247840799536
+    second: Blue Meld Bottom
+  - first:
+      213: -4103229108431493171
+    second: Blue Meld Bottom Right
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -166,7 +196,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 20
+  spritePixelsToUnits: 40
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -186,7 +216,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -198,7 +228,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -210,7 +240,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -222,7 +252,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -234,7 +264,19 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -245,13 +287,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Meld_Red_TopLeft
+      name: Red Meld Top Left
       rect:
         serializedVersion: 2
         x: 0
-        y: 40
-        width: 20
-        height: 20
+        y: 80
+        width: 40
+        height: 40
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -259,251 +301,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: addb8aadaa55cf590800000000000000
-      internalID: -7639136675625910822
+      spriteID: 2f4e899287f11d9e0800000000000000
+      internalID: -1598461791785392910
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Meld_Red_Top
-      rect:
-        serializedVersion: 2
-        x: 20
-        y: 40
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8cb198fb77f33b450800000000000000
-      internalID: 6103291703564245960
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Meld_Green_TopLeft
-      rect:
-        serializedVersion: 2
-        x: 60
-        y: 40
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 08ef470179e4ad760800000000000000
-      internalID: 7483380141552631424
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Meld_Green_Top
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 40
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 23b19b5b8a67f7fd0800000000000000
-      internalID: -2342022814233978062
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Meld_Yellow_TopLeft
-      rect:
-        serializedVersion: 2
-        x: 120
-        y: 40
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 48eb564a51d1a5490800000000000000
-      internalID: -7756855429402607996
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Meld_Yellow_Top
-      rect:
-        serializedVersion: 2
-        x: 140
-        y: 40
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 55262e8687cd20f00800000000000000
-      internalID: 1081669270236193365
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Meld_Orange_TopLeft
-      rect:
-        serializedVersion: 2
-        x: 180
-        y: 40
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e724c3660aa836000800000000000000
-      internalID: 28018444208980606
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Meld_Orange_Top
-      rect:
-        serializedVersion: 2
-        x: 200
-        y: 40
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3cf36b342259be590800000000000000
-      internalID: -7643851968133840957
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Meld_Blue_TopLeft
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 40
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e5b210cde075932d0800000000000000
-      internalID: -3298509530739954850
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Meld_Blue_Top
-      rect:
-        serializedVersion: 2
-        x: 260
-        y: 40
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 33e76d0a3aa7aec10800000000000000
-      internalID: 2083612620808945203
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Meld_Red_Left
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 20
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a89cc277d9bd6c620800000000000000
-      internalID: 2794162088185743754
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Meld_Red_Center
-      rect:
-        serializedVersion: 2
-        x: 20
-        y: 20
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1de6bd280d172d3c0800000000000000
-      internalID: -4336278350841811247
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Meld_Red_Right
+      name: Red Meld Top
       rect:
         serializedVersion: 2
         x: 40
-        y: 20
-        width: 20
-        height: 20
+        y: 80
+        width: 40
+        height: 40
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -511,41 +322,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7969f71d32e687510800000000000000
-      internalID: 1547107572119475863
+      spriteID: 15c746c67600d0a40800000000000000
+      internalID: 5335921577704062033
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Meld_Green_Left
-      rect:
-        serializedVersion: 2
-        x: 60
-        y: 20
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 836bc7034f8ef7470800000000000000
-      internalID: 8394684365925037624
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Meld_Green_Center
+      name: Meld_2
       rect:
         serializedVersion: 2
         x: 80
-        y: 20
-        width: 20
-        height: 20
+        y: 80
+        width: 40
+        height: 40
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -553,41 +343,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8df560ca494a7cf60800000000000000
-      internalID: 8054587417023635416
+      spriteID: 82ea62198ae1df790800000000000000
+      internalID: -7494800495536067032
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Meld_Green_Right
-      rect:
-        serializedVersion: 2
-        x: 100
-        y: 20
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 724fd10cdbe7f4ac0800000000000000
-      internalID: -3868734201450859481
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Meld_Yellow_Left
+      name: Green Meld Top Left
       rect:
         serializedVersion: 2
         x: 120
-        y: 20
-        width: 20
-        height: 20
+        y: 80
+        width: 40
+        height: 40
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -595,41 +364,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 64ad202e48a921de0800000000000000
-      internalID: -1363857841621640634
+      spriteID: be6780291771bc790800000000000000
+      internalID: -7508882177161398549
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Meld_Yellow_Center
-      rect:
-        serializedVersion: 2
-        x: 140
-        y: 20
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 04cff77d528051fd0800000000000000
-      internalID: -2371980670118396864
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Meld_Yellow_Right
+      name: Green Meld Top
       rect:
         serializedVersion: 2
         x: 160
-        y: 20
-        width: 20
-        height: 20
+        y: 80
+        width: 40
+        height: 40
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -637,41 +385,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 335caa6aa6c6c1aa0800000000000000
-      internalID: -6188952582595361485
+      spriteID: ce449b36e782bc370800000000000000
+      internalID: 8343807257938052332
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Meld_Orange_Left
-      rect:
-        serializedVersion: 2
-        x: 180
-        y: 20
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d996fdcd052e62aa0800000000000000
-      internalID: -6186008201215907427
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Meld_Orange_Center
+      name: Meld_5
       rect:
         serializedVersion: 2
         x: 200
-        y: 20
-        width: 20
-        height: 20
+        y: 80
+        width: 40
+        height: 40
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -679,41 +406,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e560681808066bd0800000000000000
-      internalID: -2637411700917115422
+      spriteID: 2358f119af883eae0800000000000000
+      internalID: -1521221639363132110
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Meld_Orange_Right
-      rect:
-        serializedVersion: 2
-        x: 220
-        y: 20
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d995e9711dd72e160800000000000000
-      internalID: 7053338303413508509
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Meld_Blue_Left
+      name: Yellow Meld Top Left
       rect:
         serializedVersion: 2
         x: 240
-        y: 20
-        width: 20
-        height: 20
+        y: 80
+        width: 40
+        height: 40
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -721,41 +427,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cf0bb046afa82df20800000000000000
-      internalID: 3445969472916795644
+      spriteID: 5f741aedf845a0bd0800000000000000
+      internalID: -2663223252744058891
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Meld_Blue_Center
-      rect:
-        serializedVersion: 2
-        x: 260
-        y: 20
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 97021c00b5470ffc0800000000000000
-      internalID: -3463140179244408711
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Meld_Blue_Right
+      name: Yellow Meld Top
       rect:
         serializedVersion: 2
         x: 280
-        y: 20
-        width: 20
-        height: 20
+        y: 80
+        width: 40
+        height: 40
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -763,20 +448,482 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b97c0f36c44a23a10800000000000000
-      internalID: 1887751841822853019
+      spriteID: eb94be69763f9c3d0800000000000000
+      internalID: -3185747635148731970
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Meld_Red_BottomLeft
+      name: Meld_8
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 80
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27416b57e771a9540800000000000000
+      internalID: 5015346966938653810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orange Meld Top Left
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 80
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c065ac4e67df1f100800000000000000
+      internalID: 140171750511629836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orange Meld Top
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 80
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37021b4d47ecf6c50800000000000000
+      internalID: 6660769375084159091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Meld_11
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 80
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5204e4047bac69f40800000000000000
+      internalID: 5734994063909601317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue Meld Top Left
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 80
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 138e2cbbcdd118230800000000000000
+      internalID: 3639222807772194865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue Meld Top
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 80
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a3ec60edc83b2280800000000000000
+      internalID: -9067090967895678046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Meld_14
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 80
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8ded920239cf2a00800000000000000
+      internalID: 734026480914132364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red Meld Left
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 40
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe2a40fd70fe72ff0800000000000000
+      internalID: -60817252860779793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red Meld Center
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 40
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b5b199f523b8c820800000000000000
+      internalID: 2938795732541486512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red Meld Right
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 40
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6067a469a2197e220800000000000000
+      internalID: 2515138529005827590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green Meld Left
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 40
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f21f107810c3d850800000000000000
+      internalID: 6400670706616439544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green Meld Center
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 40
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e1f87ce821e99da0800000000000000
+      internalID: -5937467067828997663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green Meld Right
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 40
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16d01795a0cbe0870800000000000000
+      internalID: 8651058686861577569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yellow Meld Left
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 40
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e39574965725984f0800000000000000
+      internalID: -826038392414840514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yellow Meld Center
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 40
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a35e780588bee9d0800000000000000
+      internalID: -2743052241509395544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yellow Meld Right
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 40
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3ddc937cfbabed90800000000000000
+      internalID: -7067366089468093124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orange Meld Left
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 40
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2efd0011ad2d34c10800000000000000
+      internalID: 2036703290531569634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orange Meld Center
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 40
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cb34e5aa2f01eed0800000000000000
+      internalID: -2386609651683411001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orange Meld Right
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 40
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f0206df278a4ca20800000000000000
+      internalID: 3081773256858935537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue Meld Left
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 40
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 717c24b4d7af5af00800000000000000
+      internalID: 1127582697766700823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue Meld Center
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 40
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a26c90d6c1c19900800000000000000
+      internalID: 689545277611991719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue Meld Right
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 39
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8d0dab54ebcfa780800000000000000
+      internalID: -8669486576013865587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red Meld Bottom Left
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 20
-        height: 20
+        width: 40
+        height: 40
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -784,41 +931,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f41d8adee3211a010800000000000000
-      internalID: 1198259037341798735
+      spriteID: 84e9d1330fee16d70800000000000000
+      internalID: 9034765042899066440
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Meld_Red_Bottom
-      rect:
-        serializedVersion: 2
-        x: 20
-        y: 0
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d8f50dea5e6b3a2b0800000000000000
-      internalID: -5574410816157884531
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Meld_Red_BottomRight
+      name: Red Meld Bottom
       rect:
         serializedVersion: 2
         x: 40
         y: 0
-        width: 20
-        height: 20
+        width: 40
+        height: 40
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -826,41 +952,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7efa090bad03d5770800000000000000
-      internalID: 8601084579170791399
+      spriteID: 0c0ed45d06ea8f450800000000000000
+      internalID: 6122835424328933568
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Meld_Green_BottomLeft
-      rect:
-        serializedVersion: 2
-        x: 60
-        y: 0
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ae6174b6e712f5690800000000000000
-      internalID: -7611328018383431958
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Meld_Green_Bottom
+      name: Red Meld Bottom Right
       rect:
         serializedVersion: 2
         x: 80
         y: 0
-        width: 20
-        height: 20
+        width: 40
+        height: 40
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -868,41 +973,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd270a607ac23b6b0800000000000000
-      internalID: -5281828842093120805
+      spriteID: c96cc10e3ba80b8c0800000000000000
+      internalID: -3985533165059127652
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Meld_Green_BottomRight
-      rect:
-        serializedVersion: 2
-        x: 100
-        y: 0
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4c8c11d0968a99180800000000000000
-      internalID: -9108063602235815740
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Meld_Yellow_BottomLeft
+      name: Green Meld Bottom Left
       rect:
         serializedVersion: 2
         x: 120
         y: 0
-        width: 20
-        height: 20
+        width: 40
+        height: 40
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -910,41 +994,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8ad321d0420a19540800000000000000
-      internalID: 5012963936938638760
+      spriteID: 814026bcd074982a0800000000000000
+      internalID: -6734773643183520744
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Meld_Yellow_Bottom
-      rect:
-        serializedVersion: 2
-        x: 140
-        y: 0
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 698bce7b02bad47a0800000000000000
-      internalID: -6391264139155818346
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Meld_Yellow_BottomRight
+      name: Green Meld Bottom
       rect:
         serializedVersion: 2
         x: 160
         y: 0
-        width: 20
-        height: 20
+        width: 40
+        height: 40
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -952,41 +1015,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b71d65b1815c3b590800000000000000
-      internalID: -7659561833898520197
+      spriteID: a171078735a0dc4c0800000000000000
+      internalID: -4265741918430816486
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Meld_Orange_BottomLeft
-      rect:
-        serializedVersion: 2
-        x: 180
-        y: 0
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7d00e96103ff4def0800000000000000
-      internalID: -84161911010230057
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Meld_Orange_Bottom
+      name: Green Meld Bottom Right
       rect:
         serializedVersion: 2
         x: 200
         y: 0
-        width: 20
-        height: 20
+        width: 40
+        height: 40
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -994,41 +1036,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 21df27b5885002b90800000000000000
-      internalID: -7268803715368026862
+      spriteID: e184bd031afd64830800000000000000
+      internalID: 4055174397896116254
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Meld_Orange_BottomRight
-      rect:
-        serializedVersion: 2
-        x: 220
-        y: 0
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 039c380d301291060800000000000000
-      internalID: 6924602202325764400
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Meld_Blue_BottomLeft
+      name: Yellow Meld Bottom Left
       rect:
         serializedVersion: 2
         x: 240
         y: 0
-        width: 20
-        height: 20
+        width: 40
+        height: 40
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1036,41 +1057,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 05a907bb2dd047150800000000000000
-      internalID: 5869331413109611088
+      spriteID: dfbd7d2812ec6aec0800000000000000
+      internalID: -3555928212438000643
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Meld_Blue_Bottom
-      rect:
-        serializedVersion: 2
-        x: 260
-        y: 0
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cc264d53e893810d0800000000000000
-      internalID: -3451945831428234548
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Meld_Blue_BottomRight
+      name: Yellow Meld Bottom
       rect:
         serializedVersion: 2
         x: 280
         y: 0
-        width: 20
-        height: 20
+        width: 40
+        height: 40
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1078,8 +1078,155 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1ed25b45bba97a8c0800000000000000
-      internalID: -3988048815642563103
+      spriteID: 213e1d8c012a7f740800000000000000
+      internalID: 5185791688912790290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yellow Meld Bottom Right
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ea6cf9c1b1d36c90800000000000000
+      internalID: -7177662819570259224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orange Meld Bottom Left
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 0
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9c621fba4055a4c0800000000000000
+      internalID: -4276923989154960227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orange Meld Bottom
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1140a6f7c9acc160800000000000000
+      internalID: 7047194193229267231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orange Meld Bottom Right
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 0
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83951cf45b7baaf10800000000000000
+      internalID: 2281838150571612472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue Meld Bottom Left
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7662e001fd697cd0800000000000000
+      internalID: -2559894031314033030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue Meld Bottom
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 0
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d49fe627361177f0800000000000000
+      internalID: -616687247840799536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue Meld Bottom Right
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 0
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc7e5ef9dd66e07c0800000000000000
+      internalID: -4103229108431493171
       vertices: []
       indices: 
       edges: []
@@ -1093,10 +1240,12 @@ TextureImporter:
     indices: 
     edges: []
     weights: []
-    secondaryTextures: []
+    secondaryTextures:
+    - texture: {fileID: 2800000, guid: e503a415ca50f104c800eb1399262617, type: 3}
+      name: _NormalMap
   spritePackingTag: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 1
+  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

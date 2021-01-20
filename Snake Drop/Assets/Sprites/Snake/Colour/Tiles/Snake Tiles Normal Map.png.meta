@@ -1,28 +1,13 @@
 fileFormatVersion: 2
-guid: 7164d33761457fa41997b45ba994c9ae
+guid: 258aa63bba428fd4381c3149be16d82e
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: -8066102581090136003
-    second: Simple Meld Highlight Recoloured_0
-  - first:
-      213: -6452751044602825890
-    second: Simple Meld Highlight Recoloured_1
-  - first:
-      213: 1218023595071881852
-    second: Simple Meld Highlight Recoloured_2
-  - first:
-      213: -2258372036695314930
-    second: Simple Meld Highlight Recoloured_3
-  - first:
-      213: -7795789450268115945
-    second: Simple Meld Highlight Recoloured_4
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 0
-    sRGBTexture: 1
+    enableMipMap: 1
+    sRGBTexture: 0
     linearTexture: 0
     fadeOut: 0
     borderMipMap: 0
@@ -56,18 +41,18 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 40
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 1
+  alphaIsTransparency: 0
   spriteTessellationDetail: -1
-  textureType: 8
+  textureType: 1
   textureShape: 1
   singleChannelComponent: 0
   maxTextureSizeSet: 0
@@ -150,112 +135,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Simple Meld Highlight Recoloured_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 58
-        height: 58
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d30d24440727f0090800000000000000
-      internalID: -8066102581090136003
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Simple Meld Highlight Recoloured_1
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 0
-        width: 58
-        height: 58
-      alignment: 9
-      pivot: {x: 0.6896552, y: 0.6896552}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e53fa62fc193376a0800000000000000
-      internalID: -6452751044602825890
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Simple Meld Highlight Recoloured_2
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 0
-        width: 58
-        height: 58
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c72cd40a10a47e010800000000000000
-      internalID: 1218023595071881852
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Simple Meld Highlight Recoloured_3
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 0
-        width: 58
-        height: 58
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e0ea9161996a8a0e0800000000000000
-      internalID: -2258372036695314930
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Simple Meld Highlight Recoloured_4
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 0
-        width: 58
-        height: 58
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 71cf7018ccacfc390800000000000000
-      internalID: -7795789450268115945
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
