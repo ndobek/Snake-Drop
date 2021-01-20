@@ -1452,6 +1452,54 @@ PrefabInstance:
       propertyPath: CameraTransform
       value: 
       objectReference: {fileID: 547739062}
+    - target: {fileID: 6678751450396826564, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
+        type: 3}
+      propertyPath: OpenSingle
+      value: 
+      objectReference: {fileID: -2603054268396057377, guid: dd47e2841f1f9414fbea3b6aa0b8fb5f,
+        type: 3}
+    - target: {fileID: 6678751450396826564, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
+        type: 3}
+      propertyPath: OpenLeft
+      value: 
+      objectReference: {fileID: -2603054268396057377, guid: dd47e2841f1f9414fbea3b6aa0b8fb5f,
+        type: 3}
+    - target: {fileID: 6678751450396826564, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
+        type: 3}
+      propertyPath: OpenCenter
+      value: 
+      objectReference: {fileID: -2603054268396057377, guid: dd47e2841f1f9414fbea3b6aa0b8fb5f,
+        type: 3}
+    - target: {fileID: 6678751450396826564, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
+        type: 3}
+      propertyPath: OpenRight
+      value: 
+      objectReference: {fileID: -2603054268396057377, guid: dd47e2841f1f9414fbea3b6aa0b8fb5f,
+        type: 3}
+    - target: {fileID: 6678751450396826564, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
+        type: 3}
+      propertyPath: ClosedSingle
+      value: 
+      objectReference: {fileID: -2603054268396057377, guid: dd47e2841f1f9414fbea3b6aa0b8fb5f,
+        type: 3}
+    - target: {fileID: 6678751450396826564, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
+        type: 3}
+      propertyPath: ClosedLeft
+      value: 
+      objectReference: {fileID: -4894029629445681618, guid: 7c861b811c6a2cf489a0b3c45aa84629,
+        type: 3}
+    - target: {fileID: 6678751450396826564, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
+        type: 3}
+      propertyPath: ClosedCenter
+      value: 
+      objectReference: {fileID: -217439698252958068, guid: 5b76c92aea09fe340821b7c8a3c65a19,
+        type: 3}
+    - target: {fileID: 6678751450396826564, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
+        type: 3}
+      propertyPath: ClosedRight
+      value: 
+      objectReference: {fileID: -6761127201691220375, guid: 3c831d7dc4899364baced1f0191cefd6,
+        type: 3}
     - target: {fileID: 6765898849019055621, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
         type: 3}
       propertyPath: m_enableVertexGradient
@@ -1527,6 +1575,17 @@ PrefabInstance:
       propertyPath: scoreManager
       value: 
       objectReference: {fileID: 827798488}
+    - target: {fileID: 7876668773435911579, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -2603054268396057377, guid: dd47e2841f1f9414fbea3b6aa0b8fb5f,
+        type: 3}
+    - target: {fileID: 7876668773435911579, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7898714004124608238, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
         type: 3}
       propertyPath: m_ApplyToSortingLayers.Array.size
@@ -1560,6 +1619,17 @@ PrefabInstance:
     - target: {fileID: 8293870098238215792, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
         type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8543589272280382863, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1086977095985334668, guid: dd47e2841f1f9414fbea3b6aa0b8fb5f,
+        type: 3}
+    - target: {fileID: 8543589272280382863, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8749854955590463421, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
@@ -1730,7 +1800,7 @@ PrefabInstance:
     - target: {fileID: 9134113235925775572, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
         type: 3}
       propertyPath: orthographic size
-      value: 14.898172
+      value: 13.331776
       objectReference: {fileID: 0}
     - target: {fileID: 9134113235925775572, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
         type: 3}
