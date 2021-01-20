@@ -4,64 +4,64 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: 5609408647229602726
-    second: 20x20 Snake Heads Recoloured_0
+    second: Red Down
   - first:
       213: -8361841684277065776
-    second: 20x20 Snake Heads Recoloured_1
+    second: Green Down
   - first:
       213: -8698155272494181028
-    second: 20x20 Snake Heads Recoloured_2
+    second: Yellow Down
   - first:
       213: 4982621587191310840
-    second: 20x20 Snake Heads Recoloured_3
+    second: Orange Down
   - first:
       213: -6296041801627217369
-    second: 20x20 Snake Heads Recoloured_4
+    second: Blue Down
   - first:
       213: -1729965508787225923
-    second: 20x20 Snake Heads Recoloured_5
+    second: Red Right
   - first:
       213: 4891120430892186707
-    second: 20x20 Snake Heads Recoloured_6
+    second: Green Right
   - first:
       213: 3749633114332085550
-    second: 20x20 Snake Heads Recoloured_7
+    second: Yellow Right
   - first:
       213: 847797052470994942
-    second: 20x20 Snake Heads Recoloured_8
+    second: Orange Right
   - first:
       213: 5967109836943596643
-    second: 20x20 Snake Heads Recoloured_9
+    second: Blue Right
   - first:
       213: -3789927232471423157
-    second: 20x20 Snake Heads Recoloured_10
+    second: Red Up
   - first:
       213: -5926441263301943787
-    second: 20x20 Snake Heads Recoloured_11
+    second: Green Up
   - first:
       213: 7608486594868099147
-    second: 20x20 Snake Heads Recoloured_12
+    second: Yellow Up
   - first:
       213: 321424460953340178
-    second: 20x20 Snake Heads Recoloured_13
+    second: Orange Up
   - first:
       213: 4738973848545823502
-    second: 20x20 Snake Heads Recoloured_14
+    second: Blue Up
   - first:
       213: -4675665672953178041
-    second: 20x20 Snake Heads Recoloured_15
+    second: Red Left
   - first:
       213: 6190792706272412088
-    second: 20x20 Snake Heads Recoloured_16
+    second: Green Left
   - first:
       213: -6833178824032487144
-    second: 20x20 Snake Heads Recoloured_17
+    second: Yellow Left
   - first:
       213: -5176774664619038564
-    second: 20x20 Snake Heads Recoloured_18
+    second: Orange Left
   - first:
       213: 7737253097813100105
-    second: 20x20 Snake Heads Recoloured_19
+    second: Blue Left
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -197,7 +197,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 20x20 Snake Heads Recoloured_0
+      name: Red Down
       rect:
         serializedVersion: 2
         x: 0
@@ -205,7 +205,7 @@ TextureImporter:
         width: 36
         height: 36
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -218,7 +218,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 20x20 Snake Heads Recoloured_1
+      name: Green Down
       rect:
         serializedVersion: 2
         x: 40
@@ -226,7 +226,7 @@ TextureImporter:
         width: 36
         height: 36
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -239,7 +239,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 20x20 Snake Heads Recoloured_2
+      name: Yellow Down
       rect:
         serializedVersion: 2
         x: 80
@@ -247,7 +247,7 @@ TextureImporter:
         width: 36
         height: 36
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -260,7 +260,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 20x20 Snake Heads Recoloured_3
+      name: Orange Down
       rect:
         serializedVersion: 2
         x: 120
@@ -268,7 +268,7 @@ TextureImporter:
         width: 36
         height: 36
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -281,7 +281,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 20x20 Snake Heads Recoloured_4
+      name: Blue Down
       rect:
         serializedVersion: 2
         x: 160
@@ -289,7 +289,7 @@ TextureImporter:
         width: 36
         height: 36
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -302,7 +302,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 20x20 Snake Heads Recoloured_5
+      name: Red Right
       rect:
         serializedVersion: 2
         x: 0
@@ -310,7 +310,7 @@ TextureImporter:
         width: 36
         height: 36
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -323,7 +323,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 20x20 Snake Heads Recoloured_6
+      name: Green Right
       rect:
         serializedVersion: 2
         x: 40
@@ -331,7 +331,7 @@ TextureImporter:
         width: 36
         height: 36
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -344,7 +344,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 20x20 Snake Heads Recoloured_7
+      name: Yellow Right
       rect:
         serializedVersion: 2
         x: 80
@@ -352,7 +352,7 @@ TextureImporter:
         width: 36
         height: 36
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -365,7 +365,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 20x20 Snake Heads Recoloured_8
+      name: Orange Right
       rect:
         serializedVersion: 2
         x: 120
@@ -373,7 +373,7 @@ TextureImporter:
         width: 36
         height: 36
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -386,7 +386,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 20x20 Snake Heads Recoloured_9
+      name: Blue Right
       rect:
         serializedVersion: 2
         x: 160
@@ -394,7 +394,7 @@ TextureImporter:
         width: 36
         height: 36
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -407,7 +407,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 20x20 Snake Heads Recoloured_10
+      name: Red Up
       rect:
         serializedVersion: 2
         x: 0
@@ -415,7 +415,7 @@ TextureImporter:
         width: 36
         height: 36
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -428,7 +428,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 20x20 Snake Heads Recoloured_11
+      name: Green Up
       rect:
         serializedVersion: 2
         x: 40
@@ -436,7 +436,7 @@ TextureImporter:
         width: 36
         height: 36
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -449,15 +449,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 20x20 Snake Heads Recoloured_12
+      name: Yellow Up
       rect:
         serializedVersion: 2
         x: 80
-        y: 40
+        y: 37
         width: 36
         height: 36
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -470,7 +470,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 20x20 Snake Heads Recoloured_13
+      name: Orange Up
       rect:
         serializedVersion: 2
         x: 120
@@ -478,7 +478,7 @@ TextureImporter:
         width: 36
         height: 36
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -491,15 +491,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 20x20 Snake Heads Recoloured_14
+      name: Blue Up
       rect:
         serializedVersion: 2
         x: 160
-        y: 40
+        y: 41
         width: 36
         height: 36
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -512,7 +512,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 20x20 Snake Heads Recoloured_15
+      name: Red Left
       rect:
         serializedVersion: 2
         x: 0
@@ -520,7 +520,7 @@ TextureImporter:
         width: 36
         height: 36
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -533,7 +533,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 20x20 Snake Heads Recoloured_16
+      name: Green Left
       rect:
         serializedVersion: 2
         x: 40
@@ -541,7 +541,7 @@ TextureImporter:
         width: 36
         height: 36
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -554,7 +554,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 20x20 Snake Heads Recoloured_17
+      name: Yellow Left
       rect:
         serializedVersion: 2
         x: 80
@@ -562,7 +562,7 @@ TextureImporter:
         width: 36
         height: 36
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -575,7 +575,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 20x20 Snake Heads Recoloured_18
+      name: Orange Left
       rect:
         serializedVersion: 2
         x: 120
@@ -583,7 +583,7 @@ TextureImporter:
         width: 36
         height: 36
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -596,7 +596,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 20x20 Snake Heads Recoloured_19
+      name: Blue Left
       rect:
         serializedVersion: 2
         x: 160
@@ -604,7 +604,7 @@ TextureImporter:
         width: 36
         height: 36
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

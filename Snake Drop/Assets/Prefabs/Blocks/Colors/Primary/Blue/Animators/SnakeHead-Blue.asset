@@ -14,12 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationConcurrent: 0
   AnimationTotalTime: 0
-  UpSprite: {fileID: 683822419353286473, guid: 85496061b42028240b2ea5daeae12aa3, type: 3}
-  DownSprite: {fileID: 13899638341151767, guid: 85496061b42028240b2ea5daeae12aa3,
+  UpSprite: {fileID: 4738973848545823502, guid: 8cc3153585b27e146bd5af7d2a7ee2d6,
     type: 3}
-  LeftSprite: {fileID: 555276856248597749, guid: 85496061b42028240b2ea5daeae12aa3,
+  DownSprite: {fileID: -6296041801627217369, guid: 8cc3153585b27e146bd5af7d2a7ee2d6,
     type: 3}
-  RightSprite: {fileID: 6118276381943132039, guid: 85496061b42028240b2ea5daeae12aa3,
+  LeftSprite: {fileID: 7737253097813100105, guid: 8cc3153585b27e146bd5af7d2a7ee2d6,
+    type: 3}
+  RightSprite: {fileID: 5967109836943596643, guid: 8cc3153585b27e146bd5af7d2a7ee2d6,
     type: 3}
   HighlightTail: 1
   color: {r: 1, g: 1, b: 1, a: 1}
