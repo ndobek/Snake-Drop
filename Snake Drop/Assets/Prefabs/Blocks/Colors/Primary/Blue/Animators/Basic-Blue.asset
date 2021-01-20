@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationConcurrent: 0
   AnimationTotalTime: 0
-  sprite: {fileID: -4065304124308622816, guid: b09044ae8d292854ab319676626f4a48, type: 3}
+  sprite: {fileID: 2162796077793752757, guid: 907e2527b53f20f4d977b2eb5e07a5bb, type: 3}
   color: {r: 1, g: 1, b: 1, a: 1}
   sortingOrder: 0
