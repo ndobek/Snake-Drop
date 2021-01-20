@@ -48,5 +48,5 @@ MonoBehaviour:
   - {fileID: 5526921751661114468, guid: db07d880882536145a2a6161712214ac, type: 3}
   MaxPlants: 1
   Plants: []
-  HorizontalVariance: 0.01
+  HorizontalVariance: 0
   VerticalVariance: 0
