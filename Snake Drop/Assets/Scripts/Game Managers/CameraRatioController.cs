@@ -22,7 +22,8 @@ public class CameraRatioController : MonoBehaviour
     [SerializeField]
     private bool landscapeUseHeight;
     [SerializeField]
-    private bool roundPosToPixelSize;
+    private bool roundAspectToPixelSize;
+
     [SerializeField]
     private float PPU;
 
@@ -42,7 +43,6 @@ public class CameraRatioController : MonoBehaviour
         {
             SetLandscape();
         }
-        if(roundPosToPixelSize) PositionCamera();
     }
 
     private void SetPortrait()
@@ -64,20 +64,39 @@ public class CameraRatioController : MonoBehaviour
 
     private void SetByHeight(float height)
     {
-        ControlledCamera.orthographicSize = height / 2;
+        Set(height / 2);
     }
 
-    private void PositionCamera()
+    private void Set(float size)
     {
-        Vector3 pos = CameraTransform.position;
-        float pixelSize = 1 / PPU;
+        float newSize = size;
 
-        float xAdj = pos.x % pixelSize;
-        float yAdj = pos.y % pixelSize;
-        float zAdj = pos.z % pixelSize;
+        if (roundAspectToPixelSize)
+        {
+            float roundToPPU(float input) { return input - (input % (ControlledCamera.orthographicSize * 2 / PPU)); }
 
-        CameraTransform.position = new Vector3(pos.x - xAdj, pos.y - yAdj, pos.z - zAdj);
+            Vector2 currentRes = new Vector2(Screen.width, Screen.height);
+            Vector2 targetRes = new Vector2(roundToPPU(currentRes.x), roundToPPU(currentRes.y));
+            //Vector2 targetRes = new Vector2(1920f, 1080f);
+
+            Vector2 normalizedRes = targetRes / currentRes;
+            Vector2 rectSize = normalizedRes / Mathf.Max(normalizedRes.x, normalizedRes.y);
+
+            ControlledCamera.rect = new Rect(default, rectSize) { center = new Vector2(0.5f, 0.5f) };
+
+            float sizeAdj = size % (targetRes.y / PPU / 2);
+            if (sizeAdj < size) size -= sizeAdj;
+
+        }
+
+        //These are the relationships between Camera Size and in game Units
+        //var height = 2*Camera.main.orthographicSize;
+        //var width = height * Camera.main.aspect;
+
+        //This is the ratio to keep to avoid pixel stretching
+        //k* (Camera.main.orthographicSize * 2)*ppu = vertical resolution
+
+
+        ControlledCamera.orthographicSize = newSize;
     }
-
-
 }
