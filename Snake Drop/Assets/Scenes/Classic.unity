@@ -707,6 +707,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TerrainSwapButtonLeft
       objectReference: {fileID: 0}
+    - target: {fileID: 3564225970791649304, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3656739459833321319, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
         type: 3}
       propertyPath: m_IsActive
@@ -761,6 +766,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TargetGraphic
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5343701047343281551, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5343701047343281551, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.78072774
+      objectReference: {fileID: 0}
+    - target: {fileID: 5343701047343281551, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.5896226
+      objectReference: {fileID: 0}
+    - target: {fileID: 5343701047343281551, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
+        type: 3}
+      propertyPath: m_LightVolumeOpacity
+      value: 0.899
+      objectReference: {fileID: 0}
+    - target: {fileID: 5343701047343281551, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 0.78
       objectReference: {fileID: 0}
     - target: {fileID: 5562700622641882087, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
         type: 3}
@@ -2339,7 +2369,7 @@ PrefabInstance:
     - target: {fileID: 9134113235925775572, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
         type: 3}
       propertyPath: orthographic size
-      value: 7.7279997
+      value: 16.00396
       objectReference: {fileID: 0}
     - target: {fileID: 9134113235925775572, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
         type: 3}
