@@ -9,7 +9,7 @@ public class EntranceManager : PlayGrid
 
     //public EntranceAnimationManager EntranceAnimationManager;
     public EntranceSlot StartingSlot;
-
+#if UNITY_EDITOR
     public override void CreateGrid()
     {
         XSize = LinkedTo.XSize + 2;
@@ -57,7 +57,7 @@ public class EntranceManager : PlayGrid
 
         }
     }
-
+#endif
     public bool CheckForValidEntrancesToGrid(PlayerManager player, PlayGrid grid)
     {
         bool result = false;
