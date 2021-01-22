@@ -96,7 +96,7 @@ public class PlayGrid : MonoBehaviour
     #endregion
 
     #region Grid initialization
-
+#if UNITY_EDITOR
     public virtual void CreateGrid()
     {
         slots = new BlockSlot[xSize * ySize];
@@ -108,11 +108,13 @@ public class PlayGrid : MonoBehaviour
             }
         }
     }
+
     protected void CreateSlot(int x, int y, BlockColor color, BlockType type)
     {
         CreateSlot(x, y);
         SetBlock(x, y, color, type);
     }
+
     protected virtual void CreateSlot(int x, int y)
     {
         if (CheckInGrid(x, y) && slots[FlattenedIndex(x, y)] == null)
@@ -126,8 +128,9 @@ public class PlayGrid : MonoBehaviour
             slots[i].y = y;
         }
     }
+#endif
 
-    #endregion
+#endregion
 
     #region Methods for updating and maintenance.
 
