@@ -9,6 +9,10 @@ public class CameraRatioController : MonoBehaviour
     //var height = 2*Camera.main.orthographicSize;
     //var width = height * Camera.main.aspect;
 
+
+    //This is the ratio to keep to avoid pixel stretching
+    //k* (Camera.main.orthographicSize * 2)*ppu = vertical resolution
+
     [HideInInspector]
     private Camera ControlledCamera;
     [SerializeField]
@@ -59,7 +63,7 @@ public class CameraRatioController : MonoBehaviour
 
     private void SetByWidth(float width)
     {
-        ControlledCamera.orthographicSize = width / ControlledCamera.aspect / 2;
+        Set(width / ControlledCamera.aspect / 2);
     }
 
     private void SetByHeight(float height)
@@ -73,7 +77,7 @@ public class CameraRatioController : MonoBehaviour
 
         if (roundAspectToPixelSize)
         {
-            float roundToPPU(float input) { return input - (input % (ControlledCamera.orthographicSize * 2 / PPU)); }
+            int roundToPPU(float input) { return (int)(input - (input % (newSize * 2 / PPU)) % 2); }
 
             Vector2 currentRes = new Vector2(Screen.width, Screen.height);
             Vector2 targetRes = new Vector2(roundToPPU(currentRes.x), roundToPPU(currentRes.y));
@@ -84,8 +88,8 @@ public class CameraRatioController : MonoBehaviour
 
             ControlledCamera.rect = new Rect(default, rectSize) { center = new Vector2(0.5f, 0.5f) };
 
-            float sizeAdj = size % (targetRes.y / PPU / 2);
-            if (sizeAdj < size) size -= sizeAdj;
+            //float sizeAdj = size % (targetRes.y / PPU / 2);
+            //if (sizeAdj < size) newSize -= sizeAdj;
 
         }
 
