@@ -185,12 +185,12 @@ PrefabInstance:
         type: 3}
       propertyPath: terrainSelectorObj
       value: 
-      objectReference: {fileID: 8459523404457991521}
+      objectReference: {fileID: 0}
     - target: {fileID: 2020569991339172463, guid: 3f3fb188545baca4d9f6112f1c0f42b0,
         type: 3}
       propertyPath: terrainSpawnerObj
       value: 
-      objectReference: {fileID: 1562794256191312483}
+      objectReference: {fileID: 0}
     - target: {fileID: 4134575752230521538, guid: 3f3fb188545baca4d9f6112f1c0f42b0,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -285,12 +285,12 @@ PrefabInstance:
         type: 3}
       propertyPath: terrainSelectorObj
       value: 
-      objectReference: {fileID: 8459523404457991521}
+      objectReference: {fileID: 0}
     - target: {fileID: 6066512274695343792, guid: 3f3fb188545baca4d9f6112f1c0f42b0,
         type: 3}
       propertyPath: terrainSpawnerObj
       value: 
-      objectReference: {fileID: 746344527102085735}
+      objectReference: {fileID: 0}
     - target: {fileID: 6399471933366425548, guid: 3f3fb188545baca4d9f6112f1c0f42b0,
         type: 3}
       propertyPath: powerupManager
@@ -330,12 +330,12 @@ PrefabInstance:
         type: 3}
       propertyPath: terrainSelectorObj
       value: 
-      objectReference: {fileID: 8459523404457991521}
+      objectReference: {fileID: 0}
     - target: {fileID: 6958444703801560203, guid: 3f3fb188545baca4d9f6112f1c0f42b0,
         type: 3}
       propertyPath: terrainSpawnerObj
       value: 
-      objectReference: {fileID: 8867333361276013331}
+      objectReference: {fileID: 0}
     - target: {fileID: 7281281027042213677, guid: 3f3fb188545baca4d9f6112f1c0f42b0,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -350,12 +350,12 @@ PrefabInstance:
         type: 3}
       propertyPath: terrainSelectorObj
       value: 
-      objectReference: {fileID: 8459523404457991521}
+      objectReference: {fileID: 0}
     - target: {fileID: 7891292388810960689, guid: 3f3fb188545baca4d9f6112f1c0f42b0,
         type: 3}
       propertyPath: terrainSpawnerObj
       value: 
-      objectReference: {fileID: 3886519831632872936}
+      objectReference: {fileID: 0}
     - target: {fileID: 8168091338025362973, guid: 3f3fb188545baca4d9f6112f1c0f42b0,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -736,6 +736,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3035482913774365133, guid: ba28145764ca10040b2f33bbf1016700,
+        type: 3}
+      propertyPath: m_Name
+      value: Alyssa doesn't know how to delete this
+      objectReference: {fileID: 0}
     - target: {fileID: 3705682187115819208, guid: ba28145764ca10040b2f33bbf1016700,
         type: 3}
       propertyPath: m_Mesh
@@ -925,36 +930,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c00a0ad3af9fc73458716492b25f9bb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &8459523404457991521 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4971026243127950916, guid: ba28145764ca10040b2f33bbf1016700,
-    type: 3}
-  m_PrefabInstance: {fileID: 3574417402669785893}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &8867333361276013331 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5374475532132460598, guid: ba28145764ca10040b2f33bbf1016700,
-    type: 3}
-  m_PrefabInstance: {fileID: 3574417402669785893}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &3886519831632872936 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 321251465385895629, guid: ba28145764ca10040b2f33bbf1016700,
-    type: 3}
-  m_PrefabInstance: {fileID: 3574417402669785893}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &746344527102085735 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4305843476796369218, guid: ba28145764ca10040b2f33bbf1016700,
-    type: 3}
-  m_PrefabInstance: {fileID: 3574417402669785893}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1562794256191312483 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2606115958742757702, guid: ba28145764ca10040b2f33bbf1016700,
-    type: 3}
-  m_PrefabInstance: {fileID: 3574417402669785893}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8319934933546858072
 PrefabInstance:
   m_ObjectHideFlags: 0
