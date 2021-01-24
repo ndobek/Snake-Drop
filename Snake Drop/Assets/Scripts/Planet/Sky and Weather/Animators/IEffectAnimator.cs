@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IWeatherPreset
+public interface IEffectAnimator
 {
-    //holds multiple effect data presets to create 1 weather
-
     List<IAnimatableEffect> Effects { get; }
+    IPresetData PresetData { get; } 
+    void UpdateAnimations();
 }
-
