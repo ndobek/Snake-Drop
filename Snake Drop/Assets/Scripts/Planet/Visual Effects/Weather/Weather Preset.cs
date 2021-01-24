@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Lightflerper : MonoBehaviour
+[CreateAssetMenu]
+public class WeatherPreset : ScriptableObject, IWeatherPreset
 {
-
+  
 }

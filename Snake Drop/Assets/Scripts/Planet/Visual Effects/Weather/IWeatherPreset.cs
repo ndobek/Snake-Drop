@@ -2,10 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IAnimatableLight
+public interface IWeatherPreset
 {
-    List<LightPreset> Presets { get; }
-
-
 
 }
+
