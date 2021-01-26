@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5186418266535475668}
   - component: {fileID: 2974507927795062372}
+  - component: {fileID: 3444541771542092477}
   m_Layer: 0
   m_Name: Rocky Terrain
   m_TagString: Untagged
@@ -25,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7173165647702447760}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -1.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7722076011773162991}
@@ -75,7 +76,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -358638985
-  m_SortingLayer: -1
+  m_SortingLayer: -9
   m_SortingOrder: -2
   m_Sprite: {fileID: 5061757703129102799, guid: 9423b5394fbf72b47a8329b03f8fa314,
     type: 3}
@@ -89,6 +90,90 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3444541771542092477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7173165647702447760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 0
+  m_CastsShadows: 1
+  m_SelfShadows: 1
+  m_ApplyToSortingLayers: 5594f21fdfdfafe24b429c05779a9fea774035d3fbaf55a081ce61a6330a7cd877eb3b11f740b061b7b487b76572607600000000
+  m_ShapePath:
+  - {x: -3.0424185, y: 0.447585, z: 0}
+  - {x: 0.025706768, y: -0.2057147, z: 0}
+  - {x: 3.421644, y: 1.5309334, z: 0}
+  - {x: 7.0114284, y: 6.1765375, z: 0}
+  - {x: 7.400462, y: 7.122898, z: 0}
+  - {x: 7.4028335, y: 7.3732114, z: 0}
+  - {x: 6.8661485, y: 7.3422794, z: 0}
+  - {x: 6.600093, y: 7.260876, z: 0}
+  - {x: 6.3281555, y: 7.1401563, z: 0}
+  - {x: 6.1592603, y: 7.027572, z: 0}
+  - {x: 5.839765, y: 6.9935975, z: 0}
+  - {x: 5.5643425, y: 7.0298076, z: 0}
+  - {x: 5.3395767, y: 7.081283, z: 0}
+  - {x: 5.0085135, y: 7.1844416, z: 0}
+  - {x: 4.6587486, y: 7.3420286, z: 0}
+  - {x: 4.3477874, y: 7.54761, z: 0}
+  - {x: 4.150893, y: 7.392523, z: 0}
+  - {x: 3.8924553, y: 7.0536976, z: 0}
+  - {x: 3.7161865, y: 6.938377, z: 0}
+  - {x: 3.285454, y: 6.8075857, z: 0}
+  - {x: 2.8350406, y: 6.8245955, z: 0}
+  - {x: 2.4486442, y: 6.865862, z: 0}
+  - {x: 2.3065033, y: 6.9658365, z: 0}
+  - {x: 1.991471, y: 7.124947, z: 0}
+  - {x: 1.625883, y: 7.1825294, z: 0}
+  - {x: 1.451312, y: 7.3311768, z: 0}
+  - {x: 1.2210171, y: 7.5039454, z: 0}
+  - {x: 1.1500615, y: 7.4316673, z: 0}
+  - {x: 1.0700408, y: 7.2881513, z: 0}
+  - {x: 0.92442805, y: 7.1285777, z: 0}
+  - {x: 0.69733286, y: 6.963381, z: 0}
+  - {x: 0.46208742, y: 6.9044714, z: 0}
+  - {x: -0.062465668, y: 6.85071, z: 0}
+  - {x: -0.65712905, y: 6.8719225, z: 0}
+  - {x: -0.89362675, y: 6.858782, z: 0}
+  - {x: -1.1329516, y: 6.8231707, z: 0}
+  - {x: -1.3443872, y: 6.905004, z: 0}
+  - {x: -1.4979573, y: 6.9857364, z: 0}
+  - {x: -1.6679192, y: 7.0023923, z: 0}
+  - {x: -1.8789922, y: 6.9791975, z: 0}
+  - {x: -2.1662607, y: 6.9828877, z: 0}
+  - {x: -2.4719167, y: 7.046578, z: 0}
+  - {x: -2.681283, y: 7.145599, z: 0}
+  - {x: -2.9258337, y: 7.28382, z: 0}
+  - {x: -2.9061644, y: 7.481554, z: 0}
+  - {x: -3.086611, y: 7.405612, z: 0}
+  - {x: -3.8016405, y: 7.234063, z: 0}
+  - {x: -4.06866, y: 7.164303, z: 0}
+  - {x: -4.408496, y: 7.1203203, z: 0}
+  - {x: -4.8802795, y: 7.1916776, z: 0}
+  - {x: -5.1818194, y: 7.395483, z: 0}
+  - {x: -5.1835723, y: 7.603007, z: 0}
+  - {x: -5.303799, y: 7.3823357, z: 0}
+  - {x: -5.4871783, y: 7.3040605, z: 0}
+  - {x: -6.254093, y: 7.2958994, z: 0}
+  - {x: -6.651903, y: 7.3077083, z: 0}
+  - {x: -6.8666143, y: 7.431052, z: 0}
+  - {x: -6.94136, y: 7.6579237, z: 0}
+  - {x: -7.279439, y: 7.5592604, z: 0}
+  - {x: -7.4515686, y: 7.3267565, z: 0}
+  - {x: -7.4170027, y: 5.3414297, z: 0}
+  - {x: -6.379396, y: 2.4680576, z: 0}
+  m_ShapePathHash: 1218277581
+  m_Mesh: {fileID: 0}
+  m_InstanceId: 687212
 --- !u!1001 &215723359637968241
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3044492358124261790}
   - component: {fileID: -4197098269233935402}
+  - component: {fileID: 6836690365865625020}
   m_Layer: 0
   m_Name: Smooth Terrain
   m_TagString: Untagged
@@ -75,7 +76,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -358638985
-  m_SortingLayer: -1
+  m_SortingLayer: -9
   m_SortingOrder: -2
   m_Sprite: {fileID: -2340373645773336236, guid: 9423b5394fbf72b47a8329b03f8fa314,
     type: 3}
@@ -89,6 +90,49 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6836690365865625020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7401955561011307737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 5594f21fdfdfafe24b429c05779a9fea774035d3fbaf55a081ce61a6330a7cd877eb3b11f740b061b7b487b76572607600000000
+  m_ShapePath:
+  - {x: -0.29789305, y: -0.3167448, z: 0}
+  - {x: 1.7649875, y: 1.1503508, z: 0}
+  - {x: 6.766412, y: 6.418889, z: 0}
+  - {x: 6.9439125, y: 6.818265, z: 0}
+  - {x: 6.838616, y: 7.0757794, z: 0}
+  - {x: 6.5798535, y: 7.24048, z: 0}
+  - {x: 5.4425707, y: 7.0854945, z: 0}
+  - {x: 3.2019129, y: 6.81875, z: 0}
+  - {x: 2.3750055, y: 6.8187494, z: 0}
+  - {x: 1.7881668, y: 6.898773, z: 0}
+  - {x: 1.7348182, y: 6.4986553, z: 0}
+  - {x: -1.3594204, y: 6.4986567, z: 0}
+  - {x: -4.1869144, y: 6.8187494, z: 0}
+  - {x: -5.47274, y: 6.9430685, z: 0}
+  - {x: -5.547313, y: 6.445307, z: 0}
+  - {x: -6.0942626, y: 6.8985257, z: 0}
+  - {x: -6.480919, y: 6.7085533, z: 0}
+  - {x: -6.6284933, y: 6.410895, z: 0}
+  - {x: -6.5447245, y: 5.922274, z: 0}
+  - {x: -6.1467423, y: 4.7770104, z: 0}
+  - {x: -3.395486, y: 1.6263783, z: 0}
+  m_ShapePathHash: -1129443335
+  m_Mesh: {fileID: 0}
+  m_InstanceId: 706570
 --- !u!1001 &3138495249316565045
 PrefabInstance:
   m_ObjectHideFlags: 0

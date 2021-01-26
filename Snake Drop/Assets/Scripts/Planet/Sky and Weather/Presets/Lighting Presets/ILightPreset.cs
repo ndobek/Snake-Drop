@@ -15,6 +15,7 @@ public interface ILightPreset
     float InnerRadius { get; }
     float OuterRadius { get;}
     float InnerAngle { get;}
+    float OuterAngle { get; }
     bool AlphaBlendOnOverlap { get; }
     bool UseNormalMap { get;}
     float VolumeOpacity { get;}

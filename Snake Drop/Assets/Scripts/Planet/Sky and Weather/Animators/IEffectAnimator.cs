@@ -5,6 +5,6 @@ using UnityEngine;
 public interface IEffectAnimator
 {
     List<IAnimatableEffect> Effects { get; }
-    IPresetData PresetData { get; } 
+    List<IPresetData> PresetData { get; } 
     void UpdateAnimations();
 }

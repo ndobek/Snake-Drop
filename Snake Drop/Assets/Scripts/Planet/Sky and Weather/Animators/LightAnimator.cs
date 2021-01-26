@@ -9,8 +9,9 @@ public class LightAnimator : MonoBehaviour, IEffectAnimator
     private List<IAnimatableEffect> effects;
     public List<IAnimatableEffect> Effects { get; }
 
-    private IPresetData presetData;
-    public IPresetData PresetData { get; }
+    [SerializeField]
+    private List<IPresetData> presetData;
+    public List<IPresetData> PresetData { get { return presetData; } }
 
 
     public void Start()
