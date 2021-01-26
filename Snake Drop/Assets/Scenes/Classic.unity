@@ -550,6 +550,11 @@ PrefabInstance:
       propertyPath: orthographic size
       value: 10.95
       objectReference: {fileID: 0}
+    - target: {fileID: 1136909919672629907, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
+        type: 3}
+      propertyPath: m_AlphaBlendOnOverlap
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1402635519101737881, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
         type: 3}
       propertyPath: m_Name

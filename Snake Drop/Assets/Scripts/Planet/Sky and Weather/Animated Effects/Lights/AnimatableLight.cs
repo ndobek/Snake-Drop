@@ -11,9 +11,10 @@ public class AnimatableLight : MonoBehaviour, IAnimatableEffect
     void Start()
     {
         lightComponent = GetComponent<Light2D>();
+        Animate();
     }
     public void Animate()
     {
-
+       
     }
 }
