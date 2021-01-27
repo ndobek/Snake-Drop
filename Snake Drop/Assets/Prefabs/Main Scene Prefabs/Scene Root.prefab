@@ -731,6 +731,66 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9134113234743710319}
     m_Modifications:
+    - target: {fileID: 109438445569846218, guid: ba28145764ca10040b2f33bbf1016700,
+        type: 3}
+      propertyPath: m_FalloffIntensity
+      value: 0.718
+      objectReference: {fileID: 0}
+    - target: {fileID: 109438445569846218, guid: ba28145764ca10040b2f33bbf1016700,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 109438445569846218, guid: ba28145764ca10040b2f33bbf1016700,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.79607844
+      objectReference: {fileID: 0}
+    - target: {fileID: 109438445569846218, guid: ba28145764ca10040b2f33bbf1016700,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.86978173
+      objectReference: {fileID: 0}
+    - target: {fileID: 109438445569846218, guid: ba28145764ca10040b2f33bbf1016700,
+        type: 3}
+      propertyPath: m_LightVolumeOpacity
+      value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 109438445569846218, guid: ba28145764ca10040b2f33bbf1016700,
+        type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[0]
+      value: -358638985
+      objectReference: {fileID: 0}
+    - target: {fileID: 109438445569846218, guid: ba28145764ca10040b2f33bbf1016700,
+        type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[2]
+      value: 535991381
+      objectReference: {fileID: 0}
+    - target: {fileID: 109438445569846218, guid: ba28145764ca10040b2f33bbf1016700,
+        type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[3]
+      value: 535991381
+      objectReference: {fileID: 0}
+    - target: {fileID: 109438445569846218, guid: ba28145764ca10040b2f33bbf1016700,
+        type: 3}
+      propertyPath: m_AlphaBlendOnOverlap
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 109438445569846218, guid: ba28145764ca10040b2f33bbf1016700,
+        type: 3}
+      propertyPath: m_ShadowIntensity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 109438445569846218, guid: ba28145764ca10040b2f33bbf1016700,
+        type: 3}
+      propertyPath: m_ShadowVolumeIntensity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 109438445569846218, guid: ba28145764ca10040b2f33bbf1016700,
+        type: 3}
+      propertyPath: m_PointLightInnerRadius
+      value: 22.86542
+      objectReference: {fileID: 0}
     - target: {fileID: 2908164481314605210, guid: ba28145764ca10040b2f33bbf1016700,
         type: 3}
       propertyPath: m_IsActive
