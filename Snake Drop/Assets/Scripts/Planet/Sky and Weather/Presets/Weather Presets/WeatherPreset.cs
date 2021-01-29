@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu]
-public class LightPreset : ScriptableObject
+public class WeatherPreset: ScriptableObject
 {
-    public LightState lightState;
+    public WeatherState weather;
 }

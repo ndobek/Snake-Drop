@@ -3,25 +3,50 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
 
-public class LightAnimator : MonoBehaviour, IEffectAnimator
+#region old stuff
+//public class LightAnimator : MonoBehaviour, IEffectAnimator
+//{
+//    [SerializeField]
+//    private List<IAnimatableEffect> effects;
+//    public List<IAnimatableEffect> Effects { get { return effects; } }
+
+
+//    [SerializeField]
+//    private List<IPresetData> presetData;
+//    public List<IPresetData> PresetData { get { return presetData; } }
+
+
+
+
+//    public void UpdateAnimations()
+//    {
+//    }
+//}
+#endregion
+//This class:
+//Goes on light
+//Interpolates data from keyframe
+//Instantiates a frame
+//Updates the light using data from the new frame
+public class LightAnimator : MonoBehaviour, IEffectAnimator<Light2D, LightState>
 {
-    [SerializeField]
-    private List<IAnimatableEffect> effects;
-    public List<IAnimatableEffect> Effects { get { return effects; } }
-   
-    //This class shouldn't have the presetData, because how would it know which ones go with which light? 
-    //instead, the light interface needs to have different methods you can call on it, like cool() but that sucks,
-    //because you would have to add them to a billion things...it's better if you just add them here. that means you need
-    //to also be able to set the light type, the cookie, the order, etc so that it can just cycle through a bunch of lights and
-    //make them whatever they need to be.
-    //[SerializeField]
-    //private List<IPresetData> presetData;
-    //public List<IPresetData> PresetData { get { return presetData; } }
+    //renamed light to animatableLight because unity had an issue with the name light, probably because it's already a thing
+    public Light2D animatableLight;
 
-
-
-   
-    public void UpdateAnimations()
+    private void Awake()
     {
+        if (animatableLight == null) animatableLight = GetComponent<Light2D>();
+    }
+
+    public void UpdateEffect(Light2D effect, LightState nextFrame)
+    {
+        effect.pointLightInnerAngle = nextFrame.InnerAngle;
+    }
+
+    public void Animate(LightState keyframe1, LightState keyframe2, float t)
+    {
+        LightState result = new LightState();
+        result.InnerAngle = Mathf.Lerp(keyframe1.InnerAngle, keyframe2.InnerAngle, t);
+        UpdateEffect(animatableLight, result);
     }
 }
