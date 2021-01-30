@@ -53,6 +53,9 @@ public class LightState
     private bool useNormalMap;
     public bool UseNormalMap { get { return useNormalMap; } set { useNormalMap = value; } }
     [SerializeField]
+    private float distance;
+    public float Distance { get { return distance; } set { distance = value; } }
+    [SerializeField]
     private float volumeOpacity;
     public float VolumeOpacity { get { return volumeOpacity; } set { volumeOpacity = value; } }
     [SerializeField]

@@ -731,75 +731,65 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9134113234743710319}
     m_Modifications:
-    - target: {fileID: 109438445569846218, guid: ba28145764ca10040b2f33bbf1016700,
+    - target: {fileID: 1015154354357185277, guid: ba28145764ca10040b2f33bbf1016700,
         type: 3}
-      propertyPath: m_FalloffIntensity
-      value: 0.718
+      propertyPath: m_LocalRotation.z
+      value: 0.92770755
       objectReference: {fileID: 0}
-    - target: {fileID: 109438445569846218, guid: ba28145764ca10040b2f33bbf1016700,
+    - target: {fileID: 1015154354357185277, guid: ba28145764ca10040b2f33bbf1016700,
         type: 3}
-      propertyPath: m_Color.r
-      value: 1
+      propertyPath: m_LocalRotation.w
+      value: -0.37330788
       objectReference: {fileID: 0}
-    - target: {fileID: 109438445569846218, guid: ba28145764ca10040b2f33bbf1016700,
+    - target: {fileID: 1015154354357185277, guid: ba28145764ca10040b2f33bbf1016700,
         type: 3}
-      propertyPath: m_Color.g
-      value: 0.79607844
+      propertyPath: m_LocalPosition.x
+      value: -15.07
       objectReference: {fileID: 0}
-    - target: {fileID: 109438445569846218, guid: ba28145764ca10040b2f33bbf1016700,
+    - target: {fileID: 1015154354357185277, guid: ba28145764ca10040b2f33bbf1016700,
         type: 3}
-      propertyPath: m_Color.b
-      value: 0.86978173
+      propertyPath: m_LocalPosition.y
+      value: 12.41
       objectReference: {fileID: 0}
-    - target: {fileID: 109438445569846218, guid: ba28145764ca10040b2f33bbf1016700,
+    - target: {fileID: 2101955367852838407, guid: ba28145764ca10040b2f33bbf1016700,
         type: 3}
-      propertyPath: m_LightVolumeOpacity
-      value: 0.07
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 109438445569846218, guid: ba28145764ca10040b2f33bbf1016700,
+    - target: {fileID: 2101955367852838407, guid: ba28145764ca10040b2f33bbf1016700,
         type: 3}
-      propertyPath: m_ApplyToSortingLayers.Array.data[0]
-      value: -358638985
-      objectReference: {fileID: 0}
-    - target: {fileID: 109438445569846218, guid: ba28145764ca10040b2f33bbf1016700,
-        type: 3}
-      propertyPath: m_ApplyToSortingLayers.Array.data[2]
-      value: 535991381
-      objectReference: {fileID: 0}
-    - target: {fileID: 109438445569846218, guid: ba28145764ca10040b2f33bbf1016700,
-        type: 3}
-      propertyPath: m_ApplyToSortingLayers.Array.data[3]
-      value: 535991381
-      objectReference: {fileID: 0}
-    - target: {fileID: 109438445569846218, guid: ba28145764ca10040b2f33bbf1016700,
-        type: 3}
-      propertyPath: m_AlphaBlendOnOverlap
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 109438445569846218, guid: ba28145764ca10040b2f33bbf1016700,
-        type: 3}
-      propertyPath: m_ShadowIntensity
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 109438445569846218, guid: ba28145764ca10040b2f33bbf1016700,
-        type: 3}
-      propertyPath: m_ShadowVolumeIntensity
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 109438445569846218, guid: ba28145764ca10040b2f33bbf1016700,
-        type: 3}
-      propertyPath: m_PointLightInnerRadius
-      value: 22.86542
+      propertyPath: m_InstanceId
+      value: -1755410
       objectReference: {fileID: 0}
     - target: {fileID: 2908164481314605210, guid: ba28145764ca10040b2f33bbf1016700,
         type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2975782164546824963, guid: ba28145764ca10040b2f33bbf1016700,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975782164546824963, guid: ba28145764ca10040b2f33bbf1016700,
+        type: 3}
+      propertyPath: m_InstanceId
+      value: -1755348
+      objectReference: {fileID: 0}
     - target: {fileID: 3035482913774365133, guid: ba28145764ca10040b2f33bbf1016700,
         type: 3}
       propertyPath: m_Name
       value: Alyssa doesn't know how to delete this
+      objectReference: {fileID: 0}
+    - target: {fileID: 3558250033366378807, guid: ba28145764ca10040b2f33bbf1016700,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3558250033366378807, guid: ba28145764ca10040b2f33bbf1016700,
+        type: 3}
+      propertyPath: m_InstanceId
+      value: -1755250
       objectReference: {fileID: 0}
     - target: {fileID: 3705682187115819208, guid: ba28145764ca10040b2f33bbf1016700,
         type: 3}
@@ -895,6 +885,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6645534728304222085, guid: ba28145764ca10040b2f33bbf1016700,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6645534728304222085, guid: ba28145764ca10040b2f33bbf1016700,
+        type: 3}
+      propertyPath: m_InstanceId
+      value: -1755634
       objectReference: {fileID: 0}
     - target: {fileID: 7360507374275313742, guid: ba28145764ca10040b2f33bbf1016700,
         type: 3}
