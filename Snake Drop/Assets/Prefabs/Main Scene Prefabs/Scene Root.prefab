@@ -751,6 +751,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 12.41
       objectReference: {fileID: 0}
+    - target: {fileID: 1631931559041374157, guid: ba28145764ca10040b2f33bbf1016700,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1735998367151625405, guid: ba28145764ca10040b2f33bbf1016700,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2101955367852838407, guid: ba28145764ca10040b2f33bbf1016700,
         type: 3}
       propertyPath: m_Mesh
@@ -759,7 +769,12 @@ PrefabInstance:
     - target: {fileID: 2101955367852838407, guid: ba28145764ca10040b2f33bbf1016700,
         type: 3}
       propertyPath: m_InstanceId
-      value: -1755410
+      value: -95558
+      objectReference: {fileID: 0}
+    - target: {fileID: 2867671070115300134, guid: ba28145764ca10040b2f33bbf1016700,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2908164481314605210, guid: ba28145764ca10040b2f33bbf1016700,
         type: 3}
@@ -774,7 +789,7 @@ PrefabInstance:
     - target: {fileID: 2975782164546824963, guid: ba28145764ca10040b2f33bbf1016700,
         type: 3}
       propertyPath: m_InstanceId
-      value: -1755348
+      value: -95496
       objectReference: {fileID: 0}
     - target: {fileID: 3035482913774365133, guid: ba28145764ca10040b2f33bbf1016700,
         type: 3}
@@ -789,7 +804,7 @@ PrefabInstance:
     - target: {fileID: 3558250033366378807, guid: ba28145764ca10040b2f33bbf1016700,
         type: 3}
       propertyPath: m_InstanceId
-      value: -1755250
+      value: -95398
       objectReference: {fileID: 0}
     - target: {fileID: 3705682187115819208, guid: ba28145764ca10040b2f33bbf1016700,
         type: 3}
@@ -894,7 +909,7 @@ PrefabInstance:
     - target: {fileID: 6645534728304222085, guid: ba28145764ca10040b2f33bbf1016700,
         type: 3}
       propertyPath: m_InstanceId
-      value: -1755634
+      value: -95782
       objectReference: {fileID: 0}
     - target: {fileID: 7360507374275313742, guid: ba28145764ca10040b2f33bbf1016700,
         type: 3}

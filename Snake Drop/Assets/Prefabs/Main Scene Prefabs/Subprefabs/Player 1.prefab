@@ -267,7 +267,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 4dc44b6d386208b4c999e41ac0ff3fb0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -293,7 +293,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 204.8, y: 204.8}
+  m_Size: {x: 102.4, y: 102.4}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -15742,7 +15742,7 @@ PrefabInstance:
     - target: {fileID: 1772988823496979456, guid: 0dd5ed0ed04e4bd4aa87320b6b26c8ed,
         type: 3}
       propertyPath: m_InstanceId
-      value: -2439660
+      value: -133344
       objectReference: {fileID: 0}
     - target: {fileID: 2048495963946885400, guid: 0dd5ed0ed04e4bd4aa87320b6b26c8ed,
         type: 3}
@@ -15807,7 +15807,7 @@ PrefabInstance:
     - target: {fileID: 3241840393534296324, guid: 0dd5ed0ed04e4bd4aa87320b6b26c8ed,
         type: 3}
       propertyPath: m_InstanceId
-      value: -2439672
+      value: -133356
       objectReference: {fileID: 0}
     - target: {fileID: 3805611195970179888, guid: 0dd5ed0ed04e4bd4aa87320b6b26c8ed,
         type: 3}
@@ -15817,7 +15817,7 @@ PrefabInstance:
     - target: {fileID: 3805611195970179888, guid: 0dd5ed0ed04e4bd4aa87320b6b26c8ed,
         type: 3}
       propertyPath: m_InstanceId
-      value: -2439680
+      value: -133364
       objectReference: {fileID: 0}
     - target: {fileID: 5638148940223982493, guid: 0dd5ed0ed04e4bd4aa87320b6b26c8ed,
         type: 3}
@@ -15832,7 +15832,7 @@ PrefabInstance:
     - target: {fileID: 6451652851214460290, guid: 0dd5ed0ed04e4bd4aa87320b6b26c8ed,
         type: 3}
       propertyPath: m_InstanceId
-      value: -2439704
+      value: -133388
       objectReference: {fileID: 0}
     - target: {fileID: 8999406248921826368, guid: 0dd5ed0ed04e4bd4aa87320b6b26c8ed,
         type: 3}
@@ -16909,6 +16909,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Sun - Sky Volume
+      objectReference: {fileID: 0}
+    - target: {fileID: 4556004946593966457, guid: 87d6755e04431fe43886b737f43eca09,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6081262188489949019, guid: 87d6755e04431fe43886b737f43eca09,
         type: 3}
@@ -18653,6 +18658,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sky Detail Light
       objectReference: {fileID: 0}
+    - target: {fileID: 3063793458484380627, guid: 85b1796c9592b1c41b339bf43ddf7db7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85b1796c9592b1c41b339bf43ddf7db7, type: 3}
 --- !u!4 &4045518857111927074 stripped
@@ -19786,6 +19796,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sky Mist
       objectReference: {fileID: 0}
+    - target: {fileID: 5582656532206181884, guid: 2c9e500c9b87e6f49b61cf35a73de19c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7724774952796016887, guid: 2c9e500c9b87e6f49b61cf35a73de19c,
         type: 3}
       propertyPath: m_Color.r
@@ -19952,6 +19967,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Sun - Terrain
+      objectReference: {fileID: 0}
+    - target: {fileID: 4556004946593966457, guid: 87d6755e04431fe43886b737f43eca09,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6626690144200408684, guid: 87d6755e04431fe43886b737f43eca09,
         type: 3}
