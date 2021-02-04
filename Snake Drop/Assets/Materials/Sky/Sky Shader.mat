@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Sky Shader
-  m_Shader: {fileID: -6465566751694194690, guid: 8fc35958c2e2c484d9f5230d5190ac1e,
+  m_Shader: {fileID: -6465566751694194690, guid: 4577f159f280ad3418520f0654008b84,
     type: 3}
   m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
   m_LightmapFlags: 4
@@ -54,5 +54,14 @@ Material:
     - Orange_Saturation: 1
     - Orange_Screen: 0
     - Saturation: 1
+    - _Adjusted_Overwrite: 0
+    - _Burn: 0
+    - _Contrast: 1
+    - _Dodge: 0
+    - _Hue: 0
+    - _Multiply: 0
+    - _Overlay: 0
+    - _Saturation: 1
+    - _Screen: 0
     m_Colors: []
   m_BuildTextureStacks: []
