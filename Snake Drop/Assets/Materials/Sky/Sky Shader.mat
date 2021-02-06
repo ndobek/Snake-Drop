@@ -54,14 +54,15 @@ Material:
     - Orange_Saturation: 1
     - Orange_Screen: 0
     - Saturation: 1
-    - _Adjusted_Overwrite: 0
+    - _Adjusted_Overwrite: 1
     - _Burn: 0
     - _Contrast: 1
+    - _Darken: 0
     - _Dodge: 0
-    - _Hue: 0
-    - _Multiply: 0
+    - _Hue: 8
+    - _Multiply: 0.225
     - _Overlay: 0
-    - _Saturation: 1
-    - _Screen: 0
+    - _Saturation: 0.7
+    - _Screen: 0.529
     m_Colors: []
   m_BuildTextureStacks: []

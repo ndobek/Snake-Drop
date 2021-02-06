@@ -13,20 +13,21 @@ MonoBehaviour:
   m_Name: Sun -  Cool
   m_EditorClassIdentifier: 
   lightState:
-    transformPosition: {x: 0, y: 0, z: 0}
-    transformRotation: {x: 0, y: 0, z: 0}
-    transformScale: {x: 0, y: 0, z: 0}
-    innerAngle: 50
-    outerAngle: 130
-    innerRadius: 23
-    outerRadius: 29
+    transformPosition: {x: -25, y: -25, z: 0}
+    transformRotation: {x: 0, y: 0, z: -135}
+    transformScale: {x: 1, y: 1, z: 1}
+    innerAngle: 360
+    outerAngle: 360
+    innerRadius: 30
+    outerRadius: 50
     falloffIntensity: 0.5
     alphaBlendOnOverlap: 1
     colour:
       serializedVersion: 2
-      rgba: 7766998
-    intensity: 1
-    useNormalMap: 1
-    volumeOpacity: 0.3
-    shadowIntensity: 0.6
+      rgba: 10587807
+    intensity: 0.44
+    useNormalMap: 0
+    distance: 0
+    volumeOpacity: 0.27
+    shadowIntensity: 0
     shadowVolumeIntensity: 0.4

@@ -4,17 +4,14 @@ using UnityEngine;
 
 public class Weather : MonoBehaviour
 {
-    //Has settings
+
+    public List<AnimatableLight> animatableLights;
 
     public List<LightPreset> lightPresets;
+    public SkyAnimator sky;
 
-    //IEffectAnimators to animate such as: 
-    //lightstate presets
-    //other effect states
-    
-    //particles?
-    //Wind?
-    //Aurora?
+    public List<SkyPreset> skyPresets;
 
-    //Does this tell them to animate??
+ 
+  
 }

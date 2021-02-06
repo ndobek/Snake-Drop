@@ -8,7 +8,7 @@ public class WeatherState
     //Holds weather settings
     public List<AnimatableLight> lights;
 
-
-
+    public SkyPreset skyPreset;
+    
 
 }

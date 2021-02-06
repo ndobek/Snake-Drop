@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 78296b887db550a4ba82e7f616602a76, type: 3}
-  m_Name: Sky Mist - Cool
+  m_Name: Sky Mist - Dusty
   m_EditorClassIdentifier: 
   lightState:
     transformPosition: {x: 0, y: 0, z: 0}
@@ -18,16 +18,16 @@ MonoBehaviour:
     transformScale: {x: 1, y: 1, z: 1}
     innerAngle: 360
     outerAngle: 360
-    innerRadius: 1.47
-    outerRadius: 25.7
+    innerRadius: 24
+    outerRadius: 30
     falloffIntensity: 0.5
     alphaBlendOnOverlap: 1
     colour:
       serializedVersion: 2
-      rgba: 16772079
-    intensity: 0.8
+      rgba: 13556706
+    intensity: 1
     useNormalMap: 0
-    distance: 0.261
-    volumeOpacity: 0
+    distance: 0
+    volumeOpacity: 0.062
     shadowIntensity: 0
     shadowVolumeIntensity: 0

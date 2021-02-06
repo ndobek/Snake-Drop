@@ -15,7 +15,7 @@ MonoBehaviour:
   lightState:
     transformPosition: {x: 0, y: 0, z: 0}
     transformRotation: {x: 0, y: 0, z: 0}
-    transformScale: {x: 0, y: 0, z: 0}
+    transformScale: {x: 1, y: 1, z: 1}
     innerAngle: 360
     outerAngle: 360
     innerRadius: 0
@@ -25,8 +25,9 @@ MonoBehaviour:
     colour:
       serializedVersion: 2
       rgba: 4289638143
-    intensity: 1
+    intensity: 0
     useNormalMap: 0
+    distance: 0
     volumeOpacity: 0.75
     shadowIntensity: 0
     shadowVolumeIntensity: 0

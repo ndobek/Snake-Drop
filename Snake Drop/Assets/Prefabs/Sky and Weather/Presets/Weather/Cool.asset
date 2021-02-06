@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 70916eb565c03d840b1f68799c5bddee, type: 3}
-  m_Name: Mild
+  m_Name: Cool
   m_EditorClassIdentifier: 
   weather:
     lights:
@@ -26,3 +26,4 @@ MonoBehaviour:
       - {fileID: 11400000, guid: 1cb3e10777ecbfa479181b3855344c30, type: 2}
       lightAnimator: {fileID: 2182197025358418127, guid: 625fba88ba78042469b418a470bdfc02,
         type: 3}
+    skyPreset: {fileID: 11400000, guid: cc0d78c8dc447e645a4833b6185681aa, type: 2}
