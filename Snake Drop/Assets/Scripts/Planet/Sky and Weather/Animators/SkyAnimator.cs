@@ -5,6 +5,10 @@ using UnityEngine;
 public class SkyAnimator : MonoBehaviour, IEffectAnimator<Material, SkyState>
 {
     public Material skyMaterial;
+
+    private SkyState currentState;
+    public SkyState CurrentState { get => currentState; }
+
     private void Start()
     {
         if (skyMaterial == null) skyMaterial = GetComponent<SpriteRenderer>().material;
@@ -23,6 +27,7 @@ public class SkyAnimator : MonoBehaviour, IEffectAnimator<Material, SkyState>
         result.Multiply = Mathf.Lerp(keyframe1.Multiply, keyframe2.Multiply, t);
         result.Darken = Mathf.Lerp(keyframe1.Darken, keyframe2.Darken, t);
         UpdateEffect(skyMaterial, result);
+        currentState = result;
     }
 
     public void UpdateEffect(Material effect, SkyState nextFrame)

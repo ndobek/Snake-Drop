@@ -1,11 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 [CreateAssetMenu]
-public class SkyPreset : ScriptableObject
+public class SkyDetailLightPreset : ScriptableObject
 {
-
-    public SkyState skyState;
-  
+    public LightState lightState;
 }

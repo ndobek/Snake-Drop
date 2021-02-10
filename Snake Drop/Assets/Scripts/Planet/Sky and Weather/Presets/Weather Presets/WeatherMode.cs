@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu]
-public class WeatherPreset: ScriptableObject
+public class WeatherMode : ScriptableObject
 {
-    public string weatherType;
     public List<WeatherState> weatherStates;
 }

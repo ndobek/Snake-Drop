@@ -3,12 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class WeatherState 
+//public class WeatherState 
+//{
+
+//    public List<SunVolumeLightPreset> sunVolumePresets;
+//    public List<SunTerrainLightPreset> sunTerrainPresets;
+//    public List<SkyVolumeLightPreset> skyVolumePresets;
+//    public List<SkyDetailLightPreset> skyDetailPresets;
+
+//    public List<SkyPreset> skyPresets;    
+
+//}
+public class WeatherState
 {
-    //Holds weather settings
-    public List<AnimatableLight> lights;
+    public LightPreset sunVolumePreset;
+    public LightPreset sunTerrainPreset;
+    public LightPreset skyVolumePreset;
+    public LightPreset skyDetailPreset;
 
     public SkyPreset skyPreset;
-    
-
 }
+
+

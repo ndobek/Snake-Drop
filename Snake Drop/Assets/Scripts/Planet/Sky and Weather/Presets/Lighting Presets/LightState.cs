@@ -35,12 +35,12 @@ public class LightState
     #endregion
     #region Falloff, Blend mode, Colour, and Intensity
     [SerializeField]
-    private float falloffIntensity;
-    public float FalloffIntensity { get { return falloffIntensity; } set { falloffIntensity = value; } }
-    [SerializeField]
-    private bool alphaBlendOnOverlap;
-    public bool AlphaBlendOnOverlap { get { return alphaBlendOnOverlap; } set { alphaBlendOnOverlap = value; } }
-    [SerializeField]
+    //private float falloffIntensity;
+    //public float FalloffIntensity { get { return falloffIntensity; } set { falloffIntensity = value; } }
+    //[SerializeField]
+    //private bool alphaBlendOnOverlap;
+    //public bool AlphaBlendOnOverlap { get { return alphaBlendOnOverlap; } set { alphaBlendOnOverlap = value; } }
+    //[SerializeField]
     private Color32 colour;
     public Color32 Colour { get { return colour; } set { colour = value; } }
     [SerializeField]
@@ -49,21 +49,21 @@ public class LightState
     #endregion
     #region Normal Map, Volume Opacity, Shadow Intensity, Shadow Volume
 
-    [SerializeField]
-    private bool useNormalMap;
-    public bool UseNormalMap { get { return useNormalMap; } set { useNormalMap = value; } }
-    [SerializeField]
-    private float distance;
-    public float Distance { get { return distance; } set { distance = value; } }
-    [SerializeField]
-    private float volumeOpacity;
-    public float VolumeOpacity { get { return volumeOpacity; } set { volumeOpacity = value; } }
+   // [SerializeField]
+    //private bool useNormalMap;
+    //public bool UseNormalMap { get { return useNormalMap; } set { useNormalMap = value; } }
+    //[SerializeField]
+    //private float distance;
+    //public float Distance { get { return distance; } set { distance = value; } }
+    //[SerializeField]
+    //private float volumeOpacity;
+    //public float VolumeOpacity { get { return volumeOpacity; } set { volumeOpacity = value; } }
     [SerializeField]
     private float shadowIntensity;
     public float ShadowIntensity { get { return shadowIntensity; } set { shadowIntensity = value; } }
     [SerializeField]
     private float shadowVolumeIntensity;
-    public float ShadowVolumeInstensity { get { return shadowVolumeIntensity; } set { shadowVolumeIntensity = value; } }
+    public float ShadowVolumeIntensity { get { return shadowVolumeIntensity; } set { shadowVolumeIntensity = value; } }
     #endregion
 
 

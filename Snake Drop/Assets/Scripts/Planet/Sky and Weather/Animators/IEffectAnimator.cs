@@ -14,7 +14,7 @@ using UnityEngine;
 
 public interface IEffectAnimator<Effect, State>
 {
-
+    State CurrentState { get; }
     void UpdateEffect(Effect effect, State nextFrame);
     void Animate(State keyframe1, State keyframe2, float t);
 }
