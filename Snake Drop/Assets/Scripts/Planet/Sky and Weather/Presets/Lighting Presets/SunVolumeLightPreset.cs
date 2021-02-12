@@ -4,5 +4,6 @@ using UnityEngine;
 [CreateAssetMenu]
 public class SunVolumeLightPreset : ScriptableObject
 {
+    //to delete
     public LightState lightState;
 }

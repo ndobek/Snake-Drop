@@ -17,19 +17,11 @@ public class Weather : MonoBehaviour
 
     public WeatherPreset currentPreset;
     public WeatherState currentState;
-    //public List<SunVolumeLightPreset> sunVolumePresets;
-    //public List<SunTerrainLightPreset> sunTerrainPresets;
-    //public List<SkyVolumeLightPreset> skyVolumePresets;
-    //public List<SkyDetailLightPreset> skyDetailPresets;
+
 
     public float effectChangeSpeed;
     //TODO: think about how this number should be determined
 
-    //private int SelectRandIndex<preset>(List<preset> presetBank)
-    //{
-    //    int randIndex = Random.Range(0, presetBank.Count - 1);
-    //    return randIndex;
-    //}
     public void SetWeather(WeatherPreset newWeather)
     {
         currentPreset = newWeather;
@@ -58,35 +50,24 @@ public class Weather : MonoBehaviour
         skyDetail.Animate(skyDetail.CurrentState, currentState.skyDetailPreset.lightState, effectChangeSpeed);
         sky.Animate(sky.CurrentState, currentState.skyPreset.skyState, effectChangeSpeed);
     }
+    bool midTransition = false;
     public void WeatherUpdate()
     {
-        //Todo: fix logic. this should change the weather if it's been enough time and it's not mid-transition, and animate the weather if it is mid-transition,
-        //and do nothing if it's neither. (except increment time.) time should get incremented for everything except make sure it gets reset when the weather changes.
-        if (weatherStateTime >= weatherStateDuration)
+        weatherStateTime += Time.deltaTime;
+        if (!midTransition && weatherStateTime > weatherStateDuration)
         {
-            if (weatherShiftPercent >= 1)
-            {
-                WeatherStateChange();
-            }
+            WeatherStateChange();
+            midTransition = true;
+            weatherStateTime = 0;          
         }
-        else
+        else if (midTransition)
         {
             weatherShiftPercent += Mathf.Lerp(weatherShiftPercent, 1, effectChangeSpeed);
-
             AnimateLights();
+            if (weatherShiftPercent >= 1)
+            {
+                midTransition = false;
+            }
         }
-            
-
-        weatherStateTime += Time.deltaTime;
-
-
-
-
-
     }
-
-
-
-
-
 }

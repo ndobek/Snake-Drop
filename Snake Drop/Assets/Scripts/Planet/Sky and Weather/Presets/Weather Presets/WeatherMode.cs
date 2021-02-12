@@ -4,5 +4,7 @@ using UnityEngine;
 
 public class WeatherMode : ScriptableObject
 {
+
+    //to delete?
     public List<WeatherState> weatherStates;
 }
