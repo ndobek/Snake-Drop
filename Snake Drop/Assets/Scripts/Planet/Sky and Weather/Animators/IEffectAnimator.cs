@@ -12,9 +12,10 @@ using UnityEngine;
 //}
 #endregion
 
-public interface IEffectAnimator<Effect, State>
+public interface IEffectAnimator<Effect, State, InitialStatePreset>
 {
-    State CurrentState { get; }
+    InitialStatePreset InitialState { get; }
+    State CurrentState { get; set; }
     void UpdateEffect(Effect effect, State nextFrame);
     void Animate(State keyframe1, State keyframe2, float t);
 }

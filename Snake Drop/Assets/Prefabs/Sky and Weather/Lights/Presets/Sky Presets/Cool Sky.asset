@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 942ab2fc53481c240bd471cf545245f4, type: 3}
-  m_Name: Sky Cool
+  m_Name: Cool Sky
   m_EditorClassIdentifier: 
   skyState:
     saturation: 0.43

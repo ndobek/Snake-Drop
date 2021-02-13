@@ -376,6 +376,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skyMaterial: {fileID: 2100000, guid: 4dc44b6d386208b4c999e41ac0ff3fb0, type: 2}
+  initialState: {fileID: 11400000, guid: cc0d78c8dc447e645a4833b6185681aa, type: 2}
 --- !u!1 &5322921507000468354
 GameObject:
   m_ObjectHideFlags: 0
@@ -468,13 +469,16 @@ MonoBehaviour:
   sunTerrain: {fileID: 6515989432162910002}
   skyVolume: {fileID: 6975399333002572158}
   skyDetail: {fileID: 4920383287377021676}
-  sunVolumePresets: []
-  sunTerrainPresets: []
-  skyVolumePresets: []
-  skyDetailPresets: []
   sky: {fileID: 6200478374666413419}
-  skyPresets: []
-  effectChangeSpeed: 1
+  currentPreset: {fileID: 0}
+  currentState:
+    sunVolumePreset: {fileID: 0}
+    sunTerrainPreset: {fileID: 0}
+    skyVolumePreset: {fileID: 0}
+    skyDetailPreset: {fileID: 0}
+    skyPreset: {fileID: 0}
+  weatherTransitionDuration: 20
+  weatherVariantDuration: 30
 --- !u!114 &8221063582022442303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -490,7 +494,7 @@ MonoBehaviour:
   weather: {fileID: 0}
   weatherPresets:
   - {fileID: 11400000, guid: 29e022463925fcb4daf9eefa33d36e63, type: 2}
-  currentWeatherType: 
+  initialState: {fileID: 11400000, guid: 29e022463925fcb4daf9eefa33d36e63, type: 2}
 --- !u!1 &7360507373980569083
 GameObject:
   m_ObjectHideFlags: 0
@@ -15890,7 +15894,7 @@ PrefabInstance:
     - target: {fileID: 1772988823496979456, guid: 0dd5ed0ed04e4bd4aa87320b6b26c8ed,
         type: 3}
       propertyPath: m_InstanceId
-      value: -37970
+      value: -340984
       objectReference: {fileID: 0}
     - target: {fileID: 2048495963946885400, guid: 0dd5ed0ed04e4bd4aa87320b6b26c8ed,
         type: 3}
@@ -15955,7 +15959,7 @@ PrefabInstance:
     - target: {fileID: 3241840393534296324, guid: 0dd5ed0ed04e4bd4aa87320b6b26c8ed,
         type: 3}
       propertyPath: m_InstanceId
-      value: -37972
+      value: -340986
       objectReference: {fileID: 0}
     - target: {fileID: 3805611195970179888, guid: 0dd5ed0ed04e4bd4aa87320b6b26c8ed,
         type: 3}
@@ -15965,7 +15969,7 @@ PrefabInstance:
     - target: {fileID: 3805611195970179888, guid: 0dd5ed0ed04e4bd4aa87320b6b26c8ed,
         type: 3}
       propertyPath: m_InstanceId
-      value: -37974
+      value: -340988
       objectReference: {fileID: 0}
     - target: {fileID: 5638148940223982493, guid: 0dd5ed0ed04e4bd4aa87320b6b26c8ed,
         type: 3}
@@ -15980,7 +15984,7 @@ PrefabInstance:
     - target: {fileID: 6451652851214460290, guid: 0dd5ed0ed04e4bd4aa87320b6b26c8ed,
         type: 3}
       propertyPath: m_InstanceId
-      value: -37976
+      value: -340992
       objectReference: {fileID: 0}
     - target: {fileID: 8999406248921826368, guid: 0dd5ed0ed04e4bd4aa87320b6b26c8ed,
         type: 3}

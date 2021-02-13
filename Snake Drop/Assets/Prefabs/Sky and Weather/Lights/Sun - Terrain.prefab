@@ -85,4 +85,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbab5516c12762643a405ebf7fd5faf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animatableLight: {fileID: 0}
+  lightComponent: {fileID: 0}
+  initialState: {fileID: 11400000, guid: 2dbd6ee24a836c447a36d3ad0a98124e, type: 2}

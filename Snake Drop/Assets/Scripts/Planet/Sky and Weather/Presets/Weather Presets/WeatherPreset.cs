@@ -6,5 +6,5 @@ using UnityEngine;
 public class WeatherPreset: ScriptableObject
 {
     public string weatherType;
-    public List<WeatherState> weatherStates;
+    public List<WeatherVariant> weatherVariants;
 }

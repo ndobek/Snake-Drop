@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 78296b887db550a4ba82e7f616602a76, type: 3}
-  m_Name: Sky Mist - Dusty
+  m_Name: Dusty Sky Volume
   m_EditorClassIdentifier: 
   lightState:
     transformPosition: {x: 0, y: 0, z: 0}
@@ -20,14 +20,9 @@ MonoBehaviour:
     outerAngle: 360
     innerRadius: 24
     outerRadius: 30
-    falloffIntensity: 0.5
-    alphaBlendOnOverlap: 1
     colour:
       serializedVersion: 2
       rgba: 13556706
     intensity: 1
-    useNormalMap: 0
-    distance: 0
-    volumeOpacity: 0.062
     shadowIntensity: 0
     shadowVolumeIntensity: 0

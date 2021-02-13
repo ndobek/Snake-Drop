@@ -2,16 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SkyAnimator : MonoBehaviour, IEffectAnimator<Material, SkyState>
+public class SkyAnimator : MonoBehaviour, IEffectAnimator<Material, SkyState, SkyPreset>
 {
     public Material skyMaterial;
-
+    [SerializeField]
+    private SkyPreset initialState;
+    public SkyPreset InitialState { get => initialState; }
     private SkyState currentState;
-    public SkyState CurrentState { get => currentState; }
+    public SkyState CurrentState { get => currentState; set { currentState = value; } }
 
     private void Start()
     {
         if (skyMaterial == null) skyMaterial = GetComponent<SpriteRenderer>().material;
+        currentState = initialState.skyState;
     }
     public void Animate(SkyState keyframe1, SkyState keyframe2, float t)
     {

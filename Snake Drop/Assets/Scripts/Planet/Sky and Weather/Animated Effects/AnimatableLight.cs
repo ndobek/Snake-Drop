@@ -10,8 +10,8 @@ public class AnimatableLight
     public List<LightPreset> lightPresets;
 
     [SerializeField]
-    private IEffectAnimator<Light2D, LightPreset> lightAnimator;
-    public IEffectAnimator<Light2D, LightPreset> LightAnimator { get; }
+    private IEffectAnimator<Light2D, LightPreset, LightPreset> lightAnimator;
+    public IEffectAnimator<Light2D, LightPreset, LightPreset> LightAnimator { get; }
     
 
     //Holds a list of light presets and a light animator. This keeps the right presets with the right light.

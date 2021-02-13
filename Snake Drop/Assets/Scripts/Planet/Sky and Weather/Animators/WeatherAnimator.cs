@@ -1,8 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class WeatherAnimator : MonoBehaviour, IEffectAnimator<Weather, WeatherPreset>
+[System.Serializable]
+public class WeatherAnimator : MonoBehaviour, IEffectAnimator<Weather, WeatherPreset, WeatherPreset>
 {
 
     //WeatherAnimator deals with presets, which are lists of states. Weather deals with states.
@@ -10,9 +10,12 @@ public class WeatherAnimator : MonoBehaviour, IEffectAnimator<Weather, WeatherPr
     public Weather weather;
 
     public List<WeatherPreset> weatherPresets;
+    [SerializeField]
+    private WeatherPreset initialState;
+    public WeatherPreset InitialState { get => initialState; }
 
     private WeatherPreset currentState;
-    public WeatherPreset CurrentState { get => currentState; }
+    public WeatherPreset CurrentState { get => currentState; set { currentState = value; } }
 
     private WeatherPreset RandWeather(List<WeatherPreset> presets)
     {
@@ -31,7 +34,7 @@ public class WeatherAnimator : MonoBehaviour, IEffectAnimator<Weather, WeatherPr
     {
         weather = gameObject.GetComponent<Weather>();
 
-        Animate(weatherPresets[1], weatherPresets[1], 1);
+        Animate(initialState, initialState, 1);
 
     }
 

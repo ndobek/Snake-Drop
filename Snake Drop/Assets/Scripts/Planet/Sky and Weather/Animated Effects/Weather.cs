@@ -19,8 +19,6 @@ public class Weather : MonoBehaviour
     public WeatherState currentState;
 
 
-    public float effectChangeSpeed;
-    //TODO: think about how this number should be determined
 
     public void SetWeather(WeatherPreset newWeather)
     {
@@ -29,44 +27,54 @@ public class Weather : MonoBehaviour
         Debug.Log("Changing weather to _" + currentPreset.weatherType);
     }
    
-    public void WeatherStateChange()
+    public void WeatherVariantChange()
     {
-        int index = Random.Range(0, 1 - currentPreset.weatherStates.Count);
-        currentState = currentPreset.weatherStates[index];
+        int index = Random.Range(0, currentPreset.weatherVariants.Count);
+        currentState = currentPreset.weatherVariants[index].weatherState;
 
-        Debug.Log("Changing "+ currentPreset.weatherType + "effects to " + index);
-        weatherStateTime = 0f;
-        weatherShiftPercent = 0f;
+        Debug.Log("Changing "+ currentPreset.weatherType + " effects to variant " + index);
+        weatherVariantTime = 0f;
+        weatherTransitionPercent = 0f;
     }
-    public float weatherStateTime = 0;
-    public float weatherStateDuration;
-    public float weatherShiftPercent = 0;
+    private float weatherVariantTime = 0;
+    public float weatherTransitionDuration;
+    public float weatherVariantDuration;
+    private float weatherTransitionPercent = 0;
 
-    public void AnimateLights()
+    public void AnimateEffects()
     {
-        sunVolume.Animate(sunVolume.CurrentState, currentState.sunVolumePreset.lightState, effectChangeSpeed);
-        sunTerrain.Animate(sunVolume.CurrentState, currentState.sunTerrainPreset.lightState, effectChangeSpeed);
-        skyVolume.Animate(skyVolume.CurrentState, currentState.skyVolumePreset.lightState, effectChangeSpeed);
-        skyDetail.Animate(skyDetail.CurrentState, currentState.skyDetailPreset.lightState, effectChangeSpeed);
-        sky.Animate(sky.CurrentState, currentState.skyPreset.skyState, effectChangeSpeed);
+        sunVolume.Animate(sunVolume.CurrentState, currentState.sunVolumePreset.lightState, weatherVariantTime/weatherTransitionDuration );
+        sunTerrain.Animate(sunVolume.CurrentState, currentState.sunTerrainPreset.lightState, weatherVariantTime/weatherTransitionDuration);
+        skyVolume.Animate(skyVolume.CurrentState, currentState.skyVolumePreset.lightState, weatherVariantTime/weatherTransitionDuration);
+        skyDetail.Animate(skyDetail.CurrentState, currentState.skyDetailPreset.lightState, weatherVariantTime/weatherTransitionDuration);
+        sky.Animate(sky.CurrentState, currentState.skyPreset.skyState, weatherVariantTime/weatherTransitionDuration);
+    }
+    public void TransitionComplete()
+    {
+        sunVolume.CurrentState = currentState.sunVolumePreset.lightState;
+        sunTerrain.CurrentState = currentState.sunTerrainPreset.lightState;
+        skyVolume.CurrentState = currentState.skyVolumePreset.lightState;
+        skyDetail.CurrentState = currentState.skyDetailPreset.lightState;
+        sky.CurrentState = currentState.skyPreset.skyState;
     }
     bool midTransition = false;
     public void WeatherUpdate()
     {
-        weatherStateTime += Time.deltaTime;
-        if (!midTransition && weatherStateTime > weatherStateDuration)
+        weatherVariantTime += Time.deltaTime;
+        if (!midTransition && weatherVariantTime > weatherVariantDuration)
         {
-            WeatherStateChange();
+            WeatherVariantChange();
             midTransition = true;
-            weatherStateTime = 0;          
+            weatherVariantTime = 0;          
         }
         else if (midTransition)
         {
-            weatherShiftPercent += Mathf.Lerp(weatherShiftPercent, 1, effectChangeSpeed);
-            AnimateLights();
-            if (weatherShiftPercent >= 1)
+            weatherTransitionPercent = Mathf.Lerp(weatherTransitionPercent, 1, weatherVariantTime /weatherTransitionDuration);
+            AnimateEffects();
+            if (weatherTransitionPercent >= 1)
             {
                 midTransition = false;
+                TransitionComplete();
             }
         }
     }

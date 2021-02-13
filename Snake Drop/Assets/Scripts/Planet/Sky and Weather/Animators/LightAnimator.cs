@@ -9,15 +9,19 @@ using UnityEngine.Experimental.Rendering.Universal;
 //Interpolates data from keyframe
 //Instantiates a frame
 //Updates the light using data from the new frame
-public class LightAnimator : MonoBehaviour, IEffectAnimator<Light2D, LightState>
+public class LightAnimator : MonoBehaviour, IEffectAnimator<Light2D, LightState, LightPreset>
 {
     //renamed light to lightComponent because unity had an issue with the name light, probably because it's already a thing
     public Light2D lightComponent;
+    [SerializeField]
+    private LightPreset initialState;
+    public LightPreset InitialState { get => initialState; }
     private LightState currentState;
-    public LightState CurrentState { get => currentState; }
+    public LightState CurrentState { get => currentState; set { currentState = value; } }
     private void Awake()
     {
         if (lightComponent == null) lightComponent = GetComponent<Light2D>();
+        currentState = initialState.lightState;
     }
 
     public void UpdateEffect(Light2D effect, LightState nextFrame)
@@ -51,6 +55,6 @@ public class LightAnimator : MonoBehaviour, IEffectAnimator<Light2D, LightState>
        
         UpdateEffect(lightComponent, result);
 
-        currentState = result;
+        
     }
 }
