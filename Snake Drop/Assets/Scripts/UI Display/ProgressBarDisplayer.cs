@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class ProgressBarDisplayer : MonoBehaviour
 {
+    public Camera cam;
     public RectTransform progressGraphic;
     public RectTransform secondaryProgressGraphic;
     public GameObject progressGraphicObj;
     public GameObject secondaryProgressGraphicObj;
     public GameObject powerupButton;
+    public RectTransform progressBackground;
+    public RectTransform secondaryProgressBackground;
+
+    public GameObject particleColliderObj;
 
     private float leftPos;
     private float fullPos;
@@ -32,15 +37,21 @@ public class ProgressBarDisplayer : MonoBehaviour
         leftPos = newRect.rect.xMin;
         fullPos = newRect.rect.center.x;
         posChange = (fullPos - leftPos) * 2;
-
+        yCoord = newRect.rect.center.y;
     }
 
-    void ProgressDisplayUpdate(RectTransform graphic)
+    void UpdateColliderPos(RectTransform background, Camera cam)
+    {
+        
+        particleColliderObj.transform.position = cam.ScreenToWorldPoint(background.transform.position);        
+    }
+    void ProgressDisplayUpdate(RectTransform graphic, RectTransform background) 
     {
         xCoord = fullPos - posChange + (posChange * GetProgressPercent());
         rectTransformUpdate = new Vector2(xCoord, yCoord);
+
         graphic.anchoredPosition = rectTransformUpdate;
-    
+        UpdateColliderPos(background, cam);
     }
     void DisplayBanked()
     {
@@ -60,13 +71,15 @@ public class ProgressBarDisplayer : MonoBehaviour
     private void Start()
     {
         initializeProgressRect(progressGraphic);
+        UpdateColliderPos(progressBackground, cam);
+        
     }
     private void Update()
     {
 
         if (isBanked == false)
         {
-            ProgressDisplayUpdate(progressGraphic);
+            ProgressDisplayUpdate(progressGraphic, progressBackground);
             if (powerupManager.PowerupBank > 0)
             {
                 DisplayBanked();
@@ -74,12 +87,13 @@ public class ProgressBarDisplayer : MonoBehaviour
         }
         else
         {
-            ProgressDisplayUpdate(secondaryProgressGraphic);
+            ProgressDisplayUpdate(secondaryProgressGraphic, secondaryProgressBackground); ;
             if (powerupManager.PowerupBank == 0)
             {
                 DisplayNoneBanked();
             }
         }
+        
         
     }
 

@@ -1254,8 +1254,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4583102845040674580}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.415379, y: 84.572365, z: -2669.6746}
-  m_LocalScale: {x: 1.0118042, y: 1.0118042, z: 1.0118042}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9087035105719182687}
   m_RootOrder: 31
@@ -1277,6 +1277,9 @@ MonoBehaviour:
   progressGraphicObj: {fileID: 7109776293868905405}
   secondaryProgressGraphicObj: {fileID: 5226356344261086993}
   powerupButton: {fileID: 3421719223417753686}
+  progressBackground: {fileID: 1475015276544345614}
+  secondaryProgressBackground: {fileID: 696591423613398764}
+  particleColliderObj: {fileID: 0}
   powerupManager: {fileID: 0}
 --- !u!1 &4619915109967576181
 GameObject:
@@ -2591,6 +2594,7 @@ GameObject:
   - component: {fileID: 3637534628539136888}
   - component: {fileID: 3536759269189200528}
   - component: {fileID: 4445528475345611695}
+  - component: {fileID: 4594417274530980797}
   m_Layer: 0
   m_Name: Progress Bar Progress
   m_TagString: Untagged
@@ -2656,6 +2660,22 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!70 &4594417274530980797
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7109776293868905405}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.5, y: 1}
+  m_Direction: 0
 --- !u!1 &7227806076760609755
 GameObject:
   m_ObjectHideFlags: 0
