@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class ProgressBarDisplayer : MonoBehaviour
 {
+    //TODO: make it so the collider positions update with the progress bar position
+    //when the screen is resized
+
     public Camera cam;
     public RectTransform progressGraphic;
     public RectTransform secondaryProgressGraphic;
@@ -14,6 +17,7 @@ public class ProgressBarDisplayer : MonoBehaviour
     public RectTransform secondaryProgressBackground;
 
     public GameObject particleColliderObj;
+    public GameObject particleMagnetFieldObj;
 
     private float leftPos;
     private float fullPos;
@@ -42,8 +46,10 @@ public class ProgressBarDisplayer : MonoBehaviour
 
     void UpdateColliderPos(RectTransform background, Camera cam)
     {
+        Vector3 pos = cam.ScreenToWorldPoint(background.transform.position);
+        particleColliderObj.transform.position = pos;
+        particleMagnetFieldObj.transform.position = pos;
         
-        particleColliderObj.transform.position = cam.ScreenToWorldPoint(background.transform.position);        
     }
     void ProgressDisplayUpdate(RectTransform graphic, RectTransform background) 
     {

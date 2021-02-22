@@ -147,19 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bec2310160d3ea4f99826387411eb88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &80859854 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1338866734769570653, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
-    type: 3}
-  m_PrefabInstance: {fileID: 1843102345}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3bec2310160d3ea4f99826387411eb88, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!43 &249012301
+--- !u!43 &58197340
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -323,6 +311,18 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!114 &80859854 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1338866734769570653, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1843102345}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bec2310160d3ea4f99826387411eb88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!43 &260914156
 Mesh:
   m_ObjectHideFlags: 0
@@ -1434,12 +1434,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1843102345}
   m_PrefabAsset: {fileID: 0}
---- !u!61 &1652164146 stripped
-BoxCollider2D:
-  m_CorrespondingSourceObject: {fileID: 2250616202842924617, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
-    type: 3}
-  m_PrefabInstance: {fileID: 1843102345}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1843102345
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1966,12 +1960,17 @@ PrefabInstance:
         type: 3}
       propertyPath: particleCollider
       value: 
-      objectReference: {fileID: 1652164146}
+      objectReference: {fileID: 0}
     - target: {fileID: 4623484341426350097, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
         type: 3}
       propertyPath: cam
       value: 
       objectReference: {fileID: 1067694981}
+    - target: {fileID: 4623484341426350097, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
+        type: 3}
+      propertyPath: particleMagnetFieldObj
+      value: 
+      objectReference: {fileID: 1843102346}
     - target: {fileID: 4666993170206055772, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
         type: 3}
       propertyPath: m_IsActive
@@ -3726,11 +3725,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 249012301}
+      objectReference: {fileID: 58197340}
     - target: {fileID: 7900245104596827296, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
         type: 3}
       propertyPath: m_InstanceId
-      value: -1586
+      value: -1588
       objectReference: {fileID: 0}
     - target: {fileID: 8134160903255468879, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
         type: 3}
@@ -3806,6 +3805,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -40
+      objectReference: {fileID: 0}
+    - target: {fileID: 8717454471479954909, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
+        type: 3}
+      propertyPath: m_Name
+      value: XPParticleController
       objectReference: {fileID: 0}
     - target: {fileID: 8749854955590463421, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
         type: 3}
@@ -4006,6 +4010,12 @@ PrefabInstance:
     - {fileID: 9134113234819281916, guid: 4a168f4bdbb2ced42aeabbe202a35da1, type: 3}
     - {fileID: 4547483284707967636, guid: 4a168f4bdbb2ced42aeabbe202a35da1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4a168f4bdbb2ced42aeabbe202a35da1, type: 3}
+--- !u!1 &1843102346 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3234861125630092317, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1843102345}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1975644315 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9134113234819281918, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
