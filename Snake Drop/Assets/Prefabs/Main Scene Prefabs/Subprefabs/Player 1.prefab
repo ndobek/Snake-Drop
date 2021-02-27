@@ -1268,7 +1268,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 4
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -1843,10 +1843,10 @@ ParticleSystem:
     m_TextureAlphaAffectsParticles: 1
     m_TextureBilinearFiltering: 0
     randomDirectionAmount: 1
-    sphericalDirectionAmount: 0.2
-    randomPositionAmount: 0
+    sphericalDirectionAmount: 0.1
+    randomPositionAmount: 1
     radius:
-      value: 1
+      value: 0.5
       mode: 3
       spread: 0
       speed:
@@ -2075,7 +2075,7 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 60
+        scalar: 100
         minScalar: 30
         maxCurve:
           serializedVersion: 2
@@ -2929,14 +2929,14 @@ ParticleSystem:
     orbitalZ:
       serializedVersion: 2
       minMaxState: 1
-      scalar: 1
+      scalar: 5
       minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: -1
+          value: -0.5
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -2944,16 +2944,7 @@ ParticleSystem:
           inWeight: 0
           outWeight: 0
         - serializedVersion: 3
-          time: 0.09439346
-          value: -1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0.33333334
-        - serializedVersion: 3
-          time: 0.5
+          time: 0.57410675
           value: 0
           inSlope: 0
           outSlope: 0
@@ -3158,15 +3149,24 @@ ParticleSystem:
         m_RotationOrder: 4
     radial:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 0
+      minMaxState: 1
+      scalar: 10
       minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 0
+          value: 0.2
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 0.5
+          value: -0.9
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -3175,7 +3175,7 @@ ParticleSystem:
           outWeight: 0.33333334
         - serializedVersion: 3
           time: 1
-          value: 0
+          value: -1
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -3851,8 +3851,8 @@ ParticleSystem:
         m_RotationOrder: 4
     separateAxis: 1
     inWorldSpace: 0
-    multiplyDragByParticleSize: 1
-    multiplyDragByParticleVelocity: 1
+    multiplyDragByParticleSize: 0
+    multiplyDragByParticleVelocity: 0
     dampen: 0
     drag:
       serializedVersion: 2
@@ -6051,7 +6051,7 @@ ParticleSystemRenderer:
   m_UseCustomVertexStreams: 0
   m_EnableGPUInstancing: 1
   m_ApplyActiveColorSpace: 1
-  m_AllowRoll: 1
+  m_AllowRoll: 0
   m_FreeformStretching: 0
   m_RotateWithStretchDirection: 1
   m_VertexStreams: 00010304
@@ -21507,7 +21507,7 @@ PrefabInstance:
     - target: {fileID: 1772988823496979456, guid: 0dd5ed0ed04e4bd4aa87320b6b26c8ed,
         type: 3}
       propertyPath: m_InstanceId
-      value: -1608752
+      value: -6686
       objectReference: {fileID: 0}
     - target: {fileID: 2048495963946885400, guid: 0dd5ed0ed04e4bd4aa87320b6b26c8ed,
         type: 3}
@@ -21572,7 +21572,7 @@ PrefabInstance:
     - target: {fileID: 3241840393534296324, guid: 0dd5ed0ed04e4bd4aa87320b6b26c8ed,
         type: 3}
       propertyPath: m_InstanceId
-      value: -1608764
+      value: -6698
       objectReference: {fileID: 0}
     - target: {fileID: 3805611195970179888, guid: 0dd5ed0ed04e4bd4aa87320b6b26c8ed,
         type: 3}
@@ -21582,7 +21582,7 @@ PrefabInstance:
     - target: {fileID: 3805611195970179888, guid: 0dd5ed0ed04e4bd4aa87320b6b26c8ed,
         type: 3}
       propertyPath: m_InstanceId
-      value: -1608772
+      value: -6706
       objectReference: {fileID: 0}
     - target: {fileID: 5638148940223982493, guid: 0dd5ed0ed04e4bd4aa87320b6b26c8ed,
         type: 3}
@@ -21597,7 +21597,7 @@ PrefabInstance:
     - target: {fileID: 6451652851214460290, guid: 0dd5ed0ed04e4bd4aa87320b6b26c8ed,
         type: 3}
       propertyPath: m_InstanceId
-      value: -1608796
+      value: -6730
       objectReference: {fileID: 0}
     - target: {fileID: 8999406248921826368, guid: 0dd5ed0ed04e4bd4aa87320b6b26c8ed,
         type: 3}
