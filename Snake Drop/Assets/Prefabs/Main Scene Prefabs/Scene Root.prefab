@@ -769,7 +769,12 @@ PrefabInstance:
     - target: {fileID: 2101955367852838407, guid: ba28145764ca10040b2f33bbf1016700,
         type: 3}
       propertyPath: m_InstanceId
-      value: -82038
+      value: -10286
+      objectReference: {fileID: 0}
+    - target: {fileID: 2124210208163916945, guid: ba28145764ca10040b2f33bbf1016700,
+        type: 3}
+      propertyPath: m_Name
+      value: Sky
       objectReference: {fileID: 0}
     - target: {fileID: 2867671070115300134, guid: ba28145764ca10040b2f33bbf1016700,
         type: 3}
@@ -789,7 +794,7 @@ PrefabInstance:
     - target: {fileID: 2975782164546824963, guid: ba28145764ca10040b2f33bbf1016700,
         type: 3}
       propertyPath: m_InstanceId
-      value: -82042
+      value: -10224
       objectReference: {fileID: 0}
     - target: {fileID: 3035482913774365133, guid: ba28145764ca10040b2f33bbf1016700,
         type: 3}
@@ -804,7 +809,7 @@ PrefabInstance:
     - target: {fileID: 3558250033366378807, guid: ba28145764ca10040b2f33bbf1016700,
         type: 3}
       propertyPath: m_InstanceId
-      value: -82044
+      value: -10126
       objectReference: {fileID: 0}
     - target: {fileID: 3705682187115819208, guid: ba28145764ca10040b2f33bbf1016700,
         type: 3}
@@ -915,7 +920,7 @@ PrefabInstance:
     - target: {fileID: 6645534728304222085, guid: ba28145764ca10040b2f33bbf1016700,
         type: 3}
       propertyPath: m_InstanceId
-      value: -82048
+      value: -10510
       objectReference: {fileID: 0}
     - target: {fileID: 7360507374275313742, guid: ba28145764ca10040b2f33bbf1016700,
         type: 3}
