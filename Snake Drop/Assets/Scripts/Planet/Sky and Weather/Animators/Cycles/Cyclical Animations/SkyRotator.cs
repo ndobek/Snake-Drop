@@ -5,7 +5,7 @@ using UnityEngine;
 public class SkyRotator : MonoBehaviour, ICyclical
 {
     public GameObject sky;
-    public Cycler solCycler;
+    public Cycler cycler;
     [SerializeField]
     private float cycleLength;//seconds
     public float CycleLength 
@@ -33,6 +33,6 @@ public class SkyRotator : MonoBehaviour, ICyclical
     }
     private void Start()
     {
-        solCycler.cyclicalBehaviours.Add(this);
+        cycler.cyclicalBehaviours.Add(this);
     }
 }

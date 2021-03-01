@@ -2,12 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 [System.Serializable]
-public class WeatherAnimator : MonoBehaviour, IEffectAnimator<Weather, WeatherPreset, WeatherPreset>
+public class WeatherCycle : MonoBehaviour, IEffectAnimator<Weather, WeatherPreset, WeatherPreset>, ICyclical
 {
 
-    //WeatherAnimator deals with presets, which are lists of states. Weather deals with states.
-    //The states in this one are presets
+    //WeatherAnimator deals with weather presets, which are lists of weather variants. Weather deals with weather variants.
+
+    public Cycler cycler;
     public Weather weather;
+
+    [SerializeField]
+    private float cycleLength;
+    public float CycleLength { get => cycleLength; set { cycleLength = value; } }
+
+    private float cyclePoint = 0;
+    public float CyclePoint { get => cyclePoint; set { cyclePoint = value; } }
 
     public List<WeatherPreset> weatherPresets;
     [SerializeField]
@@ -22,16 +30,16 @@ public class WeatherAnimator : MonoBehaviour, IEffectAnimator<Weather, WeatherPr
         WeatherPreset result = presets[Random.Range(0, presets.Count)];
         return result;
     }
-    public void AChangeInTheWeather()
+    public void ChangeWeather()
     {
         WeatherPreset randWeather = RandWeather(weatherPresets);
-        Debug.Log("okay so we know the event callback works thank GOODNESS");
         Debug.Log("Trying to change the weather to " + randWeather.weatherType + "now...");
         Animate(currentState, randWeather, 1);
     }
 
     private void Start()
     {
+        cycler.cyclicalBehaviours.Add(this);
         weather = gameObject.GetComponent<Weather>();
 
         Animate(initialState, initialState, 1);
@@ -49,9 +57,14 @@ public class WeatherAnimator : MonoBehaviour, IEffectAnimator<Weather, WeatherPr
         //sets the weatherPreset
         effect.SetWeather(nextFrame);
     }
-    private void Update()
-    {
-        weather.WeatherUpdate();
-    }
 
+    public void CycleUpdate()
+    {
+        cyclePoint += Time.deltaTime;
+        if (cyclePoint >= cycleLength)
+        {
+            ChangeWeather();
+        }
+    }
+    
 }

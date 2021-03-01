@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Weather : MonoBehaviour
+public class Weather : MonoBehaviour, ICyclical
 {
     //Different Light Presets
     //Different Sky Presets
     // Randomizes Them 
     //Sets them    
     //WeatherState comes from WeatherAnimator
+    public Cycler cycler;
+
     public LightAnimator sunVolume;
     public LightAnimator sunTerrain;
     public LightAnimator skyVolume;
@@ -18,7 +20,13 @@ public class Weather : MonoBehaviour
     public WeatherPreset currentPreset;
     public WeatherState currentState;
 
+    private float cyclePoint = 0;
+    public float CyclePoint { get => cyclePoint; set { cyclePoint = value; } }
+    public float cycleLength;
+    public float CycleLength { get => cycleLength; set { cycleLength = value; } }
 
+    public float weatherTransitionDuration;
+    private float weatherTransitionPercent = 0;
 
     public void SetWeather(WeatherPreset newWeather)
     {
@@ -33,21 +41,20 @@ public class Weather : MonoBehaviour
         currentState = currentPreset.weatherVariants[index].weatherState;
 
         Debug.Log("Changing "+ currentPreset.weatherType + " effects to variant " + index);
-        weatherVariantTime = 0f;
+        cyclePoint = 0f;
         weatherTransitionPercent = 0f;
     }
-    private float weatherVariantTime = 0;
-    public float weatherTransitionDuration;
-    public float weatherVariantDuration;
-    private float weatherTransitionPercent = 0;
+
+
+
 
     public void AnimateEffects()
     {
-        sunVolume.Animate(sunVolume.CurrentState, currentState.sunVolumePreset.lightState, weatherVariantTime/weatherTransitionDuration );
-        sunTerrain.Animate(sunVolume.CurrentState, currentState.sunTerrainPreset.lightState, weatherVariantTime/weatherTransitionDuration);
-        skyVolume.Animate(skyVolume.CurrentState, currentState.skyVolumePreset.lightState, weatherVariantTime/weatherTransitionDuration);
-        skyDetail.Animate(skyDetail.CurrentState, currentState.skyDetailPreset.lightState, weatherVariantTime/weatherTransitionDuration);
-        sky.Animate(sky.CurrentState, currentState.skyPreset.skyState, weatherVariantTime/weatherTransitionDuration);
+        sunVolume.Animate(sunVolume.CurrentState, currentState.sunVolumePreset.lightState, cyclePoint/weatherTransitionDuration );
+        sunTerrain.Animate(sunVolume.CurrentState, currentState.sunTerrainPreset.lightState, cyclePoint/weatherTransitionDuration);
+        skyVolume.Animate(skyVolume.CurrentState, currentState.skyVolumePreset.lightState, cyclePoint/weatherTransitionDuration);
+        skyDetail.Animate(skyDetail.CurrentState, currentState.skyDetailPreset.lightState, cyclePoint/weatherTransitionDuration);
+        sky.Animate(sky.CurrentState, currentState.skyPreset.skyState, cyclePoint/weatherTransitionDuration);
     }
     public void TransitionComplete()
     {
@@ -58,18 +65,18 @@ public class Weather : MonoBehaviour
         sky.CurrentState = currentState.skyPreset.skyState;
     }
     bool midTransition = false;
-    public void WeatherUpdate()
+    public void CycleUpdate()
     {
-        weatherVariantTime += Time.deltaTime;
-        if (!midTransition && weatherVariantTime > weatherVariantDuration)
+        cyclePoint += Time.deltaTime;
+        if (!midTransition && cyclePoint > cycleLength)
         {
             WeatherVariantChange();
             midTransition = true;
-            weatherVariantTime = 0;          
+            cyclePoint = 0;          
         }
         else if (midTransition)
         {
-            weatherTransitionPercent = Mathf.Lerp(weatherTransitionPercent, 1, weatherVariantTime /weatherTransitionDuration);
+            weatherTransitionPercent = Mathf.Lerp(weatherTransitionPercent, 1, cyclePoint /weatherTransitionDuration);
             AnimateEffects();
             if (weatherTransitionPercent >= 1)
             {
@@ -77,5 +84,9 @@ public class Weather : MonoBehaviour
                 TransitionComplete();
             }
         }
+    }
+    private void Start()
+    {
+        cycler.cyclicalBehaviours.Add(this);
     }
 }
