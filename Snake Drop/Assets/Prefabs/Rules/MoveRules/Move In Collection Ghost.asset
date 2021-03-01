@@ -16,4 +16,4 @@ MonoBehaviour:
     type: 2}
   AbsorbFromTail: 1
   blockFillAnimationSpeed: 0
-  OnBreak: {fileID: 11400000, guid: ee06cf4e8d7b8724e97ff5e4e2fcc66b, type: 2}
+  OnBreak: {fileID: 11400000, guid: 0691d0445babb6f4d887fd3d2d20d76d, type: 2}

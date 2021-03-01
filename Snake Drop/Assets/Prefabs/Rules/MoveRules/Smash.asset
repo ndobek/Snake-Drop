@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bc8ba6852e1fb04ca20affecb1bf859, type: 3}
   m_Name: Smash
   m_EditorClassIdentifier: 
-  OnSmash: {fileID: 11400000, guid: ee06cf4e8d7b8724e97ff5e4e2fcc66b, type: 2}
+  OnSmash: {fileID: 11400000, guid: 0691d0445babb6f4d887fd3d2d20d76d, type: 2}

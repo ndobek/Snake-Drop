@@ -33,7 +33,7 @@ public class WeatherCycle : MonoBehaviour, IEffectAnimator<Weather, WeatherPrese
     public void ChangeWeather()
     {
         WeatherPreset randWeather = RandWeather(weatherPresets);
-        Debug.Log("Trying to change the weather to " + randWeather.weatherType + "now...");
+        Debug.Log("Trying to change the weather to " + randWeather.weatherType + "...");
         Animate(currentState, randWeather, 1);
     }
 

@@ -31,6 +31,8 @@ public class PlayerManager : MonoBehaviour
     public EntranceSlot enterSlot;
     public EntranceManager entranceManager;
 
+    public ParticleManager particleManager;
+
     [HideInInspector]
     public bool RoundInProgress;
     [HideInInspector]

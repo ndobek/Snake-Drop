@@ -17,6 +17,19 @@ public class BlockCollection : IComparable
     public Block[] Blocks;
     public BlockSlot[] Slots;
 
+    public Vector3 WorldPosition()
+    {
+        PlayGrid grid = Slots[0].playGrid;
+        if (grid != null)
+        {
+            float x = ((float)LeftCoord + (float)RightCoord) / 2;
+            float y = ((float)TopCoord + (float)BottomCoord) / 2;
+            return grid.CoordsPosition(x, y);
+        }
+        return default;
+    }
+
+
     public int XSize() { return RightCoord - (LeftCoord - 1); }
     public int YSize() { return TopCoord - (BottomCoord - 1); }
 
