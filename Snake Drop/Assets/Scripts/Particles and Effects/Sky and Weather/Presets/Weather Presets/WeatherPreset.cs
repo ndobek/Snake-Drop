@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu]
+[CreateAssetMenu(menuName = "Effect Presets/Weather Type")]
 public class WeatherPreset: ScriptableObject
 {
     public string weatherType;
