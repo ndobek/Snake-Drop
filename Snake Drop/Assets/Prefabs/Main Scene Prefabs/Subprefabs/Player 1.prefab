@@ -80,12 +80,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colourCurveHueSat:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  value: 0
-  time: 0
 --- !u!95 &8189811252952135416
 Animator:
   serializedVersion: 3
@@ -96,7 +112,7 @@ Animator:
   m_GameObject: {fileID: 826605330799569303}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6e75d3da691ad7941b6aed79ea59390c, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1103,7 +1119,6 @@ MonoBehaviour:
   sunTerrain: {fileID: 6515989432162910002}
   skyVolume: {fileID: 6975399333002572158}
   skyDetail: {fileID: 4920383287377021676}
-  sky: {fileID: 0}
   currentPreset: {fileID: 0}
   currentState:
     sunVolumePreset: {fileID: 0}

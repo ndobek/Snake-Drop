@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu]
+[CreateAssetMenu(menuName = "Effect Presets/Light")]
 public class LightPreset : ScriptableObject
 {
     public LightState lightState;

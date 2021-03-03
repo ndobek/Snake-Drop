@@ -21,7 +21,7 @@ public class WeatherState
     public LightPreset skyVolumePreset;
     public LightPreset skyDetailPreset;
 
-    public SkyPreset skyPreset;
+    //public SkyPreset skyPreset;
 }
 
 
