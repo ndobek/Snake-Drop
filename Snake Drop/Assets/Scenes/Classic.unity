@@ -1758,65 +1758,10 @@ PrefabInstance:
       propertyPath: m_RenderPostProcessing
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3981418689971883468, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
-        type: 3}
-      propertyPath: UVModule.tilesX
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3981418689971883468, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
-        type: 3}
-      propertyPath: UVModule.tilesY
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3981418689971883468, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
-        type: 3}
-      propertyPath: UVModule.frameOverTime.scalar
-      value: 0.33333334
-      objectReference: {fileID: 0}
-    - target: {fileID: 3981418689971883468, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
-        type: 3}
-      propertyPath: UVModule.startFrame.scalar
-      value: 0.33333334
-      objectReference: {fileID: 0}
-    - target: {fileID: 3981418689971883468, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
-        type: 3}
-      propertyPath: UVModule.frameOverTime.minScalar
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3981418689971883468, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
-        type: 3}
-      propertyPath: UVModule.startFrame.minScalar
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3981418689971883468, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
-        type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3981418689971883468, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
-        type: 3}
-      propertyPath: UVModule.cycles
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3981418689971883468, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
-        type: 3}
-      propertyPath: UVModule.animationType
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3981418689971883468, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
-        type: 3}
-      propertyPath: UVModule.rowMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3981418689971883468, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
-        type: 3}
-      propertyPath: UVModule.rowIndex
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4053714238296741454, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4354286896417983965, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
         type: 3}
@@ -3911,7 +3856,7 @@ PrefabInstance:
     - target: {fileID: 9134113236212716689, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -62.2265
+      value: -62.226562
       objectReference: {fileID: 0}
     - target: {fileID: 9134113236212716689, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
         type: 3}
@@ -3927,6 +3872,7 @@ PrefabInstance:
     - {fileID: 9134113234819281916, guid: 4a168f4bdbb2ced42aeabbe202a35da1, type: 3}
     - {fileID: 4547483284707967636, guid: 4a168f4bdbb2ced42aeabbe202a35da1, type: 3}
     - {fileID: 7210114550990172915, guid: 4a168f4bdbb2ced42aeabbe202a35da1, type: 3}
+    - {fileID: 5598322602829937902, guid: 4a168f4bdbb2ced42aeabbe202a35da1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4a168f4bdbb2ced42aeabbe202a35da1, type: 3}
 --- !u!1 &1949340779 stripped
 GameObject:
