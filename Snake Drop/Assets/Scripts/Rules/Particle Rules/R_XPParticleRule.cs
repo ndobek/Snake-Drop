@@ -17,7 +17,7 @@ public class R_XPParticleRule : Rule
             player.particleManager.TriggerXPParticles(numParticles, centre);           
         }
 
-        player.particleManager.TriggerXPParticles(numParticles, block.transform.position);
+        player.particleManager.TriggerXPParticles(numParticles, block.Slot.transform.position);
      
     }
 }
