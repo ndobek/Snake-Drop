@@ -25,10 +25,11 @@ public class VolumeAnimator : MonoBehaviour, IEffectAnimator<ColorCurves, Volume
     {
         currentState = initialState.volumeState;
         profile.TryGet<ColorCurves>(out colorCurves);
-        hueVsSatParameter = new TextureCurveParameter(initialState.volumeState.hueVsSat);
+        hueVsSatParameter = new TextureCurveParameter(initialState.volumeState.hueVsSat, true);
         colorCurves.hueVsSat = hueVsSatParameter;
         
-
+        volume.profile = profile;
+        
     }
     private void Start()
     {
@@ -44,5 +45,6 @@ public class VolumeAnimator : MonoBehaviour, IEffectAnimator<ColorCurves, Volume
     public void UpdateEffect(ColorCurves effect, VolumeState nextFrame)
     {
         effect.hueVsSat.Interp(CurrentState.hueVsSat, nextFrame.hueVsSat, time);
+        volume.profile = profile;
     }
 }

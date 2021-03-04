@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7144113058215577168}
   - component: {fileID: 2401670755604251155}
   - component: {fileID: 1998382421373248216}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -146,7 +146,7 @@ GameObject:
   - component: {fileID: 743836663841153224}
   - component: {fileID: 2406651093775116778}
   - component: {fileID: 1141910380594118880}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EntranceSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -298,7 +298,7 @@ GameObject:
   - component: {fileID: 1624420949725538964}
   - component: {fileID: 1542151657262880930}
   - component: {fileID: 3925941931096256627}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -379,7 +379,7 @@ GameObject:
   - component: {fileID: 1464396051087349493}
   - component: {fileID: 2008883498799534915}
   - component: {fileID: 1165298179671198340}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   volumeState:
     hueVsSat:
-      <length>k__BackingField: 0
+      <length>k__BackingField: 1
       m_Loop: 0
       m_ZeroValue: 0
-      m_Range: 0
+      m_Range: 2
       m_Curve:
         serializedVersion: 2
         m_Curve:
