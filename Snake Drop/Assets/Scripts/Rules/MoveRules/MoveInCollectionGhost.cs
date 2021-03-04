@@ -7,6 +7,7 @@ public class MoveInCollectionGhost : MoveRule
     public BlockType CollectionGhostMemberType;
     public bool AbsorbFromTail;
     public float blockFillAnimationSpeed;
+    public Rule OnBreak;
 
     protected override bool MoveCondition(Block block, BlockSlot slot, PlayerManager player = null)
     {
@@ -26,6 +27,7 @@ public class MoveInCollectionGhost : MoveRule
             {
                 block.Tail.RawMoveTo(slot);
             }
+            if (OnBreak != null) OnBreak.Invoke(block, player);
             block.Break(player);
 
         } else if(block.blockColor != slot.Block.blockColor && !CollectionIsFull(slot.Block))
@@ -55,6 +57,8 @@ public class MoveInCollectionGhost : MoveRule
                 obj1.SetTail(null);
 
                 if(obj2) obj2.RawMoveTo(obj1.Slot);
+                obj1.RawMoveTo(block.Slot);
+                if (OnBreak != null) OnBreak.Invoke(obj1, player);
                 obj1.RawBreak();
             }
             else

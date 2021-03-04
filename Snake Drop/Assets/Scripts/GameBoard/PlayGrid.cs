@@ -2,13 +2,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 [ExecuteInEditMode]
 public class PlayGrid : MonoBehaviour
 {
     #region Grid Information
 
-    public BlockSlot slotObj;
+    public GameObject slotObj;
     public GridAction[] gridActions;
 
     [SerializeField]
@@ -95,7 +96,7 @@ public class PlayGrid : MonoBehaviour
     #endregion
 
     #region Grid initialization
-
+#if UNITY_EDITOR
     public virtual void CreateGrid()
     {
         slots = new BlockSlot[xSize * ySize];
@@ -107,24 +108,29 @@ public class PlayGrid : MonoBehaviour
             }
         }
     }
+
     protected void CreateSlot(int x, int y, BlockColor color, BlockType type)
     {
         CreateSlot(x, y);
         SetBlock(x, y, color, type);
     }
+
     protected virtual void CreateSlot(int x, int y)
     {
         if (CheckInGrid(x, y) && slots[FlattenedIndex(x, y)] == null)
         {
             int i = FlattenedIndex(x, y);
-            slots[i] = Instantiate(slotObj, CoordsPosition(x, y), Quaternion.identity, this.transform);
+            GameObject obj = PrefabUtility.InstantiatePrefab(slotObj, this.transform) as GameObject;
+            obj.transform.position = CoordsPosition(x, y);
+            slots[i] = obj.GetComponent<BlockSlot>();
             slots[i].playGrid = this;
             slots[i].x = x;
             slots[i].y = y;
         }
     }
+#endif
 
-    #endregion
+#endregion
 
     #region Methods for updating and maintenance.
 
@@ -173,4 +179,60 @@ public class PlayGrid : MonoBehaviour
 
         return result;
     }
+
+    public List<BlockSlot> EmptyBlockSlots(int minX, int maxX, int minY, int maxY)
+    {
+        List<BlockSlot> result = new List<BlockSlot>();
+        foreach (BlockSlot slot in slots)
+        {
+            if (slot.Block == null &&
+                slot.x >= minX &&
+                slot.x < maxX &&
+                slot.y >= minY &&
+                slot.y < maxY)
+
+                result.Add(slot);
+        }
+        return result;
+    }
+
+    public List<BlockSlot> EmptyBlockSlots()
+    {
+        return EmptyBlockSlots(0, XSize, 0, ySize);
+    }
+
+    //public GridSaveData Save(SaveData save)
+    //{
+    //    List<BlockSlotSaveData> BlockSlotSaveData = new List<BlockSlotSaveData>();
+    //    foreach (BlockSlot slot in slots) BlockSlotSaveData.Add(slot.Save(save));
+
+    //    return new GridSaveData()
+    //    {
+    //        BlockSlotData = BlockSlotSaveData
+    //    };
+        
+    //}
+
+    //public void Load(GridSaveData save)
+    //{
+    //    ClearGrid();
+    //    foreach(BlockSlotSaveData slotData in save.BlockSlotData)
+    //    {
+    //        GetSlot(slotData.x, slotData.y).Load(slotData);
+    //    }
+
+    //    foreach (BlockSlotSaveData slotData in save.BlockSlotData)
+    //    {
+    //        foreach(BlockSaveData blockData in slotData.BlockData)
+    //        {
+    //            if (blockData.tail)
+    //            {
+    //                PlayGrid tailGrid = blockData.tailOnLoadGrid ? GameManager.instance.playerManagers[0].previewGrid : GameManager.instance.playerManagers[0].playGrid;
+    //                GetSlot(slotData.x, slotData.y).Blocks[blockData.index].Tail = tailGrid.GetSlot(blockData.tailX, blockData.tailY).Blocks[blockData.tailI];
+    //            }
+    //        }
+    //    }
+
+    //}
+
 }

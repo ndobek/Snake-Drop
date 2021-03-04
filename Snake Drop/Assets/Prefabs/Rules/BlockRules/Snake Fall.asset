@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: Snake Fall
   m_EditorClassIdentifier: 
   moveType: {fileID: 11400000, guid: 92ab9aa1ed82ac94fbd2d0b8d9a0dc74, type: 2}
+  Direction: 1
+  RelativeToCamera: 1

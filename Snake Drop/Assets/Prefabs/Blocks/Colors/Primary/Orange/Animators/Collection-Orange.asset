@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 801538c514ba07440ab39e1bab2a631b, type: 3}
+  m_Name: Collection-Orange
+  m_EditorClassIdentifier: 
+  AnimationConcurrent: 0
+  AnimationTotalTime: 0
+  topLeftBlockSprite: {fileID: 140171750511629836, guid: 3fb9603cf74c6e740b5527a2e336863b,
+    type: 3}
+  topBlockSprite: {fileID: 6660769375084159091, guid: 3fb9603cf74c6e740b5527a2e336863b,
+    type: 3}
+  topRightBlockSprite: {fileID: -3076717263615486874, guid: bbfcf3eced6726f4a820fa3f174154ff,
+    type: 3}
+  leftBlockSprite: {fileID: 2036703290531569634, guid: 3fb9603cf74c6e740b5527a2e336863b,
+    type: 3}
+  centerBlockSprite: {fileID: -2386609651683411001, guid: 3fb9603cf74c6e740b5527a2e336863b,
+    type: 3}
+  rightBlockSprite: {fileID: 3081773256858935537, guid: 3fb9603cf74c6e740b5527a2e336863b,
+    type: 3}
+  bottomLeftBlockSprite: {fileID: -4276923989154960227, guid: 3fb9603cf74c6e740b5527a2e336863b,
+    type: 3}
+  bottomBlockSprite: {fileID: 7047194193229267231, guid: 3fb9603cf74c6e740b5527a2e336863b,
+    type: 3}
+  bottomRightBlockSprite: {fileID: 2281838150571612472, guid: 3fb9603cf74c6e740b5527a2e336863b,
+    type: 3}
+  color: {r: 1, g: 1, b: 1, a: 1}
+  sortingOrder: 0
+  highlightSortingOrder: 1

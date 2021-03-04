@@ -1,0 +1,586 @@
+fileFormatVersion: 2
+guid: 83ded50087e4cba4ab527c449a0de165
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3989442235190651043
+    second: Feather Grass Sprite Sheet 2x resolution_0
+  - first:
+      213: -934067911091535404
+    second: Feather Grass Sprite Sheet 2x resolution_1
+  - first:
+      213: 5865425713281656656
+    second: Feather Grass Sprite Sheet 2x resolution_2
+  - first:
+      213: 5170756552005731259
+    second: Feather Grass Sprite Sheet 2x resolution_3
+  - first:
+      213: 893685994142323505
+    second: Feather Grass Sprite Sheet 2x resolution_4
+  - first:
+      213: 5321035114539781547
+    second: Feather Grass Sprite Sheet 2x resolution_5
+  - first:
+      213: 3434837601799389360
+    second: Feather Grass Sprite Sheet 2x resolution_6
+  - first:
+      213: 6973939133279399613
+    second: Feather Grass Sprite Sheet 2x resolution_7
+  - first:
+      213: 6972632127377050256
+    second: Feather Grass Sprite Sheet 2x resolution_8
+  - first:
+      213: -4485086759089006313
+    second: Feather Grass Sprite Sheet 2x resolution_9
+  - first:
+      213: 1419298277435508585
+    second: Feather Grass Sprite Sheet 2x resolution_10
+  - first:
+      213: -4771585558400298625
+    second: Feather Grass Sprite Sheet 2x resolution_11
+  - first:
+      213: -3606485307050188989
+    second: Feather Grass Sprite Sheet 2x resolution_12
+  - first:
+      213: -5294221253961492167
+    second: Feather Grass Sprite Sheet 2x resolution_13
+  - first:
+      213: 4444291578895205776
+    second: Feather Grass Sprite Sheet 2x resolution_14
+  - first:
+      213: -2995027701994991996
+    second: Feather Grass Sprite Sheet 2x resolution_15
+  - first:
+      213: -4432170453014184115
+    second: Feather Grass Sprite Sheet 2x resolution_16
+  - first:
+      213: 6189236673592079345
+    second: Feather Grass Sprite Sheet 2x resolution_17
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 40
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Feather Grass Sprite Sheet 2x resolution_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 444
+        width: 142
+        height: 68
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d57558f8c67a2a8c0800000000000000
+      internalID: -3989442235190651043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Feather Grass Sprite Sheet 2x resolution_1
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 444
+        width: 142
+        height: 68
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d14c4b0f268903f0800000000000000
+      internalID: -934067911091535404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Feather Grass Sprite Sheet 2x resolution_2
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 444
+        width: 142
+        height: 68
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05768902c9d266150800000000000000
+      internalID: 5865425713281656656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Feather Grass Sprite Sheet 2x resolution_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 376
+        width: 142
+        height: 68
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb3435e20b732c740800000000000000
+      internalID: 5170756552005731259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Feather Grass Sprite Sheet 2x resolution_4
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 376
+        width: 142
+        height: 68
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 133589d3da2076c00800000000000000
+      internalID: 893685994142323505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Feather Grass Sprite Sheet 2x resolution_5
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 376
+        width: 142
+        height: 68
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bad068f9e3d18d940800000000000000
+      internalID: 5321035114539781547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Feather Grass Sprite Sheet 2x resolution_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 308
+        width: 142
+        height: 68
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b0486ca99efaaf20800000000000000
+      internalID: 3434837601799389360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Feather Grass Sprite Sheet 2x resolution_7
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 308
+        width: 142
+        height: 68
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbe605431b868c060800000000000000
+      internalID: 6973939133279399613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Feather Grass Sprite Sheet 2x resolution_8
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 308
+        width: 142
+        height: 68
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09a09cd2af3c3c060800000000000000
+      internalID: 6972632127377050256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Feather Grass Sprite Sheet 2x resolution_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 240
+        width: 142
+        height: 68
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71911b90b55c1c1c0800000000000000
+      internalID: -4485086759089006313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Feather Grass Sprite Sheet 2x resolution_10
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 240
+        width: 142
+        height: 68
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9670ed8734c52b310800000000000000
+      internalID: 1419298277435508585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Feather Grass Sprite Sheet 2x resolution_11
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 240
+        width: 142
+        height: 68
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f719a20373ce7cdb0800000000000000
+      internalID: -4771585558400298625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Feather Grass Sprite Sheet 2x resolution_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 172
+        width: 142
+        height: 68
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34f9b91a8b033fdc0800000000000000
+      internalID: -3606485307050188989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Feather Grass Sprite Sheet 2x resolution_13
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 172
+        width: 142
+        height: 68
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9395d4bc1d52786b0800000000000000
+      internalID: -5294221253961492167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Feather Grass Sprite Sheet 2x resolution_14
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 172
+        width: 142
+        height: 68
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0950f46e4ab4dad30800000000000000
+      internalID: 4444291578895205776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Feather Grass Sprite Sheet 2x resolution_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 104
+        width: 142
+        height: 68
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48e42226c268f66d0800000000000000
+      internalID: -2995027701994991996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Feather Grass Sprite Sheet 2x resolution_16
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 104
+        width: 142
+        height: 68
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4f7b14a474cd72c0800000000000000
+      internalID: -4432170453014184115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Feather Grass Sprite Sheet 2x resolution_17
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 104
+        width: 142
+        height: 68
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f3b64076f594e550800000000000000
+      internalID: 6189236673592079345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

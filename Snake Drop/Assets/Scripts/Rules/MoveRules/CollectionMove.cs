@@ -17,7 +17,10 @@ public class CollectionMove : MoveRule
             foreach(Block obj in blocks)
             {
                 BlockSlot destination = obj.Slot.GetNeighbor(xDistance, yDistance);
-                if (!CanBasicMove(obj, destination) && (!destination || !blocks.Contains(destination.Block))) result = false;
+                if (!CanBasicMove(obj, destination) && (!destination || !blocks.Contains(destination.Block)))
+                {
+                    result = false;
+                }
             }
 
             return result;

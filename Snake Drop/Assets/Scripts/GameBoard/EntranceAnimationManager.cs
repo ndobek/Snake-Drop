@@ -7,7 +7,6 @@ public class EntranceAnimationManager : MonoBehaviour, IEntranceAnimationBehavio
     [SerializeField]
     protected SpriteRenderer spriteRenderer;
     private EntranceSlot slot;
-    public PlayGrid grid;
 
     public Sprite OpenSingle;
     public Sprite OpenLeft;
@@ -49,6 +48,7 @@ public class EntranceAnimationManager : MonoBehaviour, IEntranceAnimationBehavio
         if (!leftOpen && !thisOpen && !rightOpen) spriteRenderer.sprite = ClosedCenter;
         if (!leftOpen && !thisOpen &&  rightOpen) spriteRenderer.sprite = ClosedRight;
 
+        PlayerManager player = GameManager.instance.playerManagers[0];
     }
 
     public bool CheckIfSlotOpen(EntranceSlot slot)

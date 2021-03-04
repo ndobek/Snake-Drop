@@ -3,8 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Types/BlockType")]
-public class BlockType : ScriptableObject
+public class BlockType : ScriptableObject, ISaveable
 {
+    [SerializeField]
+    private string TypeName;
+    public string Name { get { return TypeName; } set { TypeName = value; } }
+
     public BlockMoveAnimator defaultMoveAnimator;
     public BlockAnimator BlockFillAnimator;
     public List<BlockAnimator> EveryFrameAnimations;
@@ -41,7 +45,7 @@ public class BlockType : ScriptableObject
             block.Tail &&
             block.Slot.playGrid != block.Tail.Slot.playGrid &&
             slot == null &&
-            block.Tail.Slot.GetNeighbor(Directions.GetOppositeDirection(player.playerController.mostRecentDirectionMoved)) == block.Slot) return true;
+            block.Tail.Slot.GetNeighbor(Directions.GetOppositeDirection(player.playerController.MostRecentDirectionMoved)) == block.Slot) return true;
 
         return false;
     }

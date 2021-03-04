@@ -1,14 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
     public PlayerManager[] playerManagers;
-    public DifficultyManager difficultyManager;
+    public GameModeManager GameModeManager;
     public PlantManager plantManager;
+
+
+
+    public SaveableObjects Colors;
+    public SaveableObjects Types;
+    public SaveableObjects Powerups;
 
     public bool GameInProgress()
     {
@@ -18,16 +25,6 @@ public class GameManager : MonoBehaviour
         }
         return false;
     }
-
-
-    public Rule BasicFall;
-    public MoveRule BasicMove;
-    public Block blockObj;
-    public BlockType defaultType;
-    public BlockType snakeHeadType;
-    public BlockType snakeType;
-    public BlockType collectionType;
-    public BlockType collectionGhostType;
 
     public GameObject gameOverScreen;
 
@@ -54,6 +51,7 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
+        UpdateScore();
         gameOverScreen.SetActive(false);
         foreach (PlayerManager player in playerManagers)
         {
@@ -88,7 +86,25 @@ public class GameManager : MonoBehaviour
 
     private void EndGame()
     {
+        UpdateScore();
         gameOverScreen.SetActive(true);
     }
 
+    private void UpdateScore()
+    {
+        foreach(PlayerManager player in playerManagers)
+        {
+            player.Score.UpdateScore();
+        }
+    }
+
+    public void SaveGame()
+    {
+        SaveManager.SaveGame();
+    }
+
+    public void LoadGame(SaveData save)
+    {
+        save.LoadTo(this);
+    }
 }

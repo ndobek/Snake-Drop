@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07d51716c8e850d4fa1a360381239ba5, type: 3}
+  m_Name: Classic - Test
+  m_EditorClassIdentifier: 
+  EndGameCondition: {fileID: 11400000, guid: 6920d85594e06554683bdc470d3948f6, type: 2}
+  TypeBank: {fileID: 11400000, guid: 7ec1805175cff954e9ecd79b0e66eecc, type: 2}
+  OnGameStart: {fileID: 0}
+  Levels:
+  - MinScore: 0
+    MaxScore: 0
+    UseMinScore: 0
+    UseMaxScore: 0
+    MinSnakeNumber: 0
+    MaxSnakeNumber: 0
+    UseMinSnakeNumber: 0
+    UseMaxSnakeNumber: 0
+    possibleTypes:
+    - value: {fileID: 11400000, guid: 7d50d8ff5e938a6439c218aa18290334, type: 2}
+      probability: 1
+      StatType: {fileID: 0}
+    possibleColors:
+    - value: {fileID: 11400000, guid: 5438ed90547356044a3c13328a354b08, type: 2}
+      probability: 10
+      StatType: {fileID: 0}
+    - value: {fileID: 11400000, guid: 1f96a88418ae4d64594066b606e5646b, type: 2}
+      probability: 10
+      StatType: {fileID: 0}
+    Stats:
+    - value: 10
+      probability: 1
+      StatType: {fileID: 11400000, guid: 25ef4499148f23345b64c542146e1476, type: 2}
+    - value: 10
+      probability: 1
+      StatType: {fileID: 11400000, guid: bcf7fc9d50be8564a911997e01665bee, type: 2}
+    - value: 0.3
+      probability: 1
+      StatType: {fileID: 11400000, guid: 47708f29cd0d5c24a8f8445c2f47e8d5, type: 2}
+    - value: 1
+      probability: 1
+      StatType: {fileID: 11400000, guid: 39645c16b2ef8a742a25b80069dab812, type: 2}
+    - value: 0
+      probability: 1
+      StatType: {fileID: 11400000, guid: 4f58ca63e41b9474db393f701a582bb3, type: 2}
+    - value: 0
+      probability: 1
+      StatType: {fileID: 11400000, guid: bab21731275250e469dc795e8abe4f86, type: 2}
+    - value: 0
+      probability: 1
+      StatType: {fileID: 11400000, guid: 4d5a564ae89279e4a9bdeaf677e5634d, type: 2}
+    - value: 0
+      probability: 1
+      StatType: {fileID: 11400000, guid: c11a0ed99d1b9254bb1a834dc1addb5a, type: 2}
+    - value: 15
+      probability: 1
+      StatType: {fileID: 11400000, guid: da1fea61c1219ab458d9a73e7ac950f6, type: 2}
+    - value: 15
+      probability: 1
+      StatType: {fileID: 11400000, guid: 180b49891043d474eb2b9435c540d056, type: 2}
+    - value: 0.3
+      probability: 1
+      StatType: {fileID: 11400000, guid: f8b95da70db68684287a503e7cb2fdf9, type: 2}
+    - value: 1
+      probability: 1
+      StatType: {fileID: 11400000, guid: 962e849cc16b8d84a89901a886af65ba, type: 2}

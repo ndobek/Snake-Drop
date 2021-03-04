@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - MagnetFieldTrigger
+  - ProgressBarTrigger
   layers:
   - Default
   - TransparentFX
@@ -13,7 +15,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Post Processing Ignore
   - 
   - 
   - 
@@ -38,12 +40,51 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Background
+  - name: Sky Background
+    uniqueID: 535991381
+    locked: 0
+  - name: Sky Middleground
+    uniqueID: 3803176927
+    locked: 0
+  - name: Sky Foreground
+    uniqueID: 94126667
+    locked: 0
+  - name: Terrain Background
     uniqueID: 3936328311
+    locked: 0
+  - name: Terrain Middleground
+    uniqueID: 3543482487
+    locked: 0
+  - name: Terrain Foreground
+    uniqueID: 2689970171
+    locked: 0
+  - name: Entry Grid Background
+    uniqueID: 2791427713
+    locked: 0
+  - name: Entry Grid Middleground
+    uniqueID: 3632007731
+    locked: 0
+  - name: Entry Grid Foreground
+    uniqueID: 289139575
+    locked: 0
+  - name: Playgrid Background
+    uniqueID: 1638940919
+    locked: 0
+  - name: Playgrid Middleground
+    uniqueID: 3079124151
+    locked: 0
+  - name: Playgrid Foreground
+    uniqueID: 1986032229
     locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Highlights
-    uniqueID: 1986032229
+  - name: Particles Background
+    uniqueID: 159548107
+    locked: 0
+  - name: Particles Middleground
+    uniqueID: 566928307
+    locked: 0
+  - name: Particles Foreground
+    uniqueID: 2864136595
     locked: 0

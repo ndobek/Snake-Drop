@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40021cae352ce664488076a625cf3512, type: 3}
+  m_Name: Very Green
+  m_EditorClassIdentifier: 
+  defaultAnimator: {fileID: 11400000, guid: 698392fc493e3c542b8896ddf2b19cc2, type: 2}
+  animatorInfos:
+  - BlockType: {fileID: 11400000, guid: 5c7e6b4afee2d5e44ac32eecd7a8699e, type: 2}
+    Animator: {fileID: 11400000, guid: ec4dfb237f2ba064e9e9c64ef690a7b2, type: 2}
+  - BlockType: {fileID: 11400000, guid: e6b2ec42c7e382244ae39199d03b8ae6, type: 2}
+    Animator: {fileID: 11400000, guid: f88b86a6c63199a429d034ce769e8d2f, type: 2}
+  - BlockType: {fileID: 11400000, guid: 1bb708f6f67e7844993159c157df7353, type: 2}
+    Animator: {fileID: 11400000, guid: 7e9c66a006e8f034e894c02ac924ff4a, type: 2}
+  - BlockType: {fileID: 11400000, guid: 16024ba8efc0c5847a725e9453faf177, type: 2}
+    Animator: {fileID: 11400000, guid: ec4dfb237f2ba064e9e9c64ef690a7b2, type: 2}
+  - BlockType: {fileID: 11400000, guid: d90fcc1025da6c64983c1dfcbf46ce6b, type: 2}
+    Animator: {fileID: 11400000, guid: f88b86a6c63199a429d034ce769e8d2f, type: 2}
+  - BlockType: {fileID: 11400000, guid: cc74619ca7c94984c917b3df933aaf03, type: 2}
+    Animator: {fileID: 11400000, guid: 7e9c66a006e8f034e894c02ac924ff4a, type: 2}
+  - BlockType: {fileID: 11400000, guid: c64b8873830817d429023b61dc846e35, type: 2}
+    Animator: {fileID: 11400000, guid: ec4dfb237f2ba064e9e9c64ef690a7b2, type: 2}
+  - BlockType: {fileID: 11400000, guid: 80ca505de1b3dd84d8dd6c1586a07f69, type: 2}
+    Animator: {fileID: 11400000, guid: f88b86a6c63199a429d034ce769e8d2f, type: 2}
+  - BlockType: {fileID: 11400000, guid: c8498c90567bc164cb17b1fecc7b1b6e, type: 2}
+    Animator: {fileID: 11400000, guid: 7e9c66a006e8f034e894c02ac924ff4a, type: 2}

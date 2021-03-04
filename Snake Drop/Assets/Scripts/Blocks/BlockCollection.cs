@@ -17,6 +17,19 @@ public class BlockCollection : IComparable
     public Block[] Blocks;
     public BlockSlot[] Slots;
 
+    public Vector3 WorldPosition()
+    {
+        PlayGrid grid = Slots[0].playGrid;
+        if (grid != null)
+        {
+            float x = ((float)LeftCoord + (float)RightCoord) / 2;
+            float y = ((float)TopCoord + (float)BottomCoord) / 2;
+            return grid.CoordsPosition(x, y);
+        }
+        return default;
+    }
+
+
     public int XSize() { return RightCoord - (LeftCoord - 1); }
     public int YSize() { return TopCoord - (BottomCoord - 1); }
 
@@ -94,9 +107,12 @@ public class BlockCollection : IComparable
     {
         return (float)FillAmount/(float)Area();
     }
+    public void Rebuild()
+    {
+       if(Blocks[0] != null) Build(Blocks[0].Slot.playGrid, Blocks[0].blockType);
+    }
 
-
-    public void Build(PlayGrid grid)
+    public void Build(PlayGrid grid, BlockType type = null, PlayerManager player = null)
     {
         Blocks = new Block[XSize() * YSize()];
         Slots = new BlockSlot[XSize() * YSize()];
@@ -109,6 +125,7 @@ public class BlockCollection : IComparable
             }
         }
         UpdateFillSprites();
+        if (type) SetType(type, player);
     }
 
     public void UpdateCoords()
@@ -125,15 +142,18 @@ public class BlockCollection : IComparable
             TopCoord = Mathf.Max(block.Y, TopCoord);
             BottomCoord = Mathf.Min(block.Y, BottomCoord);
         }
+
+        Rebuild();
     }
 
 
     private void Add(BlockSlot slot)
     {
         Slots[GridCoordsToIndex(slot.x, slot.y)] = slot;
+        Blocks[GridCoordsToIndex(slot.x, slot.y)] = slot.Block;
     }
 
-    public void SetType(BlockType type)
+    public void SetType(BlockType type, PlayerManager player = null)
     {
         foreach(BlockSlot slot in Slots)
         {
@@ -143,6 +163,9 @@ public class BlockCollection : IComparable
                 block.SetBlockType(block.blockColor, type);
                 Blocks[GridCoordsToIndex(block.X, block.Y)] = block;
                 block.BlockCollection = this;
+                if (player == null) player = GameManager.instance.playerManagers[0];
+                block.Owner = player;
+
             }
             else
             {
@@ -160,11 +183,23 @@ public class BlockCollection : IComparable
     {
         foreach(Block block in Blocks)
         {
-            if (block)
+            if (block && block.blockType.BlockFillAnimator)
             {
                 block.AnimationManager.AddAnimation(new BlockAnimation(block, block.blockType.BlockFillAnimator));
             }
         }
     }
+
+    //public BlockCollectionSaveData Save()
+    //{
+    //    return new BlockCollectionSaveData
+    //    {
+    //        LeftCoord = LeftCoord,
+    //        RightCoord = RightCoord,
+    //        TopCoord = TopCoord,
+    //        BottomCoord = BottomCoord,
+    //        FillAmount = FillAmount
+    //    };
+    //}
 
 }

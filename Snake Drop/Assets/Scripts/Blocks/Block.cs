@@ -107,7 +107,6 @@ public class Block : MonoBehaviour
         AddAnimations();
     }
 
-
     //Tells the grid that it needs to check for fall movement and update
     private void SetGridDirty()
     {
@@ -183,8 +182,13 @@ public class Block : MonoBehaviour
     #endregion
 
     #region Snake Controls
-    public void SetOwner(PlayerManager NewOwner)
+    public void SetOwner(PlayerManager NewOwner = null)
     {
+        if (owner == null)
+        {
+            owner = GameManager.instance.playerManagers[0];
+            return;
+        }
         if (Tail != null)
         {
             Tail.SetOwner(NewOwner);
@@ -206,6 +210,11 @@ public class Block : MonoBehaviour
     public void SetTail(Block obj)
     {
         tail = obj;
+    }
+    public Block GetLastTail()
+    {
+        if (tail) return tail.GetLastTail();
+        else return this;
     }
 
     public void Kill(PlayerManager player = null)
@@ -238,4 +247,34 @@ public class Block : MonoBehaviour
     }
 
     #endregion
+
+
+    //public BlockSaveData Save(SaveData save)
+    //{
+    //    return Save(save, slot.Blocks.IndexOf(tail));
+    //}
+    //public BlockSaveData Save(SaveData save, int i)
+    //{
+    //    BlockSaveData result = new BlockSaveData()
+    //    {
+    //        blockColor = blockColor.Name,
+    //        blockType = blockType.Name,
+    //        index = i,
+    //        tail = tail != null,
+    //    };
+
+    //    if(tail != null)
+    //    {
+    //        result.tailOnLoadGrid = tail.slot.playGrid == GameManager.instance.playerManagers[0].previewGrid;
+    //        result.tailX = tail.X;
+    //        result.tailY = tail.Y;
+    //        result.tailI = tail.slot.Blocks.IndexOf(tail);
+    //    }
+    //    if(BlockCollection != null)
+    //    {
+    //        save.blockCollections.Add(BlockCollection.Save());
+    //    }
+
+    //    return result;
+    //}
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Rules/Grid Actions/ReactivateEntrances")]
+[CreateAssetMenu(menuName = "Rules/Grid Actions/ReactivateEntrancesIfGridEmpty")]
 public class GA_ReactivateEntrancesIfGridEmpty : GridAction
 {
     protected override void Action(PlayGrid grid)

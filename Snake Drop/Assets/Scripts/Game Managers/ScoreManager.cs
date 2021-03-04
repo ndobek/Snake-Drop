@@ -12,14 +12,15 @@ public class ScoreManager : MonoBehaviour
         get { return score; }
         set
         {
-            score = value;
-            ScoreText.text = "Score: " + score.ToString();
+           GameManager.instance.playerManagers[0].Powerup.UpdateProgress(value - score);
+             score = value;
+            //ScoreText.text = "Score: " + score.ToString();
         }
     }
-    [SerializeField]
-    private Text ScoreText;
-
-    [HideInInspector]
+   // [SerializeField]
+   // //private Text ScoreText;
+   //// private ScoreDisplayer scoreDisplay;
+   // [HideInInspector]
     private int multiplier;
     public int Multiplier
     {
@@ -27,11 +28,24 @@ public class ScoreManager : MonoBehaviour
         set
         {
             multiplier = value;
-            MultiplierText.text = "Multiplier: " + multiplier.ToString();
+            //MultiplierText.text = "Multiplier: " + multiplier.ToString();
         }
     }
-    [SerializeField]
-    private Text MultiplierText;
+    //[SerializeField]
+    //private Text MultiplierText;
+
+    private int highScore;
+    public int HighScore
+    {
+        get { return highScore; }
+        set {
+            //HighScoreText.text = "High Score: " + value; 
+            highScore = value; 
+        }
+    }
+    //public Text HighScoreText;
+
+
 
     public int numberOfSnakes;
     public int NumberOfSnakes
@@ -40,13 +54,14 @@ public class ScoreManager : MonoBehaviour
         set { numberOfSnakes = value; }
     }
 
-    private void Awake()
+    private void Start()
     {
         ResetGame();
     }
 
     public void ResetGame()
     {
+        UpdateScore();
         Score = 0;
         NumberOfSnakes = 0;
         ResetMultiplier();
@@ -62,5 +77,14 @@ public class ScoreManager : MonoBehaviour
         Score = score + (amount * multiplier);
     }
 
+    public void UpdateScore()
+    {
+        SaveData oldScore = SaveManager.LoadHighScore();
+        HighScore = oldScore !=null?oldScore.playerData.score.score : 0;
+        if (score > HighScore)
+        {
+            SaveManager.SaveHighScore();
+        }
+    }
 
 }

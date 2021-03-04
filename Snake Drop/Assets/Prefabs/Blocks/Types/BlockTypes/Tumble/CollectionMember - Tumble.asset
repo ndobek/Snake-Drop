@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bd3250dde91e984ca21eb1cdd8190dc, type: 3}
+  m_Name: CollectionMember - Tumble
+  m_EditorClassIdentifier: 
+  defaultMoveAnimator: {fileID: 11400000, guid: 23332f0fafefb3c419d44f2c79d052d7,
+    type: 2}
+  BlockFillAnimator: {fileID: 0}
+  EveryFrameAnimations: []
+  HighlightTail: 0
+  isPartOfSnake: 0
+  moveRules:
+  - {fileID: 11400000, guid: 262227f8863056f44aebf48883a89c15, type: 2}
+  killRules: []
+  breakRules:
+  - {fileID: 11400000, guid: 333c153dafca0f241bffdab718aeb812, type: 2}
+  - {fileID: 11400000, guid: 3ea51636f31fbf44db95bf1795a6ddcb, type: 2}
+  specialActionRules:
+  - {fileID: 11400000, guid: 3ae1fed3979176845af8d50eb1c90974, type: 2}

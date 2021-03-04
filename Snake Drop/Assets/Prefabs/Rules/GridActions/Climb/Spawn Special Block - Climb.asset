@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3696dab6dde9a44181ec9213f735311, type: 3}
+  m_Name: Spawn Special Block - Climb
+  m_EditorClassIdentifier: 
+  color: {fileID: 11400000, guid: c1d83d44a6fd40841a55061d440165ca, type: 2}
+  type: {fileID: 11400000, guid: e44696d60b6e32d4490862eeb3f2a527, type: 2}
+  minX: 0
+  maxX: 15
+  minY: 8
+  maxY: 15

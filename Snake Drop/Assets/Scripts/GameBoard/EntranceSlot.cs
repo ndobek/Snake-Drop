@@ -24,11 +24,13 @@ public class EntranceSlot : BlockSlot
     {
         Directions.Direction nextDirection = direction;
         EntranceSlot previous = this;
-        EntranceSlot result = (EntranceSlot)previous.GetNeighbor(nextDirection);
+        EntranceSlot result = this;
         EntranceSlot next;
+        bool runMinOnce = false;
 
-        while (result && result != this && result.Selectable == false/*&& !result.CheckIfEntranceValid(player)*/)
+        while (runMinOnce == false || (result && result != this && result.Selectable == false)/*&& !result.CheckIfEntranceValid(player)*/)
         {
+            runMinOnce = true;
             next = (EntranceSlot)result.GetNeighbor(nextDirection);
             if (!next)
             {
@@ -42,6 +44,30 @@ public class EntranceSlot : BlockSlot
         }
         return result;
     }
+    public EntranceSlot GetNextValidSlot(bool clockwise, PlayerManager player)
+    {
+        Directions.Direction nextDirection = clockwise ? Directions.GetClockwiseNeighborDirection(GetEdgeInfo().direction()) : Directions.GetCounterClockwiseNeighborDirection(GetEdgeInfo().direction());
+        EntranceSlot result = this;
+        object next;
+        bool runMinOnce = false;
+
+        while (runMinOnce == false || (result && result != this && result.Selectable == false))
+        {
+            runMinOnce = true;
+            next = result.GetNeighbor(nextDirection);
+            if (next == null || !(next is EntranceSlot))
+            {
+                nextDirection = clockwise? Directions.GetClockwiseNeighborDirection(nextDirection) : Directions.GetCounterClockwiseNeighborDirection(nextDirection);
+            }
+            else
+            {
+                result = (EntranceSlot)next;
+            }
+        }
+        return result;
+    }
+
+
 
 
 

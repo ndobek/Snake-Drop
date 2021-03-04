@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b5add053506a4f46a2d98e357dd8597, type: 3}
+  m_Name: ClearBoard
+  m_EditorClassIdentifier: 
+  gridActions:
+  - {fileID: 11400000, guid: 237dd6e6deb03724085e091ee68cc1f6, type: 2}
+  - {fileID: 11400000, guid: 6212f575b4218cb4194cb4211b20a649, type: 2}

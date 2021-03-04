@@ -6,6 +6,10 @@ using static Directions;
 public class PlayerController : MonoBehaviour
 {
     public PlayerManager player;
+    public PlayerAutoMover autoMover;
+    public BoardRotator cameraRotator;
+    public bool MoveOnCommandDuringRound = true;
+    public bool MoveOnCommandBetweenRounds = true;
     [SerializeField]
     private float autoMoveInterval;
     [SerializeField]
@@ -14,9 +18,21 @@ public class PlayerController : MonoBehaviour
     private float timePressed;
 
     [HideInInspector]
-    public Direction mostRecentDirectionMoved;
+    private Direction mostRecentDirectionMoved;
+    public Direction MostRecentDirectionMoved
+    {
+        get { return mostRecentDirectionMoved; }
+        set
+        {
+            SecondMostRecentDirectionMoved = mostRecentDirectionMoved;
+            mostRecentDirectionMoved = value;
+        }
+    }
 
-    private Vector2 DistanceMovedThisTouch;
+    [HideInInspector]
+    public Direction SecondMostRecentDirectionMoved;
+
+    private Vector3 DistanceMovedThisTouch;
     public float DistanceNeededToDragBeforeSnakeMoves = 1;
 
     public void Awake()
@@ -24,22 +40,46 @@ public class PlayerController : MonoBehaviour
         TouchManager.OnTouchBegin += ResetDistanceMovedThisTouch;
         TouchManager.OnSwipe += MoveSnakeOnSwipe;
         //TouchManager.OnDrag += MoveSnakeOnDrag;
-        TouchManager.OnHold += MoveSnakeOnHold;
+        //TouchManager.OnDrag += MoveEntranceSlotToClosest;
+        TouchManager.OnHold += HoldBehavior;
         TouchManager.OnTap += MoveSnakeOnTap;
     }
 
     //Temp to add keyboard controls
     public void Update()
     {
-        if (Input.GetKeyDown("w") || Input.GetKeyDown("up")) { FirstPress(Direction.UP); }
-        if (Input.GetKeyDown("s") || Input.GetKeyDown("down")) { FirstPress(Direction.DOWN); }
-        if (Input.GetKeyDown("a") || Input.GetKeyDown("left")) { FirstPress(Direction.LEFT); }
-        if (Input.GetKeyDown("d") || Input.GetKeyDown("right")) { FirstPress(Direction.RIGHT); }
+        //if (Input.GetButtonDown("Up")) { FirstPress(CameraDirectionTranslate(Direction.UP)); }
+        //if (Input.GetButtonDown("Down")) { FirstPress(CameraDirectionTranslate(Direction.DOWN)); }
+        //if (Input.GetButtonDown("Left")) { FirstPress(CameraDirectionTranslate(Direction.LEFT)); }
+        //if (Input.GetButtonDown("Right")) { FirstPress(CameraDirectionTranslate(Direction.RIGHT)); }
 
-        if (Input.GetKey("w") || Input.GetKey("up")) { Hold(Direction.UP); }
-        if (Input.GetKey("s") || Input.GetKey("down")) { Hold(Direction.DOWN); }
-        if (Input.GetKey("a") || Input.GetKey("left")) { Hold(Direction.LEFT); }
-        if (Input.GetKey("d") || Input.GetKey("right")) { Hold(Direction.RIGHT); }
+
+
+        //if (Input.GetButton("Up")) { Hold(CameraDirectionTranslate(Direction.UP)); }
+        //if (Input.GetButton("Down")) { Hold(CameraDirectionTranslate(Direction.DOWN)); }
+        //if (Input.GetButton("Left")) { Hold(CameraDirectionTranslate(Direction.LEFT)); }
+        //if (Input.GetButton("Right")) { Hold(CameraDirectionTranslate(Direction.RIGHT)); }
+
+
+        if (Input.GetKeyDown("w") || Input.GetKeyDown("up")) { FirstPress(CameraDirectionTranslate(Direction.UP)); }
+        if (Input.GetKeyDown("s") || Input.GetKeyDown("down")) { FirstPress(CameraDirectionTranslate(Direction.DOWN)); }
+        if (Input.GetKeyDown("a") || Input.GetKeyDown("left")) { FirstPress(CameraDirectionTranslate(Direction.LEFT)); }
+        if (Input.GetKeyDown("d") || Input.GetKeyDown("right")) { FirstPress(CameraDirectionTranslate(Direction.RIGHT)); }
+
+        if (Input.GetKeyDown("z") || Input.GetKeyDown("backspace")) { player.Undoer.Undo(); }
+
+        if (Input.GetKeyDown("e") || Input.GetKeyDown("right ctrl")) { cameraRotator.RotateClockwise(); }
+        if (Input.GetKeyDown("q") || Input.GetKeyDown("[0]")) { cameraRotator.RotateCounterClockwise(); }
+
+        if (Input.GetKey("w") || Input.GetKey("up")) { Hold(CameraDirectionTranslate(Direction.UP)); }
+        if (Input.GetKey("s") || Input.GetKey("down")) { Hold(CameraDirectionTranslate(Direction.DOWN)); }
+        if (Input.GetKey("a") || Input.GetKey("left")) { Hold(CameraDirectionTranslate(Direction.LEFT)); }
+        if (Input.GetKey("d") || Input.GetKey("right")) { Hold(CameraDirectionTranslate(Direction.RIGHT)); }
+    }
+
+    private Direction CameraDirectionTranslate(Direction direction)
+    {
+        return TranslateDirection(direction, cameraRotator.currentDirection);
     }
 
     private void ResetDistanceMovedThisTouch(TouchManager.TouchData unused)
@@ -49,31 +89,54 @@ public class PlayerController : MonoBehaviour
 
     private void MoveSnakeOnDrag(TouchManager.TouchData Drag)
     {
-        Vector2 DragDistance = Camera.main.ScreenToWorldPoint(Drag.endPos) - Camera.main.ScreenToWorldPoint(Drag.startPos);
-        Vector2 UnmovedDistance = DragDistance - DistanceMovedThisTouch;
+        Vector3 DragDistance = Camera.main.ScreenToWorldPoint(Drag.endPos) - Camera.main.ScreenToWorldPoint(Drag.startPos);
+        Vector3 UnmovedDistance = DragDistance - DistanceMovedThisTouch;
+
+        //Direction? dir = null;
+
+        bool DraggedUp() { return Mathf.Abs(UnmovedDistance.y) > DistanceNeededToDragBeforeSnakeMoves && UnmovedDistance.y > 0; }
+        bool DraggedDown() { return Mathf.Abs(UnmovedDistance.y) > DistanceNeededToDragBeforeSnakeMoves && UnmovedDistance.y < 0; }
+        bool DraggedLeft() { return Mathf.Abs(UnmovedDistance.x) > DistanceNeededToDragBeforeSnakeMoves && UnmovedDistance.x < 0; }
+        bool DraggedRight() { return Mathf.Abs(UnmovedDistance.x) > DistanceNeededToDragBeforeSnakeMoves && UnmovedDistance.x > 0; }
+
         if (IntervalToWaitBeforeHoldElapsed())
         {
-            if (Mathf.Abs(UnmovedDistance.y) > DistanceNeededToDragBeforeSnakeMoves)
-            {
-                if (UnmovedDistance.y > 0) Press(Direction.UP);
-                else Press(Direction.DOWN);
-            }
-            if (Mathf.Abs(UnmovedDistance.x) > DistanceNeededToDragBeforeSnakeMoves)
-            {
-                if (UnmovedDistance.x > 0) Press(Directions.Direction.RIGHT);
-                else Press(Directions.Direction.LEFT);
-            }
+            //if(dir == null)
+            //{
+            //    //if (Mathf.Abs(UnmovedDistance.y) > DistanceNeededToDragBeforeSnakeMoves)
+            //    //{
+            //    //    if (UnmovedDistance.y > 0) dir = Direction.UP;
+            //    //    else dir = Direction.DOWN;
+            //    //}
+            //    //if (Mathf.Abs(UnmovedDistance.x) > DistanceNeededToDragBeforeSnakeMoves)
+            //    //{
+            //    //    if (UnmovedDistance.x > 0) dir = Direction.RIGHT;
+            //    //    else dir = Direction.LEFT;
+            //    //}
+            //    if (DraggedUp()) dir = Direction.UP;
+            //    if (DraggedDown()) dir = Direction.DOWN;
+            //    if (DraggedLeft()) dir = Direction.LEFT;
+            //    if (DraggedRight()) dir = Direction.RIGHT;
+            //}
+            //if (dir != null)
+            //{
+            if (/*dir == Direction.UP && */DraggedUp()) Press(CameraDirectionTranslate(Direction.UP));
+            if (/*dir == Direction.DOWN && */DraggedDown()) Press(CameraDirectionTranslate(Direction.DOWN));
+            if (/*dir == Direction.LEFT && */DraggedLeft()) Press(CameraDirectionTranslate(Direction.LEFT));
+            if (/*dir == Direction.RIGHT && */DraggedRight()) Press(CameraDirectionTranslate(Direction.RIGHT));
+            //}
+
         }
     }
 
     private void MoveSnakeOnSwipe(TouchManager.TouchData Swipe)
     {
-        Press(Swipe.direction); 
+        Press(CameraDirectionTranslate(Swipe.direction)); 
     }
 
     private void MoveSnakeOnHold(TouchManager.TouchData HoldData)
     {
-        Hold(mostRecentDirectionMoved);
+        Hold(MostRecentDirectionMoved);
     }
     private void MoveSnakeOnTap(TouchManager.TouchData Tap)
     {
@@ -82,36 +145,41 @@ public class PlayerController : MonoBehaviour
 
     private void Press(Direction direction)
     {
-        switch (direction)
+        MostRecentDirectionMoved = direction;
+        if ((MoveOnCommandDuringRound && player.RoundInProgress) || (MoveOnCommandBetweenRounds && !player.RoundInProgress))
         {
-            case Direction.UP: 
-                DistanceMovedThisTouch.y += DistanceNeededToDragBeforeSnakeMoves;
-                break;
-            case Direction.DOWN:
-                DistanceMovedThisTouch.y -= DistanceNeededToDragBeforeSnakeMoves;
-                break;
-            case Direction.LEFT:
-                DistanceMovedThisTouch.x -= DistanceNeededToDragBeforeSnakeMoves;
-                break;
-            case Direction.RIGHT: 
-                DistanceMovedThisTouch.x += DistanceNeededToDragBeforeSnakeMoves;
-                break;
+            switch (direction)
+            {
+                case Direction.UP:
+                    DistanceMovedThisTouch.y += DistanceNeededToDragBeforeSnakeMoves;
+                    break;
+                case Direction.DOWN:
+                    DistanceMovedThisTouch.y -= DistanceNeededToDragBeforeSnakeMoves;
+                    break;
+                case Direction.LEFT:
+                    DistanceMovedThisTouch.x -= DistanceNeededToDragBeforeSnakeMoves;
+                    break;
+                case Direction.RIGHT:
+                    DistanceMovedThisTouch.x += DistanceNeededToDragBeforeSnakeMoves;
+                    break;
+            }
+            timeSinceLastMove = 0;
+            MoveSnake(direction);
         }
-        timeSinceLastMove = 0;
-        MoveSnake(direction);
     }
     private void Press()
     {
-        Press(mostRecentDirectionMoved);
+        Press(MostRecentDirectionMoved);
     }
     private void FirstPress(Direction direction)
     {
         timePressed = Time.time;
+        if (autoMover != null && player.RoundInProgress) autoMover.Queue(direction);
         Press(direction);
     }
     private void FirstPress()
     {
-        FirstPress(mostRecentDirectionMoved);
+        FirstPress(MostRecentDirectionMoved);
     }
 
     private void Hold(Direction direction)
@@ -132,13 +200,53 @@ public class PlayerController : MonoBehaviour
     }
     public void MoveSnake(Direction direction)
     {
-        mostRecentDirectionMoved = direction;
+
         if (player) player.MoveSnake(direction);
     }
 
     public void ResetGame()
     {
-        mostRecentDirectionMoved = Direction.DOWN;
+        MostRecentDirectionMoved = Direction.DOWN;
     }
 
+    public void HoldBehavior(TouchManager.TouchData data)
+    {
+        if (player.GameInProgress && !player.RoundInProgress)
+        {
+            //MoveEntranceSlotToClosest(data);
+            MoveSnakeOnDrag(data);
+        }
+        else
+        {
+            MoveSnakeOnHold(data);
+        }
+    }
+
+    public void MoveEntranceSlotToClosest(TouchManager.TouchData data)
+    {
+
+        EntranceSlot result = default;
+        float resultDistance = default;
+
+        foreach (EntranceSlot slot in player.entranceManager.slots)
+        {
+            if (slot && slot.IsOnEdge(player.enterSlot.GetEdgeInfo().direction()) && slot.Selectable)
+            {
+                float distance = Vector3.Distance(Camera.main.ScreenToWorldPoint(data.endPos), slot.transform.position);
+                if (result == default)
+                {
+                    result = slot;
+                    resultDistance = distance;
+                }
+                else if (distance < resultDistance)
+                {
+                    result = slot;
+                    resultDistance = distance;
+                }
+            }
+        }
+
+        player.PositionWaitSlot(result);
+
+    }
 }

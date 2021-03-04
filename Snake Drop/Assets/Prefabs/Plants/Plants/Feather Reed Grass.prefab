@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 5671817483375771637}
   - component: {fileID: -4160740208620165931}
   - component: {fileID: 3749149093674335167}
-  - component: {fileID: -7579352602753115989}
+  - component: {fileID: -4777394427998619292}
+  - component: {fileID: -6156710244970153848}
   - component: {fileID: 6139035584766531580}
   m_Layer: 0
   m_Name: Feather Reed Grass
@@ -53,7 +54,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -71,8 +72,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -358638985
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -97,9 +98,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8077d02c4df4194ea90b938a6fef9f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  plantName: Feather Reed Grass
   xp: 0
-  xpPerGrow: 4
---- !u!114 &-7579352602753115989
+--- !u!114 &-4777394427998619292
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -108,10 +109,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 3247554293500808389}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65ad884760af8b54299695054b515ea3, type: 3}
+  m_Script: {fileID: 11500000, guid: ef8bd7fbcbc6f3046acd27ee3cdf1e51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveData: {fileID: 11400000, guid: fbaf8a1b7b9df054db5be254166cdfc6, type: 2}
+  xp: 0
+  xpPerGrow: 4
+--- !u!114 &-6156710244970153848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3247554293500808389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3419d908426698e468272ce801a4b549, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 0}
+  wind: {fileID: 11400000, guid: 68e89ca445933fc47bb4d7eadd9207fa, type: 2}
+  WindSpeedAnimatorVar: Wind Speed
 --- !u!95 &6139035584766531580
 Animator:
   serializedVersion: 3
@@ -122,7 +139,7 @@ Animator:
   m_GameObject: {fileID: 3247554293500808389}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 378008dc2b5e95f4c8ea3fc681c471ce, type: 2}
+  m_Controller: {fileID: 22100000, guid: 83cecc659ce813646bb4b317acbe0584, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

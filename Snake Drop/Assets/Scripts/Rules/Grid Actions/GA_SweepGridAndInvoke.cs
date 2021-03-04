@@ -65,11 +65,13 @@ public class GA_SweepGridAndInvoke : GridAction
 
             if (RuleToInvoke != null)
             {
-                RuleToInvoke.Invoke(block, block.Owner);
+                //RuleToInvoke.Invoke(block, block.Owner);
+                RuleToInvoke.Invoke(block, GameManager.instance.playerManagers[0]);
             }
             else
             {
-                block.SpecialAction(block.Owner);
+                //block.SpecialAction(block.Owner);
+                block.SpecialAction(GameManager.instance.playerManagers[0]);
             }
         }
     }

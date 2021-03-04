@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Rules/MoveRule/Smash")]
 public class SmashMove : MoveRule
 {
+    public Rule OnSmash;
     protected override bool MoveCondition(Block block, BlockSlot slot, PlayerManager player = null)
     {
 
@@ -22,6 +23,7 @@ public class SmashMove : MoveRule
         //if (slot.Block && slot.Block.isPartOfSnake) slot.Block.KillSnake();
         slot.Block.Break(player);
         block.RawMoveTo(slot);
+        if (OnSmash) OnSmash.Invoke(block, player);
         block.Break(player);
         if (tail)
         {

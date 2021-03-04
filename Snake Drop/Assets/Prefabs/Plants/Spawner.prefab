@@ -13,7 +13,7 @@ GameObject:
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
-  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -44,9 +44,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlantPrefabs:
-  - {fileID: 4654389062393277305, guid: 08c3c21140b9eca4c9e12a7e68d99494, type: 3}
   - {fileID: 3247554293500808389, guid: bf273e1c6b3157a47ac19c320185eabd, type: 3}
+  - {fileID: 5526921751661114468, guid: db07d880882536145a2a6161712214ac, type: 3}
   MaxPlants: 1
   Plants: []
-  HorizontalVariance: 0.01
+  HorizontalVariance: 0
   VerticalVariance: 0
