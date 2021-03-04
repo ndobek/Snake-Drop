@@ -68,7 +68,7 @@ public class Weather : MonoBehaviour, ICyclical
         volume.CurrentState = currentState.volumePreset.volumeState;
         //sky.CurrentState = currentState.skyPreset.skyState;
     }
-    bool midTransition = false;
+    public bool midTransition = false;
     public void CycleUpdate()
     {
         cyclePoint += Time.deltaTime;
