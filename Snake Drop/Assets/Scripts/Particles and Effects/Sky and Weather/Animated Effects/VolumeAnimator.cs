@@ -8,18 +8,31 @@ public class VolumeAnimator : MonoBehaviour, IEffectAnimator<ColorCurves, Volume
 {
 
     public TextureCurve hueVsSat;
+    public TextureCurveParameter hueVsSatParameter;
     public Keyframe key;
     public Volume volume;
     public ColorCurves colorCurves;
     public VolumeProfile profile;
     private float time;
-    public VolumePreset InitialState => throw new System.NotImplementedException();
+    [SerializeField]
+    private VolumePreset initialState;
+    public VolumePreset InitialState { get => initialState; set { initialState = value; } }
 
-    public VolumeState CurrentState { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+    private VolumeState currentState;
+    public VolumeState CurrentState { get => currentState; set {currentState = value; } }
 
+    public void InitializeCurves()
+    {
+        currentState = initialState.volumeState;
+        profile.TryGet<ColorCurves>(out colorCurves);
+        hueVsSatParameter = new TextureCurveParameter(initialState.volumeState.hueVsSat);
+        colorCurves.hueVsSat = hueVsSatParameter;
+        
+
+    }
     private void Start()
     {
-        profile.TryGet<ColorCurves>(out colorCurves);
+        InitializeCurves();
     }
     public void Animate(VolumeState keyframe1, VolumeState keyframe2, float t)
     {
