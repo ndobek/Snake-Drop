@@ -17,4 +17,4 @@ MonoBehaviour:
     sunTerrainPreset: {fileID: 11400000, guid: 416f0f8a1e065344cbcea91bbe7eeb1d, type: 2}
     skyVolumePreset: {fileID: 11400000, guid: 23dd08949c338bc4da09ea6a5bcd2c38, type: 2}
     skyDetailPreset: {fileID: 11400000, guid: 0caf4ba75328184479f893b8cc968f43, type: 2}
-    skyPreset: {fileID: 11400000, guid: 3c20dc70750bcbc4b98e0b512ef01d50, type: 2}
+    volumePreset: {fileID: 11400000, guid: 8978cc2a3a8d87e4392432ccebf68f08, type: 2}

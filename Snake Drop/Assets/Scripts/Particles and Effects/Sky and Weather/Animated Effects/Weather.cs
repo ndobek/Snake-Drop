@@ -15,7 +15,9 @@ public class Weather : MonoBehaviour, ICyclical
     public LightAnimator sunTerrain;
     public LightAnimator skyVolume;
     public LightAnimator skyDetail;
-   /// public SkyAnimator sky;
+    /// public SkyAnimator sky;
+
+    public VolumeAnimator volume;
 
     public WeatherPreset currentPreset;
     public WeatherState currentState;
@@ -55,6 +57,7 @@ public class Weather : MonoBehaviour, ICyclical
         skyVolume.Animate(skyVolume.CurrentState, currentState.skyVolumePreset.lightState, cyclePoint/weatherTransitionDuration);
         skyDetail.Animate(skyDetail.CurrentState, currentState.skyDetailPreset.lightState, cyclePoint/weatherTransitionDuration);
         //sky.Animate(sky.CurrentState, currentState.skyPreset.skyState, cyclePoint/weatherTransitionDuration);
+        volume.Animate(volume.CurrentState, currentState.volumePreset.volumeState, cyclePoint / weatherTransitionDuration);
     }
     public void TransitionComplete()
     {
@@ -62,6 +65,7 @@ public class Weather : MonoBehaviour, ICyclical
         sunTerrain.CurrentState = currentState.sunTerrainPreset.lightState;
         skyVolume.CurrentState = currentState.skyVolumePreset.lightState;
         skyDetail.CurrentState = currentState.skyDetailPreset.lightState;
+        volume.CurrentState = currentState.volumePreset.volumeState;
         //sky.CurrentState = currentState.skyPreset.skyState;
     }
     bool midTransition = false;
