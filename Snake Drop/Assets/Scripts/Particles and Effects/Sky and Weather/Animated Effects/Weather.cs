@@ -19,8 +19,13 @@ public class Weather : MonoBehaviour, ICyclical
 
     public VolumeAnimator volume;
 
+    public WeatherPreset initialPreset;
+    public WeatherState initialState;
+
     public WeatherPreset currentPreset;
+    public WeatherPreset previousPreset;
     public WeatherState currentState;
+    public WeatherState previousState;
 
     private float cyclePoint = 0;
     public float CyclePoint { get => cyclePoint; set { cyclePoint = value; } }
@@ -32,6 +37,7 @@ public class Weather : MonoBehaviour, ICyclical
 
     public void SetWeather(WeatherPreset newWeather)
     {
+        previousPreset = currentPreset;
         currentPreset = newWeather;
         
         Debug.Log("Changing weather to _" + currentPreset.weatherType);
@@ -39,6 +45,8 @@ public class Weather : MonoBehaviour, ICyclical
    
     public void WeatherVariantChange()
     {
+        
+        previousState = currentState;
         int index = Random.Range(0, currentPreset.weatherVariants.Count);
         currentState = currentPreset.weatherVariants[index].weatherState;
 
@@ -52,12 +60,12 @@ public class Weather : MonoBehaviour, ICyclical
 
     public void AnimateEffects()
     {
-        sunVolume.Animate(sunVolume.CurrentState, currentState.sunVolumePreset.lightState, cyclePoint/weatherTransitionDuration );
-        sunTerrain.Animate(sunVolume.CurrentState, currentState.sunTerrainPreset.lightState, cyclePoint/weatherTransitionDuration);
-        skyVolume.Animate(skyVolume.CurrentState, currentState.skyVolumePreset.lightState, cyclePoint/weatherTransitionDuration);
-        skyDetail.Animate(skyDetail.CurrentState, currentState.skyDetailPreset.lightState, cyclePoint/weatherTransitionDuration);
+        sunVolume.Animate(previousState.sunVolumePreset.lightState, currentState.sunVolumePreset.lightState, cyclePoint/weatherTransitionDuration );
+        sunTerrain.Animate(previousState.sunTerrainPreset.lightState, currentState.sunTerrainPreset.lightState, cyclePoint/weatherTransitionDuration);
+        skyVolume.Animate(previousState.skyVolumePreset.lightState, currentState.skyVolumePreset.lightState, cyclePoint/weatherTransitionDuration);
+        skyDetail.Animate(previousState.skyDetailPreset.lightState, currentState.skyDetailPreset.lightState, cyclePoint/weatherTransitionDuration);
         //sky.Animate(sky.CurrentState, currentState.skyPreset.skyState, cyclePoint/weatherTransitionDuration);
-        volume.Animate(volume.CurrentState, currentState.volumePreset.volumeState, cyclePoint / weatherTransitionDuration);
+        volume.Animate(previousState.volumePreset.volumeState, currentState.volumePreset.volumeState, cyclePoint / weatherTransitionDuration);
     }
     public void TransitionComplete()
     {
@@ -80,7 +88,7 @@ public class Weather : MonoBehaviour, ICyclical
         }
         else if (midTransition)
         {
-            weatherTransitionPercent = Mathf.Lerp(weatherTransitionPercent, 1, cyclePoint /weatherTransitionDuration);
+            weatherTransitionPercent = Mathf.Lerp(0f, 1f, cyclePoint /weatherTransitionDuration);
             AnimateEffects();
             if (weatherTransitionPercent >= 1)
             {
@@ -91,6 +99,8 @@ public class Weather : MonoBehaviour, ICyclical
     }
     private void Start()
     {
+        previousState = initialState;
+        previousPreset = initialPreset;
         cycler.cyclicalBehaviours.Add(this);
     }
 }

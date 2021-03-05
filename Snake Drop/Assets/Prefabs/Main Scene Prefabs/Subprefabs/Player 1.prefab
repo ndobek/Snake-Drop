@@ -1159,8 +1159,22 @@ MonoBehaviour:
   skyVolume: {fileID: 6975399333002572158}
   skyDetail: {fileID: 4920383287377021676}
   volume: {fileID: 7350577838007620060}
+  initialPreset: {fileID: 11400000, guid: 29e022463925fcb4daf9eefa33d36e63, type: 2}
+  initialState:
+    sunVolumePreset: {fileID: 11400000, guid: 1cb3e10777ecbfa479181b3855344c30, type: 2}
+    sunTerrainPreset: {fileID: 11400000, guid: 2dbd6ee24a836c447a36d3ad0a98124e, type: 2}
+    skyVolumePreset: {fileID: 11400000, guid: 0929cd31fd6667249b8cef393ab39c7e, type: 2}
+    skyDetailPreset: {fileID: 11400000, guid: f424f523ef5c6f44e8a8628f596d24c1, type: 2}
+    volumePreset: {fileID: 11400000, guid: 3d814f0a9ba93774bba083300824e70f, type: 2}
   currentPreset: {fileID: 0}
+  previousPreset: {fileID: 0}
   currentState:
+    sunVolumePreset: {fileID: 0}
+    sunTerrainPreset: {fileID: 0}
+    skyVolumePreset: {fileID: 0}
+    skyDetailPreset: {fileID: 0}
+    volumePreset: {fileID: 0}
+  previousState:
     sunVolumePreset: {fileID: 0}
     sunTerrainPreset: {fileID: 0}
     skyVolumePreset: {fileID: 0}
