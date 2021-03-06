@@ -61,9 +61,10 @@ public class WeatherCycle : MonoBehaviour, IEffectAnimator<Weather, WeatherPrese
     public void CycleUpdate()
     {
         cyclePoint += Time.deltaTime;
-        if (cyclePoint > cycleLength)
+        if (cyclePoint >= cycleLength)
         {
             ChangeWeather();
+            cyclePoint = 0f;
         }
     }
     
