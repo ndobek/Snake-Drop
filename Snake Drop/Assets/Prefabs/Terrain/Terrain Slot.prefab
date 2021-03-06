@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3141163829174196942}
   - component: {fileID: 6465034759105781414}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Terrain Slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,12 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bec2310160d3ea4f99826387411eb88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  terrainSelectorObj: {fileID: 5638148940223982493, guid: 0dd5ed0ed04e4bd4aa87320b6b26c8ed,
-    type: 3}
   terrains:
   - {fileID: 7173165647702447760, guid: 5e5c8677ec1a9024f803ed29df106e44, type: 3}
   - {fileID: 7401955561011307737, guid: 6fdbf623700a8ee48bda8bcef1e5d067, type: 3}
-  terrainSpawnerObj: {fileID: 0}
 --- !u!1001 &4864815790159457007
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -61,6 +58,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Terrain Spawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 5409944400712216479, guid: 48c9b9d62fa91fb449a07f8b30444c8f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8201335698959382891, guid: 48c9b9d62fa91fb449a07f8b30444c8f,
         type: 3}

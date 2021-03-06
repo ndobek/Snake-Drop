@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8055762734347702877}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EditorTerrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4089646932349879914}
   - component: {fileID: 5008262470878803870}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Inner Planet Edges
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127,7 +127,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2048495963946885400}
   - component: {fileID: 6490333800182596903}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Terrain Selector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -173,10 +173,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8055762734347702877}
     m_Modifications:
+    - target: {fileID: 1132636701103512792, guid: 5e5c8677ec1a9024f803ed29df106e44,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3254711359655490144, guid: 5e5c8677ec1a9024f803ed29df106e44,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3444541771542092477, guid: 5e5c8677ec1a9024f803ed29df106e44,
         type: 3}
       propertyPath: m_InstanceId
       value: -2069090
+      objectReference: {fileID: 0}
+    - target: {fileID: 4519267913832949860, guid: 5e5c8677ec1a9024f803ed29df106e44,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5186418266535475668, guid: 5e5c8677ec1a9024f803ed29df106e44,
         type: 3}
@@ -233,10 +248,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5450046848455020096, guid: 5e5c8677ec1a9024f803ed29df106e44,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6872574387885301815, guid: 5e5c8677ec1a9024f803ed29df106e44,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7173165647702447760, guid: 5e5c8677ec1a9024f803ed29df106e44,
         type: 3}
       propertyPath: m_Name
       value: Rocky Terrain
+      objectReference: {fileID: 0}
+    - target: {fileID: 7173165647702447760, guid: 5e5c8677ec1a9024f803ed29df106e44,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7722076011773162896, guid: 5e5c8677ec1a9024f803ed29df106e44,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e5c8677ec1a9024f803ed29df106e44, type: 3}
@@ -253,6 +288,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8055762734347702877}
     m_Modifications:
+    - target: {fileID: 2418232674228895468, guid: 6fdbf623700a8ee48bda8bcef1e5d067,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2794383073140152732, guid: 6fdbf623700a8ee48bda8bcef1e5d067,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3044492358124261790, guid: 6fdbf623700a8ee48bda8bcef1e5d067,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -308,15 +353,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 3603938441305333044, guid: 6fdbf623700a8ee48bda8bcef1e5d067,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4189782538876458676, guid: 6fdbf623700a8ee48bda8bcef1e5d067,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6076804789484042173, guid: 6fdbf623700a8ee48bda8bcef1e5d067,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 6836690365865625020, guid: 6fdbf623700a8ee48bda8bcef1e5d067,
         type: 3}
       propertyPath: m_InstanceId
       value: -2069132
       objectReference: {fileID: 0}
+    - target: {fileID: 7339047745199531711, guid: 6fdbf623700a8ee48bda8bcef1e5d067,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7401955561011307737, guid: 6fdbf623700a8ee48bda8bcef1e5d067,
         type: 3}
       propertyPath: m_Name
       value: Smooth Terrain (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7401955561011307737, guid: 6fdbf623700a8ee48bda8bcef1e5d067,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6fdbf623700a8ee48bda8bcef1e5d067, type: 3}
@@ -333,6 +403,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2048495963946885400}
     m_Modifications:
+    - target: {fileID: 617195370459088240, guid: a492bc03421da2547aa077d61b437252,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3141163829174196942, guid: a492bc03421da2547aa077d61b437252,
         type: 3}
       propertyPath: m_LocalRotation.z
@@ -357,6 +432,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Terrain Slot Bottom
+      objectReference: {fileID: 0}
+    - target: {fileID: 4325162126028878429, guid: a492bc03421da2547aa077d61b437252,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6465034759105781414, guid: a492bc03421da2547aa077d61b437252,
         type: 3}
@@ -499,10 +579,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8055762734347702877}
     m_Modifications:
+    - target: {fileID: 1132636701103512792, guid: 5e5c8677ec1a9024f803ed29df106e44,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3254711359655490144, guid: 5e5c8677ec1a9024f803ed29df106e44,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3444541771542092477, guid: 5e5c8677ec1a9024f803ed29df106e44,
         type: 3}
       propertyPath: m_InstanceId
       value: -2069182
+      objectReference: {fileID: 0}
+    - target: {fileID: 4519267913832949860, guid: 5e5c8677ec1a9024f803ed29df106e44,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5186418266535475668, guid: 5e5c8677ec1a9024f803ed29df106e44,
         type: 3}
@@ -559,10 +654,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 180
       objectReference: {fileID: 0}
+    - target: {fileID: 5450046848455020096, guid: 5e5c8677ec1a9024f803ed29df106e44,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6872574387885301815, guid: 5e5c8677ec1a9024f803ed29df106e44,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7173165647702447760, guid: 5e5c8677ec1a9024f803ed29df106e44,
         type: 3}
       propertyPath: m_Name
       value: Rocky Terrain (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7173165647702447760, guid: 5e5c8677ec1a9024f803ed29df106e44,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7722076011773162896, guid: 5e5c8677ec1a9024f803ed29df106e44,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e5c8677ec1a9024f803ed29df106e44, type: 3}
@@ -579,6 +694,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2048495963946885400}
     m_Modifications:
+    - target: {fileID: 617195370459088240, guid: a492bc03421da2547aa077d61b437252,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3141163829174196942, guid: a492bc03421da2547aa077d61b437252,
         type: 3}
       propertyPath: m_RootOrder
@@ -603,6 +723,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Terrain Slot Left
+      objectReference: {fileID: 0}
+    - target: {fileID: 4325162126028878429, guid: a492bc03421da2547aa077d61b437252,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6465034759105781414, guid: a492bc03421da2547aa077d61b437252,
         type: 3}
@@ -745,6 +870,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8055762734347702877}
     m_Modifications:
+    - target: {fileID: 2418232674228895468, guid: 6fdbf623700a8ee48bda8bcef1e5d067,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2794383073140152732, guid: 6fdbf623700a8ee48bda8bcef1e5d067,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3044492358124261790, guid: 6fdbf623700a8ee48bda8bcef1e5d067,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -800,15 +935,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 3603938441305333044, guid: 6fdbf623700a8ee48bda8bcef1e5d067,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4189782538876458676, guid: 6fdbf623700a8ee48bda8bcef1e5d067,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6076804789484042173, guid: 6fdbf623700a8ee48bda8bcef1e5d067,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 6836690365865625020, guid: 6fdbf623700a8ee48bda8bcef1e5d067,
         type: 3}
       propertyPath: m_InstanceId
       value: -2069232
       objectReference: {fileID: 0}
+    - target: {fileID: 7339047745199531711, guid: 6fdbf623700a8ee48bda8bcef1e5d067,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7401955561011307737, guid: 6fdbf623700a8ee48bda8bcef1e5d067,
         type: 3}
       propertyPath: m_Name
       value: Smooth Terrain
+      objectReference: {fileID: 0}
+    - target: {fileID: 7401955561011307737, guid: 6fdbf623700a8ee48bda8bcef1e5d067,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6fdbf623700a8ee48bda8bcef1e5d067, type: 3}
@@ -825,6 +985,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2048495963946885400}
     m_Modifications:
+    - target: {fileID: 617195370459088240, guid: a492bc03421da2547aa077d61b437252,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3141163829174196942, guid: a492bc03421da2547aa077d61b437252,
         type: 3}
       propertyPath: m_RootOrder
@@ -849,6 +1014,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Terrain Slot Right
+      objectReference: {fileID: 0}
+    - target: {fileID: 4325162126028878429, guid: a492bc03421da2547aa077d61b437252,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6465034759105781414, guid: a492bc03421da2547aa077d61b437252,
         type: 3}
@@ -991,6 +1161,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2048495963946885400}
     m_Modifications:
+    - target: {fileID: 617195370459088240, guid: a492bc03421da2547aa077d61b437252,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3141163829174196942, guid: a492bc03421da2547aa077d61b437252,
         type: 3}
       propertyPath: m_RootOrder
@@ -1000,6 +1175,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Terrain Slot Top
+      objectReference: {fileID: 0}
+    - target: {fileID: 4325162126028878429, guid: a492bc03421da2547aa077d61b437252,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6465034759105781414, guid: a492bc03421da2547aa077d61b437252,
         type: 3}

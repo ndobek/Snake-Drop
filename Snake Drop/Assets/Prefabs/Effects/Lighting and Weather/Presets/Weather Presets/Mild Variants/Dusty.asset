@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Dusty
   m_EditorClassIdentifier: 
   weatherState:
-    sunVolumePreset: {fileID: 11400000, guid: cf6973c937e91f842aec90f1486e834e, type: 2}
-    sunTerrainPreset: {fileID: 11400000, guid: 416f0f8a1e065344cbcea91bbe7eeb1d, type: 2}
-    skyVolumePreset: {fileID: 11400000, guid: 23dd08949c338bc4da09ea6a5bcd2c38, type: 2}
-    skyDetailPreset: {fileID: 11400000, guid: 0caf4ba75328184479f893b8cc968f43, type: 2}
+    sunVolumePreset: {fileID: 11400000, guid: 1cb3e10777ecbfa479181b3855344c30, type: 2}
+    sunTerrainPreset: {fileID: 11400000, guid: 2dbd6ee24a836c447a36d3ad0a98124e, type: 2}
+    skyVolumePreset: {fileID: 11400000, guid: 0929cd31fd6667249b8cef393ab39c7e, type: 2}
+    skyDetailPreset: {fileID: 11400000, guid: f424f523ef5c6f44e8a8628f596d24c1, type: 2}
     volumePreset: {fileID: 11400000, guid: 8978cc2a3a8d87e4392432ccebf68f08, type: 2}

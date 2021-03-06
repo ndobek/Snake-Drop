@@ -55,14 +55,14 @@ MonoBehaviour:
   m_UseNormalMap: 1
   m_LightOrder: 5
   m_AlphaBlendOnOverlap: 1
-  m_ShadowIntensity: 0.301
+  m_ShadowIntensity: 0.296
   m_ShadowVolumeIntensity: 0.382
   m_PointLightInnerAngle: 42.83
   m_PointLightOuterAngle: 151.45
   m_PointLightInnerRadius: 28.325228
   m_PointLightOuterRadius: 43.42298
-  m_PointLightDistance: 100
-  m_PointLightQuality: 1
+  m_PointLightDistance: 300
+  m_PointLightQuality: 0
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1

@@ -34,7 +34,7 @@ public class VolumeAnimator : MonoBehaviour, IEffectAnimator<float, VolumeProfil
     private void InitializeVolumes()
     {
         startTransition = volumeStart.transform.position.x;
-        endTransition = startTransition + (blendDistance * 2);
+        endTransition = startTransition + (blendDistance*2);
         volumeStart.transform.position = new Vector3(startTransition, 0f, 0f);
         volumeDestination.transform.position = new Vector3(endTransition, 0f, 0f);
         volumeTrigger.transform.position = volumeStart.transform.position;
