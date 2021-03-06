@@ -16,6 +16,10 @@ public class LightAnimator : MonoBehaviour, IEffectAnimator<Light2D, LightState,
     [SerializeField]
     private LightPreset initialState;
     public LightPreset InitialState { get => initialState; }
+
+    private LightState previousState;
+    public LightState PreviousState { get => previousState; set { previousState = value; } }
+
     private LightState currentState;
     public LightState CurrentState { get => currentState; set { currentState = value; } }
     private void Awake()
@@ -56,5 +60,10 @@ public class LightAnimator : MonoBehaviour, IEffectAnimator<Light2D, LightState,
         UpdateEffect(lightComponent, result);
 
         
+    }
+    public void TransitionComplete(LightState transitionedTo, LightState transitionedFrom)
+    {
+        previousState = transitionedFrom;
+        currentState = transitionedTo;
     }
 }

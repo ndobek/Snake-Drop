@@ -22,6 +22,16 @@ public class WeatherCycle : MonoBehaviour, IEffectAnimator<Weather, WeatherPrese
     private WeatherPreset initialState;
     public WeatherPreset InitialState { get => initialState; }
 
+    private WeatherPreset previousState;
+    public WeatherPreset PreviousState { get => previousState; set { previousState = value; } }
+
+    public void TransitionComplete(WeatherPreset stateTransitionedTo, WeatherPreset stateTransitionedFrom)
+    {
+        currentState = stateTransitionedTo;
+        previousState = stateTransitionedFrom;
+    }
+
+
     private WeatherPreset currentState;
     public WeatherPreset CurrentState { get => currentState; set { currentState = value; } }
 

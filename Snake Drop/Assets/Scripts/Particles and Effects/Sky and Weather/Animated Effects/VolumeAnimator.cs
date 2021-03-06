@@ -11,35 +11,49 @@ public class VolumeAnimator : MonoBehaviour, IEffectAnimator<float, VolumeProfil
     public VolumePreset InitialState { get => initialState; set { initialState = value; } }
 
     private VolumeProfile currentState;
-    public VolumeProfile CurrentState 
+    public VolumeProfile CurrentState
+    
     { 
         get => currentState; 
         set 
         {
             currentState = value;
             volumeStart.profile = currentState;
-            UpdateEffect(startTransition, currentState);
+            UpdateEffect(startTransitionValue, currentState);
         } 
     }
+    private VolumeProfile previousState;
+    public VolumeProfile PreviousState { get => previousState; set { previousState = value; } }
+
     public float blendDistance;
-    private float startTransition;
-    private float endTransition;
-    private float triggerPos;
+    private Vector3 startPos;
+    private float startTransitionValue;
+    private Vector3 endPos;
+    private float endTransitionValue;
+    private float triggerPosX;
     public GameObject volumeTrigger;
     public Volume volumeStart;
     public Volume volumeDestination;
-    
 
-    
+
+    public void TransitionComplete(VolumeProfile transitionedTo, VolumeProfile transitionedFrom)
+    {
+        previousState = transitionedFrom;
+        currentState = transitionedTo;
+    }
     private void InitializeVolumes()
     {
-        startTransition = volumeStart.transform.position.x;
-        endTransition = startTransition + (blendDistance*2);
-        volumeStart.transform.position = new Vector3(startTransition, 0f, 0f);
-        volumeDestination.transform.position = new Vector3(endTransition, 0f, 0f);
-        volumeTrigger.transform.position = volumeStart.transform.position;
+        startPos = volumeStart.transform.position;
+        endPos = startPos;
+        endPos.x = startPos.x + (blendDistance*2);
+        volumeDestination.transform.position = endPos;
+
+        startTransitionValue = startPos.x;
+        endTransitionValue = endPos.x;
+        
+        volumeTrigger.transform.position = startPos;
         volumeStart.profile = initialState.volumeState;
-        triggerPos = startTransition;
+        triggerPosX = startTransitionValue;
     }
     private void Start()
     {
@@ -49,16 +63,16 @@ public class VolumeAnimator : MonoBehaviour, IEffectAnimator<float, VolumeProfil
     public void Animate(VolumeProfile keyframe1, VolumeProfile keyframe2, float t)
     {
         volumeDestination.profile = keyframe2;
-        triggerPos = Mathf.Lerp(startTransition, endTransition, t);
-        UpdateEffect(triggerPos, keyframe2);        
+        triggerPosX = Mathf.Lerp(startTransitionValue, endTransitionValue, t);
+        UpdateEffect(triggerPosX, keyframe2);        
     
     }
 
     public void UpdateEffect(float effect, VolumeProfile nextFrame)
     {
         Vector3 triggerTransform = volumeTrigger.transform.position;
-        triggerPos = effect;
-        triggerTransform.x = triggerPos;
+        triggerPosX = effect;
+        triggerTransform.x = triggerPosX;
         volumeTrigger.transform.position = triggerTransform;
 
     } 

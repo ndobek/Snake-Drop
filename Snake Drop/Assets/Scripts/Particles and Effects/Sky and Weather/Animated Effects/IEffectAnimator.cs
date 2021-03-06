@@ -16,6 +16,8 @@ public interface IEffectAnimator<Effect, State, InitialStatePreset>
 {
     InitialStatePreset InitialState { get; }
     State CurrentState { get; set; }
+    State PreviousState { get; set; }
+    void TransitionComplete(State stateTransitionedTo, State stateTransitionedFrom);
     void UpdateEffect(Effect effect, State nextFrame);
     void Animate(State keyframe1, State keyframe2, float t);
 }

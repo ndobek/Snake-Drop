@@ -76,11 +76,12 @@ public class Weather : MonoBehaviour, ICyclical
     }
     public void TransitionComplete()
     {
+        
         //sunVolume.CurrentState = currentState.sunVolumePreset.lightState;
         //sunTerrain.CurrentState = currentState.sunTerrainPreset.lightState;
        // skyVolume.CurrentState = currentState.skyVolumePreset.lightState;
        // skyDetail.CurrentState = currentState.skyDetailPreset.lightState;
-        volume.CurrentState = currentState.volumePreset.volumeState;
+        volume.TransitionComplete(previousState.volumePreset.volumeState, currentState.volumePreset.volumeState);
       
     }
     public bool midTransition = false;
