@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -4777394427998619292}
   - component: {fileID: -6156710244970153848}
   - component: {fileID: 6139035584766531580}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Feather Reed Grass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,8 +72,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -358638985
-  m_SortingLayer: -1
+  m_SortingLayerID: 1638940919
+  m_SortingLayer: -3
   m_SortingOrder: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

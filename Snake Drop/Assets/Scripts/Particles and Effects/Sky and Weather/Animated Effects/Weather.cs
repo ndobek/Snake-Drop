@@ -67,21 +67,21 @@ public class Weather : MonoBehaviour, ICyclical
 
     public void AnimateEffects()
     {
-        sunVolume.Animate(previousState.sunVolumePreset.lightState, currentState.sunVolumePreset.lightState, TransitionPercent());
-        sunTerrain.Animate(previousState.sunTerrainPreset.lightState, currentState.sunTerrainPreset.lightState, TransitionPercent());
-        skyVolume.Animate(previousState.skyVolumePreset.lightState, currentState.skyVolumePreset.lightState, TransitionPercent());
-        skyDetail.Animate(previousState.skyDetailPreset.lightState, currentState.skyDetailPreset.lightState, TransitionPercent());
-        //sky.Animate(sky.CurrentState, currentState.skyPreset.skyState, cyclePoint/weatherTransitionDuration);
+       // sunVolume.Animate(previousState.sunVolumePreset.lightState, currentState.sunVolumePreset.lightState, TransitionPercent());
+        //sunTerrain.Animate(previousState.sunTerrainPreset.lightState, currentState.sunTerrainPreset.lightState, TransitionPercent());
+        //skyVolume.Animate(previousState.skyVolumePreset.lightState, currentState.skyVolumePreset.lightState, TransitionPercent());
+       // skyDetail.Animate(previousState.skyDetailPreset.lightState, currentState.skyDetailPreset.lightState, TransitionPercent());
+        
         volume.Animate(previousState.volumePreset.volumeState, currentState.volumePreset.volumeState, TransitionPercent());
     }
     public void TransitionComplete()
     {
-        sunVolume.CurrentState = currentState.sunVolumePreset.lightState;
-        sunTerrain.CurrentState = currentState.sunTerrainPreset.lightState;
-        skyVolume.CurrentState = currentState.skyVolumePreset.lightState;
-        skyDetail.CurrentState = currentState.skyDetailPreset.lightState;
+        //sunVolume.CurrentState = currentState.sunVolumePreset.lightState;
+        //sunTerrain.CurrentState = currentState.sunTerrainPreset.lightState;
+       // skyVolume.CurrentState = currentState.skyVolumePreset.lightState;
+       // skyDetail.CurrentState = currentState.skyDetailPreset.lightState;
         volume.CurrentState = currentState.volumePreset.volumeState;
-        //sky.CurrentState = currentState.skyPreset.skyState;
+      
     }
     public bool midTransition = false;
     public void CycleUpdate()

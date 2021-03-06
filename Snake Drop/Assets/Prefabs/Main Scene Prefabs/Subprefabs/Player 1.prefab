@@ -1206,7 +1206,7 @@ MonoBehaviour:
   numberOfBlockBreakParticles: 8
   xPPoolSize: 5
   blockBreakPoolSize: 15
-  pSystemZCoord: -2
+  pSystemZCoord: -10
 --- !u!1 &7360507373980569083
 GameObject:
   m_ObjectHideFlags: 0
@@ -18883,7 +18883,7 @@ PrefabInstance:
     - target: {fileID: 3843568856077858208, guid: 034cb265e5e46234bb67b77f95780a70,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3843568856077858208, guid: 034cb265e5e46234bb67b77f95780a70,
         type: 3}
@@ -21572,7 +21572,7 @@ PrefabInstance:
     - target: {fileID: 6734525404444752582, guid: 4acf3881fc4822f4583986f3fb0db6f0,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6734525404444752582, guid: 4acf3881fc4822f4583986f3fb0db6f0,
         type: 3}
