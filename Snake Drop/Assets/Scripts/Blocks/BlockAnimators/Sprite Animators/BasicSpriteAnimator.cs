@@ -9,8 +9,20 @@ public class BasicSpriteAnimator : BlockSpriteAnimator
     public Color color;
     public int sortingOrder;
 
+    //Alyssa Interferes
+    public Material materialInSnake;
+    public Material materialOutOfSnake;
+
     public override void OnComplete(BlockAnimation blockAnimation)
     {
-        SetSprite(blockAnimation.block, sprite, color, sortingOrder);
+        if (blockAnimation.block.blockType.isPartOfSnake == true)//Alyssa made this if statement no scare
+        {
+            SetSprite(blockAnimation.block, sprite, color, sortingOrder, materialInSnake);//I added material dont b mad
+        }
+        else //Alyssa added else :(
+        {
+            SetSprite(blockAnimation.block, sprite, color, sortingOrder, materialOutOfSnake);
+        }
+        
     }
 }

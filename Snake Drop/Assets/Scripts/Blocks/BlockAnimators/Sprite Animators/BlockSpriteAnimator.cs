@@ -18,11 +18,20 @@ public abstract class BlockSpriteAnimator : BlockAnimator
             block.BlockSprite.color = color;
             block.BlockSprite.sortingOrder = sortingOrder;
 
-            block.Highlight.enabled = block.blockType.HighlightTail;
-
+            block.Highlight.enabled = block.blockType.HighlightTail;        
         }
-
-
     }
 
+    protected void SetSprite(Block block, Sprite sprite, Color color, int sortingOrder, Material material)
+    {
+        if (block.blockColor != null && block.blockType != null)
+        {
+            block.BlockSprite.sprite = sprite;
+            block.BlockSprite.color = color;
+            block.BlockSprite.sortingOrder = sortingOrder;
+            block.BlockSprite.material = material;
+
+            block.Highlight.enabled = block.blockType.HighlightTail;
+        }
+    }
 }
