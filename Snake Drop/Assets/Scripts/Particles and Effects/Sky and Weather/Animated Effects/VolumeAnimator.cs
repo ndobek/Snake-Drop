@@ -18,8 +18,7 @@ public class VolumeAnimator : MonoBehaviour, IEffectAnimator<float, VolumeProfil
         set 
         {
             currentState = value;
-            volumeStart.profile = currentState;
-            UpdateEffect(startTransitionValue, currentState);
+            //volumeStart.profile = currentState;//TODO: think about what the heck is going on
         } 
     }
     private VolumeProfile previousState;
@@ -62,6 +61,7 @@ public class VolumeAnimator : MonoBehaviour, IEffectAnimator<float, VolumeProfil
     }
     public void Animate(VolumeProfile keyframe1, VolumeProfile keyframe2, float t)
     {
+        volumeStart.profile = keyframe1; //TODO: think this through
         volumeDestination.profile = keyframe2;
         triggerPosX = Mathf.Lerp(startTransitionValue, endTransitionValue, t);
         UpdateEffect(triggerPosX, keyframe2);        
