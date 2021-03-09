@@ -16,3 +16,4 @@ MonoBehaviour:
   weatherVariants:
   - {fileID: 11400000, guid: 006ece79319ce0347ac8328b935e79d9, type: 2}
   - {fileID: 11400000, guid: 4ecb349a4725a0348b7a6c283964aff9, type: 2}
+  - {fileID: 11400000, guid: b00d7fef33b358e448e53dd0ff76ba61, type: 2}

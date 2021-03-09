@@ -5,6 +5,7 @@ using UnityEngine;
 public class SkyRotator : MonoBehaviour, ICyclical
 {
     public GameObject sky;
+    public GameObject detailLight;
     public Cycler cycler;
     [SerializeField]
     private float cycleLength;//seconds
@@ -27,8 +28,12 @@ public class SkyRotator : MonoBehaviour, ICyclical
         float updatesPerCycle = (cycleLength) / Time.deltaTime;
         Vector3 rotationAmount = new Vector3(0, 0, (360 / updatesPerCycle));
         sky.transform.Rotate(rotationAmount);
-        if (cyclePoint >= 1) { cyclePoint = 0; }
-        cyclePoint += rotationAmount.z;
+        detailLight.transform.Rotate(rotationAmount / 2);
+        if (cyclePoint >= cycleLength) 
+        { 
+            cyclePoint = 0; 
+        }
+        cyclePoint += Time.deltaTime; 
 
     }
     private void Start()

@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b424a161c7d64124baf407ef8ba93dc4, type: 3}
+  m_Name: Soft
+  m_EditorClassIdentifier: 
+  weatherState:
+    sunVolumePreset: {fileID: 11400000, guid: 1cb3e10777ecbfa479181b3855344c30, type: 2}
+    sunTerrainPreset: {fileID: 11400000, guid: 2dbd6ee24a836c447a36d3ad0a98124e, type: 2}
+    skyVolumePreset: {fileID: 11400000, guid: 0929cd31fd6667249b8cef393ab39c7e, type: 2}
+    skyDetailPreset: {fileID: 11400000, guid: f424f523ef5c6f44e8a8628f596d24c1, type: 2}
+    volumePreset: {fileID: 11400000, guid: 90246a2ba96b9ba4d8a07d51c1762dd0, type: 2}

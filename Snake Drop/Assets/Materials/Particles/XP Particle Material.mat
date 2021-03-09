@@ -25,10 +25,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: fd6ffdd1eca04ad42812fcf4df75ec13, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    m_Floats: []
+    m_Floats:
+    - Vector1_85093ED9: 0.223
     m_Colors:
     - Color_95396AA0: {r: 16, g: 11.23137, b: 1.192157, a: 0}
   m_BuildTextureStacks: []
