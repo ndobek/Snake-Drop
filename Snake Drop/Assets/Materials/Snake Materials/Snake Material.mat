@@ -42,10 +42,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - PixelSnap: 0
-    - Vector1_AA645928: 0.05
+    - Vector1_2B1B30F9: 0.1
+    - Vector1_AA645928: 0.01
     - _EnableExternalAlpha: 0
     m_Colors:
-    - Color_40139296: {r: 0.1745283, g: 1, b: 0.4435464, a: 0}
+    - Color_40139296: {r: 16, g: 13.803922, b: 8.658824, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
