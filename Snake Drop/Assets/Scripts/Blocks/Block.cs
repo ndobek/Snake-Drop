@@ -72,11 +72,14 @@ public class Block : MonoBehaviour
         return !isPartOfSnake(obj);
     }
 
+    private Block head;
+    public Block Head { get => head; set {head = value;} } //Alyssa maked this
+
     private Block tail;
     public Block Tail
     {
         get { return tail; }
-        set { SetTail(value); }
+        set { SetTail(value); tail.Head = this; }
     }
 
     #endregion
@@ -203,6 +206,10 @@ public class Block : MonoBehaviour
         }
         rule.Invoke(this, player);
     }
+
+    
+
+
     public void SetTail(Directions.Direction neighbor)
     {
         SetTail(Neighbor(neighbor).Block);

@@ -60,5 +60,9 @@ public static class Directions
         }
         return default;
     }
+    public static Directions.Direction HeadDirection(Block block) //Alyssa Maked This
+    {
+        return DirectionTo(block, block.Head);
+    }
 }
 
