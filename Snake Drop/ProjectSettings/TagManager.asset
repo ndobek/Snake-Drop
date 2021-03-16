@@ -76,6 +76,9 @@ TagManager:
   - name: Playgrid Foreground
     uniqueID: 1986032229
     locked: 0
+  - name: Playgrid Effects
+    uniqueID: 3322161913
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

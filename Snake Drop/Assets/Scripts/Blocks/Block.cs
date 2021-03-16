@@ -79,7 +79,7 @@ public class Block : MonoBehaviour
     public Block Tail
     {
         get { return tail; }
-        set { SetTail(value); tail.Head = this; }
+        set { SetTail(value);}
     }
 
     #endregion
@@ -103,11 +103,13 @@ public class Block : MonoBehaviour
     }
     private void UpdateSprite()
     {
-            AnimationManager.AddAnimation(new BlockAnimation(this, blockColor.GetAnimator(blockType)));
+        AnimationManager.AddAnimation(new BlockAnimation(this, blockColor.GetAnimator(blockType)));
+      
     }
-    private void Update()
+    private void LateUpdate()
     {
         AddAnimations();
+        
     }
 
     //Tells the grid that it needs to check for fall movement and update
@@ -209,14 +211,14 @@ public class Block : MonoBehaviour
 
     
 
-
-    public void SetTail(Directions.Direction neighbor)
+        public void SetTail(Directions.Direction neighbor)
     {
         SetTail(Neighbor(neighbor).Block);
     }
     public void SetTail(Block obj)
     {
         tail = obj;
+        
     }
     public Block GetLastTail()
     {

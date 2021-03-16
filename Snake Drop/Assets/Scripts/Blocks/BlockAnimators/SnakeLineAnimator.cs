@@ -7,21 +7,42 @@ public class SnakeLineAnimator : BlockAnimator
 {
     public override void OnComplete(BlockAnimation blockAnimation)
     {
+        
         CreateSnakeLine(blockAnimation.block);
     }
-
+    
     protected void CreateSnakeLine(Block block)
     {
         //block.Highlight.enabled = true;
         Block current = block;
         List<Vector3> result = new List<Vector3>();
-
+        result.Add(current.transform.position);
         while (current.Tail != null)
         {
-            result.Add(current.Highlight.transform.position);
             current = current.Tail;
+
+            BlockAnimation[] UpcomingAnimations = current.AnimationManager.UpcomingAnimations.ToArray();
+            BlockAnimation[] ActiveAnimations = current.AnimationManager.ActiveAnimations.ToArray();
+            if (UpcomingAnimations.Length > 0)
+            {
+                for (int i = UpcomingAnimations.Length - 1; i >= 0; i--)
+                {
+                    BlockAnimation animation = UpcomingAnimations[i];
+                    if (animation != null && animation.destination != null) result.Add(animation.destination.position);
+                }
+                for (int i = ActiveAnimations.Length - 1; i >= 0; i--)
+                {
+                    BlockAnimation animation = ActiveAnimations[i];
+                    if (animation != null && animation.destination != null) result.Add(animation.destination.position);
+                }
+            }
+            else
+            {
+                result.Add(current.Slot.transform.position);
+            }
+
         }
-        result.Add(current.Highlight.transform.position);
+        result.Add(current.transform.position);
         block.Highlight.positionCount = result.Count;
         block.Highlight.SetPositions(result.ToArray());
 

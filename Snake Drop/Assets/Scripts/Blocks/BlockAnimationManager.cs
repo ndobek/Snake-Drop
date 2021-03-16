@@ -5,9 +5,9 @@ using UnityEngine;
 public class BlockAnimationManager : MonoBehaviour
 {
 
-    private Queue<BlockAnimation> UpcomingAnimations = new Queue<BlockAnimation>();
+    public Queue<BlockAnimation> UpcomingAnimations = new Queue<BlockAnimation>();
     [SerializeField]
-    private List<BlockAnimation> ActiveAnimations = new List<BlockAnimation>();
+    public List<BlockAnimation> ActiveAnimations = new List<BlockAnimation>();
 
     public void AddAnimation(BlockAnimation animation)
     {
