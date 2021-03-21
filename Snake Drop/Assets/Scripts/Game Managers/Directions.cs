@@ -54,11 +54,47 @@ public static class Directions
     }
     public static Directions.Direction DirectionTo(Block blockFrom, Block blockTo)
     {
-        foreach (Directions.Direction dir in Enum.GetValues(typeof(Directions.Direction)))
+        return DirectionTo(blockFrom.Slot, blockTo.Slot);
+    }
+    public static Directions.Direction DirectionTo(BlockSlot blockSlotFrom, BlockSlot blockSlotTo)
+    {
+
+        Vector2 from = blockSlotFrom.Coords;
+        Vector2 to = blockSlotTo.Coords;
+        Vector2 dif = to - from;
+        if (Math.Abs(dif.x)> Math.Abs(dif.y))
         {
-            if (blockFrom.Neighbor(dir) == blockTo) return dir;
+            if(dif.x >= 0)
+            {
+                return Direction.RIGHT;
+            }
+            else
+            {
+                return Direction.LEFT;
+            }
         }
-        return default;
+        else
+        {
+            if (dif.y >= 0)
+            {
+                return Direction.UP;
+            }
+            else
+            {
+                return Direction.DOWN;
+            }
+        }
+        //foreach (Directions.Direction dir in Enum.GetValues(typeof(Directions.Direction)))
+        //{
+
+        //    if (blockFrom.Neighbor(dir) == blockTo.Slot)
+        //    {
+        //        return dir;
+        //    }
+        //}
+        //Debug.LogError("Ye booched it!");
+        //return default;
+
     }
     public static Directions.Direction HeadDirection(Block block) //Alyssa Maked This
     {

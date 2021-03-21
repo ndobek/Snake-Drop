@@ -1837,6 +1837,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 463.75452
       objectReference: {fileID: 0}
+    - target: {fileID: 3649512372884428412, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
+        type: 3}
+      propertyPath: m_AllowRoll
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3656739459833321319, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
         type: 3}
       propertyPath: m_IsActive
@@ -2062,6 +2067,48 @@ PrefabInstance:
       propertyPath: m_TargetGraphic
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5224879588167337490, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
+        type: 3}
+      propertyPath: UVModule.sprites.Array.data[1].sprite
+      value: 
+      objectReference: {fileID: 1595575649528535970, guid: 15fd74dc5817ac64aa8da11bb36e77d9,
+        type: 3}
+    - target: {fileID: 5224879588167337490, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
+        type: 3}
+      propertyPath: UVModule.sprites.Array.data[2].sprite
+      value: 
+      objectReference: {fileID: 1595575649528535970, guid: 15fd74dc5817ac64aa8da11bb36e77d9,
+        type: 3}
+    - target: {fileID: 5224879588167337490, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
+        type: 3}
+      propertyPath: UVModule.sprites.Array.data[3].sprite
+      value: 
+      objectReference: {fileID: 1595575649528535970, guid: 15fd74dc5817ac64aa8da11bb36e77d9,
+        type: 3}
+    - target: {fileID: 5224879588167337490, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
+        type: 3}
+      propertyPath: UVModule.sprites.Array.data[4].sprite
+      value: 
+      objectReference: {fileID: 1595575649528535970, guid: 15fd74dc5817ac64aa8da11bb36e77d9,
+        type: 3}
+    - target: {fileID: 5224879588167337490, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
+        type: 3}
+      propertyPath: UVModule.sprites.Array.data[5].sprite
+      value: 
+      objectReference: {fileID: 1595575649528535970, guid: 15fd74dc5817ac64aa8da11bb36e77d9,
+        type: 3}
+    - target: {fileID: 5224879588167337490, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
+        type: 3}
+      propertyPath: UVModule.sprites.Array.data[6].sprite
+      value: 
+      objectReference: {fileID: 1595575649528535970, guid: 15fd74dc5817ac64aa8da11bb36e77d9,
+        type: 3}
+    - target: {fileID: 5224879588167337490, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
+        type: 3}
+      propertyPath: UVModule.sprites.Array.data[7].sprite
+      value: 
+      objectReference: {fileID: 1595575649528535970, guid: 15fd74dc5817ac64aa8da11bb36e77d9,
+        type: 3}
     - target: {fileID: 5228041404042836262, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
         type: 3}
       propertyPath: m_IsActive

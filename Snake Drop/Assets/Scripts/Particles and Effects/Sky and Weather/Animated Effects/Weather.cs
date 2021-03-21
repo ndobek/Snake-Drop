@@ -160,15 +160,15 @@ public class Weather : MonoBehaviour, ICyclical
     public void WeatherVariantChange()
     {
         int randIndex = Random.Range(0, (startingPreset.weatherVariants.Count));
-        queuedStates.Enqueue(startingPreset.weatherVariants[randIndex].weatherState);
-        Debug.Log("Changing " + startingPreset.weatherType + " effects to variant " + randIndex);
+        queuedStates.Enqueue(startingPreset.weatherVariants[randIndex].state);
+        Debug.Log("Changing " + startingPreset.Label + " effects to variant " + randIndex);
         
 
     }
     public void SetWeather(WeatherPreset newWeather)
     {
         queuedPresets.Enqueue(newWeather);
-        Debug.Log("Adding Forecast: "+ newWeather.weatherType);
+        Debug.Log("Adding Forecast: "+ newWeather.Label);
     }
     private void TransitionComplete()
     {

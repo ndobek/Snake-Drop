@@ -15,48 +15,58 @@ public class SnakeSpriteController : BlockSpriteAnimator
     public int sortingOrder;
     public Material snakeMaterial;
     public Material notSnakeMaterial;
+    public float positionThreshold = .1f;
 
-
+    
     public override void OnComplete(BlockAnimation blockAnimation)
     {
+       
+        
         Block block = blockAnimation.block;
-        Directions.Direction headDirection = Directions.Direction.DOWN;
-        Directions.Direction tailDirection = Directions.Direction.DOWN;
-        if (block.Tail != null)
+        if ((block.transform.position - block.Slot.transform.position).magnitude <= positionThreshold)
         {
-            tailDirection = Directions.TailDirection(block);
-        }
-        else if (block && block.Owner && block.Owner.playerController && block.Owner.RoundInProgress)
-        {
-            tailDirection = Directions.GetOppositeDirection(block.Owner.playerController.MostRecentDirectionMoved);
-        }
-        if (block.Head != null)
-        {
-            headDirection = Directions.HeadDirection(block);
-        }
-        else if (block && block.Owner && block.Owner.playerController && block.Owner.RoundInProgress)
-        {
-            headDirection = block.Owner.playerController.MostRecentDirectionMoved;
-        }
+            Directions.Direction headDirection = Directions.Direction.DOWN;
+            Directions.Direction tailDirection = Directions.Direction.DOWN;
 
-        bool up = headDirection == Directions.Direction.UP || tailDirection == Directions.Direction.UP;
-        bool down = headDirection == Directions.Direction.DOWN || tailDirection == Directions.Direction.DOWN;
-        bool left = headDirection == Directions.Direction.LEFT || tailDirection == Directions.Direction.LEFT;
-        bool right = headDirection == Directions.Direction.RIGHT || tailDirection == Directions.Direction.RIGHT;
+            if (block.Head != null && block.Head.Slot.playGrid == block.Slot.playGrid)
+            {
+                headDirection = Directions.HeadDirection(block);
+            }
+            else
+            {
+                headDirection = block.mostRecentDirectionMoved;
+            }
 
-        if (up)
-        {
-            if (down) { SetSprite(block, vertical, color, sortingOrder); }
-            if (left) { SetSprite(block, topLeft, color, sortingOrder); }
-            if (right) { SetSprite(block, topRight, color, sortingOrder); }
-        } else if (down)
-        {
-            if (left) { SetSprite(block, bottomLeft, color, sortingOrder); }
-            if (right) { SetSprite(block, bottomRight, color, sortingOrder); }
-        }
-        else
-        {
-            SetSprite(block, horizontal, color, sortingOrder, snakeMaterial);
+            if (block.Tail != null && block.Tail.Slot.playGrid == block.Slot.playGrid)
+            {
+                tailDirection = Directions.TailDirection(block);
+            }
+            else
+            {
+                tailDirection = Directions.GetOppositeDirection(block.mostRecentDirectionMoved);
+            }
+
+            bool up = headDirection == Directions.Direction.UP || tailDirection == Directions.Direction.UP;
+            bool down = headDirection == Directions.Direction.DOWN || tailDirection == Directions.Direction.DOWN;
+            bool left = headDirection == Directions.Direction.LEFT || tailDirection == Directions.Direction.LEFT;
+            bool right = headDirection == Directions.Direction.RIGHT || tailDirection == Directions.Direction.RIGHT;
+
+            if (up)
+            {
+                if (down) { SetSprite(block, vertical, color, sortingOrder); }
+                if (left) { SetSprite(block, topLeft, color, sortingOrder); }
+                if (right) { SetSprite(block, topRight, color, sortingOrder); }
+
+            }
+            else if (down)
+            {
+                if (left) { SetSprite(block, bottomLeft, color, sortingOrder); }
+                if (right) { SetSprite(block, bottomRight, color, sortingOrder); }
+            }
+            else
+            {
+                SetSprite(block, horizontal, color, sortingOrder, snakeMaterial);
+            }
         }
 
 

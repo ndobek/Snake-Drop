@@ -6,6 +6,8 @@ using UnityEngine;
 [System.Serializable]
 public class WeatherVariant : ScriptableObject
 {
-
-    public WeatherState weatherState;
+    private string label;
+    public string Label { get => label; }
+    public WeatherState state;
 }
+

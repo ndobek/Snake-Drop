@@ -21,6 +21,7 @@ public class Block : MonoBehaviour
     public Transform FillMaskTransform;
     public SpriteRenderer FillSpriteRenderer;
 
+    public Directions.Direction mostRecentDirectionMoved = Directions.Direction.DOWN;
 
     private BlockSlot slot;
     public BlockSlot Slot
@@ -71,9 +72,8 @@ public class Block : MonoBehaviour
     {
         return !isPartOfSnake(obj);
     }
-
     private Block head;
-    public Block Head { get => head; set {head = value;} } //Alyssa maked this
+    public Block Head { get => head; set { head = value; } }
 
     private Block tail;
     public Block Tail
@@ -134,7 +134,21 @@ public class Block : MonoBehaviour
         SetGridDirty();
         UpdateSprite();
         BlockSlot Old = Slot;
-        if (Old) Old.OnUnassignment(this);
+        if (Old)
+        {
+
+            if (Old.playGrid == obj.playGrid) { mostRecentDirectionMoved = Directions.DirectionTo(Old, obj); }
+            else
+            {
+                mostRecentDirectionMoved = GameManager.instance.playerManagers[0].enterSlot.GetEntranceDirection(obj.playGrid);                
+            }
+            Old.OnUnassignment(this);
+            
+        }
+        else
+        {
+            mostRecentDirectionMoved = Directions.Direction.DOWN;
+        }
         if (obj)
         {
             if (animation == null) animation = blockType.defaultMoveAnimator;
@@ -218,6 +232,10 @@ public class Block : MonoBehaviour
     public void SetTail(Block obj)
     {
         tail = obj;
+        if (tail)
+        {
+            tail.head = this;
+        }
         
     }
     public Block GetLastTail()

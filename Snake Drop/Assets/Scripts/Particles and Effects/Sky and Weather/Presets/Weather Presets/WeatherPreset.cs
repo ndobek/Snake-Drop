@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Effect Presets/Weather Type")]
-public class WeatherPreset: ScriptableObject
+public class WeatherPreset : ScriptableObject
 {
-    public string weatherType;
+    private string label;
+    public string Label { get => label; }
+
     public List<WeatherVariant> weatherVariants;
+    public EnvironmentalState environmentalState;
 }
