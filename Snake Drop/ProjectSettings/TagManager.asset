@@ -49,6 +49,9 @@ TagManager:
   - name: Sky Foreground
     uniqueID: 94126667
     locked: 0
+  - name: Atmospheric Particles
+    uniqueID: 604119703
+    locked: 0
   - name: Terrain Background
     uniqueID: 3936328311
     locked: 0
