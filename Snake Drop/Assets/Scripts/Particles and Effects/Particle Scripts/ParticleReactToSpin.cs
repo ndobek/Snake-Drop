@@ -5,25 +5,24 @@ using System;
 
 public class ParticleReactToSpin : MonoBehaviour, IReact
 {
-    private ParticleSystem pSystem;
-    private List<ParticleSystem.Particle> newParticlesBehindPlanet = new List<ParticleSystem.Particle>();
-    private List<ParticleSystem.Particle> particlesLeavingPlanet = new List<ParticleSystem.Particle>();
-    private List<ParticleSystem.Particle> totalParticlesBehindPlanet = new List<ParticleSystem.Particle>();
-    
-    private Rigidbody rigidBody;
+    public List<ParticleSystem> pSystems;
+    // private List<ParticleSystem.Particle> totalParticlesBehindPlanet = new List<ParticleSystem.Particle>();
+    public float maxParticlesPerSpin;
+    public float minParticlesPerSpin;
+    // private Rigidbody rigidBody;
     public BoardRotator boardRotator;
-    public float radialVMultiplier;
-    public float rotationalVMultiplier;
+    public int maxVariation;
+    //public float radialVMultiplier;
+   // public float rotationalVMultiplier;
     private void Start()
     {
-        pSystem = GetComponent<ParticleSystem>();
-        rigidBody = GetComponent<Rigidbody>();
+        //rigidBody = GetComponent<Rigidbody>();
         boardRotator.reactToSpin.Add(this);
     }
-    private void OnParticleTrigger()
-    {
-        totalParticlesBehindPlanet.Clear();
-        pSystem.GetTriggerParticles(ParticleSystemTriggerEventType.Inside, totalParticlesBehindPlanet);
+   // private void OnParticleTrigger()
+   // {
+       // totalParticlesBehindPlanet.Clear();
+        //pSystem.GetTriggerParticles(ParticleSystemTriggerEventType.Inside, totalParticlesBehindPlanet);
         //pSystem.GetTriggerParticles(ParticleSystemTriggerEventType.Enter, newParticlesBehindPlanet);
         //if (newParticlesBehindPlanet.Count > 0)
         //{
@@ -46,55 +45,68 @@ public class ParticleReactToSpin : MonoBehaviour, IReact
 
 
 
-    }
+    //}
     public void React()
     {
-        #region bad
-        //for (int i = 0; i < totalParticlesBehindPlanet.Count; i++)
-        //{
-        //    ParticleSystem.Particle particle = totalParticlesBehindPlanet[i];
-        //    Vector3 radialV = (particle.position - boardRotator.transform.position).normalized * radialVMultiplier;
-
-        //    Vector3 rotationalV = (rigidBody.GetPointVelocity(particle.position) * rotationalVMultiplier) ;
-        //    particle.velocity = rotationalV + radialV;
-        //    totalParticlesBehindPlanet[i] = particle;
-        //}
-        //pSystem.SetParticles(totalParticlesBehindPlanet.ToArray());
-        ////don't cursed code uncomment inside
-        ///
-        #endregion
-        #region ehh
-        //int count = pSystem.particleCount;
-        //ParticleSystem.Particle[] p = new ParticleSystem.Particle[count];
-        //pSystem.GetParticles(p);
-        //for (int i = 0; i < totalParticlesBehindPlanet.Count; i++)
-        //{
-
-        //    int pIndex = Array.IndexOf(p, totalParticlesBehindPlanet[i]);
-        //    if(pIndex >= 0)
-        //    {
-
-        //        Vector3 radialV = (p[pIndex].position - boardRotator.transform.position).normalized * radialVMultiplier;
-        //        p[pIndex].velocity = (rigidBody.GetPointVelocity(p[pIndex].position) * rotationalVMultiplier + radialV);
-
-        //    }
-        //}
-        #endregion
-        int count = pSystem.particleCount;
-        ParticleSystem.Particle[] p = new ParticleSystem.Particle[count];
-        pSystem.GetParticles(p);
-        for (int i = 0; i < count; i++)
+        int emissionCount = (int)UnityEngine.Random.Range(minParticlesPerSpin, maxParticlesPerSpin);
+        if (pSystems != null && pSystems.Count > 0)
         {
-            if (totalParticlesBehindPlanet.Contains(p[i]))
+            foreach (ParticleSystem pSystem in pSystems)
             {
-                Vector3 radialV = (p[i].position - boardRotator.transform.position).normalized * radialVMultiplier;
-                p[i].velocity = (rigidBody.GetPointVelocity(p[i].position) * rotationalVMultiplier) + radialV;
+                int variation = (int)UnityEngine.Random.Range(0, maxVariation);
+                pSystem.Emit(emissionCount + variation);
+                
             }
         }
-        //this one works but is slow
-        pSystem.SetParticles(p);
-    }
+            
+    #region bad
+    //for (int i = 0; i < totalParticlesBehindPlanet.Count; i++)
+    //{
+    //    ParticleSystem.Particle particle = totalParticlesBehindPlanet[i];
+    //    Vector3 radialV = (particle.position - boardRotator.transform.position).normalized * radialVMultiplier;
 
+    //    Vector3 rotationalV = (rigidBody.GetPointVelocity(particle.position) * rotationalVMultiplier) ;
+    //    particle.velocity = rotationalV + radialV;
+    //    totalParticlesBehindPlanet[i] = particle;
+    //}
+    //pSystem.SetParticles(totalParticlesBehindPlanet.ToArray());
+    ////don't cursed code uncomment inside
+    ///
+    #endregion
+    #region ehh
+    //int count = pSystem.particleCount;
+    //ParticleSystem.Particle[] p = new ParticleSystem.Particle[count];
+    //pSystem.GetParticles(p);
+    //for (int i = 0; i < totalParticlesBehindPlanet.Count; i++)
+    //{
 
+    //    int pIndex = Array.IndexOf(p, totalParticlesBehindPlanet[i]);
+    //    if(pIndex >= 0)
+    //    {
+
+    //        Vector3 radialV = (p[pIndex].position - boardRotator.transform.position).normalized * radialVMultiplier;
+    //        p[pIndex].velocity = (rigidBody.GetPointVelocity(p[pIndex].position) * rotationalVMultiplier + radialV);
+
+    //    }
+    //}
+    #endregion
+    #region the best so far I guess
+    //int count = pSystem.particleCount;
+    //ParticleSystem.Particle[] p = new ParticleSystem.Particle[count];
+    //pSystem.GetParticles(p);
+    //for (int i = 0; i < count; i++)
+    //{
+    //    if (totalParticlesBehindPlanet.Contains(p[i]))
+    //    {
+    //        Vector3 radialV = (p[i].position - boardRotator.transform.position).normalized * radialVMultiplier;
+    //       // p[i].velocity = (rigidBody.GetPointVelocity(p[i].position) * rotationalVMultiplier) + radialV;
+    //    }
+    //}
+    ////this one works but is slow
+    //pSystem.SetParticles(p);
+}
+#endregion
+
+    
 
 }

@@ -8,7 +8,7 @@ public class ParticleManager : MonoBehaviour
     public List<GameObject> blockBreakPSystemObjPool = new List<GameObject>();
     public List<ParticleSystem> xPPSystemPool = new List<ParticleSystem>();
     public List<ParticleSystem> blockBreakPSystemPool = new List<ParticleSystem>();
-
+    
 
     public GameObject initialXPPSystem;
     public GameObject initialBlockBreakPSystem;
