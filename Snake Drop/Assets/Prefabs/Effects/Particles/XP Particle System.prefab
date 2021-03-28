@@ -2533,8 +2533,9 @@ ParticleSystem:
     influenceFilter: 0
     influenceMask:
       serializedVersion: 2
-      m_Bits: 4294967295
-    influenceList: []
+      m_Bits: 512
+    influenceList:
+    - {fileID: 6621212478796423545, guid: 5fe65b665a563d04fa98b9d0ecfab469, type: 3}
   ClampVelocityModule:
     enabled: 0
     x:
