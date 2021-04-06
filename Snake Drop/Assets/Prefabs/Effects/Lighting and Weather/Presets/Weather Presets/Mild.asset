@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70916eb565c03d840b1f68799c5bddee, type: 3}
   m_Name: Mild
   m_EditorClassIdentifier: 
-  weatherType: Mild
   weatherVariants:
   - {fileID: 11400000, guid: 006ece79319ce0347ac8328b935e79d9, type: 2}
   - {fileID: 11400000, guid: 4ecb349a4725a0348b7a6c283964aff9, type: 2}
   - {fileID: 11400000, guid: b00d7fef33b358e448e53dd0ff76ba61, type: 2}
+  environmentalState: {fileID: 11400000, guid: 3eb5965c3915f624496140a122330c16, type: 2}

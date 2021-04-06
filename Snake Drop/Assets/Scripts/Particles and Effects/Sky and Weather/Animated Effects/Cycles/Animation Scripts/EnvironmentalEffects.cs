@@ -2,38 +2,66 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnvironmentalEffects : MonoBehaviour, ICyclical, IEffectAnimator<PlantAnimator, EnvironmentalState, EnvironmentalPreset>
+public class EnvironmentalEffects : MonoBehaviour, ICyclical
 {
-    public Weather weather;
-    public float CycleLength => throw new System.NotImplementedException();
-
-    public float CyclePoint => throw new System.NotImplementedException();
-
-    private EnvironmentalPreset initialState;
-    public EnvironmentalPreset InitialState { get => initialState; set { initialState = value; } }
-
+    public EnvironmentAnimator animator;
+    public WeatherCycle weatherCycle;
+    private int intensityLevel = 0;
+    public int IntensityLevel { get => intensityLevel; }
     private EnvironmentalState currentState;
-    public EnvironmentalState CurrentState { get => currentState; set { currentState = value; }}
-    private EnvironmentalState previousState;
-    public EnvironmentalState PreviousState { get => previousState; set { previousState = value; } }
+    private List<Intensity> intensityLevels = new List<Intensity>();
 
-    public void Animate(EnvironmentalState keyframe1, EnvironmentalState keyframe2, float t)
+    private float cycleLength;
+    public float CycleLength { get => cycleLength; set { cycleLength = value; } }
+    private float cyclePoint;
+    public float CyclePoint { get => cyclePoint; set { cyclePoint = value; } }
+
+    
+   
+   
+    private void Start()
     {
-        throw new System.NotImplementedException();
+        animator.effects.Add(this);
+       
     }
 
+
+    public void SetState(EnvironmentalState state)
+    {
+        intensityLevels.Clear();
+        currentState = state;
+        foreach (Intensity intensity in currentState.intensities)
+        {
+            for (int i = 0; i < intensity.weight; i++)
+            {
+                intensityLevels.Add(intensity);
+                
+            }
+        }
+    }
+
+    public void SetIntensity()
+    {
+        if (intensityLevels != null)
+        {
+            int randIndex = Random.Range(0, intensityLevels.Count - 1);
+            intensityLevel = intensityLevels[randIndex].intensityValue;
+            cycleLength = Random.Range(intensityLevels[randIndex].minimumDuration, intensityLevels[randIndex].maximumDuration);
+        }
+
+    }
     public void CycleUpdate()
     {
-        throw new System.NotImplementedException();
-    }
-
-    public void TransitionComplete(EnvironmentalState stateTransitionedTo, EnvironmentalState stateTransitionedFrom)
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public void UpdateEffect(PlantAnimator effect, EnvironmentalState nextFrame)
-    {
-        throw new System.NotImplementedException();
+        if (CyclePoint >= CycleLength)
+        {
+            SetIntensity();
+            CyclePoint = 0f;
+        }
+        CyclePoint += Time.deltaTime;
+        
     }
 }
+  
+
+  
+    

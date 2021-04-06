@@ -1018,6 +1018,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 1713124983650746629, guid: ba28145764ca10040b2f33bbf1016700,
+        type: 3}
+      propertyPath: m_Name
+      value: Plant Animator
+      objectReference: {fileID: 0}
     - target: {fileID: 1726492370450654395, guid: ba28145764ca10040b2f33bbf1016700,
         type: 3}
       propertyPath: m_Layer
@@ -1061,7 +1066,7 @@ PrefabInstance:
     - target: {fileID: 2101955367852838407, guid: ba28145764ca10040b2f33bbf1016700,
         type: 3}
       propertyPath: m_InstanceId
-      value: -519594
+      value: -43908
       objectReference: {fileID: 0}
     - target: {fileID: 2124210208163916945, guid: ba28145764ca10040b2f33bbf1016700,
         type: 3}
@@ -1206,7 +1211,7 @@ PrefabInstance:
     - target: {fileID: 2975782164546824963, guid: ba28145764ca10040b2f33bbf1016700,
         type: 3}
       propertyPath: m_InstanceId
-      value: -519532
+      value: -43960
       objectReference: {fileID: 0}
     - target: {fileID: 3035482913774365133, guid: ba28145764ca10040b2f33bbf1016700,
         type: 3}
@@ -1291,7 +1296,7 @@ PrefabInstance:
     - target: {fileID: 3558250033366378807, guid: ba28145764ca10040b2f33bbf1016700,
         type: 3}
       propertyPath: m_InstanceId
-      value: -519434
+      value: -43990
       objectReference: {fileID: 0}
     - target: {fileID: 3571123510680732574, guid: ba28145764ca10040b2f33bbf1016700,
         type: 3}
@@ -1807,7 +1812,7 @@ PrefabInstance:
     - target: {fileID: 6645534728304222085, guid: ba28145764ca10040b2f33bbf1016700,
         type: 3}
       propertyPath: m_InstanceId
-      value: -519818
+      value: -44154
       objectReference: {fileID: 0}
     - target: {fileID: 6719015404539168015, guid: ba28145764ca10040b2f33bbf1016700,
         type: 3}
@@ -2965,6 +2970,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9134113234743710319}
     m_Modifications:
+    - target: {fileID: 5392168632007844087, guid: dfac5e7e60a95874f82aaec4f2df800b,
+        type: 3}
+      propertyPath: weatherCycle
+      value: 
+      objectReference: {fileID: 8765669036912582406}
     - target: {fileID: 7145050590256790479, guid: dfac5e7e60a95874f82aaec4f2df800b,
         type: 3}
       propertyPath: m_Name
@@ -3033,6 +3043,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5365869404989292874}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8765669036912582406 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3734201250642042444, guid: dfac5e7e60a95874f82aaec4f2df800b,
+    type: 3}
+  m_PrefabInstance: {fileID: 5365869404989292874}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2a0c602fded5094a8efb47cea7823a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6880109801558299409
 PrefabInstance:
   m_ObjectHideFlags: 0

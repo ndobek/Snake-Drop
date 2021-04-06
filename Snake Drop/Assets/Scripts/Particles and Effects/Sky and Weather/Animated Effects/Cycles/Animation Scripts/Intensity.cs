@@ -4,7 +4,8 @@ using UnityEngine;
 [System.Serializable]
 public class Intensity
 {
-    public int value;
+    
+    public int intensityValue;
     public float minimumDuration;
     public float maximumDuration;
     public float weight;

@@ -128,14 +128,13 @@ public class Weather : MonoBehaviour, ICyclical
 
 
     public Queue<WeatherPreset> queuedPresets = new Queue<WeatherPreset>();
-    
+
 
     public Queue<WeatherState> queuedStates = new Queue<WeatherState>();
     public WeatherState targetState;
     public WeatherState startingState;
-
     public WeatherPreset startingPreset;
-
+    public List<IEffectAnimator<EnvironmentAnimator, EnvironmentalState, EnvironmentalState>> weatherReactions = new List<IEffectAnimator<EnvironmentAnimator, EnvironmentalState, EnvironmentalState>>();
     public VolumeAnimator volumeAnimator;
     [SerializeField]
     private float cycleLength;
@@ -143,6 +142,7 @@ public class Weather : MonoBehaviour, ICyclical
     private float cyclePoint = 0;
     public float CyclePoint { get => cyclePoint; set { cyclePoint = value; } }
 
+    
     public bool MidCycle()
     {
         return (cyclePoint < cycleLength);
@@ -168,11 +168,19 @@ public class Weather : MonoBehaviour, ICyclical
     public void SetWeather(WeatherPreset newWeather)
     {
         queuedPresets.Enqueue(newWeather);
+        
         Debug.Log("Adding Forecast: "+ newWeather.Label);
+        foreach (IEffectAnimator<EnvironmentAnimator, EnvironmentalState, EnvironmentalState> reaction in weatherReactions)
+        {
+            EnvironmentalState oldState = reaction.CurrentState;
+            reaction.Animate(oldState, newWeather.environmentalState, 1f);
+            
+        }
     }
     private void TransitionComplete()
     {
         volumeAnimator.TransitionComplete(targetState.volumePreset.volumeState, startingState.volumePreset.volumeState);
+        
     }
     public void CycleUpdate()
     {
@@ -209,4 +217,6 @@ public class Weather : MonoBehaviour, ICyclical
         targetState = startingState;
         cycler.cyclicalBehaviours.Add(this);
     }
+
+    
 }

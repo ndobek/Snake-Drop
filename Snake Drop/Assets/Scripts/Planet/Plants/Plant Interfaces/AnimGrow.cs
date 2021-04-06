@@ -5,14 +5,11 @@ using UnityEngine;
 
 public class AnimGrow : MonoBehaviour, IGrowable
 {
-    Animator anim;
+    public PlantAnimator anim;
 
     public int xp = 0;
     public int xpPerGrow = 5;
-    public void Awake()
-    {
-        anim = gameObject.GetComponent<Animator>();
-    }
+    
 
 
     private int growthStage;
@@ -22,7 +19,7 @@ public class AnimGrow : MonoBehaviour, IGrowable
         set
         {
             growthStage = value;
-            if (anim != null) anim.SetInteger("Growth Stage", growthStage);
+            if (anim != null) anim.SetGrowthStage(growthStage);
         }
     }
     public bool ShouldGrow()

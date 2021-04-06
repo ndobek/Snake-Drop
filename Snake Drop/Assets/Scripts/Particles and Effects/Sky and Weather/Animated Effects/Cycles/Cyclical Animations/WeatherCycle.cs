@@ -9,7 +9,7 @@ public class WeatherCycle : MonoBehaviour, IEffectAnimator<Weather, WeatherPrese
 
     public Cycler cycler;
     public Weather weather;
-
+    
     [SerializeField]
     private float cycleLength;
     public float CycleLength { get => cycleLength; set { cycleLength = value; } }

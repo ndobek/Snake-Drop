@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: -4160740208620165931}
   - component: {fileID: 3749149093674335167}
   - component: {fileID: -4777394427998619292}
-  - component: {fileID: -6156710244970153848}
   - component: {fileID: 6139035584766531580}
   m_Layer: 8
   m_Name: Feather Reed Grass
@@ -73,7 +72,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1638940919
-  m_SortingLayer: -3
+  m_SortingLayer: -4
   m_SortingOrder: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -112,23 +111,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef8bd7fbcbc6f3046acd27ee3cdf1e51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 0}
   xp: 0
   xpPerGrow: 4
---- !u!114 &-6156710244970153848
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3247554293500808389}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3419d908426698e468272ce801a4b549, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 0}
-  wind: {fileID: 11400000, guid: 68e89ca445933fc47bb4d7eadd9207fa, type: 2}
-  WindSpeedAnimatorVar: Wind Speed
 --- !u!95 &6139035584766531580
 Animator:
   serializedVersion: 3
