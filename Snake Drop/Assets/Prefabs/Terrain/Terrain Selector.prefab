@@ -103,7 +103,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -751484809
-  m_SortingLayer: -8
+  m_SortingLayer: -9
   m_SortingOrder: -1
   m_Sprite: {fileID: 9209676354135887688, guid: df7d5d598029266469f483e8ede88e9a,
     type: 3}
@@ -185,8 +185,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3444541771542092477, guid: 5e5c8677ec1a9024f803ed29df106e44,
         type: 3}
-      propertyPath: m_InstanceId
-      value: -776188
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4519267913832949860, guid: 5e5c8677ec1a9024f803ed29df106e44,
         type: 3}
@@ -371,7 +371,12 @@ PrefabInstance:
     - target: {fileID: 6836690365865625020, guid: 6fdbf623700a8ee48bda8bcef1e5d067,
         type: 3}
       propertyPath: m_InstanceId
-      value: -776230
+      value: -5566
+      objectReference: {fileID: 0}
+    - target: {fileID: 6836690365865625020, guid: 6fdbf623700a8ee48bda8bcef1e5d067,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7339047745199531711, guid: 6fdbf623700a8ee48bda8bcef1e5d067,
         type: 3}
@@ -492,6 +497,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_InstanceId
       value: -776280
+      objectReference: {fileID: 0}
+    - target: {fileID: 3444541771542092477, guid: 5e5c8677ec1a9024f803ed29df106e44,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4519267913832949860, guid: 5e5c8677ec1a9024f803ed29df106e44,
         type: 3}
@@ -751,7 +761,12 @@ PrefabInstance:
     - target: {fileID: 6836690365865625020, guid: 6fdbf623700a8ee48bda8bcef1e5d067,
         type: 3}
       propertyPath: m_InstanceId
-      value: -776330
+      value: -5302
+      objectReference: {fileID: 0}
+    - target: {fileID: 6836690365865625020, guid: 6fdbf623700a8ee48bda8bcef1e5d067,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7339047745199531711, guid: 6fdbf623700a8ee48bda8bcef1e5d067,
         type: 3}

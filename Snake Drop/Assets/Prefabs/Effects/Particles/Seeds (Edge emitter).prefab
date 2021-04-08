@@ -2584,7 +2584,7 @@ ParticleSystem:
       serializedVersion: 2
       m_Bits: 0
     influenceList:
-    - {fileID: 0}
+    - {fileID: 7731812558417669969, guid: 4e7be5919b9630f40bdcca53905123c2, type: 3}
   ClampVelocityModule:
     enabled: 1
     x:
