@@ -22,6 +22,10 @@ public class AnimGrow : MonoBehaviour, IGrowable
             if (anim != null) anim.SetGrowthStage(growthStage);
         }
     }
+    private void Start()
+    {
+        anim = GetComponent<PlantAnimator>();
+    }
     public bool ShouldGrow()
     {
         return xp >= xpPerGrow;

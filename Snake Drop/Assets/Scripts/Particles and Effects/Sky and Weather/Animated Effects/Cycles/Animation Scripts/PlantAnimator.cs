@@ -26,7 +26,9 @@ public class PlantAnimator : MonoBehaviour, IEffectAnimator<Animator, GrowthStag
             currentStageClips.Add(clip);
             
         }
-       
+        currentClip = currentStageClips[0];
+
+
     }
    
     private void Start()
@@ -38,10 +40,17 @@ public class PlantAnimator : MonoBehaviour, IEffectAnimator<Animator, GrowthStag
     }
     public void SetGrowthStage(int stage)
     {
-        if(species.stages.Count < stage)
-        {
+        SetStageClips(species.stages[stage]);
+        if (species.stages.Count < stage)
+        {                         
             Animate(CurrentState, species.stages[stage], 1f);
         }
+        else if(species.stages.Count > 0)
+        {
+            Animate(CurrentState, species.stages[species.stages.Count - 1], 1f);
+        }
+        
+        
     }
     public void Animate(GrowthStage keyframe1, GrowthStage keyframe2, float t)
     {
@@ -94,15 +103,16 @@ public class PlantAnimator : MonoBehaviour, IEffectAnimator<Animator, GrowthStag
 
 
             }
-            
+            currentClip = nextClip;
             if (isTransition == false)
             {
-                effect.Play(nextClip.stateName);
+                
+                effect.Play(currentClip.stateName);
             }
             else
             {
                 isTransition = false;
-                effect.Play(nextClip.stateName);
+                effect.Play(currentClip.stateName);
                 TransitionComplete(nextFrame, currentState);
 
             }
