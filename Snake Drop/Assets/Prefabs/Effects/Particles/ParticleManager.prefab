@@ -75,7 +75,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  maxParticlesPerSpin: 20
-  minParticlesPerSpin: 4
+  maxParticlesPerSpin: 3
+  minParticlesPerSpin: 1
   boardRotator: {fileID: 0}
   maxVariation: 3

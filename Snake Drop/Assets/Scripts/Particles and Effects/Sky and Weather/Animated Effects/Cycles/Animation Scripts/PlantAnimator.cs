@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlantAnimator : MonoBehaviour, IEffectAnimator<Animator, GrowthStage, GrowthStage>
+public class PlantAnimator : MonoBehaviour, IEffectAnimator<Animator, GrowthStage, GrowthStage>, IReact 
 {
     public EnvironmentalEffects environmentData;
     
@@ -26,8 +26,6 @@ public class PlantAnimator : MonoBehaviour, IEffectAnimator<Animator, GrowthStag
             currentStageClips.Add(clip);
             
         }
-        currentClip = currentStageClips[0];
-
 
     }
    
@@ -36,18 +34,21 @@ public class PlantAnimator : MonoBehaviour, IEffectAnimator<Animator, GrowthStag
         initialState = species.stages[0];
         currentState = initialState;
         previousState = initialState;
+        environmentData.affectedAnimators.Add(this);
+        currentClip = species.stages[0].clips[0];
+
         animator = GetComponent<Animator>();
     }
     public void SetGrowthStage(int stage)
     {
         SetStageClips(species.stages[stage]);
-        if (species.stages.Count < stage)
+        if (species.stages.Count > stage)
         {                         
             Animate(CurrentState, species.stages[stage], 1f);
         }
         else if(species.stages.Count > 0)
         {
-            Animate(CurrentState, species.stages[species.stages.Count - 1], 1f);
+            Animate(CurrentState, species.stages[species.stages.Count-1], 1f);
         }
         
         
@@ -120,5 +121,10 @@ public class PlantAnimator : MonoBehaviour, IEffectAnimator<Animator, GrowthStag
         }
         
         
+    }
+
+    public void React()
+    {
+        UpdateEffect(animator, currentState);
     }
 }

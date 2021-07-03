@@ -13,19 +13,19 @@ MonoBehaviour:
   m_Name: Low Wind
   m_EditorClassIdentifier: 
   intensities:
-  - value: 1
+  - intensityValue: 0
     minimumDuration: 5
     maximumDuration: 30
     weight: 2
-  - value: 2
+  - intensityValue: 1
     minimumDuration: 2
     maximumDuration: 5
     weight: 2
-  - value: 0
+  - intensityValue: 2
     minimumDuration: 3
     maximumDuration: 5
     weight: 1
-  - value: 3
+  - intensityValue: 3
     minimumDuration: 1
     maximumDuration: 3
     weight: 1
