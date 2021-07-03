@@ -12,3 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 678935c11346ed64c8bbb3380f7f0b28, type: 3}
   m_Name: XPParticleRule
   m_EditorClassIdentifier: 
+  particleMultiplier: 0.2
+  minParticles: 3
+  maxParticles: 5
+  particlesReflectScore: 0

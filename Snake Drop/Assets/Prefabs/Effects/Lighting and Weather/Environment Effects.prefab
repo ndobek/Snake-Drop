@@ -45,3 +45,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
   weatherCycle: {fileID: 0}
+  cycleLength: 1

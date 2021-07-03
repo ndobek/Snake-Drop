@@ -15,9 +15,11 @@ public class EnvironmentAnimator : MonoBehaviour, IEffectAnimator<EnvironmentalE
     public EnvironmentalState PreviousState { get => previousState; set { previousState = value; } }
     [HideInInspector]
     public List<EnvironmentalEffects> effects = new List<EnvironmentalEffects>();
+    
 
     private void Start()
     {
+        weather.weatherReactions.Add(this);
         initialState = weather.startingPreset.environmentalState;
         TransitionComplete(initialState, initialState);
     }
@@ -42,5 +44,5 @@ public class EnvironmentAnimator : MonoBehaviour, IEffectAnimator<EnvironmentalE
         effect.SetState(nextFrame);
     }
 
-  
+    
 }

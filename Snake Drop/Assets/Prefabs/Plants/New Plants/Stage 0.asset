@@ -9,15 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03cb2890cf1926a49aad132c93ae16d1, type: 3}
-  m_Name: Calm Light Breeze
+  m_Script: {fileID: 11500000, guid: 177c46596a1e5494e9e1c507cc4ab3c0, type: 3}
+  m_Name: Stage 0
   m_EditorClassIdentifier: 
-  intensities:
-  - intensityValue: 0
-    minimumDuration: 3
-    maximumDuration: 4
-    weight: 1
-  - intensityValue: 1
-    minimumDuration: 3
-    maximumDuration: 4
-    weight: 1
+  growthStageNumber: 0
+  clips:
+  - {fileID: 11400000, guid: 6b46a47c07245ee4f84688c4f6a42a6b, type: 2}

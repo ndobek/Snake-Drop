@@ -1488,6 +1488,11 @@ PrefabInstance:
       propertyPath: weather
       value: 
       objectReference: {fileID: 6930419407914456619}
+    - target: {fileID: 4227435768038569810, guid: 5575435cc1e020b4393d4ff0f165c1e8,
+        type: 3}
+      propertyPath: cycler
+      value: 
+      objectReference: {fileID: 4199654693849267106}
     - target: {fileID: 7813644410910098251, guid: 5575435cc1e020b4393d4ff0f165c1e8,
         type: 3}
       propertyPath: m_LocalPosition.x

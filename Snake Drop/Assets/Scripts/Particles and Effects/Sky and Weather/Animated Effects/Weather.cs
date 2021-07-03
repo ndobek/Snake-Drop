@@ -134,7 +134,7 @@ public class Weather : MonoBehaviour, ICyclical
     public WeatherState targetState;
     public WeatherState startingState;
     public WeatherPreset startingPreset;
-    public List<IEffectAnimator<EnvironmentAnimator, EnvironmentalState, EnvironmentalState>> weatherReactions = new List<IEffectAnimator<EnvironmentAnimator, EnvironmentalState, EnvironmentalState>>();
+    public List<IEffectAnimator<EnvironmentalEffects, EnvironmentalState, EnvironmentalState>> weatherReactions = new List<IEffectAnimator<EnvironmentalEffects, EnvironmentalState, EnvironmentalState>>();
     public VolumeAnimator volumeAnimator;
     [SerializeField]
     private float cycleLength;
@@ -170,12 +170,14 @@ public class Weather : MonoBehaviour, ICyclical
         queuedPresets.Enqueue(newWeather);
         
         Debug.Log("Adding Forecast: "+ newWeather.Label);
-        foreach (IEffectAnimator<EnvironmentAnimator, EnvironmentalState, EnvironmentalState> reaction in weatherReactions)
+        foreach (IEffectAnimator<EnvironmentalEffects, EnvironmentalState, EnvironmentalState> reaction in weatherReactions)
         {
             EnvironmentalState oldState = reaction.CurrentState;
             reaction.Animate(oldState, newWeather.environmentalState, 1f);
-            
+
         }
+
+
     }
     private void TransitionComplete()
     {
@@ -187,7 +189,8 @@ public class Weather : MonoBehaviour, ICyclical
         cyclePoint += Time.deltaTime;
         if (!MidCycle() && !MidTransition())
         {
-            WeatherVariantChange();
+            WeatherVariantChange(); 
+            
         }
         if (MidTransition())
         {
@@ -195,6 +198,11 @@ public class Weather : MonoBehaviour, ICyclical
         }
         else if (queuedStates.Count > 0)
         {
+            if (queuedPresets.Count > 0)
+            {
+                startingPreset = queuedPresets.Dequeue(); 
+                
+            }
             startingState = targetState;
             targetState = queuedStates.Dequeue();
             transitionPoint = 0;
