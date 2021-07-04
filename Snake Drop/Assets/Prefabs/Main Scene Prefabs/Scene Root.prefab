@@ -2080,6 +2080,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 7360507374275313737, guid: ba28145764ca10040b2f33bbf1016700,
+        type: 3}
+      propertyPath: rotationLerpSpeed
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 7360507374275313742, guid: ba28145764ca10040b2f33bbf1016700,
         type: 3}
       propertyPath: ScoreText
