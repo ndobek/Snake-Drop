@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: XPParticleRule
   m_EditorClassIdentifier: 
   particleMultiplier: 0.2
-  minParticles: 3
-  maxParticles: 5
+  minParticles: 1
+  maxParticles: 1
   particlesReflectScore: 0
