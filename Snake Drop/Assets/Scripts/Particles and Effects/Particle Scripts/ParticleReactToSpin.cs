@@ -14,13 +14,12 @@ public class ParticleReactToSpin : MonoBehaviour, IReact
     public int maxVariation;
     //public float radialVMultiplier;
    // public float rotationalVMultiplier;
-    // private void Start()
-    // {
-    //     //rigidBody = GetComponent<Rigidbody>();
+    private void Start()
+    {
+        //rigidBody = GetComponent<Rigidbody>();
 
-    //     //TODO: MAYBE ADD THIS BACK IN
-    //     boardRotator.reactToSpin.Add(this);
-    // }
+        boardRotator.reactToSpin.Add(this);
+    }
    // private void OnParticleTrigger()
    // {
        // totalParticlesBehindPlanet.Clear();

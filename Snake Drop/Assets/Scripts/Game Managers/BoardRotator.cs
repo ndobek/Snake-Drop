@@ -14,6 +14,8 @@ public class BoardRotator : MonoBehaviour
     [HideInInspector]
     public Directions.Direction currentDirection = Directions.Direction.UP;
 
+    public List<IReact> reactToSpin;
+
     private bool EntranceMismatched = false;
 
     public void Update()
@@ -96,6 +98,7 @@ public class BoardRotator : MonoBehaviour
     private void OnRotate()
     {
         UpdateRotation();
+        foreach(IReact obj in reactToSpin) obj.React();
         GameManager.instance.playerManagers[0].playGrid.InvokeGridAction();
     }
 
