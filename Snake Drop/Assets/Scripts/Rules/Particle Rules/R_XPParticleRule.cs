@@ -28,9 +28,13 @@ public class R_XPParticleRule : Rule
             {
                 Vector3 centre = collection.WorldPosition();
                 player.particleManager.TriggerXPParticles(numParticles(), centre);
+            Debug.Log(numParticles());
+            }
+            else 
+            {
+            player.particleManager.TriggerXPParticles(numParticles(), block.Slot.transform.position);
             }
 
-            player.particleManager.TriggerXPParticles(numParticles(), block.Slot.transform.position);
          
     }
 }
