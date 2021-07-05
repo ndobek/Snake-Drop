@@ -13,6 +13,8 @@ public class PowerupsDisplayer : MonoBehaviour
     private Image iconRenderer;
     [SerializeField]
     private Image progressBar;
+    [SerializeField]
+    private GameObject powerupButton;
 
     public void Update()
     {
@@ -31,6 +33,8 @@ public class PowerupsDisplayer : MonoBehaviour
 
 
         if (progressBar != null) progressBar.fillAmount = FillBarPercentage();
+        
+        if(powerupButton != null) powerupButton.SetActive(powerupManager.numAvailablePowerups > 0);
     }
 
 
