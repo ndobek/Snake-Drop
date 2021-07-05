@@ -223,6 +223,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4331765252807477201, guid: 3f3fb188545baca4d9f6112f1c0f42b0,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8907504684116937870}
     - target: {fileID: 4482616952611418010, guid: 3f3fb188545baca4d9f6112f1c0f42b0,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -607,9 +612,9 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 61152496271089961}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &9134113234737792770 stripped
+--- !u!1 &9134113235786822595 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 9087035106356389419, guid: 3f3fb188545baca4d9f6112f1c0f42b0,
+  m_CorrespondingSourceObject: {fileID: 9087035107366769386, guid: 3f3fb188545baca4d9f6112f1c0f42b0,
     type: 3}
   m_PrefabInstance: {fileID: 61152496271089961}
   m_PrefabAsset: {fileID: 0}
@@ -3276,7 +3281,7 @@ PrefabInstance:
         type: 3}
       propertyPath: gameOverScreen
       value: 
-      objectReference: {fileID: 9134113234737792770}
+      objectReference: {fileID: 9134113235786822595}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7bc6f70463e52d241993f660fa9c9818, type: 3}
 --- !u!4 &9134113236033271032 stripped
