@@ -97,14 +97,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c88f5cead0c0b2a4eb05b5900433f8d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AssetsPPU: 20
-  m_RefResolutionX: 540
-  m_RefResolutionY: 960
+  m_AssetsPPU: 10
+  m_RefResolutionX: 126
+  m_RefResolutionY: 224
   m_UpscaleRT: 0
   m_PixelSnapping: 1
   m_CropFrameX: 0
   m_CropFrameY: 0
-  m_StretchFill: 0
+  m_StretchFill: 1
 --- !u!114 &1214469556531246204
 MonoBehaviour:
   m_ObjectHideFlags: 0
