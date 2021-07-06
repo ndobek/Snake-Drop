@@ -18,7 +18,13 @@ public class PowerupsDisplayer : MonoBehaviour
     private Image progressBar;
     [SerializeField]
     private GameObject powerupButton;
+    private UIFade powerupFader;
 
+    void Awake()
+    {
+        powerupFader = powerupButton.GetComponent<UIFade>();
+        powerupFader.SetFadedOut();
+    }
     public void Update()
     {
         if (textObject != null)
@@ -36,8 +42,11 @@ public class PowerupsDisplayer : MonoBehaviour
 
 
         if (progressBar != null) progressBar.fillAmount = FillBarPercentage();
-        
-        if(powerupButton != null) powerupButton.SetActive(powerupManager.numAvailablePowerups > 0);
+
+        if (powerupButton != null)
+        {
+            powerupFader.SetFade(powerupManager.numAvailablePowerups > 0);
+        }
     }
 
 
