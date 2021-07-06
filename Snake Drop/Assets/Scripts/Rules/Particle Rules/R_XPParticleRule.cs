@@ -9,6 +9,7 @@ public class R_XPParticleRule : Rule
     public int minParticles = 3;
     public int maxParticles = 5;
     public bool particlesReflectScore = false;
+    public bool particlesOnBlockBreak = false;
     protected override void Action(Block block, PlayerManager player = null)
     {
 
@@ -28,9 +29,9 @@ public class R_XPParticleRule : Rule
             {
                 Vector3 centre = collection.WorldPosition();
                 player.particleManager.TriggerXPParticles(numParticles(), centre);
-            Debug.Log(numParticles());
+            
             }
-            else 
+            else if (particlesOnBlockBreak)
             {
             player.particleManager.TriggerXPParticles(numParticles(), block.Slot.transform.position);
             }
