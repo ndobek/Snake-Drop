@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 987620008699396775}
   - component: {fileID: 987620008699396774}
   - component: {fileID: 987620008699396773}
+  - component: {fileID: 435249952238379011}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -97,3 +98,15 @@ MonoBehaviour:
   maxTotalLength: {fileID: 11400000, guid: 180b49891043d474eb2b9435c540d056, type: 2}
   minTotalEntropy: {fileID: 11400000, guid: f8b95da70db68684287a503e7cb2fdf9, type: 2}
   maxTotalEntropy: {fileID: 11400000, guid: 962e849cc16b8d84a89901a886af65ba, type: 2}
+--- !u!114 &435249952238379011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 987620008699396769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5f1be92e08649b499b5376664c610c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
