@@ -54,8 +54,8 @@ MonoBehaviour:
     type: 3}
   numberOfBlockBreakParticles: 8
   xPIndex: 0
-  xPPoolSize: 15
-  blockBreakPoolSize: 15
+  xPPoolSize: 121
+  blockBreakPoolSize: 121
   blockBreakIndex: 0
   pSystemZCoord: -10
 --- !u!114 &5291395909477978013
