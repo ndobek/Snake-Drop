@@ -2,25 +2,36 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class PowerupsDisplayer : MonoBehaviour
 {
     public PowerupManager powerupManager;
 
     [SerializeField]
-    private Text text;
+    private TMP_Text textObject;
+    [SerializeField]
+    private string text;
     [SerializeField]
     private Image iconRenderer;
     [SerializeField]
     private Image progressBar;
+    [SerializeField]
+    private GameObject powerupButton;
+    private UIFade powerupFader;
 
+    void Awake()
+    {
+        powerupFader = powerupButton.GetComponent<UIFade>();
+        powerupFader.SetFadedOut();
+    }
     public void Update()
     {
-        if (text != null)
+        if (textObject != null)
         {
             int num = powerupManager.extraPowerups;
-            if (num > 0) text.text = num.ToString();
-            else text.text = " ";
+            if (num > 0) textObject.text = text + " x" + (num + 1).ToString();
+            else textObject.text = text;
         }
 
         if (iconRenderer != null)
@@ -31,6 +42,11 @@ public class PowerupsDisplayer : MonoBehaviour
 
 
         if (progressBar != null) progressBar.fillAmount = FillBarPercentage();
+
+        if (powerupButton != null)
+        {
+            powerupFader.SetFade(powerupManager.numAvailablePowerups > 0);
+        }
     }
 
 

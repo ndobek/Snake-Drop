@@ -12,6 +12,7 @@ public class PowerupManager : MonoBehaviour
     public Powerup[] possiblePowerups;
     public Powerup currentPowerup;
     public int extraPowerups;
+    public int numAvailablePowerups => extraPowerups + (currentPowerup != null? 1:0);
 
     public int PowerupBank
     {
