@@ -15,4 +15,5 @@ MonoBehaviour:
   particleMultiplier: 0.2
   minParticles: 1
   maxParticles: 1
-  particlesReflectScore: 0
+  particlesReflectScore: 1
+  particlesOnBlockBreak: 0
