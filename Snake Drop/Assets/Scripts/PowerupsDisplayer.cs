@@ -20,6 +20,9 @@ public class PowerupsDisplayer : MonoBehaviour
     private GameObject powerupButton;
     private UIFade powerupFader;
 
+    [SerializeField]
+    private UIFade mustUseIndicator;
+
     void Awake()
     {
         powerupFader = powerupButton.GetComponent<UIFade>();
@@ -46,6 +49,14 @@ public class PowerupsDisplayer : MonoBehaviour
         if (powerupButton != null)
         {
             powerupFader.SetFade(powerupManager.numAvailablePowerups > 0);
+        }
+
+        if(mustUseIndicator != null){
+            PlayerManager player = GameManager.instance.playerManagers[0];
+            if (player.GameInProgress && !player.RoundInProgress)
+            {
+                mustUseIndicator.SetFade(!player.entranceManager.CheckForValidEntrancesToGrid(player, player.playGrid) && player.Powerup.currentPowerup != null);
+            }
         }
     }
 

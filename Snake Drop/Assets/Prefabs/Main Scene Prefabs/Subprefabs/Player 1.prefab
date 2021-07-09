@@ -3164,7 +3164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b75b61386d400c94da33631041670d28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  powerupFrequency: 100
+  powerupFrequency: 5000
   currentProgress: 0
   possiblePowerups:
   - {fileID: 11400000, guid: 9d43332ab0eefdd44aef41d8f0227d3e, type: 2}
