@@ -5,7 +5,9 @@ using UnityEngine;
 public class BoardRotator : MonoBehaviour
 {
     [SerializeField]
-    private float rotationLerpSpeed = 1;
+    private AnimationCurve rotationCurve;
+    [SerializeField]
+    private float rotationDuration = 1;
     private float targetRotation = 0;
     public int EnterSlotMoveDistance = 11;
     public bool KeepEntranceSlotOnOneSide;
@@ -28,15 +30,33 @@ public class BoardRotator : MonoBehaviour
                 RotateEntranceToMatchBoard();
             }
             RotateBoardToMatchEntrance();
-            
+
         }
-        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 0, targetRotation), rotationLerpSpeed);
     }
-    
+
     public void SetRotation(Directions.Direction UpDirection)
     {
-        currentDirection = UpDirection;
-        OnRotate();
+        if (currentDirection != UpDirection)
+        {
+            currentDirection = UpDirection;
+            switch (currentDirection)
+            {
+                case Directions.Direction.UP:
+                    targetRotation = 0;
+                    break;
+                case Directions.Direction.DOWN:
+                    targetRotation = 180;
+                    break;
+                case Directions.Direction.LEFT:
+                    targetRotation = 270;
+                    break;
+                case Directions.Direction.RIGHT:
+                    targetRotation = 90;
+                    break;
+            }
+            StartCoroutine(RotationRoutine());
+            GameManager.instance.playerManagers[0].playGrid.InvokeGridAction();
+        }
     }
 
     public void RotateClockwise()
@@ -60,8 +80,7 @@ public class BoardRotator : MonoBehaviour
             if (roundInProgress) EntranceMismatched = true;
             else RotateEntranceSlot(clockwise);
         }
-        
-        foreach(IReact obj in reactToSpin) obj.React();
+        foreach (IReact obj in reactToSpin) obj.React();
 
     }
 
@@ -97,29 +116,23 @@ public class BoardRotator : MonoBehaviour
         SetRotation(Directions.TranslateDirection(GameManager.instance.playerManagers[0].enterSlot.GetEdgeInfo().direction(), EntranceSide));
     }
 
-    private void OnRotate()
+    private IEnumerator RotationRoutine()
     {
-        UpdateRotation();
-        GameManager.instance.playerManagers[0].playGrid.InvokeGridAction();
-    }
+        float startTime = Time.time;
+        float percentageComplete = (Time.time - startTime) / rotationDuration;
 
+        Quaternion startRot = transform.rotation;
+        Quaternion targetRot = Quaternion.Euler(0, 0, targetRotation);
 
-    public void UpdateRotation()
-    {
-        switch (currentDirection)
+        while (true)
         {
-            case Directions.Direction.UP:
-                targetRotation = 0;
-                return;
-            case Directions.Direction.DOWN:
-                targetRotation = 180;
-                return;
-            case Directions.Direction.LEFT:
-                targetRotation = 270;
-                return;
-            case Directions.Direction.RIGHT:
-                targetRotation = 90;
-                return;
+            percentageComplete = (Time.time - startTime) / rotationDuration;
+            transform.rotation = Quaternion.Lerp(startRot, targetRot, rotationCurve.Evaluate(percentageComplete));
+
+            yield return new WaitForEndOfFrame();
+            if (percentageComplete >= 1) break;
         }
+
+        transform.rotation = targetRot;
     }
 }
