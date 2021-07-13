@@ -55,9 +55,6 @@ public class PlayerManager : MonoBehaviour
             DoGridActions();
 
             FillPreviewBar();
-
-            //DifficultyManager difficulty = GameManager.instance.difficultyManager;
-            //if (difficulty.HeightLimit) HeightLimitIndicator.LowerHeightLimit(SnakeHead.FindSnakeMaxY() + difficulty.HeightLimitModifier);
         }
 
     }
@@ -167,7 +164,6 @@ public class PlayerManager : MonoBehaviour
         }
         
         entranceManager.UpdateAnimations();
-        //Score.checkpointManager.TryCheckpoint();
         FillPreviewBar();
         ResetMoveRestrictions();
         SnakeHead = waitSlot.Block;
