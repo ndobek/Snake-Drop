@@ -80,7 +80,14 @@ public class ScoreManager : MonoBehaviour
     public void UpdateScore()
     {
         SaveData oldScore = SaveManager.LoadHighScore();
-        HighScore = oldScore !=null?oldScore.playerData.score.score : 0;
+        if (oldScore != null && oldScore.playerData != null && oldScore.playerData.score != null)
+        {
+            HighScore = oldScore.playerData.score.score;
+        }
+        else
+        {
+            HighScore = 0;
+        }
         if (score > HighScore)
         {
             SaveManager.SaveHighScore();

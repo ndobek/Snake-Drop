@@ -26,6 +26,10 @@ public class PowerupsDisplayer : MonoBehaviour
     void Awake()
     {
         powerupFader = powerupButton.GetComponent<UIFade>();
+    }
+
+    private void Start()
+    {
         powerupFader.SetFadedOut();
     }
     public void Update()

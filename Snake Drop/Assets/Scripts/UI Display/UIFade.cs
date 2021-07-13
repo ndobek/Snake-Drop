@@ -41,7 +41,10 @@ public class UIFade : MonoBehaviour
 
     void OnEnable()
     {
-        if(beginFadedOut) SetFadedOut();
+        if (Group == null) Group = GetComponent<CanvasGroup>();
+        if (rectTransform == null) rectTransform = GetComponent<RectTransform>();
+
+        if (beginFadedOut) SetFadedOut();
         if (fadeInOnEnable) FadeIn();
     }
 
@@ -91,13 +94,15 @@ public class UIFade : MonoBehaviour
 
     private IEnumerator DoFade(bool inOut)
     {
+        if (Group == null) Group = GetComponent<CanvasGroup>();
+        if (rectTransform == null) rectTransform = GetComponent<RectTransform>();
+
         Vector3 originalPos = rectTransform.position;
         Vector3 targetPos = originalPos + (Vector3)AnimDistance;
 
         float actualDelay = RandomizeDelay ? Random.Range(0, Delay) : Delay;
 
         float startTime = Time.time + actualDelay;
-        float endTime = startTime + Duration;
         float percentageComplete = (Time.time - startTime) / Duration;
 
         while (true)
