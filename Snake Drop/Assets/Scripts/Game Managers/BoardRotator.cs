@@ -8,7 +8,8 @@ public class BoardRotator : MonoBehaviour
     private AnimationCurve rotationCurve;
     [SerializeField]
     private float rotationDuration = 1;
-    private float targetRotation = 0;
+    [HideInInspector]
+    public float targetRotation = 0;
     public int EnterSlotMoveDistance = 11;
     public bool KeepEntranceSlotOnOneSide;
     public Directions.Direction EntranceSide;
@@ -54,6 +55,7 @@ public class BoardRotator : MonoBehaviour
                     targetRotation = 90;
                     break;
             }
+            foreach (IReact obj in reactToSpin) obj.React();
             StartCoroutine(RotationRoutine());
             GameManager.instance.playerManagers[0].playGrid.InvokeGridAction();
         }
@@ -80,7 +82,7 @@ public class BoardRotator : MonoBehaviour
             if (roundInProgress) EntranceMismatched = true;
             else RotateEntranceSlot(clockwise);
         }
-        foreach (IReact obj in reactToSpin) obj.React();
+
 
     }
 

@@ -2,18 +2,41 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RotationLerper : MonoBehaviour
+public class RotationLerper : MonoBehaviour, IReact
 {
-    public Transform target;
-    private Transform thisTransform;
+    public BoardRotator target;
     [SerializeField]
-    private float lerpSpeed;
-    private void Awake()
+    private AnimationCurve rotationCurve;
+    [SerializeField]
+    private float rotationDuration = 1;
+
+    public void Awake()
     {
-        if (thisTransform == null) thisTransform = GetComponent<Transform>();
+        target.reactToSpin.Add(this);
     }
-    void Update()
+
+    private IEnumerator RotationRoutine()
     {
-        thisTransform.rotation = Quaternion.Lerp(thisTransform.rotation, target.rotation, lerpSpeed);
+        float startTime = Time.time;
+        float percentageComplete = (Time.time - startTime) / rotationDuration;
+
+        Quaternion startRot = transform.rotation;
+        Quaternion targetRot = Quaternion.Euler(0, 0, target.targetRotation);
+
+        while (true)
+        {
+            percentageComplete = (Time.time - startTime) / rotationDuration;
+            transform.rotation = Quaternion.LerpUnclamped(startRot, targetRot, rotationCurve.Evaluate(percentageComplete));
+
+            yield return new WaitForEndOfFrame();
+            if (percentageComplete >= 1) break;
+        }
+
+        transform.rotation = targetRot;
+    }
+
+    public void React()
+    {
+        StartCoroutine(RotationRoutine());
     }
 }
