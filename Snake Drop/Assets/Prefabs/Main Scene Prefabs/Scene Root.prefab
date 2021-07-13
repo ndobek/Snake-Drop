@@ -3526,6 +3526,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7a26eccb6d64bc4bab3a3400dde71e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &7973054528327324941 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2178033171186639107, guid: b64e860ead7d8fc4e9dff3879710696e,
+    type: 3}
+  m_PrefabInstance: {fileID: 8114386435233936398}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8319934933546858072
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3543,6 +3549,11 @@ PrefabInstance:
       propertyPath: MenuUIFader
       value: 
       objectReference: {fileID: 5699491962187139446}
+    - target: {fileID: 435249952238379011, guid: 7bc6f70463e52d241993f660fa9c9818,
+        type: 3}
+      propertyPath: continueButton
+      value: 
+      objectReference: {fileID: 7973054528327324941}
     - target: {fileID: 987620008699396768, guid: 7bc6f70463e52d241993f660fa9c9818,
         type: 3}
       propertyPath: m_RootOrder
@@ -3603,6 +3614,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Game Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 987620008699396775, guid: 7bc6f70463e52d241993f660fa9c9818,
+        type: 3}
+      propertyPath: boardRotator
+      value: 
+      objectReference: {fileID: 6322816129438425964}
     - target: {fileID: 987620008699396775, guid: 7bc6f70463e52d241993f660fa9c9818,
         type: 3}
       propertyPath: plantManager

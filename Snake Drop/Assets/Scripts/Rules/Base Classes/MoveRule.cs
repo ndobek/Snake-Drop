@@ -7,7 +7,7 @@ public abstract class MoveRule : ScriptableObject
     protected virtual bool UniversalRules(Block block, BlockSlot slot, PlayerManager player = null)
     {
         if (slot == null) return false;
-        if (player && !player.HeightLimitIndicator.CheckHeightLimit(slot)) return false;
+        //if (player && !player.HeightLimitIndicator.CheckHeightLimit(slot)) return false;
         return true;
     }
     public bool CanMoveTo(Block block, BlockSlot slot, PlayerManager player = null)

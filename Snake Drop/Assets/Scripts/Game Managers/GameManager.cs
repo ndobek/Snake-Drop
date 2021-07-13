@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public PlayerManager[] playerManagers;
     public GameModeManager GameModeManager;
     public PlantManager plantManager;
+    public BoardRotator boardRotator;
 
 
 
@@ -88,6 +89,7 @@ public class GameManager : MonoBehaviour
     {
         UpdateScore();
         gameOverScreen.SetActive(true);
+        SaveManager.DeleteSave(SaveManager.AutoSaveSaveName);
     }
 
     private void UpdateScore()
@@ -106,5 +108,6 @@ public class GameManager : MonoBehaviour
     public void LoadGame(SaveData save)
     {
         save.LoadTo(this);
+        boardRotator.RotateBoardToMatchEntrance();
     }
 }

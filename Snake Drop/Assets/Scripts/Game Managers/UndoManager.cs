@@ -8,7 +8,9 @@ public class UndoManager : MonoBehaviour
 
     public void Save()
     {
-        moves.Push(new SaveData(GameManager.instance));
+        SaveData data = new SaveData(GameManager.instance);
+        moves.Push(data);
+        SaveManager.SaveGame(SaveManager.AutoSaveSaveName, data);
     }
 
     public void Undo()

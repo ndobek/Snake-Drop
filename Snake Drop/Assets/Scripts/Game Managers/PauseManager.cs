@@ -9,6 +9,9 @@ public class PauseManager : MonoBehaviour
     [SerializeField]
     private UIFade MenuUIFader;
 
+    [SerializeField]
+    private GameObject continueButton;
+
     private GameManager gameManager;
     private PlayerManager playerManager;
 
@@ -21,6 +24,12 @@ public class PauseManager : MonoBehaviour
         playerManager = gameManager.playerManagers[0];
     }
 
+    void Start()
+    {
+        GameManager.instance.LoadGame(SaveManager.LoadAutoSave());
+        Pause();
+    }
+
     public void Pause(bool onOff)
     {
         if (onOff) Pause();
@@ -29,6 +38,7 @@ public class PauseManager : MonoBehaviour
     public void Pause()
     {
         playerManager.GameInProgress = false;
+        continueButton.SetActive(SaveManager.SaveExists(SaveManager.AutoSaveSaveName));
         GameUIFader.FadeOut();
         MenuUIFader.FadeIn();
     }

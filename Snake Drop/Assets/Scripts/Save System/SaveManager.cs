@@ -9,11 +9,17 @@ public static class SaveManager
     public static string defaultSaveName = "planet_";
     public static string defaultSuffix = ".planet";
     public static string HighScoreSaveName = "High Score";
+    public static string AutoSaveSaveName = "Auto Save";
 
-    public static void SaveGame(string name)
+
+    public static void SaveGame(string name, SaveData data)
     {
         CheckDirExists();
-        SaveFormatter.Save(GetPath(name), new SaveData(GameManager.instance));
+        SaveFormatter.Save(GetPath(name), data);
+    }
+    public static void SaveGame(string name)
+    {
+        SaveGame(name, new SaveData(GameManager.instance));
     }
 
     public static bool SaveExists(string name)
@@ -30,11 +36,21 @@ public static class SaveManager
     {
         SaveGame(HighScoreSaveName);
     }
+    public static void AutoSave()
+    {
+        SaveGame(AutoSaveSaveName);
+    }
     public static SaveData LoadHighScore()
     {
         if (!SaveExists(HighScoreSaveName)) return null;
         return LoadGame(HighScoreSaveName);
     }
+    public static SaveData LoadAutoSave()
+    {
+        if (!SaveExists(AutoSaveSaveName)) return null;
+        return LoadGame(AutoSaveSaveName);
+    }
+
 
     public static void SaveGame()
     {
