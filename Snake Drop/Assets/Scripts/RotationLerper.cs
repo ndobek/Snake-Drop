@@ -14,11 +14,6 @@ public class RotationLerper : MonoBehaviour
     }
     void Update()
     {
-        Vector3 currentEuler = thisTransform.rotation.eulerAngles;
-        Vector3 targetEuler = thisTransform.rotation.eulerAngles;
-
-        if (targetEuler.z < currentEuler.z) targetEuler.z += 360;
-
-        thisTransform.rotation = Quaternion.Lerp(thisTransform.rotation, Quaternion.Euler(targetEuler), lerpSpeed);
+        thisTransform.rotation = Quaternion.Lerp(thisTransform.rotation, target.rotation, lerpSpeed);
     }
 }
