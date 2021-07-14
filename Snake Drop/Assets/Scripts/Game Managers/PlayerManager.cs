@@ -179,6 +179,7 @@ public class PlayerManager : MonoBehaviour
         BlockSlot destination = snakeHead.Slot.GetNeighbor(direction);
         if (SnakeHead.CanMoveToWithoutCrashing(destination, this) && enterSlot.Active/*GameManager.instance.BasicMove.CanMoveTo(SnakeHead, destination, this)*/)
         {
+            Undoer.Save();
             snakeHead.MoveTo(destination, this);/*GameManager.instance.BasicMove.OnMove(SnakeHead, destination, this)*/;
             GameManager.instance.plantManager.PlantNewPlants(destination.transform.position);
             RoundInProgress = true;
@@ -254,7 +255,6 @@ public class PlayerManager : MonoBehaviour
                 }
                 else
                 {
-                    Undoer.Save();
                     StartNewRound(direction);
                 }
             }
