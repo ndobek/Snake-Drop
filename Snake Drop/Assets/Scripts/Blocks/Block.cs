@@ -260,6 +260,25 @@ public class Block : MonoBehaviour
         Kill(player);
     }
 
+    public int SnakeLength()
+    {
+        if (Tail != null)
+        {
+            return Tail.SnakeLength() + 1;
+        }
+        else return 1;
+    }
+
+    public int SnakeLengthInPlayGrid()
+    {
+        PlayGrid playGrid = GameManager.instance.playerManagers[0].playGrid;
+        if (Tail != null && Tail.slot.playGrid == playGrid)
+        {
+            return Tail.SnakeLengthInPlayGrid() + 1;
+        }
+        else return slot.playGrid == playGrid ? 1 : 0;
+    }
+
 
     public int FindSnakeMaxY()
     {

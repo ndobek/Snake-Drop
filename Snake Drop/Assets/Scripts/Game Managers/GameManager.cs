@@ -33,10 +33,6 @@ public class GameManager : MonoBehaviour
     {
         if(!instance) instance = this;
     }
-    private void Start()
-    {
-        // StartGame();
-    }
 
     public void OnCrash()
     {

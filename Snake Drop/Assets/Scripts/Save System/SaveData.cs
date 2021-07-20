@@ -35,12 +35,13 @@ public class PlayerSaveData
     public bool GameInProgress;
     public EntranceSlotSaveData EnterSlot;
     public int mostRecentDirectionMoved;
+    public int mostRecentSnakeLength;
 
     public PlayerSaveData(PlayerManager SaveObj)
     {
         snakeHead = new BlockLocationData(SaveObj.SnakeHead);
-        score = new ScoreSaveData(SaveObj.Score);
         powerup = new PowerupSaveData(SaveObj.Powerup);
+        score = new ScoreSaveData(SaveObj.Score);
         playGrid = new GridSaveData(SaveObj.playGrid);
         previewGrid = new GridSaveData(SaveObj.previewGrid);
         entranceManager = new EntranceManagerSaveData(SaveObj.entranceManager);
@@ -48,23 +49,26 @@ public class PlayerSaveData
         GameInProgress = SaveObj.GameInProgress;
         EnterSlot = new EntranceSlotSaveData(SaveObj.enterSlot);
         mostRecentDirectionMoved = (int)SaveObj.playerController.SecondMostRecentDirectionMoved;
+        mostRecentSnakeLength = SaveObj.mostRecentSnakeLength;
 
     }
     
     public void LoadTo(PlayerManager LoadObj, GameManager gameManager)
     {
-        score.LoadTo(LoadObj.Score);
-        powerup.LoadTo(LoadObj.Powerup, gameManager);
+
         playGrid.LoadTo(LoadObj.playGrid, gameManager);
         previewGrid.LoadTo(LoadObj.previewGrid, gameManager);
         playGrid.LoadReferences(gameManager);
         previewGrid.LoadReferences(gameManager);
         entranceManager.LoadTo(LoadObj.entranceManager, gameManager);
-        LoadObj.RoundInProgress = RoundInProgress;
-        LoadObj.GameInProgress = GameInProgress;
         LoadObj.SnakeHead = snakeHead.GetBlock(LoadObj);
         LoadObj.PositionWaitSlot(LoadObj.entranceManager.GetSlot(EnterSlot.x, EnterSlot.y));
         LoadObj.playerController.MostRecentDirectionMoved = (Directions.Direction)mostRecentDirectionMoved;
+        LoadObj.mostRecentSnakeLength = mostRecentSnakeLength;
+        score.LoadTo(LoadObj.Score);
+        powerup.LoadTo(LoadObj.Powerup, gameManager);
+        LoadObj.RoundInProgress = RoundInProgress;
+        LoadObj.GameInProgress = GameInProgress;
     }
 }
 
@@ -86,6 +90,7 @@ public class PowerupSaveData
     {
         LoadObj.currentProgress = currentProgress;
         if(currentPowerup != "null") LoadObj.currentPowerup = gameManager.Powerups.getObject(currentPowerup) as Powerup;
+        else LoadObj.currentPowerup = null;
         LoadObj.extraPowerups = extraPowerups;
     }
 }

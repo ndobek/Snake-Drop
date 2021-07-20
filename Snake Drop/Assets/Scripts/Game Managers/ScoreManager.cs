@@ -14,13 +14,8 @@ public class ScoreManager : MonoBehaviour
         {
            GameManager.instance.playerManagers[0].Powerup.UpdateProgress(value - score);
              score = value;
-            //ScoreText.text = "Score: " + score.ToString();
         }
     }
-   // [SerializeField]
-   // //private Text ScoreText;
-   //// private ScoreDisplayer scoreDisplay;
-   // [HideInInspector]
     private int multiplier;
     public int Multiplier
     {
@@ -28,22 +23,17 @@ public class ScoreManager : MonoBehaviour
         set
         {
             multiplier = value;
-            //MultiplierText.text = "Multiplier: " + multiplier.ToString();
         }
     }
-    //[SerializeField]
-    //private Text MultiplierText;
 
     private int highScore;
     public int HighScore
     {
         get { return highScore; }
         set {
-            //HighScoreText.text = "High Score: " + value; 
             highScore = value; 
         }
     }
-    //public Text HighScoreText;
 
 
 
@@ -54,7 +44,7 @@ public class ScoreManager : MonoBehaviour
         set { numberOfSnakes = value; }
     }
 
-    private void Start()
+    private void Awake()
     {
         ResetGame();
     }

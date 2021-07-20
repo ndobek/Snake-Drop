@@ -39,8 +39,12 @@ public class PlayerManager : MonoBehaviour
     public bool GameInProgress;
     private bool StopMakingSnakes = false;
 
+    public int mostRecentSnakeLength;
+
     public void OnCrash()
     {
+        Rule OnCrash = GameManager.instance.GameModeManager.GameMode.OnCrash;
+        if(OnCrash != null) OnCrash.Invoke(snakeHead, this);
         RoundInProgress = false;
     }
 
@@ -167,6 +171,7 @@ public class PlayerManager : MonoBehaviour
         FillPreviewBar();
         ResetMoveRestrictions();
         SnakeHead = waitSlot.Block;
+        mostRecentSnakeLength = SnakeHead.SnakeLength();
     }
 
     public void StartNewRound(Directions.Direction direction)

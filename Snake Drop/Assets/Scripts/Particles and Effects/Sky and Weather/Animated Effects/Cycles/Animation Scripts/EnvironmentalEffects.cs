@@ -47,16 +47,16 @@ public class EnvironmentalEffects : MonoBehaviour, ICyclical
 
     public void SetIntensity()
     {
-        if (intensityLevels != null)
-        {
-            int randIndex = Random.Range(0, intensityLevels.Count - 1);
-            intensityLevel = intensityLevels[randIndex].intensityValue;
-            cycleLength = Random.Range(intensityLevels[randIndex].minimumDuration, intensityLevels[randIndex].maximumDuration);
-            foreach (IReact animator in affectedAnimators)
-            {
-                animator.React();
-            }
-        }
+        //if (intensityLevels != null)
+        //{
+        //    int randIndex = Random.Range(0, intensityLevels.Count - 1);
+        //intensityLevel = intensityLevels[randIndex].intensityValue;
+        //    cycleLength = Random.Range(intensityLevels[randIndex].minimumDuration, intensityLevels[randIndex].maximumDuration);
+        //    foreach (IReact animator in affectedAnimators)
+        //    {
+        //        animator.React();
+        //    }
+        //}
 
     }
     public void CycleUpdate()

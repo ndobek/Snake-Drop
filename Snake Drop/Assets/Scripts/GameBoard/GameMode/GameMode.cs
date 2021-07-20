@@ -8,6 +8,7 @@ public class GameMode : ScriptableObject
     public EndGameCondition EndGameCondition;
     public TypeBank TypeBank;
     public GridAction OnGameStart;
+    public Rule OnCrash;
 
     [System.Serializable]
     public class Level

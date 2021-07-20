@@ -22,6 +22,8 @@ public class PowerupManager : MonoBehaviour
     public void ResetGame()
     {
         currentProgress = 0;
+        currentPowerup = null;
+        extraPowerups = 0;
     }
     public void GetPowerUp()
     {
