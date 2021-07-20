@@ -69,7 +69,7 @@ MonoBehaviour:
     - value: 100
       probability: 1
       StatType: {fileID: 11400000, guid: 180b49891043d474eb2b9435c540d056, type: 2}
-    - value: 0.001
+    - value: 0.0001
       probability: 1
       StatType: {fileID: 11400000, guid: 4f58ca63e41b9474db393f701a582bb3, type: 2}
     - value: 0.25
@@ -104,45 +104,3 @@ MonoBehaviour:
     - value: 0
       probability: 1
       StatType: {fileID: 11400000, guid: c11a0ed99d1b9254bb1a834dc1addb5a, type: 2}
-  - MinScore: 1000
-    MaxScore: 100
-    UseMinScore: 1
-    UseMaxScore: 0
-    MinSnakeNumber: 0
-    MaxSnakeNumber: 0
-    UseMinSnakeNumber: 0
-    UseMaxSnakeNumber: 0
-    possibleTypes: []
-    possibleColors:
-    - value: {fileID: 11400000, guid: 06922463012b1f24fb757d5ffdabbd6b, type: 2}
-      probability: 1
-      StatType: {fileID: 0}
-    Stats: []
-  - MinScore: 1000
-    MaxScore: 100
-    UseMinScore: 1
-    UseMaxScore: 0
-    MinSnakeNumber: 0
-    MaxSnakeNumber: 0
-    UseMinSnakeNumber: 0
-    UseMaxSnakeNumber: 0
-    possibleTypes: []
-    possibleColors: []
-    Stats: []
-  - MinScore: 2000
-    MaxScore: 3000
-    UseMinScore: 1
-    UseMaxScore: 0
-    MinSnakeNumber: 0
-    MaxSnakeNumber: 0
-    UseMinSnakeNumber: 0
-    UseMaxSnakeNumber: 0
-    possibleTypes: []
-    possibleColors:
-    - value: {fileID: 11400000, guid: dc0a2986a68ec8447b283e6fc5dbf9cd, type: 2}
-      probability: 1
-      StatType: {fileID: 0}
-    Stats:
-    - value: 0.2
-      probability: 5
-      StatType: {fileID: 11400000, guid: 962e849cc16b8d84a89901a886af65ba, type: 2}
