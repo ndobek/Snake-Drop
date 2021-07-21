@@ -20,6 +20,7 @@ public class SaveData
     {
         Random.state = randState;
         playerData.LoadTo(LoadObj.playerManagers[0], LoadObj);
+        LoadObj.boardRotator.RotateBoardToMatchEntrance();
     }
 }
 [System.Serializable]
