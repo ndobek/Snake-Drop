@@ -115,7 +115,12 @@ public class BoardRotator : MonoBehaviour
     }
     public void RotateBoardToMatchEntrance()
     {
-        SetRotation(Directions.TranslateDirection(GameManager.instance.playerManagers[0].enterSlot.GetEdgeInfo().direction(), EntranceSide));
+        PlayerManager player = GameManager.instance.playerManagers[0];
+        SetRotation(Directions.TranslateDirection(player.enterSlot.GetEdgeInfo().direction(), EntranceSide));
+        if (!player.RoundInProgress)
+        {
+            player.playerController.MostRecentDirectionMoved = Directions.TranslateDirection(player.playerController.MostRecentDirectionMoved, currentDirection);
+        }
     }
 
     private IEnumerator RotationRoutine()
