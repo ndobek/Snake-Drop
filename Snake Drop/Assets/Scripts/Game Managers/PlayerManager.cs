@@ -22,6 +22,8 @@ public class PlayerManager : MonoBehaviour
 
     public PlayGrid playGrid;
     public PlayGrid previewGrid;
+    [SerializeField]
+    private Animator previewGridBounceAnimation;
     public HeightLimitIndicator HeightLimitIndicator;
     public GameObject EntranceIndicator;
 
@@ -188,6 +190,9 @@ public class PlayerManager : MonoBehaviour
             snakeHead.MoveTo(destination, this);/*GameManager.instance.BasicMove.OnMove(SnakeHead, destination, this)*/;
             GameManager.instance.plantManager.PlantNewPlants(destination.transform.position);
             RoundInProgress = true;
+        } else
+        {
+            previewGridBounceAnimation.Play("Bounce");
         }
     }
     public void EndGame()
