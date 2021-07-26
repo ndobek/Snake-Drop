@@ -111,6 +111,7 @@ MonoBehaviour:
   quickProgressBar: {fileID: 4140805499323265541}
   powerupButton: {fileID: 3421719223417753686}
   mustUseIndicator: {fileID: 3825672550574245212}
+  powerupFlareDuration: 1
 --- !u!225 &8026950734055869550
 CanvasGroup:
   m_ObjectHideFlags: 0

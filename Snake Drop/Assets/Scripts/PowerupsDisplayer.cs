@@ -32,8 +32,12 @@ public class PowerupsDisplayer : MonoBehaviour
 
     [SerializeField]
     private UIFade mustUseIndicator;
+    [SerializeField]
+    private float powerupFlareDuration;
 
     private float lastFramePercentage;
+    private int lastFramePowerups;
+    private bool wait;
 
     void Awake()
     {
@@ -61,8 +65,25 @@ public class PowerupsDisplayer : MonoBehaviour
         }
 
         float percentage = FillBarPercentage();
-        if (quickProgressBar != null && percentage != lastFramePercentage) StartCoroutine(tweenFill(quickProgressBar, percentage, QuickProgressAniDuration, QuickProgressAniCurve));
-        if (progressBar != null && percentage != lastFramePercentage) StartCoroutine(tweenFill(progressBar, percentage, ProgressAniDuration, ProgressAniCurve));
+        int powerups = powerupManager.numAvailablePowerups;
+        if (!wait)
+        {
+            if (powerups > lastFramePowerups)
+            {
+                StartCoroutine(tweenGetPowerup(percentage));
+            }
+            else if (percentage > lastFramePercentage)
+            {
+                if (quickProgressBar != null) StartCoroutine(tweenFill(quickProgressBar, percentage, QuickProgressAniDuration, QuickProgressAniCurve));
+                if (progressBar != null) StartCoroutine(tweenFill(progressBar, percentage, ProgressAniDuration, ProgressAniCurve));
+            }
+            else if (percentage < lastFramePercentage)
+            {
+                //Durations reversed
+                if (quickProgressBar != null) StartCoroutine(tweenFill(quickProgressBar, percentage, ProgressAniDuration, ProgressAniCurve));
+                if (progressBar != null) StartCoroutine(tweenFill(progressBar, percentage, QuickProgressAniDuration, QuickProgressAniCurve));
+            }
+        }
 
         if (powerupButton != null)
         {
@@ -79,6 +100,7 @@ public class PowerupsDisplayer : MonoBehaviour
         }
 
         lastFramePercentage = percentage;
+        lastFramePowerups = powerups;
     }
 
     private IEnumerator tweenFill(Image bar, float target, float duration, AnimationCurve curve)
@@ -100,6 +122,22 @@ public class PowerupsDisplayer : MonoBehaviour
 
         progressBar.fillAmount = targetValue;
 
+    }
+
+    private IEnumerator tweenGetPowerup(float percentage)
+    {
+        wait = true;
+        if (quickProgressBar != null && progressBar != null)
+        {
+            StartCoroutine(tweenFill(quickProgressBar, 1, QuickProgressAniDuration, QuickProgressAniCurve));
+
+            StartCoroutine(tweenFill(progressBar, percentage, ProgressAniDuration, ProgressAniCurve));
+            yield return new WaitForSeconds(powerupFlareDuration);
+            //Durations reversedF
+            StartCoroutine(tweenFill(quickProgressBar, percentage, ProgressAniDuration, ProgressAniCurve));
+
+        }
+        wait = false;
     }
 
     public float FillBarPercentage()
