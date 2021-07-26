@@ -69,10 +69,10 @@ MonoBehaviour:
     - value: 100
       probability: 1
       StatType: {fileID: 11400000, guid: 180b49891043d474eb2b9435c540d056, type: 2}
-    - value: 0.0001
+    - value: 0.001
       probability: 1
       StatType: {fileID: 11400000, guid: 4f58ca63e41b9474db393f701a582bb3, type: 2}
-    - value: 0.25
+    - value: 0.5
       probability: 1
       StatType: {fileID: 11400000, guid: bab21731275250e469dc795e8abe4f86, type: 2}
   - MinScore: 0
