@@ -127,7 +127,7 @@ public class PlayerManager : MonoBehaviour
     public void PositionWaitSlot(BlockSlot slot)
     {
         if (slot)
-        {
+        { 
             waitSlot.customDownNeighbor = slot.customDownNeighbor;
             waitSlot.customUpNeighbor = slot.customUpNeighbor;
             waitSlot.customLeftNeighbor = slot.customLeftNeighbor;

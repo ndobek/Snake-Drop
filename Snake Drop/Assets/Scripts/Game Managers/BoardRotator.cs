@@ -37,8 +37,11 @@ public class BoardRotator : MonoBehaviour
 
     public void SetRotation(Directions.Direction UpDirection)
     {
+
         if (currentDirection != UpDirection)
         {
+            PlayerManager player = GameManager.instance.playerManagers[0];
+            Directions.Direction mostRecentDirectionMoved = Directions.TranslateDirection(player.playerController.MostRecentDirectionMoved, currentDirection);
             currentDirection = UpDirection;
             switch (currentDirection)
             {
@@ -55,6 +58,7 @@ public class BoardRotator : MonoBehaviour
                     targetRotation = 90;
                     break;
             }
+            if(!player.RoundInProgress) player.playerController.MostRecentDirectionMoved = Directions.TranslateDirection(mostRecentDirectionMoved, currentDirection);
             foreach (IReact obj in reactToSpin) obj.React();
             StartCoroutine(RotationRoutine());
             GameManager.instance.playerManagers[0].playGrid.InvokeGridAction();
@@ -116,11 +120,10 @@ public class BoardRotator : MonoBehaviour
     public void RotateBoardToMatchEntrance()
     {
         PlayerManager player = GameManager.instance.playerManagers[0];
-        SetRotation(Directions.TranslateDirection(player.enterSlot.GetEdgeInfo().direction(), EntranceSide));
-        if (!player.RoundInProgress)
-        {
-            player.playerController.MostRecentDirectionMoved = Directions.TranslateDirection(player.playerController.MostRecentDirectionMoved, currentDirection);
-        }
+        Directions.Direction newDirection = Directions.TranslateDirection(player.enterSlot.GetEdgeInfo().direction(), EntranceSide);
+        SetRotation(newDirection);
+
+
     }
 
     private IEnumerator RotationRoutine()

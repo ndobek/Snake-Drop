@@ -133,7 +133,7 @@ public class PowerupsDisplayer : MonoBehaviour
 
             StartCoroutine(tweenFill(progressBar, percentage, ProgressAniDuration, ProgressAniCurve));
             yield return new WaitForSeconds(powerupFlareDuration);
-            //Durations reversedF
+            //Durations reversed
             StartCoroutine(tweenFill(quickProgressBar, percentage, ProgressAniDuration, ProgressAniCurve));
 
         }
