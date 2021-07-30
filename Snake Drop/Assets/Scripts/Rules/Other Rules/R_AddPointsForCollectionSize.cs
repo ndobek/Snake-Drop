@@ -7,6 +7,8 @@ public class R_AddPointsForCollectionSize : Rule
 {
     public int ScoreIncreasePerBlockInCollection;
     [SerializeField]
+    public int MultiplierIncreasePerBlockInCollection;
+    [SerializeField]
     private bool ApplyMultiplier;
     protected override void Action(Block block, PlayerManager player = null)
     {
@@ -14,7 +16,9 @@ public class R_AddPointsForCollectionSize : Rule
         {
             int CollectionSize = block.BlockCollection == null ? 1 : block.BlockCollection.Area();
             int ScoreIncrease = CollectionSize * ScoreIncreasePerBlockInCollection;
+            int MIncrease = CollectionSize * MultiplierIncreasePerBlockInCollection;
 
+            player.Score.Multiplier += MIncrease;
             if (ApplyMultiplier) player.Score.IncreaseScoreUsingMultiplier(ScoreIncrease);
             else player.Score.Score += ScoreIncrease;
         }
