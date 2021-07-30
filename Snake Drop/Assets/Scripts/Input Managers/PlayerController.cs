@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
         TouchManager.OnSwipe += MoveSnakeOnSwipe;
         //TouchManager.OnDrag += MoveSnakeOnDrag;
         //TouchManager.OnDrag += MoveEntranceSlotToClosest;
-        TouchManager.OnHold += HoldBehavior;
+        TouchManager.OnHold += MoveSnakeOnHold;
         TouchManager.OnTap += MoveSnakeOnTap;
     }
 
