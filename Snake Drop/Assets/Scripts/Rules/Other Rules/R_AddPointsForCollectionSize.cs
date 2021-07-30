@@ -19,8 +19,7 @@ public class R_AddPointsForCollectionSize : Rule
             int MIncrease = CollectionSize * MultiplierIncreasePerBlockInCollection;
 
             player.Score.Multiplier += MIncrease;
-            if (ApplyMultiplier) player.Score.IncreaseScoreUsingMultiplier(ScoreIncrease);
-            else player.Score.Score += ScoreIncrease;
+            player.Score.IncreaseScore(ScoreIncrease, ApplyMultiplier);
         }
     }
 }

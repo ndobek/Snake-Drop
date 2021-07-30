@@ -10,6 +10,8 @@ public class R_AddPointsForCollectionFill : Rule
     public int MultiplierIncreasePerFillAmount;
     [SerializeField]
     private bool ApplyMultiplier;
+    [SerializeField]
+    private bool OncePerCollection;
     protected override void Action(Block block, PlayerManager player = null)
     {
         if (player)
@@ -18,9 +20,18 @@ public class R_AddPointsForCollectionFill : Rule
             int ScoreIncrease = FillAmount * ScoreIncreasePerFillAmount;
             int MIncrease = FillAmount * MultiplierIncreasePerFillAmount;
 
-            player.Score.Multiplier += MIncrease;
-            if (ApplyMultiplier) player.Score.IncreaseScoreUsingMultiplier(ScoreIncrease);
-            else player.Score.Score += ScoreIncrease;
+            if (OncePerCollection)
+            {
+                player.Score.IncreaseMultiplierPartially((float)MIncrease / (float)block.BlockCollection.Area());
+                player.Score.IncreaseScorePartially( (float)ScoreIncrease /  (float)block.BlockCollection.Area(), ApplyMultiplier);
+            }
+            else
+            {
+                player.Score.Multiplier += MIncrease;
+                player.Score.IncreaseScore(ScoreIncrease, ApplyMultiplier);
+            }
+
+
         }
     }
 }

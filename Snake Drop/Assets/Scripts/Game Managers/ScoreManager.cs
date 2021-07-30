@@ -12,8 +12,8 @@ public class ScoreManager : MonoBehaviour
         get { return score; }
         set
         {
-           GameManager.instance.playerManagers[0].Powerup.UpdateProgress(value - score);
-             score = value;
+            GameManager.instance.playerManagers[0].Powerup.UpdateProgress(value - score);
+            score = value;
         }
     }
     private int multiplier;
@@ -30,10 +30,14 @@ public class ScoreManager : MonoBehaviour
     public int HighScore
     {
         get { return highScore; }
-        set {
-            highScore = value; 
+        set
+        {
+            highScore = value;
         }
     }
+
+    private float partialScore;
+    private float partialMultiplier;
 
 
 
@@ -60,6 +64,41 @@ public class ScoreManager : MonoBehaviour
     public void ResetMultiplier()
     {
         Multiplier = 1;
+    }
+
+    public void IncreaseScorePartially(float amount, bool useMultiplier)
+    {
+        partialScore += amount;
+        int amountToIncrease = 0;
+
+        if (partialScore >= 1)
+        {
+            float remainder = partialScore % 1;
+            amountToIncrease = (int)(partialScore - remainder);
+            partialScore = remainder;
+        }
+        Debug.Log("Amount to Increase: " + amountToIncrease + " partial: " + partialScore);
+        IncreaseScore(amountToIncrease, useMultiplier);
+    }
+    public void IncreaseMultiplierPartially(float amount)
+    {
+        partialMultiplier += amount;
+        int amountToIncrease = 0;
+
+        if (partialMultiplier >= .99f)
+        {
+            float remainder = partialMultiplier % 1;
+            if(remainder >= .99f) remainder = 0;
+            amountToIncrease = (int)(partialMultiplier - remainder);
+            partialMultiplier = remainder;
+        }
+        multiplier += amountToIncrease;
+    }
+
+    public void IncreaseScore(int amount, bool useMultiplier)
+    {
+        if (useMultiplier) IncreaseScoreUsingMultiplier(amount);
+        else Score += amount;
     }
 
     public void IncreaseScoreUsingMultiplier(int amount)
