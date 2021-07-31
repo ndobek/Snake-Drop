@@ -39,7 +39,7 @@ public class AnimGrow : MonoBehaviour, IGrowable
     public void AddXP(int XP)
     {
         xp += XP;
-        Debug.Log("xp = " + xp);
+        // Debug.Log("xp = " + xp);
 
     }
     public void UpdateGrowth()

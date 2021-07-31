@@ -40,7 +40,7 @@ public class MoveInCollectionGhost : MoveRule
             block.RawMoveTo(slot);
         }
 
-        Debug.Log("Fill: " + slot.Block.BlockCollection.FillAmount + "/" + slot.Block.BlockCollection.Area());
+        // Debug.Log("Fill: " + slot.Block.BlockCollection.FillAmount + "/" + slot.Block.BlockCollection.Area());
     }
 
     private void RemoveFirstColorInTail(Block block, BlockSlot slot, PlayerManager player)

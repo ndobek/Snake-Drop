@@ -10,7 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 21ecd9fdda3698b408bd9b658d75c32b, type: 3}
-  m_Name: Add Points For Collection Size
+  m_Name: Add Points For Smallest Collection Dimension
   m_EditorClassIdentifier: 
+  sizeType: 1
   ScoreIncreasePerBlockInCollection: 1
+  MultiplierIncreasePerBlockInCollection: 0
   ApplyMultiplier: 1

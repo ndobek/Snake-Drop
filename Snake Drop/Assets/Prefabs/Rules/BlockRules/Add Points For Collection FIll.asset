@@ -15,4 +15,4 @@ MonoBehaviour:
   ScoreIncreasePerFillAmount: 1
   MultiplierIncreasePerFillAmount: 0
   ApplyMultiplier: 1
-  OncePerCollection: 1
+  OncePerCollection: 0

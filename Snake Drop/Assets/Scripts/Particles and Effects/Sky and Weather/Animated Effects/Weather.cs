@@ -161,7 +161,7 @@ public class Weather : MonoBehaviour, ICyclical
     {
         int randIndex = Random.Range(0, (startingPreset.weatherVariants.Count));
         queuedStates.Enqueue(startingPreset.weatherVariants[randIndex].state);
-        Debug.Log("Changing " + startingPreset.Label + " effects to variant " + randIndex);
+        // Debug.Log("Changing " + startingPreset.Label + " effects to variant " + randIndex);
         
 
     }
@@ -169,7 +169,7 @@ public class Weather : MonoBehaviour, ICyclical
     {
         queuedPresets.Enqueue(newWeather);
         
-        Debug.Log("Adding Forecast: "+ newWeather.Label);
+        // Debug.Log("Adding Forecast: "+ newWeather.Label);
         foreach (IEffectAnimator<EnvironmentalEffects, EnvironmentalState, EnvironmentalState> reaction in weatherReactions)
         {
             EnvironmentalState oldState = reaction.CurrentState;
