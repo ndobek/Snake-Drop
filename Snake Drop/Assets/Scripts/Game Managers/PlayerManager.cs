@@ -168,7 +168,7 @@ public class PlayerManager : MonoBehaviour
         {
             Score.ResetMultiplier();
         }
-        previewGridAnimator.SetBool("Up", true);
+
         entranceManager.UpdateAnimations();
         FillPreviewBar();
         ResetMoveRestrictions();

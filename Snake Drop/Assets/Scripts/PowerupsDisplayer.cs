@@ -96,9 +96,9 @@ public class PowerupsDisplayer : MonoBehaviour
         if (mustUseIndicator != null)
         {
             PlayerManager player = GameManager.instance.playerManagers[0];
-            if (player.GameInProgress && !player.RoundInProgress)
+            if (player.GameInProgress)
             {
-                mustUseIndicator.SetFade(!player.entranceManager.CheckForValidEntrancesToGrid(player, player.playGrid) && player.Powerup.currentPowerup != null);
+                mustUseIndicator.SetFade(!player.entranceManager.CheckForValidEntrancesToGrid(player, player.playGrid) && player.Powerup.currentPowerup != null && !player.RoundInProgress);
             }
         }
 
