@@ -7,7 +7,7 @@ public class Stat<T>
 {
     public T value;
     public float probability = 1;
-    public SnakeStatType StatType;
+    public string StatType;
 
     public static Y GetRandomFromStats<Y>(Stat<Y>[] stats)
     {

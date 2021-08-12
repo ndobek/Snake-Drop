@@ -23,7 +23,7 @@ public class PlayerManager : MonoBehaviour
     public PlayGrid playGrid;
     public PlayGrid previewGrid;
     [SerializeField]
-    private Animator previewGridBounceAnimation;
+    private Animator previewGridAnimator;
     public HeightLimitIndicator HeightLimitIndicator;
     public GameObject EntranceIndicator;
 
@@ -46,7 +46,7 @@ public class PlayerManager : MonoBehaviour
     public void OnCrash()
     {
         Rule OnCrash = GameManager.instance.GameModeManager.GameMode.OnCrash;
-        if(OnCrash != null) OnCrash.Invoke(snakeHead, this);
+        if (OnCrash != null) OnCrash.Invoke(snakeHead, this);
         RoundInProgress = false;
     }
 
@@ -81,7 +81,7 @@ public class PlayerManager : MonoBehaviour
 
         if (GameIsOver())
         {
-            EndGame(); 
+            EndGame();
         }
         else
         {
@@ -127,7 +127,7 @@ public class PlayerManager : MonoBehaviour
     public void PositionWaitSlot(BlockSlot slot)
     {
         if (slot)
-        { 
+        {
             waitSlot.customDownNeighbor = slot.customDownNeighbor;
             waitSlot.customUpNeighbor = slot.customUpNeighbor;
             waitSlot.customLeftNeighbor = slot.customLeftNeighbor;
@@ -168,7 +168,7 @@ public class PlayerManager : MonoBehaviour
         {
             Score.ResetMultiplier();
         }
-        
+        previewGridAnimator.SetBool("Up", true);
         entranceManager.UpdateAnimations();
         FillPreviewBar();
         ResetMoveRestrictions();
@@ -187,12 +187,14 @@ public class PlayerManager : MonoBehaviour
         if (SnakeHead.CanMoveToWithoutCrashing(destination, this) && enterSlot.Active/*GameManager.instance.BasicMove.CanMoveTo(SnakeHead, destination, this)*/)
         {
             Undoer.Save();
+            previewGridAnimator.Play("Down");
             snakeHead.MoveTo(destination, this);/*GameManager.instance.BasicMove.OnMove(SnakeHead, destination, this)*/;
             GameManager.instance.plantManager.PlantNewPlants(destination.transform.position);
             RoundInProgress = true;
-        } else
+        }
+        else
         {
-            previewGridBounceAnimation.Play("Bounce");
+            previewGridAnimator.Play("Bounce");
         }
     }
     public void EndGame()
@@ -206,7 +208,7 @@ public class PlayerManager : MonoBehaviour
     {
         FillPreviewBar();
         Block result = waitSlot.Block;
-        while((result.Tail != null && result.blockType != GameManager.instance.GameModeManager.GameMode.TypeBank.snakeHeadType))
+        while ((result.Tail != null && result.blockType != GameManager.instance.GameModeManager.GameMode.TypeBank.snakeHeadType))
         {
 
             result = result.Slot.GetNeighbor(Directions.Direction.UP).Block;
@@ -252,14 +254,14 @@ public class PlayerManager : MonoBehaviour
         {
             if (RoundInProgress)
             {
-                if(!snakeHead.blockType.OverrideMove(snakeHead, snakeHead.Neighbor(direction), this)) Undoer.Save();
+                if (!snakeHead.blockType.OverrideMove(snakeHead, snakeHead.Neighbor(direction), this)) Undoer.Save();
                 SnakeHead.Move(direction, this);
                 MidRound();
             }
             else
             {
                 BlockSlot destination = enterSlot.GetNeighbor(direction);
-                if(!destination || destination.playGrid != playGrid)
+                if (!destination || destination.playGrid != playGrid)
                 {
                     MoveWaitSlot(direction);
                 }
@@ -269,5 +271,9 @@ public class PlayerManager : MonoBehaviour
                 }
             }
         }
+    }
+    private void Update()
+    {
+        previewGridAnimator.SetBool("Up", !RoundInProgress);
     }
 }

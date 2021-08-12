@@ -3168,7 +3168,7 @@ MonoBehaviour:
   playerController: {fileID: 7360507374275313741}
   playGrid: {fileID: 7360507376082885260}
   previewGrid: {fileID: 7360507374564549794}
-  previewGridBounceAnimation: {fileID: 1894601438367125060}
+  previewGridAnimator: {fileID: 1894601438367125060}
   HeightLimitIndicator: {fileID: 7360507375288126845}
   EntranceIndicator: {fileID: 7360507374564549792}
   startSlot: {fileID: 7360507374392078539}
@@ -3224,8 +3224,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b75b61386d400c94da33631041670d28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  powerupFrequency: 10000
+  nextPowerupScoreDiff: 0
   currentProgress: 0
+  numOfPowerupsObtained: 0
   possiblePowerups:
   - {fileID: 11400000, guid: 9d43332ab0eefdd44aef41d8f0227d3e, type: 2}
   currentPowerup: {fileID: 0}

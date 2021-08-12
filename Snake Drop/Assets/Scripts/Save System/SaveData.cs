@@ -79,12 +79,17 @@ public class PowerupSaveData
     public int currentProgress;
     public string currentPowerup;
     public int extraPowerups;
+    public int numberOfObtainedPowerups;
+    public int nextPowerupScoreDiff;
 
     public PowerupSaveData(PowerupManager SaveObj)
     {
         currentProgress = SaveObj.currentProgress;
         currentPowerup = SaveObj.currentPowerup != null? SaveObj.currentPowerup.Name : "null";
         extraPowerups = SaveObj.extraPowerups;
+        numberOfObtainedPowerups = SaveObj.numOfPowerupsObtained;
+        nextPowerupScoreDiff = SaveObj.nextPowerupScoreDiff;
+
     }
 
     public void LoadTo(PowerupManager LoadObj, GameManager gameManager)
@@ -93,6 +98,8 @@ public class PowerupSaveData
         if(currentPowerup != "null") LoadObj.currentPowerup = gameManager.Powerups.getObject(currentPowerup) as Powerup;
         else LoadObj.currentPowerup = null;
         LoadObj.extraPowerups = extraPowerups;
+        LoadObj.numOfPowerupsObtained = numberOfObtainedPowerups;
+        LoadObj.nextPowerupScoreDiff = nextPowerupScoreDiff;
     }
 }
 
