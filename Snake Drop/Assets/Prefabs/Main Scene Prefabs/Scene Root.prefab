@@ -3554,6 +3554,11 @@ PrefabInstance:
       propertyPath: continueButton
       value: 
       objectReference: {fileID: 7973054528327324941}
+    - target: {fileID: 435249952238379011, guid: 7bc6f70463e52d241993f660fa9c9818,
+        type: 3}
+      propertyPath: continueButtonFader
+      value: 
+      objectReference: {fileID: 7973054528327324941}
     - target: {fileID: 987620008699396768, guid: 7bc6f70463e52d241993f660fa9c9818,
         type: 3}
       propertyPath: m_RootOrder

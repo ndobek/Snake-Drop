@@ -70,16 +70,19 @@ public class PowerupsDisplayer : MonoBehaviour
         {
             if (powerups > lastFramePowerups)
             {
+                StopAllCoroutines();
                 StartCoroutine(tweenGetPowerup(percentage));
             }
             else if (percentage > lastFramePercentage)
             {
+                StopAllCoroutines();
                 if (quickProgressBar != null) StartCoroutine(tweenFill(quickProgressBar, percentage, QuickProgressAniDuration, QuickProgressAniCurve));
                 if (progressBar != null) StartCoroutine(tweenFill(progressBar, percentage, ProgressAniDuration, ProgressAniCurve));
             }
             else if (percentage < lastFramePercentage)
             {
                 //Durations reversed
+                StopAllCoroutines();
                 if (quickProgressBar != null) StartCoroutine(tweenFill(quickProgressBar, percentage, ProgressAniDuration, ProgressAniCurve));
                 if (progressBar != null) StartCoroutine(tweenFill(progressBar, percentage, QuickProgressAniDuration, QuickProgressAniCurve));
             }
@@ -135,7 +138,7 @@ public class PowerupsDisplayer : MonoBehaviour
             yield return new WaitForSeconds(powerupFlareDuration);
             //Durations reversed
             StartCoroutine(tweenFill(quickProgressBar, percentage, ProgressAniDuration, ProgressAniCurve));
-
+            yield return new WaitForSeconds(ProgressAniDuration);
         }
         wait = false;
     }

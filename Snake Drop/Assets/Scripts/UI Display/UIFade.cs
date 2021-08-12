@@ -32,6 +32,8 @@ public class UIFade : MonoBehaviour
     private bool beginFadedOut;
 
     private bool FadedIn = true;
+    private Vector3 originalPos;
+    private bool rewriteOriginalPos = true;
 
     void Awake()
     {
@@ -97,7 +99,11 @@ public class UIFade : MonoBehaviour
         if (Group == null) Group = GetComponent<CanvasGroup>();
         if (rectTransform == null) rectTransform = GetComponent<RectTransform>();
 
-        Vector3 originalPos = rectTransform.position;
+        if (rewriteOriginalPos)
+        {
+            originalPos = rectTransform.position;
+        }
+        rewriteOriginalPos = false;
         Vector3 targetPos = originalPos + (Vector3)AnimDistance;
 
         float actualDelay = RandomizeDelay ? Random.Range(0, Delay) : Delay;
@@ -129,6 +135,7 @@ public class UIFade : MonoBehaviour
         else SetFadedOut();
 
         rectTransform.position = originalPos;
+        rewriteOriginalPos = true;
 
     }
 
