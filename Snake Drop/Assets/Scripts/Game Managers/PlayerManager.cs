@@ -39,6 +39,7 @@ public class PlayerManager : MonoBehaviour
     public bool RoundInProgress;
     [HideInInspector]
     public bool GameInProgress;
+    public bool GameOver;
     private bool StopMakingSnakes = false;
 
     public int mostRecentSnakeLength;
@@ -157,6 +158,7 @@ public class PlayerManager : MonoBehaviour
         PositionWaitSlot(entranceManager.StartingSlot);
         GameInProgress = true;
         RoundInProgress = false;
+        GameOver = false;
 
 
         if (GameManager.instance.GameModeManager.GameMode.OnGameStart) GameManager.instance.GameModeManager.GameMode.OnGameStart.Invoke(playGrid);
@@ -202,6 +204,7 @@ public class PlayerManager : MonoBehaviour
         PrepareNewRound();
         entranceManager.UpdateAnimations();
         GameInProgress = false;
+        GameOver = true;
         GameManager.instance.CheckForGameOver();
     }
     public Block GetNextSnakeHead()

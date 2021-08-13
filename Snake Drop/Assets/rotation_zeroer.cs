@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class rotation_zeroer : MonoBehaviour
 {
-    public Vector3 targetRotation = Vector3.zero;
+    private BoardRotator boardRotator;
+    private void Awake() {
+        boardRotator = GameManager.instance.boardRotator;
+    }
     void Update()
     {
-        transform.rotation = Quaternion.Euler(targetRotation);
+        transform.rotation = Quaternion.Euler(new Vector3(0,0,boardRotator.targetRotation));
     }
 }

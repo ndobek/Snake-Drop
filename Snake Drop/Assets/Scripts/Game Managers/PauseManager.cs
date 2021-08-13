@@ -42,12 +42,14 @@ public class PauseManager : MonoBehaviour
         continueButtonFader.SetActive(SaveManager.SaveExists(SaveManager.AutoSaveSaveName));
         GameUIFader.FadeOut();
         MenuUIFader.FadeIn();
+        paused = true;
     }
     public void UnPause()
     {
         playerManager.GameInProgress = true;
         GameUIFader.FadeIn();
         MenuUIFader.FadeOut();
+        paused = false;
     }
     public void TogglePause()
     {

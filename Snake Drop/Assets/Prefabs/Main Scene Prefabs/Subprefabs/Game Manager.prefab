@@ -50,6 +50,8 @@ MonoBehaviour:
   - {fileID: 0}
   GameModeManager: {fileID: 987620008699396773}
   plantManager: {fileID: 0}
+  boardRotator: {fileID: 0}
+  pauseManager: {fileID: 435249952238379011}
   Colors: {fileID: 11400000, guid: d73af178a01b17f41920008aff3091a4, type: 2}
   Types: {fileID: 11400000, guid: 1a6cc8bc900fa2c468c7e6da15a6c3f0, type: 2}
   Powerups: {fileID: 11400000, guid: 06c3d76f1895bbe4691bf46c9c0a66b4, type: 2}
@@ -84,20 +86,6 @@ MonoBehaviour:
   HeightLimitModifier: 0
   GameMode: {fileID: 11400000, guid: c2e656447e47e8e40a4eff65f4f27d8a, type: 2}
   PossibleColors: []
-  minBaseLength: {fileID: 11400000, guid: 25ef4499148f23345b64c542146e1476, type: 2}
-  maxBaseLength: {fileID: 11400000, guid: bcf7fc9d50be8564a911997e01665bee, type: 2}
-  minBaseEntropy: {fileID: 11400000, guid: 47708f29cd0d5c24a8f8445c2f47e8d5, type: 2}
-  maxBaseEntropy: {fileID: 11400000, guid: 39645c16b2ef8a742a25b80069dab812, type: 2}
-  LengthScoreMod: {fileID: 11400000, guid: 4f58ca63e41b9474db393f701a582bb3, type: 2}
-  LengthSnakeNumberMod: {fileID: 11400000, guid: bab21731275250e469dc795e8abe4f86,
-    type: 2}
-  EntropyScoreMod: {fileID: 11400000, guid: 4d5a564ae89279e4a9bdeaf677e5634d, type: 2}
-  EntropySnakeNumberMod: {fileID: 11400000, guid: c11a0ed99d1b9254bb1a834dc1addb5a,
-    type: 2}
-  minTotalLength: {fileID: 11400000, guid: da1fea61c1219ab458d9a73e7ac950f6, type: 2}
-  maxTotalLength: {fileID: 11400000, guid: 180b49891043d474eb2b9435c540d056, type: 2}
-  minTotalEntropy: {fileID: 11400000, guid: f8b95da70db68684287a503e7cb2fdf9, type: 2}
-  maxTotalEntropy: {fileID: 11400000, guid: 962e849cc16b8d84a89901a886af65ba, type: 2}
 --- !u!114 &435249952238379011
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,3 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5f1be92e08649b499b5376664c610c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameUIFader: {fileID: 0}
+  MenuUIFader: {fileID: 0}
+  continueButtonFader: {fileID: 0}
+  paused: 0

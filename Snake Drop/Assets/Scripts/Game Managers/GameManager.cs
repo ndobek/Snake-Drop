@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public GameModeManager GameModeManager;
     public PlantManager plantManager;
     public BoardRotator boardRotator;
+    public PauseManager pauseManager;
 
 
 
@@ -68,7 +69,7 @@ public class GameManager : MonoBehaviour
     {
         foreach (PlayerManager player in playerManagers)
         {
-            if (player.GameInProgress) return false;
+            if (!player.GameOver) return false;
         }
         return true;
     }
@@ -84,7 +85,6 @@ public class GameManager : MonoBehaviour
     private void EndGame()
     {
         UpdateScore();
-        gameOverScreen.SetActive(true);
         SaveManager.DeleteSave(SaveManager.AutoSaveSaveName);
     }
 
@@ -105,5 +105,9 @@ public class GameManager : MonoBehaviour
     {
         save.LoadTo(this);
         boardRotator.RotateBoardToMatchEntrance();
+    }
+
+    private void Update() {
+        gameOverScreen.SetActive(GameIsOver());
     }
 }
