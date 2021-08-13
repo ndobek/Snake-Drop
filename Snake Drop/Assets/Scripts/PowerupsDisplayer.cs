@@ -38,6 +38,7 @@ public class PowerupsDisplayer : MonoBehaviour
     private float lastFramePercentage;
     private int lastFramePowerups;
     private bool wait;
+    private int tweensRunning;
 
     void Awake()
     {
@@ -70,22 +71,28 @@ public class PowerupsDisplayer : MonoBehaviour
         {
             if (powerups > lastFramePowerups)
             {
-                StopAllCoroutines();
+                ResetAnimations();
                 StartCoroutine(tweenGetPowerup(percentage));
             }
             else if (percentage > lastFramePercentage)
             {
-                StopAllCoroutines();
+                ResetAnimations();
                 if (quickProgressBar != null) StartCoroutine(tweenFill(quickProgressBar, percentage, QuickProgressAniDuration, QuickProgressAniCurve));
                 if (progressBar != null) StartCoroutine(tweenFill(progressBar, percentage, ProgressAniDuration, ProgressAniCurve));
             }
             else if (percentage < lastFramePercentage)
             {
                 //Durations reversed
-                StopAllCoroutines();
+                ResetAnimations();
                 if (quickProgressBar != null) StartCoroutine(tweenFill(quickProgressBar, percentage, ProgressAniDuration, ProgressAniCurve));
                 if (progressBar != null) StartCoroutine(tweenFill(progressBar, percentage, QuickProgressAniDuration, QuickProgressAniCurve));
             }
+        }
+
+        if (tweensRunning == 0)
+        {
+            progressBar.fillAmount = percentage;
+            quickProgressBar.fillAmount = percentage;
         }
 
         if (powerupButton != null)
@@ -98,7 +105,7 @@ public class PowerupsDisplayer : MonoBehaviour
             PlayerManager player = GameManager.instance.playerManagers[0];
             if (player.GameInProgress)
             {
-                mustUseIndicator.SetFade(!player.entranceManager.CheckForValidEntrancesToGrid(player, player.playGrid) && player.Powerup.currentPowerup != null && !player.RoundInProgress);
+                mustUseIndicator.SetFade(!player.RoundInProgress && !player.entranceManager.CheckForValidEntrancesToGrid(player, player.playGrid) && player.Powerup.currentPowerup != null);
             }
         }
 
@@ -106,8 +113,14 @@ public class PowerupsDisplayer : MonoBehaviour
         lastFramePowerups = powerups;
     }
 
+    private void ResetAnimations(){
+        tweensRunning = 0;
+        StopAllCoroutines();
+    }
+
     private IEnumerator tweenFill(Image bar, float target, float duration, AnimationCurve curve)
     {
+        tweensRunning += 1;
         float startValue = bar.fillAmount;
         float targetValue = target;
 
@@ -123,8 +136,8 @@ public class PowerupsDisplayer : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
 
-        progressBar.fillAmount = targetValue;
-
+        bar.fillAmount = targetValue;
+        tweensRunning -= 1;
     }
 
     private IEnumerator tweenGetPowerup(float percentage)
