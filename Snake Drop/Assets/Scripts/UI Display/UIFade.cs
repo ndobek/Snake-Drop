@@ -9,7 +9,7 @@ public class UIFade : MonoBehaviour
     private Vector2 AnimDistance;
 
     [SerializeField]
-    private float Duration;
+    public float Duration;
     [SerializeField]
     private float Delay;
     [SerializeField]
@@ -77,6 +77,7 @@ public class UIFade : MonoBehaviour
 
     public virtual void Fade(bool inOut)
     {
+        StopAllCoroutines();
         StartCoroutine(DoFade(inOut));
     }
 
@@ -133,7 +134,6 @@ public class UIFade : MonoBehaviour
 
         if (inOut) SetFadedIn();
         else SetFadedOut();
-
         rectTransform.position = originalPos;
         rewriteOriginalPos = true;
 

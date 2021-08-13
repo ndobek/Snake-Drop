@@ -6,10 +6,15 @@ public class UIFadeGroup : UIFade
 {
     public override void Fade(bool inOut)
     {
+        float duration = 0;
         UIFade[] UIFaders = GetComponentsInChildren<UIFade>();
         foreach (UIFade fader in UIFaders)
         {
-            if(!fader.ignoreFadeGroups && fader != this) fader.Fade(inOut);
+            if (!fader.ignoreFadeGroups && fader != this)
+            {
+                if(fader.Duration > duration) duration = fader.Duration;
+                fader.Fade(inOut);
+            }
         }
 
         base.Fade(inOut);
