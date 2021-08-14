@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using CloudOnce;
 
 public class GameManager : MonoBehaviour
 {
@@ -21,7 +22,7 @@ public class GameManager : MonoBehaviour
 
     public bool GameInProgress()
     {
-        foreach(PlayerManager player in playerManagers)
+        foreach (PlayerManager player in playerManagers)
         {
             if (player.GameInProgress) return true;
         }
@@ -32,12 +33,12 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        if(!instance) instance = this;
+        if (!instance) instance = this;
     }
 
     public void OnCrash()
     {
-        foreach(PlayerManager player in playerManagers)
+        foreach (PlayerManager player in playerManagers)
         {
             OnCrash(player);
         }
@@ -85,12 +86,13 @@ public class GameManager : MonoBehaviour
     private void EndGame()
     {
         UpdateScore();
+        Leaderboards.High_Score.SubmitScore(playerManagers[0].Score.Score);
         SaveManager.DeleteSave(SaveManager.AutoSaveSaveName);
     }
 
     private void UpdateScore()
     {
-        foreach(PlayerManager player in playerManagers)
+        foreach (PlayerManager player in playerManagers)
         {
             player.Score.UpdateScore();
         }
@@ -107,7 +109,8 @@ public class GameManager : MonoBehaviour
         boardRotator.RotateBoardToMatchEntrance();
     }
 
-    private void Update() {
+    private void Update()
+    {
         gameOverScreen.SetActive(GameIsOver());
     }
 }

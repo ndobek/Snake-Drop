@@ -41,15 +41,16 @@ public class PlantAnimator : MonoBehaviour, IEffectAnimator<Animator, GrowthStag
     }
     public void SetGrowthStage(int stage)
     {
-        SetStageClips(species.stages[stage]);
-        if (species.stages.Count > stage)
-        {                         
-            Animate(CurrentState, species.stages[stage], 1f);
-        }
-        else if(species.stages.Count > 0)
-        {
-            Animate(CurrentState, species.stages[species.stages.Count-1], 1f);
-        }
+        Debug.Log("Fix Me!");
+        // SetStageClips(species.stages[stage]);
+        // if (species.stages.Count > stage)
+        // {                         
+        //     Animate(CurrentState, species.stages[stage], 1f);
+        // }
+        // else if(species.stages.Count > 0)
+        // {
+        //     Animate(CurrentState, species.stages[species.stages.Count-1], 1f);
+        // }
         
         
     }

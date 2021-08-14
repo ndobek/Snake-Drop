@@ -618,6 +618,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f3fb188545baca4d9f6112f1c0f42b0, type: 3}
+--- !u!1 &9134113235786822595 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9087035107366769386, guid: 3f3fb188545baca4d9f6112f1c0f42b0,
+    type: 3}
+  m_PrefabInstance: {fileID: 61152496271089961}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &9182358458050913877 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9202837012723287932, guid: 3f3fb188545baca4d9f6112f1c0f42b0,
+    type: 3}
+  m_PrefabInstance: {fileID: 61152496271089961}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!224 &9134113234099930230 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 9087035105719182687, guid: 3f3fb188545baca4d9f6112f1c0f42b0,
+    type: 3}
+  m_PrefabInstance: {fileID: 61152496271089961}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2521229581999125444 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2460220134482924269, guid: 3f3fb188545baca4d9f6112f1c0f42b0,
@@ -630,18 +654,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7a26eccb6d64bc4bab3a3400dde71e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &9134113235786822595 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9087035107366769386, guid: 3f3fb188545baca4d9f6112f1c0f42b0,
-    type: 3}
-  m_PrefabInstance: {fileID: 61152496271089961}
-  m_PrefabAsset: {fileID: 0}
---- !u!224 &9134113234099930230 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 9087035105719182687, guid: 3f3fb188545baca4d9f6112f1c0f42b0,
-    type: 3}
-  m_PrefabInstance: {fileID: 61152496271089961}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2712831965167378140
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1070,6 +1082,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 2014905451708111706, guid: ba28145764ca10040b2f33bbf1016700,
+        type: 3}
+      propertyPath: undosRemainingText
+      value: 
+      objectReference: {fileID: 9182358458050913877}
     - target: {fileID: 2037577645401584794, guid: ba28145764ca10040b2f33bbf1016700,
         type: 3}
       propertyPath: m_Layer
@@ -3341,6 +3358,11 @@ PrefabInstance:
       propertyPath: m_textInfo.characterCount
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 4139579083395288364, guid: b64e860ead7d8fc4e9dff3879710696e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3056959421379000447}
     - target: {fileID: 4939980844095154686, guid: b64e860ead7d8fc4e9dff3879710696e,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

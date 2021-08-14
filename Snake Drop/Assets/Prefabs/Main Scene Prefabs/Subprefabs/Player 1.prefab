@@ -3213,6 +3213,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d10be56b1437b645b3c7e2b9868d8be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  undosRemainingText: {fileID: 0}
+  infiniteUndos: 1
+  undosPerWatch: 5
 --- !u!114 &5334287123915763627
 MonoBehaviour:
   m_ObjectHideFlags: 0
