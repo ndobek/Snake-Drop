@@ -28,13 +28,13 @@ public class UndoManager : MonoBehaviour
         if (infiniteUndos || undosRemaining > 0)
         {
             bool success = Undo();
-            if(success) undosRemaining -= 1;
+            if(success && undosRemaining > 0) undosRemaining -= 1;
         }
     }
 
     public bool Undo()
     {
-        if (moves.Count > 0 && !GameManager.instance.GameInProgress())
+        if (moves.Count > 0 && GameManager.instance.GameInProgress())
         {
             GameManager.instance.LoadGame(moves.Pop());
             // GameManager.instance.playerManagers[0].GameOver = false;

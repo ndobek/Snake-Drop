@@ -33,6 +33,7 @@ namespace CloudOnce.QuickStart
 
         private void OnButtonClicked()
         {
+            Debug.Log("Leaderboard!");
             if (Cloud.IsSignedIn)
             {
                 Cloud.Leaderboards.ShowOverlay();

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 987620008699396774}
   - component: {fileID: 987620008699396773}
   - component: {fileID: 435249952238379011}
+  - component: {fileID: 1553727184224205486}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -102,3 +103,18 @@ MonoBehaviour:
   MenuUIFader: {fileID: 0}
   continueButtonFader: {fileID: 0}
   paused: 0
+--- !u!114 &1553727184224205486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 987620008699396769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f9cbee2052be1944a62dbcb0ced7aa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cloudSaveEnabled: 1
+  autoSignIn: 1
+  autoCloudLoad: 1
