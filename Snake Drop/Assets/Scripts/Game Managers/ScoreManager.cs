@@ -118,10 +118,11 @@ public class ScoreManager : MonoBehaviour
         {
             HighScore = 0;
         }
-        if (score > HighScore)
-        {
-            SaveManager.SaveHighScore();
-        }
+        SubmitHighScore();
+    }
+    public void SubmitHighScore()
+    {
+        Leaderboards.High_Score.SubmitScore(Score);
     }
 
 }

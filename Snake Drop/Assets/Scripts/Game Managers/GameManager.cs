@@ -86,8 +86,6 @@ public class GameManager : MonoBehaviour
     private void EndGame()
     {
         UpdateScore();
-        Leaderboards.High_Score.SubmitScore(playerManagers[0].Score.Score);
-        SaveManager.DeleteSave(SaveManager.AutoSaveSaveName);
     }
 
     private void UpdateScore()
