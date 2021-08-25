@@ -8,16 +8,12 @@ public class PowerupManager : MonoBehaviour
     public int nextPowerupScoreDiff;
     public int currentProgress;
     public int numOfPowerupsObtained;
+    public int numOfPowerupsUsed;
 
     public Powerup[] possiblePowerups;
     public Powerup currentPowerup;
     public int extraPowerups;
     public int numAvailablePowerups => extraPowerups + (currentPowerup != null ? 1 : 0);
-
-    public int PowerupBank
-    {
-        get { return (currentPowerup != null) ? 1 : 0 + extraPowerups; }
-    }
 
     public void ResetGame()
     {
@@ -25,6 +21,7 @@ public class PowerupManager : MonoBehaviour
         currentPowerup = null;
         extraPowerups = 0;
         numOfPowerupsObtained = 0;
+        numOfPowerupsUsed = 0;
         GetNextPowerupScore();
     }
     public void GetPowerUp()
@@ -45,6 +42,7 @@ public class PowerupManager : MonoBehaviour
         if (currentPowerup != null)
         {
             currentPowerup.Activate();
+            numOfPowerupsUsed += 1;
             currentPowerup = null;
             if (extraPowerups > 0)
             {

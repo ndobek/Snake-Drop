@@ -5,6 +5,11 @@
 			"InternalID":"High_Score",
 			"AppleID":"",
 			"GoogleID":"CgkI37zJ85kBEAIQAA"
+		},
+		{
+			"InternalID":"Highest_Score_Before_Board_Clear",
+			"AppleID":"",
+			"GoogleID":"CgkI37zJ85kBEAIQBA"
 		}
 	],
 	"CloudVariables":[],

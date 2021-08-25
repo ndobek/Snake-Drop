@@ -29,6 +29,21 @@ namespace CloudOnce
             get { return s_high_Score; }
         }
 
+        private static readonly UnifiedLeaderboard s_highest_Score_Before_Board_Clear = new UnifiedLeaderboard("Highest_Score_Before_Board_Clear",
+#if !UNITY_EDITOR && (UNITY_IOS || UNITY_TVOS)
+            ""
+#elif !UNITY_EDITOR && UNITY_ANDROID && CLOUDONCE_GOOGLE
+            "CgkI37zJ85kBEAIQBA"
+#else
+            "Highest_Score_Before_Board_Clear"
+#endif
+            );
+
+        public static UnifiedLeaderboard Highest_Score_Before_Board_Clear
+        {
+            get { return s_highest_Score_Before_Board_Clear; }
+        }
+
         public static string GetPlatformID(string internalId)
         {
             return s_leaderboardDictionary.ContainsKey(internalId)
@@ -39,6 +54,7 @@ namespace CloudOnce
         private static readonly Dictionary<string, UnifiedLeaderboard> s_leaderboardDictionary = new Dictionary<string, UnifiedLeaderboard>
         {
             { "High_Score", s_high_Score },
+            { "Highest_Score_Before_Board_Clear", s_highest_Score_Before_Board_Clear },
         };
     }
 }

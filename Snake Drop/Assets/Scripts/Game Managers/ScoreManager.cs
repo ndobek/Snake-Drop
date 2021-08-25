@@ -123,6 +123,7 @@ public class ScoreManager : MonoBehaviour
     public void SubmitHighScore()
     {
         Leaderboards.High_Score.SubmitScore(Score);
+        if (GameManager.instance.playerManagers[0].Powerup.numOfPowerupsUsed == 0) Leaderboards.Highest_Score_Before_Board_Clear.SubmitScore(Score);
     }
 
 }

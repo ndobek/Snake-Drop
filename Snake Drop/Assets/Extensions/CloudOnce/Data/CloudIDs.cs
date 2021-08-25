@@ -46,6 +46,26 @@ namespace CloudOnce
 #endif
                 }
             }
+
+            public static string Highest_Score_Before_Board_Clear
+            {
+                get
+                {
+#if UNITY_ANDROID && !UNITY_EDITOR
+#if CLOUDONCE_GOOGLE
+                    return "CgkI37zJ85kBEAIQBA";
+#else
+                    return string.Empty;
+#endif
+#elif (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+                    return "";
+#elif UNITY_EDITOR
+                    return "Highest_Score_Before_Board_Clear";
+#else
+                    return string.Empty;
+#endif
+                }
+            }
         }
     }
 }

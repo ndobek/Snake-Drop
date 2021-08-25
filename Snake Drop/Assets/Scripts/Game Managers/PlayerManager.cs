@@ -43,6 +43,7 @@ public class PlayerManager : MonoBehaviour
     private bool StopMakingSnakes = false;
 
     public int mostRecentSnakeLength;
+    public Random.State randStateForSnake;
 
     public void OnCrash()
     {
@@ -63,6 +64,7 @@ public class PlayerManager : MonoBehaviour
 
             FillPreviewBar();
         }
+        Score.UpdateScore();
 
     }
 
@@ -114,6 +116,7 @@ public class PlayerManager : MonoBehaviour
     {
         if (startSlot.CheckIsClear())
         {
+            Random.state = randStateForSnake;
             Score.NumberOfSnakes += 1;
             SnakeInfo info = GameManager.instance.GameModeManager.GetSnakeInfo(Score.Score, Score.NumberOfSnakes);
             StopMakingSnakes = info == null;
@@ -122,6 +125,7 @@ public class PlayerManager : MonoBehaviour
                 Debug.Log("Entropy: " + info.entropy + " Length: " + info.length + " Snake Number: " + Score.NumberOfSnakes + " Score: " + Score.Score);
                 SnakeMaker.MakeSnake(startSlot, info);
             }
+            randStateForSnake = Random.state;
         }
     }
 

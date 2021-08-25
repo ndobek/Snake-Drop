@@ -37,6 +37,7 @@ public class PlayerSaveData
     public EntranceSlotSaveData EnterSlot;
     public int mostRecentDirectionMoved;
     public int mostRecentSnakeLength;
+    public Random.State randStateForSnake;
 
     public PlayerSaveData(PlayerManager SaveObj)
     {
@@ -51,6 +52,7 @@ public class PlayerSaveData
         EnterSlot = new EntranceSlotSaveData(SaveObj.enterSlot);
         mostRecentDirectionMoved = (int)SaveObj.playerController.SecondMostRecentDirectionMoved;
         mostRecentSnakeLength = SaveObj.mostRecentSnakeLength;
+        randStateForSnake = SaveObj.randStateForSnake;
 
     }
     
@@ -70,6 +72,7 @@ public class PlayerSaveData
         powerup.LoadTo(LoadObj.Powerup, gameManager);
         LoadObj.RoundInProgress = RoundInProgress;
         LoadObj.GameInProgress = GameInProgress;
+        LoadObj.randStateForSnake = randStateForSnake;
     }
 }
 
@@ -81,6 +84,7 @@ public class PowerupSaveData
     public int extraPowerups;
     public int numberOfObtainedPowerups;
     public int nextPowerupScoreDiff;
+    public int numberOfUsedPowerups;
 
     public PowerupSaveData(PowerupManager SaveObj)
     {
@@ -89,6 +93,7 @@ public class PowerupSaveData
         extraPowerups = SaveObj.extraPowerups;
         numberOfObtainedPowerups = SaveObj.numOfPowerupsObtained;
         nextPowerupScoreDiff = SaveObj.nextPowerupScoreDiff;
+        numberOfUsedPowerups = SaveObj.numOfPowerupsUsed;
 
     }
 
@@ -100,6 +105,7 @@ public class PowerupSaveData
         LoadObj.extraPowerups = extraPowerups;
         LoadObj.numOfPowerupsObtained = numberOfObtainedPowerups;
         LoadObj.nextPowerupScoreDiff = nextPowerupScoreDiff;
+        LoadObj.numOfPowerupsUsed = numberOfUsedPowerups;
     }
 }
 
