@@ -40,7 +40,7 @@ public class ScoreManager : MonoBehaviour
     private float partialScore;
     private float partialMultiplier;
 
-
+    public int scoreAtLastCrash;
 
     public int numberOfSnakes;
     public int NumberOfSnakes
@@ -109,21 +109,28 @@ public class ScoreManager : MonoBehaviour
 
     public void UpdateScore()
     {
-        SaveData oldScore = SaveManager.LoadHighScore();
-        if (oldScore != null && oldScore.playerData != null && oldScore.playerData.score != null)
-        {
-            HighScore = oldScore.playerData.score.score;
-        }
-        else
-        {
-            HighScore = 0;
-        }
+        //SaveData oldScore = SaveManager.LoadHighScore();
+        //if (oldScore != null && oldScore.playerData != null && oldScore.playerData.score != null)
+        //{
+        //    HighScore = oldScore.playerData.score.score;
+        //}
+        //else
+        //{
+        //    HighScore = 0;
+        //}
         SubmitHighScore();
+        HighScore = CloudVariables.HighScore;
     }
     public void SubmitHighScore()
     {
         Leaderboards.High_Score.SubmitScore(Score);
         if (GameManager.instance.playerManagers[0].Powerup.numOfPowerupsUsed == 0) Leaderboards.Highest_Score_Before_Board_Clear.SubmitScore(Score);
+        CloudVariables.HighScore = score;
+    }
+    public void OnCrash()
+    {
+        Leaderboards.Highest_Single_Combo.SubmitScore(Score - scoreAtLastCrash);
+        scoreAtLastCrash = score;
     }
 
 }

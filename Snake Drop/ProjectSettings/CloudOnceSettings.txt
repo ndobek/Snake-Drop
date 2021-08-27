@@ -10,9 +10,36 @@
 			"InternalID":"Highest_Score_Before_Board_Clear",
 			"AppleID":"",
 			"GoogleID":"CgkI37zJ85kBEAIQBA"
+		},
+		{
+			"InternalID":"Highest_Single_Combo",
+			"AppleID":"",
+			"GoogleID":"CgkI37zJ85kBEAIQBQ"
 		}
 	],
-	"CloudVariables":[],
+	"CloudVariables":[
+		{
+			"Key":"UnlimitedUndos",
+			"Type":"4",
+			"DefaultValue":"False",
+			"PersistenceType":"0",
+			"AllowNegative":false
+		},
+		{
+			"Key":"Undos",
+			"Type":"1",
+			"DefaultValue":"0",
+			"PersistenceType":"0",
+			"AllowNegative":false
+		},
+		{
+			"Key":"HighScore",
+			"Type":"0",
+			"DefaultValue":"0",
+			"PersistenceType":"1",
+			"AllowNegative":false
+		}
+	],
 	"AppleSupported":false,
 	"GoogleSupported":true,
 	"GoogleAppID":"41313001055",

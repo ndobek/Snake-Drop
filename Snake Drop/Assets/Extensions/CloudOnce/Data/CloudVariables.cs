@@ -13,5 +13,28 @@ namespace CloudOnce
     /// </summary>
     public static class CloudVariables
     {
+        private static readonly CloudBool s_unlimitedUndos = new CloudBool("UnlimitedUndos", PersistenceType.Latest, false);
+
+        public static bool UnlimitedUndos
+        {
+            get { return s_unlimitedUndos.Value; }
+            set { s_unlimitedUndos.Value = value; }
+        }
+
+        private static readonly CloudCurrencyInt s_undos = new CloudCurrencyInt("Undos", 0, false);
+
+        public static int Undos
+        {
+            get { return s_undos.Value; }
+            set { s_undos.Value = value; }
+        }
+
+        private static readonly CloudInt s_highScore = new CloudInt("HighScore", PersistenceType.Highest, 0);
+
+        public static int HighScore
+        {
+            get { return s_highScore.Value; }
+            set { s_highScore.Value = value; }
+        }
     }
 }

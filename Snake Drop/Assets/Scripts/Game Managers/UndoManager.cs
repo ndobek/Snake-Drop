@@ -2,14 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using CloudOnce;
 
 public class UndoManager : MonoBehaviour
 {
     [SerializeField]
     private TMP_Text undosRemainingText;
-    private int undosRemaining;
-    [SerializeField]
-    private bool infiniteUndos;
 
     [SerializeField]
     private int undosPerWatch;
@@ -25,10 +23,14 @@ public class UndoManager : MonoBehaviour
 
     public void TryUndo()
     {
-        if (infiniteUndos || undosRemaining > 0)
+        if (CloudVariables.UnlimitedUndos || CloudVariables.Undos > 0)
         {
             bool success = Undo();
-            if(success && undosRemaining > 0) undosRemaining -= 1;
+            if (success && CloudVariables.Undos > 0)
+            {
+                CloudVariables.Undos -= 1;
+                Cloud.Storage.Save();
+            }
         }
     }
 
@@ -49,11 +51,18 @@ public class UndoManager : MonoBehaviour
 
     public void GetUndos()
     {
-        undosRemaining += undosPerWatch;
+        CloudVariables.Undos += undosPerWatch;
+        Cloud.Storage.Save();
     }
 
     private void Update()
     {
-        undosRemainingText.text = undosRemaining.ToString();
+        if (!CloudVariables.UnlimitedUndos)
+        {
+            undosRemainingText.text = CloudVariables.Undos.ToString();
+        } else
+        {
+            undosRemainingText.text = "";
+        }
     }
 }

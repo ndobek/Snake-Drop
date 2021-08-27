@@ -49,6 +49,7 @@ public class PlayerManager : MonoBehaviour
     {
         Rule OnCrash = GameManager.instance.GameModeManager.GameMode.OnCrash;
         if (OnCrash != null) OnCrash.Invoke(snakeHead, this);
+        Score.OnCrash();
         RoundInProgress = false;
     }
 
