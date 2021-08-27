@@ -36,8 +36,11 @@ public class UndoManager : MonoBehaviour
     {
         if (moves.Count > 0 && !GameManager.instance.pauseManager.paused)
         {
-            GameManager.instance.LoadGame(moves.Pop());
-            GameManager.instance.playerManagers[0].GameOver = false;
+            GameManager m = GameManager.instance;
+            SaveData loadedData = moves.Pop();
+            m.LoadGame(loadedData);
+            m.playerManagers[0].GameOver = false;
+            SaveManager.AutoSave();
             return true;
         }
         return false;

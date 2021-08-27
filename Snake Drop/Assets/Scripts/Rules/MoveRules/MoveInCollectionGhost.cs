@@ -45,7 +45,7 @@ public class MoveInCollectionGhost : MoveRule
 
     private void RemoveFirstColorInTail(Block block, BlockSlot slot, PlayerManager player)
     {
-        if (block.Tail && !CollectionIsFull(slot.Block) && slot.Block.BlockCollection.CoordsAreInCollection(block.X, block.Y))
+        if (block.Tail && !CollectionIsFull(slot.Block) && slot.playGrid == block.Slot.playGrid && slot.Block.BlockCollection.CoordsAreInCollection(block.X, block.Y))
         {
             if(block.Tail.blockColor == slot.Block.blockColor)
             {

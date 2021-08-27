@@ -64,8 +64,6 @@ public class PlayerManager : MonoBehaviour
 
             FillPreviewBar();
         }
-        Score.UpdateScore();
-
     }
 
     public void DoGridActions()
@@ -152,6 +150,7 @@ public class PlayerManager : MonoBehaviour
 
     public void ResetGame()
     {
+        randStateForSnake = Random.state;
         GameManager.instance.plantManager.ResetGrowth();
         Score.ResetGame();
         Powerup.ResetGame();
@@ -283,4 +282,5 @@ public class PlayerManager : MonoBehaviour
     {
         previewGridAnimator.SetBool("Up", !RoundInProgress);
     }
+
 }
