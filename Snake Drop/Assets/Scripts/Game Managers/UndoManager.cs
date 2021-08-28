@@ -8,6 +8,8 @@ public class UndoManager : MonoBehaviour
 {
     [SerializeField]
     private TMP_Text undosRemainingText;
+    [SerializeField]
+    private PauseManager adMenu;
 
     [SerializeField]
     private int undosPerWatch;
@@ -23,20 +25,27 @@ public class UndoManager : MonoBehaviour
 
     public void TryUndo()
     {
-        if (CloudVariables.UnlimitedUndos || CloudVariables.Undos > 0)
+        if (!GameManager.instance.pauseManager.paused)
         {
-            bool success = Undo();
-            if (success && CloudVariables.Undos > 0)
+            if (CloudVariables.UnlimitedUndos || CloudVariables.Undos > 0)
             {
-                CloudVariables.Undos -= 1;
-                Cloud.Storage.Save();
+                bool success = Undo();
+                if (success && CloudVariables.Undos > 0)
+                {
+                    CloudVariables.Undos -= 1;
+                    Cloud.Storage.Save();
+                }
+            }
+            else
+            {
+                adMenu.Pause();
             }
         }
     }
 
     public bool Undo()
     {
-        if (moves.Count > 0 && !GameManager.instance.pauseManager.paused)
+        if (moves.Count > 0)
         {
             GameManager m = GameManager.instance;
             SaveData loadedData = moves.Pop();

@@ -35,34 +35,53 @@ public class UIFade : MonoBehaviour
     private Vector3 originalPos;
     private bool rewriteOriginalPos = true;
 
-    void Awake()
+    private void CheckComponents()
     {
         if (Group == null) Group = GetComponent<CanvasGroup>();
         if (rectTransform == null) rectTransform = GetComponent<RectTransform>();
     }
 
+    void Awake()
+    {
+        CheckComponents();
+    }
+
     void OnEnable()
     {
-        if (Group == null) Group = GetComponent<CanvasGroup>();
-        if (rectTransform == null) rectTransform = GetComponent<RectTransform>();
+        CheckComponents();
 
         if (beginFadedOut) SetFadedOut();
         if (fadeInOnEnable) FadeIn();
     }
 
-    public void SetFadedOut()
+    public virtual void SetFadedOut()
     {
+        CheckComponents();
         Group.alpha = 0;
         Group.blocksRaycasts = false;
         Group.interactable = false;
         FadedIn = false;
     }
-    public void SetFadedIn()
+    public virtual void SetFadedIn()
     {
+        CheckComponents();
         Group.alpha = 1;
         Group.blocksRaycasts = true;
         Group.interactable = true;
         FadedIn = true;
+    }
+
+    public void IgnoreFadeGroups(bool onOff)
+    {
+        ignoreFadeGroups = onOff;
+    }
+    public void IgnoreFadeGroups()
+    {
+        IgnoreFadeGroups(true);
+    }
+    public void StopIgnoringFadeGroups()
+    {
+        IgnoreFadeGroups(false);
     }
 
     public void FadeIn()
