@@ -9,7 +9,7 @@ public class UndoManager : MonoBehaviour
     [SerializeField]
     private TMP_Text undosRemainingText;
     [SerializeField]
-    private PauseManager adMenu;
+    private UIFade adMenu;
 
     [SerializeField]
     private int undosPerWatch;
@@ -25,7 +25,8 @@ public class UndoManager : MonoBehaviour
 
     public void TryUndo()
     {
-        if (!GameManager.instance.pauseManager.paused)
+        PauseManager pauseManager = GameManager.instance.pauseManager;
+        if (!pauseManager.paused)
         {
             if (CloudVariables.UnlimitedUndos || CloudVariables.Undos > 0)
             {
@@ -38,7 +39,7 @@ public class UndoManager : MonoBehaviour
             }
             else
             {
-                adMenu.Pause();
+                pauseManager.Pause(adMenu);
             }
         }
     }

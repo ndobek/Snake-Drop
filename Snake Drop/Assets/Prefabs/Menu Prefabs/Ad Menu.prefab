@@ -937,7 +937,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8837388267436976686}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PauseManager, Assembly-CSharp
         m_MethodName: UnPause
         m_Mode: 1
@@ -1181,7 +1181,6 @@ GameObject:
   - component: {fileID: 6635970269766625523}
   - component: {fileID: 3486261573724442099}
   - component: {fileID: 7103711807421920135}
-  - component: {fileID: 8837388267436976686}
   m_Layer: 0
   m_Name: Ad Menu
   m_TagString: Untagged
@@ -1355,22 +1354,6 @@ MonoBehaviour:
   ignoreFadeGroups: 0
   fadeInOnEnable: 1
   beginFadedOut: 1
---- !u!114 &8837388267436976686
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6487114728552074258}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5f1be92e08649b499b5376664c610c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GameUIFader: {fileID: 0}
-  MenuUIFader: {fileID: 7103711807421920135}
-  continueButtonFader: {fileID: 4839160851518681084}
-  paused: 0
 --- !u!1 &6512767315783342468
 GameObject:
   m_ObjectHideFlags: 0
