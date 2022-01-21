@@ -29,7 +29,16 @@ public class DirectionalSpriteController : BlockSpriteAnimator
         {
             currentMaterial = notSnakeMaterial;
         }
+
+
         if (block && block.Owner && block.Owner.playerController && block.Owner.RoundInProgress) dir = block.Owner.playerController.MostRecentDirectionMoved;
+
+        PlayerManager player = GameManager.instance.playerManagers[0];
+        if (block && block.Slot && block.Slot.playGrid == player.previewGrid)
+        {
+            dir = player.enterSlot.GetEntranceDirection(player.playGrid);
+        }
+
         switch (dir) 
         {
             case Directions.Direction.UP:

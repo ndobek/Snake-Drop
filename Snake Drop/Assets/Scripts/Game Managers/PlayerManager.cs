@@ -140,6 +140,7 @@ public class PlayerManager : MonoBehaviour
             PositionEntranceIndicator(slot.transform);
 
             enterSlot = (EntranceSlot)slot;
+            previewGrid.UpdateAllSprites();
         }
     }
 

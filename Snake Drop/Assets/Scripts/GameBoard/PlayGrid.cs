@@ -79,6 +79,17 @@ public class PlayGrid : MonoBehaviour
         else return null;
     }
 
+    public void UpdateAllSprites()
+    {
+        foreach(BlockSlot slot in slots)
+        {
+            foreach(Block block in slot.Blocks)
+            {
+                block.UpdateSprite();
+            }
+        }
+    }
+
 
     public void SetBlock(int x, int y, BlockColor color, BlockType type)
     {
