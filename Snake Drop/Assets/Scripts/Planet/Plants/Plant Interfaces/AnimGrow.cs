@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class AnimGrow : MonoBehaviour, IGrowable
 {
-    public PlantAnimator anim;
 
     public int xp = 0;
     public int xpPerGrow = 5;
-    
+
+    public Animator animator;
 
 
     private int growthStage;
@@ -19,12 +19,7 @@ public class AnimGrow : MonoBehaviour, IGrowable
         set
         {
             growthStage = value;
-            if (anim != null) anim.SetGrowthStage(growthStage);
         }
-    }
-    private void Start()
-    {
-        anim = GetComponent<PlantAnimator>();
     }
     public bool ShouldGrow()
     {
@@ -45,5 +40,6 @@ public class AnimGrow : MonoBehaviour, IGrowable
     public void UpdateGrowth()
     {
         if (ShouldGrow()) Grow();
+        animator.SetInteger("Growth Stage", growthStage);
     }
 }

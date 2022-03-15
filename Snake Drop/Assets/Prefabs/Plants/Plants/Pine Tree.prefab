@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -5521937721092750096}
   - component: {fileID: 5322462638928519705}
   - component: {fileID: -6571075540884254883}
-  - component: {fileID: 6622149719781222915}
+  - component: {fileID: 2450881463691908538}
   m_Layer: 8
   m_Name: Pine Tree
   m_TagString: Untagged
@@ -47,9 +47,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef8bd7fbcbc6f3046acd27ee3cdf1e51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 0}
   xp: 0
-  xpPerGrow: 5
+  xpPerGrow: 0
+  animator: {fileID: -6571075540884254883}
 --- !u!114 &-5521937721092750096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,7 +125,7 @@ Animator:
   m_GameObject: {fileID: 5526921751661114468}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f9cf9a344dfaa2c4ea2839be7157e065, type: 2}
+  m_Controller: {fileID: 9100000, guid: 77d79b138bf510243bd88817f99d55a1, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -134,7 +134,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &6622149719781222915
+--- !u!114 &2450881463691908538
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,11 +143,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 5526921751661114468}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7ef3f6025338664a80ba9c6ab501b90, type: 3}
+  m_Script: {fileID: 11500000, guid: 3419d908426698e468272ce801a4b549, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  environmentData: {fileID: 842660872289720693, guid: 398e3c8858fc88d4e9f609f7223c8529,
-    type: 3}
-  animator: {fileID: 0}
-  species: {fileID: 11400000, guid: e54ff96ca158f7d44b9f8f3798044072, type: 2}
-  currentStageClips: []
+  anim: {fileID: 0}
+  wind: {fileID: 11400000, guid: 68e89ca445933fc47bb4d7eadd9207fa, type: 2}
+  WindSpeedAnimatorVar: Wind Speed
