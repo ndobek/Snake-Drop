@@ -17,8 +17,11 @@ public class BlockMoveAnimator : BlockAnimator
 
     public override void OnComplete(BlockAnimation blockAnimation)
     {
+        
         blockAnimation.block.transform.SetParent(blockAnimation.destination.transform);
         blockAnimation.block.transform.localPosition = Vector3.zero;
+        
+       
     }
 
     public Vector3 Evaluate(Vector3 origin, Vector3 destination, float time)

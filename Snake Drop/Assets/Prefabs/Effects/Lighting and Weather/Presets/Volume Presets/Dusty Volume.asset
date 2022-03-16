@@ -12,24 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40d221a0d50c61b40ba792ceefb9c4f2, type: 3}
   m_Name: Dusty Volume
   m_EditorClassIdentifier: 
-  volumeState:
-    hueVsSat:
-      <length>k__BackingField: 1
-      m_Loop: 0
-      m_ZeroValue: 0
-      m_Range: 2
-      m_Curve:
-        serializedVersion: 2
-        m_Curve:
-        - serializedVersion: 3
-          time: 0.55700934
-          value: 0.5058366
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
+  volumeState: {fileID: 11400000, guid: 7113a3780f3dbc64ca60181dae0dac1f, type: 2}

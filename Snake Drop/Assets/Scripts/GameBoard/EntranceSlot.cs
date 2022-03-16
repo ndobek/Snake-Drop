@@ -82,21 +82,27 @@ public class EntranceSlot : BlockSlot
         return Active == true 
             && (player == null || AllowedPlayers.Contains(player))
             && CheckIfEntranceHasOpeningToGrid(playGrid)
-            && player.GetNextSnakeHead().CanMoveToWithoutCrashing(getOpeningToGrid(playGrid));
+            && player.GetNextSnakeHead().CanMoveToWithoutCrashing(GetOpeningToGrid(playGrid));
     }
     public bool CheckIfEntranceHasOpeningToGrid(PlayGrid grid)
     {
-        BlockSlot slot = getOpeningToGrid(grid);
+        BlockSlot slot = GetOpeningToGrid(grid);
         return (slot/* && slot.Block == null*/);
     }
-    public BlockSlot getOpeningToGrid(PlayGrid grid)
+    public BlockSlot GetOpeningToGrid(PlayGrid grid)
     {
-        BlockSlot result = null;
-        if (customLeftNeighbor && customLeftNeighbor.playGrid == grid) result = customLeftNeighbor;
-        if (customRightNeighbor && customRightNeighbor.playGrid == grid) result = customRightNeighbor;
-        if (customUpNeighbor && customUpNeighbor.playGrid == grid) result = customUpNeighbor;
-        if (customDownNeighbor && customDownNeighbor.playGrid == grid) result = customDownNeighbor;
+        return GetNeighbor(GetEntranceDirection(grid));
+        
+    }
+    public Directions.Direction GetEntranceDirection(PlayGrid grid)
+    {
+        Directions.Direction result = Directions.Direction.DOWN;
+        if (customLeftNeighbor && customLeftNeighbor.playGrid == grid) result = Directions.Direction.LEFT;
+        if (customRightNeighbor && customRightNeighbor.playGrid == grid) result = Directions.Direction.RIGHT;
+        if (customUpNeighbor && customUpNeighbor.playGrid == grid) result = Directions.Direction.UP;
+        if (customDownNeighbor && customDownNeighbor.playGrid == grid) result = Directions.Direction.DOWN;
         return result;
+
     }
 
     public void UpdateAnimations()

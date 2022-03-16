@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using CloudOnce;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class GameManager : MonoBehaviour
     public PlayerManager[] playerManagers;
     public GameModeManager GameModeManager;
     public PlantManager plantManager;
+    public BoardRotator boardRotator;
+    public PauseManager pauseManager;
 
 
 
@@ -19,7 +22,7 @@ public class GameManager : MonoBehaviour
 
     public bool GameInProgress()
     {
-        foreach(PlayerManager player in playerManagers)
+        foreach (PlayerManager player in playerManagers)
         {
             if (player.GameInProgress) return true;
         }
@@ -30,16 +33,12 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        if(!instance) instance = this;
-    }
-    private void Start()
-    {
-        StartGame();
+        if (!instance) instance = this;
     }
 
     public void OnCrash()
     {
-        foreach(PlayerManager player in playerManagers)
+        foreach (PlayerManager player in playerManagers)
         {
             OnCrash(player);
         }
@@ -71,7 +70,7 @@ public class GameManager : MonoBehaviour
     {
         foreach (PlayerManager player in playerManagers)
         {
-            if (player.GameInProgress) return false;
+            if (!player.GameOver) return false;
         }
         return true;
     }
@@ -87,12 +86,11 @@ public class GameManager : MonoBehaviour
     private void EndGame()
     {
         UpdateScore();
-        gameOverScreen.SetActive(true);
     }
 
     private void UpdateScore()
     {
-        foreach(PlayerManager player in playerManagers)
+        foreach (PlayerManager player in playerManagers)
         {
             player.Score.UpdateScore();
         }
@@ -106,5 +104,11 @@ public class GameManager : MonoBehaviour
     public void LoadGame(SaveData save)
     {
         save.LoadTo(this);
+        boardRotator.RotateBoardToMatchEntrance();
+    }
+
+    private void Update()
+    {
+        gameOverScreen.SetActive(GameIsOver());
     }
 }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5186418266535475668}
   - component: {fileID: 2974507927795062372}
   - component: {fileID: 3444541771542092477}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rocky Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -358638985
-  m_SortingLayer: -9
+  m_SortingLayer: -10
   m_SortingOrder: -2
   m_Sprite: {fileID: 5061757703129102799, guid: 9423b5394fbf72b47a8329b03f8fa314,
     type: 3}
@@ -202,7 +202,7 @@ MonoBehaviour:
   - {x: -7.2031274, y: 6.7777967, z: 0}
   m_ShapePathHash: -1539279452
   m_Mesh: {fileID: 0}
-  m_InstanceId: 212480
+  m_InstanceId: -5562
 --- !u!1001 &215723359637968241
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -214,6 +214,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ' -1'
+      objectReference: {fileID: 0}
+    - target: {fileID: 957446292435487145, guid: 209877ae95e3b044eb68c23971b0cc87,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 957446292435487190, guid: 209877ae95e3b044eb68c23971b0cc87,
         type: 3}
@@ -295,6 +300,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 957446292435487145, guid: 209877ae95e3b044eb68c23971b0cc87,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 957446292435487190, guid: 209877ae95e3b044eb68c23971b0cc87,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -369,6 +379,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 957446292435487145, guid: 209877ae95e3b044eb68c23971b0cc87,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 957446292435487190, guid: 209877ae95e3b044eb68c23971b0cc87,
         type: 3}
@@ -450,6 +465,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 957446292435487145, guid: 209877ae95e3b044eb68c23971b0cc87,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 957446292435487190, guid: 209877ae95e3b044eb68c23971b0cc87,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -524,6 +544,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 957446292435487145, guid: 209877ae95e3b044eb68c23971b0cc87,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 957446292435487190, guid: 209877ae95e3b044eb68c23971b0cc87,
         type: 3}
@@ -604,6 +629,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 957446292435487145, guid: 209877ae95e3b044eb68c23971b0cc87,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 957446292435487190, guid: 209877ae95e3b044eb68c23971b0cc87,
         type: 3}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3044492358124261790}
   - component: {fileID: -4197098269233935402}
   - component: {fileID: 6836690365865625020}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Smooth Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -163,6 +163,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 957446292435487145, guid: 209877ae95e3b044eb68c23971b0cc87,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 957446292435487190, guid: 209877ae95e3b044eb68c23971b0cc87,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -237,6 +242,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 957446292435487145, guid: 209877ae95e3b044eb68c23971b0cc87,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 957446292435487190, guid: 209877ae95e3b044eb68c23971b0cc87,
         type: 3}
@@ -313,6 +323,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 957446292435487145, guid: 209877ae95e3b044eb68c23971b0cc87,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 957446292435487190, guid: 209877ae95e3b044eb68c23971b0cc87,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -387,6 +402,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ' -1'
+      objectReference: {fileID: 0}
+    - target: {fileID: 957446292435487145, guid: 209877ae95e3b044eb68c23971b0cc87,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 957446292435487190, guid: 209877ae95e3b044eb68c23971b0cc87,
         type: 3}
@@ -463,6 +483,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: -3
       objectReference: {fileID: 0}
+    - target: {fileID: 957446292435487145, guid: 209877ae95e3b044eb68c23971b0cc87,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 957446292435487190, guid: 209877ae95e3b044eb68c23971b0cc87,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -537,6 +562,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 957446292435487145, guid: 209877ae95e3b044eb68c23971b0cc87,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 957446292435487190, guid: 209877ae95e3b044eb68c23971b0cc87,
         type: 3}

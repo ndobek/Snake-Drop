@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AnimWindReact : MonoBehaviour,  IWindReactive
+public class AnimWindReact : MonoBehaviour, IWindReactive
 {
     [HideInInspector]
     public Animator anim;

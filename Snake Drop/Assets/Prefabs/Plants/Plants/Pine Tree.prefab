@@ -9,12 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1240890129693732185}
-  - component: {fileID: 2186625014926737111}
   - component: {fileID: -4877791466320593831}
   - component: {fileID: -5521937721092750096}
   - component: {fileID: 5322462638928519705}
   - component: {fileID: -6571075540884254883}
-  m_Layer: 0
+  - component: {fileID: 2450881463691908538}
+  m_Layer: 8
   m_Name: Pine Tree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35,21 +35,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2186625014926737111
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5526921751661114468}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3419d908426698e468272ce801a4b549, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 0}
-  wind: {fileID: 11400000, guid: 68e89ca445933fc47bb4d7eadd9207fa, type: 2}
-  WindSpeedAnimatorVar: Wind Speed
 --- !u!114 &-4877791466320593831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63,7 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   xp: 0
-  xpPerGrow: 5
+  xpPerGrow: 0
+  animator: {fileID: -6571075540884254883}
 --- !u!114 &-5521937721092750096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,8 +101,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -358638985
-  m_SortingLayer: -1
+  m_SortingLayerID: 1638940919
+  m_SortingLayer: -4
   m_SortingOrder: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -148,3 +134,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2450881463691908538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5526921751661114468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3419d908426698e468272ce801a4b549, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 0}
+  wind: {fileID: 11400000, guid: 68e89ca445933fc47bb4d7eadd9207fa, type: 2}
+  WindSpeedAnimatorVar: Wind Speed

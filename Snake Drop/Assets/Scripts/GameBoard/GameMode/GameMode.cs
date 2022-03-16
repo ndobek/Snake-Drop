@@ -8,25 +8,11 @@ public class GameMode : ScriptableObject
     public EndGameCondition EndGameCondition;
     public TypeBank TypeBank;
     public GridAction OnGameStart;
+    public Rule OnCrash;
 
     [System.Serializable]
     public class Level
     {
-        //public enum StatTypes
-        //{
-        //    minBaseLength,
-        //    maxBaseLength,
-        //    minBaseEntropy,
-        //    maxBaseEntropy,
-        //    LengthScoreMod,
-        //    LengthSnakeNumberMod,
-        //    EntropyScoreMod,
-        //    EntropySnakeNumberMod,
-        //    minTotalLength,
-        //    maxTotalLength,
-        //    minTotalEntropy,
-        //    maxTotalEntropy
-        //}
 
         public int MinScore;
         public int MaxScore;
@@ -62,18 +48,6 @@ public class GameMode : ScriptableObject
     [SerializeField]
     public Level[] Levels;
 
-
-    //public SnakeInfo GetRandomSnakeInfo(int score, int snakeNumber)
-    //{
-    //    List<SnakeInfo> possibleResults = new List<SnakeInfo>();
-    //    foreach (Level level in Levels)
-    //    {
-    //        if (level.LevelInRange(score, snakeNumber)) possibleResults.Add(level.SnakeType.GetRandomSnakeInfo(score, snakeNumber));
-    //    }
-    //    if (possibleResults.Count > 0) return possibleResults[Random.Range(0, possibleResults.Count)];
-
-    //    throw new System.Exception("No Acceptable Difficulty Settings");
-    //}
     public Stat<BlockType>[] GetTypes(int score, int snakeNumber)
     {
         List<Stat<BlockType>> results = new List<Stat<BlockType>>();
@@ -142,36 +116,12 @@ public class GameMode : ScriptableObject
         //throw new System.Exception("No Acceptable Difficulty Settings");
     }
 
-    //public BlockType[] GetRandomTypes(int score, int snakeNumber)
-    //{
-    //    List<BlockType[]> possibleResults = new List<BlockType[]>();
-    //    foreach (Level level in Levels)
-    //    {
-    //        if (level.LevelInRange(score, snakeNumber)) possibleResults.Add(level.possibleTypes);
-    //    }
-    //    if (possibleResults.Count > 0) return possibleResults[Random.Range(0, possibleResults.Count)];
-
-    //    throw new System.Exception("No Acceptable Difficulty Settings");
-    //}
-    //public BlockColor[] GetRandomColors(int score, int snakeNumber)
-    //{
-    //    List<BlockColor[]> possibleResults = new List<BlockColor[]>();
-    //    foreach (Level level in Levels)
-    //    {
-    //        if (level.LevelInRange(score, snakeNumber)) possibleResults.Add(level.possibleColors);
-    //    }
-    //    if (possibleResults.Count > 0) return possibleResults[Random.Range(0, possibleResults.Count)];
-
-    //    throw new System.Exception("No Acceptable Difficulty Settings");
-    //}
-
-
-    public float GetRandomStat(SnakeStatType statType, int score, int snakeNumber)
+    public float GetRandomStat(string statType, int score, int sequenceNumber)
     {
         List<Stat<float>> possibleResults = new List<Stat<float>>();
         foreach (Level level in Levels)
         {
-            if (level.LevelInRange(score, snakeNumber))
+            if (level.LevelInRange(score, sequenceNumber))
             {
                 foreach(Stat<float> stat in level.Stats)
                 {
@@ -181,31 +131,31 @@ public class GameMode : ScriptableObject
         }
         if (possibleResults.Count > 0) return possibleResults[Random.Range(0, possibleResults.Count)].value;
 
-        //Debug.Log("No Acceptable Difficulty Settings, Returning default:" + statType + ": " + statType.defaultValue);
-        return statType.defaultValue;
+        Debug.Log("No Acceptable Difficulty Settings, Returning default:" + statType + ": " + "0");
+        return 0;
     }
 
-    public float GetRandomStatRange(SnakeStatType minStatType, SnakeStatType maxStatType, int score, int snakeNumber)
+    public float GetRandomStatRange(string minStatType, string maxStatType, int score, int sequenceNumber)
     {
-        return Random.Range(GetRandomStat(minStatType, score, snakeNumber), GetRandomStat(maxStatType, score, snakeNumber));
+        return Random.Range(GetRandomStat(minStatType, score, sequenceNumber), GetRandomStat(maxStatType, score, sequenceNumber));
     }
 
-    private float GetStatModifier(SnakeStatType ScoreMod, SnakeStatType SnakeNumberMod, int score, int snakeNumber)
+    private float GetStatModifier(string ScoreMod, string SequenceNumberMod, int score, int sequenceNumber)
     {
         float result = 0;
 
-        result += (score * GetRandomStat(ScoreMod, score, snakeNumber));
-        result += (snakeNumber * GetRandomStat(SnakeNumberMod, score, snakeNumber));
+        result += (score * GetRandomStat(ScoreMod, score, sequenceNumber));
+        result += (sequenceNumber * GetRandomStat(SequenceNumberMod, score, sequenceNumber));
 
         return result;
     }
 
-    public float GetModifiedStat(SnakeStatType minBase, SnakeStatType maxBase, SnakeStatType scoreMod, SnakeStatType snakeNumberMod, SnakeStatType minTotal, SnakeStatType maxTotal, int score, int snakeNumber)
+    public float GetModifiedStat(string minBase, string maxBase, string scoreMod, string sequenceNumberMod, string minTotal, string maxTotal, int score, int sequenceNumber)
     {
-        float Base = GetRandomStatRange(minBase, maxBase, score, snakeNumber);
-        float Modifier = GetStatModifier(scoreMod, snakeNumberMod, score, snakeNumber);
-        float min = GetRandomStat(minTotal, score, snakeNumber);
-        float max = GetRandomStat(maxTotal, score, snakeNumber);
+        float Base = GetRandomStatRange(minBase, maxBase, score, sequenceNumber);
+        float Modifier = GetStatModifier(scoreMod, sequenceNumberMod, score, sequenceNumber);
+        float min = GetRandomStat(minTotal, score, sequenceNumber);
+        float max = GetRandomStat(maxTotal, score, sequenceNumber);
 
         return Mathf.Clamp(Base + Modifier, min, max);
     }

@@ -1,0 +1,2224 @@
+[33mcommit 1516c6a5e721b17e7865d60b746d79db9505347f[m[33m ([m[1;36mHEAD -> [m[1;32mAlpha-4.0[m[33m)[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Tue Jul 13 09:26:33 2021 -0600
+
+    Something broke?
+
+[33mcommit 70b00b33db4a61f2be3253ff5310307573196fbd[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Fri Jul 9 13:47:03 2021 -0600
+
+    Update to Unity 2020.3
+
+[33mcommit b9b9d7ffde94d0df23f76fd82c56c2424d8c6a50[m[33m ([m[1;31morigin/Alpha-4.0[m[33m)[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Fri Jul 9 11:23:23 2021 -0600
+
+    Attached Undo Button
+
+[33mcommit 9ee241f20a297814fcc79038718744d72aedce78[m[33m ([m[1;32mfix-rotation[m[33m)[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Fri Jul 9 11:13:20 2021 -0600
+
+    Put board rotation on a curve.
+
+[33mcommit 2f45fb596453c6646f63b1ef9bdda6e8287d48ab[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Fri Jul 9 00:59:11 2021 -0600
+
+    Extended Sprites to prevent Tearing
+
+[33mcommit 50005f7dfa49c105cba274aaebed2e3d167d0a58[m[33m ([m[1;32mCamera-Settings[m[33m)[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Wed Jul 7 19:59:06 2021 -0600
+
+    Automatically rounds resolution
+
+[33mcommit 0572a63afefad8a40d9f82802348ce47662fa37c[m[33m ([m[1;32mSkyRotate[m[33m)[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Wed Jul 7 15:44:45 2021 -0600
+
+    quick fixes
+
+[33mcommit 00a8b97569761fec901c507c7bd5a932e371cbda[m
+Merge: fe96b79 73654c2
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Wed Jul 7 15:17:28 2021 -0600
+
+    Merge branch 'Alpha-4.0' of https://github.com/ndobek/Snake-Drop into Alpha-4.0
+
+[33mcommit fe96b7961c1b80b9db9690bc47ba7ed2b10a7e0b[m
+Merge: 19341e6 fb1a3c1
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Wed Jul 7 15:14:27 2021 -0600
+
+    Merge branch 'Alpha-4.0' of https://github.com/ndobek/Snake-Drop into Alpha-4.0
+
+[33mcommit 73654c236e1dfa981fb0711d24f9171470d1e3dd[m
+Merge: 19341e6 fb1a3c1
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Wed Jul 7 15:14:27 2021 -0600
+
+    Merge branch 'Alpha-4.0' of https://github.com/ndobek/Snake-Drop into Alpha-4.0
+
+[33mcommit 19341e6756fe4330702e52490f97a937828af5ad[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Sun Jul 4 19:28:18 2021 -0600
+
+    Resized
+
+[33mcommit fb1a3c14458d5d65513a36e32882f8782a657e6f[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Sun Jul 4 19:28:18 2021 -0600
+
+    Resized
+
+[33mcommit 61d443c373a439f6ddfab96b64cf04e34ae03fda[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Wed Jul 7 11:57:20 2021 -0600
+
+    fixed commit conflicts
+
+[33mcommit 1e08d13946f5760a247c1423da90a7fb9ab9d86d[m
+Author: Alyssa Jaeger <alyssa.dobek@gmail.com>
+Date:   Tue Jul 6 15:25:43 2021 -0600
+
+    Making Poofy Particles
+
+[33mcommit 29aff2a479a8875f2d0649e3d30351aaebd490cd[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Tue Jul 6 13:54:46 2021 -0600
+
+    Fade Groups and Bugfixing
+
+[33mcommit 3b486c0536c5bc345c19d540fc75489675507de0[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Tue Jul 6 11:42:09 2021 -0600
+
+    Implemented UI Fade
+
+[33mcommit b5bf2b579a06e7d7c5d8474922fa43524cbabb5b[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Mon Jul 5 13:56:39 2021 -0600
+
+    Begin Main Menu
+
+[33mcommit f64ff5f569ee2baec40b9144101aac6e94b71c2b[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Mon Jul 5 11:59:56 2021 -0600
+
+    Add counter to board clear button/more cleaning
+
+[33mcommit 53bc5fa7ee4521b7fe01b0bddc59d5c7eb348446[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Mon Jul 5 11:31:37 2021 -0600
+
+    Fix Powerup bar/clean up unused stuff
+
+[33mcommit 7ad97fa75eea475a5d4888570db0caac3b2b9df3[m[33m ([m[1;32mFillAndLinesAndStuff[m[33m)[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Mon Jul 5 10:17:25 2021 -0600
+
+    Fixed Snake Line
+
+[33mcommit dbbd5d9fbc40fe590f941f3aab9d812948f1ed7c[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Mon Jul 5 10:12:52 2021 -0600
+
+    Fixed Block Fill
+
+[33mcommit 52b5a1da58289dff82bd8ae4a41e0de4d05c8ff2[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Sun Jul 4 17:19:12 2021 -0600
+
+    Bugfix
+
+[33mcommit 057c200b9c641fc313f61ef9fcf41bf6d003a4b7[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Sun Jul 4 16:38:47 2021 -0600
+
+    Reattached particle response to rotation
+
+[33mcommit 8ef708d4d511122d6fb1591b0dd64c5b7410cdff[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Sun Jul 4 16:31:46 2021 -0600
+
+    Change rotation back to lerp
+
+[33mcommit 40a43c83d34e1661f8b50d1800610fb35df9431e[m
+Merge: 1eb912f a8b394e
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Sun Jul 4 12:51:07 2021 -0600
+
+    Merge branch 'Alpha-4.0' of https://github.com/ndobek/Snake-Drop into Alpha-4.0
+
+[33mcommit a8b394e7c72d648291059d030ec33873bfe8b0f0[m
+Author: Alyssa Jaeger <alyssa.dobek@gmail.com>
+Date:   Sun Jul 4 12:31:44 2021 -0600
+
+    Trying to fix roots, set sorting order just in case
+
+[33mcommit dd8ac4982bb2b4d22814a5b0964e0817af8a8f0f[m
+Author: Alyssa Jaeger <alyssa.dobek@gmail.com>
+Date:   Sun Jul 4 11:18:38 2021 -0600
+
+    Attempted to fix the particles
+
+[33mcommit 1eb912fcd59f162b898bc6447fbc4c3836553040[m
+Merge: 93e5491 66cd1e1
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Sat Jul 3 17:22:11 2021 -0600
+
+    Merge branch 'Alpha-4.0' of https://github.com/ndobek/Snake-Drop into Alpha-4.0
+
+[33mcommit 66cd1e1a75c223900f5b5fdb25f58b15cb2a7eb9[m
+Author: Alyssa Jaeger <alyssa.dobek@gmail.com>
+Date:   Sat Jul 3 17:20:44 2021 -0600
+
+    Mystery Commit
+
+[33mcommit 93e5491c8864861e57b3450f2108327975bc4d25[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Sat Jul 3 11:01:49 2021 -0600
+
+    IDK jeez its just the most recent i havent touched this in 6 months
+
+[33mcommit 03a3080ca08477abac25f5b7a404a241bca5c76f[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Thu Apr 8 15:37:48 2021 -0600
+
+    Prefabs = FIXED
+
+[33mcommit d4da23ac09ce84616d6ac568c54bc5842711af0f[m[33m ([m[1;31morigin/Fixing-broken-prefabs-another-way[m[33m)[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Thu Apr 8 11:46:12 2021 -0600
+
+    going to try to fix the prefab
+
+[33mcommit bd30eead131b59c542be6176665b2857e8d7d572[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Tue Apr 6 15:25:29 2021 -0600
+
+    Progress
+
+[33mcommit 0842581d1f3e2b9a74a9d72f49745455ddf09246[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Sun Mar 28 17:35:53 2021 -0600
+
+    Improved particles
+
+[33mcommit 202ff1e75adcc112a8f1e50717d60268607055d2[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Sun Mar 28 14:09:27 2021 -0600
+
+    Fixed the new planet spinning animation
+
+[33mcommit ddbf098d501b756b38ed765c35bbaad368e487dc[m[33m ([m[1;32mNathaniel-Takes-Control[m[33m)[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Sun Mar 21 18:34:59 2021 -0600
+
+    added pretty things
+
+[33mcommit d04090d84ab2bafe66ee7b03aa83b9562280a12e[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Sun Mar 21 16:39:24 2021 -0600
+
+    going to try changing the particles
+
+[33mcommit a20f2b6a22830ca1b7c0e6ec6c3a015097a21eaa[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Sun Mar 21 14:26:09 2021 -0600
+
+    Added a LOT of new weather/plant/animation stuff
+
+[33mcommit 45f575b191a174634f151b9af747643093363c1b[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Mon Mar 15 19:22:39 2021 -0600
+
+    Bugfixes
+
+[33mcommit e46993dea001a4ac9f0319bd74e406acc1504943[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Sat Mar 13 13:37:51 2021 -0700
+
+    about to do something scare
+
+[33mcommit a60578cf9404bc348e540ff130c490f94011b962[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Fri Mar 12 16:41:08 2021 -0700
+
+    Broke the blue stuff :(
+
+[33mcommit dc250420d35a7d61a0cf908305dfe6f04aea04f3[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Thu Mar 11 16:52:06 2021 -0700
+
+    Imported snake tiles with grooves
+
+[33mcommit 696e8d7cf0bc2550b6f28b4c564be31edbe33aed[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Wed Mar 10 16:03:47 2021 -0700
+
+    working on shader
+
+[33mcommit 7b79a531c1b39c5758dc4ef2f884c7523f54c821[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Wed Mar 10 09:33:14 2021 -0700
+
+    snake line shader progress
+
+[33mcommit 3dece96b7d220e859aa31127c331a6d9bf6c1df3[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Mon Mar 8 18:15:56 2021 -0700
+
+    Made fake bloom
+
+[33mcommit 31fdfcfa80f510b287e994e8ed40ba23286155b8[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Mon Mar 8 10:15:28 2021 -0700
+
+    Update VolumeAnimator.cs
+
+[33mcommit f239384df15289145df9b8d716b299d71c644256[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Mon Mar 8 10:12:37 2021 -0700
+
+    ok NOW I fixed the lighting stuttering ugh
+
+[33mcommit 212dcb8e9735ae2d69528ce3afed86ad20ba008c[m
+Merge: 1ef53fd 4b90b52
+Author: Lyssa <51038958+LyssaJaeger@users.noreply.github.com>
+Date:   Sat Mar 6 20:31:09 2021 -0700
+
+    Merge pull request #11 from ndobek/testing-github
+    
+    testing commit
+
+[33mcommit 4b90b529180dafd030153f9aa9e071cb84a4dcac[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Sat Mar 6 20:21:25 2021 -0700
+
+    testing commit
+
+[33mcommit 1ef53fd6489af240c67a14fe0c2b0bd2fcab44ac[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Sat Mar 6 20:12:04 2021 -0700
+
+    things
+
+[33mcommit 5a2dafb9f5e574a4f3f0258bb7c3bf674a20049d[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Sat Mar 6 17:34:02 2021 -0700
+
+    Getting In Over My Head: So Far So Good
+    
+    trying to make a snake line shader
+
+[33mcommit d4ae6728f7165b6ef9d3adc34262294f67b416dc[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Sat Mar 6 14:52:44 2021 -0700
+
+    Fixed a bug where the post processing volumes wouldn't go to the right spot if they were moved around before
+
+[33mcommit 2801eaa6f53ea9a504d27252ae67d12e05321159[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Sat Mar 6 14:15:03 2021 -0700
+
+    Fixed problem where particles were clipping in and out of the clipping planes
+
+[33mcommit d074ae7f038709bacb3bbbbefb31d3d8d805a7b9[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Fri Mar 5 19:24:36 2021 -0700
+
+    tweak
+
+[33mcommit 6d49a037d955016b17b679eaa96ff41fa5680482[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Fri Mar 5 18:47:16 2021 -0700
+
+    HUGE BUGFIXES!!!
+    
+    the light still jumps, but that's because I changed the presets and I need to fix them!! everything else is fixed!
+
+[33mcommit cdacb5e38a86c40118e6ddf220a5f6cac3bc2d31[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Thu Mar 4 18:12:23 2021 -0700
+
+    there is a bug...
+
+[33mcommit 3bdad868c07b2932c3bca9b72cfa9f0f78301895[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Thu Mar 4 16:50:30 2021 -0700
+
+    Added Post Processing Animations
+    
+    TODO: figure out why everything jumps
+
+[33mcommit 1b933a98d92d3d62754885b7bdbba215f6e4d904[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Thu Mar 4 15:31:27 2021 -0700
+
+    THANK GOODNESS IT WORKS
+
+[33mcommit be8488c00ffc4e29e87840bdf6798ffca3015edc[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Thu Mar 4 14:00:47 2021 -0700
+
+    XP particle bug fix
+    
+    Fixed XP particles stopping spawning after a while
+
+[33mcommit 368d37a4ecb021d89cabf5c7620c611d4c22db7e[m[33m ([m[1;31morigin/Using-Other-Things-For-Effects[m[33m, [m[1;32mUsing-Other-Things-For-Effects[m[33m)[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Thu Mar 4 13:07:36 2021 -0700
+
+    did things
+
+[33mcommit de9d03ef51d3c97faa3ce152e7f58c646192aa57[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Thu Mar 4 11:31:12 2021 -0700
+
+    Slightly better maybe??
+
+[33mcommit 174ef035afef7ca7ef40456c25afc9f9887bbd85[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Thu Mar 4 10:16:11 2021 -0700
+
+    more changes
+
+[33mcommit 8d38817930e08d14e7c651c2d8664e24eb5fc513[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Wed Mar 3 16:43:35 2021 -0700
+
+    Missed Another THing
+
+[33mcommit 25fd51fb512d2edc5b050e6600ba089dd047959a[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Wed Mar 3 16:40:05 2021 -0700
+
+    Missed some stuff
+
+[33mcommit accb5e853c97b3ad65d19c05c277f96b4f046c5f[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Wed Mar 3 16:09:02 2021 -0700
+
+    maybe fix??
+
+[33mcommit fe8303fce149af76aace934230a43fd52932154b[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Wed Mar 3 14:45:40 2021 -0700
+
+    Clean and shiny!
+
+[33mcommit f3620b16f548cb96ab06cb2f08a6e43dd4ec565c[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Wed Mar 3 13:59:52 2021 -0700
+
+    am deleting stuff, got scared
+
+[33mcommit b7f3b9106eb1a95ee418ec11ce755f99325264ec[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Mon Mar 1 16:49:19 2021 -0700
+
+    positioned particles
+
+[33mcommit 824f803bbe628a60ff6493844e3edb5134d705b6[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Sun Feb 28 18:24:37 2021 -0700
+
+    Fun With Post Processing
+
+[33mcommit 1d02972b5ff3ced7a515d19901f074b1ddb21607[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Sun Feb 28 14:59:21 2021 -0700
+
+    Big Cleanup (getting ready to play with post processing)
+
+[33mcommit a5628c135474fd386ed5f3e7edf57da39601fcc9[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Sat Feb 27 15:44:38 2021 -0700
+
+    I'm going to delete animations to remake them
+
+[33mcommit fc6b2f29b51762c5586620d2d9c476e6fede4485[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Sat Feb 27 14:01:32 2021 -0700
+
+    Finished the XP particle effect!!
+    
+    Now to make it do xp things
+
+[33mcommit 4f94d0758ecc8db2b64a984f79fb3608105c6ed3[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Fri Feb 26 20:52:54 2021 -0700
+
+    Made cool particle motion!
+
+[33mcommit 821f7a44c21430982c8704bf265058fb8e1ff452[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Fri Feb 26 19:07:17 2021 -0700
+
+    Deleted old magnet scripts
+
+[33mcommit 8e8544be60136af4b6eac0805267dfaf580d2292[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Fri Feb 26 18:58:33 2021 -0700
+
+    Found Particle System Force Field
+    
+    ...I'll add it now...
+
+[33mcommit 58aa6768f76219b03f7511681779db756178f901[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Wed Feb 24 14:08:58 2021 -0700
+
+    Did things
+
+[33mcommit af5ab2de06b0dbf79c7f729246309cc1b997b466[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Mon Feb 22 13:30:18 2021 -0700
+
+    Did more things... Going to try VFX graph
+
+[33mcommit 096d48ea9e62b444f951bbcb9b3b384f9526bafe[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Fri Feb 19 17:52:35 2021 -0700
+
+    poof n zip!
+
+[33mcommit e8e059b23a59eff9240b797fed86f8f8fc847df2[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Fri Feb 12 17:40:07 2021 -0700
+
+    WE HAVE LERPING
+
+[33mcommit 81f89917ff33644ddc833a7c8a8434466d2ce791[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Fri Feb 12 13:22:16 2021 -0700
+
+    Progress on weather scripts
+
+[33mcommit 763cb8df7e5ac64a9aa80cfe30e31589acc9ac07[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Wed Feb 10 15:39:53 2021 -0700
+
+    SWEET PROGRESS
+
+[33mcommit 0dc2ed8203de7df981913f393ce08885b0c75bcf[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Fri Feb 5 19:07:10 2021 -0700
+
+    Added presets... they look dum :'( I am not a perfectionist I am not a perfectionist
+
+[33mcommit eb8bc6384dd1112b62a9eab9da5487ce6591790a[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Thu Feb 4 14:00:35 2021 -0700
+
+    Fixed alpha in shader
+
+[33mcommit 006e9e23748c0505de002be8ebfc467f2c67b289[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Thu Feb 4 13:13:33 2021 -0700
+
+    made a beautiful shader!
+
+[33mcommit a5c23ac739c5ddac9ad6ff11fe8c812696036be4[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Wed Feb 3 18:04:31 2021 -0700
+
+    made the stupid shader
+
+[33mcommit 3a13c21a7b53ebfdd039c49c8031c87b9d85e5e6[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Fri Jan 29 23:09:37 2021 -0700
+
+    Got to the point where I need more than 1 preset to test!! Note to self: tomorrow don't be so picky
+
+[33mcommit 120d2b2af5ccb089f58043dc5af7be9cbe65fa18[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Fri Jan 29 13:36:08 2021 -0700
+
+    Lost and very scared
+
+[33mcommit dac334edec39cf29f30011ef5a6e8549c8821da6[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Tue Jan 26 18:08:51 2021 -0700
+
+    changed shadowcasters
+
+[33mcommit 8479877dd0b11f3c81d336511f291af21644fd7f[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Tue Jan 26 16:06:37 2021 -0700
+
+    Added shadowcaster, considering removing terrain normal maps. Also made light presets
+
+[33mcommit 823b2a23a804570a5e175f32fc14ab80cf4a6d60[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Tue Jan 26 12:36:10 2021 -0700
+
+    hope this is not dumb! made a light preset template
+
+[33mcommit c4320588c64ab50c02aeaf4a810652ded8a9fe1c[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Mon Jan 25 14:46:41 2021 -0700
+
+    Revert "Added an animator"
+    
+    This reverts commit 0d51ca45e82369eb01f15afb6cde0b18c321de08.
+
+[33mcommit 3220526cc768df5ddf070f1c914b517a475b89a7[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Mon Jan 25 14:46:10 2021 -0700
+
+    Revert "Added a pretty thing"
+    
+    This reverts commit 2b26cfb0e69501ff82832d7d80f1e4fba38e1985.
+
+[33mcommit 2b26cfb0e69501ff82832d7d80f1e4fba38e1985[m[33m ([m[1;31morigin/Alyssa's-Scary-Glow-Branch[m[33m, [m[1;32mAlyssa's-Scary-Glow-Branch[m[33m)[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Sun Jan 24 18:07:20 2021 -0700
+
+    Added a pretty thing
+
+[33mcommit 0d51ca45e82369eb01f15afb6cde0b18c321de08[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Sun Jan 24 16:32:13 2021 -0700
+
+    Added an animator
+
+[33mcommit f5f0d76f5b9c96b8afc2cbeed5ef15147b2fde0f[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Sun Jan 24 15:47:13 2021 -0700
+
+    Forgot animators exist
+
+[33mcommit 8960b74d527c195bf9868f159176a15a296594e0[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Sun Jan 24 12:22:19 2021 -0700
+
+    extremely necessary folder organization
+
+[33mcommit 0cd023ebd257af1fd011a81e142851b1dfd314b3[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Sun Jan 24 12:04:26 2021 -0700
+
+    Whittled new scripts down and made cleaner
+
+[33mcommit cd264e069461c2601887e89b3ee85172055dbcb1[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Sun Jan 24 11:52:14 2021 -0700
+
+    cleaning stuff up, starting to develop a weather system no judge
+
+[33mcommit 779d156749989beaf130a722cf56ab7be931584b[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Fri Jan 22 18:14:00 2021 -0700
+
+    lighting experiments (no criticize pls)
+
+[33mcommit a7a296f21ebfd07579c87d444565e8bc8cf78cbf[m
+Merge: 7e49524 64ec69c
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Fri Jan 22 12:15:41 2021 -0700
+
+    Merge branch 'Alyssa's-Scary-Glow-Branch' of https://github.com/ndobek/Snake-Drop into Alyssa's-Scary-Glow-Branch
+
+[33mcommit 7e49524f337aa71b3fe324cf235d329660ecb65e[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Fri Jan 22 12:15:39 2021 -0700
+
+    Ratio closer to working
+
+[33mcommit 64ec69ca9a44d7d04c8c0c90dd7fbcf7888f438f[m
+Merge: 36fb81f 9ac59ac
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Fri Jan 22 10:14:09 2021 -0700
+
+    Merge branch 'Alyssa's-Scary-Glow-Branch' of https://github.com/ndobek/Snake-Drop into Alyssa's-Scary-Glow-Branch
+
+[33mcommit 36fb81fafe9944a7dbd0d93bcbf35753aac1178b[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Thu Jan 21 17:21:02 2021 -0700
+
+    Testing shaders
+
+[33mcommit 9ac59acedc72e8c72894dccb82348dfa11254ffa[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Thu Jan 21 16:57:34 2021 -0700
+
+    Letterboxing
+
+[33mcommit 9176509ca0e95b9004d6a27d7ac0b25ff1820c4a[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Thu Jan 21 16:54:55 2021 -0700
+
+    Trying to fix pixel stretch and failing
+
+[33mcommit c66f468abbd19d87ef23eba4c492477795ca4b8d[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Thu Jan 21 15:52:44 2021 -0700
+
+    added shinier sky
+
+[33mcommit 2b3fb12a016732e8eda26ac316ae36d470407f85[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Thu Jan 21 11:30:13 2021 -0700
+
+    Fixed atmosphere sorting layer
+
+[33mcommit 7c0e833fef5182e32ee85b28d53356c09ff5aa31[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Wed Jan 20 17:27:57 2021 -0700
+
+    Added atmosphere
+
+[33mcommit b6471e6a9b1f3dd7e5041c0cb351bf0f6f942b08[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Wed Jan 20 15:50:25 2021 -0700
+
+    Fixed some things
+
+[33mcommit f9dd1683ef4c10477add1495723996a5fcf3ce71[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Wed Jan 20 15:36:50 2021 -0700
+
+    Finished sorting sprites
+    
+    Except trees
+
+[33mcommit a0819ff37ee6ab4f8b6a78ab80050d8aa42b707e[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Wed Jan 20 14:34:06 2021 -0700
+
+    Fixed corners, plugged in snake heads
+
+[33mcommit 8b720e28eda39f83d40730a7fb76c9317fce4f04[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Wed Jan 20 14:01:16 2021 -0700
+
+    Deleted Unused Snake Tiles
+
+[33mcommit 9354e3a9c3de87422716ec36314202ab7639e588[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Wed Jan 20 13:31:33 2021 -0700
+
+    Deleted old sprites
+    
+    scare
+
+[33mcommit ce2eb9c3d85401fe1d720bb5fce07cf464ad89b1[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Wed Jan 20 12:47:16 2021 -0700
+
+    Normally Mapping
+    
+    Done upscaling and adding normal maps to entrance grid tiles
+
+[33mcommit 054fc1f639e39beabe1a799aec1c7913974c8432[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Wed Jan 20 08:30:50 2021 -0700
+
+    THE SUN ON THE MOUNTAIN PEAK
+
+[33mcommit 9b761729084d3adfd82832996a0c59dbf65ca0c9[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Tue Jan 19 13:12:21 2021 -0700
+
+    Added Terrain
+
+[33mcommit 7c8962fa23cb73389a42e283822639c32bf649c0[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Sat Jan 16 16:45:41 2021 -0700
+
+    ohhhh boy
+
+[33mcommit 353c4843e4c59212d007228f28fa3716fe245932[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Sat Jan 16 13:39:33 2021 -0700
+
+    MY EYEBALLS
+
+[33mcommit 1022c6bd46c3fb0ebb45cc9389150831713436ec[m[33m ([m[1;31morigin/You-and-I-do-the-UI[m[33m)[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Sat Jan 16 11:44:32 2021 -0700
+
+    More Design
+
+[33mcommit b4736dbf7f293f0ffb16adac0eb415e6f3507ac7[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Fri Jan 15 10:14:30 2021 -0700
+
+    Adding more layout changes
+    
+    Not done yet
+
+[33mcommit 0dbc2391a19afb16be1d034a3b78e9d302cf0dc4[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Sun Jan 10 19:29:17 2021 -0700
+
+    started the display scripts!
+
+[33mcommit 3def0a175c5725f78a698fc48e8dff67953c1903[m[33m ([m[1;32mpotential-recovery-version[m[33m)[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Tue Jan 5 17:36:29 2021 -0700
+
+    Pixelate Shader
+
+[33mcommit 379609a69c9d1703110530f8a60a5c86bc6949f8[m
+Merge: 71eb7df 8b79a64
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Mon Jan 4 22:32:35 2021 -0700
+
+    Merge branch 'You-and-I-do-the-UI' of https://github.com/ndobek/Snake-Drop into You-and-I-do-the-UI
+
+[33mcommit 71eb7df62987550734dcffa89c9b164793f90415[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Mon Jan 4 22:32:22 2021 -0700
+
+    Update Controls
+
+[33mcommit 8b79a6464d7e2e80b1e27c9776fa1fe6dbec2fbe[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Mon Jan 4 22:27:40 2021 -0700
+
+    Added UI sprites
+    
+    -Added onscreen buttons, added them as gameobjects under the canvas prefab
+    -Added rough version of sky sprite
+    - Repositioned camera and layouts
+
+[33mcommit f0d60ec41b836990aa7153614b18071551a28633[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Sat Jan 2 17:07:35 2021 -0700
+
+    Trying to improve mobile controls
+
+[33mcommit 3865ff7a2e4759a103094079882993db6edc6a62[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Sat Jan 2 00:24:33 2021 -0700
+
+    Touch Controls for Entrance Slots?
+
+[33mcommit 9ed5ed038a519d3d4b21f37dfa3e264824951da7[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Fri Jan 1 20:02:55 2021 -0700
+
+    CloudOnce Settings
+
+[33mcommit b6483f3700d38a019505eaa4a8c38311686fc312[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Thu Dec 31 23:35:15 2020 -0700
+
+    Many Small Improvements
+
+[33mcommit 84430daf9df8eebf7287bc1109ae3e6bff12ea3f[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Thu Dec 31 17:00:41 2020 -0700
+
+    Making powerup displayer a little better p1
+
+[33mcommit 2bdabae298f925dd41421ba9ab61000632bd28a4[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Thu Dec 31 15:14:02 2020 -0700
+
+    Pixel Stretching Gone
+
+[33mcommit 0c296722e77c2f1d954794f1d748960b156aa70d[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Thu Dec 31 13:34:38 2020 -0700
+
+    Now Keeps Track of Rotations Midround
+
+[33mcommit 410be6edd6e46554190562248dbf6ed764309fc2[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Wed Dec 30 16:40:54 2020 -0700
+
+    powerups now roll over properly
+
+[33mcommit bb4c7e4c2dc5480f9b7be3bf0f49846ae6604fab[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Wed Dec 30 15:18:12 2020 -0700
+
+    Fixed the Double Touch problem
+
+[33mcommit 2d8c5bc6a3a55ef0e94c29f11a8cef36e755076a[m[33m ([m[1;31morigin/Nathaniel-Has-A-Bit-Of-A-Do-Over[m[33m, [m[1;32mNathaniel-Has-A-Bit-Of-A-Do-Over[m[33m)[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Tue Dec 29 00:20:18 2020 -0700
+
+    Bug "Fix"
+    
+    If I ever install multiplayer I'll hate myself.
+
+[33mcommit 79182d425028ef22453bd7c90c2e62ced6c1bd03[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Mon Dec 28 23:18:56 2020 -0700
+
+    New Icons I guess
+
+[33mcommit 7b235908d5aea470ee4026ac92ca2a1da74b75f1[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Wed Dec 9 14:05:18 2020 -0700
+
+    Now the snakehead looks better
+
+[33mcommit 302b88803c3cfd9da26f178c90c72c935e7f898c[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Wed Dec 9 13:04:39 2020 -0700
+
+    Undo Button Largely Working
+
+[33mcommit d8ee68bc0b3465fa5db3acabfce51fa53ea87d01[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Mon Dec 7 14:18:55 2020 -0700
+
+    Closer to working
+
+[33mcommit 6e2daf8255a7dddba5c8135f3783bb75b443d4fe[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Mon Dec 7 13:56:39 2020 -0700
+
+    Refactored
+
+[33mcommit 1cb414a23e39d254bd19a030546b018ce0e86526[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Wed Dec 2 23:18:08 2020 -0700
+
+    Bugfix part 1
+
+[33mcommit cd62d425336154786633a938a5a0f1f28c4ed32b[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Wed Dec 2 14:38:01 2020 -0700
+
+    Stuff can be saved hypothetically
+
+[33mcommit 3498c3e9d8aacc223a93ae4d61268debc7332ec9[m[33m ([m[1;31morigin/Nathaniel-Gets-This-Show-On-The-Road[m[33m, [m[1;32mNathaniel-Gets-This-Show-On-The-Road[m[33m)[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Tue Dec 1 23:11:56 2020 -0700
+
+    Progress on Menus
+
+[33mcommit e9d2f6412960317ca2a50b8eae1a4080706c4857[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Fri Nov 27 13:39:00 2020 -0700
+
+    Failing to fix the build settings
+
+[33mcommit 8e0d3e47fe99b6ca0e56f3500314bf080ce1bbbf[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Tue Nov 24 23:35:36 2020 -0700
+
+    Refactored Powerups
+
+[33mcommit b77cac08094c8084c28dda0e0e6771a952a3ee64[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Tue Nov 24 14:57:52 2020 -0700
+
+    Added Checkpoints
+
+[33mcommit f91cc7ffc682fadb70e75a54738bac6e42ac233a[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Mon Nov 23 18:20:58 2020 -0700
+
+    Added Blockbreak Particles
+
+[33mcommit d14be2aba2d59e820dcb47a72d2fbbb962eb9162[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Tue Nov 17 15:52:03 2020 -0700
+
+    other smol
+
+[33mcommit 12e20213f4617d9008bc62ce3a131b6b507b724d[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Tue Nov 17 15:51:27 2020 -0700
+
+    Revert "Revert "smol changes""
+    
+    This reverts commit d1741471ac3af0c991b11eed100b95d9e8d88827.
+
+[33mcommit d1741471ac3af0c991b11eed100b95d9e8d88827[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Tue Nov 17 15:49:35 2020 -0700
+
+    Revert "smol changes"
+    
+    This reverts commit 6b2567659e4675574d6673fd411a254a1c67350d.
+
+[33mcommit 6b2567659e4675574d6673fd411a254a1c67350d[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Tue Nov 17 15:33:16 2020 -0700
+
+    smol changes
+
+[33mcommit c863ec781fbb4373dd52b3eed76014bcace6fc82[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Mon Nov 16 17:55:35 2020 -0700
+
+    Simplify Plants
+
+[33mcommit 8533abbb398b20d64f5880c1539f3ea19dc1aa7a[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Mon Nov 16 14:38:19 2020 -0700
+
+    Added CloudOnce
+
+[33mcommit 757afaa73310f1b4018c604e60b02beeb9dc3c23[m[33m ([m[1;31morigin/Nathaniel-Plays-A-Different-Sort-Of-Game[m[33m, [m[1;32mNathaniel-Plays-A-Different-Sort-Of-Game[m[33m)[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Wed Nov 11 17:05:53 2020 -0700
+
+    Change Blitz
+
+[33mcommit 973ba03942adf73b87cc94d2a67b17656e21dabf[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Mon Nov 9 12:41:36 2020 -0700
+
+    Improved AutoMove Controls
+
+[33mcommit b90e56e0886ae742a2084ffa4c0c0cd4c13f9601[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Fri Nov 6 13:26:06 2020 -0700
+
+    Added Queue to auto mover
+
+[33mcommit a3bcea738b6a93306f990b8b2b81cd52bdc8789a[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Mon Nov 2 13:53:07 2020 -0700
+
+    Fixed Plants More
+
+[33mcommit 5d84e7986ebf437aac2d24e267bd3482f4778fc1[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Mon Nov 2 13:32:32 2020 -0700
+
+    Fixed Plants
+
+[33mcommit 16f7ebb65609055291ce424da9671c71370fee22[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Mon Oct 26 14:14:29 2020 -0600
+
+    Snake Mostly Working
+    
+    Just need Auto Move
+
+[33mcommit 07547065bafc86590c63ff6037ece94278680c1b[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Mon Oct 26 01:57:54 2020 -0600
+
+    Its broken but I need to go to bed
+
+[33mcommit 0f89ac6b6e62ae4fd51656c99dcbe8d7fbe3026b[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Mon Oct 26 00:51:02 2020 -0600
+
+    Started Adding Snake
+
+[33mcommit 2ffca1fbf74056bf27dee192ca54ec0c5821fb2d[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Thu Oct 22 01:40:33 2020 -0600
+
+    Renames and Adjustments
+
+[33mcommit dfea8991c219a07c960a8e566ecd0f4bb81e1902[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Wed Oct 21 21:07:00 2020 -0600
+
+    Begin Add Climb
+
+[33mcommit b9aa40ddc35ca3836d28dee4e8b6d39d8659f1c9[m[33m ([m[1;32mAlpha-3.0.1[m[33m)[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Wed Oct 21 17:53:07 2020 -0600
+
+    Create SlotTypes.meta
+
+[33mcommit b46dc7a021a2c50288e5a0f51f24cbdff3990e08[m
+Merge: 9bb8934 0c55c60
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Wed Oct 21 17:52:56 2020 -0600
+
+    Merge branch 'Nathaniel-Makes-the-World-Go-Round' into Alpha-3.0.1
+
+[33mcommit 0c55c603a61f3683a447515e64dfc2c7cbc063db[m[33m ([m[1;31morigin/Nathaniel-Makes-the-World-Go-Round[m[33m, [m[1;32mNathaniel-Makes-the-World-Go-Round[m[33m)[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Wed Oct 21 15:39:10 2020 -0600
+
+    Added option to keep entrance at top of screen
+
+[33mcommit 5abcca5abbeb55c870ed920db7340da4f0eb193b[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Wed Oct 21 11:52:39 2020 -0600
+
+    Easier to change gamemodes
+
+[33mcommit 098e0f09bef7f04ca28e6410733f6e77511d853e[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Mon Oct 19 14:16:30 2020 -0600
+
+    Bug fix and tuning
+
+[33mcommit 07370f72f3ea11a59e177de30898602c65891430[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Mon Oct 19 01:49:04 2020 -0600
+
+    Added Tumble
+
+[33mcommit ff15390408bf9b00673117515ebd9187281c8107[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Sun Oct 18 23:37:27 2020 -0600
+
+    Update Controller
+
+[33mcommit 20566f487057a1c66bedc9489b09388732402501[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Sun Oct 18 23:35:19 2020 -0600
+
+    You can now rotate stuff (A second time)
+
+[33mcommit 9bb893459ecfdf50bf51e3a5becf6c6247e23376[m[33m ([m[1;31morigin/Animation-and-Visual-Elements[m[33m, [m[1;32mAnimation-and-Visual-Elements[m[33m)[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Sat Sep 19 11:51:28 2020 -0600
+
+    Recoloured Orange Tiles
+
+[33mcommit 06fa5f1feb9cc20d97ff61c8da3c7694d84d9e8c[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Fri Sep 18 10:46:31 2020 -0600
+
+    Added animation for light wind in pine growth stage 3
+
+[33mcommit 0b4dafaf6792302b55c92ade1ecdaaee29b03a4c[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Wed Sep 16 13:09:07 2020 -0600
+
+    Finished Pine Stage 2 Animations
+    
+    - Finished state machine
+    - Added Stage 2 clips
+    - Cleaned up wind script
+
+[33mcommit ec82f265ffb015a2be827be74106cdd0347e2253[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Tue Sep 15 19:56:51 2020 -0600
+
+    Fixed animations
+    
+    -Replaced blend trees with state machine
+    -Tweaked wind loops + formulas
+    -Added animation clips
+
+[33mcommit 2a4835ffbed473057e13bf4fa9414524d565f3e2[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Sun Sep 13 12:30:27 2020 -0600
+
+    Experimenting with pine animation setup
+    
+    Tried a blend tree, decided against that way of doing it - I'm going to change how that works
+
+[33mcommit 345238d09355985c2ee53e8a684fbc7ab05c545e[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Fri Sep 11 11:10:42 2020 -0600
+
+    Setting up animation logic
+    
+    -Added new animation clips and sprites for Pine
+    - Tried different options for how best to set up the blend trees
+    - Decided on a layout but haven't set it up yet
+
+[33mcommit d5f95d789baec2bd86557f859a9190936856287e[m[33m ([m[1;31morigin/Alpha-3.0[m[33m, [m[1;32mAlpha-3.0[m[33m)[m
+Merge: fe5280e edcb2d0
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Thu Sep 10 12:58:08 2020 -0600
+
+    Merge branch 'Working-with-Animations' into Alpha-3.0
+
+[33mcommit fe5280e2ce02bbbd25417b380debdd81a26f872b[m
+Merge: 3ec80a8 5d1beac
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Thu Sep 10 12:47:34 2020 -0600
+
+    Merge branch 'Nathaniel-Saves-The-Day' into Alpha-3.0
+
+[33mcommit 5d1beac28adb1840e1b7334661014ead2c129fc1[m[33m ([m[1;31morigin/Nathaniel-Saves-The-Day[m[33m, [m[1;32mNathaniel-Saves-The-Day[m[33m)[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Thu Sep 10 12:44:59 2020 -0600
+
+    Renames
+
+[33mcommit edcb2d07c5f811cacbc48f1d9765793791234f1c[m[33m ([m[1;31morigin/Working-with-Animations[m[33m, [m[1;32mWorking-with-Animations[m[33m)[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Thu Sep 10 12:44:43 2020 -0600
+
+    added pine sprite, changed cam size
+
+[33mcommit fc9cf05f2b08a8cee29abf04ba83d339490ba4bc[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Wed Sep 9 12:36:52 2020 -0600
+
+    Some initial UI work
+
+[33mcommit 9cae3474c8ea598e1a48d83098f27a7e5c72cfb2[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Fri Sep 4 14:20:53 2020 -0600
+
+    Halfway through Making Buttons
+
+[33mcommit f1c6733f1a2292186f0090d04f487dac9eb3ba5a[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Fri Sep 4 13:04:38 2020 -0600
+
+    made a spawner to spawn all the saved planets
+
+[33mcommit d32ddae1124761f40835b91ec7e38bed79119344[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Fri Sep 4 01:39:10 2020 -0600
+
+    Added a save manager to choose filenames
+
+[33mcommit 846a3f8c7aa9fe915264abc29916fcf3e8300a5f[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Fri Sep 4 01:01:13 2020 -0600
+
+    Now we keep score in with the plants
+
+[33mcommit 3af9ab8e887e2c9917d0ee920e50097e126265e5[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Thu Sep 3 15:21:34 2020 -0600
+
+    Fixed Animations
+
+[33mcommit a3a7709a59f21ccec9c54f53e778dc9507b656f9[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Thu Sep 3 14:45:58 2020 -0600
+
+    Revert "Remove Latitude"
+    
+    This reverts commit fe8a961dbac7fe79d98473dbc862e25a5b184eec.
+
+[33mcommit db365709c47791bea08b0ad81a1e49f145d5f800[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Thu Sep 3 14:45:56 2020 -0600
+
+    Fixed Rotation
+
+[33mcommit fe8a961dbac7fe79d98473dbc862e25a5b184eec[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Thu Sep 3 14:09:19 2020 -0600
+
+    Remove Latitude
+
+[33mcommit f866d01465587da2aaf9d0833901ed108cddb198[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Thu Sep 3 13:32:13 2020 -0600
+
+    Reorganizing some stuff into new scenes
+
+[33mcommit 6188c4ac5e829ff9dace5e22fa4eb67459947f0a[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Thu Sep 3 12:49:27 2020 -0600
+
+    Did it seriously just work on the first try?
+
+[33mcommit d8d8dc0b38cce7a660f3a48a0738732505c1f53c[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Thu Sep 3 01:24:16 2020 -0600
+
+    Plants can Hypothetically be saved
+    
+    But I dont have a button for it and I don't have a way to load yet so I can't really test lol
+
+[33mcommit 8be6fbcd5e7c8a2bb9c0b55c7dc761640dafe265[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Wed Sep 2 16:36:05 2020 -0600
+
+    Added High Score and laid groundwork for saving planets
+
+[33mcommit 208700583d3e00e56c690ec32db051fb3c971a40[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Tue Sep 1 12:21:57 2020 -0600
+
+    Added/tweaked animations
+
+[33mcommit 8ae375f69fdc3fcb169b3858b833c72fa333d937[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Sat Aug 29 22:07:25 2020 -0600
+
+    Finished debug display
+
+[33mcommit 6727334f14904d586ebed26ae91445fb8f603419[m[33m ([m[1;31morigin/Changing-Method-Names[m[33m)[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Sat Aug 29 18:24:05 2020 -0600
+
+    I DID IT
+    
+    I finally fixed everything!!!
+    
+    Don't look too hard at what the bugs actually were it is too embarrassing lol
+    
+    I also renamed the methods in PlantManager and added comments
+
+[33mcommit b66298262760209ebe9c467ce277587c16d7efa8[m[33m ([m[1;31morigin/Merging-Plant-and-PlantAnimator[m[33m, [m[1;32mMerging-Plant-and-PlantAnimator[m[33m)[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Sat Aug 29 14:00:07 2020 -0600
+
+    Trying to fix null errors
+
+[33mcommit 149df1defa7df31544e679001c85a2ed05a74532[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Fri Aug 28 21:40:02 2020 -0600
+
+    Broken - no plants
+    
+    Fixed script structure
+    problem: no plants are spawning. wut
+
+[33mcommit 3ec80a8b120b8ccf0130c2104e77664213eba97e[m
+Merge: faaf3fc ecbb91e
+Author: ndobek <n.j.dobek@gmail.com>
+Date:   Wed Aug 26 22:38:23 2020 -0600
+
+    Merge pull request #6 from ndobek/Trying-to-fix-the-motherflippin-melder
+    
+    I DID IT!?
+
+[33mcommit ecbb91e44705bb9b69b25f50b941b6750756b990[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Wed Aug 26 22:37:25 2020 -0600
+
+    I DID IT!?
+
+[33mcommit 0c72b781bcc6f7205eeb18cd0f22e45850407f8e[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Wed Aug 26 16:06:12 2020 -0600
+
+    Merged Plant Animator and Plant
+
+[33mcommit 58a6c1bb3637e5931a49b8508438e7bad81c17ad[m[33m ([m[1;31morigin/Fixing-animation-scripts[m[33m, [m[1;32mFixing-animation-scripts[m[33m)[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Tue Aug 25 23:21:24 2020 -0600
+
+    Restructured Plant Animation Scripts
+    
+    Added:
+    Latitude - ScriptableObject to hold latitude methods and data if we add some
+    
+    ILatitudeDependant - interface for things that change depending on the latitude, like plant animations. Just has ReturnLatitude()
+    
+    Wind - ScriptableObject with wind methods and 2 values to play with in the inspector - Gust Frequency and Gust Strength Loop Frequency. Basically how fast the wooshes woosh and how fast the wooshes alternate from big woosh to lil woosh.
+    
+    IWindReactive - Interface for stuff that reacts to wind. Has Gust() and GustStrength()
+    
+    Sun - Scriptableobject with data and methods. SunZenith can eventually be like where the sun is overhead exactly, but for now it's a wave like the wind. If we tweak it it will actually match an orbiting sun though!
+    
+    ISunReactive - has SunZenith()
+    
+    PlantAnimator - This inherits all the new interfaces. They each update the animator on the gameobject. I collected all the methods in AnimUpdate().
+    
+    PlantManager - I tried to add a method that would access all the plantanimators on all the plant gameobjects and do AnimUpdate() on the whole list in void update, but something wasn't working. Either I wasn't getting the PlantAnimator component or the PlantAnimator wasn't able to get the AnimatorController component. Either way, the animator is null which is causing errors.
+
+[33mcommit 20dca5f40e3bdd1bc8bab4d851f45e02e0ea0bc2[m[33m ([m[1;31morigin/Fixing-Pixel-Stretching[m[33m)[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Mon Aug 24 19:33:04 2020 -0600
+
+    Fixed pixel stretching
+    
+    - Changed resolution and camera size
+    
+    - tried to get fonts looking right (unsuccessful)
+
+[33mcommit faaf3fca4591198d1dad41caea8a5b2a288c4e56[m
+Merge: 5b9a57f 065d478
+Author: ndobek <n.j.dobek@gmail.com>
+Date:   Mon Aug 24 13:55:29 2020 -0600
+
+    Merge pull request #2 from ndobek/Alyssa's-Fun-with-Animation
+    
+    wut????
+
+[33mcommit 065d478c774df4e5b43ebfb2fb38ba902e3dcce5[m[33m ([m[1;31morigin/Alyssa's-Fun-with-Animation[m[33m, [m[1;32mAlyssa's-Fun-with-Animation[m[33m)[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Mon Aug 24 13:35:14 2020 -0600
+
+    started something
+
+[33mcommit 5b9a57fde9880e550a869ecd6e440a58a149a5fc[m
+Merge: c5a56eb a5dbfe1
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Mon Aug 24 12:44:18 2020 -0600
+
+    Merge branch 'master' of https://github.com/ndobek/Snake-Drop
+
+[33mcommit a5dbfe1c068fb8fb97bd5264e010c7e4bf480bcd[m
+Merge: 6d6a901 f168942
+Author: ndobek <n.j.dobek@gmail.com>
+Date:   Mon Aug 24 12:43:55 2020 -0600
+
+    Merge pull request #1 from ndobek/Alyssa's-Fun-with-Animation
+    
+    Alyssa's fun with animation
+
+[33mcommit f1689423d66df548168c8e762dde57f64041252d[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Mon Aug 24 00:22:34 2020 -0600
+
+    Too Many THings Oops
+    
+    -Added Wheats sprite sheet (Feather Reed Grass)
+    
+    -Added new Feather Reed prefab
+    
+    -Added new Feather Reed animator
+    
+    -created animation clips for Feather Reed
+    
+    -Tried and failed to fix camera bug
+    
+    -Made blend trees
+    
+    -Decided against override animation controllers
+    
+    -Added debugging tools
+    
+    -Changed look of UI elements
+    
+    -Added fonts
+    
+    -Added textmeshpro package stuff (now it is in assets but I didn't end up using it)
+
+[33mcommit c5a56eb096c579f4d17cfb0a302079a0a7e1eb0d[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Fri Aug 21 01:47:38 2020 -0600
+
+    Fixed a bug and made another
+
+[33mcommit 6d6a901d0a0f3c87df5728e3b2bcb13fbd0bde05[m
+Merge: fe0eb05 6d6d37e
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Thu Aug 20 01:30:46 2020 -0600
+
+    Merge branch 'master' of https://github.com/ndobek/Snake-Drop
+
+[33mcommit fe0eb05b76bc2421887346bb4a30f940c66092e2[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Thu Aug 20 01:30:40 2020 -0600
+
+    Tweaks and Bugfixes
+
+[33mcommit 0ef125fa275bede6ac5dd272e5dca55722deb862[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Wed Aug 19 22:37:38 2020 -0600
+
+    Broke everything
+    
+    should make somethingor andother a scriptable object???
+
+[33mcommit 6d6d37e401bcd4f9f222cc86751cee85ee615855[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Wed Aug 19 13:38:31 2020 -0600
+
+    Update PlantMovement.cs
+
+[33mcommit 560a70388a00f9782da963886afdffe8890505b5[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Wed Aug 19 10:18:48 2020 -0600
+
+    Added tree sprite
+
+[33mcommit 41609fa15f1b6d5a698f087d53d40b81cc71f54c[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Mon Aug 17 18:28:38 2020 -0600
+
+    Fixed settings
+    
+    changed cantransitiontoself to false in the animator states
+
+[33mcommit 5520a06cc5ff473e4f99238dfd475fa1c7a5f2dd[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Mon Aug 17 17:53:11 2020 -0600
+
+    Put in placeholder animations
+    
+    Commented out AnimationGrower
+
+[33mcommit e03f8b25e49d36697c6a3eaaca467d5ebae9ec66[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Mon Aug 17 16:42:42 2020 -0600
+
+    Animation Testing
+    
+    -Put in a blend tree
+    -Put in some placeholder animations
+    -Made some parameters for the blend tree
+    -made PlantAnimator set the parameters
+
+[33mcommit 7d68e44175eddfed2e738c8e8f2537114a292ca4[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Mon Aug 17 15:32:35 2020 -0600
+
+    Animation Progress
+    
+    Added scripts:
+    PlantAnimator
+    PlantMovement
+    
+    Added GameObjects:
+    PlantMovement
+    PlantAnimMarker
+    
+    Added PlantAnimator to Plant prefab
+
+[33mcommit 5bc25b664d62cf48fdbb487a8ee052f004f31686[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Thu Aug 13 00:14:47 2020 -0600
+
+    Multiplier Applies properly if you crash in a block collection: 2
+
+[33mcommit f2d4d0c7dcc0d1ec1b01c045f172e9a0e9e229af[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Thu Aug 13 00:13:52 2020 -0600
+
+    Multiplier Applies properly if you crash in a block collection
+
+[33mcommit 5bc16c1c7d5cb8c2c2aec00870085c8d48dcd05c[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Wed Aug 12 18:37:54 2020 -0600
+
+    Fixed Soil Edges Sprite
+    
+    -Swapped out the sprite for one with padding that can be centered on the grid center
+    
+    -Positioned sprite
+
+[33mcommit 8416a1fe9c34dda7605e29881350328352aacc97[m
+Merge: b85264b d97b220
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Wed Aug 12 18:34:31 2020 -0600
+
+    Merge branch 'master' of https://github.com/ndobek/Snake-Drop
+
+[33mcommit b85264b91e2a9064c1e8a1d0a07e2657b4614b8c[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Wed Aug 12 18:25:37 2020 -0600
+
+    Padded dirt layer sprite
+
+[33mcommit d97b22071f51e928487208e18b7eb3c63186bc18[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Wed Aug 12 18:22:30 2020 -0600
+
+    Fixed Transform for Edges Object
+
+[33mcommit 6f6af285b1860b186889940b1f8bf97864d9b7ec[m
+Author: LyssaJaeger <alyssa.dobek@gmail.com>
+Date:   Wed Aug 12 17:13:24 2020 -0600
+
+    Added soil layer sprite
+    
+    - Made a new gameobject named Soil Layer under Player 1 > planet > edges
+    
+    -Added a Sprite Renderer
+    
+    -Imported Soil Sprite.png, worked on figuring out the import settings
+    
+    - Set the new sprite to the sprite renderer on the Soil Layer gameobject and changed the transform
+    
+    -Set the layer to Background, order in layer -1.
+
+[33mcommit b9f760c46863b99e715108364cef0b5f68f92e5b[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Mon Aug 3 23:04:21 2020 -0600
+
+    Share with Alyssa
+
+[33mcommit 211ec5c2717866e78a9573b8b5ddca797b547368[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Sun Aug 2 20:19:55 2020 -0600
+
+    Animation
+
+[33mcommit 11725fa5f008ded3fb22da413cec66bd9cbcfa0e[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Thu Jul 30 13:47:13 2020 -0600
+
+    Revert "Revert "yeet""
+    
+    This reverts commit 7b8ce9e6846a99107e43a9b7b856870d2ad75cb6.
+
+[33mcommit 3cd2b425510b852feb3b642e26a556443ef2f486[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Thu Jul 30 13:47:09 2020 -0600
+
+    Revert "Revert "Revert "Screwed up plants"""
+    
+    This reverts commit f5d2f17a5552ab1378a80ac08c9290565d9e63aa.
+
+[33mcommit f5d2f17a5552ab1378a80ac08c9290565d9e63aa[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Thu Jul 30 13:44:31 2020 -0600
+
+    Revert "Revert "Screwed up plants""
+    
+    This reverts commit c48f2c00db1e2505319133353a305c1f895811e5.
+
+[33mcommit 7b8ce9e6846a99107e43a9b7b856870d2ad75cb6[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Thu Jul 30 13:44:20 2020 -0600
+
+    Revert "yeet"
+    
+    This reverts commit 3a7db7839379913e958b73798df55ebc9c120258.
+
+[33mcommit 3a7db7839379913e958b73798df55ebc9c120258[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Thu Jul 30 13:44:17 2020 -0600
+
+    yeet
+
+[33mcommit c48f2c00db1e2505319133353a305c1f895811e5[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Wed Jul 29 12:03:12 2020 -0600
+
+    Revert "Screwed up plants"
+    
+    This reverts commit cf06f1747bbeaea30ebce00a5de64da6e01c07c1.
+
+[33mcommit cf06f1747bbeaea30ebce00a5de64da6e01c07c1[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Wed Jul 29 12:03:08 2020 -0600
+
+    Screwed up plants
+
+[33mcommit 7dfeafbef312ea460adea90bd0557c73a62cfd21[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Tue Jul 28 13:44:00 2020 -0600
+
+    Began Plants
+
+[33mcommit a631e086d8eaa1b026fbe53c6be9befe6350ff41[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Tue Jul 28 13:43:21 2020 -0600
+
+    Began Plants
+
+[33mcommit 70f9e0902a8d3dd6d2911a67af58cba936f29c87[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Mon Jul 20 08:55:47 2020 -0600
+
+    Slightly Less awful new controls
+
+[33mcommit c6e190a14dcc218e0200f75c096c5e216c6cc84d[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Sat Jul 18 11:07:04 2020 -0600
+
+    Revert "New Shit Controls"
+    
+    This reverts commit a8d61e050b6ff2ff9966e1f6265ad2d909ddbaee.
+
+[33mcommit a8d61e050b6ff2ff9966e1f6265ad2d909ddbaee[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Sat Jul 18 11:07:00 2020 -0600
+
+    New Shit Controls
+
+[33mcommit 4cc15ecd98f8496d7b75ae9be3a2d7e0dabd7844[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Wed Jul 15 14:17:31 2020 -0600
+
+    Destorying every piece on the board or your snake resets entrances
+
+[33mcommit e0056c3cf6abf6f9af279986e8bca008a3080553[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Wed Jul 15 09:34:05 2020 -0600
+
+    Rules Change
+
+[33mcommit c26d0ba4995be4cfcffe9ded0f56f77ca68f2b53[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Tue Jul 7 20:22:29 2020 -0600
+
+    Corners are working
+    
+    Super Janky
+
+[33mcommit d4a3a5c396d363b21e28ab656d0b980ef85bcf63[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Mon Jul 6 20:01:04 2020 -0600
+
+    Updated a bajillion sprites and animations
+
+[33mcommit afe1c25dba783ccdd15a951d2e2ca6029cbacf67[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Thu Jul 2 23:59:06 2020 -0600
+
+    Remove Shader asset that diddn't work
+
+[33mcommit 0b5a375dc3bd728b6040c6b61fbc3e783ffca047[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Thu Jul 2 23:03:59 2020 -0600
+
+    Trying to make big blocks look nice
+
+[33mcommit 994c1e1f0fd4dd9cbe900ab28aceeff25f5ecc15[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Thu Jul 2 16:03:34 2020 -0600
+
+    Added BlockCollection Fills
+
+[33mcommit e7ac83ece0d8e7e1269b2b53afdded12a939118b[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Thu Jul 2 11:52:00 2020 -0600
+
+    EdgeSprites know what their neighbors are
+
+[33mcommit 6d3c1123c88e3a09da3c6d9d07b8f5f1a2518457[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Wed Jul 1 17:06:10 2020 -0600
+
+    Pixel Perfect
+
+[33mcommit 086111f85183bdba6b54b457a1e56447738048d9[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Mon Jun 29 00:20:57 2020 -0600
+
+    Chanigng some sprites around
+
+[33mcommit 90dbcb3f144ec5d5c393d265092a4deda6444d38[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Sun Jun 28 21:42:34 2020 -0600
+
+    Added sprites
+
+[33mcommit 17cb0e2a70a7dfa8a8af2a9fe6e92053d5ad7bfd[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Sun Jun 28 18:30:29 2020 -0600
+
+    You can now set the sprite for each color
+
+[33mcommit 9224441b745694b626b380b260c0479aed33921d[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Sun Jun 28 17:49:19 2020 -0600
+
+    Revert "Maybe?"
+    
+    This reverts commit b2601a9c340c33f56766685a0142846f6f66d560.
+
+[33mcommit 838fd81ca165cdf2cacdbdff7f9393fcd5cd81dd[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Sun Jun 28 17:21:09 2020 -0600
+
+    Revert "Revert "Maybe?""
+    
+    This reverts commit 97b560a74ac4f5a4a91589f6cc92be5f0bc12cf1.
+
+[33mcommit 97b560a74ac4f5a4a91589f6cc92be5f0bc12cf1[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Sun Jun 28 17:18:52 2020 -0600
+
+    Revert "Maybe?"
+    
+    This reverts commit b2601a9c340c33f56766685a0142846f6f66d560.
+
+[33mcommit b2601a9c340c33f56766685a0142846f6f66d560[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Sun Jun 28 17:18:48 2020 -0600
+
+    Maybe?
+
+[33mcommit f46e2c9f6141cc2bf5f1e288b61a031d7ef3bf97[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Mon May 18 01:10:32 2020 -0600
+
+    Fixed Animation Flicker
+
+[33mcommit 3a4bf652fb44237c843da5722fc662d9abcc6401[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Thu May 14 11:19:47 2020 -0600
+
+    Showed Alysa here (2_2)
+
+[33mcommit bc2e9daf8f67b51d88479e42878f2da7e038296f[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Wed May 13 11:22:29 2020 -0600
+
+    FIXED?
+
+[33mcommit bd953fc57249e7e0fa74f58db847352832ce1240[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Wed May 13 02:38:46 2020 -0600
+
+    Less ugh maybe
+
+[33mcommit 9d8ec49d3156069dc09aca47bed8b9083d5d6e14[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Tue May 12 13:47:14 2020 -0600
+
+    ugh
+
+[33mcommit a86c400f17e9037cd75065cdec3e4af6b2d2212d[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Mon May 11 13:07:16 2020 -0600
+
+    Revert "Revert "Maybe?""
+    
+    This reverts commit ed693131bd37b3c24a4f2820c310998e70d78537.
+
+[33mcommit ed693131bd37b3c24a4f2820c310998e70d78537[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Mon May 11 13:02:47 2020 -0600
+
+    Revert "Maybe?"
+    
+    This reverts commit 272c69653179ad514356564facea779702ab3de6.
+
+[33mcommit 272c69653179ad514356564facea779702ab3de6[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Mon May 11 13:02:44 2020 -0600
+
+    Maybe?
+
+[33mcommit b08e677067b6e3127125ef8b7b7f1393c1889b97[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Fri May 8 14:03:13 2020 -0600
+
+    Animation Phase 2
+
+[33mcommit 73f810bd899bc6dabcd54f9fe367b219131f5839[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Fri May 8 10:45:58 2020 -0600
+
+    part 1.5
+
+[33mcommit fa22b37196407ffbbf7cf61d083303a7a76f7432[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Thu May 7 10:48:38 2020 -0600
+
+    Animation Phase 1
+
+[33mcommit 5389f12f8c353407efec840061b1676ea85f7c10[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Wed May 6 11:29:14 2020 -0600
+
+    Added Line
+
+[33mcommit fe06b9526cc81e45d3d2cff6a06ab4641044daa6[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Tue Apr 21 21:03:03 2020 -0600
+
+    Pre Scale Up
+
+[33mcommit 0140aaa780e36ff340e318f25d715257c830d07a[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Mon Apr 20 16:45:13 2020 -0600
+
+    Block collections are now better represented visually
+
+[33mcommit e09640579068ed3b28568eb990789745deb705a0[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Wed Apr 1 10:32:04 2020 -0600
+
+    Updated Melder/Added Multiplier
+
+[33mcommit 6cb29ce775162cac5de480189d33a87852c9c384[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Fri Mar 27 00:09:50 2020 -0600
+
+    Alpha 2.0
+
+[33mcommit 5cc0f2944190f5f0ab1110226014f2ecd8003b8f[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Thu Mar 26 18:10:22 2020 -0600
+
+    You can now enter the play area from any side
+
+[33mcommit 330edeeef3cb0b65f8b70129357ec5becbdd15b9[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Wed Mar 25 14:58:52 2020 -0600
+
+    Seperated Grid Actions
+
+[33mcommit bf537c9afa44fc45ba13917e56904d91e0719449[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Sat Mar 7 11:07:25 2020 -0700
+
+    This is where I showed James
+
+[33mcommit 68cf5a1c2e1ad41baa990997c8162a2615aacacc[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Thu Feb 13 19:24:23 2020 -0700
+
+    Revert "uhjhhhh"
+    
+    This reverts commit a24f91eeef3fd81b532e66cf6ce2d1755c7ffe8f.
+
+[33mcommit a24f91eeef3fd81b532e66cf6ce2d1755c7ffe8f[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Thu Feb 13 19:24:19 2020 -0700
+
+    uhjhhhh
+
+[33mcommit 2fa876fdf76ffdd526388609092a1dd759fa1c6f[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Sat Feb 8 12:33:57 2020 -0700
+
+    Changing names part 1
+
+[33mcommit 4b4499dcf7ad87075cc3db60680088029badfa72[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Sat Feb 8 01:12:58 2020 -0700
+
+    You can now change the entry slot/lose points for not using an entire snake
+
+[33mcommit edde7298aa91d324f728045d092da788927fed9b[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Sat Feb 1 01:21:45 2020 -0700
+
+    Alpha 1.4
+
+[33mcommit ad487b54d179d2a40e267bf31b734c05b99da319[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Sat Feb 1 00:58:58 2020 -0700
+
+    Difficulty Balance and Bugfix
+
+[33mcommit beaddd778c9d64496de49d6239f92fdf134126b5[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Thu Jan 30 11:54:59 2020 -0700
+
+    Pre Updating Unity
+
+[33mcommit 64cf1b1a93d0c372e39913df8e2a194c8aaa18a0[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Thu Jan 30 01:31:40 2020 -0700
+
+    You can hold the button now
+
+[33mcommit cf2726c92bff376458e7ca30497f1781c86706f9[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Tue Jan 28 13:41:46 2020 -0700
+
+    BugFixing
+
+[33mcommit c0b998465a5f60e4ed34cf7d7dafa192f56e3512[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Tue Jan 28 13:06:50 2020 -0700
+
+    Added Support for multiple players + Difficulty Manager
+
+[33mcommit 5dd80e72c350fb5e00068ee3517b583011b1e951[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Sat Jan 25 01:05:31 2020 -0700
+
+    Fixed Move in Block Collection
+
+[33mcommit 4f0f484f72fde57e5d74af2029c9c73cd34cc3d9[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Thu Jan 23 13:36:56 2020 -0700
+
+    MidClean
+
+[33mcommit d518205e5c3e4135c0418af90e279255e3b4e666[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Thu Jan 23 12:17:22 2020 -0700
+
+    Blocks now Meld Properly
+
+[33mcommit cd29353fd975b0d1b7bcaae19d942df0dbd88882[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Sat Jan 18 00:50:41 2020 -0700
+
+    Started Meld Melding
+
+[33mcommit c4171c110408d4dc1a2c292495fe92cbecafd689[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Thu Jan 16 12:24:58 2020 -0700
+
+    Made Ghosts do the thing i wanted
+
+[33mcommit 9cacb5afbcb465f03fb1c537781251851b6da503[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Tue Jan 14 13:51:42 2020 -0700
+
+    Alpha 1_1
+
+[33mcommit 9f96d23f6dc5bd650d9c92368f51db50ae062623[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Tue Jan 14 13:51:00 2020 -0700
+
+    Slots now support more than one block; Collections don't poof until the snake is gone.
+
+[33mcommit 44c310d2caac8668b075bd7627440c0dd4d64150[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Mon Jan 13 14:09:40 2020 -0700
+
+    Alpha 1_0
+
+[33mcommit 0917b2dd6626a514977787fa8397113edc4f70d1[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Mon Jan 13 11:01:32 2020 -0700
+
+    Collections Break
+
+[33mcommit 6ad42f3d4b133dfd06a85d72c2b1ad4a9d3b8e30[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Sat Jan 11 12:14:18 2020 -0700
+
+    Added Fall Rules
+
+[33mcommit 2bb24699a12898a592b26b4cd8178ccd0e77bba0[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Sat Jan 11 11:28:19 2020 -0700
+
+    Added Break Rules
+
+[33mcommit 04dfffaf5fe436445a0724584bf0df57ee737b87[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Fri Jan 10 14:18:16 2020 -0700
+
+    Stuff Melds!
+
+[33mcommit b5b30a451ea1ecc252e442dabdd06d873ee670e3[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Thu Jan 9 12:43:29 2020 -0700
+
+    Rectangle Detection is working!
+
+[33mcommit 3526dcf0339cd5e2beabdb57e7b84d24feff90da[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Thu Jan 9 11:42:56 2020 -0700
+
+    Continued MElding
+
+[33mcommit 297c617dad8b8163bb4af7b58a22332028b79884[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Thu Jan 9 11:03:36 2020 -0700
+
+    Continued Melding
+
+[33mcommit d4b517bad58bbd62dc258123d1431264e11bebf3[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Wed Jan 8 21:59:21 2020 -0700
+
+    Started Melding
+
+[33mcommit 1bfc00561c9aa50d00d1a1983f67e9bd8d309f04[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Mon Jan 6 01:39:32 2020 -0700
+
+    Started Large Blocks
+
+[33mcommit 68820423c578bc39e560c984ca9ee4a8952a634f[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Sun Jan 5 15:58:34 2020 -0700
+
+    Added Move Rules
+
+[33mcommit ccdc433ea957cd3995d96a409d5b0ae91db318d7[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Fri Jan 3 16:51:48 2020 -0700
+
+    Cleaning
+
+[33mcommit eb6b907323d37a196396d071985532f94e77c564[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Thu Jan 2 16:43:54 2020 -0700
+
+    Alpha 0.2
+    
+    Finally fixed those giant issues
+
+[33mcommit 6645c29ae00f7f7b485786a9aef275696b210b67[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Thu Jan 2 13:02:29 2020 -0700
+
+    Updated Unity and rewrote practically everything to try and make it not suck and it kinda worked I guess
+
+[33mcommit 5870eee985e446012a3811e726262e260b466c28[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Thu Jan 2 10:36:33 2020 -0700
+
+    Pre Update Unity
+    
+    Maybe this will update this dumb problem away
+
+[33mcommit a426fc700dfa2cea5c6494abcc5c99f51cfdcf03[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Thu Jan 2 02:36:44 2020 -0700
+
+    big yikes
+
+[33mcommit 9c5094fe343c06fd9ad25bb5620fd270f030e312[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Tue Dec 31 17:34:28 2019 -0700
+
+    Ugh
+    
+    Buggy
+
+[33mcommit 9fabac092209a69cfcaa991751fde738d3778120[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Tue Dec 31 15:51:30 2019 -0700
+
+    I dont even know, lots
+
+[33mcommit 7dd869d7c06d82cee0ed6e564a8c86318991f066[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Tue Dec 10 23:32:36 2019 -0700
+
+    Cleaning
+
+[33mcommit f2e8465e046131c79666d26dcb3e9f825e6c8434[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Tue Dec 10 11:27:58 2019 -0700
+
+    Cleaning
+
+[33mcommit 2f6246e3fd6c715bcf81c2ab1ccf2a04a9fd95f8[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Tue Dec 10 00:02:18 2019 -0700
+
+    More Cleaning
+
+[33mcommit 64c56979ab0bbe978c9c1c77f08c0a5f1e56bb26[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Mon Dec 9 21:38:37 2019 -0700
+
+    Partway through Cleaning
+
+[33mcommit 654175cdf4d13d3c821c14152b5177e902429511[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Mon Dec 9 20:52:00 2019 -0700
+
+    Seperated out PlayerController & Difficulty Controller
+    
+    Needs Serious Cleaning
+
+[33mcommit 259cf4937c8a05ff8c7ec2c2e0e7cff386f768f6[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Mon Dec 9 18:19:13 2019 -0700
+
+    Alpha 0.1
+
+[33mcommit f5b19129fff3e5092cdf0a61bdfcc2a4c6c507bb[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Mon Dec 9 16:22:19 2019 -0700
+
+    Added Score
+
+[33mcommit 3d75d9b847d3441dbe4dd051fbae7a4c8dd6390f[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Mon Dec 9 14:46:15 2019 -0700
+
+    Game over & Restart
+
+[33mcommit 670e43066ae7b73a3322e4d3f32ca37cdb7f6123[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Tue Dec 3 23:50:39 2019 -0700
+
+    Cleaned a little
+
+[33mcommit 9a376a2d78391907caab05111e7401e8e0481ad5[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Mon Dec 2 23:46:14 2019 -0700
+
+    Implemented Fall
+
+[33mcommit 111a9f882400890aafaacdd983ad84bcf31849f1[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Mon Dec 2 22:13:55 2019 -0700
+
+    Implemented Height Limit
+
+[33mcommit a4e2aae7982924a53a9b74b6e719e3ef61a6359c[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Mon Dec 2 15:37:49 2019 -0700
+
+    Fixed Controls
+
+[33mcommit 0dfb858fd8fd891625b5deafbe5e365e41f9c518[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Mon Dec 2 15:15:33 2019 -0700
+
+    Made Touch Manager Nicer
+
+[33mcommit ee55d25005d21bb7817e669e28f668c7b3008538[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Mon Dec 2 14:54:14 2019 -0700
+
+    Implemented Hold Control
+
+[33mcommit c3a6e403bdbfd89f18df58335eb156745ade5702[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Mon Dec 2 14:13:37 2019 -0700
+
+    Bugfix
+
+[33mcommit 68d1bb355c1a339ab480b40954ac4985ce12c9ef[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Mon Dec 2 12:41:54 2019 -0700
+
+    Snakes can now die and munch
+    
+    Buggy
+
+[33mcommit dd1fad3f400acbb85a6e2e4638532462c53b0bdb[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Tue Nov 26 00:49:35 2019 -0700
+
+    Add Colors
+
+[33mcommit 4c63bb43fa51a661fb19f8c5b79aa32aa413c71a[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Mon Nov 25 23:39:07 2019 -0700
+
+    Implemented SnakeMaker
+
+[33mcommit 8eeccef5830ea43cbd3b9daa239ad76a772f315e[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Mon Nov 25 22:29:57 2019 -0700
+
+    Added Load Grid
+
+[33mcommit 0cdcad9081fd198c572832fbeeb2a0f842e45d8a[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Mon Nov 25 22:06:00 2019 -0700
+
+    Flattened Playgrid array to allow serialization
+
+[33mcommit 4216754e82d9a2f518aa9cb2a10fead28aa25faa[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Mon Nov 25 14:47:42 2019 -0700
+
+    Cleaned Code, Made Generate Grid Button
+    
+    Need to find a way to maintain references going into play mode
+
+[33mcommit a7fabf6b06dfe140718b8d54ba27d0a4be48addc[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Mon Nov 25 02:19:02 2019 -0700
+
+    Switched to using slots for blocks
+
+[33mcommit 16003b542773f43f0e964fbdc0a089a05bac4cd0[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Mon Nov 25 00:07:20 2019 -0700
+
+    Implemented Swiping
+
+[33mcommit a5c6f57ebd5e2b4f0f8d67a5e14045ab6aa37970[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Sat Nov 23 00:59:52 2019 -0700
+
+    Touch kinda working
+    
+    but want to switch to swipes
+
+[33mcommit 887753e69adfef443588621930445bab29384581[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Fri Nov 22 22:46:12 2019 -0700
+
+    Initial Commit
+    
+    Working Grid
+
+[33mcommit d3b3ced45a71e5150c32f226bfabf947b73a5ed3[m
+Author: Fano <n.j.dobek@gmail.com>
+Date:   Fri Nov 22 22:43:43 2019 -0700
+
+    Initial commit

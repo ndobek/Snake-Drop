@@ -1,0 +1,994 @@
+fileFormatVersion: 2
+guid: 81ed6686bba036845afcce60429a3dbb
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2271661913269937966
+    second: Red Basic Tile
+  - first:
+      213: 6511515687005811440
+    second: Green Basic Tile
+  - first:
+      213: -8262386545094352335
+    second: Yellow Basic Tile
+  - first:
+      213: -8469139230168559458
+    second: Orange Basic Tile
+  - first:
+      213: -6324755174986831915
+    second: Blue Basic Tile
+  - first:
+      213: -578185558862427414
+    second: Red Vertical
+  - first:
+      213: 5647917163247547536
+    second: Green Vertical
+  - first:
+      213: -4280527606198869166
+    second: Yellow Vertical
+  - first:
+      213: -25954986333529638
+    second: Orange Vertical
+  - first:
+      213: -3714593475407040382
+    second: Blue Vertical
+  - first:
+      213: -4268988249541079181
+    second: Red Horizontal
+  - first:
+      213: 7858404312915844628
+    second: Green Horizontal
+  - first:
+      213: -6250667705905721504
+    second: Yellow Horizontal
+  - first:
+      213: -6112061764135001661
+    second: Orange Horizontal
+  - first:
+      213: 200888184425489944
+    second: Blue Horizontal
+  - first:
+      213: -6624184129077444475
+    second: Red Bottom Left
+  - first:
+      213: 1058214230995409104
+    second: Green Bottom Left
+  - first:
+      213: 6584325868947838901
+    second: Yellow Bottom Left
+  - first:
+      213: 5540137483497557063
+    second: Orange Bottom Left
+  - first:
+      213: 3531381051555619869
+    second: Blue Bottom Left
+  - first:
+      213: 1066748900109531628
+    second: Red Bottom Right
+  - first:
+      213: -1706129807333909708
+    second: Green Bottom Right
+  - first:
+      213: 5752458258917460961
+    second: Yellow Bottom Right
+  - first:
+      213: -1225847002100305768
+    second: Orange Bottom Right
+  - first:
+      213: 2479918589938134295
+    second: Blue Bottom Right
+  - first:
+      213: -6828246710306889731
+    second: Red Top Left
+  - first:
+      213: -7585772146794207781
+    second: Green Top Left
+  - first:
+      213: -2989986182370490281
+    second: Yellow Top Left
+  - first:
+      213: 6397209960199472943
+    second: Orange Top Left
+  - first:
+      213: -283005462666684579
+    second: Blue Top Left
+  - first:
+      213: 6383644175860690489
+    second: Red Top Right
+  - first:
+      213: -8823633906101804812
+    second: Green Top Right
+  - first:
+      213: -4492277064805473390
+    second: Yellow Top Right
+  - first:
+      213: 1754630813110242649
+    second: Orange Top Right
+  - first:
+      213: -8290737249431768023
+    second: Blue Top Right
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 40
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Red Basic Tile
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 460.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d8d2c1968f6970e0800000000000000
+      internalID: -2271661913269937966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green Basic Tile
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 460.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f27d51940d8d5a50800000000000000
+      internalID: 6511515687005811440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yellow Basic Tile
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 460.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1322fa6963b165d80800000000000000
+      internalID: -8262386545094352335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orange Basic Tile
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 460.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e905a78ddb2977a80800000000000000
+      internalID: -8469139230168559458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue Basic Tile
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 460.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d7a897ada4f938a0800000000000000
+      internalID: -6324755174986831915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red Vertical
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 409.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aea8ebd2c4fd9f7f0800000000000000
+      internalID: -578185558862427414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green Vertical
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 409.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 094b33c6cbe616e40800000000000000
+      internalID: 5647917163247547536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yellow Vertical
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 409.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 253634542d28894c0800000000000000
+      internalID: -4280527606198869166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orange Vertical
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 409.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad99073d31ac3aff0800000000000000
+      internalID: -25954986333529638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue Vertical
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 409.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28031653aec137cc0800000000000000
+      internalID: -3714593475407040382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red Horizontal
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 358.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37f89cb1ec181c4c0800000000000000
+      internalID: -4268988249541079181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green Horizontal
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 358.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41e1fb44619ae0d60800000000000000
+      internalID: 7858404312915844628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yellow Horizontal
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 358.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06fcb74c6da2149a0800000000000000
+      internalID: -6250667705905721504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orange Horizontal
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 358.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c16c7765389d2ba0800000000000000
+      internalID: -6112061764135001661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue Horizontal
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 358.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81621484db2b9c200800000000000000
+      internalID: 200888184425489944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red Bottom Left
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 307.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5800f8b81ab2214a0800000000000000
+      internalID: -6624184129077444475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green Bottom Left
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 307.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d89eb68c388fae00800000000000000
+      internalID: 1058214230995409104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yellow Bottom Left
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 307.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b71d081e79306b50800000000000000
+      internalID: 6584325868947838901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orange Bottom Left
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 307.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74cc2b630b582ec40800000000000000
+      internalID: 5540137483497557063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue Bottom Left
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 307.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d14a4883b5cf10130800000000000000
+      internalID: 3531381051555619869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red Bottom Right
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce93197097addce00800000000000000
+      internalID: 1066748900109531628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green Bottom Right
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 256.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43b182dcafb9258e0800000000000000
+      internalID: -1706129807333909708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yellow Bottom Right
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 256.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1eb89040f46d4df40800000000000000
+      internalID: 5752458258917460961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orange Bottom Right
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 256.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89075da75aaecfee0800000000000000
+      internalID: -1225847002100305768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue Bottom Right
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 256.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71d662181d07a6220800000000000000
+      internalID: 2479918589938134295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red Top Left
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 205.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dff9d696bc13d31a0800000000000000
+      internalID: -6828246710306889731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green Top Left
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 205.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd567437c6ce9b690800000000000000
+      internalID: -7585772146794207781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yellow Top Left
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 212
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7580b74a86f6186d0800000000000000
+      internalID: -2989986182370490281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orange Top Left
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 205.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f27c74f909477c850800000000000000
+      internalID: 6397209960199472943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue Top Left
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 205.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d57d148f700921cf0800000000000000
+      internalID: -283005462666684579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red Top Right
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 154.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93eeaa25e82479850800000000000000
+      internalID: 6383644175860690489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green Top Right
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 154.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f0a5b646b72c8580800000000000000
+      internalID: -8823633906101804812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yellow Top Right
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 154.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 293a2a78fc938a1c0800000000000000
+      internalID: -4492277064805473390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orange Top Right
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 154.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95d04679d63b95810800000000000000
+      internalID: 1754630813110242649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue Top Right
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 154.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9243589d56261fc80800000000000000
+      internalID: -8290737249431768023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

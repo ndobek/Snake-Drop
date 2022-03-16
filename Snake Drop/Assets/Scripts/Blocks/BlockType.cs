@@ -80,6 +80,7 @@ public class BlockType : ScriptableObject, ISaveable
         }
 
     }
+  
     public virtual void SpecialAction(Block block, PlayerManager player = null)
     {
         foreach (Rule rule in specialActionRules)

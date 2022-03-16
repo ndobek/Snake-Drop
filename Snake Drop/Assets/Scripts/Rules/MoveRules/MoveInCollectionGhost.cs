@@ -40,12 +40,12 @@ public class MoveInCollectionGhost : MoveRule
             block.RawMoveTo(slot);
         }
 
-        Debug.Log("Fill: " + slot.Block.BlockCollection.FillAmount + "/" + slot.Block.BlockCollection.Area());
+        // Debug.Log("Fill: " + slot.Block.BlockCollection.FillAmount + "/" + slot.Block.BlockCollection.Area());
     }
 
     private void RemoveFirstColorInTail(Block block, BlockSlot slot, PlayerManager player)
     {
-        if (block.Tail && !CollectionIsFull(slot.Block) && slot.Block.BlockCollection.CoordsAreInCollection(block.X, block.Y))
+        if (block.Tail && !CollectionIsFull(slot.Block) && slot.playGrid == block.Slot.playGrid && slot.Block.BlockCollection.CoordsAreInCollection(block.X, block.Y))
         {
             if(block.Tail.blockColor == slot.Block.blockColor)
             {

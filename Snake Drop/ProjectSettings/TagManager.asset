@@ -16,7 +16,7 @@ TagManager:
   - 
   - 
   - Post Processing Ignore
-  - 
+  - XP Particle Physics
   - 
   - 
   - 
@@ -49,6 +49,9 @@ TagManager:
   - name: Sky Foreground
     uniqueID: 94126667
     locked: 0
+  - name: Atmospheric Particles
+    uniqueID: 604119703
+    locked: 0
   - name: Terrain Background
     uniqueID: 3936328311
     locked: 0
@@ -75,6 +78,9 @@ TagManager:
     locked: 0
   - name: Playgrid Foreground
     uniqueID: 1986032229
+    locked: 0
+  - name: Playgrid Effects
+    uniqueID: 3322161913
     locked: 0
   - name: Default
     uniqueID: 0

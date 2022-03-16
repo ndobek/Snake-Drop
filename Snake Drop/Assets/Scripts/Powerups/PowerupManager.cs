@@ -5,22 +5,24 @@ using UnityEngine.UI;
 
 public class PowerupManager : MonoBehaviour
 {
-    [SerializeField]
-    private int powerupFrequency;
+    public int nextPowerupScoreDiff;
     public int currentProgress;
+    public int numOfPowerupsObtained;
+    public int numOfPowerupsUsed;
 
     public Powerup[] possiblePowerups;
     public Powerup currentPowerup;
     public int extraPowerups;
-
-    public int PowerupBank
-    {
-        get{return (currentPowerup != null) ? 1: 0 + extraPowerups;}
-    }
+    public int numAvailablePowerups => extraPowerups + (currentPowerup != null ? 1 : 0);
 
     public void ResetGame()
     {
         currentProgress = 0;
+        currentPowerup = null;
+        extraPowerups = 0;
+        numOfPowerupsObtained = 0;
+        numOfPowerupsUsed = 0;
+        GetNextPowerupScore();
     }
     public void GetPowerUp()
     {
@@ -31,13 +33,17 @@ public class PowerupManager : MonoBehaviour
     {
         if (currentPowerup == null) currentPowerup = powerup;
         else extraPowerups += 1;
+
+        numOfPowerupsObtained += 1;
     }
 
     public void TryActivate()
     {
         if (currentPowerup != null)
         {
+            GameManager.instance.playerManagers[0].Score.UpdateScore();
             currentPowerup.Activate();
+            numOfPowerupsUsed += 1;
             currentPowerup = null;
             if (extraPowerups > 0)
             {
@@ -54,12 +60,23 @@ public class PowerupManager : MonoBehaviour
         if (ProgressToNextPowerup() >= 1)
         {
             GetPowerUp();
-            currentProgress -= powerupFrequency;
+            currentProgress -= nextPowerupScoreDiff;
+            GetNextPowerupScore();
         }
         //UpdateSprite();
     }
+
+    public void GetNextPowerupScore()
+    {
+        ScoreManager score = GameManager.instance.playerManagers[0].Score;
+        GameModeManager gameModeManager = GameManager.instance.GameModeManager;
+
+        nextPowerupScoreDiff = (int)gameModeManager.GetPowerupInfo(score.Score, numOfPowerupsObtained);
+    }
+
+
     public float ProgressToNextPowerup()
     {
-        return (float)currentProgress / powerupFrequency;
+        return (float)currentProgress / nextPowerupScoreDiff;
     }
 }

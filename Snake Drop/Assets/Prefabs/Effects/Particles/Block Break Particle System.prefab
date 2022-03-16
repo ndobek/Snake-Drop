@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5657859903073713087}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Plane Transform 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 6734525404444752582}
   - component: {fileID: 6531534990113735397}
   - component: {fileID: 7318140368695828379}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Block Break Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56,7 +56,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2265538641310165598}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3872241442902383645}
@@ -318,7 +318,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.2
+      scalar: 2
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -4922,7 +4922,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3872241442902383645}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Plane Transform 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4952,7 +4952,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2613727257779978675}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Plane Transform 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4982,7 +4982,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8586083376720470221}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Plane Transform 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3843568856077858208}
   - component: {fileID: 8552966034500809587}
   - component: {fileID: 5416193718108157597}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: XP Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8235330669645162689}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -42,7 +42,7 @@ ParticleSystem:
   serializedVersion: 6
   lengthInSec: 6
   simulationSpeed: 1
-  stopAction: 1
+  stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
@@ -284,8 +284,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.3
-      minScalar: 0.2
+      scalar: 1.5
+      minScalar: 1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -2533,8 +2533,9 @@ ParticleSystem:
     influenceFilter: 0
     influenceMask:
       serializedVersion: 2
-      m_Bits: 4294967295
-    influenceList: []
+      m_Bits: 512
+    influenceList:
+    - {fileID: 6621212478796423545, guid: 5fe65b665a563d04fa98b9d0ecfab469, type: 3}
   ClampVelocityModule:
     enabled: 0
     x:
@@ -3758,7 +3759,7 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     range: {x: 0, y: 1}
   CollisionModule:
-    enabled: 0
+    enabled: 1
     serializedVersion: 3
     type: 1
     collisionMode: 0
@@ -3931,8 +3932,8 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    minKillSpeed: 0
-    maxKillSpeed: 10000
+    minKillSpeed: 1e+10
+    maxKillSpeed: 0
     radiusScale: 1
     collidesWith:
       serializedVersion: 2
@@ -3945,7 +3946,8 @@ ParticleSystem:
     interiorCollisions: 0
   TriggerModule:
     enabled: 1
-    collisionShape0: {fileID: 0}
+    collisionShape0: {fileID: 2387087296787643817, guid: 5c9bc5503e0c9d64c92dd0554c2967d3,
+      type: 3}
     collisionShape1: {fileID: 0}
     collisionShape2: {fileID: 0}
     collisionShape3: {fileID: 0}
@@ -4911,7 +4913,7 @@ ParticleSystemRenderer:
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 738d90bad9bf0be4ab1498fba78c111e, type: 2}

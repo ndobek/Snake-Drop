@@ -73,13 +73,13 @@ SpriteMask:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 6cd5a812c0dee7e4ea60d81950d17807, type: 3}
   m_MaskAlphaCutoff: 0.2
-  m_FrontSortingLayerID: 0
-  m_BackSortingLayerID: 0
-  m_FrontSortingLayer: 0
-  m_BackSortingLayer: 0
-  m_FrontSortingOrder: 0
-  m_BackSortingOrder: 0
-  m_IsCustomRangeActive: 0
+  m_FrontSortingLayerID: 1986032229
+  m_BackSortingLayerID: 1986032229
+  m_FrontSortingLayer: -2
+  m_BackSortingLayer: -2
+  m_FrontSortingOrder: 2
+  m_BackSortingOrder: 1
+  m_IsCustomRangeActive: 1
   m_SpriteSortPoint: 0
 --- !u!1 &2546978949262984959
 GameObject:
@@ -150,8 +150,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1986032229
-  m_SortingLayer: -1
-  m_SortingOrder: 0
+  m_SortingLayer: -2
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 90f72741e36e80b4bb3fb708566cad3a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -231,8 +231,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1986032229
+  m_SortingLayer: -2
   m_SortingOrder: 1
   m_Sprite: {fileID: -4065304124308622816, guid: b09044ae8d292854ab319676626f4a48,
     type: 3}
@@ -301,6 +301,7 @@ MonoBehaviour:
   FillMask: {fileID: 6466254674296656373}
   FillMaskTransform: {fileID: 7127000334172316186}
   FillSpriteRenderer: {fileID: 8853788976239101160}
+  mostRecentDirectionMoved: 0
 --- !u!114 &-7966044424637155706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -355,6 +356,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8491950226431119121}
   - component: {fileID: 5953743069245659295}
+  - component: {fileID: 6323538552063101570}
   m_Layer: 8
   m_Name: Line Renderer
   m_TagString: Untagged
@@ -392,10 +394,10 @@ LineRenderer:
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: e6a6ae2f5d6c4984faaf99aa1c2b03cf, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -413,13 +415,13 @@ LineRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1986032229
+  m_SortingLayerID: -972805383
   m_SortingLayer: -1
-  m_SortingOrder: 2
+  m_SortingOrder: 0
   m_Positions: []
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.25
+    widthMultiplier: 0.1
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -464,11 +466,23 @@ LineRenderer:
       m_Mode: 0
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
-    numCornerVertices: 5
-    numCapVertices: 2
+    numCornerVertices: 0
+    numCapVertices: 0
     alignment: 0
-    textureMode: 0
+    textureMode: 1
     shadowBias: 0.5
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+--- !u!114 &6323538552063101570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8539906581424278499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fd2fea7ae81bff468511ddfec9a2842, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

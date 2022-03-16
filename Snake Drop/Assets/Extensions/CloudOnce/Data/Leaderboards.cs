@@ -14,6 +14,50 @@ namespace CloudOnce
     /// </summary>
     public static class Leaderboards
     {
+        private static readonly UnifiedLeaderboard s_high_Score = new UnifiedLeaderboard("High_Score",
+#if !UNITY_EDITOR && (UNITY_IOS || UNITY_TVOS)
+            ""
+#elif !UNITY_EDITOR && UNITY_ANDROID && CLOUDONCE_GOOGLE
+            "CgkI37zJ85kBEAIQAA"
+#else
+            "High_Score"
+#endif
+            );
+
+        public static UnifiedLeaderboard High_Score
+        {
+            get { return s_high_Score; }
+        }
+
+        private static readonly UnifiedLeaderboard s_highest_Score_Before_Board_Clear = new UnifiedLeaderboard("Highest_Score_Before_Board_Clear",
+#if !UNITY_EDITOR && (UNITY_IOS || UNITY_TVOS)
+            ""
+#elif !UNITY_EDITOR && UNITY_ANDROID && CLOUDONCE_GOOGLE
+            "CgkI37zJ85kBEAIQBA"
+#else
+            "Highest_Score_Before_Board_Clear"
+#endif
+            );
+
+        public static UnifiedLeaderboard Highest_Score_Before_Board_Clear
+        {
+            get { return s_highest_Score_Before_Board_Clear; }
+        }
+
+        private static readonly UnifiedLeaderboard s_highest_Single_Combo = new UnifiedLeaderboard("Highest_Single_Combo",
+#if !UNITY_EDITOR && (UNITY_IOS || UNITY_TVOS)
+            ""
+#elif !UNITY_EDITOR && UNITY_ANDROID && CLOUDONCE_GOOGLE
+            "CgkI37zJ85kBEAIQBQ"
+#else
+            "Highest_Single_Combo"
+#endif
+            );
+
+        public static UnifiedLeaderboard Highest_Single_Combo
+        {
+            get { return s_highest_Single_Combo; }
+        }
 
         public static string GetPlatformID(string internalId)
         {
@@ -24,7 +68,9 @@ namespace CloudOnce
 
         private static readonly Dictionary<string, UnifiedLeaderboard> s_leaderboardDictionary = new Dictionary<string, UnifiedLeaderboard>
         {
-
+            { "High_Score", s_high_Score },
+            { "Highest_Score_Before_Board_Clear", s_highest_Score_Before_Board_Clear },
+            { "Highest_Single_Combo", s_highest_Single_Combo },
         };
     }
 }

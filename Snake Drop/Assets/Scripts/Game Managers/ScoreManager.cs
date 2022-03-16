@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using CloudOnce;
 
 public class ScoreManager : MonoBehaviour
 {
@@ -12,15 +13,10 @@ public class ScoreManager : MonoBehaviour
         get { return score; }
         set
         {
-           GameManager.instance.playerManagers[0].Powerup.UpdateProgress(value - score);
-             score = value;
-            //ScoreText.text = "Score: " + score.ToString();
+            GameManager.instance.playerManagers[0].Powerup.UpdateProgress(value - score);
+            score = value;
         }
     }
-   // [SerializeField]
-   // //private Text ScoreText;
-   //// private ScoreDisplayer scoreDisplay;
-   // [HideInInspector]
     private int multiplier;
     public int Multiplier
     {
@@ -28,24 +24,23 @@ public class ScoreManager : MonoBehaviour
         set
         {
             multiplier = value;
-            //MultiplierText.text = "Multiplier: " + multiplier.ToString();
         }
     }
-    //[SerializeField]
-    //private Text MultiplierText;
 
     private int highScore;
     public int HighScore
     {
         get { return highScore; }
-        set {
-            //HighScoreText.text = "High Score: " + value; 
-            highScore = value; 
+        set
+        {
+            highScore = value;
         }
     }
-    //public Text HighScoreText;
 
+    private float partialScore;
+    private float partialMultiplier;
 
+    public int scoreAtLastCrash;
 
     public int numberOfSnakes;
     public int NumberOfSnakes
@@ -54,7 +49,7 @@ public class ScoreManager : MonoBehaviour
         set { numberOfSnakes = value; }
     }
 
-    private void Start()
+    private void Awake()
     {
         ResetGame();
     }
@@ -72,6 +67,41 @@ public class ScoreManager : MonoBehaviour
         Multiplier = 1;
     }
 
+    public void IncreaseScorePartially(float amount, bool useMultiplier)
+    {
+        partialScore += amount;
+        int amountToIncrease = 0;
+
+        if (partialScore >= 1)
+        {
+            float remainder = partialScore % 1;
+            amountToIncrease = (int)(partialScore - remainder);
+            partialScore = remainder;
+        }
+        Debug.Log("Amount to Increase: " + amountToIncrease + " partial: " + partialScore);
+        IncreaseScore(amountToIncrease, useMultiplier);
+    }
+    public void IncreaseMultiplierPartially(float amount)
+    {
+        partialMultiplier += amount;
+        int amountToIncrease = 0;
+
+        if (partialMultiplier >= .99f)
+        {
+            float remainder = partialMultiplier % 1;
+            if(remainder >= .99f) remainder = 0;
+            amountToIncrease = (int)(partialMultiplier - remainder);
+            partialMultiplier = remainder;
+        }
+        multiplier += amountToIncrease;
+    }
+
+    public void IncreaseScore(int amount, bool useMultiplier)
+    {
+        if (useMultiplier) IncreaseScoreUsingMultiplier(amount);
+        else Score += amount;
+    }
+
     public void IncreaseScoreUsingMultiplier(int amount)
     {
         Score = score + (amount * multiplier);
@@ -79,12 +109,28 @@ public class ScoreManager : MonoBehaviour
 
     public void UpdateScore()
     {
-        SaveData oldScore = SaveManager.LoadHighScore();
-        HighScore = oldScore !=null?oldScore.playerData.score.score : 0;
-        if (score > HighScore)
-        {
-            SaveManager.SaveHighScore();
-        }
+        //SaveData oldScore = SaveManager.LoadHighScore();
+        //if (oldScore != null && oldScore.playerData != null && oldScore.playerData.score != null)
+        //{
+        //    HighScore = oldScore.playerData.score.score;
+        //}
+        //else
+        //{
+        //    HighScore = 0;
+        //}
+        SubmitHighScore();
+        HighScore = CloudVariables.HighScore;
+    }
+    public void SubmitHighScore()
+    {
+        Leaderboards.High_Score.SubmitScore(Score);
+        if (GameManager.instance.playerManagers[0].Powerup.numOfPowerupsUsed == 0) Leaderboards.Highest_Score_Before_Board_Clear.SubmitScore(Score);
+        CloudVariables.HighScore = score;
+    }
+    public void OnCrash()
+    {
+        Leaderboards.Highest_Single_Combo.SubmitScore(Score - scoreAtLastCrash);
+        scoreAtLastCrash = score;
     }
 
 }

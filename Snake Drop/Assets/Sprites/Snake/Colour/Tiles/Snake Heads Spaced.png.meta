@@ -1,0 +1,634 @@
+fileFormatVersion: 2
+guid: 909413d9cd83431468e602cd728ebaf6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8040667782465255107
+    second: Snake Heads Red Down
+  - first:
+      213: 9036052046338644725
+    second: Snake Heads Green Down
+  - first:
+      213: 8405761475947056604
+    second: Snake Heads Yellow Down
+  - first:
+      213: -6878415930246564674
+    second: Snake Heads Orange Down
+  - first:
+      213: -3108712843933565653
+    second: Snake Heads Blue Down
+  - first:
+      213: 6354022064211640776
+    second: Snake Heads Red Right
+  - first:
+      213: 1223425575095490567
+    second: Snake Heads Green Right
+  - first:
+      213: -1949216587921450056
+    second: Snake Heads Yellow Right
+  - first:
+      213: 1031253843481977754
+    second: Snake Heads Orange Right
+  - first:
+      213: 5469845495079202839
+    second: Snake Heads Blue Right
+  - first:
+      213: 3730817555667753126
+    second: Snake Heads Red Up
+  - first:
+      213: -2452739897321760520
+    second: Snake Heads Green Up
+  - first:
+      213: -2217654204565836448
+    second: Snake Heads Yellow Up
+  - first:
+      213: -7668036194673479268
+    second: Snake Heads Orange Up
+  - first:
+      213: -5729689733333153845
+    second: Snake Heads Blue Up
+  - first:
+      213: -9040623850241748894
+    second: Snake Red Left
+  - first:
+      213: -7535168515313576778
+    second: Snake Heads Green Left
+  - first:
+      213: 7141393816632486866
+    second: Snake Heads Yellow Left
+  - first:
+      213: -4153335736876960603
+    second: Snake Heads Orange Left
+  - first:
+      213: 8642414133398402515
+    second: Snake Heads Blue Left
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 40
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Snake Heads Red Down
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 204.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c6f4c23fb0369f60800000000000000
+      internalID: 8040667782465255107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snake Heads Green Down
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 204.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fad4f90671866d70800000000000000
+      internalID: 9036052046338644725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snake Heads Yellow Down
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 204.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cddcc78d68347a470800000000000000
+      internalID: 8405761475947056604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snake Heads Orange Down
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 204.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb4f344a725fa80a0800000000000000
+      internalID: -6878415930246564674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snake Heads Blue Down
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 204.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2d35ac9322abd4d0800000000000000
+      internalID: -3108712843933565653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snake Heads Red Right
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 153.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c1445007650e2850800000000000000
+      internalID: 6354022064211640776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snake Heads Green Right
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 153.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 708d1bc141b7af010800000000000000
+      internalID: 1223425575095490567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snake Heads Yellow Right
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 153.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bb94a637ddf2f4e0800000000000000
+      internalID: -1949216587921450056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snake Heads Orange Right
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 153.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a93eff528efbf4e00800000000000000
+      internalID: 1031253843481977754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snake Heads Blue Right
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 153.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 710777e4f7bc8eb40800000000000000
+      internalID: 5469845495079202839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snake Heads Red Up
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 102.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a81e57dcc686c330800000000000000
+      internalID: 3730817555667753126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snake Heads Green Up
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 102.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f855bdfe0e16fdd0800000000000000
+      internalID: -2452739897321760520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snake Heads Yellow Up
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 102.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06da336204f4931e0800000000000000
+      internalID: -2217654204565836448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snake Heads Orange Up
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 102.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9136ab35b9a59590800000000000000
+      internalID: -7668036194673479268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snake Heads Blue Up
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 102.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc789737b8d0c70b0800000000000000
+      internalID: -5729689733333153845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snake Red Left
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 52
+        width: 51
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2609a6ae180498280800000000000000
+      internalID: -9040623850241748894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snake Heads Green Left
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 51.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b4d60a8824bd6790800000000000000
+      internalID: -7535168515313576778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snake Heads Yellow Left
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 51.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dbec89e6d35b1360800000000000000
+      internalID: 7141393816632486866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snake Heads Orange Left
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 51.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a4738217236c56c0800000000000000
+      internalID: -4153335736876960603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snake Heads Blue Left
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 51.8
+        width: 51.2
+        height: 51.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d5f6076dd500f770800000000000000
+      internalID: 8642414133398402515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

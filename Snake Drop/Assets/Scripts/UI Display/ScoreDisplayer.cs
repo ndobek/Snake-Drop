@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 public class ScoreDisplayer : MonoBehaviour
 {
-    
+
     public TMP_Text scoreText;
     public TMP_Text scoreTextNewHighScore;
     public GameObject scoreDisplayObj;
@@ -29,8 +29,8 @@ public class ScoreDisplayer : MonoBehaviour
     private bool isHighScoreColorSet = false;
     public void NewHighScore()
     {
-        scoreDisplayObjHighScore.SetActive(true);
-        scoreDisplayObj.SetActive(false);
+        if (scoreDisplayObj != null) scoreDisplayObj.SetActive(false);
+        if (scoreDisplayObjHighScore != null) scoreDisplayObjHighScore.SetActive(true);
         scoreText = scoreTextNewHighScore;
         isHighScoreColorSet = true;
     }

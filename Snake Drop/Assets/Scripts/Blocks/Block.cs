@@ -21,6 +21,7 @@ public class Block : MonoBehaviour
     public Transform FillMaskTransform;
     public SpriteRenderer FillSpriteRenderer;
 
+    public Directions.Direction mostRecentDirectionMoved = Directions.Direction.DOWN;
 
     private BlockSlot slot;
     public BlockSlot Slot
@@ -71,12 +72,14 @@ public class Block : MonoBehaviour
     {
         return !isPartOfSnake(obj);
     }
+    private Block head;
+    public Block Head { get => head; set { head = value; } }
 
     private Block tail;
     public Block Tail
     {
         get { return tail; }
-        set { SetTail(value); }
+        set { SetTail(value);}
     }
 
     #endregion
@@ -98,13 +101,15 @@ public class Block : MonoBehaviour
             AnimationManager.AddAnimation(new BlockAnimation(this, obj));
         }
     }
-    private void UpdateSprite()
+    public void UpdateSprite()
     {
-            AnimationManager.AddAnimation(new BlockAnimation(this, blockColor.GetAnimator(blockType)));
+        AnimationManager.AddAnimation(new BlockAnimation(this, blockColor.GetAnimator(blockType)));
+      
     }
-    private void Update()
+    private void LateUpdate()
     {
         AddAnimations();
+        
     }
 
     //Tells the grid that it needs to check for fall movement and update
@@ -129,7 +134,21 @@ public class Block : MonoBehaviour
         SetGridDirty();
         UpdateSprite();
         BlockSlot Old = Slot;
-        if (Old) Old.OnUnassignment(this);
+        if (Old)
+        {
+
+            if (Old.playGrid == obj.playGrid) { mostRecentDirectionMoved = Directions.DirectionTo(Old, obj); }
+            else
+            {
+                mostRecentDirectionMoved = GameManager.instance.playerManagers[0].enterSlot.GetEntranceDirection(obj.playGrid);                
+            }
+            Old.OnUnassignment(this);
+            
+        }
+        else
+        {
+            mostRecentDirectionMoved = Directions.Direction.DOWN;
+        }
         if (obj)
         {
             if (animation == null) animation = blockType.defaultMoveAnimator;
@@ -203,13 +222,21 @@ public class Block : MonoBehaviour
         }
         rule.Invoke(this, player);
     }
-    public void SetTail(Directions.Direction neighbor)
+
+    
+
+        public void SetTail(Directions.Direction neighbor)
     {
         SetTail(Neighbor(neighbor).Block);
     }
     public void SetTail(Block obj)
     {
         tail = obj;
+        if (tail)
+        {
+            tail.head = this;
+        }
+        
     }
     public Block GetLastTail()
     {
@@ -231,6 +258,25 @@ public class Block : MonoBehaviour
             SetTail(null);
         }
         Kill(player);
+    }
+
+    public int SnakeLength()
+    {
+        if (Tail != null)
+        {
+            return Tail.SnakeLength() + 1;
+        }
+        else return 1;
+    }
+
+    public int SnakeLengthInPlayGrid()
+    {
+        PlayGrid playGrid = GameManager.instance.playerManagers[0].playGrid;
+        if (Tail != null && Tail.slot.playGrid == playGrid)
+        {
+            return Tail.SnakeLengthInPlayGrid() + 1;
+        }
+        else return slot.playGrid == playGrid ? 1 : 0;
     }
 
 

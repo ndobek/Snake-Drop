@@ -1,12 +1,50 @@
 {
 	"AchievementIDs":[],
-	"LeaderboardIDs":[],
-	"CloudVariables":[],
+	"LeaderboardIDs":[
+		{
+			"InternalID":"High_Score",
+			"AppleID":"",
+			"GoogleID":"CgkI37zJ85kBEAIQAA"
+		},
+		{
+			"InternalID":"Highest_Score_Before_Board_Clear",
+			"AppleID":"",
+			"GoogleID":"CgkI37zJ85kBEAIQBA"
+		},
+		{
+			"InternalID":"Highest_Single_Combo",
+			"AppleID":"",
+			"GoogleID":"CgkI37zJ85kBEAIQBQ"
+		}
+	],
+	"CloudVariables":[
+		{
+			"Key":"UnlimitedUndos",
+			"Type":"4",
+			"DefaultValue":"False",
+			"PersistenceType":"0",
+			"AllowNegative":false
+		},
+		{
+			"Key":"Undos",
+			"Type":"1",
+			"DefaultValue":"0",
+			"PersistenceType":"0",
+			"AllowNegative":false
+		},
+		{
+			"Key":"HighScore",
+			"Type":"0",
+			"DefaultValue":"0",
+			"PersistenceType":"1",
+			"AllowNegative":false
+		}
+	],
 	"AppleSupported":false,
 	"GoogleSupported":true,
-	"GoogleAppID":"3873770706",
+	"GoogleAppID":"41313001055",
 	"GoogleSetupRun":true,
 	"DebugModeEnabled":false,
-	"Version":"2.7.1",
+	"Version":"2.7.3",
 	"SettingsLocation":"0"
 }

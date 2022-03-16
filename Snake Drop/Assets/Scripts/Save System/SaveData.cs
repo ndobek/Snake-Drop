@@ -20,6 +20,7 @@ public class SaveData
     {
         Random.state = randState;
         playerData.LoadTo(LoadObj.playerManagers[0], LoadObj);
+        LoadObj.boardRotator.RotateBoardToMatchEntrance();
     }
 }
 [System.Serializable]
@@ -35,12 +36,14 @@ public class PlayerSaveData
     public bool GameInProgress;
     public EntranceSlotSaveData EnterSlot;
     public int mostRecentDirectionMoved;
+    public int mostRecentSnakeLength;
+    public Random.State randStateForSnake;
 
     public PlayerSaveData(PlayerManager SaveObj)
     {
         snakeHead = new BlockLocationData(SaveObj.SnakeHead);
-        score = new ScoreSaveData(SaveObj.Score);
         powerup = new PowerupSaveData(SaveObj.Powerup);
+        score = new ScoreSaveData(SaveObj.Score);
         playGrid = new GridSaveData(SaveObj.playGrid);
         previewGrid = new GridSaveData(SaveObj.previewGrid);
         entranceManager = new EntranceManagerSaveData(SaveObj.entranceManager);
@@ -48,23 +51,28 @@ public class PlayerSaveData
         GameInProgress = SaveObj.GameInProgress;
         EnterSlot = new EntranceSlotSaveData(SaveObj.enterSlot);
         mostRecentDirectionMoved = (int)SaveObj.playerController.SecondMostRecentDirectionMoved;
+        mostRecentSnakeLength = SaveObj.mostRecentSnakeLength;
+        randStateForSnake = SaveObj.randStateForSnake;
 
     }
     
     public void LoadTo(PlayerManager LoadObj, GameManager gameManager)
     {
-        score.LoadTo(LoadObj.Score);
-        powerup.LoadTo(LoadObj.Powerup, gameManager);
+
         playGrid.LoadTo(LoadObj.playGrid, gameManager);
         previewGrid.LoadTo(LoadObj.previewGrid, gameManager);
         playGrid.LoadReferences(gameManager);
         previewGrid.LoadReferences(gameManager);
         entranceManager.LoadTo(LoadObj.entranceManager, gameManager);
-        LoadObj.RoundInProgress = RoundInProgress;
-        LoadObj.GameInProgress = GameInProgress;
         LoadObj.SnakeHead = snakeHead.GetBlock(LoadObj);
         LoadObj.PositionWaitSlot(LoadObj.entranceManager.GetSlot(EnterSlot.x, EnterSlot.y));
         LoadObj.playerController.MostRecentDirectionMoved = (Directions.Direction)mostRecentDirectionMoved;
+        LoadObj.mostRecentSnakeLength = mostRecentSnakeLength;
+        score.LoadTo(LoadObj.Score);
+        powerup.LoadTo(LoadObj.Powerup, gameManager);
+        LoadObj.RoundInProgress = RoundInProgress;
+        LoadObj.GameInProgress = GameInProgress;
+        LoadObj.randStateForSnake = randStateForSnake;
     }
 }
 
@@ -74,19 +82,30 @@ public class PowerupSaveData
     public int currentProgress;
     public string currentPowerup;
     public int extraPowerups;
+    public int numberOfObtainedPowerups;
+    public int nextPowerupScoreDiff;
+    public int numberOfUsedPowerups;
 
     public PowerupSaveData(PowerupManager SaveObj)
     {
         currentProgress = SaveObj.currentProgress;
         currentPowerup = SaveObj.currentPowerup != null? SaveObj.currentPowerup.Name : "null";
         extraPowerups = SaveObj.extraPowerups;
+        numberOfObtainedPowerups = SaveObj.numOfPowerupsObtained;
+        nextPowerupScoreDiff = SaveObj.nextPowerupScoreDiff;
+        numberOfUsedPowerups = SaveObj.numOfPowerupsUsed;
+
     }
 
     public void LoadTo(PowerupManager LoadObj, GameManager gameManager)
     {
         LoadObj.currentProgress = currentProgress;
         if(currentPowerup != "null") LoadObj.currentPowerup = gameManager.Powerups.getObject(currentPowerup) as Powerup;
+        else LoadObj.currentPowerup = null;
         LoadObj.extraPowerups = extraPowerups;
+        LoadObj.numOfPowerupsObtained = numberOfObtainedPowerups;
+        LoadObj.nextPowerupScoreDiff = nextPowerupScoreDiff;
+        LoadObj.numOfPowerupsUsed = numberOfUsedPowerups;
     }
 }
 
