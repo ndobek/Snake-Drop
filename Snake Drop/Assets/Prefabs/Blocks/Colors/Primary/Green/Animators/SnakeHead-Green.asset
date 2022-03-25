@@ -14,16 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationConcurrent: 0
   AnimationTotalTime: 0
-  UpSprite: {fileID: -926016961253667134, guid: 6ba896defe82c38439a28fb2c5736640,
+  UpSprite: {fileID: -2452739897321760520, guid: 909413d9cd83431468e602cd728ebaf6,
     type: 3}
-  DownSprite: {fileID: -3439751901366698032, guid: 6ba896defe82c38439a28fb2c5736640,
+  DownSprite: {fileID: 9036052046338644725, guid: 909413d9cd83431468e602cd728ebaf6,
     type: 3}
-  LeftSprite: {fileID: -6692500421101929712, guid: 6ba896defe82c38439a28fb2c5736640,
+  LeftSprite: {fileID: -7535168515313576778, guid: 909413d9cd83431468e602cd728ebaf6,
     type: 3}
-  RightSprite: {fileID: -4163200537734494670, guid: 6ba896defe82c38439a28fb2c5736640,
+  RightSprite: {fileID: 1223425575095490567, guid: 909413d9cd83431468e602cd728ebaf6,
     type: 3}
   HighlightTail: 1
-  snakeMaterial: {fileID: 2100000, guid: 8faaa0849c1b2cd4590c859ef7c0437e, type: 2}
-  notSnakeMaterial: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   color: {r: 1, g: 1, b: 1, a: 1}
   sortingOrder: 0

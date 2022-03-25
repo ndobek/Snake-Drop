@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5291395909477978015}
   - component: {fileID: 5291395909477978012}
-  - component: {fileID: 5291395909477978013}
   m_Layer: 0
   m_Name: ParticleManager
   m_TagString: Untagged
@@ -58,24 +57,3 @@ MonoBehaviour:
   blockBreakPoolSize: 121
   blockBreakIndex: 0
   pSystemZCoord: -10
---- !u!114 &5291395909477978013
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5291395909477978014}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5631be78311b53d4bba3d0d81fcad849, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pSystems:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  maxParticlesPerSpin: 3
-  minParticlesPerSpin: 1
-  boardRotator: {fileID: 0}
-  maxVariation: 3

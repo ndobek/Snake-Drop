@@ -15,7 +15,7 @@ MonoBehaviour:
   TypeName: Collection Ghost Member
   defaultMoveAnimator: {fileID: 11400000, guid: 23332f0fafefb3c419d44f2c79d052d7,
     type: 2}
-  BlockFillAnimator: {fileID: 11400000, guid: b03e818a1f7e70e4e8be388c2ae46910, type: 2}
+  BlockFillAnimator: {fileID: 11400000, guid: fc0fb005ecd29b948a5e7814cdeb1dbf, type: 2}
   EveryFrameAnimations: []
   HighlightTail: 0
   isPartOfSnake: 0
