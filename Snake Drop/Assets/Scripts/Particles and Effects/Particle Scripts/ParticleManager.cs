@@ -59,7 +59,7 @@ public class ParticleManager : MonoBehaviour
     {
         ParticleSystem pSystem = RetrieveParticleSystem(xPPSystemPool, ref xPIndex);
         
-        pos.z = pSystemZCoord;
+        //pos.z = pSystemZCoord;
         pSystem.transform.position = pos;
         pSystem.Emit(xP + 1);        
     }
@@ -67,7 +67,7 @@ public class ParticleManager : MonoBehaviour
     public void TriggerBlockBreakParticles(string color, Vector3 pos)
     {
         ParticleSystem pSystem = RetrieveParticleSystem(blockBreakPSystemPool, ref blockBreakIndex);
-        pos.z = pSystemZCoord;
+        //pos.z = pSystemZCoord;
         pSystem.transform.position = pos;
         pSystem.Emit(numberOfBlockBreakParticles);
     }

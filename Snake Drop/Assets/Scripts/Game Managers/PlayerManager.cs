@@ -153,7 +153,6 @@ public class PlayerManager : MonoBehaviour
     public void ResetGame()
     {
         randStateForSnake = Random.state;
-        GameManager.instance.plantManager.ResetGrowth();
         Score.ResetGame();
         Powerup.ResetGame();
         ResetMoveRestrictions();
@@ -196,7 +195,6 @@ public class PlayerManager : MonoBehaviour
             Undoer.Save();
             previewGridAnimator.Play("Down");
             snakeHead.MoveTo(destination, this);/*GameManager.instance.BasicMove.OnMove(SnakeHead, destination, this)*/;
-            GameManager.instance.plantManager.PlantNewPlants(destination.transform.position);
             RoundInProgress = true;
         }
         else

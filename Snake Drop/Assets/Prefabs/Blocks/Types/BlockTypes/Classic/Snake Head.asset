@@ -30,5 +30,4 @@ MonoBehaviour:
   breakRules:
   - {fileID: 11400000, guid: 3eb11e2b5f833f4419626ec57de25cc1, type: 2}
   - {fileID: 11400000, guid: 4a872cf92c97bfc4f8d6373090c51616, type: 2}
-  - {fileID: 11400000, guid: dffb2289c4e0e9d48b95284ffd995d22, type: 2}
   specialActionRules: []

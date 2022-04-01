@@ -12,7 +12,6 @@ public class SaveData
     public SaveData(GameManager gameManager)
     {
         playerData = new PlayerSaveData(gameManager.playerManagers[0]);
-        planetData = gameManager.plantManager.SavePlanet();
         randState = Random.state;
     }
 
