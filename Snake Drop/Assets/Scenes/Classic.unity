@@ -4753,6 +4753,12 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -3.46
       objectReference: {fileID: 0}
+    - target: {fileID: 9134113236033271037, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
+        type: 3}
+      propertyPath: GameMode
+      value: 
+      objectReference: {fileID: 11400000, guid: 5063c639fcff9264f9b990d1b37a1a9c,
+        type: 2}
     - target: {fileID: 9134113236212716689, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
         type: 3}
       propertyPath: m_AnchoredPosition.x

@@ -110,7 +110,7 @@ MonoBehaviour:
   progressBar: {fileID: 3710951092312134227}
   quickProgressBar: {fileID: 4140805499323265541}
   powerupButton: {fileID: 3421719223417753686}
-  mustUseIndicator: {fileID: 3825672550574245212}
+  mustUseIndicator: {fileID: 7284690463667453179}
   powerupFlareDuration: 1
 --- !u!225 &8026950734055869550
 CanvasGroup:
@@ -327,6 +327,7 @@ GameObject:
   - component: {fileID: 4331765252807477201}
   - component: {fileID: 8076299817016754812}
   - component: {fileID: 3312371568447943689}
+  - component: {fileID: 7284690463667453179}
   m_Layer: 0
   m_Name: Level Up Button
   m_TagString: Untagged
@@ -532,6 +533,25 @@ MonoBehaviour:
   ignoreFadeGroups: 1
   fadeInOnEnable: 0
   beginFadedOut: 0
+--- !u!95 &7284690463667453179
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3421719223417753686}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 62ac5ae8fc8450043accff028fd73160, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3618420780012645308
 GameObject:
   m_ObjectHideFlags: 0
