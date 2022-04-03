@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2387087296787643817}
   - component: {fileID: 990474959809768788}
+  - component: {fileID: 6699040788849827042}
+  - component: {fileID: 2487164623148510161}
   m_Layer: 0
   m_Name: Progress Bar Collider
   m_TagString: ProgressBarTrigger
@@ -44,3 +46,30 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 11, y: 1, z: 100}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6699040788849827042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8387626767192859976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11a1d8d4d6d5fe044a13325c6aaff02b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UITransform: {fileID: 0}
+--- !u!114 &2487164623148510161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8387626767192859976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4c0c841d9667274eb7ebb211235afd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 0}
+  stateName: Bounce

@@ -635,6 +635,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7a26eccb6d64bc4bab3a3400dde71e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &2898686105473990358 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2946324443661524991, guid: 3f3fb188545baca4d9f6112f1c0f42b0,
+    type: 3}
+  m_PrefabInstance: {fileID: 61152496271089961}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1967772454390451338 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1988250450186481059, guid: 3f3fb188545baca4d9f6112f1c0f42b0,
+    type: 3}
+  m_PrefabInstance: {fileID: 61152496271089961}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &9134113235786822595 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9087035107366769386, guid: 3f3fb188545baca4d9f6112f1c0f42b0,
@@ -3898,6 +3910,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Particles
       objectReference: {fileID: 0}
+    - target: {fileID: 2735356270897607038, guid: 58c6ebef9b1516e42a052f23bb13ca9d,
+        type: 3}
+      propertyPath: UITransform
+      value: 
+      objectReference: {fileID: 2898686105473990358}
+    - target: {fileID: 6594986327470327373, guid: 58c6ebef9b1516e42a052f23bb13ca9d,
+        type: 3}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 1967772454390451338}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58c6ebef9b1516e42a052f23bb13ca9d, type: 3}
 --- !u!4 &2987065800400829855 stripped

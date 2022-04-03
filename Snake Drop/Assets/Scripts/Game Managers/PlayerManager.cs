@@ -164,7 +164,7 @@ public class PlayerManager : MonoBehaviour
         GameInProgress = true;
         RoundInProgress = false;
         GameOver = false;
-        boardRotator.rotateInstantly(0);
+        boardRotator.rotateInstantly(Directions.Direction.UP);
 
 
         if (GameManager.instance.GameModeManager.GameMode.OnGameStart) GameManager.instance.GameModeManager.GameMode.OnGameStart.Invoke(playGrid);
