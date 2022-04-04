@@ -55,20 +55,23 @@ public class ParticleManager : MonoBehaviour
         }
         return result;
     }
-    public void TriggerXPParticles(int xP, Vector3 pos)
+    public void TriggerXPParticles(int xP, Vector3 pos, Color color)
     {
         ParticleSystem pSystem = RetrieveParticleSystem(xPPSystemPool, ref xPIndex);
-        
+        ParticleSystem.MainModule main = pSystem.main;
         //pos.z = pSystemZCoord;
         pSystem.transform.position = pos;
+        main.startColor = color;
         pSystem.Emit(xP + 1);        
     }
 
-    public void TriggerBlockBreakParticles(string color, Vector3 pos)
+    public void TriggerBlockBreakParticles(Color color, Vector3 pos)
     {
         ParticleSystem pSystem = RetrieveParticleSystem(blockBreakPSystemPool, ref blockBreakIndex);
+        ParticleSystem.MainModule main = pSystem.main;
         //pos.z = pSystemZCoord;
         pSystem.transform.position = pos;
+        main.startColor = color;
         pSystem.Emit(numberOfBlockBreakParticles);
     }
     private void Start()

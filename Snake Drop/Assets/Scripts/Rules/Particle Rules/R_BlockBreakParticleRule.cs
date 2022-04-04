@@ -6,16 +6,18 @@ using UnityEngine;
 public class R_BlockBreakParticleRule : Rule
 {
     public bool particlesOnCollectionBreak = false;
+
     protected override void Action(Block block, PlayerManager player = null)
     {
         BlockCollection collection = block.BlockCollection;
+        Color color = block.blockColor.deathParticleColor;
         if (collection != null && particlesOnCollectionBreak)
         {
             Vector3 pos = collection.WorldPosition();
-            player.particleManager.TriggerBlockBreakParticles(block.blockColor.name, pos);
+            player.particleManager.TriggerBlockBreakParticles(color, pos);
 
         }
-        player.particleManager.TriggerBlockBreakParticles(block.blockColor.name, block.Slot.transform.position);
+        player.particleManager.TriggerBlockBreakParticles(color, block.Slot.transform.position);
 
     }
 
