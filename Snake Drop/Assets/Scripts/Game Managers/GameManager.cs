@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
         return false;
     }
 
-    public GameObject gameOverScreen;
+    public UIFade gameOverScreen;
 
     private void Awake()
     {
@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         UpdateScore();
-        gameOverScreen.SetActive(false);
+        gameOverScreen.SetFade(false);
         foreach (PlayerManager player in playerManagers)
         {
             player.ResetGame();
@@ -109,6 +109,6 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        gameOverScreen.SetActive(GameIsOver());
+        gameOverScreen.SetFade(GameIsOver());
     }
 }

@@ -647,12 +647,18 @@ Animator:
     type: 3}
   m_PrefabInstance: {fileID: 61152496271089961}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &9134113235786822595 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9087035107366769386, guid: 3f3fb188545baca4d9f6112f1c0f42b0,
+--- !u!114 &3351289738350470804 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3340384073068005309, guid: 3f3fb188545baca4d9f6112f1c0f42b0,
     type: 3}
   m_PrefabInstance: {fileID: 61152496271089961}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fac301bb7f03f104884a385fbe9ad8bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &9182358458050913877 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9202837012723287932, guid: 3f3fb188545baca4d9f6112f1c0f42b0,
@@ -4267,7 +4273,7 @@ PrefabInstance:
         type: 3}
       propertyPath: gameOverScreen
       value: 
-      objectReference: {fileID: 9134113235786822595}
+      objectReference: {fileID: 3351289738350470804}
     - target: {fileID: 987620008699396775, guid: 7bc6f70463e52d241993f660fa9c9818,
         type: 3}
       propertyPath: playerManagers.Array.data[0]
