@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Watch an ad to gain undo uses.
+  m_text: Watch an ad to undo.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5227235bc5991bc4c940aee329958a1f, type: 2}
   m_sharedMaterial: {fileID: -4106219750486440806, guid: 5227235bc5991bc4c940aee329958a1f,
