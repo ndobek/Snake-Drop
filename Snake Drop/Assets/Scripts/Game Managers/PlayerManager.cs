@@ -32,6 +32,7 @@ public class PlayerManager : MonoBehaviour
 
     public EntranceSlot enterSlot;
     public EntranceManager entranceManager;
+    public BoardRotator boardRotator;
 
     public ParticleManager particleManager;
 
@@ -163,6 +164,7 @@ public class PlayerManager : MonoBehaviour
         GameInProgress = true;
         RoundInProgress = false;
         GameOver = false;
+        boardRotator.rotateInstantly(Directions.Direction.UP);
 
 
         if (GameManager.instance.GameModeManager.GameMode.OnGameStart) GameManager.instance.GameModeManager.GameMode.OnGameStart.Invoke(playGrid);

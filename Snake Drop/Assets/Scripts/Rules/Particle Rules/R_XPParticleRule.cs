@@ -14,6 +14,7 @@ public class R_XPParticleRule : Rule
     {
 
         BlockCollection collection = block.BlockCollection;
+        Color color = block.blockColor.deathParticleColor;
          int numParticles()
         {
             if (particlesReflectScore)
@@ -28,12 +29,12 @@ public class R_XPParticleRule : Rule
             if (collection != null)
             {
                 Vector3 centre = collection.WorldPosition();
-                player.particleManager.TriggerXPParticles(numParticles(), centre);
+                player.particleManager.TriggerXPParticles(numParticles(), centre, color);
             
             }
             else if (particlesOnBlockBreak)
             {
-            player.particleManager.TriggerXPParticles(numParticles(), block.Slot.transform.position);
+            player.particleManager.TriggerXPParticles(numParticles(), block.Slot.transform.position, color);
             }
 
          

@@ -31,7 +31,7 @@ public class PowerupsDisplayer : MonoBehaviour
     private UIFade powerupFader;
 
     [SerializeField]
-    private UIFade mustUseIndicator;
+    private Animator mustUseIndicator;
     [SerializeField]
     private float powerupFlareDuration;
 
@@ -105,7 +105,8 @@ public class PowerupsDisplayer : MonoBehaviour
             PlayerManager player = GameManager.instance.playerManagers[0];
             if (player.GameInProgress)
             {
-                mustUseIndicator.SetFade(!player.RoundInProgress && !player.entranceManager.CheckForValidEntrancesToGrid(player, player.playGrid) && player.Powerup.currentPowerup != null);
+                mustUseIndicator.SetBool("Must Use", !player.RoundInProgress && !player.entranceManager.CheckForValidEntrancesToGrid(player, player.playGrid) && player.Powerup.currentPowerup != null);
+                //mustUseIndicator.SetFade(!player.RoundInProgress && !player.entranceManager.CheckForValidEntrancesToGrid(player, player.playGrid) && player.Powerup.currentPowerup != null);
             }
         }
 

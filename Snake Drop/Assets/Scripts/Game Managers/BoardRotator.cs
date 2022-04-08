@@ -71,6 +71,13 @@ public class BoardRotator : MonoBehaviour
         }
     }
 
+    public void rotateInstantly(Directions.Direction UpDirection)
+    {
+        SetRotation(UpDirection);
+        StopAllCoroutines();
+        transform.rotation = Quaternion.Euler(0, 0, targetRotation);
+    }
+
     public void RotateClockwise()
     {
         DoRotation(true);
