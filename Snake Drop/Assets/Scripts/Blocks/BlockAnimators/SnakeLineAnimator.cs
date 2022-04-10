@@ -23,13 +23,8 @@ public class SnakeLineAnimator : BlockAnimator
 
             BlockAnimation[] UpcomingAnimations = current.AnimationManager.UpcomingAnimations.ToArray();
             BlockAnimation[] ActiveAnimations = current.AnimationManager.ActiveAnimations.ToArray();
-            if (UpcomingAnimations.Length > 0)
+            if (ActiveAnimations.Length > 0)
             {
-                for (int i = UpcomingAnimations.Length - 1; i >= 0; i--)
-                {
-                    BlockAnimation animation = UpcomingAnimations[i];
-                    if (animation != null && animation.destination != null) result.Add(animation.destination.position);
-                }
                 for (int i = ActiveAnimations.Length - 1; i >= 0; i--)
                 {
                     BlockAnimation animation = ActiveAnimations[i];
@@ -38,7 +33,7 @@ public class SnakeLineAnimator : BlockAnimator
             }
             else
             {
-                result.Add(current.Slot.transform.position);
+                result.Add(current.transform.position);
             }
 
         }

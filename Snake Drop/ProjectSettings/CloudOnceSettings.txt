@@ -22,7 +22,7 @@
 			"Key":"UnlimitedUndos",
 			"Type":"4",
 			"DefaultValue":"False",
-			"PersistenceType":"0",
+			"PersistenceType":"1",
 			"AllowNegative":false
 		},
 		{

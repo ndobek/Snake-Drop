@@ -13,7 +13,7 @@ namespace CloudOnce
     /// </summary>
     public static class CloudVariables
     {
-        private static readonly CloudBool s_unlimitedUndos = new CloudBool("UnlimitedUndos", PersistenceType.Latest, false);
+        private static readonly CloudBool s_unlimitedUndos = new CloudBool("UnlimitedUndos", PersistenceType.Highest, false);
 
         public static bool UnlimitedUndos
         {
