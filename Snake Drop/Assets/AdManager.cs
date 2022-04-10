@@ -20,6 +20,11 @@ public class AdManager : MonoBehaviour
         CreateAd();
     }
 
+    public void OnPurchase()
+    {
+        CloudOnce.CloudVariables.UnlimitedUndos = true;
+    }
+
 
     public void UserChoseToWatchAd()
     {
