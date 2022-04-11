@@ -72,6 +72,8 @@ public class PlayerSaveData
         LoadObj.RoundInProgress = RoundInProgress;
         LoadObj.GameInProgress = GameInProgress;
         LoadObj.randStateForSnake = randStateForSnake;
+        LoadObj.previewGrid.RefreshBlockLocations();
+        LoadObj.playGrid.RefreshBlockLocations();
     }
 }
 
