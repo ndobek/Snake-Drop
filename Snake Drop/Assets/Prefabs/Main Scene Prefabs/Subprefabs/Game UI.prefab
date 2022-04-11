@@ -136,6 +136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AnimDistance: {x: 0, y: -40}
+  debug: 0
   Duration: 0.5
   Delay: 0.2
   RandomizeDelay: 1
@@ -256,6 +257,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AnimDistance: {x: 0, y: 40}
+  debug: 0
   Duration: 0.5
   Delay: 0.2
   RandomizeDelay: 1
@@ -511,6 +513,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AnimDistance: {x: 0, y: -20}
+  debug: 0
   Duration: 0.2
   Delay: 0
   RandomizeDelay: 0
@@ -566,7 +569,7 @@ MonoBehaviour:
   rectTransform: {fileID: 0}
   ignoreFadeGroups: 1
   fadeInOnEnable: 0
-  beginFadedOut: 0
+  beginFadedOut: 1
 --- !u!95 &7284690463667453179
 Animator:
   serializedVersion: 3
@@ -691,6 +694,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AnimDistance: {x: -40, y: 0}
+  debug: 0
   Duration: 0.5
   Delay: 0.2
   RandomizeDelay: 1
@@ -1373,6 +1377,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AnimDistance: {x: 0, y: -40}
+  debug: 0
   Duration: 0.5
   Delay: 0.2
   RandomizeDelay: 1
@@ -1967,6 +1972,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AnimDistance: {x: 0, y: -40}
+  debug: 0
   Duration: 0.5
   Delay: 0.2
   RandomizeDelay: 1
@@ -2261,6 +2267,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AnimDistance: {x: 0, y: -40}
+  debug: 0
   Duration: 0.5
   Delay: 0.2
   RandomizeDelay: 1
@@ -2613,6 +2620,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AnimDistance: {x: 0, y: -40}
+  debug: 0
   Duration: 0.5
   Delay: 0.2
   RandomizeDelay: 1
@@ -2985,6 +2993,7 @@ GameObject:
   - component: {fileID: 9087035105719182681}
   - component: {fileID: 9087035105719182680}
   - component: {fileID: 2460220134482924269}
+  - component: {fileID: 8985025260371486143}
   m_Layer: 5
   m_Name: Game UI
   m_TagString: Untagged
@@ -3094,26 +3103,75 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AnimDistance: {x: 0, y: 0}
-  Duration: 0
+  debug: 0
+  Duration: 0.2
   Delay: 0
   RandomizeDelay: 0
   FadeCurve:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
   AnimCurve:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
   Group: {fileID: 0}
   rectTransform: {fileID: 0}
   ignoreFadeGroups: 0
-  fadeInOnEnable: 0
+  fadeInOnEnable: 1
   beginFadedOut: 0
+--- !u!225 &8985025260371486143
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9087035105719182683}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &9087035105958574482
 GameObject:
   m_ObjectHideFlags: 0
@@ -3252,6 +3310,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AnimDistance: {x: 0, y: 0}
+  debug: 0
   Duration: 0.2
   Delay: 0
   RandomizeDelay: 0

@@ -177,24 +177,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79cd9c8e5ccd1aa4ba7d8797c1436541, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1004865959 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9134113234099930226, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
-    type: 3}
-  m_PrefabInstance: {fileID: 1989607182}
-  m_PrefabAsset: {fileID: 0}
---- !u!225 &1004865961
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1004865959}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!43 &1141109619
 Mesh:
   m_ObjectHideFlags: 0
@@ -2144,11 +2126,6 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2521229581999125444, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
-        type: 3}
-      propertyPath: beginFadedOut
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2532480403152142715, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
         type: 3}
       propertyPath: m_Size.x
@@ -2986,6 +2963,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4770265990913823534, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4791427202814532907, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
         type: 3}

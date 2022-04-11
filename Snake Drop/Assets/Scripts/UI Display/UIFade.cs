@@ -7,7 +7,7 @@ public class UIFade : MonoBehaviour
 {
     [SerializeField]
     private Vector2 AnimDistance;
-
+    public bool debug;
     [SerializeField]
     public float Duration;
     [SerializeField]
@@ -129,16 +129,19 @@ public class UIFade : MonoBehaviour
         float actualDelay = RandomizeDelay ? Random.Range(0, Delay) : Delay;
 
         float startTime = Time.time + actualDelay;
-        float percentageComplete = (Time.time - startTime) / Duration;
+        float percentageComplete;
 
         while (true)
         {
-            percentageComplete = (Time.time - startTime) / Duration;
-
+            percentageComplete = Mathf.Clamp((Time.time - startTime) / Duration, 0, 1);
             if (inOut)
             {
 
                 rectTransform.position = Vector3.LerpUnclamped(targetPos, originalPos, AnimCurve.Evaluate(percentageComplete));
+                if (debug)
+                {
+                    debug = true;
+                }
                 Group.alpha = FadeCurve.Evaluate(percentageComplete);
             }
             else

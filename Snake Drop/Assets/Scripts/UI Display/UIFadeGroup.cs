@@ -10,6 +10,7 @@ public class UIFadeGroup : UIFade
         UIFade[] UIFaders = GetComponentsInChildren<UIFade>();
         foreach (UIFade fader in UIFaders)
         {
+            if (fader.Duration > Duration) Duration = fader.Duration;
             if (!fader.ignoreFadeGroups && fader != this)
             {
                 action.Invoke(fader);

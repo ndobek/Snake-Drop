@@ -47,7 +47,7 @@ public class PowerupsDisplayer : MonoBehaviour
 
     private void Start()
     {
-        powerupFader.SetFadedOut();
+
         lastFramePercentage = FillBarPercentage();
     }
     public void Update()
