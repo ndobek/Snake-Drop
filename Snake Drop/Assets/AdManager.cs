@@ -20,7 +20,6 @@ public class AdManager : MonoBehaviour
         CreateAd();
     }
 
-
     public void UserChoseToWatchAd()
     {
         if (undoAd.IsLoaded())

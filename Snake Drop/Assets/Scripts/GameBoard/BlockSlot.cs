@@ -187,6 +187,13 @@ public class BlockSlot : MonoBehaviour
     {
         return Blocks.Count == 0;
     }
+    public void RefreshBlocklocation()
+    {
+        foreach(Block block in Blocks)
+        {
+            block.transform.localPosition = Vector3.zero;
+        }
+    }
 
     #endregion
 

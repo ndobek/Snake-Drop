@@ -156,6 +156,13 @@ public class PlayGrid : MonoBehaviour
     {
         dirty = true;
     }
+    public void RefreshBlockLocations()
+    {
+        foreach(BlockSlot slot in slots)
+        {
+            slot.RefreshBlocklocation();
+        }
+    }
 
     public void InvokeGridAction()
     {
