@@ -8,6 +8,7 @@ public class AdManager : MonoBehaviour
 {
     public static AdManager instance;
     private RewardedAd undoAd;
+    bool autoUndo;
     private void Awake()
     {
         if (instance == null) instance = this;
@@ -24,10 +25,19 @@ public class AdManager : MonoBehaviour
     {
         if (undoAd.IsLoaded())
         {
+            autoUndo = false;
             undoAd.Show();
         }
     }
 
+    public void UserChoseToWatchAdAndUndo()
+    {
+        if (undoAd.IsLoaded())
+        {
+            autoUndo = true;
+            undoAd.Show();
+        }
+    }
     public void CreateAd()
     {
         undoAd = CreateRewardedAd();
@@ -67,6 +77,7 @@ public class AdManager : MonoBehaviour
     public void HandleUserEarnedReward(object sender, Reward args) 
     {
         GameManager.instance.playerManagers[0].Undoer.GetUndos();
+        if(autoUndo) GameManager.instance.playerManagers[0].Undoer.TryUndo();
     }
 
 
