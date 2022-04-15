@@ -15,9 +15,9 @@ public class CanvasHelper : MonoBehaviour
     {
 
         var rectTransform = GetComponent<RectTransform>();
-
-        rectTransform.offsetMin = new Vector2(rectTransform.offsetMin.x, Screen.safeArea.y);
-        rectTransform.offsetMax = new Vector2(rectTransform.offsetMax.x, Screen.safeArea.height);
+        float x = Screen.width - Screen.safeArea.x;
+        float y = Screen.height - Screen.safeArea.y;
+        rectTransform.sizeDelta = new Vector2(x, y);
 
 
         //var bottomPixels = Screen.safeArea.y;
