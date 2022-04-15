@@ -1019,36 +1019,6 @@ PrefabInstance:
       propertyPath: m_IgnoreParentGroups
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 528106131276608013, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 528106131276608013, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 528106131276608013, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
-        type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 528106131276608013, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 528106131276608013, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -210.52652
-      objectReference: {fileID: 0}
-    - target: {fileID: 528106131276608013, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 50.000015
-      objectReference: {fileID: 0}
     - target: {fileID: 765260393412028652, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
         type: 3}
       propertyPath: OpenLeft
@@ -1170,36 +1140,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_PlayAutomatically
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 934145523577621833, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 934145523577621833, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 934145523577621833, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
-        type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 934145523577621833, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 934145523577621833, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 150
-      objectReference: {fileID: 0}
-    - target: {fileID: 934145523577621833, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 50.000015
       objectReference: {fileID: 0}
     - target: {fileID: 1013661796582181872, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
         type: 3}
@@ -5159,6 +5099,11 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7216922460148905992, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 16.964966
+      objectReference: {fileID: 0}
     - target: {fileID: 7248282509725938418, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
         type: 3}
       propertyPath: m_IsActive
@@ -5854,7 +5799,7 @@ PrefabInstance:
     - target: {fileID: 8839223029960484764, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
         type: 3}
       propertyPath: orthographic size
-      value: 10.666667
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 8855796039674717976, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
         type: 3}
@@ -6086,11 +6031,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -62.226562
-      objectReference: {fileID: 0}
-    - target: {fileID: 9154457900838313568, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 9212007474105575679, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
         type: 3}

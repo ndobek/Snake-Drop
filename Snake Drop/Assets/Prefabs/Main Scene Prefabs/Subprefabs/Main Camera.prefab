@@ -152,8 +152,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CameraTransform: {fileID: 6586243818380389111}
   targetWidth: 12
-  targetHeight: 0
+  targetHeight: 20
   portraitUseHeight: 0
-  landscapeUseHeight: 0
+  landscapeUseHeight: 1
   roundAspectToPixelSize: 0
   PPU: 0
