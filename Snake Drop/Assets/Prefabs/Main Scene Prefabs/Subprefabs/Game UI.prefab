@@ -37,7 +37,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -77}
+  m_AnchoredPosition: {x: 0, y: -80}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &8815174017553820482
@@ -122,7 +122,7 @@ CanvasGroup:
   m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
+  m_IgnoreParentGroups: 1
 --- !u!114 &1485915232212401266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,6 +193,7 @@ MonoBehaviour:
   ignoreFadeGroups: 0
   fadeInOnEnable: 0
   beginFadedOut: 1
+  FadedIn: 1
 --- !u!1 &437029577869350393
 GameObject:
   m_ObjectHideFlags: 0
@@ -398,6 +399,7 @@ MonoBehaviour:
   ignoreFadeGroups: 0
   fadeInOnEnable: 0
   beginFadedOut: 0
+  FadedIn: 1
 --- !u!225 &4499636432819680369
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -545,125 +547,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!1 &2631116505933699043
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 523842250106174358}
-  - component: {fileID: 157527369972521129}
-  - component: {fileID: 4699024050952863545}
-  m_Layer: 5
-  m_Name: Rotate Buttons
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &523842250106174358
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2631116505933699043}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 7277510657307269409}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: -250.00003}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0}
---- !u!225 &157527369972521129
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2631116505933699043}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
---- !u!114 &4699024050952863545
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2631116505933699043}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fac301bb7f03f104884a385fbe9ad8bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AnimDistance: {x: 0, y: 40}
-  debug: 0
-  Duration: 0.5
-  Delay: 0.2
-  RandomizeDelay: 1
-  FadeCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 1
-      outSlope: 1
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 1
-      outSlope: 1
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  AnimCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 1
-      outSlope: 1
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 1
-      outSlope: 1
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  Group: {fileID: 0}
-  rectTransform: {fileID: 0}
-  ignoreFadeGroups: 0
-  fadeInOnEnable: 0
-  beginFadedOut: 0
 --- !u!1 &3048858438449194514
 GameObject:
   m_ObjectHideFlags: 0
@@ -920,6 +803,7 @@ MonoBehaviour:
   ignoreFadeGroups: 1
   fadeInOnEnable: 0
   beginFadedOut: 1
+  FadedIn: 1
 --- !u!95 &7284690463667453179
 Animator:
   serializedVersion: 3
@@ -973,7 +857,7 @@ RectTransform:
   m_Children:
   - {fileID: 8736701270696713789}
   m_Father: {fileID: 7277510657307269409}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -1030,7 +914,7 @@ CanvasGroup:
   m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
+  m_IgnoreParentGroups: 1
 --- !u!114 &4649522708568847706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1100,7 +984,8 @@ MonoBehaviour:
   rectTransform: {fileID: 0}
   ignoreFadeGroups: 0
   fadeInOnEnable: 0
-  beginFadedOut: 0
+  beginFadedOut: 1
+  FadedIn: 1
 --- !u!114 &5404813999422816672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1167,6 +1052,8 @@ GameObject:
   m_Component:
   - component: {fileID: 544219108853371684}
   - component: {fileID: 7281281027042213677}
+  - component: {fileID: 3744592692369071333}
+  - component: {fileID: 1872557074537719546}
   m_Layer: 5
   m_Name: CounterClockwise
   m_TagString: Untagged
@@ -1250,6 +1137,89 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &3744592692369071333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3631617590248945230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fac301bb7f03f104884a385fbe9ad8bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AnimDistance: {x: 0, y: -20}
+  debug: 0
+  Duration: 0.5
+  Delay: 0.2
+  RandomizeDelay: 1
+  FadeCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  AnimCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  Group: {fileID: 0}
+  rectTransform: {fileID: 0}
+  ignoreFadeGroups: 0
+  fadeInOnEnable: 0
+  beginFadedOut: 1
+  FadedIn: 1
+--- !u!225 &1872557074537719546
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3631617590248945230}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 1
 --- !u!1 &3710951092312134226
 GameObject:
   m_ObjectHideFlags: 0
@@ -1597,7 +1567,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7277510657307269409}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -1713,7 +1683,7 @@ CanvasGroup:
   m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
+  m_IgnoreParentGroups: 1
 --- !u!114 &3741122244896777305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1783,7 +1753,8 @@ MonoBehaviour:
   rectTransform: {fileID: 0}
   ignoreFadeGroups: 0
   fadeInOnEnable: 0
-  beginFadedOut: 0
+  beginFadedOut: 1
+  FadedIn: 1
 --- !u!1 &5040306760758776825
 GameObject:
   m_ObjectHideFlags: 0
@@ -2251,11 +2222,11 @@ RectTransform:
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 7277510657307269409}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 30, y: -50.399902}
+  m_AnchoredPosition: {x: 30, y: -50}
   m_SizeDelta: {x: 10, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7860291233350663564
@@ -2308,7 +2279,7 @@ CanvasGroup:
   m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
+  m_IgnoreParentGroups: 1
 --- !u!114 &4052142969221324502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2378,7 +2349,8 @@ MonoBehaviour:
   rectTransform: {fileID: 0}
   ignoreFadeGroups: 0
   fadeInOnEnable: 0
-  beginFadedOut: 0
+  beginFadedOut: 1
+  FadedIn: 1
 --- !u!114 &3917382901849050561
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2468,11 +2440,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7277510657307269409}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -52}
+  m_AnchoredPosition: {x: 0, y: -50}
   m_SizeDelta: {x: 300, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3865454352933773291
@@ -2603,7 +2575,7 @@ CanvasGroup:
   m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
+  m_IgnoreParentGroups: 1
 --- !u!114 &3996316700003943948
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2673,7 +2645,8 @@ MonoBehaviour:
   rectTransform: {fileID: 0}
   ignoreFadeGroups: 0
   fadeInOnEnable: 0
-  beginFadedOut: 0
+  beginFadedOut: 1
+  FadedIn: 1
 --- !u!1 &7262972349107745089
 GameObject:
   m_ObjectHideFlags: 0
@@ -2841,7 +2814,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7277510657307269409}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -2957,7 +2930,7 @@ CanvasGroup:
   m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
+  m_IgnoreParentGroups: 1
 --- !u!114 &7756721537573619877
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3027,7 +3000,8 @@ MonoBehaviour:
   rectTransform: {fileID: 0}
   ignoreFadeGroups: 0
   fadeInOnEnable: 0
-  beginFadedOut: 0
+  beginFadedOut: 1
+  FadedIn: 1
 --- !u!1 &7304555862916650465
 GameObject:
   m_ObjectHideFlags: 0
@@ -3061,7 +3035,6 @@ RectTransform:
   - {fileID: 9087035107366769387}
   - {fileID: 878063082117557344}
   - {fileID: 544219108853371684}
-  - {fileID: 523842250106174358}
   - {fileID: 87416141767308518}
   - {fileID: 3596026431657389722}
   - {fileID: 1645301291526387485}
@@ -3307,6 +3280,8 @@ GameObject:
   m_Component:
   - component: {fileID: 878063082117557344}
   - component: {fileID: 5435205153187733782}
+  - component: {fileID: 3051072590707490808}
+  - component: {fileID: 464453685248640233}
   m_Layer: 5
   m_Name: Clockwise
   m_TagString: Untagged
@@ -3390,6 +3365,89 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &3051072590707490808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8864375840947544336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fac301bb7f03f104884a385fbe9ad8bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AnimDistance: {x: 0, y: -20}
+  debug: 0
+  Duration: 0.5
+  Delay: 0.2
+  RandomizeDelay: 1
+  FadeCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  AnimCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  Group: {fileID: 0}
+  rectTransform: {fileID: 0}
+  ignoreFadeGroups: 0
+  fadeInOnEnable: 0
+  beginFadedOut: 1
+  FadedIn: 1
+--- !u!225 &464453685248640233
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8864375840947544336}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 1
 --- !u!1 &9087035105719182683
 GameObject:
   m_ObjectHideFlags: 0
@@ -3506,7 +3564,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimDistance: {x: 0, y: 0}
   debug: 0
-  Duration: 0.2
+  Duration: 2
   Delay: 0
   RandomizeDelay: 0
   FadeCurve:
@@ -3562,6 +3620,7 @@ MonoBehaviour:
   ignoreFadeGroups: 0
   fadeInOnEnable: 1
   beginFadedOut: 0
+  FadedIn: 1
 --- !u!225 &8985025260371486143
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -3573,7 +3632,7 @@ CanvasGroup:
   m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
+  m_IgnoreParentGroups: 1
 --- !u!1 &9087035105958574482
 GameObject:
   m_ObjectHideFlags: 0
@@ -3770,3 +3829,4 @@ MonoBehaviour:
   ignoreFadeGroups: 1
   fadeInOnEnable: 0
   beginFadedOut: 1
+  FadedIn: 1

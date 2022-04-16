@@ -10,7 +10,7 @@ public class UIFadeGroup : UIFade
         UIFade[] UIFaders = GetComponentsInChildren<UIFade>();
         foreach (UIFade fader in UIFaders)
         {
-            if (fader.Duration > Duration) Duration = fader.Duration;
+            //if (fader.Duration > Duration) Duration = fader.Duration;
             if (!fader.ignoreFadeGroups && fader != this)
             {
                 action.Invoke(fader);
@@ -25,13 +25,13 @@ public class UIFadeGroup : UIFade
 
     public override void SetFadedIn()
     {
-        DoToAllInGroup(fader => fader.SetFadedIn());
+        //DoToAllInGroup(fader => fader.SetFadedIn());
         base.SetFadedIn();
     }
 
     public override void SetFadedOut()
     {
-        DoToAllInGroup(fader => fader.SetFadedOut());
+        //DoToAllInGroup(fader => fader.SetFadedOut());
         base.SetFadedOut();
     }
 }
