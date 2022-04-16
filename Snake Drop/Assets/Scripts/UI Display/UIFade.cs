@@ -31,6 +31,7 @@ public class UIFade : MonoBehaviour
     [SerializeField]
     private bool beginFadedOut;
 
+    [HideInInspector]
     public bool FadedIn = true;
     private Vector3 originalPos;
     private bool rewriteOriginalPos = true;
@@ -121,7 +122,7 @@ public class UIFade : MonoBehaviour
 
         if (rewriteOriginalPos)
         {
-            originalPos = rectTransform.position;
+            originalPos = rectTransform.anchoredPosition;
         }
         rewriteOriginalPos = false;
         Vector3 targetPos = originalPos + (Vector3)AnimDistance;
@@ -137,7 +138,7 @@ public class UIFade : MonoBehaviour
             if (inOut)
             {
 
-                rectTransform.position = Vector3.LerpUnclamped(targetPos, originalPos, AnimCurve.Evaluate(percentageComplete));
+                rectTransform.anchoredPosition = Vector3.LerpUnclamped(targetPos, originalPos, AnimCurve.Evaluate(percentageComplete));
                 if (debug)
                 {
                     debug = true;
@@ -146,7 +147,7 @@ public class UIFade : MonoBehaviour
             }
             else
             {
-                rectTransform.position = Vector3.LerpUnclamped(targetPos, originalPos, AnimCurve.Evaluate(1 - percentageComplete));
+                rectTransform.anchoredPosition = Vector3.LerpUnclamped(targetPos, originalPos, AnimCurve.Evaluate(1 - percentageComplete));
                 Group.alpha = FadeCurve.Evaluate(1 - percentageComplete);
             }
 
@@ -156,7 +157,7 @@ public class UIFade : MonoBehaviour
 
         if (inOut) SetFadedIn();
         else SetFadedOut();
-        rectTransform.position = originalPos;
+        rectTransform.anchoredPosition = originalPos;
         rewriteOriginalPos = true;
 
     }
