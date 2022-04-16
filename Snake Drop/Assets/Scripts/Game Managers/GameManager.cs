@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         UpdateScore();
-        gameOverScreen.SetFade(false);
+        gameOverScreen.Fade(false);
         foreach (PlayerManager player in playerManagers)
         {
             player.ResetGame();
@@ -109,6 +109,6 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        gameOverScreen.SetFade(GameIsOver());
+        gameOverScreen.Fade(GameIsOver());
     }
 }

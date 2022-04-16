@@ -45,13 +45,12 @@ public class UIFade : MonoBehaviour
     void Awake()
     {
         CheckComponents();
+        if (beginFadedOut) SetFadedOut();
     }
 
     void OnEnable()
     {
         CheckComponents();
-
-        if (beginFadedOut) SetFadedOut();
         if (fadeInOnEnable) FadeIn();
     }
 
@@ -109,13 +108,10 @@ public class UIFade : MonoBehaviour
         Fade(!FadedIn);
     }
 
-    public void SetFade(bool inOut)
+    public void SetFaded(bool inOut)
     {
-        if (FadedIn != inOut)
-        {
-            FadedIn = inOut;
-            Fade(inOut);
-        }
+        if (inOut) SetFadedIn();
+        else SetFadedOut();
     }
 
     private IEnumerator DoFade(bool inOut)

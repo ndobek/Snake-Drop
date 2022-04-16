@@ -3618,7 +3618,7 @@ MonoBehaviour:
   Group: {fileID: 0}
   rectTransform: {fileID: 0}
   ignoreFadeGroups: 0
-  fadeInOnEnable: 1
+  fadeInOnEnable: 0
   beginFadedOut: 1
   FadedIn: 1
 --- !u!225 &8985025260371486143

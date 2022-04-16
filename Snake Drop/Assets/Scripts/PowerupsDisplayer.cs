@@ -97,7 +97,7 @@ public class PowerupsDisplayer : MonoBehaviour
 
         if (powerupButton != null)
         {
-            powerupFader.SetFade(powerupManager.numAvailablePowerups > 0);
+            powerupFader.Fade(powerupManager.numAvailablePowerups > 0);
         }
 
         if (mustUseIndicator != null)

@@ -5430,11 +5430,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 274fcb28b0e3ca04a83a35ab5b7b9fb3,
         type: 3}
-    - target: {fileID: 8128300493346431829, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
-        type: 3}
-      propertyPath: m_IgnoreParentGroups
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8160261171521929967, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
         type: 3}
       propertyPath: OpenLeft
@@ -5855,7 +5850,7 @@ PrefabInstance:
     - target: {fileID: 8839223029960484764, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
         type: 3}
       propertyPath: orthographic size
-      value: 12.666666
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8855796039674717976, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
         type: 3}
