@@ -97,8 +97,11 @@ public class UIFade : MonoBehaviour
 
     public virtual void Fade(bool inOut)
     {
-        StopAllCoroutines();
-        StartCoroutine(DoFade(inOut));
+        if (FadedIn != inOut)
+        {
+            StopAllCoroutines();
+            StartCoroutine(DoFade(inOut));
+        }
     }
 
     public void ToggleFade()
@@ -117,6 +120,7 @@ public class UIFade : MonoBehaviour
 
     private IEnumerator DoFade(bool inOut)
     {
+        FadedIn = inOut;
         if (Group == null) Group = GetComponent<CanvasGroup>();
         if (rectTransform == null) rectTransform = GetComponent<RectTransform>();
 

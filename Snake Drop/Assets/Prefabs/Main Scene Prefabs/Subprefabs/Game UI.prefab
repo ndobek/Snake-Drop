@@ -1153,7 +1153,7 @@ MonoBehaviour:
   debug: 0
   Duration: 0.5
   Delay: 0.2
-  RandomizeDelay: 1
+  RandomizeDelay: 0
   FadeCurve:
     serializedVersion: 2
     m_Curve:
@@ -3381,7 +3381,7 @@ MonoBehaviour:
   debug: 0
   Duration: 0.5
   Delay: 0.2
-  RandomizeDelay: 1
+  RandomizeDelay: 0
   FadeCurve:
     serializedVersion: 2
     m_Curve:
