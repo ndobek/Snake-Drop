@@ -688,6 +688,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81ffc1cd49430e64b8a007a5ca518150, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &1526700516 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 5008662655720683249, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1989607182}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &1642340984
 Mesh:
   m_ObjectHideFlags: 0
@@ -1141,6 +1147,11 @@ PrefabInstance:
       propertyPath: m_PlayAutomatically
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 993991008351669090, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
+        type: 3}
+      propertyPath: origin
+      value: 
+      objectReference: {fileID: 1526700516}
     - target: {fileID: 1013661796582181872, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
         type: 3}
       propertyPath: m_Sprite

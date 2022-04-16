@@ -31,7 +31,7 @@ public class UIFade : MonoBehaviour
     [SerializeField]
     private bool beginFadedOut;
 
-    private bool FadedIn = true;
+    public bool FadedIn = true;
     private Vector3 originalPos;
     private bool rewriteOriginalPos = true;
 
