@@ -661,7 +661,7 @@ MonoBehaviour:
   Group: {fileID: 0}
   rectTransform: {fileID: 0}
   ignoreFadeGroups: 0
-  fadeInOnEnable: 0
+  fadeInOnEnable: 1
   beginFadedOut: 0
   FadedIn: 1
 --- !u!225 &1019602155611797846
@@ -1175,7 +1175,7 @@ MonoBehaviour:
   Group: {fileID: 0}
   rectTransform: {fileID: 0}
   ignoreFadeGroups: 0
-  fadeInOnEnable: 0
+  fadeInOnEnable: 1
   beginFadedOut: 0
   FadedIn: 1
 --- !u!225 &1012340273547743018
@@ -1552,7 +1552,7 @@ MonoBehaviour:
   Group: {fileID: 0}
   rectTransform: {fileID: 0}
   ignoreFadeGroups: 0
-  fadeInOnEnable: 0
+  fadeInOnEnable: 1
   beginFadedOut: 0
   FadedIn: 1
 --- !u!225 &4898544052364998496
@@ -1771,7 +1771,7 @@ MonoBehaviour:
   Group: {fileID: 0}
   rectTransform: {fileID: 0}
   ignoreFadeGroups: 0
-  fadeInOnEnable: 0
+  fadeInOnEnable: 1
   beginFadedOut: 1
   FadedIn: 1
 --- !u!225 &3353833624064057144

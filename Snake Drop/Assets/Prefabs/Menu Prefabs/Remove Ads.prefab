@@ -162,6 +162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AnimDistance: {x: -20, y: 0}
+  debug: 0
   Duration: 0.2
   Delay: 0
   RandomizeDelay: 0
@@ -216,8 +217,9 @@ MonoBehaviour:
   Group: {fileID: 0}
   rectTransform: {fileID: 0}
   ignoreFadeGroups: 0
-  fadeInOnEnable: 0
+  fadeInOnEnable: 1
   beginFadedOut: 1
+  FadedIn: 1
 --- !u!114 &6602036618212554174
 MonoBehaviour:
   m_ObjectHideFlags: 0

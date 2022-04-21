@@ -95,14 +95,16 @@ public class PowerupsDisplayer : MonoBehaviour
             quickProgressBar.fillAmount = percentage;
         }
 
+        PlayerManager player = GameManager.instance.playerManagers[0];
+
         if (powerupButton != null)
         {
-            powerupFader.Fade(powerupManager.numAvailablePowerups > 0);
+            powerupFader.Fade(powerupManager.numAvailablePowerups > 0 && player.GameInProgress);
         }
 
         if (mustUseIndicator != null)
         {
-            PlayerManager player = GameManager.instance.playerManagers[0];
+
             if (player.GameInProgress)
             {
                 mustUseIndicator.SetBool("Must Use", !player.RoundInProgress && !player.entranceManager.CheckForValidEntrancesToGrid(player, player.playGrid) && player.Powerup.currentPowerup != null);
