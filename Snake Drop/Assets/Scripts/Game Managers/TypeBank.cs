@@ -6,6 +6,7 @@ using UnityEngine;
 public class TypeBank : ScriptableObject
 {
     public Block blockObj;
+    public BlockType basicType;
     public BlockType snakeHeadType;
     public BlockType collectionType;
     public BlockType collectionGhostType;

@@ -19,18 +19,33 @@ public class GA_MeldBlocks : GridAction
         {
             //Debug.Log(color.name);
             List<BlockCollection> Melded = GetBlockCollections(grid, C => Condition(C, color));
-
-
             foreach (BlockCollection obj in Melded)
+            {
+                obj.Build(grid, GameManager.instance.GameModeManager.GameMode.TypeBank.collectionType);
+            }
+
+            List<BlockCollection> BackupMeld = GetBlockCollections(grid, C => Condition(C, color, GameManager.instance.GameModeManager.GameMode.TypeBank.basicType));
+            foreach (BlockCollection obj in BackupMeld)
             {
                 obj.Build(grid, GameManager.instance.GameModeManager.GameMode.TypeBank.collectionType);
             }
         }
     }
 
-    private static bool Condition(BlockSlot obj, BlockColor color)
+    private static bool Condition(BlockSlot obj, BlockColor color, BlockType type = null)
     {
-        return obj && obj.Block && obj.Block.blockColor == color && obj.Block.isPartOfSnake() == false && obj.Block.blockType != GameManager.instance.GameModeManager.GameMode.TypeBank.collectionGhostType;
+        bool result = false;
+        bool nullCheck = obj && obj.Block;
+        if (nullCheck)
+        {
+            bool cond1 = obj.Block.blockColor == color;
+            bool cond2 = obj.Block.isPartOfSnake() == false;
+            bool cond3 = obj.Block.blockType != GameManager.instance.GameModeManager.GameMode.TypeBank.collectionGhostType;
+            bool cond4 = type == null || obj.Block.blockType == type;
+
+            result = cond1 && cond2 && cond3 && cond4;
+        }
+        return result;
     }
 
     private static BlockCollection MeldCollections(List<BlockCollection> obj)

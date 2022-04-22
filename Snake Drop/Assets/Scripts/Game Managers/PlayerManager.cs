@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Unity.Profiling;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -46,16 +47,24 @@ public class PlayerManager : MonoBehaviour
     public int mostRecentSnakeLength;
     public Random.State randStateForSnake;
 
+    static readonly ProfilerMarker p_OnCrash = new ProfilerMarker("On Crash");
+    static readonly ProfilerMarker p_MidRound = new ProfilerMarker("MidRound");
+    static readonly ProfilerMarker p_DoGridActions = new ProfilerMarker("DoGridActions");
+    static readonly ProfilerMarker p_EndRound = new ProfilerMarker("EndRound");
+
     public void OnCrash()
     {
+        p_OnCrash.Begin();
         Rule OnCrash = GameManager.instance.GameModeManager.GameMode.OnCrash;
         if (OnCrash != null) OnCrash.Invoke(snakeHead, this);
         Score.OnCrash();
         RoundInProgress = false;
+        p_OnCrash.End();
     }
 
     public void MidRound()
     {
+        p_MidRound.Begin();
         if (!RoundInProgress)
         {
             EndRound();
@@ -66,16 +75,20 @@ public class PlayerManager : MonoBehaviour
 
             FillPreviewBar();
         }
+        p_MidRound.End();
     }
 
     public void DoGridActions()
     {
+        p_DoGridActions.Begin();
         playGrid.InvokeGridAction();
         entranceManager.InvokeGridAction();
+        p_DoGridActions.End();
     }
 
     private void EndRound()
     {
+        p_EndRound.Begin();
         if (SnakeHead)
         {
             SnakeHead.KillSnake(this);
@@ -90,6 +103,7 @@ public class PlayerManager : MonoBehaviour
         {
             PrepareNewRound();
         }
+        p_EndRound.End();
     }
 
     private bool GameIsOver()
