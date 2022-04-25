@@ -39,9 +39,9 @@ public class ScoreManager : MonoBehaviour
 
     private float partialScore;
     private float partialMultiplier;
-
+    [HideInInspector]
     public int scoreAtLastCrash;
-
+    [HideInInspector]
     public int numberOfSnakes;
     public int NumberOfSnakes
     {
