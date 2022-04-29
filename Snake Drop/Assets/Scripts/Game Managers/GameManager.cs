@@ -109,6 +109,6 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        gameOverScreen.Fade(GameIsOver());
+        gameOverScreen.Fade(GameIsOver() && !pauseManager.paused);
     }
 }
