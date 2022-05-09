@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 07d51716c8e850d4fa1a360381239ba5, type: 3}
-  m_Name: Classic - Normal
+  m_Name: Classic - Record
   m_EditorClassIdentifier: 
   EndGameCondition: {fileID: 11400000, guid: 6920d85594e06554683bdc470d3948f6, type: 2}
   TypeBank: {fileID: 11400000, guid: 7ec1805175cff954e9ecd79b0e66eecc, type: 2}
@@ -36,15 +36,6 @@ MonoBehaviour:
     - value: {fileID: 11400000, guid: 1f96a88418ae4d64594066b606e5646b, type: 2}
       probability: 1
       StatType: 
-    - value: {fileID: 11400000, guid: 48847a2b7d2594e4a885a17b2eb9b0da, type: 2}
-      probability: 1
-      StatType: 
-    - value: {fileID: 11400000, guid: 06922463012b1f24fb757d5ffdabbd6b, type: 2}
-      probability: 1
-      StatType: 
-    - value: {fileID: 11400000, guid: dc0a2986a68ec8447b283e6fc5dbf9cd, type: 2}
-      probability: 1
-      StatType: 
     Stats: []
   - MinScore: 0
     MaxScore: 100
@@ -66,7 +57,7 @@ MonoBehaviour:
     - value: 1
       probability: 1
       StatType: minTotalLength
-    - value: 100
+    - value: 5
       probability: 1
       StatType: maxTotalLength
     - value: 0.0001
@@ -86,10 +77,10 @@ MonoBehaviour:
     possibleTypes: []
     possibleColors: []
     Stats:
-    - value: 0
+    - value: 0.1
       probability: 0
       StatType: minBaseEntropy
-    - value: 0.18
+    - value: 0.2
       probability: 1
       StatType: maxBaseEntropy
     - value: 0.1
@@ -115,21 +106,21 @@ MonoBehaviour:
     possibleTypes: []
     possibleColors: []
     Stats:
-    - value: 10000
+    - value: 1000
       probability: 0
       StatType: minBasePowerup
-    - value: 10000
+    - value: 1000
       probability: 1
       StatType: maxBasePowerup
-    - value: 10000
+    - value: 1000
       probability: 1
       StatType: minTotalPowerup
-    - value: 1e+21
+    - value: 1000
       probability: 1
       StatType: maxTotalPowerup
     - value: 0
       probability: 1
       StatType: powerupScoreMod
-    - value: 5000
+    - value: 50
       probability: 1
       StatType: powerupSequenceMod

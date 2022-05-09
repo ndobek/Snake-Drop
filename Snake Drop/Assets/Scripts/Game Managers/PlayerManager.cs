@@ -43,6 +43,7 @@ public class PlayerManager : MonoBehaviour
     public bool GameInProgress;
     public bool GameOver;
     private bool StopMakingSnakes = false;
+    private bool firstRound = false;
 
     public int mostRecentSnakeLength;
     public Random.State randStateForSnake;
@@ -178,10 +179,10 @@ public class PlayerManager : MonoBehaviour
         GameInProgress = true;
         RoundInProgress = false;
         GameOver = false;
+        firstRound = true;
         boardRotator.rotateInstantly(Directions.Direction.UP);
 
-
-        if (GameManager.instance.GameModeManager.GameMode.OnGameStart) GameManager.instance.GameModeManager.GameMode.OnGameStart.Invoke(playGrid);
+        
     }
     public void PrepareNewRound()
     {
@@ -196,6 +197,11 @@ public class PlayerManager : MonoBehaviour
         ResetMoveRestrictions();
         SnakeHead = waitSlot.Block;
         mostRecentSnakeLength = SnakeHead.SnakeLength();
+        if (firstRound)
+        {
+            if(GameManager.instance.GameModeManager.GameMode.OnGameStart) GameManager.instance.GameModeManager.GameMode.OnGameStart.Invoke(playGrid);
+            firstRound = false;
+        }
     }
 
     public void StartNewRound(Directions.Direction direction)
