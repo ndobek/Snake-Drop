@@ -69,13 +69,33 @@ public class BlockAnimationManager : MonoBehaviour
         }
     }
 
-    public void LateUpdate()
+    public void ForceFinishAllAnimations()
     {
-        //Debug.Log(ActiveAnimations.Count);
+        foreach(BlockAnimation animation in ActiveAnimations)
+        {
+            animation.Animator.OnComplete(animation);
+        }
+        foreach (BlockAnimation animation in UpcomingAnimations)
+        {
+            animation.Animator.OnComplete(animation);
+        }
+        ActiveAnimations.Clear();
+        UpcomingAnimations.Clear();
+        StopAllCoroutines();
+    }
+
+    public void UpdateAnimations()
+    {
         while (CanStartNewNonConcurrent())
         {
             AddNonConcurrent();
         }
+    }
+
+    public void LateUpdate()
+    {
+        //Debug.Log(ActiveAnimations.Count);
+        UpdateAnimations();
 
     }
 }

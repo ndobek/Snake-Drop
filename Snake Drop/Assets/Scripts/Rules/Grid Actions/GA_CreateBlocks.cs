@@ -16,16 +16,22 @@ public class GA_CreateBlocks : GridAction
     {
         PlayerManager player = GameManager.instance.playerManagers[0];
         BlockColor color = MatchSnakeColor ? player.SnakeHead.blockColor : defaultColor;
+        List<Block> blocks = new List<Block>();
         
         for(int x = leftX; x <= rightX; x++)
         {
             for(int y = bottomY; y <= topY; y++)
             {
                 BlockSlot slot = grid.GetSlot(x, y);
-                slot.CreateBlock(color, type);
+                blocks.Add(slot.CreateBlock(color, type));
             }
         }
         player.DoGridActions();
+        foreach (Block block in blocks)
+        {
+            block.AnimationManager.ForceFinishAllAnimations();
+        }
+        
     }
 }
 
