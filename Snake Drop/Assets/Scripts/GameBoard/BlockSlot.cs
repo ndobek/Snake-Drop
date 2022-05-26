@@ -125,6 +125,16 @@ public class BlockSlot : MonoBehaviour
         return null;
     }
 
+    public bool HasNeighbor(BlockSlot slot)
+    {
+        if(GetNeighbor(Directions.Direction.UP) == slot) return true;
+        if(GetNeighbor(Directions.Direction.DOWN) == slot) return true;
+        if (GetNeighbor(Directions.Direction.LEFT) == slot) return true;
+        if (GetNeighbor(Directions.Direction.RIGHT) == slot) return true;
+
+        return false;
+    }
+
     #endregion
 
     [HideInInspector]

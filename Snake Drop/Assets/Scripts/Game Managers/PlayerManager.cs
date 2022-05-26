@@ -34,6 +34,7 @@ public class PlayerManager : MonoBehaviour
     public EntranceSlot enterSlot;
     public EntranceManager entranceManager;
     public BoardRotator boardRotator;
+    public ArrowHandler arrowHandler;
 
     public ParticleManager particleManager;
 
@@ -280,6 +281,7 @@ public class PlayerManager : MonoBehaviour
 
         if (GameInProgress)
         {
+            arrowHandler.OnInputGiven();
             if (RoundInProgress)
             {
                 if (!snakeHead.blockType.OverrideMove(snakeHead, snakeHead.Neighbor(direction), this)) Undoer.Save();
