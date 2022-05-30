@@ -1215,6 +1215,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1014701746848202449, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
         type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1014701746848202449, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
+        type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25
       objectReference: {fileID: 0}
@@ -5347,6 +5352,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7847066371561693361, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.87058824
       objectReference: {fileID: 0}
     - target: {fileID: 7876668773435911579, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
         type: 3}

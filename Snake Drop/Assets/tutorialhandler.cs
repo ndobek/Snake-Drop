@@ -12,9 +12,13 @@ public class tutorialhandler : MonoBehaviour
     [SerializeField]
     private UIFade OpenButtonFader;
 
+    [SerializeField]
+    private TMPro.TMP_Text slideNumberText;
+
     private void Awake()
     {
         currentSlide = 0;
+        UpdateText();
     }
 
     public void Open()
@@ -29,6 +33,11 @@ public class tutorialhandler : MonoBehaviour
         OpenButtonFader.FadeIn();
     }
 
+    public void UpdateText()
+    {
+        if (slideNumberText != null) slideNumberText.text = (currentSlide + 1).ToString() + "/" + slides.Length.ToString();
+    }
+
 
     public void ActivateSlide(int slide)
     {
@@ -37,6 +46,7 @@ public class tutorialhandler : MonoBehaviour
             slides[i].SetActive(i == slide);
         }
         currentSlide = slide;
+        UpdateText();
     }
     public void Left()
     {
