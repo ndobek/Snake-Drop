@@ -60,10 +60,16 @@ public class ArrowHandler : MonoBehaviour
 
         if (showBlockedSprites)
         {
-            left.SetActive(true);
-            right.SetActive(true);
-            up.SetActive(false);
-            down.SetActive(false);
+            Directions.Direction translatedLeft = Directions.TranslateDirection(Directions.Direction.LEFT, player.boardRotator.currentDirection);
+            Directions.Direction translatedRight = Directions.TranslateDirection(Directions.Direction.RIGHT, player.boardRotator.currentDirection);
+            Directions.Direction translatedUp = Directions.TranslateDirection(Directions.Direction.UP, player.boardRotator.currentDirection);
+            Directions.Direction translatedDown = Directions.TranslateDirection(Directions.Direction.DOWN, player.boardRotator.currentDirection);
+
+
+            left.SetActive(translatedLeft == Directions.Direction.LEFT || translatedLeft == Directions.Direction.RIGHT);
+            right.SetActive(translatedRight == Directions.Direction.LEFT || translatedRight == Directions.Direction.RIGHT);
+            up.SetActive(translatedUp == Directions.Direction.LEFT || translatedUp == Directions.Direction.RIGHT);
+            down.SetActive(translatedDown == Directions.Direction.LEFT || translatedDown == Directions.Direction.RIGHT);
         } 
         
         else if (showNoInputSprites)
