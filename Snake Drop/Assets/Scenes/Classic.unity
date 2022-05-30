@@ -1170,7 +1170,7 @@ PrefabInstance:
     - target: {fileID: 865379462767650523, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.2949829
+      value: -0.29492188
       objectReference: {fileID: 0}
     - target: {fileID: 898462991145156849, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
         type: 3}
@@ -5379,6 +5379,16 @@ PrefabInstance:
       propertyPath: m_InstanceId
       value: -81462
       objectReference: {fileID: 0}
+    - target: {fileID: 7901273937788040837, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7901273937788040837, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 7960273385767937710, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
         type: 3}
       propertyPath: OpenLeft
@@ -5619,6 +5629,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 274fcb28b0e3ca04a83a35ab5b7b9fb3,
         type: 3}
+    - target: {fileID: 8374828555934288742, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
+        type: 3}
+      propertyPath: m_Name
+      value: Slide 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8405456856759509199, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
         type: 3}
       propertyPath: m_Size.x
@@ -5895,7 +5910,7 @@ PrefabInstance:
     - target: {fileID: 8839223029960484764, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
         type: 3}
       propertyPath: orthographic size
-      value: 10
+      value: 10.672566
       objectReference: {fileID: 0}
     - target: {fileID: 8855796039674717976, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
         type: 3}
