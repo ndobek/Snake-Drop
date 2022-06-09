@@ -25,6 +25,7 @@ public class UndoManager : MonoBehaviour
 
     public void TryUndo()
     {
+        GameManager.instance.playerManagers[0].arrowHandler.OnInputGiven();
         PauseManager pauseManager = GameManager.instance.pauseManager;
         if (!pauseManager.paused)
         {

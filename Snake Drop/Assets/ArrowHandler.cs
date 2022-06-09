@@ -58,7 +58,7 @@ public class ArrowHandler : MonoBehaviour
             downSprite.color = OpenColor;
         }
 
-        if (showBlockedSprites)
+        if (showBlockedSprites && player.GameInProgress)
         {
             Directions.Direction translatedLeft = Directions.TranslateDirection(Directions.Direction.LEFT, player.boardRotator.currentDirection);
             Directions.Direction translatedRight = Directions.TranslateDirection(Directions.Direction.RIGHT, player.boardRotator.currentDirection);
@@ -72,7 +72,7 @@ public class ArrowHandler : MonoBehaviour
             down.SetActive(translatedDown == Directions.Direction.LEFT || translatedDown == Directions.Direction.RIGHT);
         } 
         
-        else if (showNoInputSprites)
+        else if (showNoInputSprites && player.GameInProgress)
         {
             if (player.RoundInProgress)
             {
