@@ -39,8 +39,6 @@ public class PlayerController : MonoBehaviour
     {
         TouchManager.OnTouchBegin += ResetDistanceMovedThisTouch;
         TouchManager.OnSwipe += MoveSnakeOnSwipe;
-        //TouchManager.OnDrag += MoveSnakeOnDrag;
-        //TouchManager.OnDrag += MoveEntranceSlotToClosest;
         TouchManager.OnHold += MoveSnakeOnHold;
         TouchManager.OnTap += MoveSnakeOnTap;
     }
@@ -87,48 +85,6 @@ public class PlayerController : MonoBehaviour
         DistanceMovedThisTouch = Vector2.zero;
     }
 
-    private void MoveSnakeOnDrag(TouchManager.TouchData Drag)
-    {
-        Vector3 DragDistance = Camera.main.ScreenToWorldPoint(Drag.endPos) - Camera.main.ScreenToWorldPoint(Drag.startPos);
-        Vector3 UnmovedDistance = DragDistance - DistanceMovedThisTouch;
-
-        //Direction? dir = null;
-
-        bool DraggedUp() { return Mathf.Abs(UnmovedDistance.y) > DistanceNeededToDragBeforeSnakeMoves && UnmovedDistance.y > 0; }
-        bool DraggedDown() { return Mathf.Abs(UnmovedDistance.y) > DistanceNeededToDragBeforeSnakeMoves && UnmovedDistance.y < 0; }
-        bool DraggedLeft() { return Mathf.Abs(UnmovedDistance.x) > DistanceNeededToDragBeforeSnakeMoves && UnmovedDistance.x < 0; }
-        bool DraggedRight() { return Mathf.Abs(UnmovedDistance.x) > DistanceNeededToDragBeforeSnakeMoves && UnmovedDistance.x > 0; }
-
-        if (IntervalToWaitBeforeHoldElapsed())
-        {
-            //if(dir == null)
-            //{
-            //    //if (Mathf.Abs(UnmovedDistance.y) > DistanceNeededToDragBeforeSnakeMoves)
-            //    //{
-            //    //    if (UnmovedDistance.y > 0) dir = Direction.UP;
-            //    //    else dir = Direction.DOWN;
-            //    //}
-            //    //if (Mathf.Abs(UnmovedDistance.x) > DistanceNeededToDragBeforeSnakeMoves)
-            //    //{
-            //    //    if (UnmovedDistance.x > 0) dir = Direction.RIGHT;
-            //    //    else dir = Direction.LEFT;
-            //    //}
-            //    if (DraggedUp()) dir = Direction.UP;
-            //    if (DraggedDown()) dir = Direction.DOWN;
-            //    if (DraggedLeft()) dir = Direction.LEFT;
-            //    if (DraggedRight()) dir = Direction.RIGHT;
-            //}
-            //if (dir != null)
-            //{
-            if (/*dir == Direction.UP && */DraggedUp()) Press(CameraDirectionTranslate(Direction.UP));
-            if (/*dir == Direction.DOWN && */DraggedDown()) Press(CameraDirectionTranslate(Direction.DOWN));
-            if (/*dir == Direction.LEFT && */DraggedLeft()) Press(CameraDirectionTranslate(Direction.LEFT));
-            if (/*dir == Direction.RIGHT && */DraggedRight()) Press(CameraDirectionTranslate(Direction.RIGHT));
-            //}
-
-        }
-    }
-
     private void MoveSnakeOnSwipe(TouchManager.TouchData Swipe)
     {
         Press(CameraDirectionTranslate(Swipe.direction)); 
@@ -136,7 +92,14 @@ public class PlayerController : MonoBehaviour
 
     private void MoveSnakeOnHold(TouchManager.TouchData HoldData)
     {
-        Hold(MostRecentDirectionMoved);
+        if (HoldData.longEnoughForSwipe)
+        {
+            Hold(CameraDirectionTranslate(HoldData.direction));
+        } 
+        else
+        {
+            Hold(MostRecentDirectionMoved);
+        }
     }
     private void MoveSnakeOnTap(TouchManager.TouchData Tap)
     {
@@ -184,6 +147,7 @@ public class PlayerController : MonoBehaviour
 
     private void Hold(Direction direction)
     {
+        
         if (timeSinceLastMove > autoMoveInterval && IntervalToWaitBeforeHoldElapsed())
         {
             Press(direction);
@@ -207,19 +171,6 @@ public class PlayerController : MonoBehaviour
     public void ResetGame()
     {
         MostRecentDirectionMoved = Direction.DOWN;
-    }
-
-    public void HoldBehavior(TouchManager.TouchData data)
-    {
-        if (player.GameInProgress && !player.RoundInProgress)
-        {
-            //MoveEntranceSlotToClosest(data);
-            MoveSnakeOnDrag(data);
-        }
-        else
-        {
-            MoveSnakeOnHold(data);
-        }
     }
 
     public void MoveEntranceSlotToClosest(TouchManager.TouchData data)
