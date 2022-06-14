@@ -16,45 +16,61 @@ public class SnakeLineAnimator : BlockAnimator
         //block.Highlight.enabled = true;
         Block current = block;
         List<Vector3> result = new List<Vector3>();
-        result.Add(current.transform.position);
-        while (current.Tail != null)
+
+        BlockAnimation[] ActiveAnimations = current.AnimationManager.ActiveAnimations.ToArray();
+        Vector3 snakeHeadNextPos = current.Slot.transform.position;
+        if (ActiveAnimations.Length > 0)
         {
-            current = current.Tail;
-
-            BlockAnimation[] UpcomingAnimations = current.AnimationManager.UpcomingAnimations.ToArray();
-            BlockAnimation[] ActiveAnimations = current.AnimationManager.ActiveAnimations.ToArray();
-
-
-            //if (UpcomingAnimations.Length > 0)
-            //{
-            //    for (int i = (UpcomingAnimations.Length - 1); i >= 0; i--)
-            //    {
-            //        BlockAnimation animation = UpcomingAnimations[i];
-            //        if (animation != null && animation.destination != null)
-            //        {
-            //            result.Add(animation.destination.position);
-            //            break;
-            //        }
-            //    }
-            //}
-            if (ActiveAnimations.Length > 0)
+            for (int i = (ActiveAnimations.Length - 1); i >= 0; i--)
             {
-                for (int i = (ActiveAnimations.Length - 1); i >= 0; i--)
+                BlockAnimation animation = ActiveAnimations[i];
+                if (animation != null && animation.destination != null)
                 {
-                    BlockAnimation animation = ActiveAnimations[i];
-                    if (animation != null && animation.destination != null)
-                    {
-                        result.Add(animation.destination.position);
-                        break;
-                    }
+                    snakeHeadNextPos = animation.destination.position;
+                    break;
                 }
             }
+        }
 
-            else
+        result.Add(current.transform.position);
+
+        bool SnakeReached = false;
+        while (current.Tail != null)
+        {
+            Vector3 currentPos = current.Slot.transform.position;
+            if (SnakeReached) result.Add(currentPos);
+            if (!SnakeReached && Vector3.Distance(currentPos, snakeHeadNextPos) < .1f)
             {
-                result.Add(current.transform.position);
+                SnakeReached = true;
             }
 
+
+            current = current.Tail;
+        }
+        result.Add(current.Slot.transform.position);
+        BlockAnimation[] tailActiveAnimations = current.AnimationManager.ActiveAnimations.ToArray();
+        BlockAnimation[] tailUpcomingAnimations = current.AnimationManager.UpcomingAnimations.ToArray();
+        if (tailUpcomingAnimations.Length > 0)
+        {
+            for (int i = (tailUpcomingAnimations.Length - 1); i >= 0; i--)
+            {
+                BlockAnimation animation = tailUpcomingAnimations[i];
+                if (animation != null && animation.destination != null)
+                {
+                    result.Add(animation.destination.position);
+                }
+            }
+        }
+        if (tailActiveAnimations.Length > 0)
+        {
+            for (int i = (tailActiveAnimations.Length - 1); i >= 0; i--)
+            {
+                BlockAnimation animation = tailActiveAnimations[i];
+                if (animation != null && animation.destination != null)
+                {
+                    result.Add(animation.destination.position);
+                }
+            }
         }
         result.Add(current.transform.position);
 
