@@ -8,12 +8,16 @@ public class R_IncreaseScore : Rule
     public int ScoreIncrease;
     [SerializeField]
     private bool ApplyMultiplier;
+    [SerializeField]
+    private bool WaitForParticles;
     protected override void Action(Block block, PlayerManager player = null)
     {
         if (player)
         {
-            if (ApplyMultiplier) player.Score.IncreaseScoreUsingMultiplier(ScoreIncrease);
-            else player.Score.Score += ScoreIncrease;
+            GameObject refObj = null;
+            if (WaitForParticles) refObj = player.particleManager.PeekNextXPSystem().gameObject;
+
+            player.Score.IncreaseScore(ScoreIncrease, ApplyMultiplier, refObj);
         }
     }
 }

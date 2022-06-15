@@ -18,6 +18,9 @@ public class R_AddPointsForCollectionSize : Rule
     public int MultiplierIncreasePerBlockInCollection;
     [SerializeField]
     private bool ApplyMultiplier;
+    [SerializeField]
+    private bool WaitForParticles;
+
     protected override void Action(Block block, PlayerManager player = null)
     {
         if (player && block.BlockCollection != null)
@@ -44,8 +47,11 @@ public class R_AddPointsForCollectionSize : Rule
             int ScoreIncrease = SizeMultiplier * ScoreIncreasePerBlockInCollection;
             int MIncrease = SizeMultiplier * MultiplierIncreasePerBlockInCollection;
 
+            GameObject refObj = null;
+            if (WaitForParticles) refObj = player.particleManager.PeekNextXPSystem().gameObject;
+
             player.Score.Multiplier += MIncrease;
-            player.Score.IncreaseScore(ScoreIncrease, ApplyMultiplier);
+            player.Score.IncreaseScore(ScoreIncrease, ApplyMultiplier, refObj);
         }
     }
 }

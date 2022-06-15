@@ -96,15 +96,17 @@ public class ScoreManager : MonoBehaviour
         multiplier += amountToIncrease;
     }
 
-    public void IncreaseScore(int amount, bool useMultiplier)
+    public void IncreaseScore(int amount, bool useMultiplier, GameObject delayReferenceObject = null)
     {
-        if (useMultiplier) IncreaseScoreUsingMultiplier(amount);
-        else Score += amount;
+        int finalAmount = amount;
+        if (useMultiplier) finalAmount *= multiplier;
+        if (delayReferenceObject != null) GameManager.instance.playerManagers[0].Powerup.displayer.DelayScore(delayReferenceObject, finalAmount);
+        Score += finalAmount;
     }
 
     public void IncreaseScoreUsingMultiplier(int amount)
     {
-        Score = score + (amount * multiplier);
+        IncreaseScore(amount, true);
     }
 
     public void UpdateScore()

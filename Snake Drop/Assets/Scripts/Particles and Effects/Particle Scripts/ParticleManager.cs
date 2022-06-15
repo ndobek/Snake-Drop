@@ -55,6 +55,15 @@ public class ParticleManager : MonoBehaviour
         }
         return result;
     }
+    public ParticleSystem PeekNextXPSystem()
+    {
+        int i = xPIndex;
+        if(i >= (xPPSystemPool.Count - 1))
+        {
+            i = 0;
+        }
+        return xPPSystemPool[i];
+    }
     public void TriggerXPParticles(int xP, Vector3 pos, Color color)
     {
         ParticleSystem pSystem = RetrieveParticleSystem(xPPSystemPool, ref xPIndex);
