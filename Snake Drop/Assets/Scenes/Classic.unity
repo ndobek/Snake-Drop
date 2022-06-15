@@ -688,31 +688,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81ffc1cd49430e64b8a007a5ca518150, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1526612567 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9134113235925775575, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
-    type: 3}
-  m_PrefabInstance: {fileID: 1989607182}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1526612574
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1526612567}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f3a95133bf0063a4fb21e63089afa504, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!224 &1526700516 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5008662655720683249, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
@@ -1247,16 +1222,6 @@ PrefabInstance:
     - target: {fileID: 1061619005146266755, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
         type: 3}
       propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1206086589843946052, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1206086589843946052, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
-        type: 3}
-      propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1236166270109166363, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
@@ -2328,11 +2293,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3089600608867590918, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3115651885428466034, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
         type: 3}
@@ -5916,11 +5876,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8839223029960484764, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
-        type: 3}
-      propertyPath: orthographic size
-      value: 8.589928
       objectReference: {fileID: 0}
     - target: {fileID: 8855796039674717976, guid: 4a168f4bdbb2ced42aeabbe202a35da1,
         type: 3}
