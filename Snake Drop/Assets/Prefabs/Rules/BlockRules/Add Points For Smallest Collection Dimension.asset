@@ -16,3 +16,4 @@ MonoBehaviour:
   ScoreIncreasePerBlockInCollection: 1
   MultiplierIncreasePerBlockInCollection: 0
   ApplyMultiplier: 1
+  WaitForParticles: 1
