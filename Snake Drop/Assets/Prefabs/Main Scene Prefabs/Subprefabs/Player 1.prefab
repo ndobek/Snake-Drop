@@ -3611,6 +3611,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9d43332ab0eefdd44aef41d8f0227d3e, type: 2}
   currentPowerup: {fileID: 0}
   extraPowerups: 0
+  displayer: {fileID: 0}
 --- !u!114 &7360507374275313742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15177,8 +15178,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44aceb3f48717054d856b68bb9d9b87d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blockedDelayTime: 3
-  inputDelayTime: 5
+  blockedDelayTime: 5
+  inputDelayTime: 9
   OpenColor: {r: 1, g: 1, b: 1, a: 1}
   BlockedColor: {r: 0.8679245, g: 0.3479886, b: 0.3479886, a: 1}
   left: {fileID: 4469962822857827757}
