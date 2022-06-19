@@ -37,7 +37,7 @@ public class ScoreDisplayer : MonoBehaviour
 
     private void Update()
     {
-        UpdateScoreDisplay(scoreManager.Score);
+        UpdateScoreDisplay(scoreManager.DelayedScore);
         UpdateMultiplierDisplay(scoreManager.Multiplier);
         UpdateHighScoreDisplay(scoreManager.HighScore);
         if (scoreManager.HighScore < scoreManager.Score && isHighScoreColorSet == false)

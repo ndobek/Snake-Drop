@@ -50,9 +50,11 @@ public class UndoManager : MonoBehaviour
         if (moves.Count > 0)
         {
             GameManager m = GameManager.instance;
+            PlayerManager p = m.playerManagers[0];
+            p.Score.FinalizeAllScores();
             SaveData loadedData = moves.Pop();
             m.LoadGame(loadedData);
-            m.playerManagers[0].GameOver = false;
+            p.GameOver = false;
             SaveManager.AutoSave();
             return true;
         }

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6699040788849827042}
   - component: {fileID: 2487164623148510161}
   - component: {fileID: 3469088640494715407}
+  - component: {fileID: 3735979204912881362}
   m_Layer: 0
   m_Name: Progress Bar Collider
   m_TagString: ProgressBarTrigger
@@ -86,4 +87,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2fbfbfd8ccd23641af5851ba0f65234, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  displayer: {fileID: 0}
+--- !u!114 &3735979204912881362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8387626767192859976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4c0c841d9667274eb7ebb211235afd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 0}
+  stateName: Bounce

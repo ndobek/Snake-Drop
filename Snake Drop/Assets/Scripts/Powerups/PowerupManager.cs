@@ -15,8 +15,6 @@ public class PowerupManager : MonoBehaviour
     public int extraPowerups;
     public int numAvailablePowerups => extraPowerups + (currentPowerup != null ? 1 : 0);
 
-    public PowerupsDisplayer displayer;
-
     public void ResetGame()
     {
         currentProgress = 0;
@@ -77,8 +75,14 @@ public class PowerupManager : MonoBehaviour
     }
 
 
-    public float ProgressToNextPowerup(int delay = 0)
+    public float ProgressToNextPowerup()
     {
+        return (float)(currentProgress) / nextPowerupScoreDiff;
+    }
+
+    public float DelayedProgressToNextPowerup()
+    {
+        int delay = GameManager.instance.playerManagers[0].Score.totalDelay();
         return (float)(currentProgress - delay) / nextPowerupScoreDiff;
     }
 }

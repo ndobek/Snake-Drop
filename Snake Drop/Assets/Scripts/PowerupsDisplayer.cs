@@ -40,34 +40,6 @@ public class PowerupsDisplayer : MonoBehaviour
     private bool wait;
     private int tweensRunning;
 
-    private Dictionary<GameObject, int> delayedScores = new Dictionary<GameObject, int>();
-
-    public void DelayScore(GameObject referenceObject, int amount)
-    {
-        if (!delayedScores.ContainsKey(referenceObject))
-        {
-            delayedScores.Add(referenceObject, amount);
-        }
-    }
-
-    public void FinalizeScore(GameObject referenceObject)
-    {
-        if (delayedScores.ContainsKey(referenceObject))
-        {
-            delayedScores.Remove(referenceObject);
-        }
-    }
-
-    public int totalDelay()
-    {
-        Dictionary<GameObject, int>.ValueCollection values = delayedScores.Values;
-        int result = 0;
-        foreach(int value in values)
-        {
-            result += value;
-        }
-        return result;
-    }
 
     void Awake()
     {
@@ -195,6 +167,6 @@ public class PowerupsDisplayer : MonoBehaviour
     }
     public float DelayedFillBarPercentage()
     {
-        return powerupManager.ProgressToNextPowerup(totalDelay()) ;
+        return powerupManager.DelayedProgressToNextPowerup() ;
     }
 }

@@ -17,6 +17,10 @@ public class ScoreManager : MonoBehaviour
             score = value;
         }
     }
+    public int DelayedScore
+    {
+        get { return score - totalDelay(); }
+    }
     private int multiplier;
     public int Multiplier
     {
@@ -48,6 +52,8 @@ public class ScoreManager : MonoBehaviour
         get { return numberOfSnakes; }
         set { numberOfSnakes = value; }
     }
+    private float timeSinceAllScoresFinalized;
+    public float maxTimeWithoutScoresFinalized = 10;
 
     private void Awake()
     {
@@ -56,6 +62,7 @@ public class ScoreManager : MonoBehaviour
 
     public void ResetGame()
     {
+        FinalizeAllScores();
         UpdateScore();
         Score = 0;
         NumberOfSnakes = 0;
@@ -100,7 +107,7 @@ public class ScoreManager : MonoBehaviour
     {
         int finalAmount = amount;
         if (useMultiplier) finalAmount *= multiplier;
-        if (delayReferenceObject != null) GameManager.instance.playerManagers[0].Powerup.displayer.DelayScore(delayReferenceObject, finalAmount);
+        if (delayReferenceObject != null) DelayScore(delayReferenceObject, finalAmount);
         Score += finalAmount;
     }
 
@@ -133,6 +140,58 @@ public class ScoreManager : MonoBehaviour
     {
         Leaderboards.Highest_Single_Combo.SubmitScore(Score - scoreAtLastCrash);
         scoreAtLastCrash = score;
+    }
+
+
+    private Dictionary<GameObject, int> delayedScores = new Dictionary<GameObject, int>();
+
+    public void DelayScore(GameObject referenceObject, int amount)
+    {
+        if (!delayedScores.ContainsKey(referenceObject))
+        {
+            delayedScores.Add(referenceObject, amount);
+        }
+    }
+
+    public void FinalizeScore(GameObject referenceObject)
+    {
+        if (delayedScores.ContainsKey(referenceObject))
+        {
+            delayedScores.Remove(referenceObject);
+        }
+    }
+
+    public void FinalizeAllScores()
+    {
+        Dictionary<GameObject, int>.KeyCollection keys = delayedScores.Keys;
+        List<GameObject> keyList = new List<GameObject>();
+        foreach (GameObject key in keys)
+        {
+            keyList.Add(key);
+        }
+        foreach(GameObject key in keyList)
+        {
+            FinalizeScore(key);
+        }
+    }
+
+    public int totalDelay()
+    {
+        Dictionary<GameObject, int>.ValueCollection values = delayedScores.Values;
+        int result = 0;
+        foreach (int value in values)
+        {
+            result += value;
+        }
+        return result;
+    }
+
+    private void Update()
+    {
+        if(totalDelay() == 0) { timeSinceAllScoresFinalized = 0; }
+        else { timeSinceAllScoresFinalized += Time.deltaTime; }
+
+        if(timeSinceAllScoresFinalized > maxTimeWithoutScoresFinalized) { FinalizeAllScores(); }
     }
 
 }

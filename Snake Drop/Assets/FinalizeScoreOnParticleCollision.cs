@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class FinalizeScoreOnParticleCollision : MonoBehaviour
 {
-    public PowerupsDisplayer displayer;
+    private ScoreManager scoreManager;
+    public void Start()
+    {
+        scoreManager = GameManager.instance.playerManagers[0].Score;
+    }
     public void OnParticleCollision(GameObject other)
     {
-        displayer.FinalizeScore(other);
+        scoreManager.FinalizeScore(other);
     }
 }
