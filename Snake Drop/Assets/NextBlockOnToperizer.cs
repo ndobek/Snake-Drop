@@ -11,7 +11,7 @@ public class NextBlockOnToperizer : MonoBehaviour
         thisSlot = GetComponent<BlockSlot>();
     }
 
-    private void Update()
+    private void LateUpdate()
     {
 
         for(int i = 0; i < thisSlot.Blocks.Count; i++)

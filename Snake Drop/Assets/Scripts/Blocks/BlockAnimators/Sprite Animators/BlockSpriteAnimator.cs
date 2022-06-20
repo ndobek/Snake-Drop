@@ -16,7 +16,7 @@ public abstract class BlockSpriteAnimator : BlockAnimator
         {
             block.BlockSprite.sprite = sprite;
             block.BlockSprite.color = color;
-            block.BlockSprite.sortingOrder = sortingOrder;
+            block.BlockSprite.sortingOrder = sortingOrder + block.Slot.Blocks.Count - block.Slot.Blocks.IndexOf(block);
 
             block.Highlight.enabled = block.blockType.HighlightTail;        
         }
