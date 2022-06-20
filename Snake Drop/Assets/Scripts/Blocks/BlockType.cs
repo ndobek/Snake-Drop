@@ -47,7 +47,7 @@ public class BlockType : ScriptableObject, ISaveable
             block.Slot &&
             block.Slot.playGrid != block.Tail.Slot.playGrid &&
             slot == null &&
-            block.Tail.Slot.HasNeighbor(block.Slot)) return true;
+            block.Tail.Slot.GetNeighbor(Directions.GetOppositeDirection(player.playerController.MostRecentDirectionMoved)) == block.Slot) return true;
 
         return false;
     }
