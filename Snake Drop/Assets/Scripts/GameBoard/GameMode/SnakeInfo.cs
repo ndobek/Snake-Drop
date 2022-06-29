@@ -5,6 +5,16 @@ public class SnakeInfo
 {
     public int length;
     public float entropy;
-    public Stat<BlockColor>[] possibleColors;
-    public Stat<BlockType>[] possibleTypes;
+    public BlockColor[] possibleColors;
+    public BlockType[] possibleTypes;
+
+    public BlockColor GetRandomColor()
+    {
+        return(possibleColors[Random.Range(0,possibleColors.Length - 1)]);
+    }
+
+    public BlockType GetRandomType()
+    {
+        return (possibleTypes[Random.Range(0, possibleTypes.Length - 1)]);
+    }
 }

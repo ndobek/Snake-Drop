@@ -68,10 +68,10 @@ public class PowerupManager : MonoBehaviour
 
     public void GetNextPowerupScore()
     {
-        ScoreManager score = GameManager.instance.playerManagers[0].Score;
+        PlayerManager player = GameManager.instance.playerManagers[0];
         GameModeManager gameModeManager = GameManager.instance.GameModeManager;
 
-        nextPowerupScoreDiff = (int)gameModeManager.GetPowerupInfo(score.Score, numOfPowerupsObtained);
+        nextPowerupScoreDiff = (int)gameModeManager.GetPowerupInfo(player);
     }
 
 

@@ -6,17 +6,17 @@ public static class SnakeMaker
 {
     public static void MakeSnake(BlockSlot slot, SnakeInfo info)
     {
-        BlockType currentType = Stat<BlockType>.GetRandomFromStats(info.possibleTypes);
-        BlockColor currentColor = Stat<BlockColor>.GetRandomFromStats(info.possibleColors);
+        BlockType currentType = info.GetRandomType();
+        BlockColor currentColor = info.GetRandomColor();
 
         if (currentType == null || currentColor == null) return;
 
         slot.CreateBlock(currentColor, GameManager.instance.GameModeManager.GameMode.TypeBank.snakeHeadType);
         for (int i = 1; i < info.length; i++)
         {
-            if (Random.value < info.entropy) currentColor = Stat<BlockColor>.GetRandomFromStats(info.possibleColors);
+            if (Random.value < info.entropy) currentColor = info.GetRandomColor();
 
-            currentType = Stat<BlockType>.GetRandomFromStats(info.possibleTypes);
+            currentType = info.GetRandomType();
             slot.CreateBlock(currentColor, currentType);
 
             if (i > 0) slot.Blocks[i - 1].SetTail(slot.Blocks[i]);

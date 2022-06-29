@@ -110,7 +110,7 @@ public class PlayerManager : MonoBehaviour
 
     private bool GameIsOver()
     {
-        return GameManager.instance.GameModeManager.GameMode.EndGameCondition.GameIsOver(this);
+        return GameManager.instance.GameModeManager.GameMode.EndGameCondition.Invoke(this);
 
     }
 
@@ -134,7 +134,7 @@ public class PlayerManager : MonoBehaviour
         {
             Random.state = randStateForSnake;
             Score.NumberOfSnakes += 1;
-            SnakeInfo info = GameManager.instance.GameModeManager.GetSnakeInfo(Score.Score, Score.NumberOfSnakes);
+            SnakeInfo info = GameManager.instance.GameModeManager.GetSnakeInfo();
             StopMakingSnakes = info == null;
             if (!StopMakingSnakes)
             {

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Rules/EndGameCondition/EndGame")]
-public class EndGame : EndGameCondition
+public class EndGame : BoolRule
 {
-    public override bool GameIsOver(PlayerManager player)
+    public override bool Invoke(PlayerManager player)
     {
         return true;
     }
