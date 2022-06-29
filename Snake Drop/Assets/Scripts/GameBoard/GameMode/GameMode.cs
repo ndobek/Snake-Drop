@@ -129,7 +129,20 @@ public class GameMode : ScriptableObject
                 }
             }
         }
-        if (possibleResults.Count > 0) return possibleResults[Random.Range(0, possibleResults.Count)].value;
+        if (possibleResults.Count > 0)
+        {
+            float totalProbability = 0;
+            foreach(Stat<float> stat in possibleResults)
+            {
+                totalProbability += stat.probability;
+            }
+            float result = Random.Range(0, totalProbability);
+            foreach(Stat<float> stat in possibleResults)
+            {
+                if (result > stat.probability) result -= stat.probability;
+                else return stat.value;
+            }
+        }
 
         Debug.Log("No Acceptable Difficulty Settings, Returning default:" + statType + ": " + "0");
         return 0;

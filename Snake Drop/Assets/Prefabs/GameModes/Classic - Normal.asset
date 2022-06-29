@@ -58,22 +58,51 @@ MonoBehaviour:
     possibleColors: []
     Stats:
     - value: 10
-      probability: 1
+      probability: 0.9
       StatType: minBaseLength
     - value: 15
-      probability: 1
+      probability: 0.9
       StatType: maxBaseLength
     - value: 1
-      probability: 1
+      probability: 0.9
       StatType: minTotalLength
     - value: 100
-      probability: 1
+      probability: 0.9
       StatType: maxTotalLength
-    - value: 0.0001
-      probability: 1
+    - value: 0
+      probability: 0.9
       StatType: lengthScoreMod
     - value: 0.25
-      probability: 1
+      probability: 0.9
+      StatType: lengthSnakeNumberMod
+  - MinScore: 0
+    MaxScore: 100
+    UseMinScore: 0
+    UseMaxScore: 0
+    MinSnakeNumber: 250
+    MaxSnakeNumber: 0
+    UseMinSnakeNumber: 1
+    UseMaxSnakeNumber: 0
+    possibleTypes: []
+    possibleColors: []
+    Stats:
+    - value: 25
+      probability: 0.1
+      StatType: minBaseLength
+    - value: 50
+      probability: 0.1
+      StatType: maxBaseLength
+    - value: 25
+      probability: 0.1
+      StatType: minTotalLength
+    - value: 50
+      probability: 0.1
+      StatType: maxTotalLength
+    - value: 0
+      probability: 0.1
+      StatType: lengthScoreMod
+    - value: 0
+      probability: 0.1
       StatType: lengthSnakeNumberMod
   - MinScore: 0
     MaxScore: 100
