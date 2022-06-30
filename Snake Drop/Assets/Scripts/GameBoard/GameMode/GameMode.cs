@@ -27,16 +27,20 @@ public class GameMode : ScriptableObject
 
     public Level GetLevel()
     {
+        PlayerManager player = GameManager.instance.playerManagers[0];
         float denominator = 0;
         foreach (Level level in Levels)
         {
-            denominator += 0;
+            if(level.LevelValid.Invoke(player)) denominator += 0;
         }
         float result = Random.Range(0, denominator);
         foreach (Level level in Levels)
         {
-            result -= level.probability;
-            if (result <= 0) return level;
+            if (level.LevelValid.Invoke(player))
+            {
+                result -= level.probability;
+                if (result <= 0) return level;
+            }
         }
         return null;
     }

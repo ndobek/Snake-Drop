@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Rules/FloatRules/Containers And Conditions/Selector")]
 public class FR_Select : FloatRule
 {
+    [System.Serializable]
     public struct selection
     {
         public FloatRule rule;
