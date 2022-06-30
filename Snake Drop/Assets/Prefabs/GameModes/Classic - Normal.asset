@@ -17,148 +17,23 @@ MonoBehaviour:
   OnGameStart: {fileID: 11400000, guid: 2b58d7a2f1b36c746b9be2bd7369b20d, type: 2}
   OnCrash: {fileID: 11400000, guid: 07a8edd8986b04843865f62526549a0c, type: 2}
   Levels:
-  - MinScore: 0
-    MaxScore: 20
-    UseMinScore: 0
-    UseMaxScore: 0
-    MinSnakeNumber: 0
-    MaxSnakeNumber: 0
-    UseMinSnakeNumber: 0
-    UseMaxSnakeNumber: 0
-    possibleTypes:
-    - value: {fileID: 11400000, guid: 7d50d8ff5e938a6439c218aa18290334, type: 2}
-      probability: 1
-      StatType: 
-    possibleColors:
-    - value: {fileID: 11400000, guid: 5438ed90547356044a3c13328a354b08, type: 2}
-      probability: 1
-      StatType: 
-    - value: {fileID: 11400000, guid: 1f96a88418ae4d64594066b606e5646b, type: 2}
-      probability: 1
-      StatType: 
-    - value: {fileID: 11400000, guid: 48847a2b7d2594e4a885a17b2eb9b0da, type: 2}
-      probability: 1
-      StatType: 
-    - value: {fileID: 11400000, guid: 06922463012b1f24fb757d5ffdabbd6b, type: 2}
-      probability: 1
-      StatType: 
-    - value: {fileID: 11400000, guid: dc0a2986a68ec8447b283e6fc5dbf9cd, type: 2}
-      probability: 1
-      StatType: 
-    Stats: []
-  - MinScore: 0
-    MaxScore: 100
-    UseMinScore: 0
-    UseMaxScore: 0
-    MinSnakeNumber: 0
-    MaxSnakeNumber: 0
-    UseMinSnakeNumber: 0
-    UseMaxSnakeNumber: 0
-    possibleTypes: []
-    possibleColors: []
-    Stats:
-    - value: 10
-      probability: 0.9
-      StatType: minBaseLength
-    - value: 15
-      probability: 0.9
-      StatType: maxBaseLength
-    - value: 1
-      probability: 0.9
-      StatType: minTotalLength
-    - value: 100
-      probability: 0.9
-      StatType: maxTotalLength
-    - value: 0
-      probability: 0.9
-      StatType: lengthScoreMod
-    - value: 0.25
-      probability: 0.9
-      StatType: lengthSnakeNumberMod
-  - MinScore: 0
-    MaxScore: 100
-    UseMinScore: 0
-    UseMaxScore: 0
-    MinSnakeNumber: 250
-    MaxSnakeNumber: 0
-    UseMinSnakeNumber: 1
-    UseMaxSnakeNumber: 0
-    possibleTypes: []
-    possibleColors: []
-    Stats:
-    - value: 25
-      probability: 0.1
-      StatType: minBaseLength
-    - value: 50
-      probability: 0.1
-      StatType: maxBaseLength
-    - value: 25
-      probability: 0.1
-      StatType: minTotalLength
-    - value: 50
-      probability: 0.1
-      StatType: maxTotalLength
-    - value: 0
-      probability: 0.1
-      StatType: lengthScoreMod
-    - value: 0
-      probability: 0.1
-      StatType: lengthSnakeNumberMod
-  - MinScore: 0
-    MaxScore: 100
-    UseMinScore: 0
-    UseMaxScore: 0
-    MinSnakeNumber: 0
-    MaxSnakeNumber: 0
-    UseMinSnakeNumber: 0
-    UseMaxSnakeNumber: 0
-    possibleTypes: []
-    possibleColors: []
-    Stats:
-    - value: 0
-      probability: 0
-      StatType: minBaseEntropy
-    - value: 0.18
-      probability: 1
-      StatType: maxBaseEntropy
-    - value: 0.1
-      probability: 1
-      StatType: minTotalEntropy
-    - value: 1
-      probability: 1
-      StatType: maxTotalEntropy
-    - value: 0
-      probability: 1
-      StatType: entropyScoreMod
-    - value: 0
-      probability: 1
-      StatType: entropySnakeNumberMod
-  - MinScore: 0
-    MaxScore: 100
-    UseMinScore: 0
-    UseMaxScore: 0
-    MinSnakeNumber: 0
-    MaxSnakeNumber: 0
-    UseMinSnakeNumber: 0
-    UseMaxSnakeNumber: 0
-    possibleTypes: []
-    possibleColors: []
-    Stats:
-    - value: 10000
-      probability: 0
-      StatType: minBasePowerup
-    - value: 10000
-      probability: 1
-      StatType: maxBasePowerup
-    - value: 10000
-      probability: 1
-      StatType: minTotalPowerup
-    - value: 1e+21
-      probability: 1
-      StatType: maxTotalPowerup
-    - value: 0
-      probability: 1
-      StatType: powerupScoreMod
-    - value: 5000
-      probability: 1
-      StatType: powerupSequenceMod
+  - LevelValid: {fileID: 0}
+    snakeInfo: {fileID: 0}
+    NextPowerupRule: {fileID: 0}
+    probability: 0
+  - LevelValid: {fileID: 0}
+    snakeInfo: {fileID: 0}
+    NextPowerupRule: {fileID: 0}
+    probability: 0
+  - LevelValid: {fileID: 0}
+    snakeInfo: {fileID: 0}
+    NextPowerupRule: {fileID: 0}
+    probability: 0
+  - LevelValid: {fileID: 0}
+    snakeInfo: {fileID: 0}
+    NextPowerupRule: {fileID: 0}
+    probability: 0
+  - LevelValid: {fileID: 0}
+    snakeInfo: {fileID: 0}
+    NextPowerupRule: {fileID: 0}
+    probability: 0

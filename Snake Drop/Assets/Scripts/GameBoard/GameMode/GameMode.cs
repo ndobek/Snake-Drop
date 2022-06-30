@@ -15,7 +15,7 @@ public class GameMode : ScriptableObject
     {
 
         public BoolRule LevelValid;
-        public SnakeInfoCreator snakeInfo;
+        public SnakeType snakeType;
         public FloatRule NextPowerupRule;
         public float probability;
 
@@ -42,7 +42,7 @@ public class GameMode : ScriptableObject
     }
     public SnakeInfo GetSnakeInfo()
     {
-        return GetLevel().snakeInfo.GetSnakeInfo();
+        return GetLevel().snakeType.GetSnakeInfo();
     }
 
     public BlockColor[] GetAllPossibleColors()
@@ -50,7 +50,7 @@ public class GameMode : ScriptableObject
         List<BlockColor> result = new List<BlockColor>();
         foreach(Level level in Levels)
         {
-            foreach(BlockColor color in level.snakeInfo.possibleBlockColors)
+            foreach(BlockColor color in level.snakeType.possibleBlockColors)
             {
                 if (!result.Contains(color)) result.Add(color);
             }

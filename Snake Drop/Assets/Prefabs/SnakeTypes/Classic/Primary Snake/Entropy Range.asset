@@ -9,7 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 443030e33cc420c4cacfc99c278afcca, type: 3}
-  m_Name: End Game
+  m_Script: {fileID: 11500000, guid: 263a8bc573b9e264795e3dd2eb05983b, type: 3}
+  m_Name: Entropy Range
   m_EditorClassIdentifier: 
-  value: 1
+  min: 0
+  max: 0

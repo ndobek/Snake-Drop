@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 443030e33cc420c4cacfc99c278afcca, type: 3}
-  m_Name: End Game
+  m_Script: {fileID: 11500000, guid: 3a6cdf8783e9c8a429593008f19c3585, type: 3}
+  m_Name: Length Rule
   m_EditorClassIdentifier: 
-  value: 1
+  Rules: []

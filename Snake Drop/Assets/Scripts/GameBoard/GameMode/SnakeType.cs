@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-public class SnakeInfoCreator : ScriptableObject
+[CreateAssetMenu(menuName = "Snake Type")]
+public class SnakeType : ScriptableObject
 {
     public BlockColor[] possibleBlockColors;
     public BlockType[] possibleBlockTypes;
