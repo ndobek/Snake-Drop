@@ -5,11 +5,12 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Rules/FloatRules/Clamp")]
 public class FR_Clamp : FloatRule
 {
-    public float min;
-    public float max;
+    public FloatRule input;
+    public FloatRule min;
+    public FloatRule max;
 
-    protected override float Action(float input, PlayerManager player)
+    protected override float Action(PlayerManager player)
     {
-        return Mathf.Clamp(input, min, max);
+        return Mathf.Clamp(input.Invoke(player), min.Invoke(player), max.Invoke(player));
     }
 }

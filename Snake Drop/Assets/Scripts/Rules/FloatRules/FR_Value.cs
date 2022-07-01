@@ -6,7 +6,7 @@ using UnityEngine;
 public class FR_Value : FloatRule
 {
     public float value;
-    protected override float Action(float input, PlayerManager player = null)
+    protected override float Action(PlayerManager player = null)
     {
         return value;
     }

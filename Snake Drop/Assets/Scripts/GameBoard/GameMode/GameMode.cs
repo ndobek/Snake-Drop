@@ -64,7 +64,7 @@ public class GameMode : ScriptableObject
 
     public float GetPowerupInfo(PlayerManager player)
     {
-        return GetLevel().NextPowerupRule.Invoke(0, player);
+        return GetLevel().NextPowerupRule.Invoke(player);
     }
 
 }

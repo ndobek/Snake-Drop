@@ -5,17 +5,15 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Rules/FloatRules/Add")]
 public class FR_Add : FloatRule
 {
-    public bool takeInput;
     public FloatRule[] floats;
 
-    protected override float Action(float input, PlayerManager player)
+    protected override float Action(PlayerManager player)
     {
         float result = 0;
-        if(takeInput) result = input;
 
         foreach (var f in floats)
         {
-            input += f.Invoke(input);
+            result += f.Invoke(player);
         }
         return result;
     }

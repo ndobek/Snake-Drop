@@ -5,17 +5,15 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Rules/FloatRules/Multiply")]
 public class FR_Multiply : FloatRule
 {
-    public bool takeInput;
     public FloatRule[] floats;
 
-    protected override float Action(float input, PlayerManager player)
+    protected override float Action(PlayerManager player)
     {
-        float result = input;
-        if (!takeInput) result = input;
+        float result = floats[0].Invoke(player);
 
-        foreach (var f in floats)
+        for(int i = 1; i < floats.Length; i++)
         {
-            input *= f.Invoke(input);
+            result *= floats[i].Invoke(player);
         }
         return result;
     }

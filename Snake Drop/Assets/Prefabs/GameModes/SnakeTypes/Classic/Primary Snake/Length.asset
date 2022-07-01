@@ -9,10 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a6cdf8783e9c8a429593008f19c3585, type: 3}
+  m_Script: {fileID: 11500000, guid: 0465232d0f301f24aaa9630618ad789e, type: 3}
   m_Name: Length
   m_EditorClassIdentifier: 
-  Rules:
-  - {fileID: 11400000, guid: 4688aa435fb038e4094de655b173a9a5, type: 2}
-  - {fileID: 0}
-  - {fileID: 11400000, guid: 8745bd5d83a87f1429bee7bee716edc7, type: 2}
+  input: {fileID: 11400000, guid: 8f417a43c340eb441921e63a06bc20cf, type: 2}
+  min: {fileID: 11400000, guid: 708af326b937c764dbe3f683b3b4a009, type: 2}
+  max: {fileID: 11400000, guid: 289b8a63a69299244a51f78bc4769991, type: 2}

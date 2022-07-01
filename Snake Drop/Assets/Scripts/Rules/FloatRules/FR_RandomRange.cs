@@ -8,7 +8,7 @@ public class FR_RandomRange : FloatRule
     public float min;
     public float max;
 
-    protected override float Action(float input, PlayerManager player)
+    protected override float Action(PlayerManager player)
     {
         return Random.Range(min, max);
     }

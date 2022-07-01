@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73872d7736abcc446b1989bf16eca176, type: 3}
-  m_Name: Powerup Multiplier
+  m_Script: {fileID: 11500000, guid: 7f5721351a921f5489a254ee1c32b0a5, type: 3}
+  m_Name: Max Length
   m_EditorClassIdentifier: 
-  floats: []
+  value: 100

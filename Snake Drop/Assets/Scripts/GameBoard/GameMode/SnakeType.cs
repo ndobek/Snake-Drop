@@ -16,8 +16,8 @@ public class SnakeType : ScriptableObject
         return new SnakeInfo()
         {
 
-            entropy = entropyRule.Invoke(0f, player),
-            length = (int)lengthRule.Invoke(0f, player),
+            entropy = entropyRule.Invoke(player),
+            length = (int)lengthRule.Invoke(player),
             possibleColors = possibleBlockColors,
             possibleTypes = possibleBlockTypes
         };

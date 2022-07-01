@@ -17,23 +17,7 @@ MonoBehaviour:
   OnGameStart: {fileID: 11400000, guid: 2b58d7a2f1b36c746b9be2bd7369b20d, type: 2}
   OnCrash: {fileID: 11400000, guid: 07a8edd8986b04843865f62526549a0c, type: 2}
   Levels:
-  - LevelValid: {fileID: 0}
-    snakeInfo: {fileID: 0}
-    NextPowerupRule: {fileID: 0}
-    probability: 0
-  - LevelValid: {fileID: 0}
-    snakeInfo: {fileID: 0}
-    NextPowerupRule: {fileID: 0}
-    probability: 0
-  - LevelValid: {fileID: 0}
-    snakeInfo: {fileID: 0}
-    NextPowerupRule: {fileID: 0}
-    probability: 0
-  - LevelValid: {fileID: 0}
-    snakeInfo: {fileID: 0}
-    NextPowerupRule: {fileID: 0}
-    probability: 0
-  - LevelValid: {fileID: 0}
-    snakeInfo: {fileID: 0}
-    NextPowerupRule: {fileID: 0}
-    probability: 0
+  - LevelValid: {fileID: 11400000, guid: 892c79c804afd1c4787866e79d16afc5, type: 2}
+    snakeType: {fileID: 11400000, guid: 919338a7320d2194e822373c5a3bcff6, type: 2}
+    NextPowerupRule: {fileID: 11400000, guid: 46ff7e48478b0a340b8555848e8e6829, type: 2}
+    probability: 1

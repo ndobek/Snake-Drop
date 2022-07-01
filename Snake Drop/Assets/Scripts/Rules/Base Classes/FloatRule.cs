@@ -4,10 +4,10 @@ using UnityEngine;
 
 public abstract class FloatRule : ScriptableObject
 {
-    public float Invoke(float input, PlayerManager player = null)
+    public float Invoke(PlayerManager player = null)
     {
-        return Action(input, player);
+        return Action(player);
     }
 
-    protected abstract float Action(float input, PlayerManager player = null);
+    protected abstract float Action(PlayerManager player = null);
 }

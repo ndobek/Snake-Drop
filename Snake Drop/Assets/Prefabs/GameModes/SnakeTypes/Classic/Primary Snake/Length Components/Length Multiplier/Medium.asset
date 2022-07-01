@@ -9,8 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0465232d0f301f24aaa9630618ad789e, type: 3}
-  m_Name: Length Clamp
+  m_Script: {fileID: 11500000, guid: 7f5721351a921f5489a254ee1c32b0a5, type: 3}
+  m_Name: Medium
   m_EditorClassIdentifier: 
-  min: 0
-  max: 0
+  value: 0.15

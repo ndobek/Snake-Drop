@@ -14,7 +14,7 @@ public class FR_Select : FloatRule
 
     public selection[] possibleSelections;
 
-    protected override float Action(float input, PlayerManager player = null)
+    protected override float Action(PlayerManager player = null)
     {
         float denominator = 0;
         foreach (var selection in possibleSelections)
@@ -26,8 +26,8 @@ public class FR_Select : FloatRule
         foreach (var selection in possibleSelections)
         {
             result -= selection.probability;
-            if (result <= 0) return selection.rule.Invoke(input, player);
+            if (result <= 0) return selection.rule.Invoke(player);
         }
-        return possibleSelections[possibleSelections.Length - 1].rule.Invoke(input, player);
+        return possibleSelections[possibleSelections.Length - 1].rule.Invoke(player);
     }
 }

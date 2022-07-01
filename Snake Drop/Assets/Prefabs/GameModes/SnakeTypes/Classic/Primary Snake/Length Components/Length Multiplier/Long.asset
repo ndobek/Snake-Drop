@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3e78323bf7bc464897193c4211a5196, type: 3}
-  m_Name: Add Snake Number Length
+  m_Script: {fileID: 11500000, guid: 7f5721351a921f5489a254ee1c32b0a5, type: 3}
+  m_Name: Long
   m_EditorClassIdentifier: 
-  floats: []
+  value: 0.25

@@ -6,7 +6,7 @@ using UnityEngine;
 public class FR_GetSnakeNumber : FloatRule
 {
 
-    protected override float Action(float input, PlayerManager player)
+    protected override float Action(PlayerManager player)
     {
         return player.Score.NumberOfSnakes;
     }
