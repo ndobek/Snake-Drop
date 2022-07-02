@@ -116,7 +116,7 @@ public class ScoreSaveData
     public int score;
     public int multiplier;
     public int numberOfSnakes;
-    public int scoreAtLastCrash
+    public int scoreAtLastCrash;
 
     public ScoreSaveData(ScoreManager SaveObj)
     {
