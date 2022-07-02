@@ -116,12 +116,14 @@ public class ScoreSaveData
     public int score;
     public int multiplier;
     public int numberOfSnakes;
+    public int scoreAtLastCrash
 
     public ScoreSaveData(ScoreManager SaveObj)
     {
         score = SaveObj.Score;
         multiplier = SaveObj.Multiplier;
         numberOfSnakes = SaveObj.numberOfSnakes;
+        scoreAtLastCrash = SaveObj.scoreAtLastCrash;
     }
 
     public void LoadTo(ScoreManager LoadObj)
@@ -129,6 +131,7 @@ public class ScoreSaveData
         LoadObj.Score = score;
         LoadObj.Multiplier = multiplier;
         LoadObj.numberOfSnakes = numberOfSnakes;
+        LoadObj.scoreAtLastCrash = scoreAtLastCrash;
     }
 }
 
