@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bd3250dde91e984ca21eb1cdd8190dc, type: 3}
+  m_Name: CollectionGhostMember
+  m_EditorClassIdentifier: 
+  TypeName: Collection Ghost Member
+  defaultMoveAnimator: {fileID: 11400000, guid: 23332f0fafefb3c419d44f2c79d052d7,
+    type: 2}
+  BlockFillAnimator: {fileID: 11400000, guid: fc0fb005ecd29b948a5e7814cdeb1dbf, type: 2}
+  EveryFrameAnimations: []
+  HighlightTail: 0
+  isPartOfSnake: 0
+  moveRules: []
+  killRules: []
+  breakRules:
+  - {fileID: 11400000, guid: 2966079c84ad76a4ea0d72cfa6c07812, type: 2}
+  - {fileID: 11400000, guid: 4a872cf92c97bfc4f8d6373090c51616, type: 2}
+  - {fileID: 11400000, guid: 98beb7ff43782ea4b9e64a5ed410723a, type: 2}
+  specialActionRules:
+  - {fileID: 11400000, guid: ce88bf423004c354dafb6444279f5ea1, type: 2}

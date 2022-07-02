@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bd3250dde91e984ca21eb1cdd8190dc, type: 3}
+  m_Name: SnakeMember
+  m_EditorClassIdentifier: 
+  TypeName: Snake Member
+  defaultMoveAnimator: {fileID: 11400000, guid: 23332f0fafefb3c419d44f2c79d052d7,
+    type: 2}
+  BlockFillAnimator: {fileID: 0}
+  EveryFrameAnimations: []
+  HighlightTail: 0
+  isPartOfSnake: 1
+  moveRules: []
+  killRules:
+  - {fileID: 11400000, guid: 3fa86c385cec3ee4e99f6fda90063626, type: 2}
+  - {fileID: 11400000, guid: 29adbe807d323654499414c9f2288c0c, type: 2}
+  - {fileID: 11400000, guid: d601699ce7bfa574eb0ac2b36188c62f, type: 2}
+  breakRules: []
+  specialActionRules: []

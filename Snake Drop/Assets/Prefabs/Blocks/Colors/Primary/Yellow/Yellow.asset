@@ -22,17 +22,9 @@ MonoBehaviour:
     Animator: {fileID: 11400000, guid: 8189ecf4147e5a14eb054977ca5a1c85, type: 2}
   - BlockType: {fileID: 11400000, guid: 1bb708f6f67e7844993159c157df7353, type: 2}
     Animator: {fileID: 11400000, guid: 1840cdbd1adb93544b188fe977f27d66, type: 2}
-  - BlockType: {fileID: 11400000, guid: 16024ba8efc0c5847a725e9453faf177, type: 2}
+  - BlockType: {fileID: 11400000, guid: 125d4cbe933a1b84bb49c1f30e143502, type: 2}
     Animator: {fileID: 11400000, guid: 261482d31192d7e4ca78ab4999b66c97, type: 2}
-  - BlockType: {fileID: 11400000, guid: d90fcc1025da6c64983c1dfcbf46ce6b, type: 2}
+  - BlockType: {fileID: 11400000, guid: c9dc9297c4765db4a821cb7eb4353feb, type: 2}
     Animator: {fileID: 11400000, guid: 8189ecf4147e5a14eb054977ca5a1c85, type: 2}
-  - BlockType: {fileID: 11400000, guid: cc74619ca7c94984c917b3df933aaf03, type: 2}
-    Animator: {fileID: 11400000, guid: 1840cdbd1adb93544b188fe977f27d66, type: 2}
-  - BlockType: {fileID: 11400000, guid: c64b8873830817d429023b61dc846e35, type: 2}
-    Animator: {fileID: 11400000, guid: 261482d31192d7e4ca78ab4999b66c97, type: 2}
-  - BlockType: {fileID: 11400000, guid: 80ca505de1b3dd84d8dd6c1586a07f69, type: 2}
-    Animator: {fileID: 11400000, guid: 8189ecf4147e5a14eb054977ca5a1c85, type: 2}
-  - BlockType: {fileID: 11400000, guid: c8498c90567bc164cb17b1fecc7b1b6e, type: 2}
-    Animator: {fileID: 11400000, guid: 1840cdbd1adb93544b188fe977f27d66, type: 2}
-  - BlockType: {fileID: 11400000, guid: 65936e9f00af11c4e86c4c3075e2c78a, type: 2}
+  - BlockType: {fileID: 11400000, guid: e5d9101e0db37c147b29bc0c48ee3ca0, type: 2}
     Animator: {fileID: 11400000, guid: 1840cdbd1adb93544b188fe977f27d66, type: 2}
