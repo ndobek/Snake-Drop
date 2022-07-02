@@ -55,10 +55,6 @@ public class ScoreManager : MonoBehaviour
     private float timeSinceAllScoresFinalized;
     public float maxTimeWithoutScoresFinalized = 10;
 
-    private void Awake()
-    {
-        ResetGame();
-    }
 
     public void ResetGame()
     {
