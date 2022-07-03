@@ -42,7 +42,7 @@ public class ArrowHandler : MonoBehaviour
     {
         TimeStep();
         Block snakeHead = player.SnakeHead;
-        transform.position = snakeHead.transform.position;
+        if(snakeHead) transform.position = snakeHead.transform.position;
         if (player.RoundInProgress)
         {
             if (leftSprite && snakeHead.CanMoveToWithoutCrashing(snakeHead.Neighbor(Directions.Direction.LEFT), player)) leftSprite.color = OpenColor; else leftSprite.color = BlockedColor;

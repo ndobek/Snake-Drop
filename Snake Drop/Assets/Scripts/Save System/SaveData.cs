@@ -17,9 +17,16 @@ public class SaveData
 
     public void LoadTo(GameManager LoadObj)
     {
-        Random.state = randState;
-        playerData.LoadTo(LoadObj.playerManagers[0], LoadObj);
-        LoadObj.boardRotator.RotateBoardToMatchEntrance();
+        try
+        {
+            Random.state = randState;
+            playerData.LoadTo(LoadObj.playerManagers[0], LoadObj);
+            LoadObj.boardRotator.RotateBoardToMatchEntrance();
+        }
+        catch {
+            Debug.Log("Failed to load save!");
+            GameManager.instance.StartGame();
+        }
     }
 }
 [System.Serializable]

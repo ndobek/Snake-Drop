@@ -33,8 +33,8 @@ public class PauseManager : MonoBehaviour
 
     void Start()
     {
-        SaveData autoSave = SaveManager.LoadAutoSave();    
-        if(autoSave != null) GameManager.instance.LoadGame(autoSave);
+        SaveData autoSave = SaveManager.LoadAutoSave();
+        if (autoSave != null) GameManager.instance.LoadGame(autoSave);
         Pause();
     }
 
