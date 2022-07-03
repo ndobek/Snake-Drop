@@ -100,6 +100,14 @@ public class ArrowHandler : MonoBehaviour
             down.SetActive(false);
         }
 
+        if (!player.RoundInProgress && !player.entranceManager.CheckForValidEntrancesToGrid(player, player.playGrid) && player.Powerup.currentPowerup != null)
+        {
+            left.SetActive(false);
+            right.SetActive(false);
+            up.SetActive(false);
+            down.SetActive(false);
+        }
+
 
     }
 

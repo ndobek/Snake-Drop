@@ -12,4 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cca800dfcea1af54ea1bd61df809d7a4, type: 3}
   m_Name: Test Powerup
   m_EditorClassIdentifier: 
-  terms: []
+  terms:
+  - floats:
+    - {fileID: 11400000, guid: 900cf7e0b012d9843adfd854a4d99ad3, type: 2}
+  - floats:
+    - {fileID: 11400000, guid: 32288f3ddbcc0f348bcfe9440b69b74a, type: 2}
+    - {fileID: 11400000, guid: d227f7af299481843bbc6f2f40d71e40, type: 2}

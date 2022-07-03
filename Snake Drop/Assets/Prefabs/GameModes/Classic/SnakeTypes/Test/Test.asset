@@ -16,5 +16,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5438ed90547356044a3c13328a354b08, type: 2}
   possibleBlockTypes:
   - {fileID: 11400000, guid: 7d50d8ff5e938a6439c218aa18290334, type: 2}
-  lengthRule: {fileID: 0}
-  entropyRule: {fileID: 0}
+  lengthRule: {fileID: 11400000, guid: 83eda22da06f5bc4f9e7178c4e491c98, type: 2}
+  entropyRule: {fileID: 11400000, guid: 6c70180b0977bbc4c949aebae841cca3, type: 2}
