@@ -6,6 +6,7 @@ Shader "Sprites/Pixelated"
     {
         _MainTex ("Texture", 2D) = "white" {}
         _PixelSize("Pixel Size", float) = 1
+        _Transparency("Transparency", Range(0.0, 1)) = 1
     }
     SubShader
     {
@@ -14,12 +15,15 @@ Shader "Sprites/Pixelated"
 
         Tags
         {
+            "RenderType" = "Transparent"
             "Queue" = "Transparent"
         }
+            ZWrite Off
+            Blend SrcAlpha OneMinusSrcAlpha
 
         Pass
         {
-            Blend SrcAlpha OneMinusSrcAlpha
+
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
@@ -50,12 +54,14 @@ Shader "Sprites/Pixelated"
 
             sampler2D _MainTex;
             float _PixelSize;
+            float _Transparency;
 
             fixed4 frag(v2f i) : SV_Target
             {
                 float pxSize = _PixelSize * unity_CameraProjection._m11  / _ScreenParams.x;
                 float3 adj = float3(i.uv.x % pxSize, i.uv.y % pxSize, i.uv.z % pxSize);
                 fixed4 col = tex2D(_MainTex, mul(unity_WorldToObject, i.uv - adj));
+                col.a = _Transparency;
                 return col;
             }
             ENDCG
