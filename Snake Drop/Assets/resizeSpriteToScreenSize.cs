@@ -6,6 +6,8 @@ using UnityEngine;
 public class resizeSpriteToScreenSize : MonoBehaviour
 {
     SpriteRenderer sr;
+    public bool keepAspect;
+
     private void Update()
     {
         Resize();
@@ -30,14 +32,23 @@ public class resizeSpriteToScreenSize : MonoBehaviour
         float worldScreenHeight = Camera.main.orthographicSize * 2f;
         float worldScreenWidth = worldScreenHeight / Screen.height * Screen.width;
 
-        Vector3 xWidth = transform.localScale;
-        xWidth.x = worldScreenWidth / width;
-        transform.localScale = xWidth;
-        //transform.localScale.x = worldScreenWidth / width;
-        Vector3 yHeight = transform.localScale;
-        yHeight.y = worldScreenHeight / height;
-        transform.localScale = yHeight;
-        //transform.localScale.y = worldScreenHeight / height;
+        Vector3 newScale = transform.localScale;
+
+        if(keepAspect)
+        {
+            newScale.x = (worldScreenWidth + Mathf.Abs(transform.localPosition.x) * 2) / width;
+            newScale.y = (worldScreenHeight + Mathf.Abs(transform.localPosition.y) * 2) / height;
+
+            newScale.x = Mathf.Max(newScale.y, newScale.x);
+            newScale.y = newScale.x;
+        }
+        else
+        {
+            newScale.x = worldScreenWidth / width;
+            newScale.y = worldScreenHeight / height;
+        }
+
+        transform.localScale = newScale;
 
     }
 }

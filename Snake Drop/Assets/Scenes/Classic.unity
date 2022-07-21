@@ -134,7 +134,6 @@ GameObject:
   - component: {fileID: 119740987}
   - component: {fileID: 119740990}
   - component: {fileID: 119740989}
-  - component: {fileID: 119740988}
   m_Layer: 7
   m_Name: BG.2
   m_TagString: Untagged
@@ -150,28 +149,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 119740986}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.46, z: 0}
-  m_LocalScale: {x: 2.4502525, y: 1.9047619, z: 1}
+  m_LocalPosition: {x: 8.2, y: -3, z: 15}
+  m_LocalScale: {x: 11.895105, y: 11.895105, z: 1}
   m_Children: []
-  m_Father: {fileID: 9134113235455257953}
-  m_RootOrder: 7
+  m_Father: {fileID: 9134113234542545701}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &119740988
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 119740986}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da00ab1c403406540a79ba6772e4d34a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  match: {fileID: 9134113234542545701}
-  matchLocationX: 1
-  matchLocationY: 1
-  matchLocationZ: 0
 --- !u!114 &119740989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,6 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb14dbe01a5d5cb42a408272843149b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keepAspect: 1
 --- !u!212 &119740990
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -203,7 +187,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2e02c89b2f742e24b83b7ce6993eb927, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -224,12 +208,12 @@ SpriteRenderer:
   m_SortingLayerID: 535991381
   m_SortingLayer: -14
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: f976bdfb29d395d40a493baf751e9aa6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 33a5ccac975ed4842b24b46142dcbaf1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 5.2, y: 2.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -307,7 +291,6 @@ GameObject:
   - component: {fileID: 1398340037}
   - component: {fileID: 1398340039}
   - component: {fileID: 1398340038}
-  - component: {fileID: 1398340040}
   m_Layer: 7
   m_Name: BG.1
   m_TagString: Untagged
@@ -323,11 +306,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1398340036}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.46, z: 0}
-  m_LocalScale: {x: 2.4502525, y: 1.9047619, z: 1}
+  m_LocalPosition: {x: 8.2, y: -3, z: 15}
+  m_LocalScale: {x: 11.895105, y: 11.895105, z: 1}
   m_Children: []
-  m_Father: {fileID: 9134113235455257953}
-  m_RootOrder: 8
+  m_Father: {fileID: 9134113234542545701}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1398340038
 MonoBehaviour:
@@ -341,6 +324,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb14dbe01a5d5cb42a408272843149b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keepAspect: 1
 --- !u!212 &1398340039
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -360,7 +344,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: cff3777f5fed3a2439ff3c7693845d41, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -381,33 +365,17 @@ SpriteRenderer:
   m_SortingLayerID: 535991381
   m_SortingLayer: -14
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: f976bdfb29d395d40a493baf751e9aa6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 33a5ccac975ed4842b24b46142dcbaf1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 5.2, y: 2.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 2
   m_SpriteSortPoint: 0
---- !u!114 &1398340040
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1398340036}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da00ab1c403406540a79ba6772e4d34a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  match: {fileID: 9134113234542545701}
-  matchLocationX: 1
-  matchLocationY: 1
-  matchLocationZ: 0
 --- !u!114 &1989607184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3282,7 +3250,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f976bdfb29d395d40a493baf751e9aa6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d87ef5177fd5eec4ea165f43abdd66ee, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -24773,7 +24741,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 9134113235455257953}
-  m_RootOrder: 9
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -45323,7 +45291,7 @@ RectTransform:
   m_Children:
   - {fileID: 9065611410638814584}
   m_Father: {fileID: 9134113235455257953}
-  m_RootOrder: 10
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -55006,7 +54974,9 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -3.46, z: -15}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 119740987}
+  - {fileID: 1398340037}
   m_Father: {fileID: 9134113235455257953}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -55124,8 +55094,6 @@ Transform:
   - {fileID: 8974657309751453472}
   - {fileID: 850398990827477334}
   - {fileID: 331387446126247322}
-  - {fileID: 119740987}
-  - {fileID: 1398340037}
   - {fileID: 5021279439464079656}
   - {fileID: 6717056305236661802}
   m_Father: {fileID: 0}
