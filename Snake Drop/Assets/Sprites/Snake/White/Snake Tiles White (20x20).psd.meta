@@ -1,22 +1,10 @@
 fileFormatVersion: 2
-guid: c4a29683cf0cbaa44a85a25f06da46c9
+guid: a53cee6bd85be044c85756a78d1ba46c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1303383988992024559
-    second: Simple Meld Highlight - Gray_0
-  - first:
-      213: 4416178410540613807
-    second: Simple Meld Highlight - Gray_1
-  - first:
-      213: -7590788743287042345
-    second: Simple Meld Highlight - Gray_2
-  - first:
-      213: 6196914393149692237
-    second: Simple Meld Highlight - Gray
-  - first:
-      213: -630935260546662872
-    second: Simple Meld Highlight - Gray_4
+      213: 2058390268321911192
+    second: Snake Tiles White
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -142,22 +130,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Simple Meld Highlight - Gray
+      name: Snake Tiles White
       rect:
         serializedVersion: 2
-        x: 80
+        x: 20
         y: 0
-        width: 40
-        height: 40
-      alignment: 9
-      pivot: {x: 0.75, y: 0.75}
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d495133deccdff550800000000000000
-      internalID: 6196914393149692237
+      spriteID: 891d2701b0fd09c10800000000000000
+      internalID: 2058390268321911192
       vertices: []
       indices: 
       edges: []

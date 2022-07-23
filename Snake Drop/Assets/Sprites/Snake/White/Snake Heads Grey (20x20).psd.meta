@@ -1,22 +1,67 @@
 fileFormatVersion: 2
-guid: c4a29683cf0cbaa44a85a25f06da46c9
+guid: 9e963ac770a6770408c434c1d5839e53
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1303383988992024559
-    second: Simple Meld Highlight - Gray_0
+      213: 8080994296595347748
+    second: 20x20 Snake Heads - Gray_0
   - first:
-      213: 4416178410540613807
-    second: Simple Meld Highlight - Gray_1
+      213: 8583109174924769867
+    second: 20x20 Snake Heads - Gray_1
   - first:
-      213: -7590788743287042345
-    second: Simple Meld Highlight - Gray_2
+      213: 2723229639207888518
+    second: 20x20 Snake Heads - Gray_2
   - first:
-      213: 6196914393149692237
-    second: Simple Meld Highlight - Gray
+      213: 1817894584804494755
+    second: 20x20 Snake Heads - Gray_Down
   - first:
-      213: -630935260546662872
-    second: Simple Meld Highlight - Gray_4
+      213: 3299461604783497198
+    second: 20x20 Snake Heads - Gray_4
+  - first:
+      213: 3328915513764255328
+    second: 20x20 Snake Heads - Gray_5
+  - first:
+      213: -5605955239819684136
+    second: 20x20 Snake Heads - Gray_6
+  - first:
+      213: -3832448738896801897
+    second: 20x20 Snake Heads - Gray_7
+  - first:
+      213: 984189733668283934
+    second: 20x20 Snake Heads - Gray_Right
+  - first:
+      213: -9175801567421360897
+    second: 20x20 Snake Heads - Gray_9
+  - first:
+      213: 1860339608502697460
+    second: 20x20 Snake Heads - Gray_10
+  - first:
+      213: 8545589912933469380
+    second: 20x20 Snake Heads - Gray_11
+  - first:
+      213: 3062166739262847116
+    second: 20x20 Snake Heads - Gray_12
+  - first:
+      213: -3575123727840569518
+    second: 20x20 Snake Heads - Gray_Up
+  - first:
+      213: -19444848689541266
+    second: 20x20 Snake Heads - Gray_14
+  - first:
+      213: 8859155794037088852
+    second: 20x20 Snake Heads - Gray_15
+  - first:
+      213: -8003788049260539255
+    second: 20x20 Snake Heads - Gray_16
+  - first:
+      213: 8909106265053938681
+    second: 20x20 Snake Heads - Gray_17
+  - first:
+      213: 900680316403021384
+    second: 20x20 Snake Heads - Gray_Left
+  - first:
+      213: -7962855479432316454
+    second: 20x20 Snake Heads - Gray_19
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -48,8 +93,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: 1
-    mipBias: 0
+    aniso: -1
+    mipBias: -100
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -70,8 +115,6 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
-  flipbookRows: 1
-  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
@@ -142,22 +185,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Simple Meld Highlight - Gray
+      name: 20x20 Snake Heads - Gray_Down
       rect:
         serializedVersion: 2
-        x: 80
-        y: 0
-        width: 40
-        height: 40
-      alignment: 9
-      pivot: {x: 0.75, y: 0.75}
+        x: 60
+        y: 60
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d495133deccdff550800000000000000
-      internalID: 6196914393149692237
+      spriteID: 3adc0664e757a3910800000000000000
+      internalID: 1817894584804494755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20x20 Snake Heads - Gray_Right
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 40
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1662ea295b88ad00800000000000000
+      internalID: 984189733668283934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20x20 Snake Heads - Gray_Up
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 20
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2571efd49eb926ec0800000000000000
+      internalID: -3575123727840569518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20x20 Snake Heads - Gray_Left
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 0
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 846736bc9fbdf7c00800000000000000
+      internalID: 900680316403021384
       vertices: []
       indices: 
       edges: []

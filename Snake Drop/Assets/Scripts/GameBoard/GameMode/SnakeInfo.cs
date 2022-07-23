@@ -10,11 +10,11 @@ public class SnakeInfo
 
     public BlockColor GetRandomColor()
     {
-        return(possibleColors[Random.Range(0,possibleColors.Length - 1)]);
+        return(possibleColors[Random.Range(0,possibleColors.Length)]);
     }
 
     public BlockType GetRandomType()
     {
-        return (possibleTypes[Random.Range(0, possibleTypes.Length - 1)]);
+        return (possibleTypes[Random.Range(0, possibleTypes.Length)]);
     }
 }
