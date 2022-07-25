@@ -13,12 +13,13 @@ MonoBehaviour:
   m_Name: Orange
   m_EditorClassIdentifier: 
   ColorName: Purple
-  defaultAnimator: {fileID: 11400000, guid: 9d9d0653f1fb0ba4598f30787072ae6e, type: 2}
+  CheckForBGOverride: 0
+  defaultAnimator: {fileID: 11400000, guid: 98c2e5ec8030c474189e9d06d32d56f0, type: 2}
   deathParticleColor: {r: 0.7294118, g: 0.45490196, b: 0.972549, a: 1}
   animatorInfos:
   - BlockType: {fileID: 11400000, guid: 5c7e6b4afee2d5e44ac32eecd7a8699e, type: 2}
-    Animator: {fileID: 11400000, guid: 81f3c22318e5b2b4da2c472a8e02ded6, type: 2}
+    Animator: {fileID: 11400000, guid: 7118842ef1563a14eb3931505ad5aa45, type: 2}
   - BlockType: {fileID: 11400000, guid: e6b2ec42c7e382244ae39199d03b8ae6, type: 2}
-    Animator: {fileID: 11400000, guid: 411447b12d1b4ae409ad1556a61a33b3, type: 2}
+    Animator: {fileID: 11400000, guid: 6805d3a5df9efac43a221d88d6e5685c, type: 2}
   - BlockType: {fileID: 11400000, guid: 1bb708f6f67e7844993159c157df7353, type: 2}
-    Animator: {fileID: 11400000, guid: 9d062c1713da38f42a1fe07b8de42902, type: 2}
+    Animator: {fileID: 11400000, guid: 7fd11d1928d551941af2c156a7dd8e55, type: 2}

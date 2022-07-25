@@ -13,12 +13,13 @@ MonoBehaviour:
   m_Name: Yellow
   m_EditorClassIdentifier: 
   ColorName: Purple
-  defaultAnimator: {fileID: 11400000, guid: 9d9d0653f1fb0ba4598f30787072ae6e, type: 2}
+  CheckForBGOverride: 0
+  defaultAnimator: {fileID: 11400000, guid: 19b37de6ecf4c1c4fb13a373f5641eeb, type: 2}
   deathParticleColor: {r: 0.7294118, g: 0.45490196, b: 0.972549, a: 1}
   animatorInfos:
   - BlockType: {fileID: 11400000, guid: 5c7e6b4afee2d5e44ac32eecd7a8699e, type: 2}
-    Animator: {fileID: 11400000, guid: 81f3c22318e5b2b4da2c472a8e02ded6, type: 2}
+    Animator: {fileID: 11400000, guid: ddba51c025e1ee94888cc214bd949f78, type: 2}
   - BlockType: {fileID: 11400000, guid: e6b2ec42c7e382244ae39199d03b8ae6, type: 2}
-    Animator: {fileID: 11400000, guid: 411447b12d1b4ae409ad1556a61a33b3, type: 2}
+    Animator: {fileID: 11400000, guid: 222608a1192fd5f40ac7ea25d7e2cdce, type: 2}
   - BlockType: {fileID: 11400000, guid: 1bb708f6f67e7844993159c157df7353, type: 2}
-    Animator: {fileID: 11400000, guid: 9d062c1713da38f42a1fe07b8de42902, type: 2}
+    Animator: {fileID: 11400000, guid: 75d467a44dd07874fb4600f82ae9016d, type: 2}
