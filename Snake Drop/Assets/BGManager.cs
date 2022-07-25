@@ -46,7 +46,7 @@ public class BGManager : MonoBehaviour
     {
         foreach (ColorOverride ColorObj in ActiveBG.ColorOverrides)
         {
-            if (ColorObj.Overridden == blockColor) return ColorObj.Override.GetAnimator(blockType, false);
+            if (ColorObj.Overridden == blockColor && ColorObj.Override != null) return ColorObj.Override.GetAnimator(blockType, false);
         }        
         return null;
     }
@@ -55,7 +55,7 @@ public class BGManager : MonoBehaviour
     {
         foreach (ColorOverride ColorObj in ActiveBG.ColorOverrides)
         {
-            if (ColorObj.Overridden == blockColor) return ColorObj.Override.deathParticleColor;
+            if (ColorObj.Overridden == blockColor && ColorObj.Override != null) return ColorObj.Override.deathParticleColor;
         }        
         return blockColor.deathParticleColor;
 
