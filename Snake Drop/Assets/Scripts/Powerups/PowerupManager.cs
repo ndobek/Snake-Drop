@@ -33,8 +33,6 @@ public class PowerupManager : MonoBehaviour
     {
         if (currentPowerup == null) currentPowerup = powerup;
         else extraPowerups += 1;
-
-        numOfPowerupsObtained += 1;
     }
 
     public void TryActivate()
@@ -60,6 +58,7 @@ public class PowerupManager : MonoBehaviour
         if (ProgressToNextPowerup() >= 1)
         {
             GetPowerUp();
+            numOfPowerupsObtained += 1;
             currentProgress -= nextPowerupScoreDiff;
             GetNextPowerupScore();
         }

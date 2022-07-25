@@ -10,7 +10,7 @@ public class R_BlockBreakParticleRule : Rule
     protected override void Action(Block block, PlayerManager player = null)
     {
         BlockCollection collection = block.BlockCollection;
-        Color color = block.blockColor.deathParticleColor;
+        Color color = block.blockColor.GetDeathParticleColor();
         if (collection != null && particlesOnCollectionBreak)
         {
             Vector3 pos = collection.WorldPosition();

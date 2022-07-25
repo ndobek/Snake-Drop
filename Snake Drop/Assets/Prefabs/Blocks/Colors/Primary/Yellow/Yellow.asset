@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Yellow
   m_EditorClassIdentifier: 
   ColorName: Yellow
+  CheckForBGOverride: 1
   defaultAnimator: {fileID: 11400000, guid: b3d6a37532061d64796533b546e6824e, type: 2}
   deathParticleColor: {r: 1, g: 0.7490196, b: 0.43529415, a: 1}
   animatorInfos:

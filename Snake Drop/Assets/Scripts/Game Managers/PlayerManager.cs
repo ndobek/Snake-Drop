@@ -121,6 +121,7 @@ public class PlayerManager : MonoBehaviour
     }
     public void FillPreviewBar()
     {
+        previewGrid.UpdateAllSprites();
         ShufflePreviewBar();
         while ((startSlot.Blocks.Count == 0 | waitSlot.Block == null) && !StopMakingSnakes)
         {

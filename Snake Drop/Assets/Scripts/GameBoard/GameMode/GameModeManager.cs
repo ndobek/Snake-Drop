@@ -10,12 +10,11 @@ public class GameModeManager : MonoBehaviour
 
     public GameMode GameMode;
     [HideInInspector]
-    public BlockColor[] PossibleColors;
-
-    private void Awake()
+    public BlockColor[] PossibleColors
     {
-        PossibleColors = GameMode.GetAllPossibleColors();
+        get { return GameMode.GetAllPossibleColors(); }
     }
+
 
 
     public SnakeInfo GetSnakeInfo()

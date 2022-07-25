@@ -10,6 +10,6 @@ public class SetColor : MonoBehaviour, INeedBlockInfo
     public void SetBlock(Block block)
     {
         var main = ps.main;
-        main.startColor = block.blockColor.deathParticleColor; 
+        main.startColor = block.blockColor.GetDeathParticleColor(); 
     }
 }

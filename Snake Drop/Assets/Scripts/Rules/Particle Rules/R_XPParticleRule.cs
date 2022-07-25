@@ -14,7 +14,7 @@ public class R_XPParticleRule : Rule
     {
 
         BlockCollection collection = block.BlockCollection;
-        Color color = block.blockColor.deathParticleColor;
+        Color color = block.blockColor.GetDeathParticleColor();
          int numParticles()
         {
             if (particlesReflectScore)

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Blue
   m_EditorClassIdentifier: 
   ColorName: Blue
+  CheckForBGOverride: 1
   defaultAnimator: {fileID: 11400000, guid: 2bb0fb2c33eda2c4abf4d84c464ea515, type: 2}
   deathParticleColor: {r: 0.3803922, g: 0.627451, b: 0.8196079, a: 1}
   animatorInfos:
