@@ -23,5 +23,5 @@ MonoBehaviour:
   RightSprite: {fileID: -2585415446867205490, guid: 98cc0f86d6fc9c44c9f8f02cffd7c964,
     type: 3}
   HighlightTail: 1
-  color: {r: 0.7294118, g: 0.45490196, b: 0.972549, a: 1}
+  color: {r: 0.7019608, g: 0.32156864, b: 0.44705883, a: 1}
   sortingOrder: 0

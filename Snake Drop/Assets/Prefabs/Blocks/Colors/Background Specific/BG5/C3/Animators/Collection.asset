@@ -32,6 +32,6 @@ MonoBehaviour:
     type: 3}
   bottomRightBlockSprite: {fileID: 7082838352296443666, guid: ac57f2e9729b64846ab6e9767bc17c4d,
     type: 3}
-  color: {r: 0.7294118, g: 0.45490196, b: 0.972549, a: 1}
+  color: {r: 0.92941177, g: 0.5372549, b: 0.3529412, a: 1}
   sortingOrder: 0
   highlightSortingOrder: 1

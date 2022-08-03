@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40021cae352ce664488076a625cf3512, type: 3}
   m_Name: Orange
   m_EditorClassIdentifier: 
-  ColorName: Purple
+  ColorName: Orange
   CheckForBGOverride: 0
   defaultAnimator: {fileID: 11400000, guid: cf6423410d9677143bb80b361a130bf9, type: 2}
-  deathParticleColor: {r: 0.7294118, g: 0.45490196, b: 0.972549, a: 1}
+  deathParticleColor: {r: 0.92941177, g: 0.5372549, b: 0.3529412, a: 1}
   animatorInfos:
   - BlockType: {fileID: 11400000, guid: 5c7e6b4afee2d5e44ac32eecd7a8699e, type: 2}
     Animator: {fileID: 11400000, guid: f56e491d1e96ee1489eb8f52fa6adb58, type: 2}

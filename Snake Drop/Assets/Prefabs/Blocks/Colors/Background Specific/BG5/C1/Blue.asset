@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40021cae352ce664488076a625cf3512, type: 3}
   m_Name: Blue
   m_EditorClassIdentifier: 
-  ColorName: Purple
+  ColorName: Blue
   CheckForBGOverride: 0
   defaultAnimator: {fileID: 11400000, guid: bfb09030651002f4cb4524ff0b7eeb96, type: 2}
-  deathParticleColor: {r: 0.7294118, g: 0.45490196, b: 0.972549, a: 1}
+  deathParticleColor: {r: 0.5764706, g: 0.75686276, b: 0.8901961, a: 1}
   animatorInfos:
   - BlockType: {fileID: 11400000, guid: 5c7e6b4afee2d5e44ac32eecd7a8699e, type: 2}
     Animator: {fileID: 11400000, guid: 46b4c58a6f245144289d1475ac6ded5a, type: 2}

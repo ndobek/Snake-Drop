@@ -15,5 +15,5 @@ MonoBehaviour:
   AnimationConcurrent: 0
   AnimationTotalTime: 0
   sprite: {fileID: 21300000, guid: a53cee6bd85be044c85756a78d1ba46c, type: 3}
-  color: {r: 0.7301746, g: 0.45376468, b: 0.9716981, a: 1}
+  color: {r: 1, g: 0.8196079, b: 0.5294118, a: 1}
   sortingOrder: 0
