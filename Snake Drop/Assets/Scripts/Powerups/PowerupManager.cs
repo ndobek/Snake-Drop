@@ -41,6 +41,7 @@ public class PowerupManager : MonoBehaviour
         {
             GameManager.instance.playerManagers[0].Score.UpdateScore();
             currentPowerup.Activate();
+            BGManager.inst.BGBlurred = false;
             numOfPowerupsUsed += 1;
             currentPowerup = null;
             if (extraPowerups > 0)

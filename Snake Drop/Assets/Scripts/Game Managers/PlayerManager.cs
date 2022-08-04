@@ -61,6 +61,7 @@ public class PlayerManager : MonoBehaviour
         if (OnCrash != null) OnCrash.Invoke(snakeHead, this);
         Score.OnCrash();
         RoundInProgress = false;
+        BGManager.inst.BGBlurred = true;
         p_OnCrash.End();
     }
 
@@ -178,6 +179,7 @@ public class PlayerManager : MonoBehaviour
         playGrid.ClearGrid();
         previewGrid.ClearGrid();
         PositionWaitSlot(entranceManager.StartingSlot);
+        BGManager.inst.BGBlurred = false;
         GameInProgress = true;
         RoundInProgress = false;
         GameOver = false;

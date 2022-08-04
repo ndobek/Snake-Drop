@@ -219,38 +219,18 @@ public class PlayGrid : MonoBehaviour
         return EmptyBlockSlots(0, XSize, 0, ySize);
     }
 
-    //public GridSaveData Save(SaveData save)
-    //{
-    //    List<BlockSlotSaveData> BlockSlotSaveData = new List<BlockSlotSaveData>();
-    //    foreach (BlockSlot slot in slots) BlockSlotSaveData.Add(slot.Save(save));
-
-    //    return new GridSaveData()
-    //    {
-    //        BlockSlotData = BlockSlotSaveData
-    //    };
-        
-    //}
-
-    //public void Load(GridSaveData save)
-    //{
-    //    ClearGrid();
-    //    foreach(BlockSlotSaveData slotData in save.BlockSlotData)
-    //    {
-    //        GetSlot(slotData.x, slotData.y).Load(slotData);
-    //    }
-
-    //    foreach (BlockSlotSaveData slotData in save.BlockSlotData)
-    //    {
-    //        foreach(BlockSaveData blockData in slotData.BlockData)
-    //        {
-    //            if (blockData.tail)
-    //            {
-    //                PlayGrid tailGrid = blockData.tailOnLoadGrid ? GameManager.instance.playerManagers[0].previewGrid : GameManager.instance.playerManagers[0].playGrid;
-    //                GetSlot(slotData.x, slotData.y).Blocks[blockData.index].Tail = tailGrid.GetSlot(blockData.tailX, blockData.tailY).Blocks[blockData.tailI];
-    //            }
-    //        }
-    //    }
-
-    //}
-
+    public bool ContainsBlockType(BlockType[] types)
+    {
+        foreach(BlockSlot slot in slots)
+        {
+            foreach(Block block in slot.Blocks)
+            {
+                foreach (BlockType type in types)
+                {
+                    if (block.blockType == type) return true;
+                }
+            }
+        }
+        return false;
+    }
 }

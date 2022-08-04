@@ -10,7 +10,8 @@ public class BGManager : MonoBehaviour
     [System.Serializable]
     public struct BGSettings
     {
-        public GameObject BGObject;
+        public SpriteRenderer BGRenderer;
+        public SpriteRenderer BlurredBGRenderer;
         public ColorOverride[] ColorOverrides;
     }
     [System.Serializable]
@@ -30,13 +31,22 @@ public class BGManager : MonoBehaviour
     {
         get { return activeBGIndex; }
         set {
-            SnapTo(ActiveBG);
-            StartCoroutine(Fade(ActiveBG, false));
+            SnapTo(ActiveBG, false);
+            Fade(ActiveBG, false);
             activeBGIndex = value;
-            StartCoroutine(Fade(ActiveBG, true));
+            Fade(ActiveBG, true);
         }
     }
-
+    private bool bgBlurred;
+    public bool BGBlurred
+    {
+        get { return bgBlurred; }
+        set
+        {
+            if(value != bgBlurred) StartCoroutine(Fade(ActiveBG.BlurredBGRenderer, value));
+            bgBlurred = value;
+        }
+    }
     public BGSettings[] backgrounds;
     public float fadeTime;
     public BGSettings ActiveBG
@@ -66,36 +76,35 @@ public class BGManager : MonoBehaviour
     private void Update()
     {
         PlayerManager p = GameManager.instance.playerManagers[0];
+
         int i = p.Powerup.numOfPowerupsUsed;
         if (i != ActiveBGIndex) ActiveBGIndex = i;
+
         p.playGrid.UpdateAllSprites();
         p.previewGrid.UpdateAllSprites();
     }
 
-    private IEnumerator Fade(BGSettings BG, bool inOut)
+    private IEnumerator Fade(SpriteRenderer BGRenderer, bool inOut)
     {
-        SpriteRenderer[] BGRenderers = BG.BGObject.GetComponentsInChildren<SpriteRenderer>();
         float startTime = Time.time;
         float percentageComplete;
+        Color c = BGRenderer.color;
+        float startingAlpha = c.a;
 
         while (true)
         {
             percentageComplete = (Time.time - startTime) / fadeTime;
 
-            foreach(SpriteRenderer renderer in BGRenderers)
-            {
-                Color c = renderer.color;
-                if (inOut)
-                {
-                    c.a = Mathf.Clamp(percentageComplete, 0, 1);
-                }
-                else
-                {
-                    c.a = Mathf.Clamp(1 - percentageComplete, 0, 1);
-                }
-                renderer.color = c;
 
+            if (inOut)
+            {
+                c.a = Mathf.Clamp(percentageComplete, startingAlpha, 1);
             }
+            else
+            {
+                c.a = Mathf.Clamp(1 - percentageComplete, 0, startingAlpha);
+            }
+            BGRenderer.color = c;
 
             if(percentageComplete >= 1) 
             { 
@@ -106,26 +115,31 @@ public class BGManager : MonoBehaviour
         }
     }
 
-    private void SnapTo(BGSettings BG)
+    private void Fade(BGSettings BG, bool inOut)
     {
-        foreach(BGSettings background in backgrounds)
-        {
-            SpriteRenderer[] BGRenderers = background.BGObject.GetComponentsInChildren<SpriteRenderer>();
-            foreach (SpriteRenderer renderer in BGRenderers)
-            {
-                Color c = renderer.color;
-                if (background.BGObject == BG.BGObject)
-                {
-                    c.a = 1;
-                }
-                else
-                {
-                    c.a = 0;
-                }
-                renderer.color = c;
+        StartCoroutine(Fade(BG.BGRenderer, inOut));
+        StartCoroutine(Fade(BG.BlurredBGRenderer, BGBlurred));
+    }
 
+    private void SnapTo(BGSettings BG, bool SnapBlur = true)
+    {
+        StopAllCoroutines();
+        foreach (BGSettings background in backgrounds)
+        {
+            Color c = background.BGRenderer.color;
+            if (background.BGRenderer == BG.BGRenderer)
+            {
+                c.a = 1;
             }
+            else
+            {
+                c.a = 0;
+            }
+            background.BGRenderer.color = c;
+            if(SnapBlur) background.BlurredBGRenderer.color = c;
 
         }
     }
+
+
 }
