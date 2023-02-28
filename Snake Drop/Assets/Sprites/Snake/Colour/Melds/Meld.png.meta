@@ -153,7 +153,7 @@ TextureImporter:
       213: -4103229108431493171
     second: Blue Meld Bottom Right
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -174,6 +174,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -183,8 +184,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -205,11 +206,14 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -283,6 +287,18 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -302,7 +318,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 2f4e899287f11d9e0800000000000000
-      internalID: -1598461791785392910
+      internalID: 1083371224909827885
       vertices: []
       indices: 
       edges: []
@@ -323,7 +339,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 15c746c67600d0a40800000000000000
-      internalID: 5335921577704062033
+      internalID: -7894441835979454406
       vertices: []
       indices: 
       edges: []
@@ -344,7 +360,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 82ea62198ae1df790800000000000000
-      internalID: -7494800495536067032
+      internalID: 4684970329225921195
       vertices: []
       indices: 
       edges: []
@@ -365,7 +381,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: be6780291771bc790800000000000000
-      internalID: -7508882177161398549
+      internalID: 4701543148912994629
       vertices: []
       indices: 
       edges: []
@@ -386,7 +402,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: ce449b36e782bc370800000000000000
-      internalID: 8343807257938052332
+      internalID: -6275167647628710455
       vertices: []
       indices: 
       edges: []
@@ -1243,6 +1259,52 @@ TextureImporter:
     secondaryTextures:
     - texture: {fileID: 2800000, guid: e503a415ca50f104c800eb1399262617, type: 3}
       name: _NormalMap
+    nameFileIdTable:
+      Blue Meld Bottom: -616687247840799536
+      Blue Meld Bottom Left: -2559894031314033030
+      Blue Meld Bottom Right: -4103229108431493171
+      Blue Meld Center: 689545277611991719
+      Blue Meld Left: 1127582697766700823
+      Blue Meld Right: -8669486576013865587
+      Blue Meld Top: -9067090967895678046
+      Blue Meld Top Left: 3639222807772194865
+      Green Meld Bottom: -4265741918430816486
+      Green Meld Bottom Left: -6734773643183520744
+      Green Meld Bottom Right: 4055174397896116254
+      Green Meld Center: -5937467067828997663
+      Green Meld Left: 6400670706616439544
+      Green Meld Right: 8651058686861577569
+      Green Meld Top: -6275167647628710455
+      Green Meld Top Left: 4701543148912994629
+      Meld_11: 5734994063909601317
+      Meld_14: 734026480914132364
+      Meld_2: 4684970329225921195
+      Meld_5: -1521221639363132110
+      Meld_8: 5015346966938653810
+      Orange Meld Bottom: 7047194193229267231
+      Orange Meld Bottom Left: -4276923989154960227
+      Orange Meld Bottom Right: 2281838150571612472
+      Orange Meld Center: -2386609651683411001
+      Orange Meld Left: 2036703290531569634
+      Orange Meld Right: 3081773256858935537
+      Orange Meld Top: 6660769375084159091
+      Orange Meld Top Left: 140171750511629836
+      Red Meld Bottom: 6122835424328933568
+      Red Meld Bottom Left: 9034765042899066440
+      Red Meld Bottom Right: -3985533165059127652
+      Red Meld Center: 2938795732541486512
+      Red Meld Left: -60817252860779793
+      Red Meld Right: 2515138529005827590
+      Red Meld Top: -7894441835979454406
+      Red Meld Top Left: 1083371224909827885
+      Yellow Meld Bottom: 5185791688912790290
+      Yellow Meld Bottom Left: -3555928212438000643
+      Yellow Meld Bottom Right: -7177662819570259224
+      Yellow Meld Center: -2743052241509395544
+      Yellow Meld Left: -826038392414840514
+      Yellow Meld Right: -7067366089468093124
+      Yellow Meld Top: -3185747635148731970
+      Yellow Meld Top Left: -2663223252744058891
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

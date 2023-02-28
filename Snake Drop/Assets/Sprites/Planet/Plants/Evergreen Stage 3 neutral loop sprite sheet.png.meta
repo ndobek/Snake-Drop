@@ -24,7 +24,7 @@ TextureImporter:
       213: -7420069515910181940
     second: Evergreen Stage 3 neutral loop sprite sheet_3
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -45,6 +45,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -54,8 +55,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -76,11 +77,14 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -154,6 +158,18 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -173,7 +189,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 2388d0c9e738f5b50800000000000000
-      internalID: 6584125760046204978
+      internalID: 1118277350873407741
       vertices: []
       indices: 
       edges: []
@@ -194,7 +210,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: c584a2a0e3fa9a230800000000000000
-      internalID: 3650641653953874012
+      internalID: -2130433747661312848
       vertices: []
       indices: 
       edges: []
@@ -215,7 +231,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: d268a2d0a6b5aa1e0800000000000000
-      internalID: -2185834158089402835
+      internalID: -1908076583857695027
       vertices: []
       indices: 
       edges: []
@@ -251,6 +267,11 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Evergreen Stage 3 neutral loop sprite sheet_0: 1118277350873407741
+      Evergreen Stage 3 neutral loop sprite sheet_1: -2130433747661312848
+      Evergreen Stage 3 neutral loop sprite sheet_2: -1908076583857695027
+      Evergreen Stage 3 neutral loop sprite sheet_3: -7420069515910181940
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

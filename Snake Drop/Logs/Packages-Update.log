@@ -112,3 +112,24 @@ The following packages were updated:
   com.unity.ide.visualstudio from version 2.0.9 to 2.0.11
   com.unity.render-pipelines.universal from version 10.5.0 to 10.5.1
   com.unity.test-framework from version 1.1.26 to 1.1.27
+
+=== Mon Feb 27 20:11:08 2023
+
+Packages were changed.
+Update Mode: updateDependencies
+
+The following packages were updated:
+  com.unity.2d.pixel-perfect from version 4.0.1 to 5.0.3
+  com.unity.ads from version 3.7.1 to 3.7.5
+  com.unity.analytics from version 3.5.3 to 3.6.12
+  com.unity.collab-proxy from version 1.7.1 to 2.0.0
+  com.unity.ide.rider from version 2.0.7 to 3.0.18
+  com.unity.ide.visualstudio from version 2.0.11 to 2.0.17
+  com.unity.ide.vscode from version 1.2.3 to 1.2.5
+  com.unity.purchasing from version 3.2.2 to 4.5.2
+  com.unity.render-pipelines.universal from version 10.5.1 to 12.1.10
+  com.unity.test-framework from version 1.1.27 to 1.1.31
+  com.unity.timeline from version 1.4.8 to 1.6.4
+The following packages were removed:
+  com.unity.device-simulator@3.0.3-preview
+  com.unity.quicksearch@2.0.2

@@ -135,7 +135,7 @@ TextureImporter:
       213: -6123277571893891185
     second: Pine Sprite Sheet Stage 2_21
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -156,6 +156,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -165,8 +166,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -187,11 +188,14 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -265,6 +269,18 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -284,7 +300,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 5df0c32e1b5324b80800000000000000
-      internalID: -8412102115853594667
+      internalID: 2633090797242240145
       vertices: []
       indices: 
       edges: []
@@ -305,7 +321,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: e10b169ddbe5121e0800000000000000
-      internalID: -2224392571455426530
+      internalID: 8269713923751260549
       vertices: []
       indices: 
       edges: []
@@ -326,7 +342,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: a2279663160e8efe0800000000000000
-      internalID: -1159430195918573014
+      internalID: -1501895980171082306
       vertices: []
       indices: 
       edges: []
@@ -347,7 +363,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 385ed4fac8c1ad470800000000000000
-      internalID: 8420073843884680579
+      internalID: -2872922423040623234
       vertices: []
       indices: 
       edges: []
@@ -368,7 +384,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 98efbecb4d3f1b670800000000000000
-      internalID: 8552885262381481609
+      internalID: 5182767906289723953
       vertices: []
       indices: 
       edges: []
@@ -389,7 +405,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 39735b860ac55a030800000000000000
-      internalID: 3505309728999028627
+      internalID: -6657350650548021757
       vertices: []
       indices: 
       edges: []
@@ -410,7 +426,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: b244913d39ec8c080800000000000000
-      internalID: -9166849907215481813
+      internalID: 8642585598923661200
       vertices: []
       indices: 
       edges: []
@@ -431,7 +447,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: dfeaed82a04a0fa50800000000000000
-      internalID: 6552917821366382333
+      internalID: 1390298772217209716
       vertices: []
       indices: 
       edges: []
@@ -452,7 +468,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 8223513db7fd59200800000000000000
-      internalID: 186300682521096744
+      internalID: 6120949761919740571
       vertices: []
       indices: 
       edges: []
@@ -473,7 +489,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: cd7ccffb94a6eb180800000000000000
-      internalID: -9097717332255651876
+      internalID: 449212864096586533
       vertices: []
       indices: 
       edges: []
@@ -494,7 +510,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 40420064cdc070ca0800000000000000
-      internalID: -6050853434142219260
+      internalID: 4724986834092739292
       vertices: []
       indices: 
       edges: []
@@ -515,7 +531,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 43f8ecebb48fa63c0800000000000000
-      internalID: -4365403884574830796
+      internalID: 8418628172562399116
       vertices: []
       indices: 
       edges: []
@@ -536,7 +552,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: b2fb5886a135138b0800000000000000
-      internalID: -5174263123984138453
+      internalID: 5468665331871260694
       vertices: []
       indices: 
       edges: []
@@ -557,7 +573,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 2b2849f81070270c0800000000000000
-      internalID: -4579590167797136718
+      internalID: 5775875101470189854
       vertices: []
       indices: 
       edges: []
@@ -578,7 +594,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 1430598d1d1ce21c0800000000000000
-      internalID: -4526467468434799807
+      internalID: 8438157295134230710
       vertices: []
       indices: 
       edges: []
@@ -599,7 +615,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 77defdec58c98db00800000000000000
-      internalID: 853604227902074231
+      internalID: -7685065280996950937
       vertices: []
       indices: 
       edges: []
@@ -620,7 +636,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: a75359f7175f95ac0800000000000000
-      internalID: -3865788937300265606
+      internalID: 8986429598103521539
       vertices: []
       indices: 
       edges: []
@@ -641,7 +657,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 108842d140f435d40800000000000000
-      internalID: 5571884043074832385
+      internalID: 6106153962646918969
       vertices: []
       indices: 
       edges: []
@@ -662,7 +678,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: ff1a5175d8bfbb070800000000000000
-      internalID: 8123362937362817535
+      internalID: 1689810003731734032
       vertices: []
       indices: 
       edges: []
@@ -683,7 +699,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 9c262623dd2328fb0800000000000000
-      internalID: -4647095939878460727
+      internalID: 5668440650967169333
       vertices: []
       indices: 
       edges: []
@@ -704,7 +720,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 469aa11eef4f6ac80800000000000000
-      internalID: -8311686686730180252
+      internalID: 8132485255394227998
       vertices: []
       indices: 
       edges: []
@@ -725,7 +741,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: f8fe52aad7fb50ba0800000000000000
-      internalID: -6123277571893891185
+      internalID: -3201796947959767147
       vertices: []
       indices: 
       edges: []
@@ -740,6 +756,29 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Pine Sprite Sheet Stage 2_0: 2633090797242240145
+      Pine Sprite Sheet Stage 2_1: 8269713923751260549
+      Pine Sprite Sheet Stage 2_10: 4724986834092739292
+      Pine Sprite Sheet Stage 2_11: 8418628172562399116
+      Pine Sprite Sheet Stage 2_12: 5468665331871260694
+      Pine Sprite Sheet Stage 2_13: 5775875101470189854
+      Pine Sprite Sheet Stage 2_14: 8438157295134230710
+      Pine Sprite Sheet Stage 2_15: -7685065280996950937
+      Pine Sprite Sheet Stage 2_16: 8986429598103521539
+      Pine Sprite Sheet Stage 2_17: 6106153962646918969
+      Pine Sprite Sheet Stage 2_18: 1689810003731734032
+      Pine Sprite Sheet Stage 2_19: 5668440650967169333
+      Pine Sprite Sheet Stage 2_2: -1501895980171082306
+      Pine Sprite Sheet Stage 2_20: 8132485255394227998
+      Pine Sprite Sheet Stage 2_21: -3201796947959767147
+      Pine Sprite Sheet Stage 2_3: -2872922423040623234
+      Pine Sprite Sheet Stage 2_4: 5182767906289723953
+      Pine Sprite Sheet Stage 2_5: -6657350650548021757
+      Pine Sprite Sheet Stage 2_6: 8642585598923661200
+      Pine Sprite Sheet Stage 2_7: 1390298772217209716
+      Pine Sprite Sheet Stage 2_8: 6120949761919740571
+      Pine Sprite Sheet Stage 2_9: 449212864096586533
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

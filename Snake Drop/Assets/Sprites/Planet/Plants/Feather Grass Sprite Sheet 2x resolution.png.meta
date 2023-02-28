@@ -57,7 +57,7 @@ TextureImporter:
       213: 6189236673592079345
     second: Feather Grass Sprite Sheet 2x resolution_17
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -78,6 +78,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -87,8 +88,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -109,11 +110,14 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -177,6 +181,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: 4
@@ -578,6 +594,25 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Feather Grass Sprite Sheet 2x resolution_0: -3989442235190651043
+      Feather Grass Sprite Sheet 2x resolution_1: -934067911091535404
+      Feather Grass Sprite Sheet 2x resolution_10: 1419298277435508585
+      Feather Grass Sprite Sheet 2x resolution_11: -4771585558400298625
+      Feather Grass Sprite Sheet 2x resolution_12: -3606485307050188989
+      Feather Grass Sprite Sheet 2x resolution_13: -5294221253961492167
+      Feather Grass Sprite Sheet 2x resolution_14: 4444291578895205776
+      Feather Grass Sprite Sheet 2x resolution_15: -2995027701994991996
+      Feather Grass Sprite Sheet 2x resolution_16: -4432170453014184115
+      Feather Grass Sprite Sheet 2x resolution_17: 6189236673592079345
+      Feather Grass Sprite Sheet 2x resolution_2: 5865425713281656656
+      Feather Grass Sprite Sheet 2x resolution_3: 5170756552005731259
+      Feather Grass Sprite Sheet 2x resolution_4: 893685994142323505
+      Feather Grass Sprite Sheet 2x resolution_5: 5321035114539781547
+      Feather Grass Sprite Sheet 2x resolution_6: 3434837601799389360
+      Feather Grass Sprite Sheet 2x resolution_7: 6973939133279399613
+      Feather Grass Sprite Sheet 2x resolution_8: 6972632127377050256
+      Feather Grass Sprite Sheet 2x resolution_9: -4485086759089006313
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

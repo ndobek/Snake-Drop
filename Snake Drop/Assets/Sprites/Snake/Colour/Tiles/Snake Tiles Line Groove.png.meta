@@ -108,7 +108,7 @@ TextureImporter:
       213: -8290737249431768023
     second: Blue Top Right
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -129,6 +129,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -138,8 +139,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -160,11 +161,14 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -228,6 +232,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -986,6 +1002,42 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Blue Basic Tile: -6324755174986831915
+      Blue Bottom Left: 3531381051555619869
+      Blue Bottom Right: 2479918589938134295
+      Blue Horizontal: 200888184425489944
+      Blue Top Left: -283005462666684579
+      Blue Top Right: -8290737249431768023
+      Blue Vertical: -3714593475407040382
+      Green Basic Tile: 6511515687005811440
+      Green Bottom Left: 1058214230995409104
+      Green Bottom Right: -1706129807333909708
+      Green Horizontal: 7858404312915844628
+      Green Top Left: -7585772146794207781
+      Green Top Right: -8823633906101804812
+      Green Vertical: 5647917163247547536
+      Orange Basic Tile: -8469139230168559458
+      Orange Bottom Left: 5540137483497557063
+      Orange Bottom Right: -1225847002100305768
+      Orange Horizontal: -6112061764135001661
+      Orange Top Left: 6397209960199472943
+      Orange Top Right: 1754630813110242649
+      Orange Vertical: -25954986333529638
+      Red Basic Tile: -2271661913269937966
+      Red Bottom Left: -6624184129077444475
+      Red Bottom Right: 1066748900109531628
+      Red Horizontal: -4268988249541079181
+      Red Top Left: -6828246710306889731
+      Red Top Right: 6383644175860690489
+      Red Vertical: -578185558862427414
+      Yellow Basic Tile: -8262386545094352335
+      Yellow Bottom Left: 6584325868947838901
+      Yellow Bottom Right: 5752458258917460961
+      Yellow Horizontal: -6250667705905721504
+      Yellow Top Left: -2989986182370490281
+      Yellow Top Right: -4492277064805473390
+      Yellow Vertical: -4280527606198869166
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
