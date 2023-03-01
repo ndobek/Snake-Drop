@@ -6,6 +6,11 @@ using System;
 
 public class AdManager : MonoBehaviour
 {
+    //TEST ID
+    private string adUnitID = "ca-app-pub-3940256099942544/5224354917";
+
+
+
     public static AdManager instance;
     private RewardedAd undoAd;
     bool autoUndo;
@@ -23,58 +28,73 @@ public class AdManager : MonoBehaviour
 
     public void UserChoseToWatchAd()
     {
-        if (undoAd.IsLoaded())
+        if (undoAd != null && undoAd.CanShowAd())
         {
             autoUndo = false;
-            undoAd.Show();
+            undoAd.Show((Reward reward) =>
+            {
+                HandleUserEarnedReward();
+            });
+
         }
     }
 
     public void UserChoseToWatchAdAndUndo()
     {
-        if (undoAd.IsLoaded())
+        if (undoAd != null && undoAd.CanShowAd())
         {
             autoUndo = true;
-            undoAd.Show();
+            undoAd.Show((Reward reward) =>
+            {
+                HandleUserEarnedReward();
+            });
+
         }
     }
     public void CreateAd()
     {
-        undoAd = CreateRewardedAd();
+
+
+        if (undoAd != null)
+        {
+            undoAd.Destroy();
+            undoAd = null;
+        }
+        Debug.Log("Loading the rewarded ad.");
+
+
+        AdRequest adRequest = new AdRequest.Builder().Build();
+
+        RewardedAd.Load(adUnitID, adRequest,
+          (RewardedAd ad, LoadAdError error) =>
+          {
+              // if error is not null, the load request failed.
+              if (error != null || ad == null)
+              {
+                  Debug.LogError("Rewarded ad failed to load an ad " +
+                                 "with error : " + error);
+                  return;
+              }
+
+              Debug.Log("Rewarded ad loaded with response : "
+                        + ad.GetResponseInfo());
+
+              undoAd = ad;
+              undoAd.OnAdFullScreenContentClosed += HandleRewardedAdClosed;
+          });
+
+        
+
+
     }
 
-
-    private RewardedAd CreateRewardedAd()
+    public void HandleRewardedAdClosed()
     {
-        string adUnitID = "ca-app-pub-3940256099942544/5224354917";
-        RewardedAd rewardedAd = new RewardedAd(adUnitID);
-
-        rewardedAd.OnAdLoaded += HandleRewardedAdLoaded;
-        rewardedAd.OnAdFailedToLoad += HandleRewardedAdFailedToLoad;
-        rewardedAd.OnAdOpening += HandleRewardedAdOpening;
-        rewardedAd.OnAdFailedToShow += HandleRewardedAdFailedToShow;
-        rewardedAd.OnUserEarnedReward += HandleUserEarnedReward;
-        rewardedAd.OnAdClosed += HandleRewardedAdClosed;
-
-        // Create an empty ad request.
-        AdRequest request = new AdRequest.Builder().Build();
-        // Load the rewarded ad with the request.
-        rewardedAd.LoadAd(request);
-        return rewardedAd;
-    }
-
-    public void HandleRewardedAdLoaded(object sender, EventArgs args){}
-
-    public void HandleRewardedAdFailedToLoad(object sender, AdFailedToLoadEventArgs args) { }
-
-    public void HandleRewardedAdOpening(object sender, EventArgs args) { }
-    public void HandleRewardedAdFailedToShow(object sender, AdErrorEventArgs args) { }
-    public void HandleRewardedAdClosed(object sender, EventArgs args)
-    {
+        undoAd.Destroy();
         CreateAd();
         GameManager.instance.pauseManager.UnPause();
     }
-    public void HandleUserEarnedReward(object sender, Reward args) 
+    public void HandleUserEarnedReward() 
     {
         GameManager.instance.playerManagers[0].Undoer.GetUndos();
         if(autoUndo) GameManager.instance.playerManagers[0].Undoer.TryUndo();
