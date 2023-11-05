@@ -206,6 +206,8 @@ public class PlayerManager : MonoBehaviour
             if(GameManager.instance.GameModeManager.GameMode.OnGameStart) GameManager.instance.GameModeManager.GameMode.OnGameStart.Invoke(playGrid);
             firstRound = false;
         }
+
+        FindFirstObjectByType<MusicManager>().ParseBlock(GameManager.instance.playerManagers[0].SnakeHead);
     }
 
     public void StartNewRound(Directions.Direction direction)

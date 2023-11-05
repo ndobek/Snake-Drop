@@ -14,6 +14,12 @@ public class Purchase_Manager : MonoBehaviour/*, IStoreListener*/
         CloudOnce.Cloud.Storage.Save();
     }
 
+    public void RemovePurchase()
+    {
+        CloudOnce.CloudVariables.UnlimitedUndos = false;
+        CloudOnce.Cloud.Storage.Save();
+    }
+
     ///// <summary>
     ///// Called when Unity IAP is ready to make purchases.
     ///// </summary>

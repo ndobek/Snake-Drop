@@ -59,6 +59,7 @@ public class MoveInCollectionGhost : MoveRule
                 if(obj2) obj2.RawMoveTo(obj1.Slot);
                 obj1.RawMoveTo(block.Slot);
                 if (OnBreak != null) OnBreak.Invoke(obj1, player);
+                FindFirstObjectByType<MusicManager>().ParseBlock(obj1);
                 obj1.RawBreak();
             }
             else

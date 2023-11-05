@@ -167,6 +167,7 @@ public class Block : MonoBehaviour
     {
         SetGridDirty();
         Slot.OnUnassignment(this);
+        FindFirstObjectByType<MusicManager>().ParseBlock(this);
         GameObject.Destroy(this.gameObject);
     }
 
@@ -194,6 +195,7 @@ public class Block : MonoBehaviour
     public void Break(PlayerManager player = null)
     {
         SetGridDirty();
+
         blockType.OnBreak(this, player);
     }
 

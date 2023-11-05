@@ -26,6 +26,10 @@ public static class SaveManager
     {
         return File.Exists(GetPath(name));
     }
+    public static bool AutoSaveExists()
+    {
+       return SaveExists(AutoSaveSaveName);
+    }
 
     public static SaveData LoadGame(string name)
     {

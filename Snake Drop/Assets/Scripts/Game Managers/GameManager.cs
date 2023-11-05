@@ -36,6 +36,11 @@ public class GameManager : MonoBehaviour
         if (!instance) instance = this;
     }
 
+    private void Start()
+    {
+        if (!playerManagers[0].GameInProgress && !SaveManager.AutoSaveExists()) StartGame();
+    }
+
     public void OnCrash()
     {
         foreach (PlayerManager player in playerManagers)
@@ -111,4 +116,6 @@ public class GameManager : MonoBehaviour
     {
         gameOverScreen.Fade(GameIsOver() && !pauseManager.paused);
     }
+
+
 }
