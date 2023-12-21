@@ -3,11 +3,40 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MusicManager : MonoBehaviour
 {
     private Stopwatch timer = new Stopwatch();
     private System.Random rng = new System.Random();
+
+    public Sprite mutedIcon;
+    public Sprite unMutedIcon;
+    public Image muteButtonImage;
+    public bool Muted
+    {
+        get
+        {
+            return CloudOnce.CloudVariables.Muted;
+        }
+        set
+        {
+            CloudOnce.CloudVariables.Muted = value;
+            EndNoise();
+            if (value)
+            {
+                muteButtonImage.sprite = mutedIcon;
+
+            }
+            else
+            {
+                StartNoise(chords[0]);
+                muteButtonImage.sprite = unMutedIcon;
+            }
+            CloudOnce.CloudVariables.Muted = value;
+            CloudOnce.Cloud.Storage.Save();
+        }
+    }
 
     public double BPS;
     private long onBeatMS;
@@ -25,16 +54,16 @@ public class MusicManager : MonoBehaviour
     private List<ScheduledNote> notes = new List<ScheduledNote>();
     public Dictionary<AudioClip, AudioSource> sources = new Dictionary<AudioClip, AudioSource>();
     private AudioClip currentNoise;
-    private AudioSource currentBass;
+    //private AudioSource currentBass;
 
     private void Awake()
     {
         timer.Start();
         CreateSources();
-
+        AudioListener.volume = 3;
         onBeatMS = (long)(1000 / BPS);
 
-
+        Muted = CloudOnce.CloudVariables.Muted;
         startTime = timer.ElapsedMilliseconds;
         currentTime = timer.ElapsedMilliseconds;
     }
@@ -76,13 +105,14 @@ public class MusicManager : MonoBehaviour
 
     void Update()
     {
+
         currentTime = timer.ElapsedMilliseconds;
 
         for (int i = notes.Count - 1; i >= 0; --i)
         {
             if(currentTime >= notes[i].time)
             {
-                sources[notes[i].clip].Play();
+                if(!Muted)sources[notes[i].clip].Play();
                 notes.RemoveAt(i);
             }
         }
@@ -97,17 +127,32 @@ public class MusicManager : MonoBehaviour
             if (chord.color != block.blockColor) continue;
             if (lastPlayedChord == -1 || chords[lastPlayedChord].name != chord.name)
             {
-                if(currentNoise != null) StartCoroutine(FadeOut(sources[currentNoise], fadeTime));
-                currentNoise = chord.noise;
-                sources[currentNoise].Play();
+
+                EndNoise();
+                StartNoise(chord);
+
             }
+
             lastPlayedChord = chords.IndexOf(chord);
             AudioClip note = chord.clips[rng.Next(0, chord.clips.Count)];
-            AddNoteOnNextBeat(note, 2);
 
+            AddNoteOnNextBeat(note, humanization: rng.NextDouble());
 
+            //if(block.blockType == GameManager.instance.GameModeManager.GameMode.TypeBank.collectionType) { AddNoteOnNextBeat(chord.bass); }
 
         }
+    }
+
+    public void EndNoise()
+    {
+        if (currentNoise != null) StartCoroutine(FadeOut(sources[currentNoise], fadeTime));
+
+    }
+
+    public void StartNoise(Chord chord)
+    {
+        currentNoise = chord.noise;
+        if (!Muted) StartCoroutine(FadeIn(sources[currentNoise], fadeTime));
     }
 
     public static IEnumerator FadeOut(AudioSource audioSource, float FadeTime)
@@ -124,6 +169,28 @@ public class MusicManager : MonoBehaviour
         audioSource.Stop();
         audioSource.volume = startVolume;
     }
+
+    public static IEnumerator FadeIn(AudioSource audioSource, float FadeTime)
+    {
+        float endVolume = audioSource.volume;
+        audioSource.volume = 0;
+        audioSource.Play();
+
+        while (audioSource.volume < endVolume)
+        {
+            audioSource.volume += endVolume * Time.deltaTime / FadeTime;
+
+            yield return null;
+        }
+
+        audioSource.volume = endVolume;
+    }
+
+    public void ToggleMute()
+    {
+        Muted = !Muted;
+    }
+
 }
 
 
@@ -133,7 +200,7 @@ public struct Chord
     public string name;
     public List<AudioClip> clips;
     public AudioClip noise;
-    //public AudioClip bass;
+    public AudioClip bass;
     public BlockColor color;
 }
 

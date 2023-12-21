@@ -18,11 +18,17 @@ public class SmashMove : MoveRule
     }
     protected override void MoveAction(Block block, BlockSlot slot, PlayerManager player = null)
     {
+        //Sound
+        MusicManager m = FindFirstObjectByType<MusicManager>();
+        m.ParseBlock(block);
+        m.ParseBlock(slot.Block);
+
         Block tail = null;
         if (block.Tail) { tail = block.Tail; }
         //if (slot.Block && slot.Block.isPartOfSnake) slot.Block.KillSnake();
         slot.Block.Break(player);
         block.RawMoveTo(slot);
+
         if (OnSmash) OnSmash.Invoke(block, player);
         block.Break(player);
         if (tail)

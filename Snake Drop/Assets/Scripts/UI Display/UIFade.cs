@@ -25,6 +25,7 @@ public class UIFade : MonoBehaviour
     private RectTransform rectTransform;
 
     public bool ignoreFadeGroups;
+    public bool ignoresRaycasts;
 
     [SerializeField]
     private bool fadeInOnEnable;
@@ -66,7 +67,7 @@ public class UIFade : MonoBehaviour
     {
         CheckComponents();
         Group.alpha = 1;
-        Group.blocksRaycasts = true;
+        Group.blocksRaycasts = !ignoresRaycasts;
         Group.interactable = true;
         FadedIn = true;
     }

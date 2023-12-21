@@ -22,6 +22,7 @@ public class MoveInCollectionGhost : MoveRule
         if (block.blockColor == slot.Block.blockColor && !CollectionIsFull(slot.Block))
         {
             slot.Block.BlockCollection.IncreaseFillAmmount(player);
+            FindFirstObjectByType<MusicManager>().ParseBlock(block);
             block.RawMoveTo(slot);
             if (block.Tail)
             {

@@ -13,7 +13,7 @@ namespace CloudOnce
     /// </summary>
     public static class CloudVariables
     {
-        private static readonly CloudBool s_unlimitedUndos = new CloudBool("UnlimitedUndos", PersistenceType.Highest, false);
+        private static readonly CloudBool s_unlimitedUndos = new CloudBool("UnlimitedUndos", PersistenceType.Latest, false);
 
         public static bool UnlimitedUndos
         {
@@ -35,6 +35,14 @@ namespace CloudOnce
         {
             get { return s_highScore.Value; }
             set { s_highScore.Value = value; }
+        }
+
+        private static readonly CloudBool s_muted = new CloudBool("Muted", PersistenceType.Latest, false);
+
+        public static bool Muted
+        {
+            get { return s_muted.Value; }
+            set { s_muted.Value = value; }
         }
     }
 }
