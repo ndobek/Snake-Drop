@@ -10,6 +10,8 @@ public class MusicManager : MonoBehaviour
     private Stopwatch timer = new Stopwatch();
     private System.Random rng = new System.Random();
 
+    public float musicVolume = 3;
+
     public Sprite mutedIcon;
     public Sprite unMutedIcon;
     public Image muteButtonImage;
@@ -22,19 +24,18 @@ public class MusicManager : MonoBehaviour
         set
         {
             CloudOnce.CloudVariables.Muted = value;
-            EndNoise();
+            CloudOnce.Cloud.Storage.Save();
+
             if (value)
             {
                 muteButtonImage.sprite = mutedIcon;
-
+                AudioListener.volume = 0;
             }
             else
             {
-                StartNoise(chords[0]);
                 muteButtonImage.sprite = unMutedIcon;
+                AudioListener.volume = musicVolume;
             }
-            CloudOnce.CloudVariables.Muted = value;
-            CloudOnce.Cloud.Storage.Save();
         }
     }
 
@@ -54,16 +55,17 @@ public class MusicManager : MonoBehaviour
     private List<ScheduledNote> notes = new List<ScheduledNote>();
     public Dictionary<AudioClip, AudioSource> sources = new Dictionary<AudioClip, AudioSource>();
     private AudioClip currentNoise;
+    private static List<AudioSource> currentlyFading = new List<AudioSource>();
     //private AudioSource currentBass;
 
     private void Awake()
     {
         timer.Start();
         CreateSources();
-        AudioListener.volume = 3;
         onBeatMS = (long)(1000 / BPS);
+        StartNoise(chords[0]);
 
-        Muted = CloudOnce.CloudVariables.Muted;
+        Muted = Muted; //initialize muted state
         startTime = timer.ElapsedMilliseconds;
         currentTime = timer.ElapsedMilliseconds;
     }
@@ -112,7 +114,7 @@ public class MusicManager : MonoBehaviour
         {
             if(currentTime >= notes[i].time)
             {
-                if(!Muted)sources[notes[i].clip].Play();
+                sources[notes[i].clip].Play();
                 notes.RemoveAt(i);
             }
         }
@@ -152,11 +154,15 @@ public class MusicManager : MonoBehaviour
     public void StartNoise(Chord chord)
     {
         currentNoise = chord.noise;
-        if (!Muted) StartCoroutine(FadeIn(sources[currentNoise], fadeTime));
+        StartCoroutine(FadeIn(sources[currentNoise], fadeTime));
     }
 
     public static IEnumerator FadeOut(AudioSource audioSource, float FadeTime)
     {
+        while (currentlyFading.Contains(audioSource)) yield return null;
+
+        currentlyFading.Add(audioSource);
+
         float startVolume = audioSource.volume;
 
         while (audioSource.volume > 0)
@@ -168,10 +174,16 @@ public class MusicManager : MonoBehaviour
 
         audioSource.Stop();
         audioSource.volume = startVolume;
+
+        currentlyFading.Remove(audioSource);
     }
 
     public static IEnumerator FadeIn(AudioSource audioSource, float FadeTime)
     {
+        while (currentlyFading.Contains(audioSource)) yield return null;
+
+        currentlyFading.Add(audioSource);
+
         float endVolume = audioSource.volume;
         audioSource.volume = 0;
         audioSource.Play();
@@ -184,6 +196,8 @@ public class MusicManager : MonoBehaviour
         }
 
         audioSource.volume = endVolume;
+
+        currentlyFading.Remove(audioSource);
     }
 
     public void ToggleMute()
