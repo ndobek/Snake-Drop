@@ -227,6 +227,7 @@ public class PlayerManager : MonoBehaviour
         }
         else
         {
+            FindFirstObjectByType<MusicManager>().AddCrash();
             previewGridAnimator.Play("Bounce");
         }
     }

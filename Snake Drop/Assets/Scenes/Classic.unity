@@ -58209,9 +58209,10 @@ MonoBehaviour:
     type: 3}
   muteButtonImage: {fileID: 216287334}
   BPS: 6
-  fadeTime: 1
+  lerpSpeed: 0.8
   minHumanization: 0
-  maxHumination: 0
+  maxHumination: 30
+  maxVolumeBlockCollectionSize: 25
   chords:
   - name: Am7
     pianoNotes:
@@ -58223,7 +58224,7 @@ MonoBehaviour:
     noise: {fileID: 8300000, guid: bf5617076959f874c92cf63b55da7768, type: 3}
     celloLegato: {fileID: 8300000, guid: 7fb0bed407d1b1945b1f9e17f3cb71cb, type: 3}
     celloTremello: {fileID: 8300000, guid: 56e5a09213b62204a9cf51dbfde60569, type: 3}
-    bass: {fileID: 0}
+    bass: {fileID: 8300000, guid: 4395dfe3e24b0bf4f991dac0c75c08c8, type: 3}
     color: {fileID: 11400000, guid: 5438ed90547356044a3c13328a354b08, type: 2}
   - name: Cmaj9
     pianoNotes:
@@ -58235,7 +58236,7 @@ MonoBehaviour:
     noise: {fileID: 8300000, guid: 0aa4fe0c572ab4f4eabb87315881ae39, type: 3}
     celloLegato: {fileID: 8300000, guid: 757d57d644a4f694b99a1fed5771161b, type: 3}
     celloTremello: {fileID: 8300000, guid: eb3f16d3599573144a8d3622ce0ffbc4, type: 3}
-    bass: {fileID: 0}
+    bass: {fileID: 8300000, guid: c05234c221ec0e84892ef6a3ff2969c0, type: 3}
     color: {fileID: 11400000, guid: 48847a2b7d2594e4a885a17b2eb9b0da, type: 2}
   - name: Dm7
     pianoNotes:
@@ -58247,7 +58248,7 @@ MonoBehaviour:
     noise: {fileID: 8300000, guid: b1bd64af361fd654bb9c7b3eed8d3ed4, type: 3}
     celloLegato: {fileID: 8300000, guid: 3c0948ff108c86349b7248fb2aaf3370, type: 3}
     celloTremello: {fileID: 8300000, guid: 91c9aaca8bad0a84b878787f5a4f9ef9, type: 3}
-    bass: {fileID: 0}
+    bass: {fileID: 8300000, guid: de70da538f3f7164db8ab5f7476f6647, type: 3}
     color: {fileID: 11400000, guid: 06922463012b1f24fb757d5ffdabbd6b, type: 2}
   - name: Fmaj9
     pianoNotes:
@@ -58259,7 +58260,7 @@ MonoBehaviour:
     noise: {fileID: 8300000, guid: 8e07822fa7d5c4c4e99526cd8eab1776, type: 3}
     celloLegato: {fileID: 8300000, guid: 2a5e32b7ce4822049bfbfcb4e59617c2, type: 3}
     celloTremello: {fileID: 8300000, guid: 2a372e13b59297b48ba161fb76121833, type: 3}
-    bass: {fileID: 0}
+    bass: {fileID: 8300000, guid: 8692c88855c437f4aa7682607721d651, type: 3}
     color: {fileID: 11400000, guid: 1f96a88418ae4d64594066b606e5646b, type: 2}
   - name: G2
     pianoNotes:
@@ -58271,7 +58272,7 @@ MonoBehaviour:
     noise: {fileID: 8300000, guid: 82aa0fd35bc000c49a177da585c22e8c, type: 3}
     celloLegato: {fileID: 8300000, guid: 32117f3c857724944b0168945cd01588, type: 3}
     celloTremello: {fileID: 8300000, guid: b8484298c9e090c45a1f8d3398f5196e, type: 3}
-    bass: {fileID: 0}
+    bass: {fileID: 8300000, guid: af349de47246c934ba4cdb887b5ab74c, type: 3}
     color: {fileID: 11400000, guid: dc0a2986a68ec8447b283e6fc5dbf9cd, type: 2}
 --- !u!4 &9134113235293775796
 Transform:

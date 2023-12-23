@@ -42,7 +42,7 @@ public class MusicManager : MonoBehaviour
 
     public double BPS;
     private long onBeatMS;
-    public float fadeTime;
+    public float lerpSpeed;
     public long minHumanization = 0;
     public long maxHumination = 0;
 
@@ -59,8 +59,6 @@ public class MusicManager : MonoBehaviour
     public Dictionary<AudioClip, AudioSource> sources = new Dictionary<AudioClip, AudioSource>();
     public Dictionary<AudioClip, float> clipVolume = new Dictionary<AudioClip, float>();
     private Chord currentChord;
-    private static List<AudioSource> currentlyFading = new List<AudioSource>();
-    //private AudioSource currentBass;
 
     private void Awake()
     {
@@ -83,25 +81,29 @@ public class MusicManager : MonoBehaviour
             {
                 AddSource(clip);
             }
-
-            AddSource(chord.noise);
-            AddSource(chord.celloLegato);
-            AddSource(chord.celloTremello);
-            sources[chord.noise].loop = true;
-            sources[chord.celloLegato].loop = true;
-            sources[chord.celloTremello].loop = true;
-            //AddSource(chord.bass);
+            AddSource(chord.bass);
+            InitLoop(chord.noise);
+            InitLoop(chord.celloLegato);
+            InitLoop(chord.celloTremello);
         }
 
 
 
     }
 
-    public void AddSource(AudioClip clip)
+    private void AddSource(AudioClip clip)
     {
         sources.Add(clip, gameObject.AddComponent<AudioSource>());
         clipVolume.Add(clip, 1);
         sources[clip].clip = clip;
+    }
+
+    private void InitLoop(AudioClip clip)
+    {
+        AddSource(clip);
+        sources[clip].loop = true;
+        sources[clip].volume = 0;
+        clipVolume[clip] = 0;
     }
 
     public void AddNoteOnNextBeat(AudioClip clipToPlay, int beatDivider = 1, double humanization = 0)
@@ -128,6 +130,22 @@ public class MusicManager : MonoBehaviour
             }
         }
 
+        foreach( AudioClip clip in sources.Keys)
+        {
+            AudioSource src = sources[clip];
+            src.volume += (clipVolume[clip]- src.volume) * lerpSpeed * Time.deltaTime;
+            if (src.loop)
+            {
+                if (src.volume < .01f && src.isPlaying)
+                {
+                    src.Stop();
+                }
+                if (src.volume > .01f && !src.isPlaying)
+                {
+                    src.Play();
+                }
+            }
+        }
 
     }
     public void ParseBlock(Block block)
@@ -147,91 +165,40 @@ public class MusicManager : MonoBehaviour
 
             AddNoteOnNextBeat(note, humanization: rng.NextDouble());
             ParseBlockCollection();
-            //if(block.blockType == GameManager.instance.GameModeManager.GameMode.TypeBank.collectionType) { AddNoteOnNextBeat(chord.bass); }
 
         }
     }
 
+    public void AddCrash()
+    {
+        AddNoteOnNextBeat(currentChord.bass);
+    }
+
     public void StopChord()
     {
-        StartCoroutine(FadeOut(sources[currentChord.noise], fadeTime));
-        StartCoroutine(FadeOut(sources[currentChord.celloLegato], fadeTime));
-        StartCoroutine(FadeOut(sources[currentChord.celloTremello], fadeTime));
+        clipVolume[currentChord.noise] = 0;
+        clipVolume[currentChord.celloLegato] = 0;
+        clipVolume[currentChord.celloTremello] = 0;
     }
 
     public void StartChord(Chord chord)
     {
         currentChord = chord;
-        StartCoroutine(FadeIn(sources[currentChord.noise], fadeTime));
-        sources[currentChord.celloLegato].volume = 0;
-        sources[currentChord.celloTremello].volume = 0;
+        FadeIn(currentChord.noise);
+        FadeIn(currentChord.celloLegato, 0);
+        FadeIn(currentChord.celloTremello, 0);
+
+        clipVolume[currentChord.noise] = 1;
+        clipVolume[currentChord.celloLegato] = 0;
+        clipVolume[currentChord.celloTremello] = 0;
     }
 
-    public static IEnumerator FadeOut(AudioSource audioSource, float FadeTime)
+    private void FadeIn(AudioClip clip, float volume = 1)
     {
-        while (currentlyFading.Contains(audioSource)) yield return null;
-
-        currentlyFading.Add(audioSource);
-
-        float startVolume = audioSource.volume;
-
-        while (audioSource.volume > 0)
-        {
-            audioSource.volume -= startVolume * Time.deltaTime / FadeTime;
-
-            yield return null;
-        }
-
-        audioSource.Stop();
-        audioSource.volume = startVolume;
-
-        currentlyFading.Remove(audioSource);
+        sources[clip].Play();
+        sources[clip].volume = 0;
+        clipVolume[clip] = volume;
     }
-
-    public static IEnumerator FadeIn(AudioSource audioSource, float FadeTime)
-    {
-        while (currentlyFading.Contains(audioSource)) yield return null;
-
-        currentlyFading.Add(audioSource);
-
-        float endVolume = audioSource.volume;
-        audioSource.volume = 0;
-        audioSource.Play();
-
-        while (audioSource.volume < endVolume)
-        {
-            audioSource.volume += endVolume * Time.deltaTime / FadeTime;
-
-            yield return null;
-        }
-
-        audioSource.volume = endVolume;
-
-        currentlyFading.Remove(audioSource);
-    }
-    public static IEnumerator FadeTo(AudioSource audioSource, float FadeTime, float endVolume)
-    {
-        while (currentlyFading.Contains(audioSource)) yield return null;
-
-        currentlyFading.Add(audioSource);
-
-        float startVolume = audioSource.volume;
-        float elapsedTime = 0;
-
-        while (elapsedTime < FadeTime)
-        {
-            elapsedTime += Time.deltaTime;
-            audioSource.volume = ((endVolume - startVolume) * (elapsedTime/FadeTime)) + startVolume;
-
-            yield return null;
-        }
-
-        audioSource.volume = endVolume;
-
-        currentlyFading.Remove(audioSource);
-    }
-
-
     public void ToggleMute()
     {
         Muted = !Muted;
@@ -245,14 +212,23 @@ public class MusicManager : MonoBehaviour
         List<Block> blocks = p.SnakeHead.Slot.Blocks.Where((b) => !b.isPartOfSnake()).ToList();
         if (p.RoundInProgress && blocks.Count > 0 && blocks[0].BlockCollection != null)
         {
-            sources[currentChord.celloLegato].volume = (float)blocks[0].BlockCollection.Area() / (float)maxVolumeBlockCollectionSize;
-            sources[currentChord.celloTremello].volume = (float)blocks[0].BlockCollection.FillAmount / (float)maxVolumeBlockCollectionSize;
+            clipVolume[currentChord.celloLegato] = 1 - ((float)blocks[0].BlockCollection.FillAmount / (float)maxVolumeBlockCollectionSize);
+            clipVolume[currentChord.celloTremello] = (float)blocks[0].BlockCollection.FillAmount / (float)maxVolumeBlockCollectionSize;
         }
         else
         {
-            StartCoroutine(FadeTo(sources[currentChord.celloLegato], fadeTime, 0));
-            StartCoroutine(FadeTo(sources[currentChord.celloTremello], fadeTime, 0));
+            clipVolume[currentChord.celloLegato] = 0;
+            clipVolume[currentChord.celloTremello] = 0;
         }
+    }
+
+    public void Florish()
+    {
+        AddNoteOnNextBeat(currentChord.pianoNotes[0], humanization: 0);
+        AddNoteOnNextBeat(currentChord.pianoNotes[1], humanization: 1);
+        AddNoteOnNextBeat(currentChord.pianoNotes[2], humanization: 2);
+        AddNoteOnNextBeat(currentChord.pianoNotes[3], humanization: 3);
+        AddNoteOnNextBeat(currentChord.pianoNotes[4], humanization: 4);
     }
 
 }

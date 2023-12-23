@@ -19,6 +19,7 @@ public class R_BlockBreakParticleRule : Rule
         }
         player.particleManager.TriggerBlockBreakParticles(color, block.Slot.transform.position);
 
+
     }
 
 }
