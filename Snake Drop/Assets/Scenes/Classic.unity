@@ -58203,6 +58203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ea14acc3ec13b1448f876f8f58adf50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  musicVolume: 3
   mutedIcon: {fileID: -300932261, guid: 3a901450f0149ea46b3468e95697dc36, type: 3}
   unMutedIcon: {fileID: -3965671228765212569, guid: 3a901450f0149ea46b3468e95697dc36,
     type: 3}
@@ -58213,53 +58214,63 @@ MonoBehaviour:
   maxHumination: 0
   chords:
   - name: Am7
-    clips:
+    pianoNotes:
     - {fileID: 8300000, guid: 6ea9b877cb4b2be4cad907f7cb1f9bac, type: 3}
     - {fileID: 8300000, guid: db41d4751697aa948bf056448954fd81, type: 3}
     - {fileID: 8300000, guid: b048761806d33bc42ba977c9ee04579b, type: 3}
     - {fileID: 8300000, guid: 683a017cf110aa74e88722df38e6724d, type: 3}
     - {fileID: 8300000, guid: 14594e606f02f1e45a944baeefad4f30, type: 3}
     noise: {fileID: 8300000, guid: bf5617076959f874c92cf63b55da7768, type: 3}
+    celloLegato: {fileID: 8300000, guid: 7fb0bed407d1b1945b1f9e17f3cb71cb, type: 3}
+    celloTremello: {fileID: 8300000, guid: 56e5a09213b62204a9cf51dbfde60569, type: 3}
     bass: {fileID: 0}
     color: {fileID: 11400000, guid: 5438ed90547356044a3c13328a354b08, type: 2}
   - name: Cmaj9
-    clips:
+    pianoNotes:
     - {fileID: 8300000, guid: 14fb0456d07168340b06999ac8ba4490, type: 3}
     - {fileID: 8300000, guid: abba419a09ab98d4c8f8903b139d008c, type: 3}
     - {fileID: 8300000, guid: 0441bc61436fe9146bb89d4774d97722, type: 3}
     - {fileID: 8300000, guid: ce82915ebcd8ff947af15fc386518744, type: 3}
     - {fileID: 8300000, guid: 8cc42a8d3ebaee848be48e8baf7dbc10, type: 3}
     noise: {fileID: 8300000, guid: 0aa4fe0c572ab4f4eabb87315881ae39, type: 3}
+    celloLegato: {fileID: 8300000, guid: 757d57d644a4f694b99a1fed5771161b, type: 3}
+    celloTremello: {fileID: 8300000, guid: eb3f16d3599573144a8d3622ce0ffbc4, type: 3}
     bass: {fileID: 0}
     color: {fileID: 11400000, guid: 48847a2b7d2594e4a885a17b2eb9b0da, type: 2}
   - name: Dm7
-    clips:
+    pianoNotes:
     - {fileID: 8300000, guid: 7684f61b0a4b4894bbab2f658ae7ce2b, type: 3}
     - {fileID: 8300000, guid: 35d9561108fbab7468d24f9187a00674, type: 3}
     - {fileID: 8300000, guid: 990cc088c185be9499c457a4bab02651, type: 3}
     - {fileID: 8300000, guid: 235fdd5e07385374c91e885444c3cfb1, type: 3}
     - {fileID: 8300000, guid: f1bbee9357cf46a49857c6f6b6823c17, type: 3}
     noise: {fileID: 8300000, guid: b1bd64af361fd654bb9c7b3eed8d3ed4, type: 3}
+    celloLegato: {fileID: 8300000, guid: 3c0948ff108c86349b7248fb2aaf3370, type: 3}
+    celloTremello: {fileID: 8300000, guid: 91c9aaca8bad0a84b878787f5a4f9ef9, type: 3}
     bass: {fileID: 0}
     color: {fileID: 11400000, guid: 06922463012b1f24fb757d5ffdabbd6b, type: 2}
   - name: Fmaj9
-    clips:
+    pianoNotes:
     - {fileID: 8300000, guid: f2b63521fb269ab40913e188f7b28be8, type: 3}
     - {fileID: 8300000, guid: 3b1c8e84396104e448c2c869c5a804e3, type: 3}
     - {fileID: 8300000, guid: 1697bdfffaaaf1a4eaf19bb3e421194a, type: 3}
     - {fileID: 8300000, guid: 74c8c24fb0e145942b3f5bfb1b9fcff1, type: 3}
     - {fileID: 8300000, guid: eebd338f3661c6d4dbd867e5740172de, type: 3}
     noise: {fileID: 8300000, guid: 8e07822fa7d5c4c4e99526cd8eab1776, type: 3}
+    celloLegato: {fileID: 8300000, guid: 2a5e32b7ce4822049bfbfcb4e59617c2, type: 3}
+    celloTremello: {fileID: 8300000, guid: 2a372e13b59297b48ba161fb76121833, type: 3}
     bass: {fileID: 0}
     color: {fileID: 11400000, guid: 1f96a88418ae4d64594066b606e5646b, type: 2}
   - name: G2
-    clips:
+    pianoNotes:
     - {fileID: 8300000, guid: 20025d8bfa19bc34ea84c5020e6e301d, type: 3}
     - {fileID: 8300000, guid: 9371823eed29b224bb64ad18a30a7e28, type: 3}
     - {fileID: 8300000, guid: 473e1cb11b2dbd04abb6a1d57308af85, type: 3}
     - {fileID: 8300000, guid: cbbd955deeb382c4398ad5ec5569fff6, type: 3}
     - {fileID: 8300000, guid: 746104cc2e71c6641bc4ef82b3eb08e8, type: 3}
     noise: {fileID: 8300000, guid: 82aa0fd35bc000c49a177da585c22e8c, type: 3}
+    celloLegato: {fileID: 8300000, guid: 32117f3c857724944b0168945cd01588, type: 3}
+    celloTremello: {fileID: 8300000, guid: b8484298c9e090c45a1f8d3398f5196e, type: 3}
     bass: {fileID: 0}
     color: {fileID: 11400000, guid: dc0a2986a68ec8447b283e6fc5dbf9cd, type: 2}
 --- !u!4 &9134113235293775796

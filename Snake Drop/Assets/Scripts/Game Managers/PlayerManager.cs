@@ -68,6 +68,7 @@ public class PlayerManager : MonoBehaviour
     public void MidRound()
     {
         p_MidRound.Begin();
+
         if (!RoundInProgress)
         {
             EndRound();
@@ -78,6 +79,7 @@ public class PlayerManager : MonoBehaviour
 
             FillPreviewBar();
         }
+        FindFirstObjectByType<MusicManager>().ParseBlockCollection();
         p_MidRound.End();
     }
 
