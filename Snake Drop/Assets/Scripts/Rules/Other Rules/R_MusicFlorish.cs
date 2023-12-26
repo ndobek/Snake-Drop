@@ -7,7 +7,7 @@ public class R_MusicFlorish : Rule
 {
     protected override void Action(Block block, PlayerManager player = null)
     {
-        GameObject.FindFirstObjectByType<MusicManager>().Florish();
+        GameObject.FindFirstObjectByType<MusicManager>().Florish(block);
     }
 
 }

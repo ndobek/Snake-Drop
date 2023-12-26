@@ -56,6 +56,7 @@ public class UndoManager : MonoBehaviour
             m.LoadGame(loadedData);
             p.GameOver = false;
             SaveManager.AutoSave();
+            FindFirstObjectByType<MusicManager>().ParseBlockCollection();
             return true;
         }
         return false;

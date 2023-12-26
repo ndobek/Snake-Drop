@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class EntranceManager : PlayGrid
 {
@@ -64,6 +65,16 @@ public class EntranceManager : PlayGrid
         foreach (EntranceSlot slot in slots)
         {
             if (slot && slot.CheckIfEntranceValid(player, grid)) result = true;
+        }
+        return result;
+    }
+
+    public int NumberOfOpenEntrances()
+    {
+        int result = 0;
+        foreach (EntranceSlot slot in slots)
+        {
+            if (slot && slot.Active) result += 1;
         }
         return result;
     }

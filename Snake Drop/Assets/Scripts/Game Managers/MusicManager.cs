@@ -43,8 +43,6 @@ public class MusicManager : MonoBehaviour
     public double BPS;
     private long onBeatMS;
     public float lerpSpeed;
-    public long minHumanization = 0;
-    public long maxHumination = 0;
 
     public long maxVolumeBlockCollectionSize = 64;
 
@@ -62,6 +60,7 @@ public class MusicManager : MonoBehaviour
 
     private void Awake()
     {
+        
         timer.Start();
         CreateSources();
         onBeatMS = (long)(1000 / BPS);
@@ -106,12 +105,11 @@ public class MusicManager : MonoBehaviour
         clipVolume[clip] = 0;
     }
 
-    public void AddNoteOnNextBeat(AudioClip clipToPlay, int beatDivider = 1, double humanization = 0)
+    public void AddNoteOnNextBeat(AudioClip clipToPlay, long delay = 0, int beatDivider = 1)
     {
         long beatTime = onBeatMS / beatDivider;
         long timeToNextBeat = beatTime - (currentTime % beatTime);
-        long humanFactor = (long)(humanization * (double)(maxHumination - minHumanization)) + minHumanization;
-        long timeToPlay = currentTime + timeToNextBeat + humanFactor;
+        long timeToPlay = currentTime + timeToNextBeat + delay;
 
         notes.Add(new ScheduledNote { clip = clipToPlay, time = timeToPlay });
     }
@@ -125,7 +123,7 @@ public class MusicManager : MonoBehaviour
         {
             if(currentTime >= notes[i].time)
             {
-                sources[notes[i].clip].Play();
+                sources[notes[i].clip].PlayOneShot(notes[i].clip);
                 notes.RemoveAt(i);
             }
         }
@@ -150,23 +148,28 @@ public class MusicManager : MonoBehaviour
     }
     public void ParseBlock(Block block)
     {
- 
+
+        Chord chord = GetChordFromBlock(block);
+        if (lastPlayedChord == -1 || chords[lastPlayedChord].name != chord.name)
+        {
+            StopChord();
+            StartChord(chord);
+        }
+
+        lastPlayedChord = chords.IndexOf(chord);
+        AudioClip note = chord.pianoNotes[rng.Next(0, chord.pianoNotes.Count)];
+
+        AddNoteOnNextBeat(note);
+    }
+
+    public Chord GetChordFromBlock(Block block)
+    {
         foreach (Chord chord in chords)
         {
             if (chord.color != block.blockColor) continue;
-            if (lastPlayedChord == -1 || chords[lastPlayedChord].name != chord.name)
-            {
-                StopChord();
-                StartChord(chord);
-            }
-
-            lastPlayedChord = chords.IndexOf(chord);
-            AudioClip note = chord.pianoNotes[rng.Next(0, chord.pianoNotes.Count)];
-
-            AddNoteOnNextBeat(note, humanization: rng.NextDouble());
-            ParseBlockCollection();
-
+            else return chord;
         }
+        return chords[0];
     }
 
     public void AddCrash()
@@ -187,10 +190,6 @@ public class MusicManager : MonoBehaviour
         FadeIn(currentChord.noise);
         FadeIn(currentChord.celloLegato, 0);
         FadeIn(currentChord.celloTremello, 0);
-
-        clipVolume[currentChord.noise] = 1;
-        clipVolume[currentChord.celloLegato] = 0;
-        clipVolume[currentChord.celloTremello] = 0;
     }
 
     private void FadeIn(AudioClip clip, float volume = 1)
@@ -212,23 +211,33 @@ public class MusicManager : MonoBehaviour
         List<Block> blocks = p.SnakeHead.Slot.Blocks.Where((b) => !b.isPartOfSnake()).ToList();
         if (p.RoundInProgress && blocks.Count > 0 && blocks[0].BlockCollection != null)
         {
-            clipVolume[currentChord.celloLegato] = 1 - ((float)blocks[0].BlockCollection.FillAmount / (float)maxVolumeBlockCollectionSize);
-            clipVolume[currentChord.celloTremello] = (float)blocks[0].BlockCollection.FillAmount / (float)maxVolumeBlockCollectionSize;
+            Chord chord = GetChordFromBlock(blocks[0]);
+            float intensity = (float)blocks[0].BlockCollection.FillAmount / (float)maxVolumeBlockCollectionSize;
+            float danger = Mathf.Clamp(((float)p.entranceManager.NumberOfOpenEntrances() / (float)p.entranceManager.slots.Length) * 6f, 0,1);
+
+
+                clipVolume[chord.celloLegato] = intensity * (1-danger);
+                clipVolume[chord.celloTremello] = intensity * danger;
+
         }
         else
         {
-            clipVolume[currentChord.celloLegato] = 0;
-            clipVolume[currentChord.celloTremello] = 0;
+            foreach (Chord chord in chords)
+            {
+                clipVolume[chord.celloLegato] = 0;
+                clipVolume[chord.celloTremello] = 0;
+            }
         }
     }
 
-    public void Florish()
+    public void Florish(Block block)
     {
-        AddNoteOnNextBeat(currentChord.pianoNotes[0], humanization: 0);
-        AddNoteOnNextBeat(currentChord.pianoNotes[1], humanization: 1);
-        AddNoteOnNextBeat(currentChord.pianoNotes[2], humanization: 2);
-        AddNoteOnNextBeat(currentChord.pianoNotes[3], humanization: 3);
-        AddNoteOnNextBeat(currentChord.pianoNotes[4], humanization: 4);
+        Chord chord = GetChordFromBlock(block);
+        AddNoteOnNextBeat(chord.pianoNotes[0], 0);
+        AddNoteOnNextBeat(chord.pianoNotes[1], 30);
+        AddNoteOnNextBeat(chord.pianoNotes[2], 60);
+        AddNoteOnNextBeat(chord.pianoNotes[3], 80);
+        AddNoteOnNextBeat(currentChord.pianoNotes[4], 100);
     }
 
 }
