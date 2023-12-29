@@ -46,7 +46,9 @@ public class MusicManager : MonoBehaviour
 
     public long maxVolumeBlockCollectionSize = 64;
 
-
+    public AudioClip OnBeatPercussion;
+    public AudioClip OffBeatPercussion;
+    public AudioClip QuarterBeatPercussion;
     public List<Chord> chords = new List<Chord>();
     private int lastPlayedChord = -1;
 
@@ -80,14 +82,18 @@ public class MusicManager : MonoBehaviour
             {
                 AddSource(clip);
             }
+            foreach (AudioClip clip in chord.harpNotes)
+            {
+                AddSource(clip);
+            }
             AddSource(chord.bass);
             InitLoop(chord.noise);
             InitLoop(chord.celloLegato);
             InitLoop(chord.celloTremello);
         }
-
-
-
+        AddSource(OnBeatPercussion);
+        AddSource(OffBeatPercussion);
+        AddSource(QuarterBeatPercussion);
     }
 
     private void AddSource(AudioClip clip)
@@ -161,6 +167,23 @@ public class MusicManager : MonoBehaviour
 
         AddNoteOnNextBeat(note);
     }
+    public void ParseMove(Block block)
+    {
+        if (!block) return;
+
+        long QuarterBeatTime = onBeatMS;
+        long HalfBeatTime = onBeatMS * 4;
+        long BeatTime = onBeatMS * 8;
+
+
+        long timeToQuarterBeat = QuarterBeatTime - (currentTime % QuarterBeatTime); 
+        long timeToHalfBeat = HalfBeatTime - (currentTime % HalfBeatTime);
+        long timeToFullBeat = BeatTime - (currentTime % BeatTime);
+
+        AddNoteOnNextBeat(QuarterBeatPercussion);
+        if (timeToHalfBeat <= timeToQuarterBeat) AddNoteOnNextBeat(OffBeatPercussion);
+        //if (timeToFullBeat <= timeToQuarterBeat) AddNoteOnNextBeat(OnBeatPercussion);
+    }
 
     public Chord GetChordFromBlock(Block block)
     {
@@ -213,7 +236,7 @@ public class MusicManager : MonoBehaviour
         {
             Chord chord = GetChordFromBlock(blocks[0]);
             float intensity = (float)blocks[0].BlockCollection.FillAmount / (float)maxVolumeBlockCollectionSize;
-            float danger = Mathf.Clamp(((float)p.entranceManager.NumberOfOpenEntrances() / (float)p.entranceManager.slots.Length) * 6f, 0,1);
+            float danger = 1- Mathf.Clamp(((float)p.entranceManager.NumberOfOpenEntrances() / (float)p.entranceManager.slots.Length) * 2f, 0,1);
 
 
                 clipVolume[chord.celloLegato] = intensity * (1-danger);
@@ -248,6 +271,7 @@ public struct Chord
 {
     public string name;
     public List<AudioClip> pianoNotes;
+    public List<AudioClip> harpNotes;
     public AudioClip noise;
     public AudioClip celloLegato;
     public AudioClip celloTremello;

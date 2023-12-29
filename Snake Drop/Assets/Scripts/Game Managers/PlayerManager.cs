@@ -37,6 +37,7 @@ public class PlayerManager : MonoBehaviour
     public ArrowHandler arrowHandler;
 
     public ParticleManager particleManager;
+    public MusicManager musicManager;
 
     [HideInInspector]
     public bool RoundInProgress;
@@ -79,7 +80,7 @@ public class PlayerManager : MonoBehaviour
 
             FillPreviewBar();
         }
-        FindFirstObjectByType<MusicManager>().ParseBlockCollection();
+        musicManager.ParseBlockCollection();
         p_MidRound.End();
     }
 
@@ -227,7 +228,7 @@ public class PlayerManager : MonoBehaviour
         }
         else
         {
-            FindFirstObjectByType<MusicManager>().AddCrash();
+            musicManager.AddCrash();
             previewGridAnimator.Play("Bounce");
         }
     }
@@ -292,6 +293,7 @@ public class PlayerManager : MonoBehaviour
             {
                 if (!snakeHead.blockType.OverrideMove(snakeHead, snakeHead.Neighbor(direction), this)) Undoer.Save();
                 SnakeHead.Move(direction, this);
+                musicManager.ParseMove(snakeHead);
                 MidRound();
             }
             else
