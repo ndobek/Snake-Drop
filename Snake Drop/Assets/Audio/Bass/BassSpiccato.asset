@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 963de100ed1eaf944b72179ef50313e0, type: 3}
+  m_Name: BassSpiccato
+  m_EditorClassIdentifier: 
+  loop: 0
+  notes:
+  - {fileID: 8300000, guid: f66b0c2d42b06bf47987733ac3abd363, type: 3}
+  - {fileID: 8300000, guid: 4395dfe3e24b0bf4f991dac0c75c08c8, type: 3}
+  - {fileID: 8300000, guid: 4857a20365165694bac432cbc37a5a47, type: 3}
+  - {fileID: 8300000, guid: c05234c221ec0e84892ef6a3ff2969c0, type: 3}
+  - {fileID: 8300000, guid: 36090468d80710c4a9dc5fec5a7f325a, type: 3}
+  - {fileID: 8300000, guid: de70da538f3f7164db8ab5f7476f6647, type: 3}
+  - {fileID: 8300000, guid: 6dc2b929ac2bc824f848f4bd9e293f36, type: 3}
+  - {fileID: 8300000, guid: 8692c88855c437f4aa7682607721d651, type: 3}
+  - {fileID: 8300000, guid: 54a0f286c9fbf284995da9bc1dd79ea4, type: 3}
+  - {fileID: 8300000, guid: af349de47246c934ba4cdb887b5ab74c, type: 3}

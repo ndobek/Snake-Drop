@@ -59,6 +59,7 @@ public class PlayerManager : MonoBehaviour
     {
         p_OnCrash.Begin();
         Rule OnCrash = GameManager.instance.GameModeManager.GameMode.OnCrash;
+        musicManager.ParseCrash(snakeHead);
         if (OnCrash != null) OnCrash.Invoke(snakeHead, this);
         Score.OnCrash();
         RoundInProgress = false;
@@ -293,7 +294,6 @@ public class PlayerManager : MonoBehaviour
             {
                 if (!snakeHead.blockType.OverrideMove(snakeHead, snakeHead.Neighbor(direction), this)) Undoer.Save();
                 SnakeHead.Move(direction, this);
-                musicManager.ParseMove(snakeHead);
                 MidRound();
             }
             else

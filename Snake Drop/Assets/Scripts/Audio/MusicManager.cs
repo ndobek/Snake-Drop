@@ -46,9 +46,7 @@ public class MusicManager : MonoBehaviour
 
     public long maxVolumeBlockCollectionSize = 64;
 
-    public AudioClip OnBeatPercussion;
-    public AudioClip OffBeatPercussion;
-    public AudioClip QuarterBeatPercussion;
+    public AudioClip ClearBoard;
     public List<Chord> chords = new List<Chord>();
     private int lastPlayedChord = -1;
 
@@ -91,9 +89,7 @@ public class MusicManager : MonoBehaviour
             InitLoop(chord.celloLegato);
             InitLoop(chord.celloTremello);
         }
-        AddSource(OnBeatPercussion);
-        AddSource(OffBeatPercussion);
-        AddSource(QuarterBeatPercussion);
+        AddSource(ClearBoard);
     }
 
     private void AddSource(AudioClip clip)
@@ -118,6 +114,13 @@ public class MusicManager : MonoBehaviour
         long timeToPlay = currentTime + timeToNextBeat + delay;
 
         notes.Add(new ScheduledNote { clip = clipToPlay, time = timeToPlay });
+    }
+
+    public void OnBoardClear()
+    {
+        StopChord();
+        StartChord(chords.Where(c => c.name == "Cmaj9").First());
+        AddNoteOnNextBeat(ClearBoard);
     }
 
     void Update()
@@ -167,22 +170,12 @@ public class MusicManager : MonoBehaviour
 
         AddNoteOnNextBeat(note);
     }
-    public void ParseMove(Block block)
+    public void ParseCrash(Block block)
     {
         if (!block) return;
-
-        long QuarterBeatTime = onBeatMS;
-        long HalfBeatTime = onBeatMS * 4;
-        long BeatTime = onBeatMS * 8;
-
-
-        long timeToQuarterBeat = QuarterBeatTime - (currentTime % QuarterBeatTime); 
-        long timeToHalfBeat = HalfBeatTime - (currentTime % HalfBeatTime);
-        long timeToFullBeat = BeatTime - (currentTime % BeatTime);
-
-        AddNoteOnNextBeat(QuarterBeatPercussion);
-        if (timeToHalfBeat <= timeToQuarterBeat) AddNoteOnNextBeat(OffBeatPercussion);
-        //if (timeToFullBeat <= timeToQuarterBeat) AddNoteOnNextBeat(OnBeatPercussion);
+        Chord chord = GetChordFromBlock(block);
+        AudioClip note = chord.harpNotes[rng.Next(0, chord.harpNotes.Count)];
+        AddNoteOnNextBeat(note);
     }
 
     public Chord GetChordFromBlock(Block block)

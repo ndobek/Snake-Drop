@@ -795,7 +795,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -5.47, y: -1.59, z: 15}
-  m_LocalScale: {x: 8.500045, y: 8.500045, z: 1}
+  m_LocalScale: {x: 8.571213, y: 8.571213, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1335287329}
@@ -926,7 +926,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -5.47, y: -1.59, z: 15}
-  m_LocalScale: {x: 8.500045, y: 8.500045, z: 1}
+  m_LocalScale: {x: 8.571213, y: 8.571213, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1335287329}
@@ -1243,7 +1243,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 4.75, y: -1.18, z: 15}
-  m_LocalScale: {x: 8.188356, y: 8.188356, z: 1}
+  m_LocalScale: {x: 8.259525, y: 8.259525, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 597871474}
@@ -1407,7 +1407,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 4.75, y: -1.18, z: 15}
-  m_LocalScale: {x: 8.188356, y: 8.188356, z: 1}
+  m_LocalScale: {x: 8.259525, y: 8.259525, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 597871474}
@@ -1538,7 +1538,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 7.81, y: -1.09, z: 15}
-  m_LocalScale: {x: 8.451963, y: 8.451963, z: 1}
+  m_LocalScale: {x: 8.515193, y: 8.515193, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1256450867}
@@ -2322,7 +2322,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 7.81, y: -1.09, z: 15}
-  m_LocalScale: {x: 8.451963, y: 8.451963, z: 1}
+  m_LocalScale: {x: 8.515193, y: 8.515193, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1256450867}
@@ -58212,10 +58212,7 @@ MonoBehaviour:
   BPS: 5
   lerpSpeed: 0.8
   maxVolumeBlockCollectionSize: 10
-  OnBeatPercussion: {fileID: 8300000, guid: 4c1636c2ea07a2240b86772afa34437c, type: 3}
-  OffBeatPercussion: {fileID: 8300000, guid: 2d1a4775e66d4394ca49742f6a963039, type: 3}
-  QuarterBeatPercussion: {fileID: 8300000, guid: 571ee15167f46234c90c21de0d16b194,
-    type: 3}
+  ClearBoard: {fileID: 8300000, guid: 0e7c42310135597418f00953f4e1f2a9, type: 3}
   chords:
   - name: Am7
     pianoNotes:

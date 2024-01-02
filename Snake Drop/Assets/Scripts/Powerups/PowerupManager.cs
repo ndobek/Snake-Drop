@@ -39,8 +39,11 @@ public class PowerupManager : MonoBehaviour
     {
         if (currentPowerup != null)
         {
-            GameManager.instance.playerManagers[0].Score.UpdateScore();
+            PlayerManager p = GameManager.instance.playerManagers[0];
+            p.Score.UpdateScore();
+            p.musicManager.OnBoardClear();
             currentPowerup.Activate();
+
             BGManager.inst.BGBlurred = false;
             numOfPowerupsUsed += 1;
             currentPowerup = null;
