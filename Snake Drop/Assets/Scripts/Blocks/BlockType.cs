@@ -32,38 +32,42 @@ public class BlockType : ScriptableObject, ISaveable
         }
         return false;
     }
-    public virtual bool OverrideMove(Block block, BlockSlot slot, PlayerManager player = null)
+
+    public virtual bool OverrideMove(Block block, BlockSlot slot, Directions.Direction moveDir, PlayerManager player = null)
     {
         if (slot &&
-            slot.Block &&
-            block &&
-            block.Tail &&
-            block.Tail.Slot &&
-            block.Tail.Slot == slot)
-             return true;
+          slot.Block &&
+          block &&
+          block.Tail &&
+           block.Tail.Slot &&
+           block.Tail.Slot == slot)
+            return true;
 
         if (block &&
             block.Tail &&
             block.Slot &&
             block.Slot.playGrid != block.Tail.Slot.playGrid &&
             slot == null &&
-            block.Tail.Slot.GetNeighbor(Directions.GetOppositeDirection(player.playerController.MostRecentDirectionMoved)) == block.Slot) return true;
+            block.Tail.Slot.GetNeighbor(Directions.GetOppositeDirection(moveDir)) == block.Slot) return true;
+
 
         return false;
     }
 
+
+
     #endregion
 
     #region Actions
-    public virtual void OnMove(Block block, BlockSlot slot, int moveType, PlayerManager player = null)
+    public virtual void OnMove(Block block, BlockSlot slot, int moveType, Directions.Direction moveDir, PlayerManager player = null)
     {
-        if (OverrideMove(block, slot, player)) return;
+        if (OverrideMove(block, slot, moveDir, player)) return;
 
         moveRules[moveType].OnMove(block, slot, player);
     }
-    public virtual void OnMove(Block block, BlockSlot slot, PlayerManager player = null)
+    public virtual void OnMove(Block block, BlockSlot slot, Directions.Direction moveDir, PlayerManager player = null)
     {
-        if (OverrideMove(block, slot, player)) return;
+        if (OverrideMove(block, slot, moveDir, player)) return;
 
         if (CanMoveToWithoutCrashing(block, slot, player))
         {

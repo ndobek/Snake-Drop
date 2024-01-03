@@ -176,15 +176,15 @@ public class Block : MonoBehaviour
     {
         blockType.SpecialAction(this, player);
     }
-    public void Move(Directions.Direction neighbor, PlayerManager player = null)
+    public void Move(Directions.Direction neighbor, Directions.Direction moveDir, PlayerManager player = null)
     {
-        MoveTo(Neighbor(neighbor), player);
+        MoveTo(Neighbor(neighbor), moveDir, player);
     }
-    public virtual void MoveTo(BlockSlot obj, PlayerManager player = null)
+    public virtual void MoveTo(BlockSlot obj, Directions.Direction moveDir, PlayerManager player = null)
     {
         SetGridDirty();
         if (player && obj) obj.SetOwner(player);
-        blockType.OnMove(this, obj, player);
+        blockType.OnMove(this, obj, moveDir, player);
     }
     public bool CanMoveToWithoutCrashing(BlockSlot obj, PlayerManager player = null)
     {

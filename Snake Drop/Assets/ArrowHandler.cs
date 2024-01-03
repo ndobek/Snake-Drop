@@ -76,10 +76,10 @@ public class ArrowHandler : MonoBehaviour
         {
             if (player.RoundInProgress)
             {
-                left.SetActive(!snakeHead.blockType.OverrideMove(snakeHead, snakeHead.Neighbor(Directions.Direction.LEFT), player));
-                right.SetActive(!snakeHead.blockType.OverrideMove(snakeHead, snakeHead.Neighbor(Directions.Direction.RIGHT), player));
-                up.SetActive(!snakeHead.blockType.OverrideMove(snakeHead, snakeHead.Neighbor(Directions.Direction.UP), player));
-                down.SetActive(!snakeHead.blockType.OverrideMove(snakeHead, snakeHead.Neighbor(Directions.Direction.DOWN), player));
+                left.SetActive(!snakeHead.blockType.OverrideMove(snakeHead, snakeHead.Neighbor(Directions.Direction.LEFT), Directions.Direction.LEFT, player));
+                right.SetActive(!snakeHead.blockType.OverrideMove(snakeHead, snakeHead.Neighbor(Directions.Direction.RIGHT), Directions.Direction.RIGHT, player));
+                up.SetActive(!snakeHead.blockType.OverrideMove(snakeHead, snakeHead.Neighbor(Directions.Direction.UP), Directions.Direction.UP, player));
+                down.SetActive(!snakeHead.blockType.OverrideMove(snakeHead, snakeHead.Neighbor(Directions.Direction.DOWN), Directions.Direction.DOWN, player));
                 
             }
             else

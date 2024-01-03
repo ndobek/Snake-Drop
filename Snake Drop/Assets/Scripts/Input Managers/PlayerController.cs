@@ -108,7 +108,7 @@ public class PlayerController : MonoBehaviour
 
     private void Press(Direction direction)
     {
-        if (!player.RoundInProgress || !player.SnakeHead.blockType.OverrideMove(player.SnakeHead, player.SnakeHead.Neighbor(direction), player)) MostRecentDirectionMoved = direction;
+        if (!player.RoundInProgress || !player.SnakeHead.blockType.OverrideMove(player.SnakeHead, player.SnakeHead.Neighbor(direction), direction, player)) MostRecentDirectionMoved = direction;
         if ((MoveOnCommandDuringRound && player.RoundInProgress) || (MoveOnCommandBetweenRounds && !player.RoundInProgress))
         {
             switch (direction)

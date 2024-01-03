@@ -225,7 +225,7 @@ public class PlayerManager : MonoBehaviour
         {
             Undoer.Save();
             previewGridAnimator.Play("Down");
-            snakeHead.MoveTo(destination, this);/*GameManager.instance.BasicMove.OnMove(SnakeHead, destination, this)*/;
+            snakeHead.MoveTo(destination,direction, this);/*GameManager.instance.BasicMove.OnMove(SnakeHead, destination, this)*/;
             RoundInProgress = true;
         }
         else
@@ -309,8 +309,8 @@ public class PlayerManager : MonoBehaviour
             arrowHandler.OnInputGiven();
             if (RoundInProgress)
             {
-                if (!snakeHead.blockType.OverrideMove(snakeHead, snakeHead.Neighbor(direction), this)) Undoer.Save();
-                SnakeHead.Move(direction, this);
+                if (!snakeHead.blockType.OverrideMove(snakeHead, snakeHead.Neighbor(direction), direction, this)) Undoer.Save();
+                SnakeHead.Move(direction, direction, this);
                 MidRound();
             }
             else
