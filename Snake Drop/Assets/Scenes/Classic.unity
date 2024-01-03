@@ -59252,7 +59252,7 @@ MonoBehaviour:
   BPS: 5
   lerpSpeed: 0.8
   maxVolumeBlockCollectionSize: 10
-  ClearBoard: {fileID: 8300000, guid: 0e7c42310135597418f00953f4e1f2a9, type: 3}
+  ClearBoard: {fileID: 8300000, guid: 820692b96c37a98489d2ffda9b19c131, type: 3}
   chords:
   - name: Am7
     pianoNotes:
