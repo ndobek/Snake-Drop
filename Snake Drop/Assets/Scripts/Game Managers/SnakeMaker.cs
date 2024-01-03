@@ -22,5 +22,21 @@ public static class SnakeMaker
             if (i > 0) slot.Blocks[i - 1].SetTail(slot.Blocks[i]);
         }
     }
+    public static List<BlockColor> GetSnakeDetails(SnakeInfo info)
+    {
+        BlockType currentType = info.GetRandomType();
+        BlockColor currentColor = info.GetRandomColor();
+        List<BlockColor> result = new List<BlockColor>();
+
+        result.Add(currentColor);
+        for (int i = 1; i < info.length; i++)
+        {
+            if (Random.value < info.entropy) currentColor = info.GetRandomColor();
+            currentType = info.GetRandomType();
+            result.Add(currentColor);
+        }
+        return result;
+    }
+
 
 }

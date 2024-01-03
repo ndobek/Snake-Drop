@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Unity.Profiling;
+using System.Linq;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -247,12 +248,28 @@ public class PlayerManager : MonoBehaviour
         Block result = waitSlot.Block;
         while ((result.Tail != null && result.blockType != GameManager.instance.GameModeManager.GameMode.TypeBank.snakeHeadType))
         {
-
-            result = result.Slot.GetNeighbor(Directions.Direction.UP).Block;
+            BlockSlot neighbor = result.Slot.GetNeighbor(Directions.Direction.UP);
+            if (neighbor) result = neighbor.Block;
+            else
+            {
+                result = null;
+                break;
+            }
         }
         return result;
     }
-
+    public List<Block> GetAllSpawnedSnakeHeads()
+    {
+        List<Block> result = new List<Block>();
+        if(RoundInProgress) result.Add(snakeHead);
+        BlockSlot slotToCheck = waitSlot;
+        while(slotToCheck != null)
+        {
+            result.AddRange(slotToCheck.Blocks.Where(s => s.blockType == GameManager.instance.GameModeManager.GameMode.TypeBank.snakeHeadType));
+            slotToCheck = slotToCheck.GetNeighbor(Directions.Direction.UP);
+        }
+        return result;
+    }
     public void ResetMoveRestrictions()
     {
         HeightLimitIndicator.ResetHeightLimit();
