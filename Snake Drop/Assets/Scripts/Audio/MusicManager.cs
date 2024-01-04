@@ -210,8 +210,8 @@ public class MusicManager : MonoBehaviour
 
     private void FadeIn(AudioClip clip, float volume = 1)
     {
-        sources[clip].Play();
-        sources[clip].volume = 0;
+        //sources[clip].Play();
+        //sources[clip].volume = 0;
         clipVolume[clip] = volume;
     }
     public void ToggleMute()
@@ -249,11 +249,11 @@ public class MusicManager : MonoBehaviour
     public void Florish(Block block)
     {
         Chord chord = GetChordFromBlock(block);
-        AddNoteOnNextBeat(chord.pianoNotes[0], 0);
-        AddNoteOnNextBeat(chord.pianoNotes[1], 30);
-        AddNoteOnNextBeat(chord.pianoNotes[2], 60);
-        AddNoteOnNextBeat(chord.pianoNotes[3], 80);
-        AddNoteOnNextBeat(currentChord.pianoNotes[4], 100);
+        AddNoteOnNextBeat(chord.pianoNotes[rng.Next(0, chord.pianoNotes.Count)], 0);
+        AddNoteOnNextBeat(chord.pianoNotes[rng.Next(0, chord.pianoNotes.Count)], 30);
+        AddNoteOnNextBeat(chord.pianoNotes[rng.Next(0, chord.pianoNotes.Count)], 60);
+        AddNoteOnNextBeat(chord.pianoNotes[rng.Next(0, chord.pianoNotes.Count)], 80);
+        AddNoteOnNextBeat(chord.pianoNotes[rng.Next(0, chord.pianoNotes.Count)], 100);
     }
 
 }

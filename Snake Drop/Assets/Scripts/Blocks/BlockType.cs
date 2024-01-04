@@ -50,6 +50,13 @@ public class BlockType : ScriptableObject, ISaveable
             slot == null &&
             block.Tail.Slot.GetNeighbor(Directions.GetOppositeDirection(moveDir)) == block.Slot) return true;
 
+        if (block &&
+            block.Tail &&
+            block.Slot &&
+            block.Slot.playGrid != block.Tail.Slot.playGrid &&
+            slot == null &&
+            block.Tail.Slot.GetNeighbor(Directions.GetOppositeDirection(GameManager.instance.playerManagers[0].playerController.MostRecentDirectionMoved)) == block.Slot) return true;
+
 
         return false;
     }
