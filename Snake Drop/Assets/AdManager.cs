@@ -7,7 +7,10 @@ using System;
 public class AdManager : MonoBehaviour
 {
     //TEST ID
-    private string adUnitID = "ca-app-pub-3940256099942544/5224354917";
+    //private string adUnitID = "ca-app-pub-3940256099942544/5224354917";
+
+    //LIVE ID
+    private string adUnitID = "ca-app-pub-5711654782694273/6943773560";
 
 
 
