@@ -20,6 +20,145 @@ namespace CloudOnce
         /// </summary>
         public static class AchievementIDs
         {
+            public static string stageTwo
+            {
+                get
+                {
+#if UNITY_ANDROID && !UNITY_EDITOR
+#if CLOUDONCE_GOOGLE
+                    return "CgkI37zJ85kBEAIQBw";
+#else
+                    return string.Empty;
+#endif
+#elif (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+                    return "";
+#elif UNITY_EDITOR
+                    return "stageTwo";
+#else
+                    return string.Empty;
+#endif
+                }
+            }
+
+            public static string stageFive
+            {
+                get
+                {
+#if UNITY_ANDROID && !UNITY_EDITOR
+#if CLOUDONCE_GOOGLE
+                    return "CgkI37zJ85kBEAIQCA";
+#else
+                    return string.Empty;
+#endif
+#elif (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+                    return "";
+#elif UNITY_EDITOR
+                    return "stageFive";
+#else
+                    return string.Empty;
+#endif
+                }
+            }
+
+            public static string stageTen
+            {
+                get
+                {
+#if UNITY_ANDROID && !UNITY_EDITOR
+#if CLOUDONCE_GOOGLE
+                    return "CgkI37zJ85kBEAIQCQ";
+#else
+                    return string.Empty;
+#endif
+#elif (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+                    return "";
+#elif UNITY_EDITOR
+                    return "stageTen";
+#else
+                    return string.Empty;
+#endif
+                }
+            }
+
+            public static string stageFifteen
+            {
+                get
+                {
+#if UNITY_ANDROID && !UNITY_EDITOR
+#if CLOUDONCE_GOOGLE
+                    return "CgkI37zJ85kBEAIQCg";
+#else
+                    return string.Empty;
+#endif
+#elif (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+                    return "";
+#elif UNITY_EDITOR
+                    return "stageFifteen";
+#else
+                    return string.Empty;
+#endif
+                }
+            }
+
+            public static string stageTwenty
+            {
+                get
+                {
+#if UNITY_ANDROID && !UNITY_EDITOR
+#if CLOUDONCE_GOOGLE
+                    return "CgkI37zJ85kBEAIQDA";
+#else
+                    return string.Empty;
+#endif
+#elif (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+                    return "";
+#elif UNITY_EDITOR
+                    return "stageTwenty";
+#else
+                    return string.Empty;
+#endif
+                }
+            }
+
+            public static string stageFinal
+            {
+                get
+                {
+#if UNITY_ANDROID && !UNITY_EDITOR
+#if CLOUDONCE_GOOGLE
+                    return "CgkI37zJ85kBEAIQCw";
+#else
+                    return string.Empty;
+#endif
+#elif (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+                    return "";
+#elif UNITY_EDITOR
+                    return "stageFinal";
+#else
+                    return string.Empty;
+#endif
+                }
+            }
+
+            public static string beatMe
+            {
+                get
+                {
+#if UNITY_ANDROID && !UNITY_EDITOR
+#if CLOUDONCE_GOOGLE
+                    return "CgkI37zJ85kBEAIQDQ";
+#else
+                    return string.Empty;
+#endif
+#elif (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+                    return "";
+#elif UNITY_EDITOR
+                    return "beatMe";
+#else
+                    return string.Empty;
+#endif
+                }
+            }
         }
 
         /// <summary>
@@ -81,6 +220,26 @@ namespace CloudOnce
                     return "";
 #elif UNITY_EDITOR
                     return "Highest_Single_Combo";
+#else
+                    return string.Empty;
+#endif
+                }
+            }
+
+            public static string Highest_Stage
+            {
+                get
+                {
+#if UNITY_ANDROID && !UNITY_EDITOR
+#if CLOUDONCE_GOOGLE
+                    return "CgkI37zJ85kBEAIQBg";
+#else
+                    return string.Empty;
+#endif
+#elif (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+                    return "";
+#elif UNITY_EDITOR
+                    return "Highest_Stage";
 #else
                     return string.Empty;
 #endif

@@ -14,8 +14,120 @@ namespace CloudOnce
     /// </summary>
     public static class Achievements
     {
+        private static readonly UnifiedAchievement s_stageTwo = new UnifiedAchievement("stageTwo",
+#if !UNITY_EDITOR && (UNITY_IOS || UNITY_TVOS)
+            ""
+#elif !UNITY_EDITOR && UNITY_ANDROID && CLOUDONCE_GOOGLE
+            "CgkI37zJ85kBEAIQBw"
+#else
+            "stageTwo"
+#endif
+            );
+
+        public static UnifiedAchievement stageTwo
+        {
+            get { return s_stageTwo; }
+        }
+
+        private static readonly UnifiedAchievement s_stageFive = new UnifiedAchievement("stageFive",
+#if !UNITY_EDITOR && (UNITY_IOS || UNITY_TVOS)
+            ""
+#elif !UNITY_EDITOR && UNITY_ANDROID && CLOUDONCE_GOOGLE
+            "CgkI37zJ85kBEAIQCA"
+#else
+            "stageFive"
+#endif
+            );
+
+        public static UnifiedAchievement stageFive
+        {
+            get { return s_stageFive; }
+        }
+
+        private static readonly UnifiedAchievement s_stageTen = new UnifiedAchievement("stageTen",
+#if !UNITY_EDITOR && (UNITY_IOS || UNITY_TVOS)
+            ""
+#elif !UNITY_EDITOR && UNITY_ANDROID && CLOUDONCE_GOOGLE
+            "CgkI37zJ85kBEAIQCQ"
+#else
+            "stageTen"
+#endif
+            );
+
+        public static UnifiedAchievement stageTen
+        {
+            get { return s_stageTen; }
+        }
+
+        private static readonly UnifiedAchievement s_stageFifteen = new UnifiedAchievement("stageFifteen",
+#if !UNITY_EDITOR && (UNITY_IOS || UNITY_TVOS)
+            ""
+#elif !UNITY_EDITOR && UNITY_ANDROID && CLOUDONCE_GOOGLE
+            "CgkI37zJ85kBEAIQCg"
+#else
+            "stageFifteen"
+#endif
+            );
+
+        public static UnifiedAchievement stageFifteen
+        {
+            get { return s_stageFifteen; }
+        }
+
+        private static readonly UnifiedAchievement s_stageTwenty = new UnifiedAchievement("stageTwenty",
+#if !UNITY_EDITOR && (UNITY_IOS || UNITY_TVOS)
+            ""
+#elif !UNITY_EDITOR && UNITY_ANDROID && CLOUDONCE_GOOGLE
+            "CgkI37zJ85kBEAIQDA"
+#else
+            "stageTwenty"
+#endif
+            );
+
+        public static UnifiedAchievement stageTwenty
+        {
+            get { return s_stageTwenty; }
+        }
+
+        private static readonly UnifiedAchievement s_stageFinal = new UnifiedAchievement("stageFinal",
+#if !UNITY_EDITOR && (UNITY_IOS || UNITY_TVOS)
+            ""
+#elif !UNITY_EDITOR && UNITY_ANDROID && CLOUDONCE_GOOGLE
+            "CgkI37zJ85kBEAIQCw"
+#else
+            "stageFinal"
+#endif
+            );
+
+        public static UnifiedAchievement stageFinal
+        {
+            get { return s_stageFinal; }
+        }
+
+        private static readonly UnifiedAchievement s_beatMe = new UnifiedAchievement("beatMe",
+#if !UNITY_EDITOR && (UNITY_IOS || UNITY_TVOS)
+            ""
+#elif !UNITY_EDITOR && UNITY_ANDROID && CLOUDONCE_GOOGLE
+            "CgkI37zJ85kBEAIQDQ"
+#else
+            "beatMe"
+#endif
+            );
+
+        public static UnifiedAchievement beatMe
+        {
+            get { return s_beatMe; }
+        }
+
         public static readonly UnifiedAchievement[] All =
         {
+            s_stageTwo,
+            s_stageFive,
+            s_stageTen,
+            s_stageFifteen,
+            s_stageTwenty,
+            s_stageFinal,
+            s_beatMe,
         };
 
         public static string GetPlatformID(string internalId)
@@ -27,7 +139,13 @@ namespace CloudOnce
 
         private static readonly Dictionary<string, UnifiedAchievement> s_achievementDictionary = new Dictionary<string, UnifiedAchievement>
         {
-
+            { "stageTwo", s_stageTwo },
+            { "stageFive", s_stageFive },
+            { "stageTen", s_stageTen },
+            { "stageFifteen", s_stageFifteen },
+            { "stageTwenty", s_stageTwenty },
+            { "stageFinal", s_stageFinal },
+            { "beatMe", s_beatMe },
         };
     }
 }

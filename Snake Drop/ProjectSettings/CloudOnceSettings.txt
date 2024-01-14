@@ -1,5 +1,41 @@
 {
-	"AchievementIDs":[],
+	"AchievementIDs":[
+		{
+			"InternalID":"stageTwo",
+			"AppleID":"",
+			"GoogleID":"CgkI37zJ85kBEAIQBw"
+		},
+		{
+			"InternalID":"stageFive",
+			"AppleID":"",
+			"GoogleID":"CgkI37zJ85kBEAIQCA"
+		},
+		{
+			"InternalID":"stageTen",
+			"AppleID":"",
+			"GoogleID":"CgkI37zJ85kBEAIQCQ"
+		},
+		{
+			"InternalID":"stageFifteen",
+			"AppleID":"",
+			"GoogleID":"CgkI37zJ85kBEAIQCg"
+		},
+		{
+			"InternalID":"stageTwenty",
+			"AppleID":"",
+			"GoogleID":"CgkI37zJ85kBEAIQDA"
+		},
+		{
+			"InternalID":"stageFinal",
+			"AppleID":"",
+			"GoogleID":"CgkI37zJ85kBEAIQCw"
+		},
+		{
+			"InternalID":"beatMe",
+			"AppleID":"",
+			"GoogleID":"CgkI37zJ85kBEAIQDQ"
+		}
+	],
 	"LeaderboardIDs":[
 		{
 			"InternalID":"High_Score",
@@ -15,6 +51,11 @@
 			"InternalID":"Highest_Single_Combo",
 			"AppleID":"",
 			"GoogleID":"CgkI37zJ85kBEAIQBQ"
+		},
+		{
+			"InternalID":"Highest_Stage",
+			"AppleID":"",
+			"GoogleID":"CgkI37zJ85kBEAIQBg"
 		}
 	],
 	"CloudVariables":[
@@ -44,6 +85,13 @@
 			"Type":"4",
 			"DefaultValue":"False",
 			"PersistenceType":"0",
+			"AllowNegative":false
+		},
+		{
+			"Key":"Tooltips",
+			"Type":"4",
+			"DefaultValue":"True",
+			"PersistenceType":"2",
 			"AllowNegative":false
 		}
 	],

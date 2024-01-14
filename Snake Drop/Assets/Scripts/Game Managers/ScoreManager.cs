@@ -128,9 +128,13 @@ public class ScoreManager : MonoBehaviour
     }
     public void SubmitHighScore()
     {
+        PlayerManager p = GameManager.instance.playerManagers[0];
         Leaderboards.High_Score.SubmitScore(Score);
-        if (GameManager.instance.playerManagers[0].Powerup.numOfPowerupsUsed == 0) Leaderboards.Highest_Score_Before_Board_Clear.SubmitScore(Score);
+        Leaderboards.Highest_Stage.SubmitScore(p.Powerup.numOfPowerupsUsed + 1);
+        if (p.Powerup.numOfPowerupsUsed == 0) Leaderboards.Highest_Score_Before_Board_Clear.SubmitScore(Score);
         CloudVariables.HighScore = score;
+
+        CheckAchievements();
     }
     public void OnCrash()
     {
@@ -188,6 +192,21 @@ public class ScoreManager : MonoBehaviour
         else { timeSinceAllScoresFinalized += Time.deltaTime; }
 
         if(timeSinceAllScoresFinalized > maxTimeWithoutScoresFinalized) { FinalizeAllScores(); }
+    }
+
+    private void CheckAchievements()
+    {
+        PlayerManager p = GameManager.instance.playerManagers[0];
+        int stage = p.Powerup.numOfPowerupsUsed + 1;
+
+        if (stage >= 2) CloudOnce.Achievements.stageTwo.Unlock();
+        if (stage >= 5) CloudOnce.Achievements.stageFive.Unlock();
+        if (stage >= 10) CloudOnce.Achievements.stageTen.Unlock();
+        if (stage >= 15) CloudOnce.Achievements.stageFifteen.Unlock();
+        if (stage >= 20) CloudOnce.Achievements.stageTwenty.Unlock();
+        if (stage >= 26) CloudOnce.Achievements.stageFinal.Unlock();
+
+        if (score > 1319897) CloudOnce.Achievements.beatMe.Unlock();
     }
 
 }

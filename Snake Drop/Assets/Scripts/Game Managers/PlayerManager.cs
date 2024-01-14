@@ -102,7 +102,7 @@ public class PlayerManager : MonoBehaviour
             SnakeHead.KillSnake(this);
         }
         DoGridActions();
-
+        Score.UpdateScore();
         if (GameIsOver())
         {
             EndGame();

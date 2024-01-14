@@ -59,6 +59,21 @@ namespace CloudOnce
             get { return s_highest_Single_Combo; }
         }
 
+        private static readonly UnifiedLeaderboard s_highest_Stage = new UnifiedLeaderboard("Highest_Stage",
+#if !UNITY_EDITOR && (UNITY_IOS || UNITY_TVOS)
+            ""
+#elif !UNITY_EDITOR && UNITY_ANDROID && CLOUDONCE_GOOGLE
+            "CgkI37zJ85kBEAIQBg"
+#else
+            "Highest_Stage"
+#endif
+            );
+
+        public static UnifiedLeaderboard Highest_Stage
+        {
+            get { return s_highest_Stage; }
+        }
+
         public static string GetPlatformID(string internalId)
         {
             return s_leaderboardDictionary.ContainsKey(internalId)
@@ -71,6 +86,7 @@ namespace CloudOnce
             { "High_Score", s_high_Score },
             { "Highest_Score_Before_Board_Clear", s_highest_Score_Before_Board_Clear },
             { "Highest_Single_Combo", s_highest_Single_Combo },
+            { "Highest_Stage", s_highest_Stage },
         };
     }
 }

@@ -58,4 +58,13 @@ public class tutorialhandler : MonoBehaviour
         if (currentSlide == slides.Length - 1) ActivateSlide(0);
         else ActivateSlide(currentSlide + 1);
     }
+
+    public void PopUpToolTip(int slide)
+    {
+        if (CloudOnce.CloudVariables.Tooltips)
+        {
+            Open();
+            ActivateSlide(slide);
+        }
+    }
 }

@@ -44,5 +44,13 @@ namespace CloudOnce
             get { return s_muted.Value; }
             set { s_muted.Value = value; }
         }
+
+        private static readonly CloudBool s_tooltips = new CloudBool("Tooltips", PersistenceType.Lowest, true);
+
+        public static bool Tooltips
+        {
+            get { return s_tooltips.Value; }
+            set { s_tooltips.Value = value; }
+        }
     }
 }
