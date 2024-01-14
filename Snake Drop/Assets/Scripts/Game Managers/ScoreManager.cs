@@ -30,6 +30,15 @@ public class ScoreManager : MonoBehaviour
             multiplier = value;
         }
     }
+    private int multiplierTwo;
+    public int MultiplierTwo
+    {
+        get { return multiplierTwo; }
+        set
+        {
+            multiplierTwo = value;
+        }
+    }
 
     private int highScore;
     public int HighScore
@@ -68,6 +77,7 @@ public class ScoreManager : MonoBehaviour
     public void ResetMultiplier()
     {
         Multiplier = 1;
+        MultiplierTwo = 1;
     }
 
     public void IncreaseScorePartially(float amount, bool useMultiplier)
@@ -102,7 +112,7 @@ public class ScoreManager : MonoBehaviour
     public void IncreaseScore(int amount, bool useMultiplier, GameObject delayReferenceObject = null)
     {
         int finalAmount = amount;
-        if (useMultiplier) finalAmount *= multiplier;
+        if (useMultiplier) finalAmount *= multiplier * multiplierTwo;
         if (delayReferenceObject != null) DelayScore(delayReferenceObject, finalAmount);
         Score += finalAmount;
     }

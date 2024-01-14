@@ -49,6 +49,7 @@ public class PlayerManager : MonoBehaviour
     private bool firstRound = false;
 
     public int mostRecentSnakeLength;
+    public BlockColor mostRecentBlockColorEaten;
     public Random.State randStateForSnake;
 
     static readonly ProfilerMarker p_OnCrash = new ProfilerMarker("On Crash");
@@ -195,20 +196,25 @@ public class PlayerManager : MonoBehaviour
     }
     public void PrepareNewRound()
     {
+        bool resetMostRecentBlockColor = false;
         if (snakeHead == null) entranceManager.ReactivateEntrances();
         else
         {
             Score.ResetMultiplier();
+            resetMostRecentBlockColor = true;
+            
         }
 
         entranceManager.UpdateAnimations();
         FillPreviewBar();
         ResetMoveRestrictions();
         SnakeHead = waitSlot.Block;
+        if(resetMostRecentBlockColor) mostRecentBlockColorEaten = snakeHead.blockColor;
         mostRecentSnakeLength = SnakeHead.SnakeLength();
         if (firstRound)
         {
             if(GameManager.instance.GameModeManager.GameMode.OnGameStart) GameManager.instance.GameModeManager.GameMode.OnGameStart.Invoke(playGrid);
+            mostRecentBlockColorEaten = snakeHead.blockColor;
             firstRound = false;
         }
     }

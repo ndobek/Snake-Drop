@@ -17,9 +17,11 @@ public class ScoreDisplayer : MonoBehaviour
     {
         scoreText.SetText(score.ToString());
     }
-    public void UpdateMultiplierDisplay(int multiplier)
+    public void UpdateMultiplierDisplay(int multiplier, int multiplierTwo = 1)
     {
-        multiplierText.SetText("x " + multiplier.ToString());
+        string text = "x" + multiplier.ToString();
+        if (multiplierTwo != 1) text += " x" + multiplierTwo.ToString();
+        multiplierText.SetText(text);
     }
 
     public void UpdateHighScoreDisplay(int highScore)
@@ -38,7 +40,7 @@ public class ScoreDisplayer : MonoBehaviour
     private void Update()
     {
         UpdateScoreDisplay(scoreManager.DelayedScore);
-        UpdateMultiplierDisplay(scoreManager.Multiplier);
+        UpdateMultiplierDisplay(scoreManager.Multiplier, scoreManager.MultiplierTwo);
         UpdateHighScoreDisplay(scoreManager.HighScore);
         if (scoreManager.HighScore < scoreManager.Score && isHighScoreColorSet == false)
         {

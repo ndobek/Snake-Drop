@@ -43,6 +43,7 @@ public class PlayerSaveData
     public EntranceSlotSaveData EnterSlot;
     public int mostRecentDirectionMoved;
     public int mostRecentSnakeLength;
+    public string mostRecentBlockColorEaten;
     public Random.State randStateForSnake;
 
     public PlayerSaveData(PlayerManager SaveObj)
@@ -58,6 +59,7 @@ public class PlayerSaveData
         EnterSlot = new EntranceSlotSaveData(SaveObj.enterSlot);
         mostRecentDirectionMoved = (int)SaveObj.playerController.SecondMostRecentDirectionMoved;
         mostRecentSnakeLength = SaveObj.mostRecentSnakeLength;
+        mostRecentBlockColorEaten = SaveObj.mostRecentBlockColorEaten.Name;
         randStateForSnake = SaveObj.randStateForSnake;
 
     }
@@ -74,6 +76,7 @@ public class PlayerSaveData
         LoadObj.PositionWaitSlot(LoadObj.entranceManager.GetSlot(EnterSlot.x, EnterSlot.y));
         LoadObj.playerController.MostRecentDirectionMoved = (Directions.Direction)mostRecentDirectionMoved;
         LoadObj.mostRecentSnakeLength = mostRecentSnakeLength;
+        LoadObj.mostRecentBlockColorEaten = gameManager.Colors.getObject(mostRecentBlockColorEaten) as BlockColor;
         score.LoadTo(LoadObj.Score);
         powerup.LoadTo(LoadObj.Powerup, gameManager);
         LoadObj.RoundInProgress = RoundInProgress;
@@ -122,6 +125,7 @@ public class ScoreSaveData
 {
     public int score;
     public int multiplier;
+    public int multiplierTwo;
     public int numberOfSnakes;
     public int scoreAtLastCrash;
 
@@ -129,6 +133,7 @@ public class ScoreSaveData
     {
         score = SaveObj.Score;
         multiplier = SaveObj.Multiplier;
+        multiplierTwo = SaveObj.MultiplierTwo;
         numberOfSnakes = SaveObj.numberOfSnakes;
         scoreAtLastCrash = SaveObj.scoreAtLastCrash;
     }
@@ -137,6 +142,7 @@ public class ScoreSaveData
     {
         LoadObj.Score = score;
         LoadObj.Multiplier = multiplier;
+        LoadObj.MultiplierTwo = multiplierTwo;
         LoadObj.numberOfSnakes = numberOfSnakes;
         LoadObj.scoreAtLastCrash = scoreAtLastCrash;
     }
