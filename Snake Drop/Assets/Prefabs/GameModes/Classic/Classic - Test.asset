@@ -19,5 +19,5 @@ MonoBehaviour:
   Levels:
   - LevelValid: {fileID: 11400000, guid: 892c79c804afd1c4787866e79d16afc5, type: 2}
     snakeType: {fileID: 11400000, guid: 7f13ef94a3c224043afe19d790627a74, type: 2}
-    NextPowerupRule: {fileID: 11400000, guid: 9f2da7af9a477c54aa31bcbefa918df0, type: 2}
+    NextPowerupRule: {fileID: 11400000, guid: 544e6a46a95bcd741a9d7d01279f1fce, type: 2}
     probability: 1

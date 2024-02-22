@@ -17,4 +17,5 @@ MonoBehaviour:
     - {fileID: 11400000, guid: bf86b87bf94e02c4fa184b1320751368, type: 2}
   - floats:
     - {fileID: 11400000, guid: 32288f3ddbcc0f348bcfe9440b69b74a, type: 2}
+    - {fileID: 11400000, guid: 32288f3ddbcc0f348bcfe9440b69b74a, type: 2}
     - {fileID: 11400000, guid: 540d690257bc6c74ead91a7237881f25, type: 2}

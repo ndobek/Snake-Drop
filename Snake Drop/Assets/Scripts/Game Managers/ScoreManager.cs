@@ -216,7 +216,7 @@ public class ScoreManager : MonoBehaviour
         if (stage >= 20) CloudOnce.Achievements.stageTwenty.Unlock();
         if (stage >= 26) CloudOnce.Achievements.stageFinal.Unlock();
 
-        if (score > 1319897) CloudOnce.Achievements.beatMe.Unlock();
+        if (score > 4658457) CloudOnce.Achievements.beatMe.Unlock();
     }
 
 }

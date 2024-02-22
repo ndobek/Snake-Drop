@@ -38,6 +38,11 @@ public class MusicManager : MonoBehaviour
                 muteButtonImage.sprite = unMutedIcon;
                 AudioListener.volume = musicVolume;
             }
+
+            foreach (AudioSource src in sources.Values)
+            {
+                src.enabled = !value;
+            }
         }
     }
 
@@ -56,12 +61,13 @@ public class MusicManager : MonoBehaviour
 
     private List<ScheduledNote> notes = new List<ScheduledNote>();
     public Dictionary<AudioClip, AudioSource> sources = new Dictionary<AudioClip, AudioSource>();
+    private AudioSource commonSource = null;
     public Dictionary<AudioClip, float> clipVolume = new Dictionary<AudioClip, float>();
     private Chord currentChord;
 
     private void Awake()
     {
-        
+
         timer.Start();
         CreateSources();
         onBeatMS = (long)(1000 / BPS);
@@ -74,18 +80,18 @@ public class MusicManager : MonoBehaviour
 
     private void CreateSources()
     {
-        
-        foreach(Chord chord in chords)
+        if (commonSource == null) commonSource = gameObject.AddComponent<AudioSource>();
+        foreach (Chord chord in chords)
         {
-            foreach(AudioClip clip in chord.pianoNotes)
+            foreach (AudioClip clip in chord.pianoNotes)
             {
-                AddSource(clip);
+                AddSource(clip, true);
             }
             foreach (AudioClip clip in chord.harpNotes)
             {
-                AddSource(clip);
+                AddSource(clip, true);
             }
-            AddSource(chord.bass);
+            AddSource(chord.bass, true);
             InitLoop(chord.noise);
             InitLoop(chord.celloLegato);
             InitLoop(chord.celloTremello);
@@ -93,9 +99,17 @@ public class MusicManager : MonoBehaviour
         AddSource(ClearBoard);
     }
 
-    private void AddSource(AudioClip clip)
+    private void AddSource(AudioClip clip, bool useCommon = false)
     {
-        sources.Add(clip, gameObject.AddComponent<AudioSource>());
+        if (useCommon)
+        {
+            sources.Add(clip, commonSource);
+        }
+        else
+        {
+            sources.Add(clip, gameObject.AddComponent<AudioSource>());
+        }
+        sources[clip].playOnAwake = false;
         clipVolume.Add(clip, 1);
         sources[clip].clip = clip;
     }

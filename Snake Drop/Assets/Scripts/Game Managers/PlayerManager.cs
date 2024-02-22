@@ -73,6 +73,7 @@ public class PlayerManager : MonoBehaviour
     {
         p_MidRound.Begin();
 
+        Score.UpdateScore();
         if (!RoundInProgress)
         {
             EndRound();
